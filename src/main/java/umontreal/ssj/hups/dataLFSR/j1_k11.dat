@@ -1,0 +1,20 @@
+#-------------------------------------------------------#
+# Equidistributed LFSR generator with one composent
+# Criteria : DELTA(k,k,k/2) <= 1
+#-------------------------------------------------------#
+# Format :
+#
+# Number Of Component (only at the beginning of the file)
+#
+# Comments (value of the criteria)
+# s
+# Non-zeros coefficients of the polynomial
+#-------------------------------------------------------#
+
+
+1
+
+# DELTA = 1
+5
+11 5 3 1 0
+

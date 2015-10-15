@@ -1,0 +1,11 @@
+/**
+ * @package umontreal.ssj.simevents.eventlist
+ *
+ * This package provides different kinds of event list implementations. One
+ * can change the default  @ref umontreal.ssj.simevents.eventlist.SplayTree
+ * event list implemntation via the method
+ * umontreal.ssj.simevents.Sim.init(umontreal.ssj.simevents.eventlist.EventList).
+ *
+ * @remark **Pierre:** Should add the appropriate references for the
+ * different event list implementations.
+ */

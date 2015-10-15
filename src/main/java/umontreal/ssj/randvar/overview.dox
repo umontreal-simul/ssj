@@ -1,0 +1,134 @@
+/**
+ * @package umontreal.ssj.randvar
+ *
+ * Generating Non-Uniform Random Numbers.
+ *
+ * This package provides a collection of classes for non-uniform random
+ * variate generation, primarily from standard distributions.
+ *
+ * Each non-uniform random variate generator requires at least one
+ * @ref umontreal.ssj.rng.RandomStream object (from package
+ * @ref umontreal.ssj.rng ), used to generate the underlying uniform random
+ * numbers.
+ *
+ * The generic classes  @ref umontreal.ssj.randvar.RandomVariateGen and
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt permit one to construct a
+ * random variate generator from a random stream and an arbitrary
+ * distribution (see interface  @ref umontreal.ssj.probdist.Distribution ).
+ * To generate random variates by inversion from an arbitrary distribution
+ * over the real numbers using a given random stream, it suffices to
+ * construct a  @ref umontreal.ssj.randvar.RandomVariateGen object with the
+ * desired (previously created)  @ref umontreal.ssj.probdist.Distribution and
+ * @ref umontreal.ssj.rng.RandomStream objects, and then call its
+ * umontreal.ssj.randvar.RandomVariateGen.nextDouble method as many times as
+ * needed. For discrete distributions over the integers, one can construct a
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt object containing the
+ * desired  @ref umontreal.ssj.probdist.DiscreteDistributionInt and
+ * @ref umontreal.ssj.rng.RandomStream, and call its
+ * umontreal.ssj.randvar.RandomVariateGenInt.nextInt method. By default,
+ * these generators simply call the
+ * umontreal.ssj.probdist.ContinuousDistribution.inverseF method from the
+ * specified distribution object. These two classes suffice as long as we are
+ * willing to use inversion. Here is a simple example in which we create
+ * three parallel streams of normal random variates using inversion.
+ *
+ *  **Using three parallel streams of random normal variates**
+ * &emsp;[normaltest]
+ * @anchor REF_randvar_overview_lst_normaltest
+ * @include randvar/normaltest.java
+ *
+ * To generate random variates by other methods than inversion, one can use
+ * specialized classes that extend
+ * @ref umontreal.ssj.randvar.RandomVariateGen or
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. Such classes are provided
+ * for a variety of standard discrete and continuous distributions. For
+ * example, five different subclasses implement normal random variate
+ * generators, using five different methods. One of them, the class
+ * @ref umontreal.ssj.randvar.NormalGen, extends
+ * @ref umontreal.ssj.randvar.RandomVariateGen directly and provides normal
+ * random variate generators based on inversion, so it does the same thing as
+ * using  @ref umontreal.ssj.randvar.RandomVariateGen with the normal
+ * distribution. The others are subclasses of
+ * @ref umontreal.ssj.randvar.NormalGen; they implement various non-inversion
+ * normal variate generation methods. To generate random variates with a
+ * specific method, it suffices to construct an object of the appropriate
+ * subclass and then call its `nextDouble` method.
+ *
+ * In most cases, the specialized classes maintain local copies of the
+ * distribution parameters and use them for variate generation. If the
+ * parameters of the contained distribution objects are later modified, this
+ * may lead to inconsistencies: the variate generator object will keep using
+ * the old values. In fact, the constructors of the specialized classes often
+ * precompute constants and tables based on these parameter values, which
+ * would have to be recomputed if the parameters are changed. On the other
+ * hand, the generic classes  @ref umontreal.ssj.randvar.RandomVariateGen and
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt call directly the
+ * `inverseF` method of the contained distribution object, so they will
+ * always use the new parameter values whenever the parameters in the
+ * distribution object are changed.
+ *
+ * With some variate generation methods (e.g., the *rejection* method), the
+ * number of uniforms required to get a single non-uniform variate varies
+ * from one call to the next. In that case, an auxiliary stream is often used
+ * to preserve the synchronization between random variates when implementing
+ * variance-reduction methods @cite sLAW00a&thinsp;. The main random number
+ * stream is called a fixed number of times per non-uniform variate
+ * generation. If more uniform random numbers are needed, they are obtained
+ * from the auxiliary stream. For these types of generators, two
+ * @ref umontreal.ssj.rng.RandomStream objects should be passed to the
+ * constructor. Otherwise, by default, the same stream will be used for all
+ * uniforms.
+ *
+ * *Static* methods in the specialized classes allow the generation of random
+ * variates from specific distributions without constructing a
+ * @ref umontreal.ssj.randvar.RandomVariateGen object.
+ *
+ * This package also provides an interface to the *UNURAN* (Universal
+ * Non-Uniform RANdom number generators) package, a rich library of C
+ * functions designed and implemented by the ARVAG (Automatic Random VAriate
+ * Generation) project group in Vienna @cite iLEY02a&thinsp;. This interface
+ * can be used to access distributions or generation methods not available
+ * directly in SSJ. To get a UNURAN generator, it suffices to instantiate one
+ * of the UNURAN interface classes:
+ * @ref umontreal.ssj.randvar.UnuranDiscreteInt for discrete random variates,
+ * @ref umontreal.ssj.randvar.UnuranContinuous for continuous ones (in one
+ * dimension), and  @ref umontreal.ssj.randvar.UnuranEmpirical for
+ * quasi-empirical distributions based on experimental data. The type of
+ * distribution and its parameters are specified to UNURAN via its String API
+ * (see the UNURAN documentation). Only univariate distributions are
+ * supported because the UNURAN String API does not support the multivariate
+ * ones yet.
+ *
+ * In the UNURAN interface classes,
+ * umontreal.ssj.randvar.RandomVariateGen.nextDouble and
+ * umontreal.ssj.randvar.RandomVariateGenInt.nextInt can be invoked as usual
+ * to generate variates, but these methods are slowed down significantly by
+ * the overhead in the interactions between code on the native side and on
+ * the Java side. When several random variates are needed, it is much more
+ * efficient to generate them in a single call, via the methods
+ * umontreal.ssj.randvar.RandomVariateGen.nextArrayOfDouble and
+ * umontreal.ssj.randvar.RandomVariateGenInt.nextArrayOfInt.
+ */
+
+
+/**
+ * @defgroup randvar_general [randvar] General Classes
+ */
+
+
+
+/**
+ * @defgroup randvar_discrete [randvar] Generators for Discrete Distributions over the Integers
+ */
+
+
+
+/**
+ * @defgroup randvar_continuous [randvar] Generators for Continuous Distributions
+ */
+
+
+
+/**
+ * @defgroup randvar_unuran [randvar] UNURAN Interface
+ */

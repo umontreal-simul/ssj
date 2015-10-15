@@ -1,0 +1,290 @@
+/*
+ * Class:        Pearson5Dist
+ * Description:  Pearson type V distribution
+ * Environment:  Java
+ * Software:     SSJ 
+ * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Organization: DIRO, Universite de Montreal
+ * @author       
+ * @since
+
+ * SSJ is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License (GPL) as published by the
+ * Free Software Foundation, either version 3 of the License, or
+ * any later version.
+
+ * SSJ is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * A copy of the GNU General Public License is available at
+   <a href="http://www.gnu.org/licenses">GPL licence site</a>.
+ */
+package umontreal.ssj.probdist;
+import umontreal.ssj.util.Num;
+
+/**
+ * <strong>THIS CLASS HAS BEEN RENAMED  @ref InverseGammaDist </strong>.
+ *
+ * Extends the class  @ref ContinuousDistribution for the *Pearson type V*
+ * distribution with shape parameter @f$\alpha> 0@f$ and scale parameter
+ * @f$\beta> 0@f$. The density function is given by
+ * @anchor REF_probdist_Pearson5Dist_eq_fpearson5
+ * @f[
+ *   f(x) = \left\{\begin{array}{ll}
+ *    \displaystyle\frac{\beta^{\alpha}e^{-\beta/ x}}{x^{\alpha+ 1} \Gamma(\alpha)} 
+ *    & 
+ *    \quad\mbox{for } x > 0 
+ *    \\ 
+ *    0 
+ *    & 
+ *    \quad\mbox{otherwise,} 
+ *   \end{array} \right. \tag{fpearson5}
+ * @f]
+ * where @f$\Gamma@f$ is the gamma function. The distribution function is
+ * given by
+ * @anchor REF_probdist_Pearson5Dist_eq_Fpearson5
+ * @f[
+ *   F(x) = 1 - F_G\left(\frac{1}{x}\right) \qquad\mbox{for } x > 0, \tag{Fpearson5}
+ * @f]
+ * and @f$F(x) = 0@f$ otherwise, where @f$F_G(x)@f$ is the distribution
+ * function of a gamma distribution with shape parameter @f$\alpha@f$ and
+ * scale parameter @f$\beta@f$.
+ *
+ * <div class="SSJ-bigskip"></div>
+ *
+ * @ingroup probdist_continuous
+ */
+@Deprecated
+public class Pearson5Dist extends ContinuousDistribution {
+   protected double alpha;
+   protected double beta;
+   protected double logam;   // Ln (Gamma(alpha))
+
+   /**
+    * <strong>THIS CLASS HAS BEEN RENAMED  @ref InverseGammaDist
+    * </strong>. Constructs a `Pearson5Dist` object with parameters
+    * @f$\alpha@f$ = `alpha` and @f$\beta@f$ = `beta`.
+    */
+   public Pearson5Dist (double alpha, double beta) {
+      setParam (alpha, beta);
+   }
+
+
+   public double density (double x) {
+      if (x <= 0.0)
+         return 0.0;
+      return Math.exp (alpha * Math.log (beta/x) - (beta / x) - logam) / x;
+   }
+
+   public double cdf (double x) {
+      return cdf (alpha, beta, x);
+   }
+
+   public double barF (double x) {
+      return barF (alpha, beta, x);
+   }
+
+   public double inverseF (double u) {
+      return inverseF (alpha, beta, u);
+   }
+
+   public double getMean () {
+      return getMean (alpha, beta);
+   }
+
+   public double getVariance () {
+      return getVariance (alpha, beta);
+   }
+
+   public double getStandardDeviation () {
+      return getStandardDeviation (alpha, beta);
+   }
+
+/**
+ * Computes the density function of a Pearson V distribution with shape
+ * parameter @f$\alpha@f$ and scale parameter @f$\beta@f$.
+ */
+public static double density (double alpha, double beta, double x) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+      if (x <= 0.0)
+         return 0.0;
+
+      return Math.exp (alpha * Math.log (beta/x) - (beta / x) - Num.lnGamma (alpha)) / x;
+   }
+
+   /**
+    * Computes the density function of a Pearson V distribution with shape
+    * parameter @f$\alpha@f$ and scale parameter @f$\beta@f$.
+    */
+   public static double cdf (double alpha, double beta, double x) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+      if (x <= 0.0)
+         return 0.0;
+
+      return GammaDist.barF (alpha, beta, 15, 1.0 / x);
+   }
+
+   /**
+    * Computes the complementary distribution function of a Pearson V
+    * distribution with shape parameter @f$\alpha@f$ and scale parameter
+    * @f$\beta@f$.
+    */
+   public static double barF (double alpha, double beta, double x) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+      if (x <= 0.0)
+         return 1.0;
+
+      return GammaDist.cdf (alpha, beta, 15, 1.0 / x);
+   }
+
+   /**
+    * Computes the inverse distribution function of a Pearson V
+    * distribution with shape parameter @f$\alpha@f$ and scale parameter
+    * @f$\beta@f$.
+    */
+   public static double inverseF (double alpha, double beta, double u) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+
+      return 1.0 / GammaDist.inverseF (alpha, beta, 15, 1 - u);
+   }
+
+   /**
+    * Estimates the parameters @f$(\alpha,\beta)@f$ of the Pearson V
+    * distribution using the maximum likelihood method, from the @f$n@f$
+    * observations @f$x[i]@f$, @f$i = 0, 1,…, n-1@f$. The estimates are
+    * returned in a two-element array, in regular order: [@f$\alpha@f$,
+    * @f$\beta@f$].  The equations of the maximum likelihood are the same
+    * as the equations of the gamma distribution, with the sample @f$y_i =
+    * 1/x_i@f$.
+    *  @param x            the list of observations to use to evaluate
+    *                      parameters
+    *  @param n            the number of observations to use to evaluate
+    *                      parameters
+    *  @return returns the parameters [@f$\hat{\alpha}, \hat{\beta}@f$]
+    */
+   public static double[] getMLE (double[] x, int n) {
+      double[] y = new double[n];
+
+      for (int i = 0; i < n; i++) {
+	 if(x[i] > 0)
+	     y[i] = 1.0 / x[i];
+	 else
+	     y[i] = 1.0E100;
+      }
+
+      return GammaDist.getMLE (y, n);
+   }
+
+   /**
+    * Creates a new instance of a Pearson V distribution with parameters
+    * @f$\alpha@f$ and @f$\beta@f$ estimated using the maximum
+    * likelihood method based on the @f$n@f$ observations @f$x[i]@f$, @f$i
+    * = 0, 1, …, n-1@f$.
+    *  @param x            the list of observations to use to evaluate
+    *                      parameters
+    *  @param n            the number of observations to use to evaluate
+    *                      parameters
+    */
+   public static Pearson5Dist getInstanceFromMLE (double[] x, int n) {
+      double parameters[] = getMLE (x, n);
+      return new Pearson5Dist (parameters[0], parameters[1]);
+   }
+
+   /**
+    * Computes and returns the mean @f$E[X] = \beta/ (\alpha- 1)@f$ of a
+    * Pearson V distribution with shape parameter @f$\alpha@f$ and scale
+    * parameter @f$\beta@f$.
+    */
+   public static double getMean (double alpha, double beta) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+
+      return (beta / (alpha - 1.0));
+   }
+
+   /**
+    * Computes and returns the variance @f$\mbox{Var}[X] = \beta^2 /
+    * ((\alpha- 1)^2(\alpha- 2)@f$ of a Pearson V distribution with
+    * shape parameter @f$\alpha@f$ and scale parameter @f$\beta@f$.
+    */
+   public static double getVariance (double alpha, double beta) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+
+      return ((beta * beta) / ((alpha - 1.0) * (alpha - 1.0) * (alpha - 2.0)));
+   }
+
+   /**
+    * Computes and returns the standard deviation of a Pearson V
+    * distribution with shape parameter @f$\alpha@f$ and scale parameter
+    * @f$\beta@f$.
+    */
+   public static double getStandardDeviation (double alpha, double beta) {
+      return Math.sqrt (getVariance (alpha, beta));
+   }
+
+   /**
+    * Returns the @f$\alpha@f$ parameter of this object.
+    */
+   public double getAlpha() {
+      return alpha;
+   }
+
+   /**
+    * Returns the @f$\beta@f$ parameter of this object.
+    */
+   public double getBeta() {
+      return beta;
+   }
+
+   /**
+    * Sets the parameters @f$\alpha@f$ and @f$\beta@f$ of this object.
+    */
+   public void setParam (double alpha, double beta) {
+      if (alpha <= 0.0)
+         throw new IllegalArgumentException("alpha <= 0");
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
+      supportA = 0.0;
+      this.alpha = alpha;
+      this.beta = beta;
+      logam = Num.lnGamma (alpha);
+   }
+
+   /**
+    * Return a table containing the parameters of the current
+    * distribution. This table is put in regular order: [@f$\alpha@f$,
+    * @f$\beta@f$].
+    */
+   public double[] getParams () {
+      double[] retour = {alpha, beta};
+      return retour;
+   }
+
+   /**
+    * Returns a `String` containing information about the current
+    * distribution.
+    */
+   public String toString () {
+      return getClass().getSimpleName() + " : alpha = " + alpha + ", beta = " + beta;
+   }
+
+}

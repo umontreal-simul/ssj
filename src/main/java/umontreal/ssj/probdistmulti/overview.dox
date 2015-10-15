@@ -1,0 +1,81 @@
+/**
+ * @package umontreal.ssj.probdistmulti
+ *
+ * Multivariate Probability Distributions.
+ *
+ * This package contains Java classes providing methods to compute mass,
+ * density, distribution and complementary distribution functions for some
+ * multi-dimensional discrete and continuous probability distributions. It
+ * does not generate random numbers for multivariate distributions; for that,
+ * see the package  @ref umontreal.ssj.randvarmulti.
+ *
+ * ## Distributions
+ *
+ * We recall that the *distribution function* of a *continuous* random vector
+ * @f$X= \{x_1, x_2, …, x_d\}@f$ with *density* @f$f(x_1, x_2, …, x_d)@f$
+ * over the @f$d@f$-dimensional space @f$R^d@f$ is
+ * @anchor REF_probdistmulti_overview_eq_FDist
+ * @f{align}{
+ *    F(x_1, x_2, …, x_d) 
+ *    & 
+ *   =
+ *    P[X_1\le x_1, X_2\le x_2, …, X_d\le x_d] 
+ *    \\  & 
+ *   =
+ *    \int_{-\infty}^{x_1}\int_{-\infty}^{x_2} \cdots\int_{-\infty}^{x_d} f(s_1, s_2, …, s_d)\; ds_1 ds_2 …ds_d \tag{FDist}
+ * @f}
+ * while that of a *discrete* random vector @f$X@f$ with *mass function*
+ * @f$\{p_1, p_2, …, p_d\}@f$ over a fixed set of real numbers is
+ * @anchor REF_probdistmulti_overview_eq_FDistDisc
+ * @f{align}{
+ *    F(x_1, x_2, …, x_d) 
+ *    & 
+ *   =
+ *    P[X_1\le x_1, X_2\le x_2, …, X_d\le x_d] 
+ *    \\  & 
+ *   =
+ *    \sum_{i_1\le x_1}\sum_{i_2\le x_2} \cdots\sum_{i_d\le x_d} p(x_1, x_2, …, x_d), \tag{FDistDisc}
+ * @f}
+ * where @f$p(x_1, x_2, …, x_d) = P[X_1 = x_1, X_2 = x_2, …, X_d = x_d]@f$.
+ * For a discrete distribution over the set of integers, one has
+ * @anchor REF_probdistmulti_overview_eq_FDistDiscInt
+ * @f{align}{
+ *    F (x_1, x_2, …, x_d) 
+ *    & 
+ *   =
+ *    P[X_1\le x_1, X_2\le x_2, …, X_d\le x_d] 
+ *    \\  & 
+ *   =
+ *    \sum_{s_1=-\infty}^{x_1} \sum_{s_2=-\infty}^{x_2} \cdots\sum_{s_d=-\infty}^{x_d} p(s_1, s_2, …, s_d), \tag{FDistDiscInt}
+ * @f}
+ * where @f$p(s_1, s_2, …, s_d) = P[X_1=s_1, X_2=s_2, …, X_d=s_d]@f$.
+ *
+ * We define @f$\bar{F}@f$, the *complementary distribution function* of
+ * @f$X@f$, as
+ * @f[
+ *   \bar{F} (x_1, x_2, …, x_d) = P[X_1\ge x_1, X_2\ge x_2, …, X_d\ge x_d].
+ * @f]
+ */
+
+
+/**
+ * @defgroup probdistmulti_general [probdistmulti] General Classes
+ */
+
+
+
+/**
+ * @defgroup probdistmulti_discrete [probdistmulti] Discrete Distributions over Integers
+ */
+
+
+
+/**
+ * @defgroup probdistmulti_continuous2dim [probdistmulti] 2-Dimensional Continuous Distributions
+ */
+
+
+
+/**
+ * @defgroup probdistmulti_continuous [probdistmulti] Continuous Distributions
+ */

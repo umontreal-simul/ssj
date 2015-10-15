@@ -1,0 +1,12 @@
+/**
+ * @package umontreal.ssj.functions
+ *
+ * Functions utilities.
+ *
+ * This package contains a few utilities classes representing univariate
+ * mathematical functions. They are useful, for example, when one wants to
+ * pass an arbitrary function of one variable as argument to a method. They
+ * allow one to apply mathematical operations like squaring, power, etc. on
+ * generic functions. There are also utilities for numerical differentiation
+ * and integration.
+ */

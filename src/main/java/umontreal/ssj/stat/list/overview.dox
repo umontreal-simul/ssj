@@ -1,0 +1,40 @@
+/**
+ * @package umontreal.ssj.stat.list
+ *
+ * @anchor REF_stat_list_overview_over_li_tal Provides support
+ * for lists of statistical probes. Sometimes, a simulator computes several
+ * related performance measures such as the quality of service for different
+ * call types in a phone call center, the waiting times of different types of
+ * customers, the average number of pieces of different types a machine
+ * processes, etc. A list of statistical probes, in contrast with an ordinary
+ * array, can be resized. Since a list of statistical probes implements the
+ * Java `List` interface, one can iterate over each probe, e.g., to set
+ * reporting options. In addition to an ordinary list, a list of probes
+ * provides facilities to get a vector of averages, a vector of sums, and to
+ * create reports.
+ *
+ * In the Java programming language, a list is usually constructed empty, and
+ * filled with items. Lists of statistical probes can be constructed this
+ * generic way, or created using factory methods that automatically construct
+ * the probes.
+ *
+ *  @ref umontreal.ssj.stat.list.ListOfStatProbes is the base class for lists
+ * of statistical probes. It can hold a list of any
+ * @ref umontreal.ssj.stat.StatProbe subclass, and provides the basic
+ * facilities to obtain an array of sums, an array of averages, etc.
+ * Subclasses provide probe-specific functionalities for adding vectors of
+ * observations, computing sample covariances, etc.
+ * @ref umontreal.ssj.stat.list.ListOfTallies is used to contain
+ * @ref umontreal.ssj.stat.Tally instances. A subclass,
+ * @ref umontreal.ssj.stat.list.ListOfTalliesWithCovariance, is provided to
+ * add support for covariance computation without storing observations.
+ *
+ * All classes in this package representing lists of probes support the
+ * observer design pattern similarly to the classes in package `stat`. A list
+ * of statistical probes maintains a list of registered
+ * @ref umontreal.ssj.stat.list.ArrayOfObservationListener objects, and
+ * broadcasts information to all its registered observers when it receives a
+ * new vector of observations. Any object that implements the interface
+ * @ref umontreal.ssj.stat.list.ArrayOfObservationListener can register as an
+ * observer.
+ */

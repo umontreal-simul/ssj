@@ -1,0 +1,183 @@
+/**
+ * @package umontreal.ssj.rng
+ *
+ * Random Number Generators.
+ *
+ * This package offers the basic facilities for generating uniform random
+ * numbers. It provides an interface called
+ * @ref umontreal.ssj.rng.RandomStream and some implementations of that
+ * interface. The interface specifies that each stream of random numbers is
+ * partitioned into multiple substreams and that methods are available to
+ * jump between the substreams, as discussed in @cite rLEC91a, @cite rLEC97d,
+ * @cite rLEC02a&thinsp;. For an example of how to use these streams
+ * properly, see `InventoryCRN` in the set of example programs.
+ *
+ * Each implementation uses a specific backbone uniform random number
+ * generator (RNG), whose period length is typically partitioned into very
+ * long non-overlapping segments to provide the streams and substreams. A
+ * stream can generate uniform variates (real numbers) over the interval
+ * (0,1), uniform integers over a given range of values @f$\{i,…,j\}@f$, and
+ * arrays of these.
+ *
+ * The generators provided here have various speeds and period lengths.
+ * @ref umontreal.ssj.rng.MRG32k3a is the one that has been most extensively
+ * tested, but it is not among the fastest. The
+ * @ref umontreal.ssj.rng.LFSR113,  @ref umontreal.ssj.rng.GenF2w32,
+ * @ref umontreal.ssj.rng.MT19937, and the `WELL` generators produce
+ * sequences of bits that obey a linear recurrence, so they eventually fail
+ * statistical tests that measure the linear complexity of these bits
+ * sequences. But this can affect only very special types of applications.
+ *
+ * For each generator, the following tables give the approximate period
+ * length (period), the CPU time (in seconds) to generate @f$10^9@f$
+ * @f$U(0,1)@f$ random numbers (gen. time), and the CPU time to jump ahead
+ * @f$10^6@f$ times to the next substream (jump time). The following timings
+ * are on a 2100 MHz 32-bit AMD Athlon XP 2800+ computer running Linux, with
+ * the JDK 1.4.2.
+ *
+ * <center>
+ *
+ * <table class="SSJ-table SSJ-has-hlines">
+ * <tr class="bt">
+ *   <td class="l bl br">RNG</td>
+ *   <td class="l bl">period</td>
+ *   <td class="c">gen. time</td>
+ *   <td class="r br">jump time</td>
+ * </tr><tr class="bt">
+ *   <td class="l bl br">LFSR113<span style="height: 11.0pt;"></span></td>
+ *   <td class="l bl">@f$2^{113}@f$</td>
+ *   <td class="c">&ensp;51</td>
+ *   <td class="r br">0.08</td>
+ * </tr><tr>
+ *   <td class="l bl br">WELL512</td>
+ *   <td class="l bl">@f$2^{512}@f$</td>
+ *   <td class="c">&ensp;55</td>
+ *   <td class="r br">372</td>
+ * </tr><tr>
+ *   <td class="l bl br">WELL1024</td>
+ *   <td class="l bl">@f$2^{1024}@f$</td>
+ *   <td class="c">&ensp;55</td>
+ *   <td class="r br">1450</td>
+ * </tr><tr>
+ *   <td class="l bl br">MT19937</td>
+ *   <td class="l bl">@f$2^{19937}@f$</td>
+ *   <td class="c">&ensp;56</td>
+ *   <td class="r br">60</td>
+ * </tr><tr>
+ *   <td class="l bl br">WELL607</td>
+ *   <td class="l bl">@f$2^{607}@f$</td>
+ *   <td class="c">&ensp;61</td>
+ *   <td class="r br">523</td>
+ * </tr><tr>
+ *   <td class="l bl br">GenF2w32</td>
+ *   <td class="l bl">@f$2^{800}@f$</td>
+ *   <td class="c">&ensp;62</td>
+ *   <td class="r br">937</td>
+ * </tr><tr>
+ *   <td class="l bl br">MRG31k3p</td>
+ *   <td class="l bl">@f$2^{185}@f$</td>
+ *   <td class="c">&ensp;66</td>
+ *   <td class="r br">1.8</td>
+ * </tr><tr>
+ *   <td class="l bl br">MRG32k3a</td>
+ *   <td class="l bl">@f$2^{191}@f$</td>
+ *   <td class="c">109</td>
+ *   <td class="r br">2.3</td>
+ * </tr><tr>
+ *   <td class="l bl br">F2NL607</td>
+ *   <td class="l bl">@f$2^{637}@f$</td>
+ *   <td class="c">125</td>
+ *   <td class="r br">523</td>
+ * </tr><tr>
+ *   <td class="l bl br">RandRijndael</td>
+ *   <td class="l bl">@f$2^{130}@f$</td>
+ *   <td class="c">260</td>
+ *   <td class="r br">0.9</td>
+ * </tr>
+ * </table>
+ *
+ * </center>
+ *
+ * The following timings are on a 2400 MHz 64-bit AMD Athlon 64 Processor
+ * 4000+ computer running Linux, with the JDK 1.5.0.
+ *
+ * <center>
+ *
+ * <table class="SSJ-table SSJ-has-hlines">
+ * <tr class="bt">
+ *   <td class="l bl br">RNG</td>
+ *   <td class="l bl">period</td>
+ *   <td class="c">gen. time</td>
+ *   <td class="r br">jump time</td>
+ * </tr><tr class="bt">
+ *   <td class="l bl br">LFSR113<span style="height: 11.0pt;"></span></td>
+ *   <td class="l bl">@f$2^{113}@f$</td>
+ *   <td class="c">&ensp;31</td>
+ *   <td class="r br">0.08</td>
+ * </tr><tr>
+ *   <td class="l bl br">WELL607</td>
+ *   <td class="l bl">@f$2^{607}@f$</td>
+ *   <td class="c">&ensp;33</td>
+ *   <td class="r br">329</td>
+ * </tr><tr>
+ *   <td class="l bl br">WELL512</td>
+ *   <td class="l bl">@f$2^{512}@f$</td>
+ *   <td class="c">&ensp;33</td>
+ *   <td class="r br">234</td>
+ * </tr><tr>
+ *   <td class="l bl br">WELL1024</td>
+ *   <td class="l bl">@f$2^{1024}@f$</td>
+ *   <td class="c">&ensp;34</td>
+ *   <td class="r br">917</td>
+ * </tr><tr>
+ *   <td class="l bl br">LFSR258</td>
+ *   <td class="l bl">@f$2^{258}@f$</td>
+ *   <td class="c">&ensp;35</td>
+ *   <td class="r br">0.18</td>
+ * </tr><tr>
+ *   <td class="l bl br">MT19937</td>
+ *   <td class="l bl">@f$2^{19937}@f$</td>
+ *   <td class="c">&ensp;36</td>
+ *   <td class="r br">46</td>
+ * </tr><tr>
+ *   <td class="l bl br">GenF2w32</td>
+ *   <td class="l bl">@f$2^{800}@f$</td>
+ *   <td class="c">&ensp;43</td>
+ *   <td class="r br">556</td>
+ * </tr><tr>
+ *   <td class="l bl br">MRG31k3p</td>
+ *   <td class="l bl">@f$2^{185}@f$</td>
+ *   <td class="c">&ensp;51</td>
+ *   <td class="r br">0.89</td>
+ * </tr><tr>
+ *   <td class="l bl br">F2NL607</td>
+ *   <td class="l bl">@f$2^{637}@f$</td>
+ *   <td class="c">&ensp;65</td>
+ *   <td class="r br">329</td>
+ * </tr><tr>
+ *   <td class="l bl br">MRG32k3a</td>
+ *   <td class="l bl">@f$2^{191}@f$</td>
+ *   <td class="c">&ensp;70</td>
+ *   <td class="r br">1.1</td>
+ * </tr><tr>
+ *   <td class="l bl br">RandRijndael</td>
+ *   <td class="l bl">@f$2^{130}@f$</td>
+ *   <td class="c">127</td>
+ *   <td class="r br">0.6</td>
+ * </tr>
+ * </table>
+ *
+ * </center>
+ *
+ * Other tools included in this package permit one to manage and synchronize
+ * several streams simultaneously (
+ * @ref umontreal.ssj.rng.RandomStreamManager ), to create random stream
+ * factories for a given type of stream (
+ * @ref umontreal.ssj.rng.BasicRandomStreamFactory ), and to apply automatic
+ * transformations to the output of a given stream (
+ * @ref umontreal.ssj.rng.AntitheticStream and
+ * @ref umontreal.ssj.rng.BakerTransformedStream ).
+ *
+ * For further details about uniform RNGs, we refer the reader to
+ * @cite rKNU98a, @cite rLEC01d, @cite rLEC04b&thinsp;.
+ */

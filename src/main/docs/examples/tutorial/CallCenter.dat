@@ -1,0 +1,46 @@
+8.0     opening
+13      numPeriods
+4  100.0 numAgents and base arrival rate
+6  150.0
+8  150.0
+8  180.0
+8  200.0
+7  150.0
+8  150.0
+8  150.0
+6  120.0
+6  100.0
+4   80.0
+4   70.0
+4   60.0
+10.0    alpha_0
+0.1     p
+0.001   nu
+1.0     alpha
+0.01    beta    (mean service time = 100 sec)
+20.0    s
+
+
+==========================================================
+Commentaire: 
+Vous pourriez avoir une erreur
+
+  "java.util.InputMismatchException"
+
+avec CallCenter.java si votre système Java est configuré pour lire
+des nombres réels en virgule-flottante (par exemple un nombre réel
+s'écrit: 8,5 pour presque tous les pays dans le monde) au lieu 
+de la convention anglo-saxonne point-flottant
+(où un nombre réel s'écrit: 8.5). Dans ce cas, soit changez tous les
+point-flottants ci-dessus en virgule-flottantes, soit ajoutez 
+l'instruction
+
+   Locale.setDefault(Locale.US);
+
+ou
+
+   Locale.setDefault(Locale.ROOT);
+
+avant la lecture du fichier  CallCenter.dat.
+Locale se trouve dans java.util.
+

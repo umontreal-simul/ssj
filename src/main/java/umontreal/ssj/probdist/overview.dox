@@ -1,0 +1,145 @@
+/**
+ * @package umontreal.ssj.probdist
+ *
+ * Probability Distributions.
+ *
+ * This package contains a set of Java classes providing methods to compute
+ * mass, density, distribution, complementary distribution, and inverse
+ * distribution functions for some discrete and continuous probability
+ * distributions. It also provides methods to estimate the parameters of some
+ * distributions from empirical data. It does not generate random variates;
+ * for that, see the package  @ref umontreal.ssj.randvar. It is possible to
+ * plot the density or the cumulative probabilities of a distribution
+ * function either on screen, or in a LaTeX file, but for this, one has to
+ * use the package  @ref umontreal.ssj.charts.
+ *
+ * ## Distributions
+ *
+ * We recall that the *distribution function* of a *continuous* random
+ * variable @f$X@f$ with *density* @f$f@f$ over the real line is
+ * @anchor REF_probdist_overview_eq_FDist
+ * @f[
+ *   F(x) = P[X\le x] = \int_{-\infty}^x f(s)ds \tag{FDist}
+ * @f]
+ * while that of a *discrete* random variable @f$X@f$ with *mass function*
+ * @f$p@f$ over a fixed set of real numbers @f$x_0 < x_1 < x_2 < \cdots@f$
+ * is
+ * @anchor REF_probdist_overview_eq_FDistDisc
+ * @f[
+ *   F(x) = P[X\le x] = \sum_{x_i\le x} p(x_i), \tag{FDistDisc}
+ * @f]
+ * where @f$p(x_i) = P[X = x_i]@f$. For a discrete distribution over the set
+ * of integers, one has
+ * @anchor REF_probdist_overview_eq_FDistDiscInt
+ * @f[
+ *   F (x) = P[X\le x] = \sum_{s=-\infty}^x p(s), \tag{FDistDiscInt}
+ * @f]
+ * where @f$p(s) = P[X=s]@f$.
+ *
+ * We define @f$\bar{F}@f$, the *complementary distribution function* of
+ * @f$X@f$, by
+ * @f[
+ *   \bar{F} (x) = P[X\ge x].
+ * @f]
+ * With this definition of @f$\bar{F}@f$, one has @f$\bar{F}(x) = 1 - F
+ * (x)@f$ for continuous distributions and @f$\bar{F}(x) = 1 - F (x-1)@f$ for
+ * discrete distributions over the integers. This definition is
+ * *non-standard* for the discrete case: we have @f$\bar{F} (x) =
+ * P[X\ge x]@f$ instead of @f$\bar{F} (x) = P[X > x] = 1-F(x)@f$. We find it
+ * more convenient especially for computing @f$p@f$-values in goodness-of-fit
+ * tests.
+ *
+ * The *inverse distribution function* is defined as
+ * @anchor REF_probdist_overview_eq_inverseF
+ * @f[
+ *   F^{-1}(u) = \inf\{x\in\mathbb{R}: F (x)\ge u\}, \tag{inverseF}
+ * @f]
+ * for @f$0\le u\le1@f$. This function @f$F^{-1}@f$ is often used, among
+ * other things, to generate the random variable @f$X@f$ by inversion, by
+ * passing a @f$U (0,1)@f$ random variate as the value of @f$u@f$.
+ *
+ * The package `probdist` offers two types of tools for computing @f$p@f$,
+ * @f$f@f$, @f$F@f$, @f$\bar{F}@f$, and @f$F^{-1}@f$: *static methods*, for
+ * which no object needs to be created, and methods associated with
+ * *distribution objects*. Standard distributions are implemented each in
+ * their own class. Constructing an object from one of these classes can be
+ * convenient if @f$F@f$, @f$\bar{F}@f$, etc., has to be evaluated several
+ * times for the same distribution. In certain cases (for the Poisson
+ * distribution, for example), creating the distribution object would
+ * precompute tables that would speed up significantly all subsequent method
+ * calls for computing @f$F@f$, @f$\bar{F}@f$, etc. This trades memory, plus
+ * a one-time setup cost, for speed. In addition to the non-static methods,
+ * the distribution classes also provide static methods that do not require
+ * the creation of an object.
+ *
+ * The distribution classes extend one of the (abstract) classes
+ * @ref umontreal.ssj.probdist.DiscreteDistribution and
+ * @ref umontreal.ssj.probdist.ContinuousDistribution (which both implement
+ * the interface  @ref umontreal.ssj.probdist.Distribution ) for discrete and
+ * continuous distributions over the real numbers, or
+ * @ref umontreal.ssj.probdist.DiscreteDistributionInt, for discrete
+ * distributions over the non-negative integers.
+ *
+ * For example, the class  @ref umontreal.ssj.probdist.PoissonDist extends
+ * @ref umontreal.ssj.probdist.DiscreteDistributionInt. Calling a static
+ * method from this class will compute the corresponding probability from
+ * scratch. Constructing a  @ref umontreal.ssj.probdist.PoissonDist object,
+ * on the other hand, will precompute tables that contain the probability
+ * terms and the distribution function for a given parameter @f$\lambda@f$
+ * (the mean of the Poisson distribution). These tables will then be used
+ * whenever a method is called for the corresponding object. This second
+ * approach is recommended if some of @f$F@f$, @f$\bar{F}@f$, etc., has to be
+ * computed several times for the same parameter @f$\lambda@f$. As a rule of
+ * thumb, creating objects and using their methods is faster than just using
+ * static methods as soon as two or three calls are made, unless the
+ * parameters are large.
+ *
+ * In fact, only the non-negligible probability terms (those that exceed the
+ * threshold  umontreal.ssj.probdist.DiscreteDistributionInt.EPSILON ) are
+ * stored in the tables. For @f$F@f$ and @f$\bar{F}@f$, a single table
+ * actually contains @f$F (x)@f$ for @f$F (x) \le1/2@f$ and @f$1-F (x)@f$
+ * for @f$F (x) > 1/2@f$. When the distribution parameters are so large that
+ * the tables would take too much space, these are not created and the
+ * methods automatically call their static equivalents instead of using
+ * tables.
+ *
+ * Objects that implement the interface
+ * @ref umontreal.ssj.probdist.Distribution (and sometimes the abstract class
+ * @ref umontreal.ssj.probdist.ContinuousDistribution ) are required by some
+ * methods in package  @ref umontreal.ssj.randvar and also in classes
+ * @ref umontreal.ssj.gof.GofStat and  @ref umontreal.ssj.gof.GofFormat of
+ * package  @ref umontreal.ssj.gof.
+ *
+ * Some of the classes also provide methods that compute parameter
+ * estimations of the corresponding distribution from a set of empirical
+ * observations, in most cases based on the maximum likelihood method.
+ */
+
+
+/**
+ * @defgroup probdist_general [probdist] General Classes
+ */
+
+
+
+/**
+ * @defgroup probdist_discrete [probdist] Discrete Distributions over Integers
+ */
+
+
+
+/**
+ * @defgroup probdist_discretereal [probdist] Discrete Distributions over Real Numbers
+ */
+
+
+
+/**
+ * @defgroup probdist_continuous [probdist] Continuous Distributions
+ */
+
+
+
+/**
+ * @defgroup probdist_edf [probdist] Empirical Distribution Functions (EDF)
+ */

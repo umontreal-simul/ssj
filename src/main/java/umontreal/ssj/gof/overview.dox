@@ -1,0 +1,109 @@
+/**
+ * @package umontreal.ssj.gof
+ *
+ * Goodness-of-fit test Statistics.
+ *
+ * This package contains tools for performing univariate *goodness-of-fit*
+ * (GOF) statistical tests. Methods for computing (or approximating) the
+ * distribution function @f$F(x)@f$ of certain GOF test statistics, as well
+ * as their complementary distribution function @f$\bar{F}(x) = 1 - F(x)@f$,
+ * are implemented in classes of package  @ref umontreal.ssj.probdist. Tools
+ * for computing the GOF test statistics and the corresponding
+ * @f$p@f$-values, and for formating the results, are provided in classes
+ * @ref umontreal.ssj.gof.GofStat and  @ref umontreal.ssj.gof.GofFormat.
+ *
+ * We are concerned here with GOF test statistics for testing the hypothesis
+ * @f$\mathcal{H}_0@f$ that a sample of @f$N@f$ observations @f$X_1,…,X_N@f$
+ * comes from a given univariate probability distribution @f$F@f$. We
+ * consider tests such as those of Kolmogorov-Smirnov, Anderson-Darling,
+ * Crámer-von Mises, etc. These test statistics generally measure, in
+ * different ways, the distance between a *continuous* distribution function
+ * @f$F@f$ and the *empirical distribution function* (EDF) @f$\hat{F}_N@f$ of
+ * @f$X_1,…,X_N@f$. They are also called EDF test statistics. The
+ * observations @f$X_i@f$ are usually transformed into @f$U_i = F (X_i)@f$,
+ * which satisfy @f$0\le U_i\le1@f$ and which follow the @f$U(0,1)@f$
+ * distribution under @f$\mathcal{H}_0@f$. (This is called the *probability
+ * integral transformation*.) Methods for applying this transformation, as
+ * well as other types of transformations, to the observations @f$X_i@f$ or
+ * @f$U_i@f$ are provided in  @ref umontreal.ssj.gof.GofStat.
+ *
+ * Then the GOF tests are applied to the @f$U_i@f$ sorted by increasing
+ * order. The corresponding @f$p@f$-values are easily computed by calling the
+ * appropriate methods in the classes of package
+ * @ref umontreal.ssj.probdist. If a GOF test statistic @f$Y@f$ has a
+ * continuous distribution under @f$\mathcal{H}_0@f$ and takes the value
+ * @f$y@f$, its (right) @f$p@f$-value is defined as @f$p = P[Y \ge y
+ * \mid\mathcal{H}_0]@f$. The test usually rejects @f$\mathcal{H}_0@f$ if
+ * @f$p@f$ is deemed too close to 0 (for a one-sided test) or too close to 0
+ * or 1 (for a two-sided test).
+ *
+ * In the case where @f$Y@f$ has a *discrete distribution* under
+ * @f$\mathcal{H}_0@f$, we distinguish the <em>right @f$p@f$-value</em>
+ * @f$p_R = P[Y \ge y \mid\mathcal{H}_0]@f$ and the <em>left
+ * @f$p@f$-value</em> @f$p_L = P[Y \le y \mid\mathcal{H}_0]@f$. We then
+ * define the @f$p@f$-value for a two-sided test as
+ * @anchor REF_gof_overview_eq_pdisc
+ * @f{align}{
+ *    p 
+ *    & 
+ *    = 
+ *    \left\{ 
+ *   \begin{array}{l@{qquad}l}
+ *    p_R, 
+ *    & 
+ *    \mbox{if } p_R < p_L 
+ *    \\ 
+ *    1 - p_L, 
+ *    \mbox{if } p_R \ge p_L \mbox{ and } p_L < 0.5 
+ *    \\ 
+ *    0.5 
+ *    & 
+ *    \mbox{otherwise.} 
+ *   \end{array}
+ *   \right. \tag{pdisc}
+ * @f}
+ * Why such a definition? Consider for example a Poisson random variable
+ * @f$Y@f$ with mean 1 under @f$\mathcal{H}_0@f$. If @f$Y@f$ takes the value
+ * 0, the right @f$p@f$-value is @f$p_R = P[Y \ge0 \mid\mathcal{H}_0] =
+ * 1@f$. In the uniform case, this would obviously lead to rejecting
+ * @f$\mathcal{H}_0@f$ on the basis that the @f$p@f$-value is too close to 1.
+ * However, @f$P[Y = 0 \mid\mathcal{H}_0] = 1/e \approx0.368@f$, so it does
+ * not really make sense to reject @f$\mathcal{H}_0@f$ in this case. In fact,
+ * the left @f$p@f$-value here is @f$p_L = 0.368@f$, and the @f$p@f$-value
+ * computed with the above definition is @f$p = 1 - p_L \approx0.632@f$.
+ * Note that if @f$p_L@f$ is very small, in this definition, @f$p@f$ becomes
+ * close to 1. If the left @f$p@f$-value was defined as @f$p_L = 1 - p_R =
+ * P[Y < y \mid\mathcal{H}_0]@f$, this would also lead to problems. In the
+ * example, one would have @f$p_L = 0@f$ in that case.
+ *
+ * A very common type of test in the discrete case is the *chi-square* test,
+ * which applies when the possible outcomes are partitioned into a finite
+ * number of categories. Suppose there are @f$k@f$ categories and that each
+ * observation belongs to category @f$i@f$ with probability @f$p_i@f$, for
+ * @f$0\le i < k@f$. If there are @f$n@f$ independent observations, the
+ * expected number of observations in category @f$i@f$ is @f$e_i = n p_i@f$,
+ * and the chi-square test statistic is defined as
+ * @anchor REF_gof_overview_eq_chi_square0
+ * @f[
+ *   X^2 = \sum_{i=0}^{k-1} \frac{(o_i - e_i)^2}{e_i} \tag{chi-square0}
+ * @f]
+ * where @f$o_i@f$ is the actual number of observations in category @f$i@f$.
+ * Assuming that all @f$e_i@f$’s are large enough (a popular rule of thumb
+ * asks for @f$e_i \ge5@f$ for each @f$i@f$), @f$X^2@f$ follows
+ * approximately the chi-square distribution with @f$k-1@f$ degrees of
+ * freedom @cite tREA88a&thinsp;. The class
+ * @ref umontreal.ssj.gof.GofStat.OutcomeCategoriesChi2, a nested class
+ * defined inside the  @ref umontreal.ssj.gof.GofStat class, provides tools
+ * to automatically regroup categories in the cases where some @f$e_i@f$’s
+ * are too small.
+ *
+ * The class  @ref umontreal.ssj.gof.GofFormat contains methods used to
+ * format results of GOF test statistics, or to apply several such tests
+ * simultaneously to a given data set and format the results to produce a
+ * report that also contains the @f$p@f$-values of all these tests. A C
+ * version of this class is actually used extensively in the package TestU01,
+ * which applies statistical tests to random number generators
+ * @cite iLEC01t&thinsp;. The class also provides tools to plot an empirical
+ * or theoretical distribution function, by creating a data file that
+ * contains a graphic plot in a format compatible with a given software.
+ */

@@ -1,0 +1,131 @@
+/**
+ * @package umontreal.ssj.util.io
+ *
+ * This package provides tools for exporting data to text and binary files,
+ * as well as for importing data from files.
+ *
+ * Each of the `write()` methods takes a *field label* as their first
+ * argument. This label can always be set to `null`, in which case an
+ * anonymous field will be written. The `write()` methods that take
+ * one-dimensional array argument can also take an additional integer
+ * argument, for convenience, to specify the number of elements to write in
+ * the array.
+ *
+ * For a quick start, consult the following examples and the documentation
+ * for  @ref umontreal.ssj.util.io.DataWriter and
+ * @ref umontreal.ssj.util.io.DataReader, as well as the constructors of
+ * implementing classes ( @ref umontreal.ssj.util.io.TextDataWriter,
+ * @ref umontreal.ssj.util.io.BinaryDataWriter and
+ * @ref umontreal.ssj.util.io.BinaryDataReader ).
+ *
+ * <strong>Example of how to write data to a file:</strong><br>
+ *
+ * @code
+ *
+ * public static void writerExample() throws IOException {
+ *    String filename = "test.dat";
+ *    DataWriter out = new BinaryDataWriter(filename);
+ *    out.write("zero", 0);
+ *    out.write("zerotxt", "ZERO");
+ *    out.write("n", new int[]{1,2,3,4,5});
+ *    out.write("pi", Math.PI);
+ *    out.write("str", new String[]{"text1", "text2"});
+ *    out.write("real", new double[]{2.5, 3.7, 8.9});
+ *    out.write("real2", new float[]{2.5f, 3.7f, 8.9f});
+ *    out.write(null, 24);
+ *    out.write(null, 39);
+ *    out.write(null, 116);
+ *    out.close();
+ * }
+ *
+ * @endcode
+ *
+ * <strong>Example of how to read data from a file — specific
+ * fields:</strong><br>
+ *
+ * @code
+ *
+ * public static void readerExample1() throws IOException {
+ *    String filename = "test.dat";
+ *    DataReader in = new BinaryDataReader(filename);
+ *
+ *    // read double field labeled "pi"
+ *    System.out.println("[pi] (double) " + in.readField("pi").asDouble());
+ *
+ *    // read integer-array field labeled "n"
+ *    int[] n = in.readIntArray("n");
+ *    System.out.print("[n] (int[]) ");
+ *    for (int i = 0; i < n.length; i++)
+ *       System.out.print(" " + n[i]);
+ *    System.out.println();
+ *
+ *    in.close();
+ * }
+ *
+ * @endcode
+ *
+ * <strong>Example of how to read data from a file — list all
+ * fields:</strong><br>
+ *
+ * @code
+ *
+ * public static void readerExample2() throws IOException {
+ *    String filename = "test.dat";
+ *    DataReader in = new BinaryDataReader(filename);
+ *
+ *    Map<String,DataField> fields = in.readAllFields();
+ *    in.close();
+ *
+ *    // sort keys
+ *    Set<String> allKeys = new TreeSet<String>(fields.keySet());
+ *
+ *    for (String key : allKeys) {
+ *       System.out.print("[" + key + "]");
+ *       DataField d = fields.get(key);
+ *
+ *       if (d.isString())
+ *          System.out.print(" (String) " + d.asString());
+ *
+ *       if (d.isInt())
+ *          System.out.print(" (int) " + d.asInt());
+ *
+ *       if (d.isFloat())
+ *          System.out.print(" (float) " + d.asFloat());
+ *
+ *       if (d.isDouble())
+ *          System.out.print(" (double) " + d.asDouble());
+ *
+ *       if (d.asStringArray() != null) {
+ *          System.out.print(" (String[]) ");
+ *          String[] a = d.asStringArray();
+ *          for (int i = 0; i < a.length; i++)
+ *             System.out.print(" " + a[i]);
+ *       }
+ *
+ *       if (d.asIntArray() != null) {
+ *          System.out.print(" (int[]) ");
+ *          int[] a = d.asIntArray();
+ *          for (int i = 0; i < a.length; i++)
+ *             System.out.print(" " + a[i]);
+ *       }
+ *
+ *       if (d.asFloatArray() != null) {
+ *          System.out.print(" (float[]) ");
+ *          float[] a = d.asFloatArray();
+ *          for (int i = 0; i < a.length; i++)
+ *             System.out.print(" " + a[i]);
+ *       }
+ *
+ *       if (d.asDoubleArray() != null) {
+ *          System.out.print(" (double[]) ");
+ *          double[] a = d.asDoubleArray();
+ *          for (int i = 0; i < a.length; i++)
+ *             System.out.print(" " + a[i]);
+ *       }
+ *
+ *       System.out.println();
+ *    }
+ * }
+ *
+ * @endcode
+ */

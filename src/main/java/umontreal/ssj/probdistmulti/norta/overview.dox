@@ -1,0 +1,107 @@
+/**
+ * @package umontreal.ssj.probdistmulti.norta
+ *
+ * This package implements the correlation matching algorithms proposed in
+ * @cite sAVR06a&thinsp; for the situation where one wants to use the NORTA
+ * method to fit a multivariate distribution with discrete marginals. The
+ * four different algorithms discussed in @cite sAVR06a&thinsp; are
+ * implemented in four subclasses of an abstract class named
+ * <tt>NortaInitDisc</tt>. This software makes use of the SSJ library
+ * @cite iLEC04j&thinsp;. An example of how to use it is given at the end of
+ * this document.
+ *
+ * The NORTA method is an approach for modeling dependence in a
+ * finite-dimensional random vector @f$X=(X_1,…,X_d)@f$ with given univariate
+ * marginals via normal copula that fits the rank or the linear correlation
+ * between each pair of coordinates of @f$X@f$. The standard normal
+ * distribution function is applied to each coordinate of a vector
+ * @f$Z=(Z_1,…,Z_d)@f$ of correlated standard normals to produce a vector
+ * @f$U=(U_1,…,U_d)@f$ of correlated uniforms over @f$[0,1]@f$. Then @f$X@f$
+ * is obtained by applying the inverse of each marginal distribution function
+ * to each coordinate of @f$U@f$. The fitting requires finding the
+ * correlation between the coordinates of each pair of @f$Z@f$ that would
+ * yield the correlation between the coordinates of the corresponding pair of
+ * @f$X@f$. The step of finding the correlation matrix of @f$Z@f$, given the
+ * correlation matrix of @f$X@f$ and the marginal distributions, constitutes
+ * the NORTA initialization step. In @cite sAVR06a&thinsp;, we present a
+ * detailed analysis of the NORTA method and root-finding problem when the
+ * marginal distributions are discrete.
+ *
+ * With the NORTA method, we have the following representation:
+ * @f[
+ *   X_l=F_l^{-1}(\Phi(Z_l)), \quad l=1,…,d,
+ * @f]
+ * where @f$\Phi@f$ is the standard normal distribution function and
+ * @f$F_l^{-1}(u) = \inf\{x: F_l(x) \ge u\}@f$ for @f$0\le u \le1@f$, which
+ * is the quantile function of the marginal distribution @f$F_l, l=1,…,d@f$.
+ *
+ * For the bivariate case (@f$d=2@f$), we have a vector @f$X=(X_1, X_2)@f$
+ * and the two marginal distributions @f$F_1@f$ and @f$F_2@f$ with means and
+ * standard deviations @f$\mu_{F_1}=E[F_1(X_1)]@f$,
+ * @f$\mu_{F_2}=E[F_2(X_2)]@f$, @f$\sigma_{F_1}=\mbox{Var}(F_1(X_1))^{1/2}@f$
+ * and @f$\sigma_{F_2}=\mbox{Var}(F_2(X_2))^{1/2}@f$, respectively. For this
+ * case, NORTA initialization is reduced to the problem of finding the
+ * correlation @f$\rho_Z=\mbox{Corr}(Z_1,Z_2)@f$.
+ *
+ * In this document, we present a set of Java classes for NORTA
+ * initialization in the bivariate case given the rank correlation and two
+ * discrete marginal distributions. We have:
+ * @anchor REF_probdistmulti_norta_overview_r
+ * @f{align}{
+ *    \tag{r} r_X(\rho)=\mbox{Corr}(F_1(X_1),F_2(X_2))=\frac{g_r(\rho) -\mu_{F_1}\mu_{F_2} }{\sigma_{F_1}\sigma_{F_2}},
+ * @f}
+ * where:
+ * @anchor REF_probdistmulti_norta_overview_gr
+ * @f{align}{
+ *    g_r(\rho)
+ *    & 
+ *    =
+ *    E \left[ F_1 (X_1) F_2 (X_2) \right]\nonumber
+ *    \\  & 
+ *    =
+ *    \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F_1 \{ F_1^{-1} [ \Phi(x_1)]\} F_2\{ F_2^{-1}[\Phi(x_2)]\} \phi_{\rho}(x_1,x_2) dx_1 dx_2,
+ *    \tag{gr}
+ * @f}
+ * where @f$\phi_{\rho}@f$ is the bivariate standard normal density. Then,
+ * for a given correlation @f$r_X@f$, we use an algorithm of root-finder to
+ * find the corresponding correlation @f$\rho_Z@f$ that verifies
+ * @anchor REF_probdistmulti_norta_overview_fr
+ * @f{align}{
+ *    \tag{fr} f_r(\rho_Z)=g_r(\rho_Z)-r_X\sigma_{F_1}\sigma_{F_2}-\mu_{F_1}\mu_{F_2}=0.
+ * @f}
+ * When the marginal distributions are continuous, the root-finding problem
+ * is easy to solve when we use the rank correlation. We have an analytic
+ * solution for ( {@link REF_probdistmulti_norta_overview_gr
+ * gr} ) and the relation in (
+ * {@link REF_probdistmulti_norta_overview_r r} ) becomes:
+ * @f{align}{
+ *    r_X(\rho)=(6/\pi) \arcsin(\rho/2).\nonumber
+ * @f}
+ *
+ * # Example
+ *
+ * In this example, we consider two random variables @f$X_1@f$ and @f$X_2@f$
+ * with negative binomial marginals, denoted by NegBin@f$(s,p)@f$. In our
+ * example, the parameters @f$(s,p)@f$ for @f$X_1@f$ and @f$X_2@f$,
+ * respectively, are: @f$s_1=15.68@f$, @f$p_1=0.3861@f$, @f$s_2=60.21@f$ and
+ * @f$p_2=0.6211@f$. We want to calculate the correlation @f$\rho_Z@f$ for a
+ * target rank correlation @f$r_X=0.43@f$. Since the negative binomial has an
+ * unbounded support, we set the upper bound points of each support at the
+ * quantile of order @f$tr=1-10^{-6}@f$, so that the number of support points
+ * @f$m_l=F_l^{-1}(1-10^{-6})+1@f$, for @f$l=1,2@f$.
+ *
+ * The Java program uses the class
+ * @ref umontreal.ssj.probdist.DiscreteDistributionInt of package `probdist`
+ * from SSJ, to specify the two discrete marginal distributions. Each of the
+ * four subclasses  @ref NI1,  @ref NI2a,  @ref NI2b and  @ref NI3 are called
+ * for each algorithm to compute the correlation @f$\rho_Z@f$, so we can
+ * compare the results.
+ *
+ *  **Example with correlated negative binomial distributions.**
+ * &emsp;[Collision]
+ * @anchor REF_probdistmulti_norta_overview_lst_Collision
+ * @include probdistmulti/norta/ExampleNortaInitDisc.java  <strong>Results of
+ * the program <tt>ExampleNortaInitDisc.java</tt></strong> &emsp;[Collision]
+ * @anchor REF_probdistmulti_norta_overview_res_Collision
+ * @include probdistmulti/norta/ExampleNortaInitDisc.txt
+ */

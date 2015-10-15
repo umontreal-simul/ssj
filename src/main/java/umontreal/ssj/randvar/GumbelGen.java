@@ -1,0 +1,107 @@
+/*
+ * Class:        GumbelGen
+ * Description:  generator of random variates from the Gumbel distribution 
+ * Environment:  Java
+ * Software:     SSJ 
+ * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Organization: DIRO, Universite de Montreal
+ * @author       
+ * @since
+
+ * SSJ is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License (GPL) as published by the
+ * Free Software Foundation, either version 3 of the License, or
+ * any later version.
+
+ * SSJ is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * A copy of the GNU General Public License is available at
+   <a href="http://www.gnu.org/licenses">GPL licence site</a>.
+ */
+package umontreal.ssj.randvar;
+import umontreal.ssj.rng.*;
+import umontreal.ssj.probdist.*;
+
+/**
+ * This class implements methods for generating random variates from the
+ * *Gumbel* distribution. Its density is given by
+ * @anchor REF_randvar_GumbelGen_eq_densgumbel
+ * @f[
+ *   f (x) = \frac{e^{-z} e^{-e^{-z}}}{|\beta|}, \qquad\mbox{for } -\infty< x < \infty, 
+ *    \tag{densgumbel}
+ * @f]
+ * where we use the notation @f$z = (x-\delta)/\beta@f$. The scale
+ * parameter @f$\beta@f$ can be positive (for the Gumbel distribution) or
+ * negative (for the reverse Gumbel distribution), but not 0.
+ *
+ * <div class="SSJ-bigskip"></div>
+ *
+ * @ingroup randvar_continuous
+ */
+public class GumbelGen extends RandomVariateGen {
+   private double delta;
+   private double beta;
+
+   /**
+    * Creates a Gumbel random number generator with @f$\beta= 1@f$ and
+    * @f$\delta= 0@f$ using stream `s`.
+    */
+   public GumbelGen (RandomStream s) {
+      this (s, 1.0, 0.0);
+   }
+
+   /**
+    * Creates a Gumbel random number generator with parameters
+    * @f$\beta@f$ = `beta` and @f$\delta@f$ = `delta` using stream `s`.
+    */
+   public GumbelGen (RandomStream s, double beta, double delta) {
+      super (s, new GumbelDist(beta, delta));
+      setParams (beta, delta);
+   }
+
+   /**
+    * Creates a new generator for the Gumbel distribution `dist` and
+    * stream `s`.
+    */
+   public GumbelGen (RandomStream s, GumbelDist dist) {
+      super (s, dist);
+      if (dist != null)
+         setParams (dist.getBeta(), dist.getDelta());
+   }
+
+   /**
+    * Generates a new variate from the Gumbel distribution with parameters
+    * @f$\beta= @f$&nbsp;`beta` and @f$\delta= @f$&nbsp;`delta` using
+    * stream `s`.
+    */
+   public static double nextDouble (RandomStream s, double beta, double delta) {
+      return GumbelDist.inverseF (beta, delta, s.nextDouble());
+   }
+
+   /**
+    * Returns the parameter @f$\beta@f$.
+    */
+   public double getBeta() {
+      return beta;
+   }
+
+   /**
+    * Returns the parameter @f$\delta@f$.
+    */
+   public double getDelta() {
+      return delta;
+   }
+
+   /**
+    * Sets the parameters @f$\beta@f$ and @f$\delta@f$ of this object.
+    */
+   protected void setParams (double beta, double delta) {
+     if (beta == 0.0)
+         throw new IllegalArgumentException ("beta = 0");
+      this.delta = delta;
+      this.beta = beta;
+   }
+}

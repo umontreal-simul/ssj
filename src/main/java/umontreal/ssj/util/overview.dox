@@ -1,0 +1,11 @@
+/**
+ * @package umontreal.ssj.util
+ *
+ * General basic utilities.
+ *
+ * This document describes a set of basic utilities  used in the Java
+ * software developed in the *simulation laboratory* of the DIRO, at the
+ * Université de Montréal. Many of these tools were originally implemented in
+ * the Modula-2 language and have been translated in C and then in Java, with
+ * some adaptations along the road.
+ */
