@@ -358,6 +358,7 @@ sourceSets {
     test {
         java {
             srcDir 'src/main/docs/examples'
+            exclude 'markovchainrqmc/**' // FIXME: broken examples
         }
     }
 }
