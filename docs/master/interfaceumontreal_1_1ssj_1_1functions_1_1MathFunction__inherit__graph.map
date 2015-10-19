@@ -1,0 +1,16 @@
+<map id="MathFunction" name="MathFunction">
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html" title="Represents a B&#45;spline with control points at . " alt="" coords="457,60,524,88"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1functionfit_1_1SmoothingCubicSpline.html" title="Represents a cubic spline with nodes at &#160;computed with the smoothing cubic spline algorithm of Schoen..." alt="" coords="415,110,567,138"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1functions_1_1AverageMathFunction.html" title="Represents a function computing the average of several functions. " alt="" coords="416,161,565,189"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1functions_1_1IdentityMathFunction.html" title="Represents the identity function . " alt="" coords="419,212,563,240"/>
+<area shape="rect" id="node11" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="168,161,352,189"/>
+<area shape="rect" id="node17" href="$classumontreal_1_1ssj_1_1functions_1_1Polynomial.html" title="Represents a polynomial of degree &#160;in power form. " alt="" coords="448,262,533,290"/>
+<area shape="rect" id="node21" href="$classumontreal_1_1ssj_1_1functions_1_1ShiftedMathFunction.html" title="Represents a function computing &#160;for a user&#45;defined function &#160;and shift . " alt="" coords="420,313,561,341"/>
+<area shape="rect" id="node23" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="155,262,365,290"/>
+<area shape="rect" id="node30" href="$classumontreal_1_1ssj_1_1functions_1_1PowerMathFunction.html" title="Represents a function computing &#160;for a user&#45;defined function &#160;and power . " alt="" coords="423,414,559,442"/>
+<area shape="rect" id="node35" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="175,110,345,138"/>
+<area shape="rect" id="node43" href="$classumontreal_1_1ssj_1_1functions_1_1PiecewiseConstantFunction.html" title="Represents a piecewise&#45;constant function. " alt="" coords="169,465,351,493"/>
+<area shape="rect" id="node48" href="$classumontreal_1_1ssj_1_1functions_1_1SqrtMathFunction.html" title="Represents a function computing the square root of another function . " alt="" coords="197,516,323,544"/>
+<area shape="rect" id="node19" href="$classumontreal_1_1ssj_1_1functionfit_1_1PolInterp.html" title="Represents a polynomial that interpolates through a set of points. " alt="" coords="616,262,691,290"/>
+<area shape="rect" id="node33" href="$classumontreal_1_1ssj_1_1functions_1_1SquareMathFunction.html" title="Represents a function computing &#160;for a user&#45;defined function . " alt="" coords="420,364,561,392"/>
+</map>

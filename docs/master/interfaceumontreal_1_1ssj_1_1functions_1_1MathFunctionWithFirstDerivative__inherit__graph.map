@@ -1,0 +1,12 @@
+<map id="MathFunctionWithFirstDerivative" name="MathFunctionWithFirstDerivative">
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html" title="Represents a B&#45;spline with control points at . " alt="" coords="457,5,524,33"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1functionfit_1_1SmoothingCubicSpline.html" title="Represents a cubic spline with nodes at &#160;computed with the smoothing cubic spline algorithm of Schoen..." alt="" coords="415,55,567,83"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1functions_1_1AverageMathFunction.html" title="Represents a function computing the average of several functions. " alt="" coords="416,106,565,134"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1functions_1_1IdentityMathFunction.html" title="Represents the identity function . " alt="" coords="419,157,563,185"/>
+<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1functions_1_1Polynomial.html" title="Represents a polynomial of degree &#160;in power form. " alt="" coords="448,207,533,235"/>
+<area shape="rect" id="node17" href="$classumontreal_1_1ssj_1_1functions_1_1PowerMathFunction.html" title="Represents a function computing &#160;for a user&#45;defined function &#160;and power . " alt="" coords="423,258,559,286"/>
+<area shape="rect" id="node19" href="$classumontreal_1_1ssj_1_1functions_1_1ShiftedMathFunction.html" title="Represents a function computing &#160;for a user&#45;defined function &#160;and shift . " alt="" coords="420,309,561,337"/>
+<area shape="rect" id="node21" href="$classumontreal_1_1ssj_1_1functions_1_1SquareMathFunction.html" title="Represents a function computing &#160;for a user&#45;defined function . " alt="" coords="420,359,561,387"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,182,107,210"/>
+<area shape="rect" id="node15" href="$classumontreal_1_1ssj_1_1functionfit_1_1PolInterp.html" title="Represents a polynomial that interpolates through a set of points. " alt="" coords="616,207,691,235"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="PointSetRandomization" name="PointSetRandomization">
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1EmptyRandomization.html" title="This class implements an empty umontreal.ssj.hups.PointSetRandomization. " alt="" coords="5,83,152,111"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1RandomShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization. " alt="" coords="176,83,272,111"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1hups_1_1RandomStart.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that randomizes a sequence with a ra..." alt="" coords="296,83,395,111"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1LMScrambleShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a left matrix scrambli..." alt="" coords="89,161,212,189"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1hups_1_1SMScrambleShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a striped matrix scram..." alt="" coords="236,161,359,189"/>
+</map>

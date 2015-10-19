@@ -1,0 +1,5 @@
+<map id="BetaSymmetricalDist" name="BetaSymmetricalDist">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1BetaDist.html" title="Extends the class ContinuousDistribution for the beta distribution   (page 210) with shape parameter..." alt="" coords="45,161,117,189"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="5,83,157,111"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="39,6,124,34"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="GeometricGen" name="GeometricGen">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html" title="This is the base class for all generators of discrete random variates over the set of integers..." alt="" coords="5,83,155,111"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="13,6,147,34"/>
+</map>

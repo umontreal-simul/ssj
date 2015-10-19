@@ -1,0 +1,7 @@
+<map id="MultinormalPCAGen" name="MultinormalPCAGen">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html" title="Extends RandomMultivariateGen for a multivariate normal (or multinormal) distribution  ..." alt="" coords="221,302,333,330"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="77,193,237,221"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,99,139,127"/>
+<area shape="rect" id="node8" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="21,6,107,34"/>
+<area shape="rect" id="node10" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="131,6,243,34"/>
+</map>

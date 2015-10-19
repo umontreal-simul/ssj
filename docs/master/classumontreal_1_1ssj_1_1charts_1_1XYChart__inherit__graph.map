@@ -1,0 +1,9 @@
+<map id="XYChart" name="XYChart">
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1EmpiricalChart.html" title="This class provides additional tools to create and manage empirical plots. " alt="" coords="5,83,112,111"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1HistogramChart.html" title="This class provides tools to create and manage histograms. " alt="" coords="136,83,248,111"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1charts_1_1ScatterChart.html" title="This class provides tools to create and manage scatter plots. " alt="" coords="272,83,365,111"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html" title="This class provides tools to create and manage curve plots. " alt="" coords="389,83,483,111"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1charts_1_1PPPlot.html" title="This class implements PP&#45;plot (or probability&#45;probability plot) objects that compare two probability ..." alt="" coords="319,161,380,189"/>
+<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1charts_1_1QQPlot.html" title="This class implements QQ&#45;plot (or quantile&#45;quantile plot) objects that compare two probability distri..." alt="" coords="404,161,468,189"/>
+<area shape="rect" id="node15" href="$classumontreal_1_1ssj_1_1charts_1_1YListChart.html" title="This class extends the class umontreal.ssj.charts.XYLineChart. " alt="" coords="492,161,575,189"/>
+</map>

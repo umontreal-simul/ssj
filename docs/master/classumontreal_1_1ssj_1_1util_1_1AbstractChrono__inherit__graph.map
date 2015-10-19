@@ -1,0 +1,7 @@
+<map id="AbstractChrono" name="AbstractChrono">
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1Chrono.html" title="The Chrono class extends the umontreal.ssj.util.AbstractChrono class and computes the CPU time for th..." alt="" coords="5,83,67,111"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1ChronoSingleThread.html" title="This class is deprecated but kept for compatibility with older versions of SSJ. " alt="" coords="91,83,229,111"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1util_1_1GlobalCPUTimeChrono.html" title="Extends the AbstractChrono class to compute the global CPU time used by the Java Virtual Machine..." alt="" coords="253,83,408,111"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1util_1_1SystemTimeChrono.html" title="Extends the AbstractChrono class to compute the total system time using Java’s builtin System..." alt="" coords="432,83,568,111"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1util_1_1ThreadCPUTimeChrono.html" title="Extends the AbstractChrono class to compute the CPU time for a single thread. " alt="" coords="592,83,749,111"/>
+</map>

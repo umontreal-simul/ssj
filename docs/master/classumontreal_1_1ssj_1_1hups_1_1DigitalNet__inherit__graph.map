@@ -1,0 +1,14 @@
+<map id="DigitalNet" name="DigitalNet">
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html" title="A special case of DigitalNet for the base . " alt="" coords="352,161,467,189"/>
+<area shape="rect" id="node21" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile.html" title="This class allows us to read the parameters defining a digital net either from a file, or from a URL address on the World Wide Web. " alt="" coords="491,161,619,189"/>
+<area shape="rect" id="node23" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalSequence.html" title="This abstract class describes methods specific to digital sequences. " alt="" coords="643,161,757,189"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="519,6,591,34"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2FromFile.html" title="This class allows us to read the parameters defining a digital net in base 2 either from a file..." alt="" coords="5,238,171,266"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalSequenceBase2.html" title="This abstract class describes methods specific to digital sequences in base 2. " alt="" coords="195,238,347,266"/>
+<area shape="rect" id="node17" href="$classumontreal_1_1ssj_1_1hups_1_1F2wNetLFSR.html" title="This class implements a digital net in base 2 starting from a linear feedback shift register generato..." alt="" coords="371,238,469,266"/>
+<area shape="rect" id="node19" href="$classumontreal_1_1ssj_1_1hups_1_1F2wNetPolyLCG.html" title="This class implements a digital net in base 2 starting from a polynomial LCG in . ..." alt="" coords="493,238,611,266"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1hups_1_1NiedSequenceBase2.html" title="This class implements digital sequences constructed from the Niederreiter sequence in base 2..." alt="" coords="21,315,163,343"/>
+<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1hups_1_1NiedXingSequenceBase2.html" title="This class implements digital sequences based on the Niederreiter&#45;Xing sequence in base 2..." alt="" coords="187,315,355,343"/>
+<area shape="rect" id="node15" href="$classumontreal_1_1ssj_1_1hups_1_1SobolSequence.html" title="This class implements digital nets or digital sequences in base 2 formed by the first &#160;points of a So..." alt="" coords="379,315,491,343"/>
+<area shape="rect" id="node25" href="$classumontreal_1_1ssj_1_1hups_1_1FaureSequence.html" title="This class implements digital nets or digital sequences formed by the first &#160;points of the Faure sequ..." alt="" coords="644,238,756,266"/>
+</map>

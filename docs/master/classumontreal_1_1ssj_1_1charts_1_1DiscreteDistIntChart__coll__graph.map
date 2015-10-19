@@ -1,0 +1,8 @@
+<map id="DiscreteDistIntChart" name="DiscreteDistIntChart">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html" title="This class provides tools to create and manage curve plots. " alt="" coords="92,289,185,317"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="104,209,173,237"/>
+<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="115,99,163,127"/>
+<area shape="rect" id="node10" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="187,99,344,127"/>
+<area shape="rect" id="node16" href="$classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html" title="Classes implementing discrete distributions over the integers should inherit from this class..." alt="" coords="209,289,359,317"/>
+<area shape="rect" id="node18" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="241,209,327,237"/>
+</map>

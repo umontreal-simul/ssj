@@ -1,0 +1,5 @@
+<map id="AndersonDarlingDistQuick" name="AndersonDarlingDistQuick">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1AndersonDarlingDist.html" title="Extends the class ContinuousDistribution for the Anderson–Darling distribution (see ..." alt="" coords="23,161,161,189"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="16,83,168,111"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="49,6,135,34"/>
+</map>

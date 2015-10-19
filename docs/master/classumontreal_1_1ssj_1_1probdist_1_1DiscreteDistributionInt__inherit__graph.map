@@ -1,0 +1,13 @@
+<map id="DiscreteDistributionInt" name="DiscreteDistributionInt">
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1BernoulliDist.html" title="Extends the class DiscreteDistributionInt for the Bernoulli distribution   with parameter ..." alt="" coords="368,5,461,33"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1probdist_1_1BinomialDist.html" title="Extends the class DiscreteDistributionInt for the binomial distribution   (page 321) with parameters..." alt="" coords="368,55,461,83"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1probdist_1_1GeometricDist.html" title="Extends the class DiscreteDistributionInt for the geometric distribution   (page 322) with parameter..." alt="" coords="363,106,467,134"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1probdist_1_1HypergeometricDist.html" title="Extends the class DiscreteDistributionInt for the hypergeometric distribution   (page 101) with &#160;ele..." alt="" coords="347,157,483,185"/>
+<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1probdist_1_1LogarithmicDist.html" title="Extends the class DiscreteDistributionInt for the logarithmic distribution. " alt="" coords="359,207,471,235"/>
+<area shape="rect" id="node15" href="$classumontreal_1_1ssj_1_1probdist_1_1NegativeBinomialDist.html" title="Extends the class DiscreteDistributionInt for the negative binomial distribution   (page 324) with r..." alt="" coords="341,258,488,286"/>
+<area shape="rect" id="node19" href="$classumontreal_1_1ssj_1_1probdist_1_1PoissonDist.html" title="Extends the class DiscreteDistributionInt for the Poisson distribution   (page 325) with mean ..." alt="" coords="369,309,460,337"/>
+<area shape="rect" id="node21" href="$classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html" title="Extends the class DiscreteDistributionInt for the discrete uniform distribution over the range ..." alt="" coords="363,359,467,387"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="7,182,92,210"/>
+<area shape="rect" id="node17" href="$classumontreal_1_1ssj_1_1probdist_1_1PascalDist.html" title="The Pascal distribution is a special case of the negative binomial distribution   (page 324) with pa..." alt="" coords="549,258,635,286"/>
+<area shape="rect" id="node23" href="$classumontreal_1_1ssj_1_1probdist_1_1ConstantIntDist.html" title="Represents a constant discrete distribution taking a single integer value with probability 1..." alt="" coords="536,359,648,387"/>
+</map>

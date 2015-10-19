@@ -1,0 +1,5 @@
+<map id="DigitalSequence" name="DigitalSequence">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1FaureSequence.html" title="This class implements digital nets or digital sequences formed by the first &#160;points of the Faure sequ..." alt="" coords="7,238,119,266"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ..." alt="" coords="24,83,101,111"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="27,6,99,34"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ChiSquareNoncentralDist" name="ChiSquareNoncentralDist">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="12,83,164,111"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="45,6,131,34"/>
+</map>

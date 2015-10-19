@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1stat_1_1ObservationListener.html" title="Represents an object that can listen to observations broadcast by statistical probes. " alt="" coords="5,30,144,58"/>
+<area shape="rect" id="node3" href="$classQueueObs_1_1LargeWaitsCollector.html" title="QueueObs.LargeWaitsCollector" alt="" coords="193,5,396,33"/>
+<area shape="rect" id="node5" href="$classQueueObs_1_1ObservationTrace.html" title="QueueObs.ObservationTrace" alt="" coords="200,55,389,83"/>
+</map>

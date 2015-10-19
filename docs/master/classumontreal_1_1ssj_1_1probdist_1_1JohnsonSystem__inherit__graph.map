@@ -1,0 +1,7 @@
+<map id="JohnsonSystem" name="JohnsonSystem">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSBDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution , ,   with shape parameters &#160;..." alt="" coords="5,238,117,266"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSLDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution (see ,  ). " alt="" coords="141,238,251,266"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSUDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution (see   (page 316))..." alt="" coords="275,238,387,266"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="120,83,272,111"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="153,6,239,34"/>
+</map>

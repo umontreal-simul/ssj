@@ -1,0 +1,7 @@
+<map id="RandomMultivariateGen" name="RandomMultivariateGen">
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1DirichletGen.html" title="Extends RandomMultivariateGen for a Dirichlet   distribution. " alt="" coords="5,83,99,111"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1IIDMultivariateGen.html" title="Extends RandomMultivariateGen for a vector of independent identically distributed (i..." alt="" coords="123,83,253,111"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html" title="Extends RandomMultivariateGen for a multivariate normal (or multinormal) distribution  ..." alt="" coords="277,83,389,111"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalCholeskyGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via a Cholesky decomposit..." alt="" coords="163,161,328,189"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalPCAGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via the method of princip..." alt="" coords="352,161,491,189"/>
+</map>

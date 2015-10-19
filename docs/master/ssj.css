@@ -1,0 +1,33 @@
+/* LaTeX-like elements */
+.SSJ-minipage   { display: inline-block; }
+.SSJ-bigskip    { margin-top: 3ex; }
+.SSJ-medskip    { margin-top: 2ex; }
+.SSJ-smallskip  { margin-top: 1ex; }
+.SSJ-fbox       { border: 2px solid #ccc; }
+
+
+/* Tables */
+
+/* defaults */
+.SSJ-table { border-collapse: collapse; margin: 1ex; }
+.SSJ-table td { padding: 3px; border: none; }
+
+/* font (inherit from <code>) */
+code .SSJ-table { font-family: monospace; }
+
+/* alignment */
+.SSJ-table td.l { text-align: left;   }
+.SSJ-table td.c { text-align: center; }
+.SSJ-table td.r { text-align: right;  }
+
+/* borders */
+.SSJ-table td.bl { border-left:   1px solid black; }
+.SSJ-table td.br { border-right:  1px solid black; }
+.SSJ-table td.bb { border-bottom: 1px solid black; }
+.SSJ-table td.bt { border-top:    1px solid black; }
+.SSJ-table tr.bb td { border-bottom: 1px solid black; }
+.SSJ-table tr.bt td { border-top:    1px solid black; }
+
+/* force bottom border on last table row */
+.SSJ-has-hlines tr:last-child td { border-bottom: 1px solid black; }
+

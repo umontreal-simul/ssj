@@ -1,0 +1,5 @@
+<map id="Rank1Lattice" name="Rank1Lattice">
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1KorobovLattice.html" title="This class implements Korobov lattices, which represents the same point sets as in class LCGPointSet..." alt="" coords="33,161,143,189"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="52,6,124,34"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1KorobovLatticeSequence.html" title="KorobovLatticeSequence" alt="" coords="5,238,171,266"/>
+</map>

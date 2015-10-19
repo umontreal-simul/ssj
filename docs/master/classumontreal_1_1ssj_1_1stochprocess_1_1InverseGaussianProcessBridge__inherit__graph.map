@@ -1,0 +1,5 @@
+<map id="InverseGaussianProcessBridge" name="InverseGaussianProcessBridge">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html" title="Uses a faster generating method (MSH)   than the simple inversion of the distribution function used ..." alt="" coords="9,161,207,189"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html" title="The inverse Gaussian process is a non&#45;decreasing process where the increments are additive and are gi..." alt="" coords="24,83,192,111"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="43,6,173,34"/>
+</map>

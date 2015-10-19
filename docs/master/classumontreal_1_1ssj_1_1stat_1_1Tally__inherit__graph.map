@@ -1,0 +1,5 @@
+<map id="Tally" name="Tally">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html" title="This class is an extension of Tally which gives a more detailed view of the observations statistics..." alt="" coords="5,161,112,189"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1stat_1_1TallyStore.html" title="This class is a variant of Tally for which the individual observations are stored in a list implement..." alt="" coords="136,161,216,189"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="27,6,107,34"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="CloneableRandomStream" name="CloneableRandomStream">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1rng_1_1RandMrg.html" title="USE MRG32k3a INSTEAD of this class. " alt="" coords="419,207,493,235"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built. " alt="" coords="385,258,527,286"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,207,117,235"/>
+<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1rng_1_1GenF2w32.html" title="Implements the RandomStream interface via inheritance from RandomStreamBase. " alt="" coords="588,5,671,33"/>
+<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1rng_1_1LFSR113.html" title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ..." alt="" coords="592,55,667,83"/>
+<area shape="rect" id="node15" href="$classumontreal_1_1ssj_1_1rng_1_1LFSR258.html" title="Extends RandomStreamBase using a 64&#45;bit composite linear feedback shift register (LFSR) (or Tausworth..." alt="" coords="592,106,667,134"/>
+<area shape="rect" id="node17" href="$classumontreal_1_1ssj_1_1rng_1_1MRG31k3p.html" title="Extends the abstract class RandomStreamBase, thus implementing the RandomStream interface indirectly..." alt="" coords="587,157,672,185"/>
+<area shape="rect" id="node19" href="$classumontreal_1_1ssj_1_1rng_1_1MRG32k3a.html" title="Extends the abstract class RandomStreamBase by using as a backbone (or main) generator the combined m..." alt="" coords="587,207,672,235"/>
+<area shape="rect" id="node21" href="$classumontreal_1_1ssj_1_1rng_1_1MRG32k3aL.html" title="The same generator as MRG32k3a, except here it is implemented with type long instead of double..." alt="" coords="583,258,676,286"/>
+<area shape="rect" id="node23" href="$classumontreal_1_1ssj_1_1rng_1_1MT19937.html" title="Implements the RandomStream interface via inheritance from RandomStreamBase. " alt="" coords="592,309,667,337"/>
+<area shape="rect" id="node25" href="$classumontreal_1_1ssj_1_1rng_1_1RandRijndael.html" title="Implements a RNG using the Rijndael block cipher algorithm (AES) with key and block lengths of 128 bi..." alt="" coords="580,359,679,387"/>
+<area shape="rect" id="node27" href="$classumontreal_1_1ssj_1_1rng_1_1WELL1024.html" title="Implements the RandomStream interface via inheritance from RandomStreamBase. " alt="" coords="587,410,672,438"/>
+<area shape="rect" id="node29" href="$classumontreal_1_1ssj_1_1rng_1_1WELL512.html" title="This class implements the RandomStream interface via inheritance from RandomStreamBase. " alt="" coords="591,461,668,489"/>
+<area shape="rect" id="node31" href="$classumontreal_1_1ssj_1_1rng_1_1WELL607base.html" title="WELL607base" alt="" coords="576,511,683,539"/>
+<area shape="rect" id="node33" href="$classumontreal_1_1ssj_1_1rng_1_1F2NL607.html" title="Implements the RandomStream interface by using as a backbone generator the combination of the WELL607..." alt="" coords="733,486,808,514"/>
+<area shape="rect" id="node35" href="$classumontreal_1_1ssj_1_1rng_1_1WELL607.html" title="This class implements the RandomStream interface via inheritance from RandomStreamBase. " alt="" coords="732,537,809,565"/>
+</map>

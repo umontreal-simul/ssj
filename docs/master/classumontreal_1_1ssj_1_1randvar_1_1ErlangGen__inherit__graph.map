@@ -1,0 +1,5 @@
+<map id="ErlangGen" name="ErlangGen">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1randvar_1_1ErlangConvolutionGen.html" title="This class implements Erlang random variate generators using the convolution method. " alt="" coords="5,238,155,266"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" title="This class implements random variate generators for the gamma distribution. " alt="" coords="35,83,125,111"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="13,6,147,34"/>
+</map>

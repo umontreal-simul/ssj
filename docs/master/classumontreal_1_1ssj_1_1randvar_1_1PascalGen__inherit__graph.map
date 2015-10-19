@@ -1,0 +1,5 @@
+<map id="PascalGen" name="PascalGen">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1randvar_1_1PascalConvolutionGen.html" title="Implements Pascal random variate generators by the convolution method (see  ). " alt="" coords="5,238,160,266"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html" title="This is the base class for all generators of discrete random variates over the set of integers..." alt="" coords="8,83,157,111"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="16,6,149,34"/>
+</map>

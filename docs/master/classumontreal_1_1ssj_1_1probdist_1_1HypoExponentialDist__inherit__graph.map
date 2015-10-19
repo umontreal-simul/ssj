@@ -1,0 +1,6 @@
+<map id="HypoExponentialDist" name="HypoExponentialDist">
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1probdist_1_1HypoExponentialDistEqual.html" title="This class implements the hypoexponential distribution for the case of equidistant ..." alt="" coords="5,238,181,266"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1probdist_1_1HypoExponentialDistQuick.html" title="This class is a subclass of HypoExponentialDist and also implements the hypoexponential distribution..." alt="" coords="205,238,381,266"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="117,83,269,111"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="151,6,236,34"/>
+</map>
