@@ -40,7 +40,10 @@ public class RandomShift implements PointSetRandomization {
    protected RandomStream stream;
 
    /**
-    * Empty constructor.
+    * Empty constructor: No stream is passed here for the randomization;
+    * one must be passed later by  #setStream.
+    * @remark **Pierre:** Not sure if we should keep this; we need a
+    * stream!
     */
    public RandomShift() {
    }
@@ -57,6 +60,8 @@ public class RandomShift implements PointSetRandomization {
     * This method calls
     * {@link umontreal.ssj.hups.PointSet.addRandomShift(RandomStream)
     * addRandomShift(stream)}.
+    * @remark **Pierre:** This should be changed if we remove
+    * `PointSet.addRandomShift`.
     *  @param p            Point set to randomize
     */
    public void randomize (PointSet p) {
