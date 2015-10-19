@@ -5,7 +5,7 @@
  * Software:     SSJ
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @authors      Jean-Sebastien Parent-Chartier and Maxime Dion
+ * @authors       Jean-Sébastien Parent-Chartier and Maxime Dion 
  * @since        2008
 
  * SSJ is free software: you can redistribute it and/or modify it under
