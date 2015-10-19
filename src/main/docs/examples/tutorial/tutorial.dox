@@ -150,6 +150,9 @@
  * visualization, and customization of @f$xy@f$ plots, histograms, and
  * empirical styled charts from a Java program.
  *
+ *  @ref umontreal.ssj.discrepancy contains classes and methods to compute
+ * several kind of discrepancies for point sets.
+ *
  *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
  * processes.
  * 
