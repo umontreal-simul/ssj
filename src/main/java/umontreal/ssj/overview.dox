@@ -136,6 +136,9 @@
  *  @ref umontreal.ssj.discrepancy contains classes and methods to compute
  * several kind of discrepancies for point sets.
  *
+ *  @ref umontreal.ssj.markovchainrqmc contains classes related to Markov
+ *  chains simulation using randomized quasi-Monte Carlo.
+ *
  *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
  * processes.
  * 
