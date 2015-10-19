@@ -259,11 +259,9 @@ public abstract class StatProbe {
 
    /**
     * Instructs the probe to turn its broadcasting ON or OFF. The default
-    * value is OFF.
-    *
-    * Warning: To avoid useless overhead and performance degradation,
-    * broadcasting should never be turned ON when there are no registered
-    * observers.
+    * value is OFF. Warning: To avoid useless overhead and performance
+    * degradation, broadcasting should never be turned ON when there are
+    * no registered observers.
     *  @param b            `true` to turn broadcasting ON, `false` to turn
     *                      it OFF
     */

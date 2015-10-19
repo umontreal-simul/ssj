@@ -27,7 +27,10 @@
  * @ref umontreal.ssj.stat.list.ListOfTallies is used to contain
  * @ref umontreal.ssj.stat.Tally instances. A subclass,
  * @ref umontreal.ssj.stat.list.ListOfTalliesWithCovariance, is provided to
- * add support for covariance computation without storing observations.
+ * add support for covariance computation without storing observations. The
+ * @ref umontreal.ssj.stat.list.ListOfFunctionOfMultipleMeansTallies is
+ * available to regroup  @ref umontreal.ssj.stat.FunctionOfMultipleMeansTally
+ * objects.
  *
  * All classes in this package representing lists of probes support the
  * observer design pattern similarly to the classes in package `stat`. A list

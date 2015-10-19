@@ -1,0 +1,47 @@
+/**
+ * @package umontreal.ssj.stat.matrix
+ *
+ * @anchor REF_stat_matrix_overview_over_mat_tal Provides
+ * facilities to construct and manage rectangular 2D arrays of statistical
+ * probes. Sometimes, lists of statistical probes provided by the package
+ * @ref umontreal.ssj.stat.list are not sufficient. For example, statistics
+ * can be obtained for different types of customers in different periods, for
+ * different parts of various machines, etc. In some cases, this can be
+ * managed by encoding the observations in lists, but matrices offer
+ * reporting facilities for rows and columns.
+ *
+ * In contrast with a list of statistical probes which is constructed empty
+ * and in which probes are added, a matrix of statistical probes is created
+ * with predefined dimensions, and a probe is affected to each cell. A cell
+ * of a matrix is located by a row and a column. Alternatively, some classes
+ * of this package provide factory methods that constructs a matrix, and
+ * fills it with newly-constructed statistical probes.
+ *
+ * The  @ref umontreal.ssj.stat.matrix.MatrixOfStatProbes class represents a
+ * matrix of statistical probes providing facilities to get matrices of sums,
+ * matrices of averages, and to format a report for a specified row or
+ * column. It provides various ways to access the internal statistical
+ * probes. First, a `get` method can return a probe corresponding to a cell
+ * @f$(r, c)@f$. A matrix of probes also provides an `iterator` method that
+ * returns an iterator for traversing every probe row by row. One can also
+ * use the  umontreal.ssj.stat.matrix.MatrixOfStatProbes.viewRow and
+ * umontreal.ssj.stat.matrix.MatrixOfStatProbes.viewColumn methods to obtain
+ * lists corresponding to rows or columns of the matrix.
+ *
+ * The package defines one subclass for each type of probe. The
+ * @ref umontreal.ssj.stat.matrix.MatrixOfTallies can be used to manage a
+ * group of tallies, and to add values to each one using a single method
+ * call. The
+ * @ref umontreal.ssj.stat.matrix.MatrixOfFunctionOfMultipleMeansTallies is
+ * available to regroup  @ref umontreal.ssj.stat.FunctionOfMultipleMeansTally
+ * objects.
+ *
+ * All classes in this package representing matrices of probes support the
+ * observer design pattern similarly to the classes in package `stat`. A
+ * matrix of statistical probes maintains a list of registered
+ * @ref umontreal.ssj.stat.matrix.MatrixOfObservationListener objects, and
+ * broadcasts information to all its registered observers when it receives a
+ * new matrix of observations. Any object that implements the interface
+ * @ref umontreal.ssj.stat.matrix.MatrixOfObservationListener can register as
+ * an observer.
+ */
