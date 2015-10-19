@@ -25,6 +25,9 @@ targetCompatibility = 1.6
 
 version = '3.0.0-rc1'
 
+// indicate branch
+version += '+labo'
+
 repositories {
     jcenter()
 }
