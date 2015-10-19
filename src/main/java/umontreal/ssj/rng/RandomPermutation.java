@@ -44,7 +44,8 @@ public class RandomPermutation {
  *  @param array        the array to initialize.
  *  @param n            number of elements initialized.
  */
-public static void init (byte[] array, int n) {
+@Deprecated
+   public static void init (byte[] array, int n) {
       for (byte k = 1; k <= n; k++)
          array[k-1] = k;
    }
@@ -54,6 +55,7 @@ public static void init (byte[] array, int n) {
     *  @param array        the array to initialize.
     *  @param n            number of elements initialized.
     */
+   @Deprecated
    public static void init (short[] array, int n) {
       for (short k = 1; k <= n; k++)
          array[k-1] = k;
@@ -64,6 +66,7 @@ public static void init (byte[] array, int n) {
     *  @param array        the array to initialize.
     *  @param n            number of elements initialized.
     */
+   @Deprecated
    public static void init (int[] array, int n) {
       for (int k = 1; k <= n; k++)
          array[k-1] = k;
@@ -74,6 +77,7 @@ public static void init (byte[] array, int n) {
     *  @param array        the array to initialize.
     *  @param n            number of elements initialized.
     */
+   @Deprecated
    public static void init (long[] array, int n) {
       for (int k = 1; k <= n; k++)
          array[k-1] = k;
@@ -84,6 +88,7 @@ public static void init (byte[] array, int n) {
     *  @param array        the array to initialize.
     *  @param n            number of elements initialized.
     */
+   @Deprecated
    public static void init (float[] array, int n) {
       for (int k = 1; k <= n; k++)
          array[k-1] = k;
@@ -95,6 +100,7 @@ public static void init (byte[] array, int n) {
     *  @param array        the array to initialize.
     *  @param n            number of elements initialized.
     */
+   @Deprecated
    public static void init (double[] array, int n) {
       for (int k = 1; k <= n; k++)
          array[k-1] = k;
