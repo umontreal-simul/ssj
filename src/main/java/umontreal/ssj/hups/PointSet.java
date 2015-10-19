@@ -599,12 +599,17 @@ public abstract class PointSet {
         return getCurPointIndex() < getNumPoints();
       }
 
+      public int nextPoint (double p[], int fromDim, int d) {
+         setCurCoordIndex(fromDim);
+         nextCoordinates (p, d);
+         return resetToNextPoint();
+      }
+
       public int nextPoint (double p[], int d) {
          resetCurCoordIndex();
          nextCoordinates (p, d);
          return resetToNextPoint();
       }
-
 
       public void resetStartStream() {     // Same as resetCurPointIndex();
          resetCurPointIndex();
