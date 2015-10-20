@@ -41,7 +41,15 @@ publishing {
         maven(MavenPublication) {
             repositories.jcenter()
             from components.java
-            // JNI libraries are added below with whenTaskAdded
+
+            // NOTE: JNI libraries are added below with whenTaskAdded
+
+            // Add sources JAR
+            artifact sourceJar {
+                classifier "sources"
+            }
+
+            // Populate the pom file
             pom.withXml {
                 asNode().appendNode('name', 'SSJ')
                 asNode().appendNode('description', 'Stochastic Simulation in Java')
@@ -91,19 +99,25 @@ tasks.whenTaskAdded { task ->
 
         if (project.hasProperty("${lib}.jni.build")) {
 
-            // Add javah dependency to compilation.
             def Lib = lib.substring(0, 1).toUpperCase() + lib.substring(1);
+
+            // Compile tasks
             if (task.name ==~ /compile.*${Lib}SharedLibrary${Lib}C/) {
+
+                // Add javah dependency to compilation.
                 task.inputs.files tasks["${lib}Javah"].outputs
+
+                // Add source files to source jar
+                tasks.sourceJar.from task.inputs.files
             }
 
-            // Add linked library to distribution and set library path for tests.
+            // Link tasks
             if (task.name ==~ /link.*${Lib}SharedLibrary/) {
 
-                // add JNI library to jar
+                // Add JNI library to jar
                 tasks.jniCopy.from(task)
 
-                // update library path for test task
+                // Update library path for test task
                 java_library_path += files(task.outputs.files*.parent.unique())
                 project.test.systemProperty 'java.library.path', java_library_path.asPath
                 project.test.inputs.files task.outputs
@@ -319,6 +333,10 @@ jar {
             "Class-Path":               configurations.compile.collect { it.getName() }.join(' ')
         )
     }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
 }
 
 
