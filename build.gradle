@@ -59,6 +59,10 @@ bintray {
             name = project.version
             desc = 'SSJ ' + project.version
             vcsTag = 'v' + project.version
+            gpg {
+                sign = true
+            }
+            mavenCentralSync
         }
     }
 }
