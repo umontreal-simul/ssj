@@ -38,20 +38,14 @@ scratch](#compiling-the-source-code).
 
 **(Recommended approach)**
 
-[SSJ packages are hosted on Bintray](https://bintray.com/umontreal-simul/maven/ssj/_latestVersion).
+SSJ packages are hosted
+[on Bintray](https://bintray.com/umontreal-simul/maven/ssj/_latestVersion)
+and on
+[Maven Central](https://repo1.maven.org/maven2/ca/umontreal/iro/simul/ssj/).
 If your Java project uses [Maven](http://maven.apache.org/) or
-[Gradle](http://gradle.org/), all you need to do is:
-
-- add `https://dl.bintray.com/umontreal-simul/maven` to your Maven repositories
-  (one way to do this is to download
-  [this `settings.xml` file](https://bintray.com/repo/downloadMavenRepoSettingsFile/downloadSettings?repoPath=%2Fumontreal-simul%2Fmaven)
-  to your Maven project or to the `.m2` subdirectory under your user home directory);
-- add `ca.umontreal.iro.simul:ssj:<version>` to the dependencies of your project, where
-  `<version>` is a
-  [valid release number](http://github.com/umontreal-simul/ssj/releases) such
-  as `3.0.0-rc1`;
-
-and start working on your project right-away, without further ado.
+[Gradle](http://gradle.org/), **all you need to do is add
+`ca.umontreal.iro.simul:ssj:+` to the Maven dependencies of your project**,
+then you can start working on your SSJ-based project right-away.
 
 
 ##### IDE integration
@@ -63,7 +57,12 @@ Maven (there may be more):
 [IntelliJ IDEA](http://www.jetbrains.com/idea/).
 When using these, simply create your project as a *Maven project* instead
 of a Java project.  Then you can add SSJ to the Maven dependencies of the
-project (refer to your editor's documentation).
+project (refer to your editor's documentation), with the following parameters:
+
+- **Group Id**: `ca.umontreal.iro.simul`;
+- **Artifact Id**: `ssj`;
+- **Version**: any [valid release number](http://github.com/umontreal-simul/ssj/releases),
+  e.g., `3.0.0-rc1`.
 
 
 ### Binary releases
