@@ -80,14 +80,41 @@ publishing {
                 classifier "sources"
             }
 
+            // Add docs JAR
+            artifact docsJar {
+                classifier "javadoc"
+            }
+
             // Populate the pom file
             pom.withXml {
                 asNode().appendNode('name', 'SSJ')
                 asNode().appendNode('description', 'Stochastic Simulation in Java')
                 asNode().appendNode('url', 'http://umontreal-simul.github.io/ssj/')
+                // organization
                 def n = asNode().appendNode('organization')
                 n.appendNode('name', 'DIRO of Université de Montréal')
                 n.appendNode('url', 'http://simul.iro.umontreal.ca')
+                // developers
+                n = asNode().appendNode('developers')
+                n = n.appendNode('developer')
+                n.appendNode('id', 'lecuyer')
+                n.appendNode('name', "Pierre L'Ecuyer")
+                n.appendNode('email', "lecuyer@iro.umontreal.ca")
+                n.appendNode('url', 'http://www.iro.umontreal.ca/~lecuyer')
+                n.appendNode('organization', 'DIRO of Université de Montréal')
+                n.appendNode('organizationUrl', 'http://diro.umontreal.ca')
+                // licences
+                n = asNode().appendNode('licenses')
+                n = n.appendNode('license')
+                n.appendNode('name', 'LGPL-3.0')
+                n.appendNode('url', 'http://opensource.org/licenses/lgpl-3.0.html')
+                n.appendNode('distribution', 'repo')
+                // SCM
+                n = asNode().appendNode('scm')
+                n.appendNode('connection', 'https://github.com/umontreal-simul/ssj.git')
+                n.appendNode('developerConnection', 'scm:git:ssh://git@github.com/umontreal-simul/ssj.git')
+                n.appendNode('url', 'https://github.com/umontreal-simul/ssj')
+                n.appendNode('tag', 'HEAD')
             }
         }
     }
@@ -368,6 +395,10 @@ jar {
 
 task sourceJar(type: Jar) {
     from sourceSets.main.allSource
+}
+
+task docsJar(type: Jar) {
+    from doxygen
 }
 
 
