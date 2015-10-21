@@ -38,15 +38,18 @@ scratch](#compiling-the-source-code).
 
 **(Recommended approach)**
 
+[SSJ packages are hosted on Bintray](https://bintray.com/umontreal-simul/maven/ssj/_latestVersion).
 If your Java project uses [Maven](http://maven.apache.org/) or
 [Gradle](http://gradle.org/), all you need to do is:
 
+- add `https://dl.bintray.com/umontreal-simul/maven` to your Maven repositories
+  (one way to do this is to download
+  [this `settings.xml` file](https://bintray.com/repo/downloadMavenRepoSettingsFile/downloadSettings?repoPath=%2Fumontreal-simul%2Fmaven)
+  to your Maven project or to the `.m2` subdirectory under your user home directory);
 - add `ca.umontreal.iro.simul:ssj:<version>` to the dependencies of your project, where
   `<version>` is a
   [valid release number](http://github.com/umontreal-simul/ssj/releases) such
   as `3.0.0-rc1`;
-- add [jCenter](http://bintray.com/bintray/jcenter) to the Maven repositories
-  (it should already be included);
 
 and start working on your project right-away, without further ado.
 
