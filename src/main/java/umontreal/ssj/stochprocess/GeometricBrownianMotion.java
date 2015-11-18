@@ -40,9 +40,9 @@ import umontreal.ssj.randvar.*;
  * exponential of a Brownian motion:
  * @anchor REF_stochprocess_GeometricBrownianMotion_eq_GBM2
  * @f[
- *   S(t) = S(0) \exp\left[ (\mu- \sigma^2/2) t + \sigma t B(t) \right] = S(0) \exp\left[ X(t) \right], \tag{GBM2}
+ *   S(t) = S(0) \exp\left[ (\mu- \sigma^2/2) t + \sigma B(t) \right] = S(0) \exp\left[ X(t) \right], \tag{GBM2}
  * @f]
- * where @f$X(t) = (\mu- \sigma^2/2) t + \sigma t B(t)@f$. The GBM process
+ * where @f$X(t) = (\mu- \sigma^2/2) t + \sigma B(t)@f$. The GBM process
  * is simulated by simulating the BM process @f$X@f$ and taking the
  * exponential. This BM process is stored internally.
  *
