@@ -16,7 +16,7 @@ public class ExampleNortaInitDisc
 			   + ni1Obj.computeCorr());
 	NI2a ni2aObj = new NI2a(rX, dist1, dist2, tr, 0.005, 1.0e-4);
 	System.out.println("Result with method NI2b: rho_Z = " 
-			   + ni2aObj.computeCorr());
+			   + String.format("%.14g", ni2aObj.computeCorr()));
 	NI2b ni2bObj = new NI2b(rX, dist1, dist2, tr, 5, 1.0e-4);
 	System.out.println("Result with method NI2a: rho_Z = " 
 			   + ni2bObj.computeCorr());
