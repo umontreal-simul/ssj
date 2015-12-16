@@ -252,15 +252,19 @@ model {
                 targetPlatform 'linux64'
             }
 
-            binaries.withType(StaticLibraryBinarySpec) {
-                buildable = false
+            binaries {
+                withType(StaticLibraryBinarySpec) {
+                    buildable = false
+                }
             }
 
-            binaries.withType(SharedLibraryBinarySpec) {
-                def javaHome = ant.properties['java.home']
-                def javah = project.ssjutilJavah
-                if (toolChain in Gcc || toolChain in Clang) {
-                    cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+            binaries {
+                withType(SharedLibraryBinarySpec) {
+                    def javaHome = ant.properties['java.home']
+                    def javah = project.ssjutilJavah
+                    if (toolChain in Gcc || toolChain in Clang) {
+                        cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                    }
                 }
             }
         }
@@ -272,34 +276,38 @@ model {
                 targetPlatform 'linux64'
             }
 
-            binaries.withType(StaticLibraryBinarySpec) {
-                buildable = false
+            binaries {
+                withType(StaticLibraryBinarySpec) {
+                    buildable = false
+                }
             }
 
-            binaries.withType(SharedLibraryBinarySpec) {
-                def javaHome = ant.properties['java.home']
-                def javah = project.randvarJavah
+            binaries {
+                withType(SharedLibraryBinarySpec) {
+                    def javaHome = ant.properties['java.home']
+                    def javah = project.randvarJavah
 
-                // resolve UNU.RAN installation path
-                def unuran_prefix = null;
-                def propName = "unuran.prefix.${targetPlatform.name}"
-                if (project.hasProperty(propName))
-                    unuran_prefix = project.properties[propName];
-                else {
-                    logger.info "Property `${propName}` undefined."
-                    if (project.hasProperty('unuran.prefix')) {
-                        logger.info "Property `$propName` undefined; defaulting to the value of `unuran.prefix`"
-                        unuran_prefix = project.properties['unuran.prefix'];
+                    // resolve UNU.RAN installation path
+                    def unuran_prefix = null;
+                    def propName = "unuran.prefix.${targetPlatform.name}"
+                    if (project.hasProperty(propName))
+                        unuran_prefix = project.properties[propName];
+                    else {
+                        logger.info "Property `${propName}` undefined."
+                        if (project.hasProperty('unuran.prefix')) {
+                            logger.info "Property `$propName` undefined; defaulting to the value of `unuran.prefix`"
+                            unuran_prefix = project.properties['unuran.prefix'];
+                        }
                     }
-                }
 
-                if (toolChain in Gcc || toolChain in Clang) {
-                    if (unuran_prefix) {
-                        cCompiler.args "-I${unuran_prefix}/include"
-                        linker.args "-L${unuran_prefix}/lib"
+                    if (toolChain in Gcc || toolChain in Clang) {
+                        if (unuran_prefix) {
+                            cCompiler.args "-I${unuran_prefix}/include"
+                            linker.args "-L${unuran_prefix}/lib"
+                        }
+                        cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                        linker.args "-lunuran"
                     }
-                    cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
-                    linker.args "-lunuran"
                 }
             }
         }
