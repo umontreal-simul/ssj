@@ -155,31 +155,28 @@ tasks.whenTaskAdded { task ->
     // Catch the JNI tasks when they are created.
     ['ssjutil', 'randvar'].each { lib ->
 
-        if (project.hasProperty("${lib}.jni.build")) {
+        def Lib = lib.substring(0, 1).toUpperCase() + lib.substring(1);
 
-            def Lib = lib.substring(0, 1).toUpperCase() + lib.substring(1);
+        // Compile tasks
+        if (task.name ==~ /compile${Lib}.*SharedLibrary${Lib}C/) {
 
-            // Compile tasks
-            if (task.name ==~ /compile.*${Lib}SharedLibrary${Lib}C/) {
+            // Add javah dependency to compilation.
+            task.inputs.files tasks["${lib}Javah"].outputs
 
-                // Add javah dependency to compilation.
-                task.inputs.files tasks["${lib}Javah"].outputs
+            // Add source files to source jar
+            tasks.sourceJar.from task.inputs.files
+        }
 
-                // Add source files to source jar
-                tasks.sourceJar.from task.inputs.files
-            }
+        // Link tasks
+        if (task.name ==~ /link${Lib}.*SharedLibrary/) {
 
-            // Link tasks
-            if (task.name ==~ /link.*${Lib}SharedLibrary/) {
+            // Add JNI library to jar
+            tasks.jniCopy.from(task)
 
-                // Add JNI library to jar
-                tasks.jniCopy.from(task)
-
-                // Update library path for test task
-                java_library_path += files(task.outputs.files*.parent.unique())
-                project.test.systemProperty 'java.library.path', java_library_path.asPath
-                project.test.inputs.files task.outputs
-            }
+            // Update library path for test task
+            java_library_path += files(task.outputs.files*.parent.unique())
+            project.test.systemProperty 'java.library.path', java_library_path.asPath
+            project.test.inputs.files task.outputs
         }
     }
 }
@@ -188,7 +185,7 @@ tasks.whenTaskAdded { task ->
     ['ssjutil', 'util.GlobalCPUTimeChrono'],
     ['randvar', 'randvar.RandUnuran'],
 ].each { name, pack ->
-    task "${name}Javah" {
+    task "${name}Javah"(dependsOn: classes) {
 
         ext.outputDir = file("$buildDir/javah")
         def className = "umontreal.ssj.$pack"
@@ -244,69 +241,75 @@ model {
     }
 
     components {
-        // util JNI
-        ssjutil(NativeLibrarySpec) {
+        if (project.hasProperty("ssjutil.jni.build")) {
 
-            if (project.hasProperty('crossCompile')) { // from gradle.properties
-                targetPlatform 'win32'
-                targetPlatform 'linux64'
-            }
+            // util JNI
+            ssjutil(NativeLibrarySpec) {
 
-            binaries {
-                withType(StaticLibraryBinarySpec) {
-                    buildable = false
+                if (project.hasProperty('crossCompile')) { // from gradle.properties
+                    targetPlatform 'win32'
+                    targetPlatform 'linux64'
                 }
-            }
 
-            binaries {
-                withType(SharedLibraryBinarySpec) {
-                    def javaHome = ant.properties['java.home']
-                    def javah = project.ssjutilJavah
-                    if (toolChain in Gcc || toolChain in Clang) {
-                        cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                binaries {
+                    withType(StaticLibraryBinarySpec) {
+                        buildable = false
+                    }
+                }
+
+                binaries {
+                    withType(SharedLibraryBinarySpec) {
+                        def javaHome = ant.properties['java.home']
+                        def javah = project.ssjutilJavah
+                        if (toolChain in Gcc || toolChain in Clang) {
+                            cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                        }
                     }
                 }
             }
         }
-        // randvar JNI
-        randvar(NativeLibrarySpec) {
+        if (project.hasProperty("randvar.jni.build")) {
 
-            if (project.hasProperty('crossCompile')) { // from gradle.properties
-                targetPlatform 'win32'
-                targetPlatform 'linux64'
-            }
+            // randvar JNI
+            randvar(NativeLibrarySpec) {
 
-            binaries {
-                withType(StaticLibraryBinarySpec) {
-                    buildable = false
+                if (project.hasProperty('crossCompile')) { // from gradle.properties
+                    targetPlatform 'win32'
+                    targetPlatform 'linux64'
                 }
-            }
 
-            binaries {
-                withType(SharedLibraryBinarySpec) {
-                    def javaHome = ant.properties['java.home']
-                    def javah = project.randvarJavah
-
-                    // resolve UNU.RAN installation path
-                    def unuran_prefix = null;
-                    def propName = "unuran.prefix.${targetPlatform.name}"
-                    if (project.hasProperty(propName))
-                        unuran_prefix = project.properties[propName];
-                    else {
-                        logger.info "Property `${propName}` undefined."
-                        if (project.hasProperty('unuran.prefix')) {
-                            logger.info "Property `$propName` undefined; defaulting to the value of `unuran.prefix`"
-                            unuran_prefix = project.properties['unuran.prefix'];
-                        }
+                binaries {
+                    withType(StaticLibraryBinarySpec) {
+                        buildable = false
                     }
+                }
 
-                    if (toolChain in Gcc || toolChain in Clang) {
-                        if (unuran_prefix) {
-                            cCompiler.args "-I${unuran_prefix}/include"
-                            linker.args "-L${unuran_prefix}/lib"
+                binaries {
+                    withType(SharedLibraryBinarySpec) {
+                        def javaHome = ant.properties['java.home']
+                        def javah = project.randvarJavah
+
+                        // resolve UNU.RAN installation path
+                        def unuran_prefix = null;
+                        def propName = "unuran.prefix.${targetPlatform.name}"
+                        if (project.hasProperty(propName))
+                            unuran_prefix = project.properties[propName];
+                        else {
+                            logger.info "Property `${propName}` undefined."
+                            if (project.hasProperty('unuran.prefix')) {
+                                logger.info "Property `$propName` undefined; defaulting to the value of `unuran.prefix`"
+                                unuran_prefix = project.properties['unuran.prefix'];
+                            }
                         }
-                        cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
-                        linker.args "-lunuran"
+
+                        if (toolChain in Gcc || toolChain in Clang) {
+                            if (unuran_prefix) {
+                                cCompiler.args "-I${unuran_prefix}/include"
+                                linker.args "-L${unuran_prefix}/lib"
+                            }
+                            cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                            linker.args "-lunuran"
+                        }
                     }
                 }
             }
