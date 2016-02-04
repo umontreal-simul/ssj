@@ -1,11 +1,11 @@
 /*
  * Class:        CachedPointSet
- * Description:  
+ * Description:
  * Environment:  Java
- * Software:     SSJ 
+ * Software:     SSJ
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       
+ * @author
  * @since
 
  * SSJ is free software: you can redistribute it and/or modify it under
@@ -62,9 +62,9 @@ public class CachedPointSet extends PointSet {
    protected double x[][];      // Cached points.
    int fromPoint = 0;           // Number of skipped points (usually 0).
    int fromDim = 0;             // Number of skipped coordinates (usually 0).
-   // int numPoints;            // Number of retained points, inherited from PointSet. 
+   // int numPoints;            // Number of retained points, inherited from PointSet.
 	 // int dim;                  // Dimension of the *retained* points, inherited from PointSet.
-	
+
    protected CachedPointSet() {}   // Constructs an empty cache for a point set.
 
    /**
@@ -100,7 +100,7 @@ public class CachedPointSet extends PointSet {
       this.fromDim = fromDim;
       dim = toDim - fromDim;
       this.P = P;
-      x = new double[numPoints][dim]; 
+      x = new double[numPoints][dim];
       fillCache (fromDim, dim);
    }
 
@@ -177,7 +177,7 @@ public void sortByCoordinate (int j) {
  */
 public <T> void sort (MultiDimSort<T> sort) {
       sort.sort(x);
-      // sort.sort (P);   init(); ?   No.    
+      // sort.sort (P);   init(); ?   No.
    }
 
 /**
@@ -207,13 +207,18 @@ public void stripCoordinates (int d) {
    public double getCoordinate (int i, int j) {
       return x[i][j];
    }
-	
+
    public double[][] getArray () {
       return x;
    }
-	
 
-	
+   /**
+    * Returns the reference point set that was passed to the constructor.
+    */
+   public PointSet getRefPointSet() {
+      return P;
+   }
+
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 // This class implements a CachedPointSet iterator.
 // which takes the value in x rather than calling the function
