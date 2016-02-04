@@ -453,3 +453,7 @@ distTar.extension = 'tar.bz2'
 task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
 }
+
+task showClasspath(dependsOn: configurations.runtime) << {
+    println sourceSets.main.runtimeClasspath.asPath
+}
