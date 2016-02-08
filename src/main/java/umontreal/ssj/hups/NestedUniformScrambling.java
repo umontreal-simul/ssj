@@ -29,6 +29,16 @@ import java.lang.IllegalArgumentException;
  * This class implements a PointSetRandomization that performs Owen's nested
  * uniform scrambling \cite vOWE95a, \cite vOWE03a .
  * The point set must be a CachedPointSet of a DigitalNetBase2.
+ *
+ * To use this randomization, one should should call the randomize() function of
+ * an instance of NestedUniformScrambling with, as its argument, an instance of
+ * CachedPointSet with a reference to a DigitalNetBase2 instance.
+ *
+ * @warning Calling CachedPointSet.randomize() with an instance of
+ * NestedUniformScrambling as its arguments will not work, because
+ * CachedPointSet.randomize() calls randomize() on its reference point set.
+ * However, this randomization modifies the cached values and not the original
+ * point set.
  */
 public class NestedUniformScrambling implements PointSetRandomization {
 
