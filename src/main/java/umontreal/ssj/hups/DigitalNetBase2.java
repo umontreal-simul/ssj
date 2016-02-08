@@ -456,6 +456,83 @@ public PointSetIterator iteratorNoGray() {
          rightMultiplyMat (j, scrambleMat);
    }
 
+   private int randomBitVector(RandomStream stream) {
+      int maxj;
+      if (outDigits < 31)
+         maxj = (1 << outDigits) - 1;
+      else
+         maxj = 2147483647;
+      return stream.nextInt(0, maxj);
+   }
+
+   /** Owen's nested uniform scrambling.
+    *
+    *  This type of scrambling does not modify the DigitalNetBase2 object.
+    *  In particular, it does not randomize the generator matrices stored in the object.
+    *  Rather, it computes the randomized points all at once and stores them in the two-dimenaion array `output`.
+    *  All points are randomized at once to avoid storing all the permutations.
+    *
+    *  The implementation is an adaptation of that found in SAMPLE PACKage by
+    *  Thomas Kollig and Alexander Keller.
+    */
+   public void nestedUniformScramble (RandomStream stream, double[][] output) {
+      assert output.length == numPoints;
+      assert output.length > 0;
+      assert output[0].length == dim;
+
+      int[] poslist = new int[2 * numPoints];
+      int[] bvlist = new int[2 * numPoints];
+      int[] counts = new int[256];
+      int[] binpos = new int[256];
+
+      for (int j = 0; j < dim; ++j) {
+         bvlist[0] = 0;
+         poslist[0] = 0;
+         for (int i = 1; i < numPoints; i++) {
+            // Gray code order (could be optional)
+            // We could have used a point set iterator here, but the iterator computes all
+            // coordinates at once and we need only one at a time.
+            int pos = 0;
+            int bv = 1;
+            while ((i & bv) == 0) {
+               pos++;
+               bv <<= 1;
+            }
+            bvlist[i] = bvlist[i - 1] ^ genMat[j * numCols + pos];
+            poslist[i] = i;
+         }
+         for (int b = 0; b < 4; b++){
+            for (int i = 0; i < 256; i++)
+               counts[i] = 0;
+            int m = (b % 2) * numPoints;
+            int bb = 8 * b;
+            int bv = 0xff << bb;
+            for (int i = 0; i < numPoints; i++)
+              counts[(bvlist[m + i] & bv) >>> bb]++;
+            binpos[0] = (1 - b % 2) * numPoints;
+            for (int i = 0; i < 255; i++)
+              binpos[i + 1] = binpos[i] + counts[i];
+            for (int i = 0; i < numPoints; i++)
+            {
+              int pos = (bvlist[m + i] & bv) >>> bb;
+              int k = binpos[pos]++;
+              bvlist[k] = bvlist[m + i];
+              poslist[k] = poslist[m + i];
+            }
+         }
+         int bv = randomBitVector(stream);
+         output[poslist[0]][j] = (bvlist[0] ^ bv) * normFactor + EpsilonHalf;
+         for (int i = 1; i < numPoints; i++) {
+            int bv2 = bvlist[i - 1];
+            bv2 ^= bvlist[i];
+            bv2 = randomBitVector(stream) & ((int)(1 << (int)Num.log2((double)bv2)) - 1);
+            bv ^= bv2;
+            output[poslist[i]][j] = (bvlist[i] ^ bv) * normFactor + EpsilonHalf;
+         }
+
+      }
+   }
+
    //-----------------------------------------------------------------------
    private void ScrambleError (String method) {
        throw new UnsupportedOperationException
