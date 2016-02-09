@@ -472,8 +472,9 @@ public PointSetIterator iteratorNoGray() {
     *  Rather, it computes the randomized points all at once and stores them in the two-dimenaion array `output`.
     *  All points are randomized at once to avoid storing all the permutations.
     *
-    *  The implementation is an adaptation of that found in SAMPLE PACKage by
-    *  Thomas Kollig and Alexander Keller.
+    *  The implementation is an adaptation of that found in
+    *  [SAMPLE PACKage](http://www.uni-kl.de/AG-Heinrich/SamplePack.html)
+    *  by Thomas Kollig and Alexander Keller.
     */
    public void nestedUniformScramble (RandomStream stream, double[][] output) {
       assert output.length == numPoints;
