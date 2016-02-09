@@ -103,8 +103,8 @@ public class NestedUniformScrambling implements PointSetRandomization {
    public void randomize (PointSet p) {
       if (p instanceof CachedPointSet) {
          CachedPointSet cp = (CachedPointSet) p;
-         if (cp.getRefPointSet() instanceof DigitalNetBase2) {
-            ((DigitalNetBase2) cp.getRefPointSet()).nestedUniformScramble(stream, cp.getArray(), numBits);
+         if (cp.getParentPointSet() instanceof DigitalNetBase2) {
+            ((DigitalNetBase2) cp.getParentPointSet()).nestedUniformScramble(stream, cp.getArray(), numBits);
             return;
          }
       }

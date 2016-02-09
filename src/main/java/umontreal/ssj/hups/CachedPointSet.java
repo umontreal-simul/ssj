@@ -233,7 +233,7 @@ public void stripCoordinates (int d) {
    /**
     * Returns the reference point set that was passed to the constructor.
     */
-   public PointSet getRefPointSet() {
+   public PointSet getParentPointSet() {
       return P;
    }
 
