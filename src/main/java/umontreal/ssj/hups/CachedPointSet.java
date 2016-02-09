@@ -64,6 +64,7 @@ public class CachedPointSet extends PointSet {
    int fromDim = 0;             // Number of skipped coordinates (usually 0).
    // int numPoints;            // Number of retained points, inherited from PointSet.
 	 // int dim;                  // Dimension of the *retained* points, inherited from PointSet.
+   boolean randomizeParent = true;
 
    protected CachedPointSet() {}   // Constructs an empty cache for a point set.
 
@@ -138,27 +139,44 @@ public class CachedPointSet extends PointSet {
       return new CachedPointSetIterator();
    }
 
-/**
- * Add the shift to the contained point set and re-caches the points. See the
- * doc of the overridden method
- * {@link umontreal.ssj.hups.PointSet.addRandomShift(int,int,RandomStream)
- * addRandomShift(d1, d2, stream)} in  @ref PointSet. In case there is no
- * underlying point set, this method must be redefined to randomize the
- * cached points.
- */
-public void addRandomShift(int d1, int d2, RandomStream stream) {
+   /**
+    * If `randomizeParent` is `true`, calls to randomize() will be defered to the
+    * parent point set (this is the default); otherwise, the randomize method of
+    * the PointSetRandomization instance is invoked with this CachedPointSet
+    * instance as its argument.
+    */
+   public void setRandomizeParent(boolean randomizeParent) {
+      this.randomizeParent = randomizeParent;
+   }
+
+   /**
+    * Add the shift to the contained point set and re-caches the points. See the
+    * doc of the overridden method
+    * {@link umontreal.ssj.hups.PointSet.addRandomShift(int,int,RandomStream)
+    * addRandomShift(d1, d2, stream)} in  @ref PointSet. In case there is no
+    * underlying point set, this method must be redefined to randomize the
+    * cached points.
+    */
+   public void addRandomShift(int d1, int d2, RandomStream stream) {
         P.addRandomShift(d1, d2, stream);
         fillCache (fromDim, dim);
    }
 
-/**
- * Randomizes the underlying point set using `rand` and re-caches the points.
- * In case there is no underlying point set, this method must be redefined to
- * randomize the cached points.
- */
-public void randomize (PointSetRandomization rand) {
-      P.randomize(rand);
-      fillCache (fromDim, dim);
+   /**
+    * Randomizes the underlying point set using `rand` and re-caches the points.
+    * In case there is no underlying point set, this method must be redefined to
+    * randomize the cached points.
+    * If setRandomizeParent() was called with `false` as its argument, invokes
+    * randomize() on `rand` instead of on the parent.
+    */
+   public void randomize (PointSetRandomization rand) {
+      if (randomizeParent) {
+         P.randomize(rand);
+         fillCache (fromDim, dim);
+      }
+      else {
+         rand.randomize(this);
+      }
    }
 
 /**
