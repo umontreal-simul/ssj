@@ -45,6 +45,7 @@ import java.lang.IllegalArgumentException;
 public class NestedUniformScrambling implements PointSetRandomization {
 
    private RandomStream stream;
+   private int numBits;
 
    /**
     * Empty constructor.
@@ -54,11 +55,28 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Sets internal variable `stream` to the given `stream`.
+    * Create a NestedUniformScrambling instance, using `stream` as the random
+    * generator, and randomizing all of the DigitalNet.outDigits output bits of
+    * the DigitalNetBase2, up to 31 bits.
     *  @param stream       stream to use in the randomization
     */
    public NestedUniformScrambling (RandomStream stream) {
+      this(stream, 0);
+   }
+
+   /**
+    * Create a NestedUniformScrambling instance, using `stream` as the random
+    * generator, and randomizing only the first `numBits` output bits of
+    * the DigitalNetBase2.
+    *
+    *  @param stream       stream to use in the randomization
+    *  @param numBits      number of output bits to scramble (it can be smaller
+    *                      than, equal to or larger than the number of output
+    *                      bits in the DigitalNetBase2).
+    */
+   public NestedUniformScrambling (RandomStream stream, int numBits) {
        this.stream = stream;
+       this.numBits = numBits;
    }
 
    @Override public RandomStream getStream() {
@@ -67,6 +85,13 @@ public class NestedUniformScrambling implements PointSetRandomization {
 
    @Override public void setStream(RandomStream stream) {
       this.stream = stream;
+   }
+
+   /**
+    * Set the number of bits to randomize to `numBits`
+    */
+   public void setNumBits(int numBits) {
+      this.numBits = numBits;
    }
 
    /**
@@ -79,7 +104,7 @@ public class NestedUniformScrambling implements PointSetRandomization {
       if (p instanceof CachedPointSet) {
          CachedPointSet cp = (CachedPointSet) p;
          if (cp.getRefPointSet() instanceof DigitalNetBase2) {
-            ((DigitalNetBase2) cp.getRefPointSet()).nestedUniformScramble(stream, cp.getArray());
+            ((DigitalNetBase2) cp.getRefPointSet()).nestedUniformScramble(stream, cp.getArray(), numBits);
             return;
          }
       }

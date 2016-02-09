@@ -1,11 +1,11 @@
 /*
  * Class:        DigitalNetBase2
- * Description:  
+ * Description:
  * Environment:  Java
- * Software:     SSJ 
+ * Software:     SSJ
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       
+ * @author
  * @since
 
  * SSJ is free software: you can redistribute it and/or modify it under
@@ -456,30 +456,56 @@ public PointSetIterator iteratorNoGray() {
          rightMultiplyMat (j, scrambleMat);
    }
 
-   private int randomBitVector(RandomStream stream) {
+   /**
+    * Generate a vector of `numBits <= 31` random bits using the random stream `stream`.
+    */
+   private int randomBitVector(RandomStream stream, int numBits) {
+      if (numBits < 1)
+         throw new IllegalArgumentException("numBits must be >= 1");
+      if (numBits > 31)
+         throw new IllegalArgumentException("numBits must be <= 31");
       int maxj;
-      if (outDigits < 31)
-         maxj = (1 << outDigits) - 1;
+      if (numBits < 31)
+         maxj = (1 << numBits) - 1;
       else
          maxj = 2147483647;
-      return stream.nextInt(0, maxj);
+      return stream.nextInt(0, maxj) << (31 - numBits);
    }
 
-   /** Owen's nested uniform scrambling.
+   /**
+    * Same as @link nestedUniformScramble(RandomStream,double[][],int) nestedUniformScramble(stream, output, 0) @endlink.
+    */
+   public void nestedUniformScramble (RandomStream stream, double[][] output) {
+      nestedUniformScramble(stream, output, 0);
+   }
+
+   /** Apply Owen's nested uniform scrambling.
     *
     *  This type of scrambling does not modify the DigitalNetBase2 object.
     *  In particular, it does not randomize the generator matrices stored in the object.
-    *  Rather, it computes the randomized points all at once and stores them in the two-dimenaion array `output`.
+    *  Rather, it computes the randomized points all at once and stores them in the two-dimensional array `output`.
     *  All points are randomized at once to avoid storing all the permutations.
     *
     *  The implementation is an adaptation of that found in
     *  [SAMPLE PACKage](http://www.uni-kl.de/AG-Heinrich/SamplePack.html)
     *  by Thomas Kollig and Alexander Keller.
+    *
+    *  @param stream    Random stream used to randomize the bits.
+    *  @param output    Output array that will store the randomized points.  The
+    *                   size of its first dimension must be getNumPoints() and
+    *                   the size of its second dimension must be getDimension().
+    *  @param numBits   Number of ouput bits to scramble.  If it is zero, the
+    *                   number of ouput bits of the DigitalNetBase2 instance
+    *                   is used.  It can be smaller than, equal to or
+    *                   larger than DigitalNet.outDigits.
     */
-   public void nestedUniformScramble (RandomStream stream, double[][] output) {
+   public void nestedUniformScramble (RandomStream stream, double[][] output, int numBits) {
       assert output.length == numPoints;
       assert output.length > 0;
       assert output[0].length == dim;
+
+      if (numBits == 0)
+         numBits = outDigits;
 
       int[] poslist = new int[2 * numPoints];
       int[] bvlist = new int[2 * numPoints];
@@ -521,12 +547,12 @@ public PointSetIterator iteratorNoGray() {
               poslist[k] = poslist[m + i];
             }
          }
-         int bv = randomBitVector(stream);
+         int bv = randomBitVector(stream, numBits);
          output[poslist[0]][j] = (bvlist[0] ^ bv) * normFactor + EpsilonHalf;
          for (int i = 1; i < numPoints; i++) {
             int bv2 = bvlist[i - 1];
             bv2 ^= bvlist[i];
-            bv2 = randomBitVector(stream) & ((int)(1 << (int)Num.log2((double)bv2)) - 1);
+            bv2 = randomBitVector(stream, numBits) & ((int)(1 << (int)Num.log2((double)bv2)) - 1);
             bv ^= bv2;
             output[poslist[i]][j] = (bvlist[i] ^ bv) * normFactor + EpsilonHalf;
          }
