@@ -82,7 +82,7 @@ public class MultinomialDist extends DiscreteDistributionIntMulti {
          sumPi += p[i];
       }
 
-      if (sumPi != 1.0)
+      if (Math.abs(sumPi - 1.0) > 1.0e-15)
          throw new IllegalArgumentException ("p is not a probability vector");
    }
 
@@ -312,7 +312,7 @@ public static double[][] getCorrelation (int n, double[] p) {
          sumP += p[i];
       }
 
-      if (sumP != 1.0)
+      if (Math.abs(sumP - 1.0) > 1.0e-15)
          throw new IllegalArgumentException ("p is not a probability vector");
    }
 
