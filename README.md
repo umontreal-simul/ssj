@@ -2,7 +2,7 @@
 
 *Stochastic Simulation in Java*
 
-SSJ is a Java library for stochastic simulation, developed at 
+SSJ is a Java library for stochastic simulation, developed at
 [Pierre L'Ecuyer](http://www-labs.iro.umontreal.ca/~lecuyer/)'s
 [Simulation and Optimization Laboratory](http://simul.iro.umontreal.ca/),
 located at the
@@ -16,6 +16,9 @@ It provides facilities for:
 - applying quasi-Monte Carlo methods;
 - collecting (elementary) statistics; and
 - performing event-based discrete-event simulation.
+
+As of version 3.1.0, SSJ is released under the
+[Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Documentation
