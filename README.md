@@ -65,7 +65,7 @@ project (refer to your editor's documentation), with the following parameters:
 - **Group Id**: `ca.umontreal.iro.simul`;
 - **Artifact Id**: `ssj`;
 - **Version**: any [valid release number](http://github.com/umontreal-simul/ssj/releases),
-  e.g., `3.0.0-rc1`.
+  e.g., `3.1.0`.
 
 
 ### Binary releases
