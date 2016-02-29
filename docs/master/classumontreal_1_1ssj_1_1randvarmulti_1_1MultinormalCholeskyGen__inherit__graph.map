@@ -1,4 +1,4 @@
 <map id="MultinormalCholeskyGen" name="MultinormalCholeskyGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html" title="Extends RandomMultivariateGen for a multivariate normal (or multinormal) distribution  ..." alt="" coords="32,83,144,111"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="8,6,168,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html" title="Extends RandomMultivariateGen for a multivariate normal (or multinormal) distribution  ..." alt="" coords="35,80,162,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="9,5,189,32"/>
 </map>

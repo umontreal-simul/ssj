@@ -1,6 +1,6 @@
 <map id="PPPlot" name="PPPlot">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html" title="This class provides tools to create and manage curve plots. " alt="" coords="92,289,185,317"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="104,209,173,237"/>
-<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="115,99,163,127"/>
-<area shape="rect" id="node10" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="187,99,344,127"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html" title="This class provides tools to create and manage curve plots. " alt="" coords="94,275,195,301"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="107,199,182,225"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="119,95,170,121"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="195,95,359,121"/>
 </map>

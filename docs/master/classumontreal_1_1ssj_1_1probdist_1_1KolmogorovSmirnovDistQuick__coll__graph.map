@@ -1,5 +1,5 @@
 <map id="KolmogorovSmirnovDistQuick" name="KolmogorovSmirnovDistQuick">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1KolmogorovSmirnovDist.html" title="Extends the class ContinuousDistribution for the Kolmogorov&#45;Smirnov distribution with parameter &#160; ..." alt="" coords="21,161,184,189"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="27,83,179,111"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="60,6,145,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1KolmogorovSmirnovDist.html" title="Extends the class ContinuousDistribution for the Kolmogorov&#45;Smirnov distribution with parameter &#160; ..." alt="" coords="24,155,205,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="29,80,200,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="65,5,164,32"/>
 </map>

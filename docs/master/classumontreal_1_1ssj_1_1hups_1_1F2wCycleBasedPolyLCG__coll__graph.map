@@ -1,6 +1,6 @@
 <map id="F2wCycleBasedPolyLCG" name="F2wCycleBasedPolyLCG">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2.html" title="Similar to CycleBasedPointSet, except that the successive values in the cycles are stored as integers..." alt="" coords="5,259,184,287"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="24,179,165,207"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="59,99,131,127"/>
-<area shape="rect" id="node8" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="39,6,151,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2.html" title="Similar to CycleBasedPointSet, except that the successive values in the cycles are stored as integers..." alt="" coords="5,247,197,273"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="25,171,177,197"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="63,95,139,121"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="40,5,163,32"/>
 </map>

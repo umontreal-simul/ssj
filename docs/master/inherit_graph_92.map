@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1util_1_1TransformingList.html" title="TransformingList\&lt; E,\l ListWithStat.Node\&lt; E \&gt; \&gt;" alt="" coords="5,5,181,49"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1UnuranException.html" title="This type of unchecked exception is thrown when an error occurs inside the UNURAN package..." alt="" coords="248,5,381,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamInstantiationException.html" title="This exception is thrown when a random stream factory cannot instantiate a stream on a call to its um..." alt="" coords="212,57,417,98"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1BitMatrix_1_1IncompatibleDimensionException.html" title="Runtime exception raised when the dimensions of the BitMatrix are not appropriate for the operation..." alt="" coords="195,122,435,163"/>
 </map>

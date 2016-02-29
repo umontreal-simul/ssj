@@ -1,6 +1,6 @@
 <map id="DigitalNet.DigitalNetIterator" name="DigitalNet.DigitalNetIterator">
-<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIteratorNoGray.html" title="DigitalNet.DigitalNetIterator\lNoGray" alt="" coords="5,331,184,375"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" title="PointSet.DefaultPointSet\lIterator" alt="" coords="12,161,177,205"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser..." alt="" coords="39,83,151,111"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="39,6,151,34"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIteratorNoGray.html" title="DigitalNet.DigitalNetIterator\lNoGray" alt="" coords="5,319,212,360"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" title="PointSet.DefaultPointSet\lIterator" alt="" coords="17,155,200,196"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser..." alt="" coords="47,80,171,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="47,5,170,32"/>
 </map>

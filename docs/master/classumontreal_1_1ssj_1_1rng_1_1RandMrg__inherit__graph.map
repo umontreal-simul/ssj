@@ -1,4 +1,4 @@
 <map id="RandMrg" name="RandMrg">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="36,83,204,111"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,6,117,34"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="37,80,225,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,128,32"/>
 </map>

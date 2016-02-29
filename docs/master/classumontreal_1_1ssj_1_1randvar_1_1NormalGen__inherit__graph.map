@@ -1,8 +1,8 @@
 <map id="NormalGen" name="NormalGen">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalACRGen.html" title="This class implements normal random variate generators using the acceptance&#45;complement ratio method �..." alt="" coords="371,5,485,33"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalBoxMullerGen.html" title="This class implements normal random variate generators using the Box&#45;Muller method from  ..." alt="" coords="356,55,500,83"/>
-<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalInverseFromDensityGen.html" title="This class implements normal random variate generators using numerical inversion of the normal densit..." alt="" coords="327,106,529,134"/>
-<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalKindermannRamageGen.html" title="This class implements normal random variate generators using the Kindermann&#45;Ramage method  ..." alt="" coords="327,157,529,185"/>
-<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalPolarGen.html" title="This class implements normal random variate generators using the polar method with rejection  ..." alt="" coords="369,207,487,235"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="7,106,140,134"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalACRGen.html" title="This class implements normal random variate generators using the acceptance&#45;complement ratio method �..." alt="" coords="400,5,523,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalBoxMullerGen.html" title="This class implements normal random variate generators using the Box&#45;Muller method from  ..." alt="" coords="381,56,542,83"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalInverseFromDensityGen.html" title="This class implements normal random variate generators using numerical inversion of the normal densit..." alt="" coords="348,107,575,133"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalKindermannRamageGen.html" title="This class implements normal random variate generators using the Kindermann&#45;Ramage method  ..." alt="" coords="347,157,576,184"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalPolarGen.html" title="This class implements normal random variate generators using the polar method with rejection  ..." alt="" coords="397,208,526,235"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,107,155,133"/>
 </map>

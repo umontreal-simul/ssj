@@ -1,4 +1,4 @@
 <map id="ExponentialGen" name="ExponentialGen">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1ExponentialInverseFromDensityGen.html" title="This class implements exponential random variate generators using numerical inversion of the exponent..." alt="" coords="5,161,235,189"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="53,6,187,34"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1ExponentialInverseFromDensityGen.html" title="This class implements exponential random variate generators using numerical inversion of the exponent..." alt="" coords="5,155,261,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="59,5,208,32"/>
 </map>

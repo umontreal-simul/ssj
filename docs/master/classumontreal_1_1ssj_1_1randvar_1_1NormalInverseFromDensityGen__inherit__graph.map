@@ -1,4 +1,4 @@
 <map id="NormalInverseFromDensityGen" name="NormalInverseFromDensityGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="64,83,149,111"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="40,6,173,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="71,80,167,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="44,5,193,32"/>
 </map>

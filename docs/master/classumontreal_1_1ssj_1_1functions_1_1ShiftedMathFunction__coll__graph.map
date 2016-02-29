@@ -1,6 +1,6 @@
 <map id="ShiftedMathFunction" name="ShiftedMathFunction">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,89,107,117"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="157,89,368,117"/>
-<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="171,140,355,168"/>
-<area shape="rect" id="node10" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="177,190,348,218"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,79,115,106"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="164,79,399,106"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="178,130,385,157"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="187,181,376,207"/>
 </map>

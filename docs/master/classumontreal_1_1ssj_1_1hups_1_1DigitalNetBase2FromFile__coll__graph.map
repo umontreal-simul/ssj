@@ -1,6 +1,6 @@
 <map id="DigitalNetBase2FromFile" name="DigitalNetBase2FromFile">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html" title="A special case of DigitalNet for the base . " alt="" coords="31,259,145,287"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ..." alt="" coords="49,179,127,207"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="52,99,124,127"/>
-<area shape="rect" id="node8" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="32,6,144,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html" title="A special case of DigitalNet for the base . " alt="" coords="33,247,161,273"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ..." alt="" coords="53,171,141,197"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="59,95,135,121"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="36,5,159,32"/>
 </map>

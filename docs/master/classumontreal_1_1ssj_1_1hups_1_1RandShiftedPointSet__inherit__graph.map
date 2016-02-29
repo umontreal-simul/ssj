@@ -1,4 +1,4 @@
 <map id="RandShiftedPointSet" name="RandShiftedPointSet">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1ContainerPointSet.html" title="This acts as a generic base class for all container classes that contain a point set and apply some k..." alt="" coords="13,83,139,111"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="40,6,112,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1ContainerPointSet.html" title="This acts as a generic base class for all container classes that contain a point set and apply some k..." alt="" coords="13,80,152,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="45,5,121,32"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="BSpline" name="BSpline">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,60,107,88"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="175,35,345,63"/>
-<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="168,85,352,113"/>
-<area shape="rect" id="node10" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="155,136,365,164"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,63,115,89"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="185,37,375,64"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="177,88,383,115"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="163,139,397,165"/>
 </map>

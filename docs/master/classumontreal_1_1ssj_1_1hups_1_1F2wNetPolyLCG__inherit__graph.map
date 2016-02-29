@@ -1,5 +1,5 @@
 <map id="F2wNetPolyLCG" name="F2wNetPolyLCG">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html" title="A special case of DigitalNet for the base . " alt="" coords="7,161,121,189"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ..." alt="" coords="25,83,103,111"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="28,6,100,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html" title="A special case of DigitalNet for the base . " alt="" coords="5,155,133,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ..." alt="" coords="25,80,113,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="31,5,107,32"/>
 </map>

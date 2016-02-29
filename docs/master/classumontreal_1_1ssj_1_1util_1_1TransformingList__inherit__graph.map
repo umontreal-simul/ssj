@@ -1,4 +1,4 @@
 <map id="TransformingList&lt; OE, IE &gt;" name="TransformingList&lt; OE, IE &gt;">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html" title="Implements a list with integrated statistical probes to provide automatic collection of statistics on..." alt="" coords="5,177,173,221"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html" title="This class extends ListWithStat, and uses a linked list as the internal data structure. " alt="" coords="20,270,159,298"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html" title="Implements a list with integrated statistical probes to provide automatic collection of statistics on..." alt="" coords="5,169,191,211"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html" title="This class extends ListWithStat, and uses a linked list as the internal data structure. " alt="" coords="22,259,174,285"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="BetaSymmetricalBestGen" name="BetaSymmetricalBestGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalGen.html" title="This class implements random variate generators with the symmetrical beta distribution with shape par..." alt="" coords="19,161,165,189"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1BetaGen.html" title="This class implements random variate generators with the beta distribution with shape parameters &#160;and..." alt="" coords="56,83,128,111"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="25,6,159,34"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalGen.html" title="This class implements random variate generators with the symmetrical beta distribution with shape par..." alt="" coords="20,155,181,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1BetaGen.html" title="This class implements random variate generators with the beta distribution with shape parameters &#160;and..." alt="" coords="61,80,140,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="26,5,175,32"/>
 </map>

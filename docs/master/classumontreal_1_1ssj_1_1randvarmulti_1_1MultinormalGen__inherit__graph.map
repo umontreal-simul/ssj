@@ -1,5 +1,5 @@
 <map id="MultinormalGen" name="MultinormalGen">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalCholeskyGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via a Cholesky decomposit..." alt="" coords="5,161,171,189"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalPCAGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via the method of princip..." alt="" coords="195,161,333,189"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="96,6,256,34"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalCholeskyGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via a Cholesky decomposit..." alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalPCAGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via the method of princip..." alt="" coords="216,155,368,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="105,5,285,32"/>
 </map>

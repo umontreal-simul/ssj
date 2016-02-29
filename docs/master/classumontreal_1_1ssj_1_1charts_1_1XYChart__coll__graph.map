@@ -1,4 +1,4 @@
 <map id="XYChart" name="XYChart">
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="115,99,163,127"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="187,99,344,127"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="119,95,170,121"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="195,95,359,121"/>
 </map>

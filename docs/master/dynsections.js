@@ -95,4 +95,3 @@ function toggleInherit(id)
   }
 }
 
-D

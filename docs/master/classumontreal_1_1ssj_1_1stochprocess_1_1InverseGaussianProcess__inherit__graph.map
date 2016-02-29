@@ -1,6 +1,6 @@
 <map id="InverseGaussianProcess" name="InverseGaussianProcess">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html" title="Uses a faster generating method (MSH)   than the simple inversion of the distribution function used ..." alt="" coords="9,161,207,189"/>
-<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html" title="Approximates a principal component analysis (PCA) decomposition of the InverseGaussianProcess. " alt="" coords="231,161,425,189"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="152,6,283,34"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html" title="Samples the path by bridge sampling: first finding the process value at the final time and then the m..." alt="" coords="5,238,211,266"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html" title="Uses a faster generating method (MSH)   than the simple inversion of the distribution function used ..." alt="" coords="12,155,221,181"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html" title="Approximates a principal component analysis (PCA) decomposition of the InverseGaussianProcess. " alt="" coords="245,155,452,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="163,5,302,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html" title="Samples the path by bridge sampling: first finding the process value at the final time and then the m..." alt="" coords="5,229,228,256"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="InverseGaussianProcessMSH" name="InverseGaussianProcessMSH">
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html" title="Samples the path by bridge sampling: first finding the process value at the final time and then the m..." alt="" coords="5,238,211,266"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html" title="The inverse Gaussian process is a non&#45;decreasing process where the increments are additive and are gi..." alt="" coords="24,83,192,111"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="43,6,173,34"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html" title="Samples the path by bridge sampling: first finding the process value at the final time and then the m..." alt="" coords="5,229,228,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html" title="The inverse Gaussian process is a non&#45;decreasing process where the increments are additive and are gi..." alt="" coords="27,80,207,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="47,5,186,32"/>
 </map>

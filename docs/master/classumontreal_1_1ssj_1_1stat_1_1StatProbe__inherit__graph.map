@@ -1,6 +1,6 @@
 <map id="StatProbe" name="StatProbe">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1Accumulate.html" title="A subclass of umontreal.ssj.stat.StatProbe, for collecting statistics on a variable that evolves in s..." alt="" coords="5,83,96,111"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="120,83,168,111"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html" title="This class is an extension of Tally which gives a more detailed view of the observations statistics..." alt="" coords="32,161,139,189"/>
-<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1stat_1_1TallyStore.html" title="This class is a variant of Tally for which the individual observations are stored in a list implement..." alt="" coords="163,161,243,189"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simevents_1_1Accumulate.html" title="A subclass of umontreal.ssj.stat.StatProbe, for collecting statistics on a variable that evolves in s..." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="129,80,183,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html" title="This class is an extension of Tally which gives a more detailed view of the observations statistics..." alt="" coords="31,155,153,181"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1TallyStore.html" title="This class is a variant of Tally for which the individual observations are stored in a list implement..." alt="" coords="177,155,265,181"/>
 </map>
