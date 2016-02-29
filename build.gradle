@@ -14,6 +14,7 @@ plugins {
     id 'distribution'
     id 'maven-publish'
     id 'com.jfrog.bintray' version '1.4'
+    id 'eclipse'
 }
 
 defaultTasks 'build'
@@ -23,7 +24,7 @@ group = 'ca.umontreal.iro.simul'
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
-version = '3.0.0-rc1'
+version = '3.1.0'
 
 // indicate branch
 version += '+labo'
@@ -48,7 +49,7 @@ bintray {
         repo = 'maven'
         name = 'ssj'
         userOrg = 'umontreal-simul'
-        licenses = ['LGPL-3.0']
+        licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/umontreal-simul/ssj.git'
         labels = [
             'stochastic simulation',
@@ -109,8 +110,8 @@ publishing {
                 // licences
                 n = asNode().appendNode('licenses')
                 n = n.appendNode('license')
-                n.appendNode('name', 'LGPL-3.0')
-                n.appendNode('url', 'http://opensource.org/licenses/lgpl-3.0.html')
+                n.appendNode('name', 'Apache-2.0')
+                n.appendNode('url', 'http://www.apache.org/licenses/LICENSE-2.0')
                 n.appendNode('distribution', 'repo')
                 // SCM
                 n = asNode().appendNode('scm')
