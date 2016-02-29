@@ -178,7 +178,7 @@
  * required to take full advantage of the library.
  * 
  * 
- * @section REF_0_sec_03 random number generation
+ * @section REF_0_sec_03 Random Number Generation
  * 
  * 
  * Random numbers feed simulation models and allow one to compute statistics.
@@ -325,7 +325,7 @@
  * class and method.
  * 
  * 
- * @section REF_0_sec_07 Acknowledgments
+ * @section ssj_acknowledgments Acknowledgments
  * 
  * 
  * SSJ was designed and implemented under the supervision of Pierre L’Ecuyer,
