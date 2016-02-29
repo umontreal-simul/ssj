@@ -20,6 +20,8 @@ It provides facilities for:
 As of version 3.1.0, SSJ is released under the
 [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
 
+**WARNING**: all package names have changed from `umontreal.iro.lecuyer.*` to `umontreal.ssj.*`.
+
 
 ## Documentation
 
