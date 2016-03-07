@@ -403,10 +403,22 @@ jar {
             "Class-Path":               configurations.compile.collect { it.getName() }.join(' ')
         )
     }
+    metaInf {
+        from('.') {
+            include 'LICENSE.md'
+            include 'NOTICE'
+        }
+    }
 }
 
 task sourceJar(type: Jar) {
     from sourceSets.main.allSource
+    metaInf {
+        from('.') {
+            include 'LICENSE.md'
+            include 'NOTICE'
+        }
+    }
 }
 
 task docsJar(type: Jar) {
@@ -434,6 +446,8 @@ distributions {
                 }
                 from('.') {
                     include 'README.md'
+                    include 'LICENSE.md'
+                    include 'NOTICE'
                 }
             }
             // Contents is also included in the JNI section above,
