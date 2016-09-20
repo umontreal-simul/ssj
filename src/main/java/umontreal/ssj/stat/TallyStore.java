@@ -190,6 +190,41 @@ public double[] getArray() {
       t.array = (DoubleArrayList)array.clone();
       return t;
    }
+   
+   
+    /**
+     * Aggregates the observations of this TallyStore into groups of size {@code gsize}, 
+     * takes the average in each group, and 
+     * returns a new TallyStore instance that contains these averages as
+     * the observations.
+     *
+     * @param gsize the number of observations in the new TallyStore
+     *
+     * @return a new TallyStore object with {@code gsize} observations
+     */
+    public TallyStore aggregate (int gsize) {
+        int numObs = this.numberObs();
+        int numGroups = numObs / gsize;
+        double sum;
+        TallyStore t = new TallyStore (numGroups);
+        for (int i = 0; i < numGroups; i++) {
+            sum = 0.0;
+            for (int j = 0; j < gsize; j++)
+                sum += this.getArray()[gsize * i + j];
+            sum /= gsize;
+            t.add(sum);
+        }
+        // This is if gsize does not divide numObs.
+        int rest = numObs - numGroups * gsize;
+        if (rest > 0) {
+            sum = 0.0;
+            for (int j = 0; j < rest; j++)
+                sum += this.getArray()[gsize * numGroups + j];
+            sum /= rest;
+            t.add(sum);
+        }
+        return t;
+    } 
 
    /**
     * Returns the observations stored in this object as a `String`.
