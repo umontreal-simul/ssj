@@ -123,11 +123,11 @@ public class TallyStore extends Tally {
       super.add(x);
    }
 
-/**
- * Returns the observations stored in this probe.
- *  @return the array of observations associated with this object
- */
-public double[] getArray() {
+   /**
+    * Returns the observations stored in this probe.
+    * @return the array of observations associated with this object
+    */
+   public double[] getArray() {
       array.trimToSize();
       return array.elements();
    }
