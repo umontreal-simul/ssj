@@ -22,7 +22,7 @@
  * limitations under the License.
  *
  */
-package umontreal.ssj.util;
+package umontreal.ssj.util.sort;
 import java.util.Comparator;
 
 /**

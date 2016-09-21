@@ -31,7 +31,7 @@
   * Date:	Thu Feb  7 1991
   * Copyright (c) 1991, University of Michigan
   */
-package umontreal.ssj.util;
+package umontreal.ssj.util.sort;
   import java.util.Comparator;
   import java.util.Arrays;
 

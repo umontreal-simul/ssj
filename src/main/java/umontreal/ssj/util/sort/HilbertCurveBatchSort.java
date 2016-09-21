@@ -21,7 +21,7 @@
  * A copy of the GNU General Public License is available at
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
-package umontreal.ssj.util;
+package umontreal.ssj.util.sort;
  import java.util.Comparator;
  import java.util.Arrays;
  import umontreal.ssj.util.*;

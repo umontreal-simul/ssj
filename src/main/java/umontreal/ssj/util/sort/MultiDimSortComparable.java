@@ -1,5 +1,5 @@
 /*
- * Class:        MultiDimSort01
+ * Class:        MultiDimSortComparable
  * Description:  Represents a sort on multidimensional arrays of MultiDimComparable.
  * Environment:  Java
  * Software:     SSJ 
@@ -21,17 +21,27 @@
  * A copy of the GNU General Public License is available at
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
-package umontreal.ssj.util;
+package umontreal.ssj.util.sort;
  import java.util.Comparator;
  import java.util.Arrays;
 
 /**
  * This interface extends  @ref MultiDimSort to implement multivariate
- * sorting algorithms that sort points of @f$d@f$ dimensions in the unit
- * hypercube @f$[0, 1)^d@f$.
+ * sorting algorithms that sort objects that are pairwise comparable. These
+ * objects have @f$d@f$ sorting fields (or coordinates) and must implement
+ * the interface  @ref MultiDimComparable, which is used to sort them on any
+ * given coordinate, numbered from 0 to @f$d-1@f$.
+ *
+ * The ordering is induced by the method
+ * umontreal.ssj.util.MultiDimComparable.compareTo, and the number of the
+ * largest coordinate used by the sort must not exceed @f$d-1@f$, where the
+ * dimension @f$d@f$ refers to the value returned by
+ * umontreal.ssj.util.MultiDimComparable.dimension. One can sort only a
+ * subset of the objects, or all of them.
  *
  * <div class="SSJ-bigskip"></div>
  */
-public interface MultiDimSort01 <T extends MultiDim01> extends 
+public interface MultiDimSortComparable <T extends MultiDimComparable<? super T>> extends 
    MultiDimSort<T> {
+
 }

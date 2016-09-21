@@ -21,7 +21,7 @@
  * A copy of the GNU General Public License is available at
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
-package umontreal.ssj.util;
+package umontreal.ssj.util.sort;
 
 /**
  * This interface is an extension (or variant) of the  Comparable interface

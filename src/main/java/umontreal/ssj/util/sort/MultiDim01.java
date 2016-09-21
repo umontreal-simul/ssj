@@ -21,7 +21,7 @@
  * A copy of the GNU General Public License is available at
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
-package umontreal.ssj.util;
+package umontreal.ssj.util.sort;
 
 /**
  * This interface represents a point or array of @f$d@f$ dimensions in a unit
