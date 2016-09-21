@@ -193,24 +193,29 @@ public class TallyStore extends Tally {
    
    
     /**
-     * Aggregates the observations of this TallyStore into groups of size {@code gsize}, 
-     * takes the average in each group, and 
-     * returns a new TallyStore instance that contains these averages as
-     * the observations.
+     * Returns a new TallyStore instance that contains aggregate observations from this TallyStore.
+     * This method sorts the observations and divides them into groups of size {@code gsize}.
+     * Then, it inserts the average of each group in a new TallyStore object.
      *
-     * @param gsize the number of observations in the new TallyStore
+     * Note that this method does not sort the observations. It will aggregate
+     * the observations according to their order of insertion.
+     * To aggregate the observations sorted by values, the user should sort
+     * this TallyStore object before calling this method.
      *
-     * @return a new TallyStore object with {@code gsize} observations
+     * @param gsize the group size to use when performing the aggregation
+     *
+     * @return a new TallyStore object with aggregated observations
      */
     public TallyStore aggregate (int gsize) {
         int numObs = this.numberObs();
         int numGroups = numObs / gsize;
+        double[] obs = this.getArray();
         double sum;
         TallyStore t = new TallyStore (numGroups);
         for (int i = 0; i < numGroups; i++) {
             sum = 0.0;
             for (int j = 0; j < gsize; j++)
-                sum += this.getArray()[gsize * i + j];
+                sum += obs[gsize * i + j];
             sum /= gsize;
             t.add(sum);
         }
@@ -219,7 +224,7 @@ public class TallyStore extends Tally {
         if (rest > 0) {
             sum = 0.0;
             for (int j = 0; j < rest; j++)
-                sum += this.getArray()[gsize * numGroups + j];
+                sum += obs[gsize * numGroups + j];
             sum /= rest;
             t.add(sum);
         }
