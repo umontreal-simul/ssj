@@ -5,7 +5,7 @@
  * Software:     SSJ
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       Pierre Tremblay, Jean-Sebastien Parent & Maxime Dion
+ * @author       Pierre Tremblay, Jean-Sébastien Parent & Maxime Dion
  * @since        July 2003
  *
  *
