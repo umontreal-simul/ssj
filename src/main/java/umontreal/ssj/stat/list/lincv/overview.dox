@@ -1,0 +1,64 @@
+/**
+ * @package umontreal.ssj.stat.list.lincv
+ *
+ * @anchor REF_stat_list_lincv_overview_over_licv_tal Provides
+ * facilities for computing estimators with linear control variables
+ * @cite vLAV81a, @cite vGLY02a&thinsp;. Let @f$\mathbf{X}\in\mathbb{R}^p@f$
+ * be a vector of estimators, and @f$\mathbf{C}\in\mathbb{R}^q@f$ be a
+ * vector of *control variables* with known expectation @f$E[\mathbf{C}]@f$.
+ * The estimator @f$\mathbf{X}@f$ can be replaced by the linearly controlled
+ * estimator
+ * @f[
+ *   \mathbf{X}_{\mathrm{C}}=\mathbf{X}- \boldsymbol{\beta}^{\mathsf{t}}(\mathbf{C}- E[\mathbf{C}]),
+ * @f]
+ * where @f$\boldsymbol{\beta}@f$ is a constant @f$q\times p@f$ matrix. The
+ * covariance matrix of this estimator is
+ * @f[
+ *   \mathrm{Cov}(\mathbf{X}_{\mathrm{C}}) = \boldsymbol{\Sigma}_{\mathrm{X}}+ \boldsymbol{\beta}^{\mathsf{t}}\boldsymbol{\Sigma}_{\mathrm{C}}\boldsymbol{\beta}- \boldsymbol{\beta}^{\mathsf{t}}\boldsymbol{\Sigma}_{\mathrm{CX}}- \boldsymbol{\Sigma}_{\mathrm{CX}}^{\mathsf{t}}\boldsymbol{\beta},
+ * @f]
+ * where @f$\boldsymbol{\Sigma}_{\mathrm{CX}}@f$ is the @f$q\times p@f$
+ * covariance matrix of @f$\mathbf{C}@f$ and @f$\mathbf{X}@f$,
+ * @f$\boldsymbol{\Sigma}_{\mathrm{C}}@f$ is the @f$q\times q@f$ covariance
+ * matrix of @f$\mathbf{C}@f$, and @f$\boldsymbol{\Sigma}_{\mathrm{X}}@f$ is
+ * the @f$p\times p@f$ covariance matrix of @f$\mathbf{X}@f$. The matrix
+ * @f$\boldsymbol{\beta}@f$ can be set for
+ * @f$|\mathrm{Cov}(\mathbf{X}_{\mathrm{C}})|\le|\mathrm{Cov}(\mathbf{X})|@f$,
+ * where @f$|\boldsymbol{\Sigma}|@f$ is the determinant of the matrix
+ * @f$\boldsymbol{\Sigma}@f$. The optimal @f$\boldsymbol{\beta}@f$ matrix,
+ * which minimizes the determinant (or the trace) of the covariance matrix,
+ * is
+ * @f[
+ *   \boldsymbol{\beta}^* = \boldsymbol{\Sigma}_{\mathrm{C}}^{-1}\boldsymbol{\Sigma}_{\mathrm{CX}}.
+ * @f]
+ * If @f$\boldsymbol{\mu}=E[\mathbf{X}]@f$,
+ * @f$\boldsymbol{\nu}=E[\mathbf{C}]@f$, and @f$g(\boldsymbol{\mu})@f$ is a
+ * continuous function in the neighborhood of @f$\boldsymbol{\mu}@f$, let
+ * @f$h(\boldsymbol{\mu},
+ * \boldsymbol{\nu})=g(\boldsymbol{\mu})-\boldsymbol{\beta}_{\mathrm{f}}^{\mathsf{t}}(\mathbf{C}-
+ * \boldsymbol{\nu})@f$ be the corresponding function with control variables.
+ * Here, @f$\boldsymbol{\beta}_{\mathrm{f}}@f$ is a @f$q@f$-dimensional
+ * vector being set to reduce the variance of the function of averages with
+ * control variables. The optimal @f$\boldsymbol{\beta}_{\mathrm{f}}@f$
+ * vector that minimizes the variance is
+ * @f[
+ *   \boldsymbol{\beta}_{\mathrm{f}}^* = \boldsymbol{\beta}^*\nabla g(\boldsymbol{\mu}) = \boldsymbol{\Sigma}_{\mathrm{C}}^{-1}\boldsymbol{\Sigma}_{\mathrm{CX}}\nabla g(\boldsymbol{\mu}).
+ * @f]
+ * This package provides classes that can help one implement such control
+ * variables. During the simulation, or during pilot runs, one adds
+ * observations of the estimators and the control variables to a list of
+ * tallies specialized for control variables. This list computes the
+ * covariances, and can compute an estimate of @f$\boldsymbol{\beta}^*@f$ by
+ * using matrices of sample covariances. The vector of controlled averages,
+ * and the sample controlled covariance matrix can then be obtained.
+ * Alternatively, one can reset the list of tallies, keep the
+ * @f$\boldsymbol{\beta}@f$ matrix, and add independent vectors of
+ * observations.
+ *
+ * The package also provides a class for applying control variables on a
+ * function of multiple averages. A tally for a function of multiple means
+ * with control variables encapsulates a list of tallies with control
+ * variables, and an object computing @f$g(\boldsymbol{\mu})@f$ and its
+ * gradient @f$\nabla g(\boldsymbol{\mu})@f$. A method is available to
+ * estimate the @f$\boldsymbol{\beta}_{\mathrm{f}}@f$ vector minimizing the
+ * variance of the function of averages.
+ */
