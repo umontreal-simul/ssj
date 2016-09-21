@@ -67,6 +67,9 @@
  * mathematical functions and constants, root-finding tools, facilities for
  * SQL database interface, and so on.
  *
+ *  @ref umontreal.ssj.util.sort contains utility classes to sort multi-dimensional
+ * points.
+ *
  *  @ref umontreal.ssj.probdist contains a set of Java classes providing
  * methods to compute mass, density, distribution, complementary
  * distribution, and inverse distribution functions for many discrete and
@@ -103,6 +106,10 @@
  *  @ref umontreal.ssj.stat.list this subpackage of `stat` provides support
  * to manage lists of statistical collectors.
  *
+ *  @ref umontreal.ssj.stat.list.lincv this subpackage of `stat.list`
+ * provides classes that help implement control variables on lists of
+ * collectors.
+ *
  *  @ref umontreal.ssj.simevents provides and manages the event-driven
  * simulation facilities as well as the simulation clock. Can manage several
  * simulations in parallel, in the same program.
@@ -120,6 +127,9 @@
  *  @ref umontreal.ssj.charts provides tools for easy construction,
  * visualization, and customization of @f$xy@f$ plots, histograms, and
  * empirical styled charts from a Java program.
+ *
+ * @ref umontreal.ssj.markovchainrqmc contains classes related to Markov
+ *  chains simulation using randomized quasi-Monte Carlo.
  *
  *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
  * processes.
