@@ -37,7 +37,7 @@ import umontreal.ssj.util.PrintfFormat;
  * used in building the net are those defined in class
  * @ref umontreal.ssj.hups.DigitalNet. The format of the data files must be
  * the following:
- *  (see the format in <tt>guidehups.pdf</tt>)
+ *  (see the format in @ref umontreal.ssj.hups)
  *
  * <center>
  *  <tt><div class="SSJ-fbox">

@@ -52,8 +52,8 @@ public abstract class ContainerPointSet extends PointSet {
     * inheriting from  @ref ContainerPointSet.
     *  @param P0           contained point set
     */
-   protected void init (PointSet P0) {
-      P = P0;
+   protected void init (PointSet p0) {
+      P = p0;
 //      this.dim = P.getDimension();
 //      this.numPoints = P.getNumPoints();
    }

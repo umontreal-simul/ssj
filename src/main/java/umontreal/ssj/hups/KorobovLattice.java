@@ -90,9 +90,9 @@ public class KorobovLattice extends Rank1Lattice {
     */
    public KorobovLattice (int n, int a, int s, int t) {
       super (n, null, 0);
-      if (t < 1)
+      if (t < 0)
          throw new IllegalArgumentException
-            ("KorobovLattice: must have 0 < t");
+            ("KorobovLattice: must have t >= 0");
       dim = s;
       genA = a;
       v = new double[s];

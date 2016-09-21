@@ -70,18 +70,23 @@ import umontreal.ssj.util.PrintfFormat;
  * liste de randomisations obsolète: nous n’avons jamais utilisé l’ancienne
  * version.
  *
+ * @remark **Pierre:** Now removed.
+ *
  * This abstract class has only one abstract method:  #getCoordinate.
  * Providing an implementation for this method is already sufficient for the
- * subclass to work. However, in practically all cases, efficiency can be
- * dramatically improved by overwriting  #iterator to provide a custom
- * iterator that does not necessarily rely on  #getCoordinate. In fact,
- * direct use of  #getCoordinate to access the coordinates is discouraged.
- * One should access the coordinates only via the iterators.
+ * subclass to work. However, in many cases, efficiency can be dramatically
+ * improved by overwriting  #iterator to provide a custom iterator that does
+ * not necessarily rely on  #getCoordinate. In fact, direct use of
+ * #getCoordinate to access the coordinates is generally discouraged. One
+ * should access the points and coordinates via the iterators.
  *
  *  The built-in range checks require some extra time and also assumes that
- * nobody ever uses negative indices (Java does not offer unsigned integers).
- * If  #getCoordinate is not accessed directly by the user, it may be
- * implemented without range checks.
+ * nobody ever uses negative indices. If  #getCoordinate is not accessed
+ * directly by the user, it may be implemented without range checks.
+ * @remark **Pierre:** I think we should remove the `addRandomShift` and
+ * `clearRandomShift` methods, because they are too specialized and not
+ * appropriate for all kinds of point sets. We can also make the
+ * `randomize(stream)` methods abstract, or make them do nothing by default.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -179,6 +184,7 @@ public abstract class PointSet {
     * stream `stream` to generate the random numbers, for coordinates `d1`
     * to `d2-1`.
     */
+   @Deprecated
    public void addRandomShift (int d1, int d2, RandomStream stream) {
 //   throw new UnsupportedOperationException
 //         ("addRandomShift in PointSet called");
@@ -191,6 +197,7 @@ public abstract class PointSet {
     * `addRandomShift (0, d2, stream)`, with `d2` the dimension of the
     * current random shift.
     */
+   @Deprecated
    public void addRandomShift (RandomStream stream) {
       addRandomShift (0, dimShift, stream);
   }
@@ -216,6 +223,7 @@ public abstract class PointSet {
    /**
     * Erases the current random shift, if any.
     */
+   @Deprecated
    public void clearRandomShift() {
       capacityShift = 0;
       dimShift = 0;
@@ -223,15 +231,16 @@ public abstract class PointSet {
   }
 
    /**
-    * By default, this method simply calls `addRandomShift(d1, d2,
-    * stream)`.
+    * By default, this method simply calls `addRandomShift (fromDim,
+    * toDim, stream)`, which does nothing.
     */
-   public void randomize (int d1, int d2, RandomStream stream) {
-      addRandomShift (d1, d2, stream);
+   public void randomize (int fromDim, int toDim, RandomStream stream) {
+      addRandomShift (fromDim, toDim, stream);
    }
 
    /**
-    * By default, this method simply calls `addRandomShift(stream)`.
+    * By default, this method simply calls
+    * {@link #randomize(int,int,RandomStream) randomize(0, dim, stream)}.
     */
    public void randomize (RandomStream stream) {
       addRandomShift (stream);
@@ -591,12 +600,17 @@ public abstract class PointSet {
         return getCurPointIndex() < getNumPoints();
       }
 
+      public int nextPoint (double p[], int fromDim, int d) {
+         setCurCoordIndex(fromDim);
+         nextCoordinates (p, d);
+         return resetToNextPoint();
+      }
+
       public int nextPoint (double p[], int d) {
          resetCurCoordIndex();
          nextCoordinates (p, d);
          return resetToNextPoint();
       }
-
 
       public void resetStartStream() {     // Same as resetCurPointIndex();
          resetCurPointIndex();

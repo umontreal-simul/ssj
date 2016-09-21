@@ -1,11 +1,11 @@
 /*
  * Class:        DigitalNetBase2
- * Description:  
+ * Description:
  * Environment:  Java
- * Software:     SSJ 
+ * Software:     SSJ
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       
+ * @author
  * @since
  *
  *
@@ -455,6 +455,110 @@ public PointSetIterator iteratorNoGray() {
       // Right-multiply the generator matrices by the scrambling matrix.
       for (j = 0; j < dim; j++)
          rightMultiplyMat (j, scrambleMat);
+   }
+
+   /**
+    * Generate a vector of `numBits <= 31` random bits using the random stream `stream`.
+    */
+   private int randomBitVector(RandomStream stream, int numBits) {
+      if (numBits < 1)
+         throw new IllegalArgumentException("numBits must be >= 1");
+      if (numBits > 31)
+         throw new IllegalArgumentException("numBits must be <= 31");
+      int maxj;
+      if (numBits < 31)
+         maxj = (1 << numBits) - 1;
+      else
+         maxj = 2147483647;
+      return stream.nextInt(0, maxj) << (31 - numBits);
+   }
+
+   /**
+    * Same as @link nestedUniformScramble(RandomStream,double[][],int) nestedUniformScramble(stream, output, 0) @endlink.
+    */
+   public void nestedUniformScramble (RandomStream stream, double[][] output) {
+      nestedUniformScramble(stream, output, 0);
+   }
+
+   /** Apply Owen's nested uniform scrambling.
+    *
+    *  This type of scrambling does not modify the DigitalNetBase2 object.
+    *  In particular, it does not randomize the generator matrices stored in the object.
+    *  Rather, it computes the randomized points all at once and stores them in the two-dimensional array `output`.
+    *  All points are randomized at once to avoid storing all the permutations.
+    *
+    *  The implementation is an adaptation of that found in
+    *  [SAMPLE PACKage](http://www.uni-kl.de/AG-Heinrich/SamplePack.html)
+    *  by Thomas Kollig and Alexander Keller.
+    *
+    *  @param stream    Random stream used to randomize the bits.
+    *  @param output    Output array that will store the randomized points.  The
+    *                   size of its first dimension must be getNumPoints() and
+    *                   the size of its second dimension must be getDimension().
+    *  @param numBits   Number of ouput bits to scramble.  If it is zero, the
+    *                   number of ouput bits of the DigitalNetBase2 instance
+    *                   is used.  It can be smaller than, equal to or
+    *                   larger than DigitalNet.outDigits.
+    */
+   public void nestedUniformScramble (RandomStream stream, double[][] output, int numBits) {
+      assert output.length == numPoints;
+      assert output.length > 0;
+      assert output[0].length == dim;
+
+      if (numBits == 0)
+         numBits = outDigits;
+
+      int[] poslist = new int[2 * numPoints];
+      int[] bvlist = new int[2 * numPoints];
+      int[] counts = new int[256];
+      int[] binpos = new int[256];
+
+      for (int j = 0; j < dim; ++j) {
+         bvlist[0] = 0;
+         poslist[0] = 0;
+         for (int i = 1; i < numPoints; i++) {
+            // Gray code order (could be optional)
+            // We could have used a point set iterator here, but the iterator computes all
+            // coordinates at once and we need only one at a time.
+            int pos = 0;
+            int bv = 1;
+            while ((i & bv) == 0) {
+               pos++;
+               bv <<= 1;
+            }
+            bvlist[i] = bvlist[i - 1] ^ genMat[j * numCols + pos];
+            poslist[i] = i;
+         }
+         for (int b = 0; b < 4; b++){
+            for (int i = 0; i < 256; i++)
+               counts[i] = 0;
+            int m = (b % 2) * numPoints;
+            int bb = 8 * b;
+            int bv = 0xff << bb;
+            for (int i = 0; i < numPoints; i++)
+              counts[(bvlist[m + i] & bv) >>> bb]++;
+            binpos[0] = (1 - b % 2) * numPoints;
+            for (int i = 0; i < 255; i++)
+              binpos[i + 1] = binpos[i] + counts[i];
+            for (int i = 0; i < numPoints; i++)
+            {
+              int pos = (bvlist[m + i] & bv) >>> bb;
+              int k = binpos[pos]++;
+              bvlist[k] = bvlist[m + i];
+              poslist[k] = poslist[m + i];
+            }
+         }
+         int bv = randomBitVector(stream, numBits);
+         output[poslist[0]][j] = (bvlist[0] ^ bv) * normFactor + EpsilonHalf;
+         for (int i = 1; i < numPoints; i++) {
+            int bv2 = bvlist[i - 1];
+            bv2 ^= bvlist[i];
+            bv2 = randomBitVector(stream, numBits) & ((int)(1 << (int)Num.log2((double)bv2)) - 1);
+            bv ^= bv2;
+            output[poslist[i]][j] = (bvlist[i] ^ bv) * normFactor + EpsilonHalf;
+         }
+
+      }
    }
 
    //-----------------------------------------------------------------------

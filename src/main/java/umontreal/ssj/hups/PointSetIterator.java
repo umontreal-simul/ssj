@@ -37,7 +37,8 @@ import umontreal.ssj.rng.RandomStream;
  * Successive coordinates can be accessed one or many at a time by the
  * methods  #nextCoordinate and  #nextCoordinates, respectively. The current
  * coordinate index @f$j@f$ can be set explicitely by  #setCurCoordIndex and
- * #resetCurCoordIndex. Similar methods are available for resetting and
+ * #resetCurCoordIndex. This could be used to skip some coordinates for each
+ * point, for example. Similar methods are available for resetting and
  * accessing the current point. The method  #nextPoint permits one to
  * enumerate the successive points in natural order.
  *
@@ -72,7 +73,8 @@ public interface PointSetIterator extends RandomStream {
 /**
  * Sets the current coordinate index to @f$j@f$, so that the next calls to
  * #nextCoordinate or  #nextCoordinates will return the values @f$u_{i,j},
- * u_{i,j+1}, …@f$, where @f$i@f$ is the index of the current point.
+ * u_{i,j+1}, …@f$, where @f$i@f$ is the index of the current point. This can
+ * be useful to skip certain coordinates for each point, for example.
  *  @param j            index of the new current coordinate
  */
 public void setCurCoordIndex (int j);
@@ -160,14 +162,15 @@ public void setCurCoordIndex (int j);
    public boolean hasNextPoint();
 
    /**
-    * Returns the *first* `d` coordinates of the *current* point in `p`,
-    * advances to the next point, and returns the index of the *new*
-    * current point. Even if the current coordinate index is 0, the point
-    * returned starts from coordinate 0. After obtaining the last point
-    * via this method, the current point index (returned by the method) is
-    * equal to the number of points, so it is no longer a valid point
-    * index. An exception will then be raised if we attempt to generate
-    * additional points or coordinates.
+    * Returns in `p` the next `d` coordinates of the *current* point,
+    * starting at coordinate `fromDim` (i.e., after skipping `fromDim`
+    * coordinates), then advances to the next point and returns the index
+    * of the *new* current point. Regardless of the current coordinate
+    * index, the point returned starts from coordinate `fromDim`. After
+    * obtaining the last point via this method, the current point index
+    * (returned by the method) is equal to the number of points, so it is
+    * no longer a valid point index. An exception will then be raised if
+    * we attempt to generate additional points or coordinates.
     *
     * Specialized implementations of this method often allow for increased
     * efficiency, e.g., for cycle-based point sets where the cycles (but
@@ -175,11 +178,18 @@ public void setCurCoordIndex (int j);
     * allowing non-incremental point enumerations via Gray-code counters.
     *  @param p            array to be filled with the coordinates,
     *                      starting from array index 0
+    *  @param fromDim      number of coordinates to be skipped
     *  @param d            number of coordinates to return
     *  @return index of the new current point
     *
     *  @exception NoSuchElementException if there are not enough
     * coordinates available in the current point for filling `p`
     */
+   public int nextPoint (double[] p, int fromDim, int d);
+
+   /**
+    * Same as  {@link #nextPoint(double[],int,int) nextPoint(p, 0, d)}.
+    */
    public int nextPoint (double[] p, int d);
+
 }

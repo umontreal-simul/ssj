@@ -2,6 +2,7 @@ package umontreal.ssj.markovchainrqmc;
  import umontreal.ssj.stat.Tally;
  import umontreal.ssj.rng.RandomStream;
  import umontreal.ssj.util.*;
+ import umontreal.ssj.util.sort.*;
  import umontreal.ssj.hups.*;
  import umontreal.ssj.charts.*;
  import umontreal.ssj.functionfit.LeastSquares;

@@ -23,7 +23,7 @@
  *
  */
 package umontreal.ssj.hups;
- import umontreal.ssj.rng.MRG32k3a;
+ // import umontreal.ssj.rng.MRG32k3a;
  import umontreal.ssj.rng.RandomStream;
 
 /**
@@ -36,7 +36,7 @@ package umontreal.ssj.hups;
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class EmptyRandomization implements PointSetRandomization {
-   protected RandomStream stream = new MRG32k3a();
+   protected RandomStream stream;   //  = new MRG32k3a();
 
    /**
     * This method does nothing.

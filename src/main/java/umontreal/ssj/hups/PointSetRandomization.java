@@ -42,6 +42,9 @@ import umontreal.ssj.rng.RandomStream;
  * set, the randomizations will concatenate if they are of different types,
  * but only the last of each type will remain.
  *
+ * @remark **Pierre:** There should be examples to illustrate how this works
+ * and how to use it.
+ *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public interface PointSetRandomization {
