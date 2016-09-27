@@ -26,7 +26,7 @@ package umontreal.ssj.util.sort;
  import java.util.Arrays;
 
 /**
- * This interface extends  @ref MultiDimSort to implement multivariate
+ * This interface extends  @ref MultiDimSort<T> to implement multivariate
  * sorting algorithms that sort objects that are pairwise comparable. These
  * objects have @f$d@f$ sorting fields (or coordinates) and must implement
  * the interface  @ref MultiDimComparable, which is used to sort them on any

@@ -26,7 +26,7 @@ package umontreal.ssj.util.sort;
  import java.util.Arrays;
 
 /**
- * This interface extends  @ref MultiDimSort to implement multivariate
+ * This interface extends  @ref MultiDimSort<T> to implement multivariate
  * sorting algorithms that sort points of @f$d@f$ dimensions in the unit
  * hypercube @f$[0, 1)^d@f$.
  *

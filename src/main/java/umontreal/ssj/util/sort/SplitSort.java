@@ -27,7 +27,7 @@ package umontreal.ssj.util.sort;
 
 /**
  * Implements a  @ref MultiDimSortComparable that performs a *split sort* on
- * a  @ref MultiDimComparable array based on its first @f$d@f$ dimensions.
+ * a  @ref MultiDimComparable<T> array based on its first @f$d@f$ dimensions.
  * The sort first separates the array in two, such that the objects in the
  * first part are smaller or equal to those in the second part for their
  * coordinate 0. If the number of objects is even, the two parts will contain
@@ -45,7 +45,7 @@ public class SplitSort<T extends MultiDimComparable<? super T>>
    private int dimension;
 
    /**
-    * Constructs a  @ref SplitSort that will use the first `d` dimensions
+    * Constructs a SplitSort that will use the first `d` dimensions
     * to sort.
     *  @param d            number of dimensions to use for the sort
     */

@@ -26,21 +26,21 @@ package umontreal.ssj.util.sort;
  import java.util.Arrays;
 
 /**
- * This class implements a  @ref MultiDimSortComparable that performs a batch
+ * This class implements a \ref MultiDimSortComparable that performs a batch
  * sort on multivariate arrays. It separates the objects in @f$n_0@f$ batches
  * of (approximately) equal size such that each object in a batch is smaller
  * or equal, in the first coordinate, to the objects in the next batches.
  * Then, each batch is separated in @f$n_1@f$ batches in the same way but
  * using the second coordinate. And so on.
  *
- * One way of constructing a  @ref BatchSort object is to specify the batch
+ * One way of constructing a @ref BatchSort object is to specify the batch
  * numbers (integers) @f$n_0, n_1, …, n_{d-1}@f$ in an array of size @f$d@f$
  * named `batchNumbers` passed to the constructor. The size @f$d@f$ must not
  * exceed the dimension of the objects to be sorted, and the product @f$p =
  * n_0 n_1 \cdots n_{d-1}@f$ must normally be equal to the number @f$n@f$ of
  * objects to be sorted, which is `iMax - iMin` when doing a partial sort,
  * and the total number of objects otherwise. This means that one should
- * normally use always the same @f$n@f$ after the  @ref BatchSort object has
+ * normally use always the same @f$n@f$ after the BatchSort object has
  * been constructed in this way, with a fixed @f$p@f$. The sorting method
  * always uses batch sizes at each level as if the number of objects was
  * exactly @f$p@f$. The batch size at level @f$j@f$ is @f$n_{j+1}
@@ -53,14 +53,14 @@ package umontreal.ssj.util.sort;
  * actually never used by the batch sort; at the last level, each batch is
  * sorted by the last coordinate regardless of its size.
  *
- * A second way of constructing a  @ref BatchSort object is by specifying an
+ * A second way of constructing a BatchSort object is by specifying an
  * array of non-negative doubles @f$\alpha_0,\alpha_1,…,\alpha_{d-1}@f$,
  * called *proportion exponents*, such that
  * @f$\alpha_0+\cdots+\alpha_{d-1} = 1@f$. For each number @f$n@f$ of
  * objects to be sorted, the batch numbers will be recomputed as
  * (approximately) @f$n_j = n^{\alpha_j}@f$. With this construction, one can
  * easily handle very different (arbitrary) values of @f$n@f$ with the same
- * @ref BatchSort object. The vector of batch numbers is recomputed each time
+ * BatchSort object. The vector of batch numbers is recomputed each time
  * we sort with a new value of @f$n@f$, as follows: @f$n_0 =
  * \lceil n^{\alpha_0} \rceil@f$, @f$n_1 = \lceil(n/n_0)^{\alpha_1}
  * \rceil@f$, …, @f$n_{d-1} = \lceil n / (n_0 \cdots n_{d-2}) \rceil@f$.
@@ -80,7 +80,7 @@ public class BatchSort<T extends MultiDimComparable<? super T>> implements Multi
    int nSaved = 0;       // Number n of objects last time sort was called.
 
    /**
-    * Constructs a  @ref BatchSort that will always use the (fixed) batch
+    * Constructs a BatchSort that will always use the (fixed) batch
     * numbers given in `batchNumbers`. These batch numbers can be changed
     * only by creating new object, of by using proportion exponents via
     * `setBatchExponents`. The number of objects to sort should not exceed
@@ -99,7 +99,7 @@ public class BatchSort<T extends MultiDimComparable<? super T>> implements Multi
    }
 
    /**
-    * Constructs a  @ref BatchSort that will use the proportion exponents
+    * Constructs a BatchSort that will use the proportion exponents
     * in `batchExponents`, which must contain non-negative numbers that
     * sum to 1.
     *  @param batchExponents proportion exponents to compute the batches
@@ -142,7 +142,7 @@ public class BatchSort<T extends MultiDimComparable<? super T>> implements Multi
     * Sets the vector of proportion exponents
     * @f$\alpha_0,\alpha_1,…,\alpha_{d-1}@f$ to the values in
     * `batchExponents`. These values must be non-negative and sum to 1.
-    * From now on, this  @ref BatchSort object will use proportion
+    * From now on, this BatchSort object will use proportion
     * exponents.
     *  @param batchExponents exponents in each dimension
     */

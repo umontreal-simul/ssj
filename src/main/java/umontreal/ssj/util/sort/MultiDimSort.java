@@ -40,9 +40,9 @@ package umontreal.ssj.util.sort;
  * @f$d-1@f$. These objects can be simply @f$d@f$-dimensional vectors of
  * <tt>double</tt>’s, which are sorted in the natural way according to any of
  * the @f$d@f$ coordinates. They can also be more general types of objects
- * that implement the  @ref MultiDimComparable interface, which is used to
+ * that implement the  @ref MultiDimComparable<T> interface, which is used to
  * sort them on any given coordinate. The ordering is then the one induced by
- * the method  umontreal.ssj.util.MultiDimComparable.compareTo, and the
+ * the method  \ref MultiDimComparable<T>#compareTo, and the
  * number of the largest coordinate used by the sort must not exceed
  * @f$d-1@f$, where the dimension @f$d@f$ refers to the value returned by
  * umontreal.ssj.util.MultiDimComparable.dimension. One can sort only a

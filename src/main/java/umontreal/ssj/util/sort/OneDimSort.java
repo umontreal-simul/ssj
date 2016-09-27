@@ -29,7 +29,7 @@ package umontreal.ssj.util.sort;
  * This class implements a  @ref MultiDimSortComparable that simply sorts the
  * objects according to a given sorting coordinate @f$j \ge0@f$ specified in
  * the constructor. One must have @f$j \in\{0,…,d-1\}@f$ where @f$d@f$ is
- * the dimension of the  @ref MultiDimComparable objects to be sorted. The
+ * the dimension of the  @ref MultiDimComparable<T> objects to be sorted. The
  * sort uses the method  java.util.Arrays.sort from class  Arrays. For
  * example, to sort objects based on the first coordinate, one should use
  * `OneDimSort(0)`. It is also possible to specify in the constructor the
@@ -45,8 +45,8 @@ public class OneDimSort<T extends MultiDimComparable<? super T>>
    private int d;
 
    /**
-    * Constructs a  @ref OneDimSort object that will sort the
-    * @ref MultiDimComparable objects according to coordinate @f$j@f$. The
+    * Constructs a OneDimSort object that will sort the
+    * @ref MultiDimComparable<T> objects according to coordinate @f$j@f$. The
     * sorted objects are assumed to have dimension `d`.
     */
    public OneDimSort (int j, int d) {
@@ -58,7 +58,7 @@ public class OneDimSort<T extends MultiDimComparable<? super T>>
    }
 
    /**
-    * Constructs a  @ref OneDimSort that will sort the objects with
+    * Constructs a  OneDimSort that will sort the objects with
     * respect to their coordinate @f$j@f$. The dimension returned by
     * #dimension() will then be @f$d=j+1@f$.
     */

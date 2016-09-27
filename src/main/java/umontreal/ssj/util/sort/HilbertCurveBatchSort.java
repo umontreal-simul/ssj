@@ -78,7 +78,7 @@ public class HilbertCurveBatchSort <T extends MultiDimComparable<? super T>> imp
    int nSavedIndex = 0;   // Value of n for which indexH is now computed.
 
    /**
-    * Constructs a  @ref HilbertCurveBatchSort that will use the
+    * Constructs a HilbertCurveBatchSort that will use the
     * @f$\alpha_j@f$ specified in `batchesExponents` for the batch sort.
     * They must be non-negative numbers and their sum must equal 1. The
     * dimension @f$d@f$ of this array will be the dimension for the sort.
@@ -88,6 +88,7 @@ public class HilbertCurveBatchSort <T extends MultiDimComparable<? super T>> imp
     * #getHilbertCurveMap.
     *  @param batchExponents proportion exponents @f$\alpha_j@f$ to
     *                        compute the batches sizes
+    *  @param m              the number of bits for each coordinate
     */
    public HilbertCurveBatchSort (double[] batchExponents, int m) {
       hcMap = new HilbertCurveMap(batchExponents.length, m);
@@ -104,6 +105,8 @@ public class HilbertCurveBatchSort <T extends MultiDimComparable<? super T>> imp
     * and same number of bits @f$m@f$.
     *  @param batchExponents proportion exponents @f$\alpha_j@f$ to
     *                        compute the batches sizes
+    *  @param m              the number of bits for each coordinate
+    *  @param map            the mapping object to use
     */
    public HilbertCurveBatchSort (double[] batchExponents, int m, HilbertCurveMap map) {
       dimension = batchExponents.length;
@@ -161,7 +164,7 @@ public class HilbertCurveBatchSort <T extends MultiDimComparable<? super T>> imp
    }
 
    /**
-    * Sorts the subarray `a[iMin..iMax-1]` of  @ref MultiDimComparable
+    * Sorts the subarray `a[iMin..iMax-1]` of  @ref MultiDimComparable<T>
     * objects with this sort.
     */
    @Override
@@ -171,10 +174,10 @@ public class HilbertCurveBatchSort <T extends MultiDimComparable<? super T>> imp
            computeIndexH (iMax-iMin); // This changes nSavedIndex.
         bsort.sort (a, iMin, iMax);   // This changes nSaved if needed.
         // Now use the sorted indexH to sort a.  
-	// First make a copy, and pick the elements from this unmodified copy. 
+        // First make a copy, and pick the elements from this unmodified copy. 
         T[] aclone = a.clone(); // We should not clone all the objects in a, 
-	                        // but only the array of pointers. 
-				// T[] aclone = new Object[iMax];
+	                            // but only the array of pointers. 
+		// T[] aclone = new Object[iMax];
 
         for (int i = iMin; i < iMax; ++i) {
            a[i] = aclone[(int) indexH[i][0]];
@@ -187,14 +190,15 @@ public class HilbertCurveBatchSort <T extends MultiDimComparable<? super T>> imp
    public void sort (T[] a) {
       sort (a, 0, a.length);
    }
+   
    @Override
    public void sort (double[][] a, int iMin, int iMax) {
         if (iMin+1 == iMax) return;
         if (iMax-iMin != nSavedIndex) 
            computeIndexH (iMax-iMin); // This changes nSavedIndex.
-	bsort.sort (a, iMin, iMax);   // This changes nSaved if needed.
+	    bsort.sort (a, iMin, iMax);   // This changes nSaved if needed.
         // Now use the sorted indexH to sort a.  
-	// First make a copy, and pick the elements from this unmodified copy. 
+	    // First make a copy, and pick the elements from this unmodified copy. 
         double[][] aclone = a.clone(); 
         for (int i = iMin; i < iMax; ++i) {
             a[i] = aclone[(int) indexH[i][0]];

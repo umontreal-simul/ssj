@@ -36,14 +36,14 @@ package umontreal.ssj.util.sort;
   import java.util.Arrays;
 
 /**
- * This class implements a  @ref MultiDimSort01 that can sort an array of
+ * This class implements a  @ref MultiDimSort01<T extends MultiDim01> that can sort an array of
  * points in the @f$d@f$-dimensional unit hypercube @f$[0,1)^d@f$, by
  * following a Hilbert curve, and using (at most) the first @f$m@f$ bits of
  * each point. See @cite iHAM07a&thinsp;. The objects sorted by this class
  * can only be points in @f$[0,1)^d@f$, represented as arrays of `double`.
- * This sort does not apply directly to more general  @ref MultiDimComparable
- * objects. For that, see the classes  HilbertCurveSplitSort and
- * @ref HilbertCurveBatchSort instead. However, this sort can be applied to
+ * This sort does not apply directly to more general  @ref MultiDimComparable<T>
+ * objects. For that, see the class \ref HilbertCurveBatchSort instead. 
+ * However, this sort can be applied to
  * points in another space if we first define a mapping between this space
  * and the unit hypercube. For example, to sort points in the real space, it
  * suffices to map each coordinate to @f$[0,1)@f$.
@@ -106,7 +106,7 @@ package umontreal.ssj.util.sort;
  * #getIndexAfterSort(). This access can be convenient for example in case we
  * sort a `double[][]` array with the Hilbert sort and want to apply the
  * corresponding permutation afterward to another array of objects. Certain
- * subclasses of  @ref HilbertCurveSort use this.
+ * subclasses of HilbertCurveSort use this.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -120,7 +120,7 @@ public class HilbertCurveSort implements MultiDimSort01<MultiDim01> {
     HilbertCurveMap hcMap; // The map used for sorting
 
    /**
-    * Constructs a  @ref HilbertCurveSort object that will use the first
+    * Constructs a HilbertCurveSort object that will use the first
     * @f$m@f$ bits of each of the first `d` coordinates to sort the
     * points. The constructor will initialize a  @ref HilbertCurveMap with
     * arguments `d` and @f$m@f$. This map can be accessed with

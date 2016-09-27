@@ -29,7 +29,7 @@ import umontreal.ssj.randvar.*;
 
 /**
  * The geometric normal inverse gaussian (GNIG) process is the exponentiation
- * of a  @ref NormalInverseGaussianProcess:
+ * of a  @ref NormalInverseGaussianProcess :
  * @f[
  *   S(t) = S_0 \exp\left[ (r-\omega_{RN})t + \mbox{NIG}(t;\alpha,\beta,\mu,\delta) \right],
  * @f]

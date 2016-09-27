@@ -49,7 +49,7 @@ public class RatioFunction implements MultivariateFunction {
    }
 
    /**
-    * Returns the value returned by  #evaluate(double[]) in the case where
+    * Returns the value returned by  #evaluate in the case where
     * the @f$0/0@f$ function is calculated. The default value for
     * @f$0/0@f$ is `Double.NaN`.
     *
@@ -71,7 +71,7 @@ public class RatioFunction implements MultivariateFunction {
    }
 
    /**
-    * Sets the value returned by  #evaluate(double[]) for the undefined
+    * Sets the value returned by #evaluate for the undefined
     * function @f$0/0@f$ to `zeroOverZero`. See  #getZeroOverZeroValue for
     * more information.
     *  @param zeroOverZero the new value for @f$0/0@f$.

@@ -265,11 +265,7 @@
  * specialized class also provides static method which perform the same
  * action. Although they allow one to avoid object creation, their signatures
  * are specific to the used distribution and they have to perform setup-time
- * operations on each variate generation, which can become inefficient. The
- * @ref umontreal.ssj.randvar package also provides the class
- * @ref umontreal.ssj.randvar.RandomVariateTrans to apply transformations to
- * a generator. This allows, for example, to generate variates from a
- * truncated distribution.
+ * operations on each variate generation, which can become inefficient. 
  * 
  * 
  * @section REF_0_sec_04 Performing simulation
@@ -284,7 +280,7 @@
  * the right order. Events are user-defined subclasses of
  * @ref umontreal.ssj.simevents.Event. When an event occurs, any type of
  * actions can then be taken. The package provides a class called
- * @ref umontreal.ssj.simevents.List which implements a linked list
+ * @ref umontreal.ssj.simevents.LinkedListStat<E> which implements a linked list
  * supporting statistical collection. Continuous simulation can be performed
  * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
  * event framework to resolve differential equations numerically at fixed
