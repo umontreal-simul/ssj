@@ -213,10 +213,10 @@ public class MatrixOfTallies<E extends Tally> extends MatrixOfStatProbes<E> {
     * there are not enough observations for estimating the variance,
     * `Double.NaN` is stored in the corresponding element of the given
     * matrix `m`.
-    *  @param m            the matrix to be filled with sample variances.
+    *  @param m   the matrix to be filled with sample variances.
     *  @exception NullPointerException if `m` is `null`.
     *  @exception IllegalArgumentException if `m.rows()` does not
-    * correspond to  #rows, or `m.columns()` does not correspond to
+    * correspond to  \ref #rows , or `m.columns()` does not correspond to
     * #columns.
     */
    public void variance (DoubleMatrix2D m) {
