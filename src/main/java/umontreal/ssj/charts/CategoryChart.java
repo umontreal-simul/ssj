@@ -79,6 +79,15 @@ public abstract class CategoryChart {
    public Axis getYAxis() {
       return YAxis;
    }
+
+  /**
+    * Displays the chart on the screen using Swing. 
+    *
+    *  @param width     frame width
+    *  @param height    frame height
+    *
+    *  @return frame containing the chart
+    */
    public abstract JFrame view (int width, int height);
 
    /**
@@ -91,8 +100,9 @@ public abstract class CategoryChart {
 
    /**
     * Sets a title to this chart. This title will appear on the chart
-    * displayed by method  #view.
-    *  @param title        chart title.
+    * displayed by method @ref #view.
+    *
+    *  @param title        chart title
     */
    public void setTitle (String title) {
       chart.setTitle(title);

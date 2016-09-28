@@ -358,6 +358,7 @@ public class PlotFormat {
     *  @param betweenValues `String` which separates values on the same
     *                       line.
     *  @param endLine      `String` which separates lines.
+    *  @param precision    number of decimal
     *  @param data         data tables.
     *  @return String that represent data tables in customized format.
     */
@@ -387,7 +388,9 @@ public class PlotFormat {
     *  @param betweenValues `String` which separates values on the same
     *                       line.
     *  @param endLine      `String` which separates lines.
+    *  @param precision    number of decimal
     *  @param data         data tables.
+    *
     *  @return String that represent data tables in customized format.
     */
    public static String toCustomizedFormat (String heading, String footer,

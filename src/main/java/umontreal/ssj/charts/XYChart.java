@@ -296,6 +296,7 @@ public void setAutoRange00 (boolean xZero, boolean yZero) {
  * = [xmin, xmax, ymin, ymax]`. If `xZero` is `true`, the vertical axis will
  * pass through the point @f$(0, y)@f$. If `yZero` is `true`, the horizontal
  * axis will pass through the point @f$(x, 0)@f$.
+  * @param range        new axis ranges.
  *  @param xZero        true if vertical axis passes through point 0
  *  @param yZero        true if horizontal axis passes through point 0
  */
