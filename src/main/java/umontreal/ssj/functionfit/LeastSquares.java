@@ -134,8 +134,9 @@ public class LeastSquares {
     * Given the @f$n@f$ data points @f$(X_i, Y_i)@f$, @f$i=0,1,…,(n-1)@f$,
     * the method computes and returns the array @f$[\beta_0, \beta_1, …,
     * \beta_k]@f$. Restriction: @f$n > k@f$.
-    *  @param X            the regressor variables
-    *  @param Y            the response
+    *  @param X     the regressor variables
+    *  @param Y     the response
+    *  @param deg   degree of the function    
     *  @return the regression coefficients
     */
    public static double[] calcCoefficients (double[] X, double[] Y, int deg) {

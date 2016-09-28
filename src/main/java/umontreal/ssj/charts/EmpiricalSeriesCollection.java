@@ -111,7 +111,8 @@ public class EmpiricalSeriesCollection extends SSJXYSeriesCollection {
     * parameters and a given series `data`. The values of `data` *must be
     * sorted* in increasing order. However, only *the first* `numPoints`
     * of `data` will be considered for the series.
-    *  @param data         series of point sets.
+    *  @param data         series of point sets
+    *  @param numPoints    number of points to plot
     */
    public EmpiricalSeriesCollection (double[] data, int numPoints) {
       seriesCollection = new XYSeriesCollection();
