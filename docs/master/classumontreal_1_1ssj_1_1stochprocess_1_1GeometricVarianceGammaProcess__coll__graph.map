@@ -1,11 +1,11 @@
 <map id="GeometricVarianceGammaProcess" name="GeometricVarianceGammaProcess">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="132,184,271,211"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" title="This class represents a variance gamma (VG) process . " alt="" coords="173,363,355,389"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotion.html" title="This class represents a Brownian motion process , sampled at times . " alt="" coords="137,273,263,300"/>
-<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ..." alt="" coords="339,273,463,300"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="5,184,101,211"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="239,95,388,121"/>
-<area shape="rect" id="node10" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" title="This class implements random variate generators for the gamma distribution. " alt="" coords="297,184,397,211"/>
-<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="253,5,352,32"/>
-<area shape="rect" id="node8" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="376,5,499,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="123,184,255,211"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" title="This class represents a variance gamma (VG) process . " alt="" coords="163,363,330,389"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotion.html" title="This class represents a Brownian motion process , sampled at times . " alt="" coords="129,273,244,300"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ..." alt="" coords="319,273,435,300"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="5,184,93,211"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="231,95,367,121"/>
+<area shape="rect" id="node10" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" title="This class implements random variate generators for the gamma distribution. " alt="" coords="281,184,373,211"/>
+<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="245,5,333,32"/>
+<area shape="rect" id="node8" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="358,5,471,32"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="InverseGaussianProcess" name="InverseGaussianProcess">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="5,5,144,32"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="168,5,291,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="161,5,275,32"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="GammaProcessBridge" name="GammaProcessBridge">
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessSymmetricalBridge.html" title="This class differs from GammaProcessBridge only in that it requires the number of interval of the pat..." alt="" coords="5,229,255,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ..." alt="" coords="68,80,192,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="61,5,199,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessSymmetricalBridge.html" title="This class differs from GammaProcessBridge only in that it requires the number of interval of the pat..." alt="" coords="5,229,232,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ..." alt="" coords="61,80,177,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="53,5,185,32"/>
 </map>

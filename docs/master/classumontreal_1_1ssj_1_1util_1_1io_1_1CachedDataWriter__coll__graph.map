@@ -1,4 +1,4 @@
 <map id="CachedDataWriter" name="CachedDataWriter">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataWriter.html" title="This abstract class implements shared functionality for data writers. " alt="" coords="5,89,152,115"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataWriter.html" title="Data writer interface. " alt="" coords="32,5,125,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataWriter.html" title="This abstract class implements shared functionality for data writers. " alt="" coords="5,89,140,115"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataWriter.html" title="Data writer interface. " alt="" coords="30,5,115,32"/>
 </map>

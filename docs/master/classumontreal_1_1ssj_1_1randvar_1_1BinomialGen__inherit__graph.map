@@ -1,5 +1,5 @@
 <map id="BinomialGen" name="BinomialGen">
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1BinomialConvolutionGen.html" title="Implements binomial random variate generators using the convolution method. " alt="" coords="5,229,189,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html" title="This is the base class for all generators of discrete random variates over the set of integers..." alt="" coords="14,80,181,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="23,5,172,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1BinomialConvolutionGen.html" title="Implements binomial random variate generators using the convolution method. " alt="" coords="5,229,171,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html" title="This is the base class for all generators of discrete random variates over the set of integers..." alt="" coords="13,80,163,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="20,5,156,32"/>
 </map>

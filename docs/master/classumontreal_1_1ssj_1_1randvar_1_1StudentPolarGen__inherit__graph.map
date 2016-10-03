@@ -1,4 +1,4 @@
 <map id="StudentPolarGen" name="StudentPolarGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1StudentGen.html" title="This class implements methods for generating random variates from the Student distribution with &#160;degr..." alt="" coords="31,80,129,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1StudentGen.html" title="This class implements methods for generating random variates from the Student distribution with &#160;degr..." alt="" coords="28,80,119,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,5,141,32"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="ListOfStatProbes&lt; E extends StatProbe &gt;" name="ListOfStatProbes&lt; E extends StatProbe &gt;">
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies_3_01E_01extendsFunctionOfMultipleMeansTally_01_4.html" title="Represents a list of tally statistical collectors for a vector of functions of multiple means..." alt="" coords="363,5,583,61"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies_3_01E_01extends_01Tally_01_4.html" title="Represents a list of tally statistical collectors. " alt="" coords="389,85,556,126"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTalliesWithCovariance_3_01E_01extends_01Tally_01_4.html" title="Extends ListOfTallies to add support for the computation of the sample covariance between each pair o..." alt="" coords="631,85,819,126"/>
+</map>

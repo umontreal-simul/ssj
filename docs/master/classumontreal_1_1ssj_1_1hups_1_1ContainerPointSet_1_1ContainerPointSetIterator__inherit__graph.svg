@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 548;
+var viewWidth = 502;
 var viewHeight = 88;
 var sectionId = 'dynsection-0';
 </script>
@@ -56,47 +56,47 @@ var sectionId = 'dynsection-0';
 <title>ContainerPointSet.ContainerPointSetIterator</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="165,-24.5 165,-54.5 320,-54.5 320,-24.5 165,-24.5"/>
-<text text-anchor="start" x="173" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContainerPointSet.Container</text>
-<text text-anchor="middle" x="242.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
+<polygon fill="#bfbfbf" stroke="black" points="152,-24.5 152,-54.5 293,-54.5 293,-24.5 152,-24.5"/>
+<text text-anchor="start" x="160" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContainerPointSet.Container</text>
+<text text-anchor="middle" x="222.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet_1_1AntitheticPointSetIterator.html" target="_top" xlink:title="AntitheticPointSet.Antithetic\lPointSetIterator">
-<polygon fill="none" stroke="black" points="370.5,-49.5 370.5,-79.5 525.5,-79.5 525.5,-49.5 370.5,-49.5"/>
-<text text-anchor="start" x="378.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">AntitheticPointSet.Antithetic</text>
-<text text-anchor="middle" x="448" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
+<polygon fill="none" stroke="black" points="341.5,-49.5 341.5,-79.5 481.5,-79.5 481.5,-49.5 341.5,-49.5"/>
+<text text-anchor="start" x="349.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">AntitheticPointSet.Antithetic</text>
+<text text-anchor="middle" x="411.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M330.268,-50.1595C343.618,-51.7995 357.318,-53.4826 370.424,-55.0927"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="330.497,-46.6613 320.145,-48.9158 329.643,-53.6091 330.497,-46.6613"/>
+<path fill="none" stroke="midnightblue" d="M303.231,-50.1593C315.941,-51.8584 328.997,-53.6038 341.433,-55.2664"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="303.508,-46.6651 293.132,-48.8091 302.58,-53.6034 303.508,-46.6651"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet_1_1BakerTransformedPointSetIterator.html" target="_top" xlink:title="BakerTransformedPointSet.\lBakerTransformedPointSetIterator">
-<polygon fill="none" stroke="black" points="356,-0.5 356,-30.5 540,-30.5 540,-0.5 356,-0.5"/>
-<text text-anchor="start" x="364" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedPointSet.</text>
-<text text-anchor="middle" x="448" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedPointSetIterator</text>
+<polygon fill="none" stroke="black" points="329,-0.5 329,-30.5 494,-30.5 494,-0.5 329,-0.5"/>
+<text text-anchor="start" x="337" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedPointSet.</text>
+<text text-anchor="middle" x="411.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedPointSetIterator</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M330.309,-29.2621C338.711,-28.2712 347.252,-27.2638 355.697,-26.268"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="329.666,-25.8136 320.145,-30.4608 330.486,-32.7654 329.666,-25.8136"/>
+<path fill="none" stroke="midnightblue" d="M303.053,-29.29C311.581,-28.1955 320.267,-27.0807 328.819,-25.9831"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="302.605,-25.8187 293.132,-30.5633 303.496,-32.7617 302.605,-25.8187"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<polygon fill="none" stroke="#bfbfbf" points="0,-30 0,-49 129,-49 129,-30 0,-30"/>
-<text text-anchor="middle" x="64.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultPointSetIterator</text>
+<polygon fill="none" stroke="#bfbfbf" points="0,-30 0,-49 116,-49 116,-30 0,-30"/>
+<text text-anchor="middle" x="58" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultPointSetIterator</text>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M139.249,-39.5C147.709,-39.5 156.35,-39.5 164.848,-39.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="139.04,-36.0001 129.04,-39.5 139.04,-43.0001 139.04,-36.0001"/>
+<path fill="none" stroke="midnightblue" d="M126.427,-39.5C134.84,-39.5 143.457,-39.5 151.902,-39.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="126.291,-36.0001 116.291,-39.5 126.291,-43.0001 126.291,-36.0001"/>
 </g>
 </g>
 </svg>

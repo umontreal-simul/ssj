@@ -1,3 +1,8 @@
 <map id="CachedPointSet" name="CachedPointSet">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="29,5,105,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1IndependentPointsCached.html" title="Similar to IndependentPoints, but the points are all generated and stored (cached) when the point set..." alt="" coords="291,5,465,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1LatinHypercube.html" title="Implements Latin Hypercube Sampling (LHS) with &#160;points in the &#45;dimensional unit hypercube. " alt="" coords="321,56,435,83"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1SortedAndCutPointSet.html" title="SortedAndCutPointSet" alt="" coords="301,107,455,133"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1StratifiedUnitCube.html" title="This class implements a stratification of the unit cube in rectangular boxes of same size and orienta..." alt="" coords="313,157,443,184"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1StratifiedUnitCubeAnti.html" title="This class implements a stratification of the unit cube in rectangular boxes of same size and orienta..." alt="" coords="302,208,454,235"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="5,107,77,133"/>
 </map>

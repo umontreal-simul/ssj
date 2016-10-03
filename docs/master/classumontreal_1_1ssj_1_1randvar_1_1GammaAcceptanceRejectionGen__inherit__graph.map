@@ -1,4 +1,4 @@
 <map id="GammaAcceptanceRejectionGen" name="GammaAcceptanceRejectionGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" title="This class implements random variate generators for the gamma distribution. " alt="" coords="73,80,173,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="49,5,198,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" title="This class implements random variate generators for the gamma distribution. " alt="" coords="67,80,159,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="45,5,181,32"/>
 </map>

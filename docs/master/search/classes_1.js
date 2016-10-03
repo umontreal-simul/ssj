@@ -5,6 +5,8 @@ var searchData=
   ['bakertransformedstream',['BakerTransformedStream',['../classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html',1,'umontreal::ssj::rng']]],
   ['bankev',['BankEv',['../classBankEv.html',1,'']]],
   ['basicrandomstreamfactory',['BasicRandomStreamFactory',['../classumontreal_1_1ssj_1_1rng_1_1BasicRandomStreamFactory.html',1,'umontreal::ssj::rng']]],
+  ['batchsort_3c_20t_20extends_20multidimcomparable_3c_3fsuper_20t_20_3e_20_3e',['BatchSort&lt; T extends MultiDimComparable&lt;?super T &gt; &gt;',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort_3_01T_01extends_01MultiDimComparable_3_04super_01T_01_4_01_4.html',1,'umontreal::ssj::util::sort']]],
+  ['batchsortpow2',['BatchSortPow2',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSortPow2.html',1,'umontreal::ssj::util::sort']]],
   ['bernoullidist',['BernoulliDist',['../classumontreal_1_1ssj_1_1probdist_1_1BernoulliDist.html',1,'umontreal::ssj::probdist']]],
   ['bernoulligen',['BernoulliGen',['../classumontreal_1_1ssj_1_1randvar_1_1BernoulliGen.html',1,'umontreal::ssj::randvar']]],
   ['betadist',['BetaDist',['../classumontreal_1_1ssj_1_1probdist_1_1BetaDist.html',1,'umontreal::ssj::probdist']]],

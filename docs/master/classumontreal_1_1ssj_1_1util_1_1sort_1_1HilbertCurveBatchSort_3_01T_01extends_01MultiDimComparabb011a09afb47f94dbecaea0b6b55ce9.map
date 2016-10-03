@@ -1,0 +1,7 @@
+<map id="HilbertCurveBatchSort&lt; T extends MultiDimComparable&lt;?super T &gt; &gt;" name="HilbertCurveBatchSort&lt; T extends MultiDimComparable&lt;?super T &gt; &gt;">
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable_3_01T_01extends_01MultiDimCo45d0e8774cd123522345c6e0f6ef4062.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort objects..." alt="" coords="185,5,404,61"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort_3_01T_01extends_01MultiDimComparable_3_04super_01T_01_4_01_4.html" title="This class implements a MultiDimSortComparable that performs a batch sort on multivariate arrays..." alt="" coords="453,45,609,101"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort_3_01T_01_4.html" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="5,20,136,47"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSortPow2.html" title="This is a subclass of BatchSort for which the batch numbers &#160;are always powers of 2..." alt="" coords="662,52,775,79"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveMap.html" title="This class implements the mapping of a Hilbert curve in the &#45;dimensional unit hypercube ..." alt="" coords="659,103,779,129"/>
+</map>

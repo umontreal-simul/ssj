@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 560;
+var viewWidth = 524;
 var viewHeight = 294;
 var sectionId = 'dynsection-0';
 </script>
@@ -56,138 +56,138 @@ var sectionId = 'dynsection-0';
 <title>MathFunctionWithFirstDerivative</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="118,-133.5 118,-152.5 294,-152.5 294,-133.5 118,-133.5"/>
-<text text-anchor="middle" x="206" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithFirstDerivative</text>
+<polygon fill="#bfbfbf" stroke="black" points="112,-133.5 112,-152.5 272,-152.5 272,-133.5 112,-133.5"/>
+<text text-anchor="middle" x="192" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithFirstDerivative</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html" target="_top" xlink:title="Represents a B&#45;spline with control points at . ">
-<polygon fill="none" stroke="black" points="366.5,-266.5 366.5,-285.5 419.5,-285.5 419.5,-266.5 366.5,-266.5"/>
-<text text-anchor="middle" x="393" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">BSpline</text>
+<polygon fill="none" stroke="black" points="341,-266.5 341,-285.5 391,-285.5 391,-266.5 341,-266.5"/>
+<text text-anchor="middle" x="366" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">BSpline</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M221.464,-160.718C242.739,-185.669 284.858,-231.009 330,-257 341.122,-263.404 354.634,-267.872 366.201,-270.859"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="223.943,-158.226 214.838,-152.808 218.577,-162.721 223.943,-158.226"/>
+<path fill="none" stroke="midnightblue" d="M206.61,-160.947C226.373,-185.848 265.346,-230.767 308,-257 318.04,-263.175 330.323,-267.601 340.912,-270.618"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="209.132,-158.489 200.226,-152.75 203.609,-162.79 209.132,-158.489"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1functionfit_1_1SmoothingCubicSpline.html" target="_top" xlink:title="Represents a cubic spline with nodes at &#160;computed with the smoothing cubic spline algorithm of Schoen...">
-<polygon fill="none" stroke="black" points="330,-228.5 330,-247.5 456,-247.5 456,-228.5 330,-228.5"/>
-<text text-anchor="middle" x="393" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">SmoothingCubicSpline</text>
+<polygon fill="none" stroke="black" points="308,-228.5 308,-247.5 424,-247.5 424,-228.5 308,-228.5"/>
+<text text-anchor="middle" x="366" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">SmoothingCubicSpline</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M228.306,-158.524C252.117,-175.299 292.29,-201.914 330,-219 337.999,-222.624 346.879,-225.803 355.361,-228.473"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="230.195,-155.573 220.021,-152.618 226.132,-161.273 230.195,-155.573"/>
+<path fill="none" stroke="midnightblue" d="M213.126,-158.676C235.346,-175.402 272.665,-201.806 308,-219 315.41,-222.606 323.675,-225.795 331.561,-228.482"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="215.19,-155.849 205.115,-152.571 210.947,-161.416 215.19,-155.849"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1functions_1_1AverageMathFunction.html" target="_top" xlink:title="Represents a function computing the average of several functions. ">
-<polygon fill="none" stroke="black" points="332,-190.5 332,-209.5 454,-209.5 454,-190.5 332,-190.5"/>
-<text text-anchor="middle" x="393" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">AverageMathFunction</text>
+<polygon fill="none" stroke="black" points="310,-190.5 310,-209.5 422,-209.5 422,-190.5 310,-190.5"/>
+<text text-anchor="middle" x="366" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">AverageMathFunction</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M247.643,-155.582C271.607,-162.994 302.524,-172.546 330,-181 340.007,-184.079 350.926,-187.429 360.773,-190.446"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="248.417,-152.158 237.829,-152.546 246.348,-158.845 248.417,-152.158"/>
+<path fill="none" stroke="midnightblue" d="M231.6,-155.792C263.278,-166.29 307.434,-180.923 336.117,-190.428"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="232.382,-152.364 221.789,-152.541 230.18,-159.009 232.382,-152.364"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1functions_1_1IdentityMathFunction.html" target="_top" xlink:title="Represents the identity function . ">
-<polygon fill="none" stroke="black" points="333.5,-152.5 333.5,-171.5 452.5,-171.5 452.5,-152.5 333.5,-152.5"/>
-<text text-anchor="middle" x="393" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">IdentityMathFunction</text>
+<polygon fill="none" stroke="black" points="312,-152.5 312,-171.5 420,-171.5 420,-152.5 312,-152.5"/>
+<text text-anchor="middle" x="366" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">IdentityMathFunction</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M304.075,-152.97C314.06,-153.995 323.974,-155.014 333.35,-155.976"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="304.388,-149.484 294.083,-151.944 303.673,-156.447 304.388,-149.484"/>
+<path fill="none" stroke="midnightblue" d="M282.276,-152.862C292.348,-153.975 302.361,-155.081 311.76,-156.119"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="282.527,-149.368 272.204,-151.749 281.759,-156.326 282.527,-149.368"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1functions_1_1Polynomial.html" target="_top" xlink:title="Represents a polynomial of degree &#160;in power form. ">
-<polygon fill="none" stroke="black" points="357.5,-114.5 357.5,-133.5 428.5,-133.5 428.5,-114.5 357.5,-114.5"/>
-<text text-anchor="middle" x="393" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">Polynomial</text>
+<polygon fill="none" stroke="black" points="333.5,-114.5 333.5,-133.5 398.5,-133.5 398.5,-114.5 333.5,-114.5"/>
+<text text-anchor="middle" x="366" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">Polynomial</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M304.288,-133.008C323.201,-131.066 341.846,-129.151 357.05,-127.589"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="303.673,-129.553 294.083,-134.056 304.388,-136.516 303.673,-129.553"/>
+<path fill="none" stroke="midnightblue" d="M282.392,-133.125C300.73,-131.1 318.863,-129.097 333.447,-127.485"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="281.759,-129.674 272.204,-134.251 282.527,-136.632 281.759,-129.674"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
 <g id="a_node9"><a xlink:href="classumontreal_1_1ssj_1_1functions_1_1PowerMathFunction.html" target="_top" xlink:title="Represents a function computing &#160;for a user&#45;defined function &#160;and power . ">
-<polygon fill="none" stroke="black" points="337,-76.5 337,-95.5 449,-95.5 449,-76.5 337,-76.5"/>
-<text text-anchor="middle" x="393" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">PowerMathFunction</text>
+<polygon fill="none" stroke="black" points="314,-76.5 314,-95.5 418,-95.5 418,-76.5 314,-76.5"/>
+<text text-anchor="middle" x="366" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">PowerMathFunction</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge"><title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M247.643,-130.418C271.607,-123.006 302.524,-113.454 330,-105 340.007,-101.921 350.926,-98.5715 360.773,-95.5545"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="246.348,-127.155 237.829,-133.454 248.417,-133.842 246.348,-127.155"/>
+<path fill="none" stroke="midnightblue" d="M231.6,-130.208C263.278,-119.71 307.434,-105.077 336.117,-95.5716"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="230.18,-126.991 221.789,-133.459 232.382,-133.636 230.18,-126.991"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
 <g id="a_node10"><a xlink:href="classumontreal_1_1ssj_1_1functions_1_1ShiftedMathFunction.html" target="_top" xlink:title="Represents a function computing &#160;for a user&#45;defined function &#160;and shift . ">
-<polygon fill="none" stroke="black" points="335,-38.5 335,-57.5 451,-57.5 451,-38.5 335,-38.5"/>
-<text text-anchor="middle" x="393" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShiftedMathFunction</text>
+<polygon fill="none" stroke="black" points="312.5,-38.5 312.5,-57.5 419.5,-57.5 419.5,-38.5 312.5,-38.5"/>
+<text text-anchor="middle" x="366" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShiftedMathFunction</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge9" class="edge"><title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M228.306,-127.476C252.117,-110.701 292.29,-84.0858 330,-67 337.999,-63.376 346.879,-60.1965 355.361,-57.5271"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="226.132,-124.727 220.021,-133.382 230.195,-130.427 226.132,-124.727"/>
+<path fill="none" stroke="midnightblue" d="M213.126,-127.324C235.346,-110.598 272.665,-84.1936 308,-67 315.41,-63.3944 323.675,-60.2047 331.561,-57.5177"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="210.947,-124.584 205.115,-133.429 215.19,-130.151 210.947,-124.584"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
 <g id="a_node11"><a xlink:href="classumontreal_1_1ssj_1_1functions_1_1SquareMathFunction.html" target="_top" xlink:title="Represents a function computing &#160;for a user&#45;defined function . ">
-<polygon fill="none" stroke="black" points="335,-0.5 335,-19.5 451,-19.5 451,-0.5 335,-0.5"/>
-<text text-anchor="middle" x="393" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SquareMathFunction</text>
+<polygon fill="none" stroke="black" points="312.5,-0.5 312.5,-19.5 419.5,-19.5 419.5,-0.5 312.5,-0.5"/>
+<text text-anchor="middle" x="366" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SquareMathFunction</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge"><title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M221.464,-125.282C242.739,-100.331 284.858,-54.9908 330,-29 336.634,-25.1802 344.119,-22.0491 351.533,-19.5103"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="218.577,-123.279 214.838,-133.192 223.943,-127.774 218.577,-123.279"/>
+<path fill="none" stroke="midnightblue" d="M206.61,-125.053C226.373,-100.152 265.346,-55.2333 308,-29 314.131,-25.2294 321.098,-22.1112 328.004,-19.5674"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="203.609,-123.21 200.226,-133.25 209.132,-127.511 203.609,-123.21"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" target="_top" xlink:title="This interface should be implemented by classes which represent univariate mathematical functions...">
-<polygon fill="none" stroke="black" points="0,-133.5 0,-152.5 82,-152.5 82,-133.5 0,-133.5"/>
-<text text-anchor="middle" x="41" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunction</text>
+<polygon fill="none" stroke="black" points="0,-133.5 0,-152.5 76,-152.5 76,-133.5 0,-133.5"/>
+<text text-anchor="middle" x="38" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunction</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M92.3565,-143C100.534,-143 109.204,-143 117.96,-143"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="92.2922,-139.5 82.2921,-143 92.2921,-146.5 92.2922,-139.5"/>
+<path fill="none" stroke="midnightblue" d="M86.2394,-143C94.4267,-143 103.136,-143 111.901,-143"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="86.1834,-139.5 76.1834,-143 86.1833,-146.5 86.1834,-139.5"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1functionfit_1_1PolInterp.html" target="_top" xlink:title="Represents a polynomial that interpolates through a set of points. ">
-<polygon fill="none" stroke="black" points="492,-114.5 492,-133.5 552,-133.5 552,-114.5 492,-114.5"/>
-<text text-anchor="middle" x="522" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">PolInterp</text>
+<polygon fill="none" stroke="black" points="460,-114.5 460,-133.5 516,-133.5 516,-114.5 460,-114.5"/>
+<text text-anchor="middle" x="488" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">PolInterp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge7" class="edge"><title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M438.8,-124C456.443,-124 476.201,-124 491.923,-124"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="438.703,-120.5 428.703,-124 438.703,-127.5 438.703,-120.5"/>
+<path fill="none" stroke="midnightblue" d="M408.725,-124C425.634,-124 444.683,-124 459.756,-124"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="408.529,-120.5 398.529,-124 408.529,-127.5 408.529,-120.5"/>
 </g>
 </g>
 </svg>

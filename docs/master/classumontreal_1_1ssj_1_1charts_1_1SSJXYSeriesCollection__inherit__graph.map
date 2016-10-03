@@ -1,6 +1,6 @@
 <map id="SSJXYSeriesCollection" name="SSJXYSeriesCollection">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1EmpiricalSeriesCollection.html" title="Stores data used in a EmpiricalChart. " alt="" coords="5,80,193,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1HistogramSeriesCollection.html" title="Stores data used in a HistogramChart. " alt="" coords="218,80,413,107"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html" title="This class extends umontreal.ssj.charts.SSJXYSeriesCollection. " alt="" coords="437,80,604,107"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1YListSeriesCollection.html" title="This class extends umontreal.ssj.charts.XYListSeriesCollection. " alt="" coords="441,155,600,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1EmpiricalSeriesCollection.html" title="Stores data used in a EmpiricalChart. " alt="" coords="5,80,176,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1HistogramSeriesCollection.html" title="Stores data used in a HistogramChart. " alt="" coords="201,80,378,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html" title="This class extends umontreal.ssj.charts.SSJXYSeriesCollection. " alt="" coords="402,80,558,107"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1YListSeriesCollection.html" title="This class extends umontreal.ssj.charts.XYListSeriesCollection. " alt="" coords="407,155,553,181"/>
 </map>

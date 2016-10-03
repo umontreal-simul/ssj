@@ -29,6 +29,6 @@ var searchData=
   ['distribution',['Distribution',['../interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html',1,'umontreal::ssj::probdist']]],
   ['distributionfactory',['DistributionFactory',['../classumontreal_1_1ssj_1_1probdist_1_1DistributionFactory.html',1,'umontreal::ssj::probdist']]],
   ['dmatrix',['DMatrix',['../classumontreal_1_1ssj_1_1util_1_1DMatrix.html',1,'umontreal::ssj::util']]],
-  ['doublearraycomparator',['DoubleArrayComparator',['../classumontreal_1_1ssj_1_1util_1_1DoubleArrayComparator.html',1,'umontreal::ssj::util']]],
+  ['doublearraycomparator',['DoubleArrayComparator',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1DoubleArrayComparator.html',1,'umontreal::ssj::util::sort']]],
   ['doublylinked',['DoublyLinked',['../classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1DoublyLinked.html',1,'umontreal::ssj::simevents::eventlist']]]
 ];

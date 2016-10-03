@@ -1,6 +1,6 @@
 <map id="DirichletGen" name="DirichletGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="82,184,262,211"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,95,155,121"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="19,5,117,32"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="141,5,264,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="79,184,241,211"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,95,141,121"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="20,5,108,32"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="133,5,246,32"/>
 </map>

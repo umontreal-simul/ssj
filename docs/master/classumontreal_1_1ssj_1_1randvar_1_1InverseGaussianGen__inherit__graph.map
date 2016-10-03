@@ -1,4 +1,4 @@
 <map id="InverseGaussianGen" name="InverseGaussianGen">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1InverseGaussianMSHGen.html" title="This class implements inverse gaussian random variate generators using the many&#45;to&#45;one transformation..." alt="" coords="5,155,191,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="23,5,173,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1InverseGaussianMSHGen.html" title="This class implements inverse gaussian random variate generators using the many&#45;to&#45;one transformation..." alt="" coords="5,155,180,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="25,5,161,32"/>
 </map>

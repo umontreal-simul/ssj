@@ -1,0 +1,4 @@
+<map id="ListOfTallies&lt; E extends Tally &gt;" name="ListOfTallies&lt; E extends Tally &gt;">
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTalliesWithCovariance_3_01E_01extends_01Tally_01_4.html" title="Extends ListOfTallies to add support for the computation of the sample covariance between each pair o..." alt="" coords="54,259,242,300"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes_3_01E_01extends_01StatProbe_01_4.html" title="Represents a list of statistical probes that can be managed simultaneously. " alt="" coords="75,80,221,121"/>
+</map>

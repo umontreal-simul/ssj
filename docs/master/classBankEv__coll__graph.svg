@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 815;
+var viewWidth = 752;
 var viewHeight = 364;
 var sectionId = 'dynsection-0';
 </script>
@@ -56,244 +56,244 @@ var sectionId = 'dynsection-0';
 <title>BankEv</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="230.5,-0.5 230.5,-19.5 283.5,-19.5 283.5,-0.5 230.5,-0.5"/>
-<text text-anchor="middle" x="257" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BankEv</text>
+<polygon fill="#bfbfbf" stroke="black" points="208.5,-0.5 208.5,-19.5 259.5,-19.5 259.5,-0.5 208.5,-0.5"/>
+<text text-anchor="middle" x="234" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BankEv</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ErlangGen.html" target="_top" xlink:title="This class implements random variate generators for the Erlang distribution with parameters &#160;and ...">
-<polygon fill="none" stroke="black" points="40.5,-122.5 40.5,-141.5 107.5,-141.5 107.5,-122.5 40.5,-122.5"/>
-<text text-anchor="middle" x="74" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">ErlangGen</text>
+<polygon fill="none" stroke="black" points="36,-122.5 36,-141.5 98,-141.5 98,-122.5 36,-122.5"/>
+<text text-anchor="middle" x="67" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">ErlangGen</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M69.8169,-112.55C66.2583,-91.6088 64.31,-57.7962 83,-38 102.622,-17.2165 186.421,-12.3896 230.169,-11.2975"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="66.3997,-113.312 71.7812,-122.438 73.2655,-111.948 66.3997,-113.312"/>
-<text text-anchor="middle" x="104.5" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00"> genServ</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M62.871,-112.601C59.363,-91.707 57.4621,-57.9387 76,-38 93.5274,-19.1482 168.235,-13.4429 208.326,-11.7283"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="59.4465,-113.326 64.8088,-122.464 66.3152,-111.977 59.4465,-113.326"/>
+<text text-anchor="middle" x="96" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00"> genServ</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" target="_top" xlink:title="This class implements random variate generators for the gamma distribution. ">
-<polygon fill="none" stroke="black" points="23.5,-196 23.5,-215 98.5,-215 98.5,-196 23.5,-196"/>
-<text text-anchor="middle" x="61" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">GammaGen</text>
+<polygon fill="none" stroke="black" points="20.5,-196 20.5,-215 89.5,-215 89.5,-196 20.5,-196"/>
+<text text-anchor="middle" x="55" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">GammaGen</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M64.4375,-185.594C67.0122,-171.433 70.4178,-152.702 72.3929,-141.839"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.9394,-185.268 62.5941,-195.733 67.8265,-186.52 60.9394,-185.268"/>
+<path fill="none" stroke="midnightblue" d="M58.1731,-185.594C60.5497,-171.433 63.6934,-152.702 65.5165,-141.839"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="54.675,-185.291 56.4714,-195.733 61.5784,-186.45 54.675,-185.291"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
-<polygon fill="none" stroke="black" points="0,-269.5 0,-288.5 112,-288.5 112,-269.5 0,-269.5"/>
-<text text-anchor="middle" x="56" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
+<polygon fill="none" stroke="black" points="0,-269.5 0,-288.5 102,-288.5 102,-269.5 0,-269.5"/>
+<text text-anchor="middle" x="51" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M57.3221,-259.094C58.3124,-244.933 59.6222,-226.202 60.3819,-215.339"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.8193,-259.013 56.6131,-269.233 60.8023,-259.501 53.8193,-259.013"/>
+<path fill="none" stroke="midnightblue" d="M52.0577,-259.094C52.8499,-244.933 53.8978,-226.202 54.5055,-215.339"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="48.5546,-259.053 51.4905,-269.233 55.5437,-259.444 48.5546,-259.053"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
-<polygon fill="none" stroke="black" points="2,-336.5 2,-355.5 76,-355.5 76,-336.5 2,-336.5"/>
-<text text-anchor="middle" x="39" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
+<polygon fill="none" stroke="black" points="3,-336.5 3,-355.5 69,-355.5 69,-336.5 3,-336.5"/>
+<text text-anchor="middle" x="36" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge4" class="edge"><title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M39.0005,-326.23C39.39,-320.015 40.2485,-313.124 42,-307 43.8585,-300.502 47.3585,-293.752 50.3939,-288.626"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="35.4978,-326.281 38.7146,-336.376 42.495,-326.479 35.4978,-326.281"/>
-<text text-anchor="middle" x="53" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M36.2165,-326.288C36.6207,-320.077 37.4334,-313.174 39,-307 40.6149,-300.636 43.6149,-293.886 46.2112,-288.727"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="32.7141,-326.296 35.8555,-336.414 39.7097,-326.545 32.7141,-326.296"/>
+<text text-anchor="middle" x="48.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
-<polygon fill="none" stroke="black" points="94,-336.5 94,-355.5 186,-355.5 186,-336.5 94,-336.5"/>
-<text text-anchor="middle" x="140" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
+<polygon fill="none" stroke="black" points="87.5,-336.5 87.5,-355.5 172.5,-355.5 172.5,-336.5 87.5,-336.5"/>
+<text text-anchor="middle" x="130" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge20" class="edge"><title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M140,-326.134C140,-313.161 140,-295.536 140,-280 140,-280 140,-280 140,-131 140,-75.4251 205.129,-35.9796 238.202,-19.5316"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="136.5,-326.169 140,-336.169 143.5,-326.169 136.5,-326.169"/>
-<text text-anchor="middle" x="171.5" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00"> streamArr</text>
-<text text-anchor="middle" x="171.5" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">streamTeller</text>
-<text text-anchor="middle" x="171.5" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">streamBalk</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M130,-326.134C130,-313.161 130,-295.536 130,-280 130,-280 130,-280 130,-131 130,-77.7925 189.111,-36.607 218.205,-19.5583"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="126.5,-326.169 130,-336.169 133.5,-326.169 126.5,-326.169"/>
+<text text-anchor="middle" x="157.5" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00"> streamArr</text>
+<text text-anchor="middle" x="157.5" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">streamTeller</text>
+<text text-anchor="middle" x="157.5" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">streamBalk</text>
 </g>
 <!-- Node6&#45;&gt;Node4 -->
 <g id="edge5" class="edge"><title>Node6&#45;&gt;Node4</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M110.127,-332.028C102.543,-328.069 94.6627,-323.332 88,-318 77.3604,-309.485 67.6646,-297.006 61.8004,-288.699"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="108.612,-335.183 119.129,-336.459 111.703,-328.903 108.612,-335.183"/>
-<text text-anchor="middle" x="107" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M102.059,-331.603C95.1665,-327.688 88.0359,-323.078 82,-318 71.7064,-309.34 62.3104,-296.894 56.6251,-288.635"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="100.718,-334.855 111.186,-336.49 104.023,-328.684 100.718,-334.855"/>
+<text text-anchor="middle" x="99" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1Tally.html" target="_top" xlink:title="A subclass of StatProbe. ">
-<polygon fill="none" stroke="black" points="313.5,-122.5 313.5,-141.5 354.5,-141.5 354.5,-122.5 313.5,-122.5"/>
-<text text-anchor="middle" x="334" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">Tally</text>
+<polygon fill="none" stroke="black" points="288,-122.5 288,-141.5 326,-141.5 326,-122.5 288,-122.5"/>
+<text text-anchor="middle" x="307" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">Tally</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge6" class="edge"><title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M326.913,-112.989C318.735,-93.4371 304.063,-61.8206 286,-38 280.846,-31.2031 273.881,-24.656 268.069,-19.7114"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="323.764,-114.536 330.769,-122.484 330.249,-111.902 323.764,-114.536"/>
-<text text-anchor="middle" x="349.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00"> avWait</text>
-<text text-anchor="middle" x="349.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">statServed</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M299.759,-112.863C291.576,-93.4373 277.139,-62.148 260,-38 255.254,-31.3135 248.882,-24.6683 243.633,-19.6435"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="296.603,-114.392 303.639,-122.314 303.079,-111.734 296.603,-114.392"/>
+<text text-anchor="middle" x="320" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00"> avWait</text>
+<text text-anchor="middle" x="320" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">statServed</text>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" target="_top" xlink:title="The objects of this class are statistical probes or collectors, which are elementary devices for coll...">
-<polygon fill="none" stroke="black" points="221,-196 221,-215 285,-215 285,-196 221,-196"/>
-<text text-anchor="middle" x="253" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">StatProbe</text>
+<polygon fill="none" stroke="black" points="203,-196 203,-215 263,-215 263,-196 203,-196"/>
+<text text-anchor="middle" x="233" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">StatProbe</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node7 -->
 <g id="edge7" class="edge"><title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M270.711,-188.866C287.043,-174.45 310.706,-153.562 323.987,-141.839"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="268.113,-186.491 262.932,-195.733 272.745,-191.739 268.113,-186.491"/>
+<path fill="none" stroke="midnightblue" d="M249.593,-188.468C264.497,-174.067 285.83,-153.455 297.852,-141.839"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="246.833,-186.267 242.074,-195.733 251.697,-191.301 246.833,-186.267"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
 <g id="a_node17"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1Accumulate.html" target="_top" xlink:title="A subclass of umontreal.ssj.stat.StatProbe, for collecting statistics on a variable that evolves in s...">
-<polygon fill="none" stroke="black" points="220,-122.5 220,-141.5 294,-141.5 294,-122.5 220,-122.5"/>
-<text text-anchor="middle" x="257" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">Accumulate</text>
+<polygon fill="none" stroke="black" points="200,-122.5 200,-141.5 268,-141.5 268,-122.5 200,-122.5"/>
+<text text-anchor="middle" x="234" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">Accumulate</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node17 -->
 <g id="edge18" class="edge"><title>Node8&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M254.058,-185.594C254.85,-171.433 255.898,-152.702 256.506,-141.839"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="250.555,-185.553 253.49,-195.733 257.544,-185.944 250.555,-185.553"/>
+<path fill="none" stroke="midnightblue" d="M233.264,-185.594C233.462,-171.433 233.724,-152.702 233.876,-141.839"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="229.763,-185.685 233.123,-195.733 236.762,-185.783 229.763,-185.685"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<polygon fill="none" stroke="#bfbfbf" points="303.5,-196 303.5,-215 368.5,-215 368.5,-196 303.5,-196"/>
-<text text-anchor="middle" x="336" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Cloneable</text>
+<polygon fill="none" stroke="#bfbfbf" points="281,-196 281,-215 341,-215 341,-196 281,-196"/>
+<text text-anchor="middle" x="311" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Cloneable</text>
 </g>
 <!-- Node9&#45;&gt;Node7 -->
 <g id="edge8" class="edge"><title>Node9&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M335.471,-185.594C335.075,-171.433 334.551,-152.702 334.247,-141.839"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="331.976,-185.835 335.755,-195.733 338.974,-185.639 331.976,-185.835"/>
+<path fill="none" stroke="midnightblue" d="M309.942,-185.594C309.15,-171.433 308.102,-152.702 307.494,-141.839"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="306.456,-185.944 310.51,-195.733 313.445,-185.553 306.456,-185.944"/>
 </g>
 <!-- Node9&#45;&gt;Node17 -->
 <g id="edge19" class="edge"><title>Node9&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M318.726,-188.866C302.798,-174.45 279.719,-153.562 266.766,-141.839"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="316.55,-191.617 326.313,-195.733 321.247,-186.427 316.55,-191.617"/>
+<path fill="none" stroke="midnightblue" d="M294.164,-188.866C278.638,-174.45 256.144,-153.562 243.519,-141.839"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="291.849,-191.493 301.558,-195.733 296.612,-186.363 291.849,-191.493"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<polygon fill="none" stroke="#bfbfbf" points="386.5,-196 386.5,-215 463.5,-215 463.5,-196 386.5,-196"/>
-<text text-anchor="middle" x="425" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Tally.CIType</text>
+<polygon fill="none" stroke="#bfbfbf" points="359.5,-196 359.5,-215 432.5,-215 432.5,-196 359.5,-196"/>
+<text text-anchor="middle" x="396" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Tally.CIType</text>
 </g>
 <!-- Node10&#45;&gt;Node7 -->
 <g id="edge9" class="edge"><title>Node10&#45;&gt;Node7</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M405.808,-189.421C387.326,-174.899 360.021,-153.445 344.965,-141.616"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="403.816,-192.307 413.842,-195.733 408.141,-186.802 403.816,-192.307"/>
-<text text-anchor="middle" x="430" y="-163" font-family="Helvetica,sans-Serif" font-size="10.00"> confidenceInterval</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M376.984,-189.223C358.912,-174.705 332.382,-153.391 317.724,-141.616"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="375.099,-192.198 385.087,-195.733 379.483,-186.741 375.099,-192.198"/>
+<text text-anchor="middle" x="396.5" y="-163" font-family="Helvetica,sans-Serif" font-size="10.00"> confidenceInterval</text>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
 <g id="a_node11"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1Event.html" target="_top" xlink:title="This abstract class provides event scheduling tools. ">
-<polygon fill="none" stroke="black" points="513,-122.5 513,-141.5 557,-141.5 557,-122.5 513,-122.5"/>
-<text text-anchor="middle" x="535" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">Event</text>
+<polygon fill="none" stroke="black" points="475,-122.5 475,-141.5 517,-141.5 517,-122.5 475,-122.5"/>
+<text text-anchor="middle" x="496" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">Event</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node1 -->
 <g id="edge10" class="edge"><title>Node11&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M515.376,-116.335C486.977,-95.808 432.105,-58.7058 380,-38 348.102,-25.3242 309.067,-18.041 283.646,-14.3035"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="513.492,-119.294 523.629,-122.375 517.626,-113.645 513.492,-119.294"/>
-<text text-anchor="middle" x="519" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00"> e14h</text>
-<text text-anchor="middle" x="519" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">e11h</text>
-<text text-anchor="middle" x="519" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">e10h</text>
-<text text-anchor="middle" x="519" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">nextArriv</text>
-<text text-anchor="middle" x="519" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">e9h45</text>
-<text text-anchor="middle" x="519" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">e15h</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M476.979,-116.136C449.847,-95.6373 397.789,-58.8623 348,-38 318.924,-25.8165 283.265,-18.4885 259.655,-14.6026"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="475.117,-119.119 485.185,-122.418 479.372,-113.56 475.117,-119.119"/>
+<text text-anchor="middle" x="479" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00"> e14h</text>
+<text text-anchor="middle" x="479" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">e11h</text>
+<text text-anchor="middle" x="479" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">e10h</text>
+<text text-anchor="middle" x="479" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">nextArriv</text>
+<text text-anchor="middle" x="479" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">e9h45</text>
+<text text-anchor="middle" x="479" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">e15h</text>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<polygon fill="none" stroke="#bfbfbf" points="681,-196 681,-215 807,-215 807,-196 681,-196"/>
-<text text-anchor="middle" x="744" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Comparable&lt; Event &gt;</text>
+<polygon fill="none" stroke="#bfbfbf" points="630.5,-196 630.5,-215 743.5,-215 743.5,-196 630.5,-196"/>
+<text text-anchor="middle" x="687" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Comparable&lt; Event &gt;</text>
 </g>
 <!-- Node12&#45;&gt;Node11 -->
 <g id="edge11" class="edge"><title>Node12&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M709.25,-192.612C666.009,-177.819 593.448,-152.995 557.123,-140.568"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="708.195,-195.95 718.79,-195.875 710.461,-189.327 708.195,-195.95"/>
+<path fill="none" stroke="midnightblue" d="M654.57,-192.36C615.317,-177.666 550.35,-153.346 517.072,-140.888"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="653.369,-195.647 663.961,-195.875 655.823,-189.092 653.369,-195.647"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
 <g id="a_node13"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" target="_top" xlink:title="Represents the executive of a discrete&#45;event simulator. ">
-<polygon fill="none" stroke="black" points="496,-196 496,-215 560,-215 560,-196 496,-196"/>
-<text text-anchor="middle" x="528" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Simulator</text>
+<polygon fill="none" stroke="black" points="462,-196 462,-215 520,-215 520,-196 462,-196"/>
+<text text-anchor="middle" x="491" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">Simulator</text>
 </a>
 </g>
 </g>
 <!-- Node13&#45;&gt;Node11 -->
 <g id="edge12" class="edge"><title>Node13&#45;&gt;Node11</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M529.851,-185.594C531.237,-171.433 533.071,-152.702 534.135,-141.839"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="526.349,-185.439 528.858,-195.733 533.316,-186.121 526.349,-185.439"/>
-<text text-anchor="middle" x="544" y="-163" font-family="Helvetica,sans-Serif" font-size="10.00"> sim</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M492.322,-185.594C493.312,-171.433 494.622,-152.702 495.382,-141.839"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="488.819,-185.513 491.613,-195.733 495.802,-186.001 488.819,-185.513"/>
+<text text-anchor="middle" x="504.5" y="-163" font-family="Helvetica,sans-Serif" font-size="10.00"> sim</text>
 </g>
 <!-- Node13&#45;&gt;Node13 -->
 <g id="edge13" class="edge"><title>Node13&#45;&gt;Node13</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M570.222,-211.833C574.945,-210.638 578,-208.527 578,-205.5 578,-200.656 570.179,-198.159 560.22,-198.007"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="569.75,-208.364 560.22,-212.993 570.557,-215.317 569.75,-208.364"/>
-<text text-anchor="middle" x="620.5" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00"> defaultSimulator</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M530.603,-211.856C535.091,-210.665 538,-208.547 538,-205.5 538,-200.5 530.167,-198 520.375,-198"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="529.924,-208.41 520.375,-213 530.702,-215.366 529.924,-208.41"/>
+<text text-anchor="middle" x="575" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00"> defaultSimulator</text>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
 <g id="a_node14"><a xlink:href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" target="_top" xlink:title="An interface for implementations of event lists. ">
-<polygon fill="none" stroke="black" points="442,-269.5 442,-288.5 504,-288.5 504,-269.5 442,-269.5"/>
-<text text-anchor="middle" x="473" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">EventList</text>
+<polygon fill="none" stroke="black" points="410,-269.5 410,-288.5 468,-288.5 468,-269.5 410,-269.5"/>
+<text text-anchor="middle" x="439" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">EventList</text>
 </a>
 </g>
 </g>
 <!-- Node14&#45;&gt;Node13 -->
 <g id="edge14" class="edge"><title>Node14&#45;&gt;Node13</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M481.888,-260.542C485.591,-253.875 490.156,-246.354 495,-240 502.028,-230.781 511.413,-221.482 518.377,-215.028"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="478.749,-258.991 477.148,-269.464 484.931,-262.275 478.749,-258.991"/>
-<text text-anchor="middle" x="519.5" y="-243" font-family="Helvetica,sans-Serif" font-size="10.00"> eventList</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M449.343,-260.554C453.413,-253.983 458.245,-246.525 463,-240 469.428,-231.179 477.484,-221.682 483.303,-215.06"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="446.212,-258.968 444.024,-269.335 452.199,-262.595 446.212,-258.968"/>
+<text text-anchor="middle" x="484.5" y="-243" font-family="Helvetica,sans-Serif" font-size="10.00"> eventList</text>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<polygon fill="none" stroke="#bfbfbf" points="421,-336.5 421,-355.5 525,-355.5 525,-336.5 421,-336.5"/>
-<text text-anchor="middle" x="473" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Iterable&lt; Event &gt;</text>
+<polygon fill="none" stroke="#bfbfbf" points="393,-336.5 393,-355.5 485,-355.5 485,-336.5 393,-336.5"/>
+<text text-anchor="middle" x="439" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Iterable&lt; Event &gt;</text>
 </g>
 <!-- Node15&#45;&gt;Node14 -->
 <g id="edge15" class="edge"><title>Node15&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M473,-326.037C473,-313.67 473,-298.12 473,-288.627"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="469.5,-326.234 473,-336.234 476.5,-326.234 469.5,-326.234"/>
+<path fill="none" stroke="midnightblue" d="M439,-326.037C439,-313.67 439,-298.12 439,-288.627"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="435.5,-326.234 439,-336.234 442.5,-326.234 435.5,-326.234"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
 <g id="a_node16"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" target="_top" xlink:title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. ">
-<polygon fill="none" stroke="black" points="521.5,-269.5 521.5,-288.5 618.5,-288.5 618.5,-269.5 521.5,-269.5"/>
-<text text-anchor="middle" x="570" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContinuousState</text>
+<polygon fill="none" stroke="black" points="485.5,-269.5 485.5,-288.5 574.5,-288.5 574.5,-269.5 485.5,-269.5"/>
+<text text-anchor="middle" x="530" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContinuousState</text>
 </a>
 </g>
 </g>
 <!-- Node16&#45;&gt;Node13 -->
 <g id="edge16" class="edge"><title>Node16&#45;&gt;Node13</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M559.628,-260.343C551.234,-246.053 539.763,-226.525 533.192,-215.339"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="556.767,-262.383 564.85,-269.233 562.803,-258.838 556.767,-262.383"/>
-<text text-anchor="middle" x="595" y="-243" font-family="Helvetica,sans-Serif" font-size="10.00"> continuousState</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M520.369,-260.343C512.574,-246.053 501.922,-226.525 495.821,-215.339"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="517.357,-262.13 525.218,-269.233 523.502,-258.778 517.357,-262.13"/>
+<text text-anchor="middle" x="553" y="-243" font-family="Helvetica,sans-Serif" font-size="10.00"> continuousState</text>
 </g>
 <!-- Node17&#45;&gt;Node1 -->
 <g id="edge17" class="edge"><title>Node17&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M257,-112.145C257,-85.7231 257,-38.7637 257,-19.5519"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="253.5,-112.37 257,-122.37 260.5,-112.37 253.5,-112.37"/>
-<text text-anchor="middle" x="269.5" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00"> wait</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M234,-112.145C234,-85.7231 234,-38.7637 234,-19.5519"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="230.5,-112.37 234,-122.37 237.5,-112.37 230.5,-112.37"/>
+<text text-anchor="middle" x="245" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00"> wait</text>
 </g>
 </g>
 </svg>

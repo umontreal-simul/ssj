@@ -1,7 +1,7 @@
 var searchData=
 [
   ['qqplot',['QQPlot',['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html',1,'umontreal::ssj::charts']]],
-  ['qqplot',['QQPlot',['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html#a085d5083d0e3c9821a88f75c4253c9f7',1,'umontreal.ssj.charts.QQPlot.QQPlot(String title, String XLabel, String YLabel, ContinuousDistribution dist, double[] X)'],['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html#ad021f7171a4da5a72c5b3e1770ee00df',1,'umontreal.ssj.charts.QQPlot.QQPlot(String title, String XLabel, String YLabel, ContinuousDistribution dist, double[] X, int numPoints)'],['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html#a81f3481ca7e024fe9789db67bf158951',1,'umontreal.ssj.charts.QQPlot.QQPlot(String title, String XLabel, String YLabel, ContinuousDistribution dist, double[][] data, int r)']]],
+  ['qqplot',['QQPlot',['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html#a085d5083d0e3c9821a88f75c4253c9f7',1,'umontreal.ssj::charts.QQPlot.QQPlot(String title, String XLabel, String YLabel, ContinuousDistribution dist, double[] X)'],['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html#ad021f7171a4da5a72c5b3e1770ee00df',1,'umontreal.ssj::charts.QQPlot.QQPlot(String title, String XLabel, String YLabel, ContinuousDistribution dist, double[] X, int numPoints)'],['../classumontreal_1_1ssj_1_1charts_1_1QQPlot.html#a81f3481ca7e024fe9789db67bf158951',1,'umontreal.ssj::charts.QQPlot.QQPlot(String title, String XLabel, String YLabel, ContinuousDistribution dist, double[][] data, int r)']]],
   ['queueev',['QueueEv',['../classQueueEv.html',1,'']]],
   ['queuelindley',['QueueLindley',['../classQueueLindley.html',1,'']]],
   ['queueobs',['QueueObs',['../classQueueObs.html',1,'']]],

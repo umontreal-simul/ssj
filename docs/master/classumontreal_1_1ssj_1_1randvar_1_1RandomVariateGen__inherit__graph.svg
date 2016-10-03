@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 513;
+var viewWidth = 476;
 var viewHeight = 1738;
 var sectionId = 'dynsection-0';
 </script>
@@ -56,632 +56,632 @@ var sectionId = 'dynsection-0';
 <title>RandomVariateGen</title>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="0,-836.5 0,-855.5 112,-855.5 112,-836.5 0,-836.5"/>
-<text text-anchor="middle" x="56" y="-843.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
+<polygon fill="#bfbfbf" stroke="black" points="0,-836.5 0,-855.5 102,-855.5 102,-836.5 0,-836.5"/>
+<text text-anchor="middle" x="51" y="-843.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1BetaGen.html" target="_top" xlink:title="This class implements random variate generators with the beta distribution with shape parameters &#160;and...">
-<polygon fill="none" stroke="black" points="200.5,-1672.5 200.5,-1691.5 259.5,-1691.5 259.5,-1672.5 200.5,-1672.5"/>
-<text text-anchor="middle" x="230" y="-1679.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaGen</text>
+<polygon fill="none" stroke="black" points="186,-1672.5 186,-1691.5 241,-1691.5 241,-1672.5 186,-1672.5"/>
+<text text-anchor="middle" x="213.5" y="-1679.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M57.8653,-866.002C63.2082,-985.439 93.2909,-1601.33 148,-1663 160.941,-1677.59 182.758,-1682.07 200.492,-1683.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.3509,-865.597 57.4138,-855.761 54.3577,-865.905 61.3509,-865.597"/>
+<path fill="none" stroke="midnightblue" d="M52.7555,-865.984C57.4414,-985.313 84.1125,-1600.68 138,-1663 149.699,-1676.53 169.563,-1681.1 185.838,-1682.39"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.2438,-865.609 52.3603,-855.752 49.249,-865.879 56.2438,-865.609"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1CauchyGen.html" target="_top" xlink:title="This class implements random variate generators for the Cauchy distribution. ">
-<polygon fill="none" stroke="black" points="194,-1634.5 194,-1653.5 266,-1653.5 266,-1634.5 194,-1634.5"/>
-<text text-anchor="middle" x="230" y="-1641.5" font-family="Helvetica,sans-Serif" font-size="10.00">CauchyGen</text>
+<polygon fill="none" stroke="black" points="179.5,-1634.5 179.5,-1653.5 247.5,-1653.5 247.5,-1634.5 179.5,-1634.5"/>
+<text text-anchor="middle" x="213.5" y="-1641.5" font-family="Helvetica,sans-Serif" font-size="10.00">CauchyGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M57.9681,-865.783C63.7987,-981.385 95.7536,-1566.42 148,-1625 159.345,-1637.72 177.441,-1642.75 193.654,-1644.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.4528,-865.387 57.46,-855.574 54.4614,-865.735 61.4528,-865.387"/>
+<path fill="none" stroke="midnightblue" d="M52.8534,-865.764C58.0125,-981.262 86.546,-1565.8 138,-1625 148.157,-1636.69 164.406,-1641.68 179.141,-1643.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.3409,-865.401 52.4046,-855.565 49.3477,-865.709 56.3409,-865.401"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ChiGen.html" target="_top" xlink:title="This class implements random variate generators for the chi distribution. ">
-<polygon fill="none" stroke="red" points="204,-1596.5 204,-1615.5 256,-1615.5 256,-1596.5 204,-1596.5"/>
-<text text-anchor="middle" x="230" y="-1603.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChiGen</text>
+<polygon fill="none" stroke="red" points="188.5,-1596.5 188.5,-1615.5 238.5,-1615.5 238.5,-1596.5 188.5,-1596.5"/>
+<text text-anchor="middle" x="213.5" y="-1603.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChiGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M58.0963,-865.858C64.4754,-978.254 98.2575,-1531.56 148,-1587 161.794,-1602.37 185.452,-1606.5 203.65,-1607.15"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.5769,-865.412 57.5225,-855.624 54.5879,-865.804 61.5769,-865.412"/>
+<path fill="none" stroke="midnightblue" d="M52.9745,-865.84C58.6624,-978.132 89.0202,-1530.96 138,-1587 150.386,-1601.17 171.729,-1605.5 188.404,-1606.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.4583,-865.427 52.4636,-855.615 49.4671,-865.777 56.4583,-865.427"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ChiSquareGen.html" target="_top" xlink:title="This class implements random variate generators with the chi square distribution with &#160;degrees of fre...">
-<polygon fill="none" stroke="black" points="187,-1558.5 187,-1577.5 273,-1577.5 273,-1558.5 187,-1558.5"/>
-<text text-anchor="middle" x="230" y="-1565.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChiSquareGen</text>
+<polygon fill="none" stroke="black" points="173.5,-1558.5 173.5,-1577.5 253.5,-1577.5 253.5,-1558.5 173.5,-1558.5"/>
+<text text-anchor="middle" x="213.5" y="-1565.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChiSquareGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge"><title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M56.6478,-866.029C55.2444,-969.75 54.0787,-1445.01 148,-1549 157.778,-1559.83 172.449,-1565.07 186.629,-1567.45"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.1518,-865.788 56.8057,-855.735 53.1527,-865.681 60.1518,-865.788"/>
+<path fill="none" stroke="midnightblue" d="M53.1044,-865.832C59.3351,-974.635 91.4785,-1496.11 138,-1549 146.904,-1559.12 160.378,-1564.22 173.431,-1566.67"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.5862,-865.411 52.527,-855.624 49.5974,-865.806 56.5862,-865.411"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
 <g id="a_node9"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralGen.html" target="_top" xlink:title="This class implements random variate generators for the noncentral chi square distribution with &#160;degr...">
-<polygon fill="none" stroke="red" points="160.5,-1520.5 160.5,-1539.5 299.5,-1539.5 299.5,-1520.5 160.5,-1520.5"/>
-<text text-anchor="middle" x="230" y="-1527.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChiSquareNoncentralGen</text>
+<polygon fill="none" stroke="red" points="149.5,-1520.5 149.5,-1539.5 277.5,-1539.5 277.5,-1520.5 149.5,-1520.5"/>
+<text text-anchor="middle" x="213.5" y="-1527.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChiSquareNoncentralGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge"><title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M56.8124,-865.886C56.2842,-965.92 58.9915,-1413.17 148,-1511 151.597,-1514.95 155.845,-1518.16 160.483,-1520.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.3136,-865.705 56.8852,-855.68 53.3138,-865.655 60.3136,-865.705"/>
+<path fill="none" stroke="midnightblue" d="M51.6884,-865.844C50.533,-965.675 50.3914,-1412.08 138,-1511 141.363,-1514.8 145.369,-1517.89 149.753,-1520.39"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="55.1905,-865.705 51.825,-855.659 48.1911,-865.612 55.1905,-865.705"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
 <g id="a_node10"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ConstantGen.html" target="_top" xlink:title="This class implements a random variate generator that returns a constant value. ">
-<polygon fill="none" stroke="black" points="190,-1482.5 190,-1501.5 270,-1501.5 270,-1482.5 190,-1482.5"/>
-<text text-anchor="middle" x="230" y="-1489.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConstantGen</text>
+<polygon fill="none" stroke="black" points="176.5,-1482.5 176.5,-1501.5 250.5,-1501.5 250.5,-1482.5 176.5,-1482.5"/>
+<text text-anchor="middle" x="213.5" y="-1489.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConstantGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge9" class="edge"><title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M56.9932,-865.655C57.3695,-961.76 63.8709,-1381.28 148,-1473 158.545,-1484.5 174.609,-1489.67 189.658,-1491.82"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.4932,-865.575 56.9729,-855.582 53.4932,-865.589 60.4932,-865.575"/>
+<path fill="none" stroke="midnightblue" d="M51.8612,-865.613C51.5883,-961.521 55.214,-1380.25 138,-1473 147.6,-1483.75 162.359,-1488.82 176.216,-1491.08"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="55.3613,-865.578 51.9088,-855.561 48.3614,-865.544 55.3613,-865.578"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
 <g id="a_node11"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ExponentialGen.html" target="_top" xlink:title="This class implements random variate generators for the exponential distribution. ...">
-<polygon fill="none" stroke="red" points="183,-1444.5 183,-1463.5 277,-1463.5 277,-1444.5 183,-1444.5"/>
-<text text-anchor="middle" x="230" y="-1451.5" font-family="Helvetica,sans-Serif" font-size="10.00">ExponentialGen</text>
+<polygon fill="none" stroke="red" points="170.5,-1444.5 170.5,-1463.5 256.5,-1463.5 256.5,-1444.5 170.5,-1444.5"/>
+<text text-anchor="middle" x="213.5" y="-1451.5" font-family="Helvetica,sans-Serif" font-size="10.00">ExponentialGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge"><title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M57.1994,-865.924C58.5433,-958.939 68.8851,-1349.54 148,-1435 157.027,-1444.75 170.027,-1449.95 182.979,-1452.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.6987,-865.837 57.0739,-855.882 53.6992,-865.925 60.6987,-865.837"/>
+<path fill="none" stroke="midnightblue" d="M52.0547,-865.881C52.7194,-958.703 60.1695,-1348.56 138,-1435 146.306,-1444.23 158.41,-1449.26 170.455,-1451.92"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="55.5546,-865.842 52.0023,-855.86 48.5547,-865.878 55.5546,-865.842"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
 <g id="a_node12"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ExtremeValueGen.html" target="_top" xlink:title="This class has been replaced by GumbelGen . ">
-<polygon fill="none" stroke="black" points="177.5,-1406.5 177.5,-1425.5 282.5,-1425.5 282.5,-1406.5 177.5,-1406.5"/>
-<text text-anchor="middle" x="230" y="-1413.5" font-family="Helvetica,sans-Serif" font-size="10.00">ExtremeValueGen</text>
+<polygon fill="none" stroke="black" points="165.5,-1406.5 165.5,-1425.5 261.5,-1425.5 261.5,-1406.5 165.5,-1406.5"/>
+<text text-anchor="middle" x="213.5" y="-1413.5" font-family="Helvetica,sans-Serif" font-size="10.00">ExtremeValueGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge"><title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M57.4275,-865.751C59.7612,-954.752 73.7616,-1317.64 148,-1397 155.696,-1405.23 166.222,-1410.21 177.139,-1413.15"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.9246,-865.585 57.1838,-855.673 53.9266,-865.755 60.9246,-865.585"/>
+<path fill="none" stroke="midnightblue" d="M52.2718,-865.708C53.9007,-954.523 64.9899,-1316.71 138,-1397 145.184,-1404.9 155.154,-1409.72 165.466,-1412.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="55.7705,-865.593 52.1077,-855.652 48.7714,-865.707 55.7705,-865.593"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
 <g id="a_node13"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1FatigueLifeGen.html" target="_top" xlink:title="This class implements random variate generators for the fatigue life distribution   with location pa...">
-<polygon fill="none" stroke="black" points="185,-1368.5 185,-1387.5 275,-1387.5 275,-1368.5 185,-1368.5"/>
-<text text-anchor="middle" x="230" y="-1375.5" font-family="Helvetica,sans-Serif" font-size="10.00">FatigueLifeGen</text>
+<polygon fill="none" stroke="black" points="172,-1368.5 172,-1387.5 255,-1387.5 255,-1368.5 172,-1368.5"/>
+<text text-anchor="middle" x="213.5" y="-1375.5" font-family="Helvetica,sans-Serif" font-size="10.00">FatigueLifeGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge12" class="edge"><title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M57.7012,-865.999C61.1117,-951.569 78.7412,-1285.83 148,-1359 157.533,-1369.07 171.306,-1374.26 184.8,-1376.81"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.192,-865.686 57.3174,-855.825 54.197,-865.95 61.192,-865.686"/>
+<path fill="none" stroke="midnightblue" d="M52.5294,-865.955C55.2016,-951.343 69.9122,-1284.97 138,-1359 146.674,-1368.43 159.319,-1373.46 171.737,-1376.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.0235,-865.697 52.2332,-855.803 49.0265,-865.901 56.0235,-865.697"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
 <g id="a_node14"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1FisherFGen.html" target="_top" xlink:title="This class implements random variate generators for the Fisher F distribution with &#160;and &#160;degrees of f...">
-<polygon fill="none" stroke="black" points="194.5,-1330.5 194.5,-1349.5 265.5,-1349.5 265.5,-1330.5 194.5,-1330.5"/>
-<text text-anchor="middle" x="230" y="-1337.5" font-family="Helvetica,sans-Serif" font-size="10.00">FisherFGen</text>
+<polygon fill="none" stroke="black" points="179.5,-1330.5 179.5,-1349.5 247.5,-1349.5 247.5,-1330.5 179.5,-1330.5"/>
+<text text-anchor="middle" x="213.5" y="-1337.5" font-family="Helvetica,sans-Serif" font-size="10.00">FisherFGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge"><title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M58.0275,-866.315C62.5913,-948.354 83.7199,-1254.02 148,-1321 159.902,-1333.4 178.241,-1338.38 194.461,-1340.15"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.4991,-865.688 57.4712,-855.889 54.5091,-866.061 61.4991,-865.688"/>
+<path fill="none" stroke="midnightblue" d="M52.8364,-866.27C56.6253,-948.133 74.834,-1253.21 138,-1321 148.555,-1332.33 164.842,-1337.29 179.498,-1339.33"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.315,-865.703 52.3784,-855.866 49.3217,-866.011 56.315,-865.703"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
 <g id="a_node15"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1FNoncentralGen.html" target="_top" xlink:title="This class implements random variate generators for the noncentral F&#45;distribution. ">
-<polygon fill="none" stroke="black" points="182.5,-1292.5 182.5,-1311.5 277.5,-1311.5 277.5,-1292.5 182.5,-1292.5"/>
-<text text-anchor="middle" x="230" y="-1299.5" font-family="Helvetica,sans-Serif" font-size="10.00">FNoncentralGen</text>
+<polygon fill="none" stroke="black" points="169.5,-1292.5 169.5,-1311.5 257.5,-1311.5 257.5,-1292.5 169.5,-1292.5"/>
+<text text-anchor="middle" x="213.5" y="-1299.5" font-family="Helvetica,sans-Serif" font-size="10.00">FNoncentralGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge"><title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M58.3835,-866.169C64.1173,-943.808 88.5593,-1222.05 148,-1283 157.076,-1292.31 169.782,-1297.42 182.443,-1300.13"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.8504,-865.58 57.6461,-855.855 54.8682,-866.079 61.8504,-865.58"/>
+<path fill="none" stroke="midnightblue" d="M53.1746,-866.124C58.1011,-943.593 79.6196,-1221.29 138,-1283 146.164,-1291.63 157.656,-1296.56 169.176,-1299.31"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.6491,-865.6 52.5443,-855.833 49.6622,-866.028 56.6491,-865.6"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
 <g id="a_node16"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1FoldedNormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the folded normal distribution with...">
-<polygon fill="none" stroke="black" points="178,-1254.5 178,-1273.5 282,-1273.5 282,-1254.5 178,-1254.5"/>
-<text text-anchor="middle" x="230" y="-1261.5" font-family="Helvetica,sans-Serif" font-size="10.00">FoldedNormalGen</text>
+<polygon fill="none" stroke="black" points="166,-1254.5 166,-1273.5 261,-1273.5 261,-1254.5 166,-1254.5"/>
+<text text-anchor="middle" x="213.5" y="-1261.5" font-family="Helvetica,sans-Serif" font-size="10.00">FoldedNormalGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node16 -->
 <g id="edge15" class="edge"><title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M58.7807,-865.812C65.7225,-938.617 93.3277,-1189.99 148,-1245 156.044,-1253.09 166.837,-1258 177.916,-1260.92"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="62.253,-865.351 57.843,-855.718 55.283,-865.999 62.253,-865.351"/>
+<path fill="none" stroke="midnightblue" d="M53.5531,-865.766C59.6558,-938.411 84.3363,-1189.29 138,-1245 145.408,-1252.69 155.462,-1257.43 165.784,-1260.31"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="57.0331,-865.377 52.7316,-855.695 50.0563,-865.946 57.0331,-865.377"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
 <g id="a_node17"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1FrechetGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the Fréchet distribution, with location parameter , scale parameter , and shape parameter , where we use the notation . ">
-<polygon fill="none" stroke="black" points="194,-1216.5 194,-1235.5 266,-1235.5 266,-1216.5 194,-1216.5"/>
-<text text-anchor="middle" x="230" y="-1223.5" font-family="Helvetica,sans-Serif" font-size="10.00">FrechetGen</text>
+<polygon fill="none" stroke="black" points="179.5,-1216.5 179.5,-1235.5 247.5,-1235.5 247.5,-1216.5 179.5,-1216.5"/>
+<text text-anchor="middle" x="213.5" y="-1223.5" font-family="Helvetica,sans-Serif" font-size="10.00">FrechetGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node17 -->
 <g id="edge16" class="edge"><title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M59.3254,-866.097C67.6629,-934.694 98.2333,-1158.05 148,-1207 160.048,-1218.85 178.003,-1223.84 193.948,-1225.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="62.7584,-865.326 58.1022,-855.81 55.8074,-866.153 62.7584,-865.326"/>
+<path fill="none" stroke="midnightblue" d="M54.0673,-866.05C61.5211,-934.494 89.1887,-1157.41 138,-1207 148.768,-1217.94 164.895,-1222.89 179.394,-1225.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="57.5138,-865.36 52.9764,-855.786 50.553,-866.1 57.5138,-865.36"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
 <g id="a_node18"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" target="_top" xlink:title="This class implements random variate generators for the gamma distribution. ">
-<polygon fill="none" stroke="red" points="192.5,-1178.5 192.5,-1197.5 267.5,-1197.5 267.5,-1178.5 192.5,-1178.5"/>
-<text text-anchor="middle" x="230" y="-1185.5" font-family="Helvetica,sans-Serif" font-size="10.00">GammaGen</text>
+<polygon fill="none" stroke="red" points="179,-1178.5 179,-1197.5 248,-1197.5 248,-1178.5 179,-1178.5"/>
+<text text-anchor="middle" x="213.5" y="-1185.5" font-family="Helvetica,sans-Serif" font-size="10.00">GammaGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node18 -->
 <g id="edge17" class="edge"><title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M56.1883,-865.697C55.015,-921.934 59.7822,-1084.6 148,-1169 159.794,-1180.28 176.958,-1185.31 192.453,-1187.4"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="59.6882,-865.751 56.4901,-855.65 52.6914,-865.54 59.6882,-865.751"/>
+<path fill="none" stroke="midnightblue" d="M54.6582,-865.97C63.5075,-929.511 93.9262,-1125.39 138,-1169 148.721,-1179.61 164.493,-1184.55 178.768,-1186.77"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="58.0784,-865.147 53.2584,-855.712 51.1427,-866.094 58.0784,-865.147"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node"><title>Node19</title>
 <g id="a_node19"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1GumbelGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the Gumbel distribution. ">
-<polygon fill="none" stroke="black" points="193,-1140.5 193,-1159.5 267,-1159.5 267,-1140.5 193,-1140.5"/>
-<text text-anchor="middle" x="230" y="-1147.5" font-family="Helvetica,sans-Serif" font-size="10.00">GumbelGen</text>
+<polygon fill="none" stroke="black" points="179.5,-1140.5 179.5,-1159.5 247.5,-1159.5 247.5,-1140.5 179.5,-1140.5"/>
+<text text-anchor="middle" x="213.5" y="-1147.5" font-family="Helvetica,sans-Serif" font-size="10.00">GumbelGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge18" class="edge"><title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M57.0586,-865.763C58.3406,-917.555 69.2763,-1058.24 148,-1131 159.986,-1142.08 177.173,-1147.08 192.634,-1149.21"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.5559,-865.552 56.9082,-855.605 53.5567,-865.655 60.5559,-865.552"/>
+<path fill="none" stroke="midnightblue" d="M51.7574,-865.649C52.2419,-917.163 60.9568,-1057.23 138,-1131 148.991,-1141.52 164.966,-1146.44 179.308,-1148.66"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="55.2573,-865.549 51.7627,-855.547 48.2573,-865.545 55.2573,-865.549"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
 <g id="a_node20"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1HalfNormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the half&#45;normal distribution with p...">
-<polygon fill="none" stroke="black" points="184,-1102.5 184,-1121.5 276,-1121.5 276,-1102.5 184,-1102.5"/>
-<text text-anchor="middle" x="230" y="-1109.5" font-family="Helvetica,sans-Serif" font-size="10.00">HalfNormalGen</text>
+<polygon fill="none" stroke="black" points="171.5,-1102.5 171.5,-1121.5 255.5,-1121.5 255.5,-1102.5 171.5,-1102.5"/>
+<text text-anchor="middle" x="213.5" y="-1109.5" font-family="Helvetica,sans-Serif" font-size="10.00">HalfNormalGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge"><title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M58.163,-865.627C62.0404,-912.498 78.5816,-1031.61 148,-1093 157.846,-1101.71 170.927,-1106.63 183.7,-1109.35"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.6487,-865.302 57.4396,-855.579 54.6668,-865.805 61.6487,-865.302"/>
+<path fill="none" stroke="midnightblue" d="M52.811,-865.512C55.8397,-912.132 70.1743,-1030.73 138,-1093 147.144,-1101.4 159.477,-1106.2 171.474,-1108.91"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="56.3056,-865.316 52.2688,-855.521 49.3159,-865.696 56.3056,-865.316"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
 <g id="a_node21"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1HyperbolicSecantGen.html" target="_top" xlink:title="This class implements random variate generators for the hyperbolic secant distribution with location ...">
-<polygon fill="none" stroke="black" points="169,-1064.5 169,-1083.5 291,-1083.5 291,-1064.5 169,-1064.5"/>
-<text text-anchor="middle" x="230" y="-1071.5" font-family="Helvetica,sans-Serif" font-size="10.00">HyperbolicSecantGen</text>
+<polygon fill="none" stroke="black" points="157.5,-1064.5 157.5,-1083.5 269.5,-1083.5 269.5,-1064.5 157.5,-1064.5"/>
+<text text-anchor="middle" x="213.5" y="-1071.5" font-family="Helvetica,sans-Serif" font-size="10.00">HyperbolicSecantGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node21 -->
 <g id="edge20" class="edge"><title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M59.6452,-865.682C66.3295,-907.369 87.873,-1004.84 148,-1055 154.1,-1060.09 161.318,-1063.87 168.892,-1066.67"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="63.0943,-865.08 58.1632,-855.702 56.1702,-866.108 63.0943,-865.08"/>
+<path fill="none" stroke="midnightblue" d="M54.2224,-865.567C60.0023,-907.032 79.3834,-1004.1 138,-1055 143.644,-1059.9 150.384,-1063.57 157.469,-1066.3"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="57.6937,-865.12 52.9559,-855.643 50.75,-866.006 57.6937,-865.12"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
 <g id="a_node22"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1HypoExponentialGen.html" target="_top" xlink:title="This class implements random variate generators for the hypoexponential distribution (see classes umo...">
-<polygon fill="none" stroke="black" points="170.5,-1026.5 170.5,-1045.5 289.5,-1045.5 289.5,-1026.5 170.5,-1026.5"/>
-<text text-anchor="middle" x="230" y="-1033.5" font-family="Helvetica,sans-Serif" font-size="10.00">HypoExponentialGen</text>
+<polygon fill="none" stroke="black" points="159,-1026.5 159,-1045.5 268,-1045.5 268,-1026.5 159,-1026.5"/>
+<text text-anchor="middle" x="213.5" y="-1033.5" font-family="Helvetica,sans-Serif" font-size="10.00">HypoExponentialGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node22 -->
 <g id="edge21" class="edge"><title>Node1&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M61.6068,-865.264C71.1973,-901.019 96.803,-977.587 148,-1017 154.524,-1022.02 162.158,-1025.75 170.085,-1028.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="64.9959,-864.389 59.134,-855.564 58.2129,-866.119 64.9959,-864.389"/>
+<path fill="none" stroke="midnightblue" d="M56.2105,-865.615C64.9371,-901.379 88.4612,-977.164 138,-1017 144.137,-1021.94 151.403,-1025.6 158.95,-1028.33"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="59.5375,-864.465 53.8829,-855.506 52.7159,-866.036 59.5375,-864.465"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
 <g id="a_node23"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen.html" target="_top" xlink:title="Implements a method for generating random variates by numerical inversion of an arbitrary continuous ...">
-<polygon fill="none" stroke="black" points="163,-988.5 163,-1007.5 297,-1007.5 297,-988.5 163,-988.5"/>
-<text text-anchor="middle" x="230" y="-995.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseFromDensityGen</text>
+<polygon fill="none" stroke="black" points="152,-988.5 152,-1007.5 275,-1007.5 275,-988.5 152,-988.5"/>
+<text text-anchor="middle" x="213.5" y="-995.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseFromDensityGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node23 -->
 <g id="edge22" class="edge"><title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M64.577,-864.994C77.2637,-894.251 105.652,-949.992 148,-979 153.601,-982.836 159.875,-985.905 166.387,-988.357"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="67.7003,-863.39 60.6166,-855.511 61.241,-866.088 67.7003,-863.39"/>
+<path fill="none" stroke="midnightblue" d="M59.1051,-865.314C70.8735,-894.541 97.2357,-949.697 138,-979 143.419,-982.896 149.563,-985.994 155.943,-988.459"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="62.3025,-863.878 55.43,-855.815 55.7741,-866.404 62.3025,-863.878"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
 <g id="a_node24"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1InverseGammaGen.html" target="_top" xlink:title="This class implements random variate generators for the inverse gamma distribution with shape paramet...">
-<polygon fill="none" stroke="black" points="174.5,-950.5 174.5,-969.5 285.5,-969.5 285.5,-950.5 174.5,-950.5"/>
-<text text-anchor="middle" x="230" y="-957.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseGammaGen</text>
+<polygon fill="none" stroke="black" points="163,-950.5 163,-969.5 264,-969.5 264,-950.5 163,-950.5"/>
+<text text-anchor="middle" x="213.5" y="-957.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseGammaGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node24 -->
 <g id="edge23" class="edge"><title>Node1&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M69.0798,-863.872C84.7027,-885.547 113.982,-921.584 148,-941 156.029,-945.582 165.105,-949.061 174.204,-951.702"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="71.8532,-861.731 63.2464,-855.553 66.1218,-865.75 71.8532,-861.731"/>
+<path fill="none" stroke="midnightblue" d="M63.4391,-864.071C78.0766,-885.683 105.468,-921.393 138,-941 145.545,-945.547 154.152,-949.013 162.771,-951.652"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="66.222,-861.933 57.8034,-855.5 60.3732,-865.779 66.222,-861.933"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node"><title>Node25</title>
 <g id="a_node25"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1InverseGaussianGen.html" target="_top" xlink:title="This class implements random variate generators for the inverse Gaussian distribution with location p...">
-<polygon fill="none" stroke="red" points="171.5,-912.5 171.5,-931.5 288.5,-931.5 288.5,-912.5 171.5,-912.5"/>
-<text text-anchor="middle" x="230" y="-919.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseGaussianGen</text>
+<polygon fill="none" stroke="red" points="159.5,-912.5 159.5,-931.5 267.5,-931.5 267.5,-912.5 159.5,-912.5"/>
+<text text-anchor="middle" x="213.5" y="-919.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseGaussianGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node25 -->
 <g id="edge24" class="edge"><title>Node1&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M77.6544,-861.722C95.4286,-874.549 122.212,-892.249 148,-903 157.066,-906.78 167.03,-909.892 176.777,-912.425"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="79.3615,-858.633 69.2338,-855.521 75.2107,-864.269 79.3615,-858.633"/>
+<path fill="none" stroke="midnightblue" d="M71.7189,-861.871C88.4646,-874.638 113.599,-892.176 138,-903 146.541,-906.789 155.981,-909.926 165.191,-912.485"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="73.8167,-859.069 63.775,-855.691 69.5182,-864.594 73.8167,-859.069"/>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node"><title>Node26</title>
 <g id="a_node26"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1JohnsonSystemG.html" target="_top" xlink:title="This class contains common parameters and methods for the random variate generators associated with t...">
-<polygon fill="none" stroke="red" points="180.5,-874.5 180.5,-893.5 279.5,-893.5 279.5,-874.5 180.5,-874.5"/>
-<text text-anchor="middle" x="230" y="-881.5" font-family="Helvetica,sans-Serif" font-size="10.00">JohnsonSystemG</text>
+<polygon fill="none" stroke="red" points="166,-874.5 166,-893.5 261,-893.5 261,-874.5 166,-874.5"/>
+<text text-anchor="middle" x="213.5" y="-881.5" font-family="Helvetica,sans-Serif" font-size="10.00">JohnsonSystemG</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node26 -->
 <g id="edge25" class="edge"><title>Node1&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M110.196,-857.753C134.517,-863.126 162.955,-869.409 185.909,-874.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="110.922,-854.329 100.403,-855.589 109.412,-861.164 110.922,-854.329"/>
+<path fill="none" stroke="midnightblue" d="M102.245,-857.896C124.805,-863.237 151.061,-869.454 172.29,-874.48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="103.038,-854.487 92.5009,-855.589 101.426,-861.299 103.038,-854.487"/>
 </g>
 <!-- Node27 -->
 <g id="node27" class="node"><title>Node27</title>
 <g id="a_node27"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen.html" target="_top" xlink:title="This class implements random variate generators for distributions obtained via kernel density estimat...">
-<polygon fill="none" stroke="red" points="177.5,-836.5 177.5,-855.5 282.5,-855.5 282.5,-836.5 177.5,-836.5"/>
-<text text-anchor="middle" x="230" y="-843.5" font-family="Helvetica,sans-Serif" font-size="10.00">KernelDensityGen</text>
+<polygon fill="none" stroke="red" points="165.5,-836.5 165.5,-855.5 261.5,-855.5 261.5,-836.5 165.5,-836.5"/>
+<text text-anchor="middle" x="213.5" y="-843.5" font-family="Helvetica,sans-Serif" font-size="10.00">KernelDensityGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node27 -->
 <g id="edge26" class="edge"><title>Node1&#45;&gt;Node27</title>
-<path fill="none" stroke="midnightblue" d="M122.56,-846C140.66,-846 160.042,-846 177.241,-846"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="122.369,-842.5 112.369,-846 122.369,-849.5 122.369,-842.5"/>
+<path fill="none" stroke="midnightblue" d="M112.461,-846C129.956,-846 148.789,-846 165.344,-846"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="112.343,-842.5 102.343,-846 112.343,-849.5 112.343,-842.5"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node"><title>Node28</title>
 <g id="a_node28"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1LaplaceGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the Laplace distribution. ">
-<polygon fill="none" stroke="black" points="193,-798.5 193,-817.5 267,-817.5 267,-798.5 193,-798.5"/>
-<text text-anchor="middle" x="230" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00">LaplaceGen</text>
+<polygon fill="none" stroke="black" points="179.5,-798.5 179.5,-817.5 247.5,-817.5 247.5,-798.5 179.5,-798.5"/>
+<text text-anchor="middle" x="213.5" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00">LaplaceGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node28 -->
 <g id="edge27" class="edge"><title>Node1&#45;&gt;Node28</title>
-<path fill="none" stroke="midnightblue" d="M110.406,-834.201C137.208,-828.28 168.967,-821.263 192.871,-815.982"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="109.412,-830.836 100.403,-836.411 110.922,-837.671 109.412,-830.836"/>
+<path fill="none" stroke="midnightblue" d="M102.235,-834.106C127.357,-828.158 157.065,-821.125 179.311,-815.858"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="101.426,-830.701 92.5009,-836.411 103.038,-837.513 101.426,-830.701"/>
 </g>
 <!-- Node29 -->
 <g id="node29" class="node"><title>Node29</title>
 <g id="a_node29"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1LogisticGen.html" target="_top" xlink:title="This class implements random variate generators for the logistic distribution. ">
-<polygon fill="none" stroke="black" points="193,-760.5 193,-779.5 267,-779.5 267,-760.5 193,-760.5"/>
-<text text-anchor="middle" x="230" y="-767.5" font-family="Helvetica,sans-Serif" font-size="10.00">LogisticGen</text>
+<polygon fill="none" stroke="black" points="179.5,-760.5 179.5,-779.5 247.5,-779.5 247.5,-760.5 179.5,-760.5"/>
+<text text-anchor="middle" x="213.5" y="-767.5" font-family="Helvetica,sans-Serif" font-size="10.00">LogisticGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node29 -->
 <g id="edge28" class="edge"><title>Node1&#45;&gt;Node29</title>
-<path fill="none" stroke="midnightblue" d="M77.6544,-830.278C95.4286,-817.451 122.212,-799.751 148,-789 162.132,-783.108 178.448,-778.838 192.717,-775.857"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="75.2107,-827.731 69.2338,-836.479 79.3615,-833.367 75.2107,-827.731"/>
+<path fill="none" stroke="midnightblue" d="M71.7189,-830.129C88.4646,-817.362 113.599,-799.824 138,-789 151.056,-783.209 166.212,-778.939 179.433,-775.931"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="69.5182,-827.406 63.775,-836.309 73.8167,-832.931 69.5182,-827.406"/>
 </g>
 <!-- Node30 -->
 <g id="node30" class="node"><title>Node30</title>
 <g id="a_node30"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1LoglogisticGen.html" target="_top" xlink:title="This class implements random variate generators for the log&#45;logistic distribution with shape paramete...">
-<polygon fill="none" stroke="black" points="185.5,-722.5 185.5,-741.5 274.5,-741.5 274.5,-722.5 185.5,-722.5"/>
-<text text-anchor="middle" x="230" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">LoglogisticGen</text>
+<polygon fill="none" stroke="black" points="173,-722.5 173,-741.5 254,-741.5 254,-722.5 173,-722.5"/>
+<text text-anchor="middle" x="213.5" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">LoglogisticGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node30 -->
 <g id="edge29" class="edge"><title>Node1&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M69.0798,-828.128C84.7027,-806.453 113.982,-770.416 148,-751 159.29,-744.556 172.653,-740.294 185.236,-737.477"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="66.1218,-826.25 63.2464,-836.447 71.8532,-830.269 66.1218,-826.25"/>
+<path fill="none" stroke="midnightblue" d="M63.4391,-827.929C78.0766,-806.317 105.468,-770.607 138,-751 148.518,-744.661 161.097,-740.424 172.899,-737.598"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="60.3732,-826.221 57.8034,-836.5 66.222,-830.067 60.3732,-826.221"/>
 </g>
 <!-- Node31 -->
 <g id="node31" class="node"><title>Node31</title>
 <g id="a_node31"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1LognormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the lognormal distribution. ">
-<polygon fill="none" stroke="black" points="186,-684.5 186,-703.5 274,-703.5 274,-684.5 186,-684.5"/>
-<text text-anchor="middle" x="230" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">LognormalGen</text>
+<polygon fill="none" stroke="black" points="173.5,-684.5 173.5,-703.5 253.5,-703.5 253.5,-684.5 173.5,-684.5"/>
+<text text-anchor="middle" x="213.5" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">LognormalGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node31 -->
 <g id="edge30" class="edge"><title>Node1&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M64.577,-827.006C77.2637,-797.749 105.652,-742.008 148,-713 159.082,-705.409 172.803,-700.826 185.782,-698.067"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="61.241,-825.912 60.6166,-836.489 67.7003,-828.61 61.241,-825.912"/>
+<path fill="none" stroke="midnightblue" d="M59.1051,-826.686C70.8735,-797.459 97.2357,-742.303 138,-713 148.296,-705.599 161.21,-701.074 173.381,-698.31"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="55.7741,-825.596 55.43,-836.185 62.3025,-828.122 55.7741,-825.596"/>
 </g>
 <!-- Node32 -->
 <g id="node32" class="node"><title>Node32</title>
 <g id="a_node32"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1LognormalSpecialGen.html" target="_top" xlink:title="Implements methods for generating random variates from the lognormal distribution using an arbitrary ...">
-<polygon fill="none" stroke="black" points="168.5,-646.5 168.5,-665.5 291.5,-665.5 291.5,-646.5 168.5,-646.5"/>
-<text text-anchor="middle" x="230" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00">LognormalSpecialGen</text>
+<polygon fill="none" stroke="black" points="157.5,-646.5 157.5,-665.5 269.5,-665.5 269.5,-646.5 157.5,-646.5"/>
+<text text-anchor="middle" x="213.5" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00">LognormalSpecialGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node32 -->
 <g id="edge31" class="edge"><title>Node1&#45;&gt;Node32</title>
-<path fill="none" stroke="midnightblue" d="M61.6068,-826.736C71.1973,-790.981 96.803,-714.413 148,-675 154.066,-670.33 161.092,-666.779 168.421,-664.085"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="58.2129,-825.881 59.134,-836.436 64.9959,-827.611 58.2129,-825.881"/>
+<path fill="none" stroke="midnightblue" d="M56.2105,-826.385C64.9371,-790.621 88.4612,-714.836 138,-675 143.721,-670.399 150.423,-666.899 157.419,-664.237"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="52.7159,-825.964 53.8829,-836.494 59.5375,-827.535 52.7159,-825.964"/>
 </g>
 <!-- Node33 -->
 <g id="node33" class="node"><title>Node33</title>
 <g id="a_node33"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1NakagamiGen.html" target="_top" xlink:title="This class implements random variate generators for the Nakagami distribution. ">
-<polygon fill="none" stroke="black" points="187,-608.5 187,-627.5 273,-627.5 273,-608.5 187,-608.5"/>
-<text text-anchor="middle" x="230" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00">NakagamiGen</text>
+<polygon fill="none" stroke="black" points="174,-608.5 174,-627.5 253,-627.5 253,-608.5 174,-608.5"/>
+<text text-anchor="middle" x="213.5" y="-615.5" font-family="Helvetica,sans-Serif" font-size="10.00">NakagamiGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node33 -->
 <g id="edge32" class="edge"><title>Node1&#45;&gt;Node33</title>
-<path fill="none" stroke="midnightblue" d="M59.6452,-826.318C66.3295,-784.631 87.873,-687.16 148,-637 158.87,-627.932 173.287,-623.023 186.944,-620.416"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="56.1702,-825.892 58.1632,-836.298 63.0943,-826.92 56.1702,-825.892"/>
+<path fill="none" stroke="midnightblue" d="M54.2224,-826.433C60.0023,-784.968 79.3834,-687.902 138,-637 147.877,-628.423 161.109,-623.629 173.681,-620.977"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="50.75,-825.994 52.9559,-836.357 57.6937,-826.88 50.75,-825.994"/>
 </g>
 <!-- Node34 -->
 <g id="node34" class="node"><title>Node34</title>
 <g id="a_node34"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the normal distribution ...">
-<polygon fill="none" stroke="red" points="194,-570.5 194,-589.5 266,-589.5 266,-570.5 194,-570.5"/>
-<text text-anchor="middle" x="230" y="-577.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalGen</text>
+<polygon fill="none" stroke="red" points="180.5,-570.5 180.5,-589.5 246.5,-589.5 246.5,-570.5 180.5,-570.5"/>
+<text text-anchor="middle" x="213.5" y="-577.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node34 -->
 <g id="edge33" class="edge"><title>Node1&#45;&gt;Node34</title>
-<path fill="none" stroke="midnightblue" d="M58.163,-826.373C62.0404,-779.502 78.5816,-660.391 148,-599 160.443,-587.996 178.052,-583.044 193.675,-580.928"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.6668,-826.195 57.4396,-836.421 61.6487,-826.698 54.6668,-826.195"/>
+<path fill="none" stroke="midnightblue" d="M52.811,-826.488C55.8397,-779.868 70.1743,-661.271 138,-599 149.406,-588.528 165.772,-583.646 180.26,-581.437"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.3159,-826.304 52.2688,-836.479 56.3056,-826.684 49.3159,-826.304"/>
 </g>
 <!-- Node35 -->
 <g id="node35" class="node"><title>Node35</title>
 <g id="a_node35"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1NormalInverseGaussianGen.html" target="_top" xlink:title="This class implements random variate generators for the normal inverse gaussian ( ) distribution...">
-<polygon fill="none" stroke="red" points="153.5,-532.5 153.5,-551.5 306.5,-551.5 306.5,-532.5 153.5,-532.5"/>
-<text text-anchor="middle" x="230" y="-539.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalInverseGaussianGen</text>
+<polygon fill="none" stroke="red" points="143.5,-532.5 143.5,-551.5 283.5,-551.5 283.5,-532.5 143.5,-532.5"/>
+<text text-anchor="middle" x="213.5" y="-539.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalInverseGaussianGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node35 -->
 <g id="edge34" class="edge"><title>Node1&#45;&gt;Node35</title>
-<path fill="none" stroke="midnightblue" d="M57.0586,-826.237C58.3406,-774.445 69.2763,-633.762 148,-561 152.137,-557.176 156.893,-554.077 161.984,-551.569"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.5567,-826.345 56.9082,-836.395 60.5559,-826.448 53.5567,-826.345"/>
+<path fill="none" stroke="midnightblue" d="M51.7574,-826.351C52.2419,-774.837 60.9568,-634.773 138,-561 142.049,-557.123 146.775,-554.006 151.846,-551.505"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="48.2573,-826.455 51.7627,-836.453 55.2573,-826.451 48.2573,-826.455"/>
 </g>
 <!-- Node36 -->
 <g id="node36" class="node"><title>Node36</title>
 <g id="a_node36"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1ParetoGen.html" target="_top" xlink:title="This class implements random variate generators for one of the Pareto distributions, with parameters &#160;and . ">
-<polygon fill="none" stroke="black" points="196,-494.5 196,-513.5 264,-513.5 264,-494.5 196,-494.5"/>
-<text text-anchor="middle" x="230" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParetoGen</text>
+<polygon fill="none" stroke="black" points="182,-494.5 182,-513.5 245,-513.5 245,-494.5 182,-494.5"/>
+<text text-anchor="middle" x="213.5" y="-501.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParetoGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node36 -->
 <g id="edge35" class="edge"><title>Node1&#45;&gt;Node36</title>
-<path fill="none" stroke="midnightblue" d="M56.1883,-826.303C55.015,-770.066 59.7822,-607.401 148,-523 160.629,-510.918 179.415,-506.012 195.717,-504.199"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="52.6914,-826.46 56.4901,-836.35 59.6882,-826.249 52.6914,-826.46"/>
+<path fill="none" stroke="midnightblue" d="M54.6582,-826.03C63.5075,-762.489 93.9262,-566.613 138,-523 149.48,-511.64 166.752,-506.774 181.775,-504.801"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="51.1427,-825.906 53.2584,-836.288 58.0784,-826.853 51.1427,-825.906"/>
 </g>
 <!-- Node37 -->
 <g id="node37" class="node"><title>Node37</title>
 <g id="a_node37"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1Pearson5Gen.html" target="_top" xlink:title="THIS CLASS HAS BEEN RENAMED InverseGammaGen . ">
-<polygon fill="none" stroke="black" points="189.5,-456.5 189.5,-475.5 270.5,-475.5 270.5,-456.5 189.5,-456.5"/>
-<text text-anchor="middle" x="230" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pearson5Gen</text>
+<polygon fill="none" stroke="black" points="175.5,-456.5 175.5,-475.5 251.5,-475.5 251.5,-456.5 175.5,-456.5"/>
+<text text-anchor="middle" x="213.5" y="-463.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pearson5Gen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node37 -->
 <g id="edge36" class="edge"><title>Node1&#45;&gt;Node37</title>
-<path fill="none" stroke="midnightblue" d="M59.3254,-825.903C67.6629,-757.306 98.2333,-533.951 148,-485 158.916,-474.263 174.679,-469.161 189.404,-466.867"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="55.8074,-825.847 58.1022,-836.19 62.7584,-826.674 55.8074,-825.847"/>
+<path fill="none" stroke="midnightblue" d="M54.0673,-825.95C61.5211,-757.506 89.1887,-534.591 138,-485 147.738,-475.107 161.859,-470.116 175.195,-467.677"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="50.553,-825.9 52.9764,-836.214 57.5138,-826.64 50.553,-825.9"/>
 </g>
 <!-- Node38 -->
 <g id="node38" class="node"><title>Node38</title>
 <g id="a_node38"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1Pearson6Gen.html" target="_top" xlink:title="This class implements random variate generators for the Pearson type VI distribution with shape param...">
-<polygon fill="none" stroke="black" points="189.5,-418.5 189.5,-437.5 270.5,-437.5 270.5,-418.5 189.5,-418.5"/>
-<text text-anchor="middle" x="230" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pearson6Gen</text>
+<polygon fill="none" stroke="black" points="175.5,-418.5 175.5,-437.5 251.5,-437.5 251.5,-418.5 175.5,-418.5"/>
+<text text-anchor="middle" x="213.5" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pearson6Gen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node38 -->
 <g id="edge37" class="edge"><title>Node1&#45;&gt;Node38</title>
-<path fill="none" stroke="midnightblue" d="M58.7807,-826.188C65.7225,-753.383 93.3277,-502.011 148,-447 158.793,-436.14 174.535,-431.016 189.278,-428.74"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="55.283,-826.001 57.843,-836.282 62.253,-826.649 55.283,-826.001"/>
+<path fill="none" stroke="midnightblue" d="M53.5531,-826.234C59.6558,-753.589 84.3363,-502.71 138,-447 147.723,-436.906 162.003,-431.896 175.467,-429.497"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="50.0563,-826.054 52.7316,-836.305 57.0331,-826.623 50.0563,-826.054"/>
 </g>
 <!-- Node39 -->
 <g id="node39" class="node"><title>Node39</title>
 <g id="a_node39"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1PowerGen.html" target="_top" xlink:title="This class implements random variate generators for the power distribution with shape parameter ...">
-<polygon fill="none" stroke="black" points="197,-380.5 197,-399.5 263,-399.5 263,-380.5 197,-380.5"/>
-<text text-anchor="middle" x="230" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">PowerGen</text>
+<polygon fill="none" stroke="black" points="182.5,-380.5 182.5,-399.5 244.5,-399.5 244.5,-380.5 182.5,-380.5"/>
+<text text-anchor="middle" x="213.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">PowerGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node39 -->
 <g id="edge38" class="edge"><title>Node1&#45;&gt;Node39</title>
-<path fill="none" stroke="midnightblue" d="M58.3835,-825.831C64.1173,-748.192 88.5593,-469.952 148,-409 160.606,-396.074 180.213,-391.241 196.979,-389.68"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.8682,-825.921 57.6461,-836.145 61.8504,-826.42 54.8682,-825.921"/>
+<path fill="none" stroke="midnightblue" d="M53.1746,-825.876C58.1011,-748.407 79.6196,-470.708 138,-409 149.283,-397.074 166.922,-392.222 182.205,-390.399"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.6622,-825.972 52.5443,-836.167 56.6491,-826.4 49.6622,-825.972"/>
 </g>
 <!-- Node40 -->
 <g id="node40" class="node"><title>Node40</title>
 <g id="a_node40"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html" target="_top" xlink:title="This is the base class for all generators of discrete random variates over the set of integers...">
-<polygon fill="none" stroke="red" points="167.5,-342.5 167.5,-361.5 292.5,-361.5 292.5,-342.5 167.5,-342.5"/>
-<text text-anchor="middle" x="230" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGenInt</text>
+<polygon fill="none" stroke="red" points="157,-342.5 157,-361.5 270,-361.5 270,-342.5 157,-342.5"/>
+<text text-anchor="middle" x="213.5" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGenInt</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node40 -->
 <g id="edge39" class="edge"><title>Node1&#45;&gt;Node40</title>
-<path fill="none" stroke="midnightblue" d="M58.0275,-825.685C62.5913,-743.646 83.7199,-437.979 148,-371 153.401,-365.372 160.127,-361.274 167.38,-358.309"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.5091,-825.939 57.4712,-836.111 61.4991,-826.312 54.5091,-825.939"/>
+<path fill="none" stroke="midnightblue" d="M52.8364,-825.73C56.6253,-743.867 74.834,-438.791 138,-371 143.187,-365.434 149.757,-361.404 156.838,-358.503"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.3217,-825.989 52.3784,-836.134 56.315,-826.297 49.3217,-825.989"/>
 </g>
 <!-- Node41 -->
 <g id="node41" class="node"><title>Node41</title>
 <g id="a_node41"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenWithCache.html" target="_top" xlink:title="This class represents a random variate generator whose values are cached for more efficiency when usi...">
-<polygon fill="none" stroke="black" points="148,-304.5 148,-323.5 312,-323.5 312,-304.5 148,-304.5"/>
-<text text-anchor="middle" x="230" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGenWithCache</text>
+<polygon fill="none" stroke="black" points="138,-304.5 138,-323.5 289,-323.5 289,-304.5 138,-304.5"/>
+<text text-anchor="middle" x="213.5" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGenWithCache</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node41 -->
 <g id="edge40" class="edge"><title>Node1&#45;&gt;Node41</title>
-<path fill="none" stroke="midnightblue" d="M57.7012,-826.001C61.1117,-740.431 78.7412,-406.165 148,-333 151.575,-329.224 155.746,-326.134 160.275,-323.612"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.197,-826.05 57.3174,-836.175 61.192,-826.314 54.197,-826.05"/>
+<path fill="none" stroke="midnightblue" d="M52.5294,-826.045C55.2016,-740.657 69.9122,-407.033 138,-333 141.524,-329.168 145.703,-326.063 150.256,-323.552"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.0265,-826.099 52.2332,-836.197 56.0235,-826.303 49.0265,-826.099"/>
 </g>
 <!-- Node42 -->
 <g id="node42" class="node"><title>Node42</title>
 <g id="a_node42"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RayleighGen.html" target="_top" xlink:title="This class implements random variate generators for the Rayleigh distribution. ">
-<polygon fill="none" stroke="black" points="190.5,-266.5 190.5,-285.5 269.5,-285.5 269.5,-266.5 190.5,-266.5"/>
-<text text-anchor="middle" x="230" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayleighGen</text>
+<polygon fill="none" stroke="black" points="177,-266.5 177,-285.5 250,-285.5 250,-266.5 177,-266.5"/>
+<text text-anchor="middle" x="213.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">RayleighGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node42 -->
 <g id="edge41" class="edge"><title>Node1&#45;&gt;Node42</title>
-<path fill="none" stroke="midnightblue" d="M57.4275,-826.249C59.7612,-737.248 73.7616,-374.365 148,-295 158.755,-283.502 175.036,-278.351 190.188,-276.226"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.9266,-826.245 57.1838,-836.327 60.9246,-826.415 53.9266,-826.245"/>
+<path fill="none" stroke="midnightblue" d="M52.2718,-826.292C53.9007,-737.477 64.9899,-375.288 138,-295 147.788,-284.236 162.748,-279.193 176.7,-276.952"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="48.7714,-826.293 52.1077,-836.348 55.7705,-826.407 48.7714,-826.293"/>
 </g>
 <!-- Node43 -->
 <g id="node43" class="node"><title>Node43</title>
 <g id="a_node43"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1StudentGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the Student distribution with &#160;degr...">
-<polygon fill="none" stroke="red" points="193,-228.5 193,-247.5 267,-247.5 267,-228.5 193,-228.5"/>
-<text text-anchor="middle" x="230" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">StudentGen</text>
+<polygon fill="none" stroke="red" points="179.5,-228.5 179.5,-247.5 247.5,-247.5 247.5,-228.5 179.5,-228.5"/>
+<text text-anchor="middle" x="213.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">StudentGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node43 -->
 <g id="edge42" class="edge"><title>Node1&#45;&gt;Node43</title>
-<path fill="none" stroke="midnightblue" d="M57.1994,-826.076C58.5433,-733.061 68.8851,-342.464 148,-257 159.284,-244.81 176.776,-239.738 192.621,-237.849"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.6992,-826.075 57.0739,-836.118 60.6987,-826.163 53.6992,-826.075"/>
+<path fill="none" stroke="midnightblue" d="M52.0547,-826.119C52.7194,-733.297 60.1695,-343.44 138,-257 148.361,-245.493 164.628,-240.513 179.323,-238.508"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="48.5547,-826.122 52.0023,-836.14 55.5546,-826.158 48.5547,-826.122"/>
 </g>
 <!-- Node44 -->
 <g id="node44" class="node"><title>Node44</title>
 <g id="a_node44"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1StudentNoncentralGen.html" target="_top" xlink:title="This class implements random variate generators for the noncentral Student&#45;t distribution with &#160;degre...">
-<polygon fill="none" stroke="black" points="166.5,-190.5 166.5,-209.5 293.5,-209.5 293.5,-190.5 166.5,-190.5"/>
-<text text-anchor="middle" x="230" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">StudentNoncentralGen</text>
+<polygon fill="none" stroke="black" points="155.5,-190.5 155.5,-209.5 271.5,-209.5 271.5,-190.5 155.5,-190.5"/>
+<text text-anchor="middle" x="213.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">StudentNoncentralGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node44 -->
 <g id="edge43" class="edge"><title>Node1&#45;&gt;Node44</title>
-<path fill="none" stroke="midnightblue" d="M56.9932,-826.345C57.3695,-730.24 63.8709,-310.719 148,-219 153.077,-213.465 159.434,-209.394 166.34,-206.422"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.4932,-826.411 56.9729,-836.418 60.4932,-826.425 53.4932,-826.411"/>
+<path fill="none" stroke="midnightblue" d="M51.8612,-826.387C51.5883,-730.479 55.214,-311.75 138,-219 142.711,-213.722 148.664,-209.815 155.144,-206.938"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="48.3614,-826.456 51.9088,-836.439 55.3613,-826.422 48.3614,-826.456"/>
 </g>
 <!-- Node45 -->
 <g id="node45" class="node"><title>Node45</title>
 <g id="a_node45"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1TriangularGen.html" target="_top" xlink:title="This class implements random variate generators for the triangular distribution. ">
-<polygon fill="none" stroke="black" points="187,-152.5 187,-171.5 273,-171.5 273,-152.5 187,-152.5"/>
-<text text-anchor="middle" x="230" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">TriangularGen</text>
+<polygon fill="none" stroke="black" points="175,-152.5 175,-171.5 252,-171.5 252,-152.5 175,-152.5"/>
+<text text-anchor="middle" x="213.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">TriangularGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node45 -->
 <g id="edge44" class="edge"><title>Node1&#45;&gt;Node45</title>
-<path fill="none" stroke="midnightblue" d="M56.8124,-826.114C56.2842,-726.08 58.9915,-278.835 148,-181 157.817,-170.209 172.496,-164.975 186.673,-162.594"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.3138,-826.345 56.8852,-836.32 60.3136,-826.295 53.3138,-826.345"/>
+<path fill="none" stroke="midnightblue" d="M51.6884,-826.156C50.533,-726.325 50.3914,-279.917 138,-181 147.204,-170.608 161.225,-165.524 174.631,-163.15"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="48.1911,-826.388 51.825,-836.341 55.1905,-826.295 48.1911,-826.388"/>
 </g>
 <!-- Node46 -->
 <g id="node46" class="node"><title>Node46</title>
 <g id="a_node46"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1UniformGen.html" target="_top" xlink:title="This class implements random variate generators for the (continuous) uniform distribution over the in...">
-<polygon fill="none" stroke="black" points="192,-114.5 192,-133.5 268,-133.5 268,-114.5 192,-114.5"/>
-<text text-anchor="middle" x="230" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">UniformGen</text>
+<polygon fill="none" stroke="black" points="179,-114.5 179,-133.5 248,-133.5 248,-114.5 179,-114.5"/>
+<text text-anchor="middle" x="213.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">UniformGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node46 -->
 <g id="edge45" class="edge"><title>Node1&#45;&gt;Node46</title>
-<path fill="none" stroke="midnightblue" d="M56.6478,-825.971C55.2444,-722.25 54.0787,-246.991 148,-143 158.94,-130.887 176.004,-125.766 191.654,-123.824"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.1527,-826.319 56.8057,-836.265 60.1518,-826.212 53.1527,-826.319"/>
+<path fill="none" stroke="midnightblue" d="M53.1044,-826.168C59.3351,-717.365 91.4785,-195.892 138,-143 148.138,-131.474 164.201,-126.469 178.821,-124.453"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.5974,-826.194 52.527,-836.376 56.5862,-826.589 49.5974,-826.194"/>
 </g>
 <!-- Node47 -->
 <g id="node47" class="node"><title>Node47</title>
 <g id="a_node47"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1UnuranContinuous.html" target="_top" xlink:title="This class permits one to create continuous univariate generators using UNURAN via its string API...">
-<polygon fill="none" stroke="black" points="176.5,-76.5 176.5,-95.5 283.5,-95.5 283.5,-76.5 176.5,-76.5"/>
-<text text-anchor="middle" x="230" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnuranContinuous</text>
+<polygon fill="none" stroke="black" points="164.5,-76.5 164.5,-95.5 262.5,-95.5 262.5,-76.5 164.5,-76.5"/>
+<text text-anchor="middle" x="213.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnuranContinuous</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node47 -->
 <g id="edge46" class="edge"><title>Node1&#45;&gt;Node47</title>
-<path fill="none" stroke="midnightblue" d="M58.0963,-826.142C64.4754,-713.746 98.2575,-160.439 148,-105 155.428,-96.7218 165.715,-91.7045 176.47,-88.7354"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.5879,-826.196 57.5225,-836.376 61.5769,-826.588 54.5879,-826.196"/>
+<path fill="none" stroke="midnightblue" d="M52.9745,-826.16C58.6624,-713.868 89.0202,-161.035 138,-105 144.852,-97.161 154.445,-92.3351 164.472,-89.4138"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.4671,-826.223 52.4636,-836.385 56.4583,-826.573 49.4671,-826.223"/>
 </g>
 <!-- Node48 -->
 <g id="node48" class="node"><title>Node48</title>
 <g id="a_node48"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1UnuranEmpirical.html" target="_top" xlink:title="This class permits one to create generators for empirical and quasi&#45;empirical univariate distribution...">
-<polygon fill="none" stroke="black" points="181,-38.5 181,-57.5 279,-57.5 279,-38.5 181,-38.5"/>
-<text text-anchor="middle" x="230" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnuranEmpirical</text>
+<polygon fill="none" stroke="black" points="169,-38.5 169,-57.5 258,-57.5 258,-38.5 169,-38.5"/>
+<text text-anchor="middle" x="213.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnuranEmpirical</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node48 -->
 <g id="edge47" class="edge"><title>Node1&#45;&gt;Node48</title>
-<path fill="none" stroke="midnightblue" d="M57.9681,-826.217C63.7987,-710.615 95.7536,-125.576 148,-67 156.365,-57.6219 168.399,-52.4236 180.643,-49.6473"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.4614,-826.265 57.46,-836.426 61.4528,-826.613 54.4614,-826.265"/>
+<path fill="none" stroke="midnightblue" d="M52.8534,-826.236C58.0125,-710.738 86.546,-126.199 138,-67 145.793,-58.0337 157.172,-53.0054 168.702,-50.2606"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.3477,-826.291 52.4046,-836.435 56.3409,-826.599 49.3477,-826.291"/>
 </g>
 <!-- Node49 -->
 <g id="node49" class="node"><title>Node49</title>
 <g id="a_node49"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1WeibullGen.html" target="_top" xlink:title="This class implements random variate generators for the Weibull distribution. ">
-<polygon fill="none" stroke="black" points="193.5,-0.5 193.5,-19.5 266.5,-19.5 266.5,-0.5 193.5,-0.5"/>
-<text text-anchor="middle" x="230" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">WeibullGen</text>
+<polygon fill="none" stroke="black" points="180,-0.5 180,-19.5 247,-19.5 247,-0.5 180,-0.5"/>
+<text text-anchor="middle" x="213.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">WeibullGen</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node49 -->
 <g id="edge48" class="edge"><title>Node1&#45;&gt;Node49</title>
-<path fill="none" stroke="midnightblue" d="M57.8653,-825.998C63.2082,-706.561 93.2909,-90.6696 148,-29 159.215,-16.358 177.098,-11.3029 193.211,-9.54042"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.3577,-826.095 57.4138,-836.239 61.3509,-826.403 54.3577,-826.095"/>
+<path fill="none" stroke="midnightblue" d="M52.7555,-826.016C57.4414,-706.687 84.1125,-91.3175 138,-29 148.302,-17.086 164.936,-12.1184 179.875,-10.2248"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="49.249,-826.121 52.3603,-836.248 56.2438,-826.391 49.249,-826.121"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1BetaRejectionLoglogisticGen.html" target="_top" xlink:title="Implements Beta random variate generators using the rejection method with log&#45;logistic envelopes from...">
-<polygon fill="none" stroke="black" points="348,-1710.5 348,-1729.5 505,-1729.5 505,-1710.5 348,-1710.5"/>
-<text text-anchor="middle" x="426.5" y="-1717.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaRejectionLoglogisticGen</text>
+<polygon fill="none" stroke="black" points="325,-1710.5 325,-1729.5 468,-1729.5 468,-1710.5 325,-1710.5"/>
+<text text-anchor="middle" x="396.5" y="-1717.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaRejectionLoglogisticGen</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M269.612,-1689.54C300.346,-1695.55 343.55,-1703.99 376.682,-1710.46"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="270.185,-1686.09 259.699,-1687.61 268.842,-1692.96 270.185,-1686.09"/>
+<path fill="none" stroke="midnightblue" d="M251.18,-1689.7C279.731,-1695.69 319.506,-1704.05 350.071,-1710.46"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="251.713,-1686.24 241.207,-1687.61 250.275,-1693.09 251.713,-1686.24"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1BetaStratifiedRejectionGen.html" target="_top" xlink:title="This class implements Beta random variate generators using the stratified rejection/patchwork rejecti...">
-<polygon fill="none" stroke="black" points="352,-1672.5 352,-1691.5 501,-1691.5 501,-1672.5 352,-1672.5"/>
-<text text-anchor="middle" x="426.5" y="-1679.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaStratifiedRejectionGen</text>
+<polygon fill="none" stroke="black" points="329,-1672.5 329,-1691.5 464,-1691.5 464,-1672.5 329,-1672.5"/>
+<text text-anchor="middle" x="396.5" y="-1679.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaStratifiedRejectionGen</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M269.915,-1682C293.322,-1682 323.88,-1682 351.712,-1682"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="269.699,-1678.5 259.699,-1682 269.699,-1685.5 269.699,-1678.5"/>
+<path fill="none" stroke="midnightblue" d="M251.234,-1682C273.499,-1682 302.575,-1682 328.785,-1682"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="251.207,-1678.5 241.207,-1682 251.207,-1685.5 251.207,-1678.5"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalGen.html" target="_top" xlink:title="This class implements random variate generators with the symmetrical beta distribution with shape par...">
-<polygon fill="none" stroke="red" points="366,-1634.5 366,-1653.5 487,-1653.5 487,-1634.5 366,-1634.5"/>
-<text text-anchor="middle" x="426.5" y="-1641.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaSymmetricalGen</text>
+<polygon fill="none" stroke="red" points="341.5,-1634.5 341.5,-1653.5 451.5,-1653.5 451.5,-1634.5 341.5,-1634.5"/>
+<text text-anchor="middle" x="396.5" y="-1641.5" font-family="Helvetica,sans-Serif" font-size="10.00">BetaSymmetricalGen</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M269.612,-1674.46C300.346,-1668.45 343.55,-1660.01 376.682,-1653.54"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="268.842,-1671.04 259.699,-1676.39 270.185,-1677.91 268.842,-1671.04"/>
+<path fill="none" stroke="midnightblue" d="M251.18,-1674.3C279.731,-1668.31 319.506,-1659.95 350.071,-1653.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="250.275,-1670.91 241.207,-1676.39 251.713,-1677.76 250.275,-1670.91"/>
 </g>
 </g>
 </svg>

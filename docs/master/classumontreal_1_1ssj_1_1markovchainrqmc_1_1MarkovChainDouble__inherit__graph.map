@@ -1,0 +1,4 @@
+<map id="MarkovChainDouble" name="MarkovChainDouble">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of Markov chain for which there is a total ordering between the states in each dimension i..." alt="" coords="55,169,225,196"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ..." alt="" coords="5,87,104,114"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="AndersonDarlingDist" name="AndersonDarlingDist">
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1AndersonDarlingDistQuick.html" title="Extends the class AndersonDarlingDist for the Anderson–Darling distribution (see ..." alt="" coords="5,229,199,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="17,80,187,107"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="53,5,151,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1AndersonDarlingDistQuick.html" title="Extends the class AndersonDarlingDist for the Anderson–Darling distribution (see ..." alt="" coords="5,229,181,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="16,80,171,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="49,5,137,32"/>
 </map>

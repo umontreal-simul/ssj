@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1util_1_1JDBCManager.html" title="This class provides some facilities to connect to a SQL database and to retrieve data stored in it..." alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node1" href="$classInventory.html" title="Inventory" alt="" coords="5,5,81,32"/>
+<area shape="rect" id="node2" href="$classInventoryCRN.html" title="InventoryCRN" alt="" coords="129,5,236,32"/>
 </map>

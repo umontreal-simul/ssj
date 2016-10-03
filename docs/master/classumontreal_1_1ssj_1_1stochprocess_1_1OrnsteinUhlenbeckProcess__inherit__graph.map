@@ -1,4 +1,4 @@
 <map id="OrnsteinUhlenbeckProcess" name="OrnsteinUhlenbeckProcess">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcessEuler.html" title="This class represents an Ornstein&#45;Uhlenbeck process as in OrnsteinUhlenbeckProcess, but the process is generated using the simple Euler scheme. " alt="" coords="5,155,201,196"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="34,5,173,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcessEuler.html" title="This class represents an Ornstein&#45;Uhlenbeck process as in OrnsteinUhlenbeckProcess, but the process is generated using the simple Euler scheme. " alt="" coords="5,155,187,196"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="30,5,162,32"/>
 </map>

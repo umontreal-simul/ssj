@@ -1,5 +1,5 @@
 <map id="BoxChart" name="BoxChart">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1CategoryChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="273,184,389,211"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html" title="Stores data used in a CategoryChart. " alt="" coords="56,95,263,121"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="401,95,451,121"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1CategoryChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="259,184,366,211"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html" title="Stores data used in a CategoryChart. " alt="" coords="50,95,245,121"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="381,95,429,121"/>
 </map>

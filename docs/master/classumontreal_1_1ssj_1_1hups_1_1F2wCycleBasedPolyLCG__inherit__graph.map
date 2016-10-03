@@ -1,5 +1,5 @@
 <map id="F2wCycleBasedPolyLCG" name="F2wCycleBasedPolyLCG">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2.html" title="Similar to CycleBasedPointSet, except that the successive values in the cycles are stored as integers..." alt="" coords="5,155,197,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="25,80,177,107"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="63,5,139,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2.html" title="Similar to CycleBasedPointSet, except that the successive values in the cycles are stored as integers..." alt="" coords="5,155,185,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="24,80,167,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="59,5,131,32"/>
 </map>

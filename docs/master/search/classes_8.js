@@ -3,6 +3,7 @@ var searchData=
   ['identitymathfunction',['IdentityMathFunction',['../classumontreal_1_1ssj_1_1functions_1_1IdentityMathFunction.html',1,'umontreal::ssj::functions']]],
   ['iidmultivariategen',['IIDMultivariateGen',['../classumontreal_1_1ssj_1_1randvarmulti_1_1IIDMultivariateGen.html',1,'umontreal::ssj::randvarmulti']]],
   ['incompatibledimensionexception',['IncompatibleDimensionException',['../classumontreal_1_1ssj_1_1util_1_1BitMatrix_1_1IncompatibleDimensionException.html',1,'umontreal::ssj::util::BitMatrix']]],
+  ['independentpointscached',['IndependentPointsCached',['../classumontreal_1_1ssj_1_1hups_1_1IndependentPointsCached.html',1,'umontreal::ssj::hups']]],
   ['integmethod',['IntegMethod',['../enumumontreal_1_1ssj_1_1simevents_1_1ContinuousState_1_1IntegMethod.html',1,'umontreal::ssj::simevents::ContinuousState']]],
   ['introspection',['Introspection',['../classumontreal_1_1ssj_1_1util_1_1Introspection.html',1,'umontreal::ssj::util']]],
   ['inventory',['Inventory',['../classInventory.html',1,'']]],

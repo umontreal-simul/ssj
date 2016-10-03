@@ -1,5 +1,5 @@
 <map id="MRG32k3aL" name="MRG32k3aL">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built. " alt="" coords="137,155,292,181"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="37,80,225,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built. " alt="" coords="128,155,271,181"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="37,80,207,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
 </map>

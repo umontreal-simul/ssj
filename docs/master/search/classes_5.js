@@ -22,5 +22,7 @@ var searchData=
   ['foldednormalgen',['FoldedNormalGen',['../classumontreal_1_1ssj_1_1randvar_1_1FoldedNormalGen.html',1,'umontreal::ssj::randvar']]],
   ['format',['Format',['../enumumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter_1_1Format.html',1,'umontreal::ssj::util::io::TextDataWriter']]],
   ['frechetdist',['FrechetDist',['../classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html',1,'umontreal::ssj::probdist']]],
-  ['frechetgen',['FrechetGen',['../classumontreal_1_1ssj_1_1randvar_1_1FrechetGen.html',1,'umontreal::ssj::randvar']]]
+  ['frechetgen',['FrechetGen',['../classumontreal_1_1ssj_1_1randvar_1_1FrechetGen.html',1,'umontreal::ssj::randvar']]],
+  ['functionofmultiplemeanstally',['FunctionOfMultipleMeansTally',['../classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html',1,'umontreal::ssj::stat']]],
+  ['functionofmultiplemeanstallywithcv',['FunctionOfMultipleMeansTallyWithCV',['../classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1FunctionOfMultipleMeansTallyWithCV.html',1,'umontreal::ssj::stat::list::lincv']]]
 ];
