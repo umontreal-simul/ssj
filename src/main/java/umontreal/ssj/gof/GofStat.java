@@ -23,7 +23,7 @@
  *
  */
 package umontreal.ssj.gof;
-   import cern.colt.list.*;
+import cern.colt.list.*;
 import umontreal.ssj.util.*;
 import umontreal.ssj.probdist.*;
 import java.util.Arrays;

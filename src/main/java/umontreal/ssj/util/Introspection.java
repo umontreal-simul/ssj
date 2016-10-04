@@ -300,7 +300,7 @@ public static Method getMethod (Class<?> c, String name, Class[] pt)
    }
 
    /**
-    * Similar to  {@link #valueOf(Class,String) valueOf(cls, name)}, with
+    * Similar to \ref #valueOf(Class<T>,String), with
     * case insensitive field name look-up. If `cls` defines several fields
     * with the same case insensitive name `name`, an
     * IllegalArgumentException is thrown.

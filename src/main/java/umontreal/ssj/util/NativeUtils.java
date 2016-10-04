@@ -48,12 +48,12 @@ public class NativeUtils {
     }
  
     /**
-     * Loads library from current JAR archive
+     * Loads library from current JAR archive.
      * 
      * The file from JAR is copied into system temporary directory and then loaded. The temporary file is deleted after exiting.
      * Method uses String as filename because the pathname is "abstract", not system-dependent.
      * 
-     * @param filename The filename inside JAR as absolute path (beginning with '/'), e.g. /package/File.ext
+     * @param path The absolute path to the filename inside JAR (beginning with '/'), e.g. /package/File.ext
      * @throws IOException If temporary file creation or read/write operation fails
      * @throws IllegalArgumentException If source file (param path) does not exist
      * @throws IllegalArgumentException If the path is not absolute or if the filename is shorter than three characters (restriction of {@see File#createTempFile(java.lang.String, java.lang.String)}).

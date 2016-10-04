@@ -24,7 +24,7 @@ group = 'ca.umontreal.iro.simul'
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
-version = '3.1.1'
+version = '3.2.0'
 
 // indicate branch
 version += '+labo'
@@ -39,6 +39,10 @@ dependencies {
     compile     group: 'colt',              name: 'colt',           version: '1.2.0'
     compile     group: 'com.github.rwl',    name: 'optimization',   version: '1.3'
     testCompile group: 'junit',             name: 'junit',          version: '4.+'
+}
+
+compileJava {
+    options.encoding="UTF-8"
 }
 
 bintray {

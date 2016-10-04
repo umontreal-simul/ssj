@@ -95,8 +95,8 @@ public class MatrixOfStatProbes<E extends StatProbe>
       createProbes (numRows, numColumns);
    }
 
-
-   @SuppressWarnings("unchecked")
+   
+   // @SuppressWarnings("unchecked")
    private void createProbes (int numRows, int numColumns) {
       if (numRows < 0)
          throw new NegativeArraySizeException
@@ -111,11 +111,12 @@ public class MatrixOfStatProbes<E extends StatProbe>
       probes = (E[])new StatProbe[length];
    }
 
-/**
- * Returns the global name of this matrix of statistical probes.
- *  @return the global name of the matrix.
- */
-public String getName() {
+
+   /**
+    * Returns the global name of this matrix of statistical probes.
+    *  @return the global name of the matrix.
+    */
+   public String getName() {
       return name;
    }
 
@@ -500,4 +501,8 @@ public String getName() {
       }
    }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1a696bdda000b0fa3139af8fcab54cdef06bff8f

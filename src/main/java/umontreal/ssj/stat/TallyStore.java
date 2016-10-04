@@ -123,11 +123,11 @@ public class TallyStore extends Tally {
       super.add(x);
    }
 
-/**
- * Returns the observations stored in this probe.
- *  @return the array of observations associated with this object
- */
-public double[] getArray() {
+   /**
+    * Returns the observations stored in this probe.
+    * @return the array of observations associated with this object
+    */
+   public double[] getArray() {
       array.trimToSize();
       return array.elements();
    }
@@ -190,6 +190,46 @@ public double[] getArray() {
       t.array = (DoubleArrayList)array.clone();
       return t;
    }
+   
+   
+    /**
+     * Returns a new TallyStore instance that contains aggregate observations from this TallyStore.
+     * This method sorts the observations and divides them into groups of size {@code gsize}.
+     * Then, it inserts the average of each group in a new TallyStore object.
+     *
+     * Note that this method does not sort the observations. It will aggregate
+     * the observations according to their order of insertion.
+     * To aggregate the observations sorted by values, the user should sort
+     * this TallyStore object before calling this method.
+     *
+     * @param gsize the group size to use when performing the aggregation
+     *
+     * @return a new TallyStore object with aggregated observations
+     */
+    public TallyStore aggregate (int gsize) {
+        int numObs = this.numberObs();
+        int numGroups = numObs / gsize;
+        double[] obs = this.getArray();
+        double sum;
+        TallyStore t = new TallyStore (numGroups);
+        for (int i = 0; i < numGroups; i++) {
+            sum = 0.0;
+            for (int j = 0; j < gsize; j++)
+                sum += obs[gsize * i + j];
+            sum /= gsize;
+            t.add(sum);
+        }
+        // This is if gsize does not divide numObs.
+        int rest = numObs - numGroups * gsize;
+        if (rest > 0) {
+            sum = 0.0;
+            for (int j = 0; j < rest; j++)
+                sum += obs[gsize * numGroups + j];
+            sum /= rest;
+            t.add(sum);
+        }
+        return t;
+    } 
 
    /**
     * Returns the observations stored in this object as a `String`.

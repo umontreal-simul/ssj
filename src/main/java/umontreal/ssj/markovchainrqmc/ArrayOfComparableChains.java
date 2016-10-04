@@ -2,6 +2,7 @@ package umontreal.ssj.markovchainrqmc;
  import umontreal.ssj.stat.Tally;
  import umontreal.ssj.rng.RandomStream;
  import umontreal.ssj.util.*;
+ import umontreal.ssj.util.sort.*;
  import umontreal.ssj.hups.*;
  import umontreal.ssj.charts.*;
  import umontreal.ssj.functionfit.LeastSquares;
@@ -507,4 +508,8 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
 		}
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1a696bdda000b0fa3139af8fcab54cdef06bff8f

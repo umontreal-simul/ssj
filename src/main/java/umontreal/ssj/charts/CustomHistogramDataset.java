@@ -54,7 +54,7 @@ public class CustomHistogramDataset extends AbstractIntervalXYDataset
 
    /**
     * Creates a new (empty) dataset with a default type of
-    * {@link HistogramType}.FREQUENCY.
+    * @ref HistogramType . FREQUENCY.
     */
    public CustomHistogramDataset()
    {
@@ -71,7 +71,7 @@ public class CustomHistogramDataset extends AbstractIntervalXYDataset
    }
 
    /**
-    * Sets the histogram type and sends a {@link DatasetChangeEvent} to all
+    * Sets the histogram type and sends a @ref DatasetChangeEvent to all
     * registered listeners.
     *
     * @param type  the type (<code>null</code> not permitted).

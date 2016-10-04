@@ -22,8 +22,8 @@
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
 package umontreal.ssj.hups;
-   import umontreal.ssj.util.MultiDimSort;
-   import umontreal.ssj.rng.RandomStream;
+ import umontreal.ssj.util.sort.MultiDimSort;
+ import umontreal.ssj.rng.RandomStream;
  import umontreal.ssj.util.PrintfFormat;
  import java.util.Comparator;
  import java.util.Arrays;
@@ -129,12 +129,12 @@ public class SortedAndCutPointSet extends CachedPointSet {
       }
    }
 
-/**
- * Returns the number of coordinates of each point, which is the dimension of
- * the original point set minus the dimension of the sort.
- */
-public int getDimension() {
-       return dim;
+   /**
+    * Returns the number of coordinates of each point, which is the dimension of
+    * the original point set minus the dimension of the sort.
+    */
+   public int getDimension() {
+      return dim;
    }
 
    /**

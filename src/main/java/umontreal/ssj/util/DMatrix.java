@@ -432,7 +432,7 @@ public class DMatrix {
    }
 
    /**
-    * Similar to  {@link #exp(DoubleMatrix2D) exp(A)}.
+    * Similar to \ref #exp(final DoubleMatrix2D).
     *  @param A            input matrix
     *  @return the exponential of @f$A@f$
     */
@@ -444,7 +444,7 @@ public class DMatrix {
 
    /**
     * Returns @f$e^A@f$, the exponential of the square matrix @f$A@f$. The
-    * scaling and squaring method @cite mHIG09a&thinsp; is used with Padé
+    * scaling and squaring method @cite mHIG09a is used with Padé
     * approximants to compute the exponential.
     *  @param A            input matrix
     *  @return the exponential of @f$A@f$
@@ -550,7 +550,7 @@ public class DMatrix {
     * Returns @f$e^A@f$, the exponential of the *bidiagonal* square matrix
     * @f$A@f$. The only non-zero elements of @f$A@f$ are on the diagonal
     * and on the first superdiagonal. This method is faster than
-    * {@link #exp(DoubleMatrix2D) exp(A)} because of the special form of
+    * \ref #exp(final DoubleMatrix2D) because of the special form of
     * @f$A@f$.
     *  @param A            bidiagonal matrix
     *  @return @f$e^A@f$
@@ -640,10 +640,11 @@ public class DMatrix {
     * Computes @f$c = e^A b@f$, where @f$e^A@f$ is the exponential of the
     * *bidiagonal* square matrix @f$A@f$. The only non-zero elements of
     * @f$A@f$ are on the diagonal and on the first superdiagonal. Uses the
-    * scaling and squaring method @cite mHIG09a&thinsp; with Padé
+    * scaling and squaring method @cite mHIG09a with Padé
     * approximants. Returns @f$c@f$.
     *  @param A            bidiagonal matrix
-    *  @return @f$e^A@f$
+    *  @param b            vector
+    *  @return @f$c@f$
     */
    public static DoubleMatrix1D expBidiagonal (final DoubleMatrix2D A,
                                                final DoubleMatrix1D b) {

@@ -1,0 +1,6 @@
+/**
+ * @package umontreal.ssj.util.sort
+ *
+ * This package contains classes for sorting, in particular to sort multi-dimensional points.
+ *
+ */

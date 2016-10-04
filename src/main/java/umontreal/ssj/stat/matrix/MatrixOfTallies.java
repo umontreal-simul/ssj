@@ -22,9 +22,9 @@
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
 package umontreal.ssj.stat.matrix;
-   import umontreal.ssj.stat.Tally;
-   import umontreal.ssj.stat.TallyStore;
-   import cern.colt.matrix.DoubleMatrix2D;
+import umontreal.ssj.stat.Tally;
+import umontreal.ssj.stat.TallyStore;
+import cern.colt.matrix.DoubleMatrix2D;
 import umontreal.ssj.util.PrintfFormat;
 import cern.colt.list.DoubleArrayList;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
@@ -213,10 +213,15 @@ public class MatrixOfTallies<E extends Tally> extends MatrixOfStatProbes<E> {
     * there are not enough observations for estimating the variance,
     * `Double.NaN` is stored in the corresponding element of the given
     * matrix `m`.
-    *  @param m            the matrix to be filled with sample variances.
+    *
+    *  @param m   the matrix to be filled with sample variances.
     *  @exception NullPointerException if `m` is `null`.
     *  @exception IllegalArgumentException if `m.rows()` does not
     * correspond to  #rows, or `m.columns()` does not correspond to
+    *  @param m   the matrix to be filled with sample variances.
+    *  @exception NullPointerException if `m` is `null`.
+    *  @exception IllegalArgumentException if `m.rows()` does not
+    * correspond to  \ref #rows , or `m.columns()` does not correspond to
     * #columns.
     */
    public void variance (DoubleMatrix2D m) {
@@ -273,3 +278,4 @@ public class MatrixOfTallies<E extends Tally> extends MatrixOfStatProbes<E> {
       return (MatrixOfTallies<E>)super.clone ();
    }
 }
+
