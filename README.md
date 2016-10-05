@@ -72,7 +72,7 @@ project (refer to your editor's documentation), with the following parameters:
 
 ### Binary releases
 
-SSJ is compatible with Java SE5 (JDK 5) and later versions of Java. The latest
+SSJ is compatible with Java SE6 (JDK 6) and later versions of Java. The latest
 Java platform is available at
 [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 with installation instructions.
