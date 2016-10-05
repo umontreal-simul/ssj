@@ -501,8 +501,5 @@ public class MatrixOfStatProbes<E extends StatProbe>
       }
    }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1a696bdda000b0fa3139af8fcab54cdef06bff8f
+
