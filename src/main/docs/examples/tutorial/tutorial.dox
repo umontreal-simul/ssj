@@ -117,8 +117,16 @@
  *  @ref umontreal.ssj.stat provides elementary tools for collecting
  * statistics and computing confidence intervals.
  *
+ *  @ref umontreal.ssj.stat.matrix this subpackage of `stat` provides
+ * facilities to create and manage rectangular two-dimensional arrays of
+ * statistical collectors.
+ *
  *  @ref umontreal.ssj.stat.list this subpackage of `stat` provides support
  * to manage lists of statistical collectors.
+ *
+ *  @ref umontreal.ssj.stat.list.lincv this subpackage of `stat.list`
+ * provides classes that help implement control variables on lists of
+ * collectors.
  *
  *  @ref umontreal.ssj.simevents provides and manages the event-driven
  * simulation facilities as well as the simulation clock. Can manage several
@@ -134,9 +142,19 @@
  *  @ref umontreal.ssj.functionfit provides basic facilities for curve
  * fitting and interpolation with polynomials.
  *
+ *  @ref umontreal.ssj.simexp provides facilities for performing simulation
+ * experiments using independent replications as well as simulations using
+ * batch means.
+ *
  *  @ref umontreal.ssj.charts provides tools for easy construction,
  * visualization, and customization of @f$xy@f$ plots, histograms, and
  * empirical styled charts from a Java program.
+ *
+ *  @ref umontreal.ssj.discrepancy contains classes and methods to compute
+ * several kind of discrepancies for point sets.
+ *
+ *  @ref umontreal.ssj.markovchainrqmc contains classes related to Markov
+ *  chains simulation using randomized quasi-Monte Carlo.
  *
  *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
  * processes.

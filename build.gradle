@@ -26,6 +26,9 @@ targetCompatibility = 1.6
 
 version = '3.2.0'
 
+// indicate branch
+version += '+labo'
+
 repositories {
     jcenter()
 }
@@ -363,6 +366,7 @@ sourceSets {
     test {
         java {
             srcDir 'src/main/docs/examples'
+            exclude 'markovchainrqmc/**' // FIXME: broken examples
         }
     }
 }
@@ -467,4 +471,8 @@ distTar.extension = 'tar.bz2'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
+}
+
+task showClasspath(dependsOn: configurations.runtime) << {
+    println sourceSets.main.runtimeClasspath.asPath
 }
