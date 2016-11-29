@@ -342,6 +342,118 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       return new BSpline(px, py, U);
    }
 
+   
+   
+   /**
+    * Returns a B-spline curve of degree `degree` smoothing @f$(x_i,
+    * y_i)@f$, for @f$i=0,…,n@f$ points. The precision depends on the
+    * parameter @f$h@f$: @f$1 \le\mathtt{degree} \le h<n@f$, which
+    * represents the number of control points used by the new B-spline
+    * curve, minimizing the quadratic error
+    * @f[
+    *   L = \sum_{i=0}^n\left( \frac{Y_i - S_i(X_i)}{W_i}\right)^2.
+    * @f]
+    * This method uses the uniformly spaced method for interpolating
+    * points with a B-spline curve and a uniformed clamped knot vector, as
+    * described in
+    * [http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/](http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/).
+    *  @param x            the values of @f$X@f$.
+    *  @param y            the values of @f$Y@f$.
+    *  @param degree       the degree of the B-spline.
+    *  @param hp1            the desired number of control points.
+    *  @return the B-spline curve.
+    */
+   public static BSpline createApproxBSpline2 (double[] x, double[] y,
+                                              int degree, int hp1) {
+      if (x.length != y.length)
+         throw new IllegalArgumentException("The arrays x and y must share the same length");
+      if (x.length <= degree)
+         throw new IllegalArgumentException("The arrays length must be greater than degree");
+
+      int h = hp1 - 1;
+      int n = x.length-1;
+      
+      //compute t : parameters vector uniformly from 0 to 1
+      double[] t = new double[x.length];
+      for(int i = 0; i < t.length; i++) {
+         t[i] = (double)i / n;
+      }
+
+      //compute U : clamped knots vector uniformly from 0 to 1
+      int m = h + degree + 1;
+      double U[] = new double[m + 1];
+      for(int i = 0; i <= degree; i++)
+         U[i] = 0;
+      for(int i = 1; i < hp1 - degree; i++)
+         U[i+degree] = (double)i/(hp1 - degree);
+      for(int i = m-degree; i<= m; i++)
+         U[i] = 1;
+
+
+      //compute matrix N : composed of BSpline coefficients
+      double [][] N = new double[n+1][h+1];
+      for(int i = 0; i < N.length; i++) {
+            N[i] = computeN(U, degree, t[i], h+1);
+      }
+
+      //initialize D : initial points matrix
+      double [][] D = new double[x.length][2];
+      for(int i =0; i<x.length; i++) {
+         D[i][0] = x[i];
+         D[i][1] = y[i];
+      }
+
+      //compute Q :
+      double[][] tempQ = new double[x.length][2];
+      for(int k = 1; k < n; k++) {
+         tempQ[k][0] = D[k][0] - N[k][0]*D[0][0] - N[k][h]*D[D.length-1][0];
+         tempQ[k][1] = D[k][1] - N[k][0]*D[0][1] - N[k][h]*D[D.length-1][1];
+      }
+      double[][] Q = new double[h-1][2];
+      for(int i = 1; i < h; i++) {
+         for(int k = 1; k < n; k++) {
+            Q[i-1][0] += N[k][i]*tempQ[k][0];
+            Q[i-1][1] += N[k][i]*tempQ[k][1];
+         }
+      }
+      
+      // compute N matrix for computation:
+      double [][] N2 = new double[n-1][h-1];
+      for(int i = 0; i < N2.length; i++) {
+         for (int j = 0; j < N2[i].length; j++)
+               N2[i][j] = N[i+1][j+1];
+      }
+
+      //initialize P : new control point matrix
+      double [][] P = new double[hp1][2];
+
+      //solve the linear equation system using colt library
+      DoubleMatrix2D coltQ = DoubleFactory2D.dense.make(Q);
+      DoubleMatrix2D coltN = DoubleFactory2D.dense.make(N2);
+      DoubleMatrix2D coltM = Algebra.ZERO.mult(Algebra.ZERO.transpose(coltN), coltN);
+      DoubleMatrix2D coltP;
+      coltP = Algebra.ZERO.solve(coltM, coltQ);
+      double[] pxTemp = coltP.viewColumn(0).toArray();
+      double[] pyTemp = coltP.viewColumn(1).toArray();
+      double[] px = new double[hp1];
+      double[] py = new double[hp1];
+      px[0] = D[0][0];
+      py[0] = D[0][1];
+      px[h] = D[D.length-1][0];
+      py[h] = D[D.length-1][1];
+      for(int i =0; i< pxTemp.length; i++) {
+         px[i+1] = pxTemp[i];
+         py[i+1] = pyTemp[i];
+      }
+      
+      for (int i = 0; i < px.length; i++)
+         System.out.println("Control point: " + px[i] + " , " + py[i]);
+
+      // return new BSpline(px, py, U);
+      return new BSpline(px, py, degree);
+   }
+   
+   
    /**
     * Returns the derivative B-spline object of the current variable.
     * Using this function and the returned object, instead of the
