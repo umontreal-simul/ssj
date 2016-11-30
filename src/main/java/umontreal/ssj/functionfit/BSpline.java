@@ -428,9 +428,7 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       DoubleMatrix2D coltQ = DoubleFactory2D.dense.make(Q);
       DoubleMatrix2D coltN = DoubleFactory2D.dense.make(N2);
       DoubleMatrix2D coltM = Algebra.ZERO.mult(Algebra.ZERO.transpose(coltN), coltN);
-      //DoubleMatrix2D coltM = Algebra.ZERO.mult(Algebra.DEFAULT.transpose(coltN).copy(), coltN);
-      DoubleMatrix2D coltP;
-      coltP = Algebra.ZERO.solve(coltM, coltQ);
+      DoubleMatrix2D coltP = Algebra.ZERO.solve(coltM, coltQ);
       double[] pxTemp = coltP.viewColumn(0).toArray();
       double[] pyTemp = coltP.viewColumn(1).toArray();
       double[] px = new double[hp1];
@@ -443,9 +441,6 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
          px[i+1] = pxTemp[i];
          py[i+1] = pyTemp[i];
       }
-      
-      for (int i = 0; i < px.length; i++)
-         System.out.println("Control point: " + px[i] + " , " + py[i]);
 
       return new BSpline(px, py, U);
       // return new BSpline(px, py, degree);
@@ -514,10 +509,9 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
             return evalX(t) - u;
          }
       };
-//      final double t = RootFinder.brentDekker (0, 1-1.0E-6, xFunction, 1e-6);
-//      final double t = RootFinder.brentDekker (0, 1-1.0E-10, xFunction, 1e-6);
-      final double t = RootFinder.bisection (0, 1-1.0E-6, xFunction, 1e-6);
-System.out.println("u = " + u + " , t= " + t);
+      // brentDekker may be unstable; using bisection instead
+      // final double t = RootFinder.brentDekker (0, 1, xFunction, 1e-6);
+      final double t = RootFinder.bisection (0, 1, xFunction, 1e-6);
       return evalY(t);
    }
 
@@ -535,7 +529,7 @@ System.out.println("u = " + u + " , t= " + t);
 
    private void init(double[] x, double[] y, double [] initialKnots) {
       if(initialKnots == null) {
-      //Cree un vecteur de noeud uniforme entre 0 et 1
+         //Cree un vecteur de noeud uniforme entre 0 et 1
          knots = new double[x.length+degree+1];
          for(int i = degree; i < this.knots.length-degree; i++)
             this.knots[i]= (double)(i-degree)/(knots.length - (2.0*degree) -1);
@@ -544,8 +538,8 @@ System.out.println("u = " + u + " , t= " + t);
          for(int i = degree; i > 0; i--)
             this.knots[i-1]=this.knots[i];
 
-      // cree notre vecteur interne de Points de controle
-      // ici, aucune modification a faire sur les tableaux originaux
+         // cree notre vecteur interne de Points de controle
+         // ici, aucune modification a faire sur les tableaux originaux
          myX = x;
          myY = y;
       }
@@ -601,10 +595,14 @@ System.out.println("u = " + u + " , t= " + t);
 
    public double evalX(double u) {
       int k = Misc.getTimeInterval (knots, 0, knots.length - 1, u);
+      if (k >= myX.length) // set to last control point
+         k = myX.length-1;
+      
       double[][] X = new double[degree+1][myX.length];
 
       for(int i = k-degree; i<=k; i++)
          X[0][i] = myX[i];
+
       for(int j=1; j<= degree; j++) {
          for(int i = k-degree+j; i <= k; i++) {
             double aij = (u - this.knots[i]) / (this.knots[i+1+degree-j] - this.knots[i]);
@@ -616,6 +614,9 @@ System.out.println("u = " + u + " , t= " + t);
 
    public double evalY(double u) {
       int k = Misc.getTimeInterval (knots, 0, knots.length - 1, u);
+      if (k >= myY.length) // set to last control point
+         k = myY.length-1;
+      
       double[][] Y = new double[degree+1][myX.length];
 
       for(int i = k-degree; i<=k; i++)
@@ -638,22 +639,17 @@ System.out.println("u = " + u + " , t= " + t);
     * @return 
     */
    private static boolean areEqual(double a, double b, double tol) {
-      if (Math.abs(a - b) < tol)
-         return true;
-      else
-         return false;
+      return Math.abs(a - b) < tol;
    }
    
    private static double[] computeN(double[] U, int degree, double u, int np1) {
       double[] N = new double[np1];
 
       // special cases at bounds
-      //if(u == U[0]) {
       if (areEqual(u, U[0], 1e-10)) {
          N[0] = 1.0;
          return N;
       }
-      // else if (u == U[U.length-1]) {
       else if (areEqual(u, U[U.length-1], 1e-10)) {
          N[N.length-1] = 1.0;
          return N;
