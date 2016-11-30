@@ -62,7 +62,13 @@ public class RootFinder {
 
       // Initialization
       fa = f.evaluate (a);
+      if (Math.abs (fa) <= MINVAL)
+         return a;
+      
       fb = f.evaluate (b);
+      if (Math.abs (fb) <= MINVAL)
+         return b;
+      
       c = a;
       fc = fa;
       d = e = b - a;
