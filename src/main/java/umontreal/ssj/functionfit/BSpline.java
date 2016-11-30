@@ -360,7 +360,7 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
     *  @param x            the values of @f$X@f$.
     *  @param y            the values of @f$Y@f$.
     *  @param degree       the degree of the B-spline.
-    *  @param hp1            the desired number of control points.
+    *  @param hp1          the desired number of control points.
     *  @return the B-spline curve.
     */
    public static BSpline createApproxBSpline2 (double[] x, double[] y,
@@ -389,16 +389,16 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       for(int i = m-degree; i<= m; i++)
          U[i] = 1;
 
-
+      
       //compute matrix N : composed of BSpline coefficients
       double [][] N = new double[n+1][h+1];
       for(int i = 0; i < N.length; i++) {
-            N[i] = computeN(U, degree, t[i], h+1);
+         N[i] = computeN(U, degree, t[i], h+1);
       }
 
       //initialize D : initial points matrix
       double [][] D = new double[x.length][2];
-      for(int i =0; i<x.length; i++) {
+      for(int i = 0; i < x.length; i++) {
          D[i][0] = x[i];
          D[i][1] = y[i];
       }
@@ -420,17 +420,15 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       // compute N matrix for computation:
       double [][] N2 = new double[n-1][h-1];
       for(int i = 0; i < N2.length; i++) {
-         for (int j = 0; j < N2[i].length; j++)
-               N2[i][j] = N[i+1][j+1];
+         for (int j = 0; j < h-1; j++)
+            N2[i][j] = N[i+1][j+1];
       }
-
-      //initialize P : new control point matrix
-      double [][] P = new double[hp1][2];
 
       //solve the linear equation system using colt library
       DoubleMatrix2D coltQ = DoubleFactory2D.dense.make(Q);
       DoubleMatrix2D coltN = DoubleFactory2D.dense.make(N2);
       DoubleMatrix2D coltM = Algebra.ZERO.mult(Algebra.ZERO.transpose(coltN), coltN);
+      //DoubleMatrix2D coltM = Algebra.ZERO.mult(Algebra.DEFAULT.transpose(coltN).copy(), coltN);
       DoubleMatrix2D coltP;
       coltP = Algebra.ZERO.solve(coltM, coltQ);
       double[] pxTemp = coltP.viewColumn(0).toArray();
@@ -441,7 +439,7 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       py[0] = D[0][1];
       px[h] = D[D.length-1][0];
       py[h] = D[D.length-1][1];
-      for(int i =0; i< pxTemp.length; i++) {
+      for(int i = 0; i < pxTemp.length; i++) {
          px[i+1] = pxTemp[i];
          py[i+1] = pyTemp[i];
       }
@@ -449,8 +447,8 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       for (int i = 0; i < px.length; i++)
          System.out.println("Control point: " + px[i] + " , " + py[i]);
 
-      // return new BSpline(px, py, U);
-      return new BSpline(px, py, degree);
+      return new BSpline(px, py, U);
+      // return new BSpline(px, py, degree);
    }
    
    
@@ -516,7 +514,10 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
             return evalX(t) - u;
          }
       };
-      final double t = RootFinder.brentDekker (0, 1-1.0E-6, xFunction, 1e-6);
+//      final double t = RootFinder.brentDekker (0, 1-1.0E-6, xFunction, 1e-6);
+//      final double t = RootFinder.brentDekker (0, 1-1.0E-10, xFunction, 1e-6);
+      final double t = RootFinder.bisection (0, 1-1.0E-6, xFunction, 1e-6);
+System.out.println("u = " + u + " , t= " + t);
       return evalY(t);
    }
 
@@ -557,18 +558,20 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       // x.length + degree + 1 = this.knots.length
       // Cette modification n'influence pas le resultat et permet de fermer notre courbe
 
-         //Compute the number of values wich need to be added
+         //Compute the number of values that need to be added
          int iBorneInf = 1, iBorneSup = initialKnots.length-2;
-         while(initialKnots[iBorneInf] == initialKnots[0])
+         // while(initialKnots[iBorneInf] == initialKnots[0])
+         while (areEqual(initialKnots[iBorneInf], initialKnots[0], 1e-10))
             iBorneInf++;
-         if(iBorneInf <= degree)
+         if (iBorneInf <= degree)
             iBorneInf = degree-iBorneInf+1;
          else
             iBorneInf=0;//on a alors iBorneInf valeurs a rajouter en debut de tableau
 
-         while(initialKnots[iBorneSup] == initialKnots[initialKnots.length-1])
+         // while(initialKnots[iBorneSup] == initialKnots[initialKnots.length-1])
+         while (areEqual(initialKnots[iBorneSup], initialKnots[initialKnots.length-1], 1e-10))
             iBorneSup--;
-         if(iBorneSup >= initialKnots.length-1-degree)
+         if (iBorneSup >= initialKnots.length-1-degree)
             iBorneSup = degree+1-(initialKnots.length-1-iBorneSup);
          else
             iBorneSup = 0; //on a alors iBorneSup valeurs a rajouter en fin de tableau
@@ -577,7 +580,7 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
          this.knots = new double[initialKnots.length + iBorneInf + iBorneSup];
          myX = new double[x.length + iBorneInf + iBorneSup];
          myY = new double[y.length + iBorneInf + iBorneSup];
-         for(int i = 0; i<iBorneInf; i++) {
+         for (int i = 0; i < iBorneInf; i++) {
             this.knots[i] = initialKnots[0];
             myX[i] = x[0];
             myY[i] = y[0];
@@ -626,28 +629,44 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
       return Y[degree][k];
    }
 
-   private static double[] computeN(double[] U, int degree, double u, int n) {
-      double[] N = new double[n];
+   /**
+    * Checks if two doubles {@code a} and {@code b} are equal with tolerance level.
+    * 
+    * @param a
+    * @param b
+    * @param tol absolute tolerance level
+    * @return 
+    */
+   private static boolean areEqual(double a, double b, double tol) {
+      if (Math.abs(a - b) < tol)
+         return true;
+      else
+         return false;
+   }
+   
+   private static double[] computeN(double[] U, int degree, double u, int np1) {
+      double[] N = new double[np1];
 
-      //cas particuliers
-      if(u == U[0]) {
+      // special cases at bounds
+      //if(u == U[0]) {
+      if (areEqual(u, U[0], 1e-10)) {
          N[0] = 1.0;
          return N;
       }
-      else if (u == U[U.length-1]) {
+      // else if (u == U[U.length-1]) {
+      else if (areEqual(u, U[U.length-1], 1e-10)) {
          N[N.length-1] = 1.0;
          return N;
       }
 
-      //trouve l'intervalle de u
+      // find the knot index k such that U[k]<= u < U[k+1]
       int k = Misc.getTimeInterval (U, 0, U.length - 1, u);
 
-      //calcule N, tableaux des coefficients des BSplines
       N[k] = 1.0;
       for(int d = 1; d <= degree; d++) {
          N[k-d] = N[k-d+1] * (U[k+1] - u) / (U[k+1] - U[k-d+1]);
          for(int i = k-d+1; i<= k-1; i++)
-            N[i] = (u - U[i]) / (U[i+d]-U[i]) * N[i] + (U[i+d+1] - u)/(U[i+d+1] - U[i+1]) * N[i+1];
+            N[i] = (u - U[i]) / (U[i+d]-U[i]) * N[i] + ((U[i+d+1] - u)/(U[i+d+1] - U[i+1])) * N[i+1];
          N[k] = (u - U[k]) / (U[k+d] - U[k]) * N[k];
       }
       return N;
