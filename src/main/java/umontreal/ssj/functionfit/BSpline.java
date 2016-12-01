@@ -247,7 +247,7 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
     *  @param hp1          the desired number of control points.
     *  @return the B-spline curve.
     */
-   public static BSpline createApproxBSpline2 (double[] x, double[] y,
+   public static BSpline createApproxBSpline (double[] x, double[] y,
                                               int degree, int hp1) {
       if (x.length != y.length)
          throw new IllegalArgumentException("The arrays x and y must share the same length");
