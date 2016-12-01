@@ -231,7 +231,7 @@ MathFunctionWithIntegral, MathFunctionWithDerivative, MathFunctionWithFirstDeriv
    /**
     * Returns a B-spline curve of degree `degree` smoothing @f$(x_i,
     * y_i)@f$, for @f$i=0,…,n@f$ points. The precision depends on the
-    * parameter @f$h@f$: @f$1 \le\mathtt{degree} \le h<n@f$, which
+    * parameter @f$hp1@f$: @f$1 \le\mathtt{degree} \le hp1<n@f$, which
     * represents the number of control points used by the new B-spline
     * curve, minimizing the quadratic error
     * @f[
