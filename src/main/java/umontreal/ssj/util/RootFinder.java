@@ -62,7 +62,13 @@ public class RootFinder {
 
       // Initialization
       fa = f.evaluate (a);
+      if (Math.abs (fa) <= MINVAL)
+         return a;
+      
       fb = f.evaluate (b);
+      if (Math.abs (fb) <= MINVAL)
+         return b;
+      
       c = a;
       fc = fa;
       d = e = b - a;
@@ -183,7 +189,13 @@ public class RootFinder {
       double xa = a;
       double xb = b;
       double yb = f.evaluate (b);
+      // do preliminary checks on the bounds
+      if (Math.abs (yb) <= MINVAL)
+         return b;
       double ya = f.evaluate (a);
+      if (Math.abs (ya) <= MINVAL)
+         return a;
+      
       double x = 0, y = 0;
       final int MAXITER = 1200;   // Maximum number of iterations
       final boolean DEBUG = false;
