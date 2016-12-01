@@ -1,2 +1,5 @@
 .gradle
 build
+/.nb-gradle/
+.nb-gradle-properties
+hs_err*
