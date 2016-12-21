@@ -44,7 +44,7 @@ import java.util.logging.Logger;
  * <div class="SSJ-bigskip"></div>
  */
 public class Tally extends StatProbe implements Cloneable {
-   private int numObs;
+   protected int numObs;
    private double sumSquares;
    private double curAverage;  // The average of the first numObs observations
    private double curSum2;     // The sum (xi - average)^2 of the first numObs
