@@ -1,9 +1,11 @@
-package charts;
+package markovchainrqmc;
+
 import umontreal.ssj.markovchainrqmc.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.*;
+import umontreal.ssj.util.sort.*;
 
 public class BrownianTest {
    Brownian brownian;
@@ -50,7 +52,7 @@ public class BrownianTest {
       ArrayOfComparableChains array = 
                               new ArrayOfComparableChains(brownian, rand, sort);
       array.makeCopies(4096);
-      array.simulReplicatesArrayRQMC(p2,100,20,replicates);
+      array.simulReplicatesArrayRQMC (p2, rand, sort, 0, 100, 20, replicates);
       System.out.println("\n 4- Array-RQMC, 100 replications" + 
                                               ", 2^12 trajectories, 20 steps");
       System.out.println(replicates.report());
