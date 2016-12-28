@@ -1,3 +1,4 @@
+package tutorial;
 import umontreal.ssj.simevents.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;

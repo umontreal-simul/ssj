@@ -1,3 +1,4 @@
+package charts;
 import umontreal.ssj.charts.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;

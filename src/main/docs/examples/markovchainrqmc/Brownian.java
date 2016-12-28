@@ -1,3 +1,4 @@
+package charts;
 import umontreal.ssj.markovchainrqmc.MarkovChainComparable;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.probdist.NormalDist;

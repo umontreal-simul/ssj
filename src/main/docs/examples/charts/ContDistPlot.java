@@ -1,3 +1,4 @@
+package charts;
 import umontreal.ssj.probdist.*;
 import umontreal.ssj.charts.*;
 

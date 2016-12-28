@@ -1,3 +1,4 @@
+package randvar;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;
 

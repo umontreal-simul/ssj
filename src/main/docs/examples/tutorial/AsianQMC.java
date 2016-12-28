@@ -1,3 +1,4 @@
+package tutorial;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.Tally;

@@ -1,3 +1,4 @@
+package charts;
 import umontreal.ssj.markovchainrqmc.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.rng.*;

@@ -1,4 +1,5 @@
-import umontreal.ssj.charts.XYLineChart;
+package charts;
+// import umontreal.ssj.charts.XYLineChart;
 
 public class ChartTest1
 {

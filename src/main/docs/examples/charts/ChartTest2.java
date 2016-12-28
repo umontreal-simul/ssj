@@ -1,4 +1,5 @@
-import umontreal.ssj.charts.*;
+package charts;
+// import umontreal.ssj.charts.*;
 import java.awt.Color;
 
 public class ChartTest2
