@@ -1,6 +1,7 @@
+package umontreal.ssj.stat;
 
 /*
- * Class:        TallyHistogram
+ * Class:        HistogramOnly
  * Description:  Histogram of a tally
  * Environment:  Java
  * Software:     SSJ
@@ -23,10 +24,10 @@
  * limitations under the License.
  *
  */
-package umontreal.ssj.stat;
-//  import umontreal.ssj.stat.*;
-// import java.util.logging.Level;
-// import java.util.logging.Logger;
+// package umontreal.ssj.stat;
+import umontreal.ssj.stat.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import umontreal.ssj.util.PrintfFormat;
 
 /**

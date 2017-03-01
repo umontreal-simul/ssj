@@ -1,3 +1,4 @@
+package umontreal.ssj.stat;
 
 /*
  * Class:        TallyHistogram
@@ -23,10 +24,10 @@
  * limitations under the License.
  *
  */
-package umontreal.ssj.stat;
-// import umontreal.ssj.stat.*;
-// import java.util.logging.Level;
-// import java.util.logging.Logger;
+// package umontreal.ssj.stat;
+import umontreal.ssj.stat.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
@@ -49,7 +50,7 @@ public class TallyHistogram extends Tally {
 	protected double m_h; // width of 1 bin
 	protected double m_a; // left boundary of first bin
 	protected double m_b; // right boundary of last bin
-	// private Logger log = Logger.getLogger("umontreal.ssj.stat");
+	private Logger log = Logger.getLogger("umontreal.ssj.stat");
 
 	/**
 	 * Constructs a `TallyHistogram` statistical probe. Divide the interval

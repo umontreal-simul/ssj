@@ -32,7 +32,7 @@ public abstract class MarkovChainComparable extends MarkovChain
    /**
     * Returns the dimension of the state.
     */
-   public int dimension() {
+   public int getStateDimension() {
      return stateDim;
   }
 
