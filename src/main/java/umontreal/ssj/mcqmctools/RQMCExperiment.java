@@ -62,7 +62,7 @@ public class RQMCExperiment extends MonteCarloExperiment {
 	public static void simulReplicatesRQMCSave (MonteCarloModelDouble model, RQMCPointSet prqmc, 
 	        int m, Tally statReps, double[][] data) {
 		int n = prqmc.getNumPoints();
-        data = new double[m][n];
+        data = new double[m][];  // ????
 		// Internal collector for stats on the n outputs X, for each replication.
 		TallyStore statSave = new TallyStore(n);
 		PointSetIterator stream = prqmc.iterator();

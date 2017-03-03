@@ -16,7 +16,7 @@ import umontreal.ssj.util.Chrono;
  */
 public class MonteCarloExperiment {
 
-	// Performs n indep. runs using stream and collects statistics in statValue.
+	// Performs n runs using stream and collects statistics in statValue.
 	public static void simulateRuns (MonteCarloModelDouble model, int n,
 			RandomStream stream, Tally statValue) {
 		statValue.init();
@@ -28,13 +28,13 @@ public class MonteCarloExperiment {
 	}
 	
 	/**
-	 * Performs <SPAN CLASS="MATH"><I>n</I></SPAN> independent runs using <TT>stream</TT> and
+	 * Performs <SPAN CLASS="MATH"><I>n</I></SPAN> runs using <TT>stream</TT> and
 	 * collects statistics in collectors <TT>statValue</TT> for the performance and 
 	 * <TT>statValuesCV</TT> for the control variates.
 	 */
 	public static void simulateRunsCV (MonteCarloModelCV model, int n, RandomStream stream, 
 			  ListOfTalliesWithCV<Tally> statWithCV) {
-		// Performs n indep. runs using stream, and collects statistics in
+		// Performs n runs using stream, and collects statistics in
 		// statValue for X and in statValuesCV for the CVs.
 		statWithCV.init();
 		for (int i = 0; i < n; i++) {
@@ -44,7 +44,7 @@ public class MonteCarloExperiment {
 		}
 	}
 	
-	// Simulation with Monte Carlo with and without CV
+	// Simulation with Monte Carlo with and without CV,  different version....
 	public static void simulateRunsCV1 (MonteCarloModelCV model, int n, RandomStream stream, 
 			   double[] meanPayoff, double[] varPayoff) 
 	   {
