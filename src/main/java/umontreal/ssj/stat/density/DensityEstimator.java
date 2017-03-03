@@ -34,12 +34,12 @@ public interface DensityEstimator {
 
 	
     /**	
-     * Returns in array f the value of the density at the evaluation points in x.
+     * Returns in array density the value of the density at the evaluation points in x.
      * These two arrays must have the same size. 
      * @param x  evaluation points
-     * @param f  values of the density
+     * @param density  values of the density
      */
-	public void evalDensity (double[] x, double[] f);
+	public void evalDensity (double[] x, double[] density);
 		
 
 }

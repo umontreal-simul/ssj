@@ -35,7 +35,7 @@ import umontreal.ssj.util.PrintfFormat;
  * @author Pierre L'Ecuyer
  * 
  */
-public class RQMCExperimentDensityU01 extends RQMCExperimentDensityKnown {
+public class RQMCExperimentDensityU01Old extends RQMCExperimentDensityKnownOld {
 	
 	static int numStats = 15;
 	String[] statNames = { "var of average  ", 

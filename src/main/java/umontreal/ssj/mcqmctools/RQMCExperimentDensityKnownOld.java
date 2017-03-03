@@ -36,7 +36,7 @@ import umontreal.ssj.util.PrintfFormat;
  * @author Pierre L'Ecuyer
  * 
  */
-public class RQMCExperimentDensityKnown extends RQMCExperimentDensity {
+public class RQMCExperimentDensityKnownOld extends RQMCExperimentDensityOld {
 	
 	static int numStats = 13;
 	String[] statNames = { "var centered average  ", 
