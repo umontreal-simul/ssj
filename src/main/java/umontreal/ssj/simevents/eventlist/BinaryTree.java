@@ -28,14 +28,9 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
-import umontreal.ssj.util.PrintfFormat;
 import umontreal.ssj.simevents.Event;
 import umontreal.ssj.util.PrintfFormat;
 
-/**
- *  Implantation de l'interface EventList ayant comme structure de
- *  donnees un arbre binaire.
- */
 
 /**
  * An implementation of  @ref EventList using a binary search tree. Every
@@ -55,9 +50,6 @@ public class BinaryTree implements EventList {
    // racine de l'arbre
    private Entry root = null;
 
-   // liste d'objets qui peuvent etre reutilises
-   private Entry freeEntries = null;
-
    // compteur de modifications sur l'iterateur.
    private int modCount = 0;
    public boolean isEmpty() {
@@ -72,7 +64,7 @@ public class BinaryTree implements EventList {
    public void add (Event ev) {
       // fonction qui ajoute un evenement dans l'arbre
       // note : si deux evenements ont le meme temps, alors il faut
-      //        toujours faire en sorte que ces evenements se retrouvement
+      //        toujours faire en sorte que ces evenements se retrouvent
       //        comme les fils droits les uns des autres
 
       Entry cursor = root;
@@ -271,19 +263,7 @@ public class BinaryTree implements EventList {
    }
 
    private Entry add (Event ev, Entry father) {
-      // On regarde la liste freeEntries
-      if (freeEntries != null) {
-         Entry tempo = freeEntries;
-         freeEntries = freeEntries.right;
-         tempo.event = ev;
-         tempo.left  = null;
-         tempo.right = null;
-         tempo.father = father;
-         return tempo;
-      }
-      // on cree un nouvel objet
-      else
-         return new Entry(ev, null, null, father);
+      return new Entry(ev, null, null, father);
    }
 
    private boolean remove (Entry e) {
@@ -345,9 +325,6 @@ public class BinaryTree implements EventList {
             while (cursor.left != null)
                cursor = cursor.left;
 
-            // echange entre e et cursor et elimination de e
-            cursor.father.left = cursor.right;
-
             if (isRoot)
                root = cursor;
             else if (filsGauche)
@@ -355,6 +332,7 @@ public class BinaryTree implements EventList {
             else
                e.father.right = cursor;
 
+            // echange entre e et cursor et elimination de e
             cursor.father.left = cursor.right;
             if (cursor.right != null)
                cursor.right.father = cursor.father;
@@ -369,11 +347,10 @@ public class BinaryTree implements EventList {
       }
 
       // recupere l'espace du noeud
-      e.right = freeEntries;
+      e.right = null;
       e.left =  null;
       e.event = null;
-      freeEntries = e;
-      e = null;
+
       ++modCount;
       return true;
    }
