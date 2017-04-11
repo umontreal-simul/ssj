@@ -44,7 +44,6 @@ import umontreal.ssj.simevents.Event;
  */
 public class SplayTree implements EventList {
    private Entry root = null;
-   private Entry free = null;
    private int modCount = 0;
 
    private int myCompareTo (Event ev, Event other) {
@@ -492,18 +491,7 @@ public class SplayTree implements EventList {
     * Creates a new entry object.
     */
    private Entry add (Event ev, Entry father) {
-      Entry e;
-//      synchronized (SplayTree.class) {
-         if (free == null)
-            return new Entry (ev, null, null, father);
-
-         e = free;
-         free = free.right;
-//      }
-      e.event = ev;
-      e.left = e.right = null;
-      e.father = father;
-      return e;
+      return new Entry (ev, null, null, father);
    }
 
 
@@ -669,14 +657,9 @@ public class SplayTree implements EventList {
       if(rightTree != null)
          rightTree.father = null;
 
-      // Recupere l'espace de l'avis d'evenement
       e.left = null;
       e.event = null;
-//      synchronized (SplayTree.class) {
-         e.right = free;
-         free = e;
-//      }
-
+      e.right = null;
 
       if(rightTree == null)
          root = leftTree;
@@ -696,7 +679,6 @@ public class SplayTree implements EventList {
          leftTree.father = newRoot;
          root = newRoot;
       }
-
 
       ++modCount;
 
