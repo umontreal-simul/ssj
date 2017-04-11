@@ -33,7 +33,6 @@ import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
 import umontreal.ssj.util.PrintfFormat;
 import umontreal.ssj.simevents.Event;
-import umontreal.ssj.simevents.Sim;
 
 /**
  * An implementation of  @ref EventList using a *red black* tree, which is
@@ -52,9 +51,11 @@ import umontreal.ssj.simevents.Sim;
  * <div class="SSJ-bigskip"></div>
  */
 public class RedblackTree implements EventList {
-   private TreeMap<Event, Node> tree = new TreeMap<Event, Node>(new EventComparator());
+   private final TreeMap<Event, Node> tree = new TreeMap<Event, Node>(new EventComparator());
    private static Node free = null;
    private int modCount = 0;
+   
+   @Override
    public void clear() {
       Iterator<Node> itr = tree.values().iterator();
       while (itr.hasNext()) {
@@ -69,6 +70,7 @@ public class RedblackTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void add (Event ev) {
       Node node = tree.get (ev);
       if (node != null)
@@ -78,8 +80,8 @@ public class RedblackTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addFirst (Event ev) {
- //     ev.setTime (Sim.time());   // necessaire si eventime n'est pas deja a 0
       Node node = tree.get (ev);
       if (node != null)
          node.events.add (ev);
@@ -88,29 +90,31 @@ public class RedblackTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Node node = tree.get (other);
       if (node == null)
          throw new IllegalArgumentException ("Event not in list.");
-   //   ev.setTime (other.time());
       node.addBefore (ev, other);
       ++modCount;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       Node node = tree.get (other);
       if (node == null)
          throw new IllegalArgumentException ("Event not in list.");
-   //   ev.setTime (other.time());
       node.addAfter (ev, other);
       ++modCount;
    }
 
+   @Override
    public Event getFirst() {
       return isEmpty() ? null :
          tree.get (tree.firstKey()).events.get (0);
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Iterator<Node> itr = tree.values().iterator();
       while (itr.hasNext()) {
@@ -122,6 +126,7 @@ public class RedblackTree implements EventList {
       return null;
    }
 
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Iterator<Node> itr = tree.values().iterator();
       while (itr.hasNext()) {
@@ -133,6 +138,7 @@ public class RedblackTree implements EventList {
       return null;
    }
 
+   @Override
    public boolean remove (Event ev) {
       Node node = tree.get (ev);
       if (node == null)
@@ -147,6 +153,7 @@ public class RedblackTree implements EventList {
       return true;
    }
 
+   @Override
    public Event removeFirst() {
       if (tree.isEmpty())
          return null;
@@ -164,8 +171,9 @@ public class RedblackTree implements EventList {
       return first;
    }
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer ("Contents of the event list RedblackTree:");
+      StringBuilder sb = new StringBuilder ("Contents of the event list RedblackTree:");
       for (Node node : tree.values()) {
          for (Event ev : node.events)
             sb.append (PrintfFormat.NEWLINE +
@@ -176,6 +184,7 @@ public class RedblackTree implements EventList {
       return sb.toString();
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
@@ -184,6 +193,7 @@ public class RedblackTree implements EventList {
       return new RBItr();
    }
 
+   @Override
    public boolean isEmpty() {
       return tree.isEmpty();
    }
@@ -277,6 +287,7 @@ public class RedblackTree implements EventList {
    }
 
    private static class EventComparator implements Comparator<Event> {
+      @Override
       public int compare (Event ev1, Event ev2) {
          return ev1.compareTo(ev2);
       }
@@ -313,10 +324,12 @@ public class RedblackTree implements EventList {
          }
       }
 
+      @Override
       public void add(Event ev) {
          throw new UnsupportedOperationException();
       }
 
+      @Override
       public boolean hasNext() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -324,6 +337,7 @@ public class RedblackTree implements EventList {
             nextNodeIndex < nextNode.events.size();
       }
 
+      @Override
       public boolean hasPrevious() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -331,6 +345,7 @@ public class RedblackTree implements EventList {
             prevNodeIndex >= 0;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -347,6 +362,7 @@ public class RedblackTree implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -354,6 +370,7 @@ public class RedblackTree implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -371,6 +388,7 @@ public class RedblackTree implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -378,10 +396,12 @@ public class RedblackTree implements EventList {
          return nextIndex - 1;
       }
 
+      @Override
       public void remove() {
          throw new UnsupportedOperationException();
       }
 
+      @Override
       public void set (Event ev) {
          throw new UnsupportedOperationException();
       }
@@ -406,6 +426,7 @@ public class RedblackTree implements EventList {
         this.priority = ev.priority();
       }
 
+      @Override
       public void actions() { }
    }
 }
