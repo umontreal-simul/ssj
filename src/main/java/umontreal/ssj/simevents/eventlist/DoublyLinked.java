@@ -47,10 +47,12 @@ public class DoublyLinked implements EventList {
    // First and last elements in the list.
    private Node first = null, last = null;
 
+   @Override
    public boolean isEmpty() {
       return first == null;
    }
 
+   @Override
    public void clear() {
       if (first == null)
          return;
@@ -60,6 +62,7 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public void add (Event ev) {
       Node newNode;
       newNode = new Node();
@@ -90,6 +93,7 @@ public class DoublyLinked implements EventList {
       }
    }
 
+   @Override
    public void addFirst (Event ev) {
       Node newNode;
       newNode = new Node();
@@ -108,6 +112,7 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Node node = last;
       while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
@@ -130,6 +135,7 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       Node node = last;
       while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
@@ -152,10 +158,12 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public Event getFirst() {
       return first == null ? null : first.ev;
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Node node = first;
       while (node != null) {
@@ -167,6 +175,7 @@ public class DoublyLinked implements EventList {
    }
 
    @SuppressWarnings("unchecked")
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Node node = first;
       while (node != null) {
@@ -177,6 +186,7 @@ public class DoublyLinked implements EventList {
       return null;
    }
 
+   @Override
    public boolean remove (Event ev) {
       // Find the node corresponding to this event ev.
       Node node = last;
@@ -210,6 +220,7 @@ public class DoublyLinked implements EventList {
       return true;
    }
 
+   @Override
    public Event removeFirst() {
       if (first == null)
          return null;
@@ -229,16 +240,19 @@ public class DoublyLinked implements EventList {
       return ev;
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new DLItr();
    }
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer ("Contents of the event list DoublyLinked:");
+      StringBuilder sb = new StringBuilder ("Contents of the event list DoublyLinked:");
       Node node = first;
       while (node != null) {
          sb.append (PrintfFormat.NEWLINE +
@@ -272,6 +286,7 @@ public class DoublyLinked implements EventList {
          nextIndex = 0;
       }
 
+      @Override
       public void add(Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -322,18 +337,21 @@ public class DoublyLinked implements EventList {
          }
       }
 
+      @Override
       public boolean hasNext() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != null;
       }
 
+      @Override
       public boolean hasPrevious() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return prev != null;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -346,6 +364,7 @@ public class DoublyLinked implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -353,6 +372,7 @@ public class DoublyLinked implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -365,6 +385,7 @@ public class DoublyLinked implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -372,6 +393,7 @@ public class DoublyLinked implements EventList {
          return nextIndex - 1;
       }
 
+      @Override
       public void remove() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -412,6 +434,7 @@ public class DoublyLinked implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public void set (Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
