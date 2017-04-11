@@ -58,10 +58,12 @@ public class SplayTree implements EventList {
          return 1;
       return 0;
    }
+   @Override
    public boolean isEmpty() {
       return root == null;
    }
 
+   @Override
    public void clear() {
       // Simply root = null would be more efficient but the
       // entries would not be recuperated.
@@ -69,6 +71,7 @@ public class SplayTree implements EventList {
          remove (root);
    }
 
+   @Override
    public void add (Event ev) {
       //ajoute un element dans l'arbre en faisant un "splay"
 
@@ -172,6 +175,7 @@ public class SplayTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addFirst (Event ev) {
       if (root == null)
          root = add (ev, null);
@@ -184,6 +188,7 @@ public class SplayTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Entry otherEntry = findEntry (other);
       if (otherEntry == null)
@@ -214,6 +219,7 @@ public class SplayTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       Entry otherEntry = findEntry (other);
       if (otherEntry == null)
@@ -227,6 +233,7 @@ public class SplayTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public Event getFirst() {
       if (root == null)
          return null;
@@ -236,6 +243,7 @@ public class SplayTree implements EventList {
       return cursor.event;
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Entry cursor = root;
       if (root != null)
@@ -250,6 +258,7 @@ public class SplayTree implements EventList {
    }
 
    @SuppressWarnings("unchecked")
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Entry cursor = root;
       if (root != null)
@@ -263,14 +272,17 @@ public class SplayTree implements EventList {
       return null;
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new SPItr();
    }
 
+   @Override
    public boolean remove (Event ev) {
       //on trouve le noeud correspondant a l'evenement pour l'enlever
       if (root == null)
@@ -281,6 +293,7 @@ public class SplayTree implements EventList {
       return remove (e);
    }
 
+   @Override
    public Event removeFirst() {
       if (root == null)
          return null;
@@ -292,8 +305,9 @@ public class SplayTree implements EventList {
       return first;
    }
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer
+      StringBuilder sb = new StringBuilder
           ("Contents of the event list SplayTree:");
       Entry cursor = root;
       if (root != null)
@@ -342,6 +356,7 @@ public class SplayTree implements EventList {
          nextIndex = 0;
       }
 
+      @Override
       public void add(Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -398,18 +413,21 @@ public class SplayTree implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public boolean hasNext() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != null;
       }
 
+      @Override
       public boolean hasPrevious() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return prev != null;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -422,6 +440,7 @@ public class SplayTree implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -429,6 +448,7 @@ public class SplayTree implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -441,6 +461,7 @@ public class SplayTree implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -448,6 +469,7 @@ public class SplayTree implements EventList {
          return nextIndex - 1;
       }
 
+      @Override
       public void remove() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -465,6 +487,7 @@ public class SplayTree implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public void set (Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
