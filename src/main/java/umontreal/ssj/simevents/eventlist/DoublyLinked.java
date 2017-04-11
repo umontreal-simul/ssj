@@ -46,7 +46,7 @@ public class DoublyLinked implements EventList {
 
    // First and last elements in the list.
    private Node first = null, last = null;
-   private static Node free = null;     // Pointer to stack of free nodes.
+
    public boolean isEmpty() {
       return first == null;
    }
@@ -54,30 +54,16 @@ public class DoublyLinked implements EventList {
    public void clear() {
       if (first == null)
          return;
-      /*      Node p = first;
-              while (p != null) {
-              p.ev.setTime(-20.0);
-              p.ev = null;
-              p = p.succ;
-              }
-      */
-      synchronized (DoublyLinked.class) {
-         last.succ = free;   free = first;
-      }
+
+      last.succ = null;
       last = first = null;
       ++modCount;
    }
 
    public void add (Event ev) {
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+
       newNode.ev = ev;
       ++modCount;
       if (last == null) {     // Easy: the event list was empty.
@@ -106,14 +92,8 @@ public class DoublyLinked implements EventList {
 
    public void addFirst (Event ev) {
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+      
       newNode.ev = ev;
       newNode.prec = null;
       if (first == null) {
@@ -136,14 +116,8 @@ public class DoublyLinked implements EventList {
          throw new IllegalArgumentException ("Event not in list.");
 
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+      
       newNode.ev = ev;
 
       newNode.prec = node.prec;
@@ -164,14 +138,8 @@ public class DoublyLinked implements EventList {
          throw new IllegalArgumentException ("Event not in list.");
 
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+      
       newNode.ev = ev;
 
       newNode.prec = node;
@@ -236,9 +204,8 @@ public class DoublyLinked implements EventList {
          }
       }
       node.ev = null;
-      synchronized (DoublyLinked.class) {
-         node.succ = free;  free = node;  // Recycle node.
-      }
+      node.succ = null;
+              
       ++modCount;
       return true;
    }
@@ -256,9 +223,8 @@ public class DoublyLinked implements EventList {
          first.prec = null;
 
       temp.ev = null;
-      synchronized (DoublyLinked.class) {
-         temp.succ = free;  free = temp;   // Recycle node.
-      }
+      temp.succ = null;
+
       ++modCount;
       return ev;
    }
@@ -321,14 +287,8 @@ public class DoublyLinked implements EventList {
          }
 
          Node newNode;
-         synchronized (DoublyLinked.class) {
-            if (free == null)
-               newNode = new Node();
-            else {
-               newNode = free;
-               free = free.succ;
-            }
-         }
+         newNode = new Node();
+         
          newNode.ev = ev;
          ++nextIndex;
          ++modCount;
@@ -445,9 +405,8 @@ public class DoublyLinked implements EventList {
             }
          }
          lastRet.ev = null;
-         synchronized (DoublyLinked.class) {
-            lastRet.succ = free;  free = lastRet;  // Recycle node.
-         }
+         lastRet.succ = null;
+
          lastRet = null;
          ++modCount;
          ++expectedModCount;
