@@ -37,7 +37,7 @@ import umontreal.ssj.simevents.Event;
  * of Henriksen @cite sKIN86a&thinsp; (see also @cite sFIS01a&thinsp; (p.
  * 207)).
  *
- * Events are stored in a normal doubly-linked list. An additionnal index
+ * Events are stored in a normal doubly-linked list. An additional index
  * array is added to the structure to allow quick access to the events.
  *
  * <div class="SSJ-bigskip"></div>
@@ -63,7 +63,6 @@ public class Henriksen implements EventList {
      Ceci permet un certain balancement des elements presents dans l'index,
      et donc une meilleure efficacite de la recherche binaire sans avoir
      a mettre tous les elements dans l'index.
-
    */
 
    private static final double MIN_VALUE = -10E38; //n'importe quoi < 0
@@ -96,10 +95,12 @@ public class Henriksen implements EventList {
       entryVec[0] = lastEntry;
    }
 
+   @Override
    public boolean isEmpty() {
       return firstEntry.right == entryVec[0];
    }
 
+   @Override
    public void clear() {
       if(isEmpty())
          return;
@@ -116,6 +117,7 @@ public class Henriksen implements EventList {
    }
 
 
+   @Override
    public void add (Event ev) {
       Entry prec = findEntry(ev, false);
 
@@ -125,6 +127,7 @@ public class Henriksen implements EventList {
       modCount++;
    }
 
+   @Override
    public void addFirst (Event ev) {
       Entry e = new Entry(ev, firstEntry, firstEntry.right, ev.time());
       firstEntry.right.left = e;
@@ -133,6 +136,7 @@ public class Henriksen implements EventList {
       modCount++;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Entry otherEntry = findEntry(other, true);
       if(otherEntry == null)
@@ -144,6 +148,7 @@ public class Henriksen implements EventList {
       modCount++;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       Entry otherEntry = findEntry(other, true);
       if(otherEntry == null)
@@ -156,10 +161,12 @@ public class Henriksen implements EventList {
    }
 
 
+   @Override
    public Event getFirst() {
       return firstEntry.right.event;
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Entry e = firstEntry.right;
       while(e.right != null) {
@@ -171,6 +178,7 @@ public class Henriksen implements EventList {
    }
 
    @SuppressWarnings("unchecked")
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Entry e = firstEntry.right;
       while(e.right != null) {
@@ -181,14 +189,17 @@ public class Henriksen implements EventList {
       return null;
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new HItr();
    }
 
+   @Override
    public boolean remove (Event ev) {
       Entry e = findEntry (ev, true);
       if (e == null)
@@ -218,6 +229,7 @@ public class Henriksen implements EventList {
       return true;
    }
 
+   @Override
    public Event removeFirst() {
       // si la premiere moitie de l'index est composee d'entrees perimees,
       // on coupe de moitie l'index
@@ -245,8 +257,9 @@ public class Henriksen implements EventList {
    }
 
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer
+      StringBuilder sb = new StringBuilder
                         ("Contents of the event list Henriksen:");
       Entry e = firstEntry.right;
       while (e.right != null) {
@@ -273,6 +286,7 @@ public class Henriksen implements EventList {
          this.time = time;
       }
 
+      @Override
       public String toString() {
          return "[" + event + " |" + time + "|]";
       }
@@ -294,6 +308,7 @@ public class Henriksen implements EventList {
          nextIndex = 0;
       }
 
+      @Override
       public void add (Event ev) {
          if(modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -319,18 +334,21 @@ public class Henriksen implements EventList {
          expectedModCount++;
       }
 
+      @Override
       public boolean hasNext() {
          if(modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != entryVec[0];
       }
 
+      @Override
       public boolean hasPrevious() {
          if(modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != firstEntry;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -343,6 +361,7 @@ public class Henriksen implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if(!hasNext())
             throw new NoSuchElementException();
@@ -350,6 +369,7 @@ public class Henriksen implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if(!hasPrevious())
             throw new NoSuchElementException();
@@ -362,6 +382,7 @@ public class Henriksen implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if(!hasPrevious())
             throw new NoSuchElementException();
@@ -370,6 +391,7 @@ public class Henriksen implements EventList {
       }
 
 
+      @Override
       public void remove() {
          if(modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -407,6 +429,7 @@ public class Henriksen implements EventList {
          expectedModCount++;
       }
 
+      @Override
       public void set (Event ev) {
          if(modCount != expectedModCount)
             throw new ConcurrentModificationException();
