@@ -52,7 +52,6 @@ import umontreal.ssj.simevents.Event;
  */
 public class RedblackTree implements EventList {
    private final TreeMap<Event, Node> tree = new TreeMap<Event, Node>(new EventComparator());
-   private static Node free = null;
    private int modCount = 0;
    
    @Override
@@ -62,10 +61,7 @@ public class RedblackTree implements EventList {
          Node node = itr.next();
          node.events.clear();
          itr.remove();
-         synchronized (RedblackTree.class) {
-            node.nextNode = free;
-            free = node;
-         }
+         node.nextNode = null;
       }
       ++modCount;
    }
@@ -145,9 +141,7 @@ public class RedblackTree implements EventList {
          return false;
       if (node.remove (ev)) {
          tree.remove (ev);
-         synchronized (RedblackTree.class) {
-            node.nextNode = free; free = node;
-         }
+         node.nextNode = null;
       }
       ++modCount;
       return true;
@@ -163,9 +157,7 @@ public class RedblackTree implements EventList {
       node.events.remove (0);
       if (node.events.isEmpty()) {
          tree.remove (evKey);
-         synchronized (RedblackTree.class) {
-            node.nextNode = free; free = node;
-         }
+         node.nextNode = null;
       }
       ++modCount;
       return first;
@@ -189,6 +181,7 @@ public class RedblackTree implements EventList {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new RBItr();
    }
@@ -271,8 +264,9 @@ public class RedblackTree implements EventList {
          throw new IllegalArgumentException ("Event not in node.");
       }
 
+      @Override
       public String toString() {
-         StringBuffer sb = new StringBuffer();
+         StringBuilder sb = new StringBuilder();
          boolean first = true;
          Iterator<Event> itr = events.iterator();
          while (itr.hasNext()) {
@@ -291,8 +285,6 @@ public class RedblackTree implements EventList {
       public int compare (Event ev1, Event ev2) {
          return ev1.compareTo(ev2);
       }
-
-      public boolean equals (Object obj) { return true; }
    }
 
    private class RBItr implements ListIterator<Event> {
@@ -408,16 +400,7 @@ public class RedblackTree implements EventList {
    }
 
    private Node newNode (Event ev) {
-      Node temp;
-      synchronized (RedblackTree.class) {
-         if (free == null)
-            return new Node (ev);
-
-         temp = free;
-         free = free.nextNode;
-      }
-      temp.events.add (ev);
-      return temp;
+      return new Node (ev);
    }
 
    private class EventMapKey extends Event {
