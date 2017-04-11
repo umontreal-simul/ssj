@@ -52,15 +52,19 @@ public class BinaryTree implements EventList {
 
    // compteur de modifications sur l'iterateur.
    private int modCount = 0;
+   
+   @Override
    public boolean isEmpty() {
       return root == null;
    }
 
+   @Override
    public void clear() {
       while (root != null)
          remove (root);
    }
 
+   @Override
    public void add (Event ev) {
       // fonction qui ajoute un evenement dans l'arbre
       // note : si deux evenements ont le meme temps, alors il faut
@@ -93,6 +97,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addFirst (Event ev) {
    /**
     * Ajoute "ev" comme premier evenement dans l'arbre.
@@ -120,6 +125,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Entry otherEntry = findEntry (other);
       Entry evEntry    = add (ev , null);
@@ -156,6 +162,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       // on va chercher le "Entry" de other
       Entry otherEntry = findEntry (other);
@@ -175,6 +182,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public Event getFirst() {
       if (root==null)
          return null;
@@ -184,6 +192,7 @@ public class BinaryTree implements EventList {
       return cursor.event;
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Entry cursor = root;
       if (root != null)
@@ -199,6 +208,7 @@ public class BinaryTree implements EventList {
    }
 
    @SuppressWarnings("unchecked")
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Entry cursor = root;
       if (root != null)
@@ -213,14 +223,17 @@ public class BinaryTree implements EventList {
       return null;
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new BTItr();
    }
 
+   @Override
    public boolean remove (Event ev) {
       Entry evEntry = findEntry(ev);
       if (evEntry == null)
@@ -229,6 +242,7 @@ public class BinaryTree implements EventList {
          return remove(evEntry);
    }
 
+   @Override
    public Event removeFirst() {
       if (root == null)
          return null;
@@ -243,8 +257,9 @@ public class BinaryTree implements EventList {
       return first;
    }
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer ("Contents of the event list BinaryTree:");
+      StringBuilder sb = new StringBuilder ("Contents of the event list BinaryTree:");
       Entry cursor = root;
 
       if (root != null)
@@ -442,6 +457,7 @@ public class BinaryTree implements EventList {
          nextIndex = 0;
       }
 
+      @Override
       public void add(Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -496,18 +512,21 @@ public class BinaryTree implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public boolean hasNext() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != null;
       }
 
+      @Override
       public boolean hasPrevious() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return prev != null;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -520,6 +539,7 @@ public class BinaryTree implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -527,6 +547,7 @@ public class BinaryTree implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -539,6 +560,7 @@ public class BinaryTree implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -546,6 +568,7 @@ public class BinaryTree implements EventList {
          return nextIndex - 1;
       }
 
+      @Override
       public void remove() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -563,6 +586,7 @@ public class BinaryTree implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public void set (Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
