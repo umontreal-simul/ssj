@@ -26,7 +26,6 @@ package umontreal.ssj.simevents;
 
 import umontreal.ssj.simevents.eventlist.EventList;
 import umontreal.ssj.simevents.eventlist.SplayTree;
-import java.util.ListIterator;
 
 /**
  * Represents the executive of a discrete-event simulator. This class
