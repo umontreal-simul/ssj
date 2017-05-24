@@ -7,6 +7,7 @@ This release contains bug fixes.
 
 - package `functionfit`: Fix bug when creating an approximate BSpline.
 - package `util`: bisection and brentDekker methods will now check the bounds of the interval first.
+- package `eventlist`: Removed free node stack and removed synchronization on the free node stack. This increases the performance when executing many simulations in multi-thread program.
 
 ## SSJ 3.2.0
 
