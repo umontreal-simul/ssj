@@ -15,7 +15,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" target="_top" xlink:title="Implantation de l&#39;interface EventList ayant comme structure de donnees un arbre binaire. ">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" target="_top" xlink:title="An implementation of EventList using a binary search tree. ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-19.5 64,-19.5 64,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="32" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BinaryTree</text>
 </a>

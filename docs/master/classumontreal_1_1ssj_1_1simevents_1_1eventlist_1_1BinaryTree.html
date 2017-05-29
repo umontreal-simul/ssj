@@ -35,7 +35,7 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SSJ
-   &#160;<span id="projectnumber">3.2.0</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    <div id="projectbrief">Stochastic Simulation in Java</div>
   </td>
@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Implantation de l'interface <a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. ">EventList</a> ayant comme structure de donnees un arbre binaire.  
+<p>An implementation of <a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html">EventList</a> using a binary search tree.  
  <a href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for BinaryTree:</div>
@@ -164,8 +164,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:ab29372b49daee6aa87926a08fbc8b4fb inherit pub_methods_interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implantation de l'interface <a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. ">EventList</a> ayant comme structure de donnees un arbre binaire. </p>
-<p>An implementation of <a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html">EventList</a> using a binary search tree. Every event is stored into a tree node which has left and right children. Using the event time as a comparator the left child is always smaller than its parent whereas the right is greater or equal. This allows an average \(O(\log(n))\) time for adding an event and searching the first event, where \(n\) is the number of events in the structure. There is less overhead for adding and removing events than splay tree or red black tree. However, in the worst case, adding or removing could be done in time proportional to \(n\) because the binary search tree can be turned into a linked list.</p>
+<div class="textblock"><p>An implementation of <a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html">EventList</a> using a binary search tree. </p>
+<p>Every event is stored into a tree node which has left and right children. Using the event time as a comparator the left child is always smaller than its parent whereas the right is greater or equal. This allows an average \(O(\log(n))\) time for adding an event and searching the first event, where \(n\) is the number of events in the structure. There is less overhead for adding and removing events than splay tree or red black tree. However, in the worst case, adding or removing could be done in time proportional to \(n\) because the binary search tree can be turned into a linked list.</p>
 <div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a0769d7725f16bae909b17f62043f1511"></a>
 <div class="memitem">

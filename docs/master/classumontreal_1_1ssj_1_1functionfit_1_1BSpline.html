@@ -35,7 +35,7 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SSJ
-   &#160;<span id="projectnumber">3.2.0</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    <div id="projectbrief">Stochastic Simulation in Java</div>
   </td>
@@ -180,9 +180,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a364fa9e72b7cdc0457140d79b2249530"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html">BSpline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html#a364fa9e72b7cdc0457140d79b2249530">createInterpBSpline</a> (double[] x, double[] y, int degree)</td></tr>
 <tr class="memdesc:a364fa9e72b7cdc0457140d79b2249530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a B-spline curve of degree <code>degree</code> interpolating the \((x_i, y_i)\) points <a class="el" href="citelist.html#CITEREF_mDEB78a">[38]</a>&thinsp;.  <a href="#a364fa9e72b7cdc0457140d79b2249530">More...</a><br /></td></tr>
 <tr class="separator:a364fa9e72b7cdc0457140d79b2249530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f987d516b292d6556391290f00a7cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html">BSpline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html#a57f987d516b292d6556391290f00a7cb">createApproxBSpline</a> (double[] x, double[] y, int degree, int h)</td></tr>
-<tr class="memdesc:a57f987d516b292d6556391290f00a7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a B-spline curve of degree <code>degree</code> smoothing \((x_i, y_i)\), for \(i=0,…,n\) points.  <a href="#a57f987d516b292d6556391290f00a7cb">More...</a><br /></td></tr>
-<tr class="separator:a57f987d516b292d6556391290f00a7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0892c41fc64e14a58e7f17208e05289a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html">BSpline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html#a0892c41fc64e14a58e7f17208e05289a">createApproxBSpline</a> (double[] x, double[] y, int degree, int hp1)</td></tr>
+<tr class="memdesc:a0892c41fc64e14a58e7f17208e05289a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a B-spline curve of degree <code>degree</code> smoothing \((x_i, y_i)\), for \(i=0,…,n\) points.  <a href="#a0892c41fc64e14a58e7f17208e05289a">More...</a><br /></td></tr>
+<tr class="separator:a0892c41fc64e14a58e7f17208e05289a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a B-spline with control points at \((X_i, Y_i)\). </p>
@@ -279,7 +279,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a57f987d516b292d6556391290f00a7cb"></a>
+<a class="anchor" id="a0892c41fc64e14a58e7f17208e05289a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -308,7 +308,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h</em>&#160;</td>
+          <td class="paramname"><em>hp1</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -324,7 +324,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a B-spline curve of degree <code>degree</code> smoothing \((x_i, y_i)\), for \(i=0,…,n\) points. </p>
-<p>The precision depends on the parameter \(h\): \(1 \le\mathtt{degree} \le h&lt;n\), which represents the number of control points used by the new B-spline curve, minimizing the quadratic error </p><p class="formulaDsp">
+<p>The precision depends on the parameter \(hp1\): \(1 \le\mathtt{degree} \le hp1&lt;n\), which represents the number of control points used by the new B-spline curve, minimizing the quadratic error </p><p class="formulaDsp">
 \[ L = \sum_{i=0}^n\left( \frac{Y_i - S_i(X_i)}{W_i}\right)^2. \]
 </p>
 <p> This method uses the uniformly spaced method for interpolating points with a B-spline curve and a uniformed clamped knot vector, as described in <a href="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/">http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/</a>. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -332,7 +332,7 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramname">x</td><td>the values of \(X\). </td></tr>
     <tr><td class="paramname">y</td><td>the values of \(Y\). </td></tr>
     <tr><td class="paramname">degree</td><td>the degree of the B-spline. </td></tr>
-    <tr><td class="paramname">h</td><td>the desired number of control points. </td></tr>
+    <tr><td class="paramname">hp1</td><td>the desired number of control points. </td></tr>
   </table>
   </dd>
 </dl>

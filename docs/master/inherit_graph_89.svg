@@ -675,7 +675,7 @@
 </g>
 <!-- Node52 -->
 <g id="node52" class="node"><title>Node52</title>
-<g id="a_node52"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" target="_top" xlink:title="Implantation de l&#39;interface EventList ayant comme structure de donnees un arbre binaire. ">
+<g id="a_node52"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" target="_top" xlink:title="An implementation of EventList using a binary search tree. ">
 <polygon fill="none" stroke="black" points="546.5,-188.538 546.5,-207.538 610.5,-207.538 610.5,-188.538 546.5,-188.538"/>
 <text text-anchor="middle" x="578.5" y="-195.538" font-family="Helvetica,sans-Serif" font-size="10.00">BinaryTree</text>
 </a>

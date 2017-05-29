@@ -35,7 +35,7 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SSJ
-   &#160;<span id="projectnumber">3.2.0</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    <div id="projectbrief">Stochastic Simulation in Java</div>
   </td>
@@ -138,7 +138,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinitializes the simulation executive by clearing up the event list, and resetting the simulation clock to zero. <br /></td></tr>
 <tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b7e1a5d043f079feb06f169634df948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a2b7e1a5d043f079feb06f169634df948">init</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html">EventList</a> evlist)</td></tr>
-<tr class="memdesc:a2b7e1a5d043f079feb06f169634df948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="Reinitializes the simulation executive by clearing up the event list, and resetting the simulation cl...">init</a>, but also chooses <code>evlist</code> as the event list to be used.  <a href="#a2b7e1a5d043f079feb06f169634df948">More...</a><br /></td></tr>
+<tr class="memdesc:a2b7e1a5d043f079feb06f169634df948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="Reinitializes the simulation executive by clearing up the event list, and resetting the simulation cl...">init</a>, but also sets <code>evlist</code> as the event list to be used.  <a href="#a2b7e1a5d043f079feb06f169634df948">More...</a><br /></td></tr>
 <tr class="separator:a2b7e1a5d043f079feb06f169634df948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce80b963d277ccf727ef272ad4fd3f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html">EventList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#adce80b963d277ccf727ef272ad4fd3f9">getEventList</a> ()</td></tr>
 <tr class="memdesc:adce80b963d277ccf727ef272ad4fd3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently used event list.  <a href="#adce80b963d277ccf727ef272ad4fd3f9">More...</a><br /></td></tr>
@@ -279,8 +279,10 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>simulating</b> = f
       </table>
 </div><div class="memdoc">
 
-<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="Reinitializes the simulation executive by clearing up the event list, and resetting the simulation cl...">init</a>, but also chooses <code>evlist</code> as the event list to be used. </p>
-<p>For example, <code>init (new DoublyLinked())</code> initializes the simulation with a doubly linked linear structure for the event list. To initialize the current <code><a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete-event simulator. ">Simulator</a></code> with a not empty eventList is also possible, but the events scheduled in the eventList will be linked with the current simulator only. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="Reinitializes the simulation executive by clearing up the event list, and resetting the simulation cl...">init</a>, but also sets <code>evlist</code> as the event list to be used. </p>
+<p>For example, <code>init(new DoublyLinked())</code> initializes the simulator with a doubly linked linear structure <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1DoublyLinked.html">umontreal.ssj.simevents.eventlist.DoublyLinked</a> for the event list. Note that this method will clear the event list, so any existing events in <code>evlist</code> will be removed.</p>
+<p>To initialize the simulator with a non-empty event list, one can extend the class <code><a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete-event simulator. ">Simulator</a></code> and define his own initialization method.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evlist</td><td>selected event list implementation </td></tr>
   </table>

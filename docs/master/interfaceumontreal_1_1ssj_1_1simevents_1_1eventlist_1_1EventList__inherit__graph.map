@@ -1,5 +1,5 @@
 <map id="EventList" name="EventList">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" title="Implantation de l&#39;interface EventList ayant comme structure de donnees un arbre binaire. " alt="" coords="5,155,91,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" title="An implementation of EventList using a binary search tree. " alt="" coords="5,155,91,181"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1DoublyLinked.html" title="An implementation of EventList using a doubly linked linear list. " alt="" coords="115,155,216,181"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1Henriksen.html" title="An implementation of EventList using the doubly&#45;linked indexed list of Henriksen   (see also   (p..." alt="" coords="241,155,322,181"/>
 <area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1RedblackTree.html" title="An implementation of EventList using a red black tree, which is similar to a binary search tree excep..." alt="" coords="346,155,449,181"/>
