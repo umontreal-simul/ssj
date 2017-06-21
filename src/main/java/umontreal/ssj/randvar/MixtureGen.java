@@ -23,7 +23,8 @@
  *
  */
 package umontreal.ssj.randvar;
-import umontreal.ssj.probdist.*;
+
+import umontreal.ssj.probdist.DiscreteDistribution;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.probdist.Distribution;
 
