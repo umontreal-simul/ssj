@@ -102,7 +102,9 @@ public class MixtureGen extends RandomVariateGen {
     */
 
    /**
-    * This method will throw an `UnsupportedOperationException`. Use method #getDistributions instead.
+    * This method is not supported, it will throw an `UnsupportedOperationException`. Use method #getDistributions instead.
+    * 
+    * @throws UnsupportedOperationException this method is not supported
     */
    @Override
    public Distribution getDistribution() {
