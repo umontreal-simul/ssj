@@ -8,7 +8,7 @@ import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.stat.Tally;
 
 /**
- * Test the class {@link MixtureGen}.
+ * Test the class {@link umontreal.ssj.randvar.MixtureGen}.
  */
 public class MixtureGenTest {
 
