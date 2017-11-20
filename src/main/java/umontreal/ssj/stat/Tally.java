@@ -45,7 +45,7 @@ import java.util.logging.Logger;
  */
 public class Tally extends StatProbe implements Cloneable {
    protected int numObs;
-   private double sumSquares;
+   //private double sumSquares;
    private double curAverage;  // The average of the first numObs observations
    private double curSum2;     // The sum (xi - average)^2 of the first numObs
                                // observations.
@@ -80,7 +80,7 @@ public class Tally extends StatProbe implements Cloneable {
        maxValue = Double.NEGATIVE_INFINITY;
        minValue = Double.POSITIVE_INFINITY;
        sumValue = 0.0;
-       sumSquares = 0.0;
+       // sumSquares = 0.0;
        curAverage = 0.0;
        curSum2 = 0.0;
        numObs = 0;
@@ -91,7 +91,7 @@ public class Tally extends StatProbe implements Cloneable {
  * to observers is activated for this object, this method also transmits the
  * new information to the registered observers by invoking the method
  * #notifyListeners.
- *  @param x            observation being added to this tally
+ *  @param x            observation being added to this Tally object
  */
 public void add (double x) {
       if (collect) {

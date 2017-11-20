@@ -14,7 +14,7 @@ import umontreal.ssj.util.Chrono;
  * @author Pierre L'Ecuyer
  * 
  */
-public class MonteCarloExperimentDensity extends MonteCarloExperiment {
+public class MonteCarloExperimentDensity extends MonteCarloExperimentDouble {
 
 	// Performs n runs using stream and collects statistics in statValue.
 	// Note that the stream can be an RQMC stream.

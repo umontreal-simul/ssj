@@ -25,7 +25,7 @@ import umontreal.ssj.util.PrintfFormat;
  * @author Pierre L'Ecuyer
  * 
  */
-public class RQMCExperimentOld extends MonteCarloExperiment {
+public class RQMCExperimentOld extends MonteCarloExperimentDouble {
 
 	/*
 	 * static int numStats = 12; String[] statNames = { "var of average ",

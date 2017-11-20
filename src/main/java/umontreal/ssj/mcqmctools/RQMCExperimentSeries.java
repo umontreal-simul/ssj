@@ -29,34 +29,38 @@ import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stat.list.lincv.ListOfTalliesWithCV;
 import umontreal.ssj.util.Chrono;
-import umontreal.ssj.util.Num;
 import umontreal.ssj.util.PrintfFormat;
 import java.util.ArrayList;
 
 
 /**
- * This class offers facilities to perform experiments to study the convergence
+ * This class offers facilities to perform experiments on the convergence
  * of the variance when estimating a mean (expectation) with a series of RQMC 
  * point sets usually of the same type, but different size @f$n@f.
  * The series of RQMC point sets of different sizes can be passed in an array 
  * to the constructor.   The method @f$testVarianceRate@f$ performs an experiment 
- * with a given model and the series of point sets.  One can recover the average,
- * variance, their logs in base 2, etc., in arrays, as well as the estimated 
- * linear regression of log(variance) as a function of log(n). 
+ * with a given @ref MonteCarloModelDouble and the series of point sets.  
+ * One can recover the average, the variance, their logs in any base, etc., in arrays, 
+ * as well as the estimated linear regression of log(variance) as a function of log(n). 
+ * 
+ * Note:  Also many point set series on the same model, and same plot.
+ *   Also many different estimators for the same model and same point sets.
  */
 
 public class RQMCExperimentSeries {
-	int numSets = 0;  // Number of point sets in the series.
+	int numSets = 0;   // Number of point sets in the series.
     RQMCPointSet[] theSets = null;   
+    double base = 2.0;    // Base for the logs (in base 2 by default)
+    double logOfBase;       // Math.log(base)
 	double[] size = new double[numSets];    // values of n
-	double[] mean = new double[numSets];    // averge performance for each point set 
+	double[] mean = new double[numSets];    // average performance for each point set 
 	double[] variance = new double[numSets]; // variance for each point set
-	double[] log2n = new double[numSets];   // log_2 n
-	double[] log2Var = new double[numSets]; // log_2 of variance
+	double[] logn = new double[numSets];   // log_base n 
+	double[] logVar = new double[numSets]; // log_base (variance)
 	boolean displayExec = false;   // When true, prints a display of execution in real time
 	int numReplicates;    // last value of m
 	MonteCarloModelDouble model;
-	int numSkipRegression = 0; // Number of values of n that are skipped for the regression
+	// int numSkipRegression = 0; // Number of values of n that are skipped for the regression
 	String cpuTime;       // time for last experiment
 
 
@@ -64,10 +68,26 @@ public class RQMCExperimentSeries {
     * Constructor with a give series of RQMC point sets.
     *  @param theSets      the RQMC point sets
     */
-   public RQMCExperimentSeries (RQMCPointSet[] theSets) {
-	   init(theSets);
+   public RQMCExperimentSeries (RQMCPointSet[] theSets, double base) {
+	   init(theSets, base);
    }
 
+   /**
+    * Resets the array of RQMC point sets for this object, and initializes 
+    * (re-creates) the arrays that will contain the results.
+    */
+   public void init(RQMCPointSet[] theSets, double base) {
+	   this.base = base;
+	   this.logOfBase = Math.log(base);
+	     this.numSets = theSets.length;
+	     this.theSets = theSets;
+		 size = new double[numSets]; //  n for each point set
+	     mean = new double[numSets]; //  average for each point set
+	     variance = new double[numSets]; // variance for each point set
+	     logn = new double[numSets];    // log n
+	     logVar = new double[numSets];  // log (variance)
+   }
+   
    /**
     * When set to true, a real-time display of execution results and CPU times 
     * will be printed on the default output.
@@ -77,19 +97,19 @@ public class RQMCExperimentSeries {
    }
    
    /**
-    * Resets the array of RQMC point sets for this object, and initializes 
-    * (re-creates) the arrays that will contain the results.
+    * Sets the base for the logs to b.
     */
-   public void init(RQMCPointSet[] theSets) {
-	     this.numSets = theSets.length;
-	     this.theSets = theSets;
-		 size = new double[numSets]; //  n for each point set
-	     mean = new double[numSets]; //  average for each point set
-	     variance = new double[numSets]; // variance for each point set
-	     log2n = new double[numSets];    // log_2 n
-	     log2Var = new double[numSets];  // log_2 of the variance
+   public void setBase (double b) {
+      base = b;
    }
-   
+
+   /**
+    * Returns the base used for the logs.
+    */
+   public double getBase() {
+      return base;
+   }
+
    /**
     * Returns the point set number i associated to this object (starts at 0).
     *  @return the ith point set associated to this object
@@ -99,8 +119,43 @@ public class RQMCExperimentSeries {
    }
 
    /**
+    * Returns the vector of values of n.
+    */
+   public double[] getValuesn() {
+      return size;
+   }
+
+   /**
+    * Returns the vector of log_base(n).
+    */
+   public double[] getLogn() {
+      return logn;
+   }
+
+  /**
+    * Returns the vector of means from last experiment.
+    */
+   public double[] getMeans() {
+      return mean;
+   }
+
+   /**
+    * Returns the vector of variances from last experiment.
+    */
+   public double[] getVariances() {
+      return variance;
+   }
+
+   /**
+    * Returns the vector of log_base of variances from last experiment.
+    */
+   public double[] getLogVariances() {
+      return logVar;
+   }
+
+    /**
     * Performs an RQMC experiment with the given model, with this series of RQMC point sets.  
-    * For each set in the series, computes the average, the variance, its log in base 2.
+    * For each set in the series, computes the average, the variance, its log in given base.
     */
    public void testVarianceRate (MonteCarloModelDouble model, int m) {
 		int n;
@@ -109,30 +164,30 @@ public class RQMCExperimentSeries {
 		numReplicates = m;
 		this.model = model;
 	    if (displayExec) {
-	    	System.out.println("\n ============================================= ");
+			System.out.println("\n ============================================= ");
 	    	System.out.println("RQMC simulation for mean estimation:  ");
 	    	System.out.println("Model: " + model.toString());
 	    	System.out.println(" Number of indep copies m  = " + m);
 	    	System.out.println(" Point sets: " + theSets[0].toString() + "\n");
-			System.out.println("    n     CPU time         mean       log2(var) ");	    	
+			System.out.println("    n     CPU time         mean      log(var) ");	    	
 	    }
 		for (int s = 0; s < numSets; s++) { // For each cardinality n
 			n = theSets[s].getNumPoints();
 			size[s] = n;
-			log2n[s] = Num.log2(n);
-			// System.out.println(" n = " + n + ", Lg n = " + log2n[s] + "\n"); // ****
+			logn[s] = Math.log(n) / logOfBase;
+			// System.out.println(" n = " + n + ", log n = " + logn[s] + "\n"); // ****
 			// System.out.println("  " + n + "     " + timer.format());
-			RQMCExperiment.simulReplicatesRQMC (model, theSets[s], m, statReps);
+			RQMCExperimentDouble.simulReplicatesRQMC (model, theSets[s], m, statReps);
 			mean[s] = statReps.average();
 			variance[s] = statReps.variance();
-		    log2Var[s] = Num.log2(variance[s]);
+		    logVar[s] = Math.log(variance[s]) / logOfBase;
 		    if (displayExec) {
 			   System.out.println("  " + n + "     " + timer.format() + 
 			              "   " + PrintfFormat.f(10, 5, mean[s]) + 
-					      "   " + PrintfFormat.f(7, 2, log2Var[s]));
+			              "   " + PrintfFormat.f(7, 2, logVar[s]));
 		    }
 		}	   
-        cpuTime = timer.format();	   
+        cpuTime = timer.format();	 
    }
 
    /**
@@ -152,79 +207,30 @@ public class RQMCExperimentSeries {
 	    	System.out.println("Model: " + model.toString());
 	    	System.out.println(" Number of indep copies m  = " + m);
 	    	System.out.println(" Point sets: " + theSets[0].toString() + "\n");
-			System.out.println("    n     CPU time         mean       log2(var) ");	    	
+			System.out.println("    n     CPU time         mean     log(var) ");	    	
 	    }
 		for (int s = 0; s < numSets; s++) { // For each cardinality n
 			n = theSets[s].getNumPoints();
 			size[s] = n;
-			log2n[s] = Num.log2(n);
-			// System.out.println(" n = " + n + ", Lg n = " + log2n[s] + "\n"); // ****
+			logn[s] = Math.log(n) / logOfBase;
+			// System.out.println(" n = " + n + ", log n = " + logn[s] + "\n"); // ****
 			// System.out.println("  " + n + "     " + timer.format());
-			RQMCExperiment.simulReplicatesRQMCCV (model, theSets[s], m, statWithCV);
+			RQMCExperimentDouble.simulReplicatesRQMCCV (model, theSets[s], m, statWithCV);
 			statWithCV.estimateBeta();    // This is where the var. and covar. are computed!
 			mean[s] = statWithCV.averageWithCV(0);
 			variance[s] = statWithCV.covarianceWithCV(0, 0);
-		    log2Var[s] = Num.log2(variance[s]);
+		    logVar[s] = Math.log(variance[s]) / logOfBase;
 		    if (displayExec) {
 			   System.out.println("  " + n + "     " + timer.format() + 
 			              "   " + PrintfFormat.f(10, 5, mean[s]) + 
-					      "   " + PrintfFormat.f(7, 2, log2Var[s]));
+					      "   " + PrintfFormat.f(7, 2, logVar[s]));
 		    }
 		}	   
         cpuTime = timer.format();	   
    }
 
    /**
-    * Sets the number of (small) values of n to skip for regression.
-    */
-   public void setNumSkipRegression (int numSkip) {
-      numSkipRegression = numSkip;
-   }
-
-   /**
-    * Sets the number of (small) values of n to skip for regression.
-    */
-   public void setDisplayExec (boolean displayExec) {
-      this.displayExec = displayExec;
-   }
-
-   /**
-    * Returns the vector of means from last experiment.
-    */
-   public double[] getMeans() {
-      return mean;
-   }
-
-   /**
-    * Returns the vector of variances from last experiment.
-    */
-   public double[] getVariances() {
-      return variance;
-   }
-
-   /**
-    * Returns the vector of log_2 of variances from last experiment.
-    */
-   public double[] getLog2Variances() {
-      return log2Var;
-   }
-
-   /**
-    * Returns the vector of values of n.
-    */
-   public double[] getValuesn() {
-      return size;
-   }
-
-   /**
-    * Returns the vector of log_2(n).
-    */
-   public double[] getLog2n() {
-      return log2n;
-   }
-
-   /**
-    * Performs a linear regression of log_2(variance) vs log_2(n), and returns the 
+    * Performs a linear regression of log(variance) vs log(n), and returns the 
     * coefficients (constant and slope) in two-dimensional vector.
     * The first numSkip values in the array are skipped (not used) to make the regression.
     * This is useful if we want to focus the regression on larger values of n. 
@@ -232,19 +238,33 @@ public class RQMCExperimentSeries {
    public double[] regressionLogVariance (int numSkip) {
 		double[] x2 = new double[numSets-numSkip], y2 = new double[numSets-numSkip];
 		for (int i = 0; i < numSets-numSkip; ++i) {
-			x2[i] = log2n[i+numSkip];
-			y2[i] = log2Var[i+numSkip];
+			x2[i] = logn[i+numSkip];
+			y2[i] = logVar[i+numSkip];
 		}
 		return LeastSquares.calcCoefficients(x2, y2, 1);
 	}
    
+   /**
+    * Takes the regression coefficients of log(variance) in #regCoeff and returns a two-line string 
+    * that reports on these coefficients.  
+    * @param  regCoeff  the regression coefficients.
+    * @return  Report as a string.
+    */
+    public String formatRegression (double[] regCoeff) {
+		StringBuffer sb = new StringBuffer("");
+		// double[] regCoeff = regressionLogVariance (numSkipRegression);
+		sb.append("  Slope of log(var) = " + PrintfFormat.f(8, 5, regCoeff[1]) + "\n");
+		sb.append("    constant term      = " + PrintfFormat.f(8, 5, regCoeff[0]) + "\n\n");
+		return sb.toString();
+	}
+	
    /**
     * Produces and returns a report on the last experiment.
     * @param numSkip  The first numSkip values of n are skipped for the regression
     * @param details  If true, gives values (mean, log variance,...) for each n.
     * @return  Report as a string.
     */
-	public String report (boolean details) {
+	public String report (int numSkip, boolean details) {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("\n ============================================= \n");
 		sb.append("RQMC simulation for mean estimation: \n ");
@@ -253,20 +273,49 @@ public class RQMCExperimentSeries {
 		sb.append(" Point sets: " + this.toString() + "\n\n");
 		sb.append("RQMC variance \n");
 		if (details) {
-			sb.append("    n      mean       log2(var) \n");
+			sb.append("    n      mean       log(var) \n");
 			for (int s = 0; s < numSets; s++) { // For each cardinality n
 				sb.append(" " + size[s] + " " + PrintfFormat.f(10, 5, mean[s]) +
-				          " " + PrintfFormat.f(7, 2, log2Var[s]) + "\n");
+				          " " + PrintfFormat.f(7, 2, logVar[s]) + "\n");
 			}
 		}
-		double[] regCoeff = regressionLogVariance (numSkipRegression);
-		sb.append("  Slope of log2(var) = " + PrintfFormat.f(8, 5, regCoeff[1]) + "\n");
-		sb.append("    constant term      = " + PrintfFormat.f(8, 5, regCoeff[0]) + "\n\n");
+		sb.append (formatRegression (regressionLogVariance (numSkip)));
+		// sb.append("  Slope of log(var) = " + PrintfFormat.f(8, 5, regCoeff[1]) + "\n");
+		// sb.append("    constant term      = " + PrintfFormat.f(8, 5, regCoeff[0]) + "\n\n");
 		sb.append("  Total CPU Time = " + cpuTime + "\n");
 		sb.append("-----------------------------------------------------\n");		
 		return sb.toString();
 	}
 	
+	/**
+	 * Returns the data on the mean and variance for each n, in an appropriate format to produce a
+	 * plot with the pgfplot package.
+	 * 
+	 * @return Report as a string.
+	 */
+	public String plotData() {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("    n      mean       variance \n");
+		for (int s = 0; s < numSets; s++)  // For each cardinality n
+			sb.append(" " + size[s] + " " + PrintfFormat.f(10, 5, mean[s]) + " "
+			        + PrintfFormat.f(10, 5, variance[s]) + "\n");
+		return sb.toString();
+	}
+
+	/**
+	 * Similar to plotData, but for the log(variance) in terms of log n.
+	 * 
+	 * @return Report as a string.
+	 */
+	public String plotLogData() {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("   log n      mean       log(variance) \n");
+		for (int s = 0; s < numSets; s++)  // For each cardinality n
+			sb.append(" " + logn[s] + " " + PrintfFormat.f(10, 5, mean[s]) + " "
+			        + PrintfFormat.f(10, 5, logVar[s]) + "\n");
+		return sb.toString();
+	}
+
 	/**
 	 * Performs an experiment (testVarianceRate) for each point set series in the given list,
 	 * and returns a report as a string. 
@@ -275,14 +324,14 @@ public class RQMCExperimentSeries {
 	 * @param list
 	 * @param m
 	 */
-	public String TestRQMCManyPointTypes (MonteCarloModelDouble model, 
-			ArrayList<RQMCPointSet[]> list, int m, boolean details) {
+	public String testRQMCManyPointTypes (MonteCarloModelDouble model, 
+			ArrayList<RQMCPointSet[]> list, int m, int numSkip, boolean details) {
 		StringBuffer sb = new StringBuffer("");
 		numReplicates = m;	
 		for(RQMCPointSet[] ptSeries : list) {
-			init (ptSeries);
+			init (ptSeries, base);
 			testVarianceRate (model, m);
-			sb.append (report (details));			
+			sb.append (report (numSkip, details));			
 		}
 		return sb.toString();
 	}
@@ -292,6 +341,7 @@ public class RQMCExperimentSeries {
 	 * and returns a report as a string. 
 	 */
 	public String toString () {
+		//  TO DO ...
 		return theSets[0].toString();
 	}
 }

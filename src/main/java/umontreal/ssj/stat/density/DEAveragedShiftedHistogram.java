@@ -5,7 +5,7 @@ package umontreal.ssj.stat.density;
 * An averaged shifted histogram used a a density estimator.
 * 
 */
-public class  DEAveragedShiftedHistogram  implements DensityEstimator {
+public class  DEAveragedShiftedHistogram  extends AbstractDensityEstimator {
 
 	DEAveragedShiftedHistogram (double a, double b) {
 		

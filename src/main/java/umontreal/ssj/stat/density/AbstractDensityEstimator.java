@@ -1,10 +1,6 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.stat.density;
 
-// import java.util.Arrays;
 import java.util.ArrayList;
-
-import umontreal.ssj.stat.density.DensityEstimator;
-// import umontreal.ssj.stat.list.ListOfTallies;
 
 
 /**
@@ -27,8 +23,7 @@ import umontreal.ssj.stat.density.DensityEstimator;
  * @author Pierre L'Ecuyer
  * 
  */
-public class RQMCExperimentDensity {  //  extends RQMCExperimentDouble {
-
+public abstract class AbstractDensityEstimator implements DensityEstimator {
 
 	/**
 	 * Takes data from previous simulations (m independent replications, with n data points each).
@@ -40,8 +35,8 @@ public class RQMCExperimentDensity {  //  extends RQMCExperimentDouble {
 	 * TO DO: Maybe pass an array of arbitrary evaluation points instead?
 	 *    Maybe ModelBounded is not essential:  could pass a and b directly perhaps?
 	 */
-	public static double computeDensityVariance (int n, int m,
-			double[][] data, DensityEstimator de, double a, double b, int numEvalPoints) {
+	public double computeDensityVariance (int n, int m,
+			double[][] data, double a, double b, int numEvalPoints) {
 
 		double x, y;
 		// TO DO:
@@ -55,8 +50,8 @@ public class RQMCExperimentDensity {  //  extends RQMCExperimentDouble {
 		// Arrays.fill(varDens, 0.0);
 		for (int rep = 0; rep < m; rep++) {
 			// Estimate the density for this rep and evaluate it at the evaluation points
-			de.constructDensity(data[rep]);
-			de.evalDensity(evalPoints, estimDens);
+			constructDensity(data[rep]);
+			evalDensity(evalPoints, estimDens);
 	        // Update the empirical mean and sum of squares of centered observations at each evaluation point.
 			for (int j = 0; j < numEvalPoints; j++) {
 				x = estimDens[j];
@@ -76,10 +71,9 @@ public class RQMCExperimentDensity {  //  extends RQMCExperimentDouble {
 	/**
 	 * Similar to computeDensityVariance but does it for a list of density estimators,
 	 * and returns the results (integrated variance for each DE) in array integVariance.
-	 * NOTE: In case we would like to provide more results, we may want to return
-	 * them in a list like listDE, but for the results (?).
+	 * This method is static, so we cannot declare it in the @ref DensityEstimator interface.
 	 * 
-	 * We may also want a method that plots the densities?   
+	 * We may also want a method that plots the densities for pgfplots?   
 	 */
 	public static void computeDensityVarianceListDE (int n, int m,
 			double[][] data, ArrayList<DensityEstimator> listDE, double a, double b, int numEvalPoints, 
@@ -87,8 +81,8 @@ public class RQMCExperimentDensity {  //  extends RQMCExperimentDouble {
         integVariance = new double[listDE.size()];
         int deNumber = 0;
 		for (DensityEstimator de : listDE) {
-            integVariance[deNumber] = computeDensityVariance (n, m,
-        			data, de, a, b, numEvalPoints);
+            integVariance[deNumber] = de.computeDensityVariance (n, m,
+        			data, a, b, numEvalPoints);
             deNumber++;
 		}
 	}
