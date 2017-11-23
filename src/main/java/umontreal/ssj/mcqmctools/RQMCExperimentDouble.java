@@ -46,8 +46,8 @@ public class RQMCExperimentDouble extends MonteCarloExperimentDouble {
 
 	/**
 	 * Same as @ref simulReplicatesRQMC, except that all the n observations for each the 
-	 * m replications are saved and returned in the two-dimensional array @data, which is 
-	 * an array of <tt>m/tt> arrays of size <tt>n/tt>, created inside this method.
+	 * m replications are saved and returned in a new two-dimensional array @data, which is 
+	 * an array of <tt>m/tt> arrays of size <tt>n/tt>, i.e., <tt>double[m][n]/tt>, created inside this method.
 	 * Each array of size <tt>n/tt> is sorted by increasing order.
 	 * This is useful for density and cdf estimation, or for further processing of the data, for example.
 	 */

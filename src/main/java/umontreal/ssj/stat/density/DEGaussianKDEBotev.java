@@ -6,7 +6,7 @@ package umontreal.ssj.stat.density;
  * @author Lecuyer
  *
  */
-public class DEGaussianKDEBotev extends AbstractDensityEstimator {
+public class DEGaussianKDEBotev extends DensityEstimator {
 
 
 	DEGaussianKDEBotev (double a, double b) {

@@ -7,7 +7,7 @@ package umontreal.ssj.stat.density;
  * A histogram used a a density estimator.
  * 
  */
-public class DEHistogram extends AbstractDensityEstimator {
+public class DEHistogram extends DensityEstimator {
 
 	DEHistogram (double a, double b) {
 		

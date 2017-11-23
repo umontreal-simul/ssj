@@ -264,7 +264,7 @@ public class RQMCExperimentSeries {
     * @param details  If true, gives values (mean, log variance,...) for each n.
     * @return  Report as a string.
     */
-	public String report (int numSkip, boolean details) {
+	public String reportVarianceRate (int numSkip, boolean details) {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("\n ============================================= \n");
 		sb.append("RQMC simulation for mean estimation: \n ");
@@ -272,13 +272,7 @@ public class RQMCExperimentSeries {
 		sb.append(" Number of indep copies m  = " + numReplicates + "\n");
 		sb.append(" Point sets: " + this.toString() + "\n\n");
 		sb.append("RQMC variance \n");
-		if (details) {
-			sb.append("    n      mean       log(var) \n");
-			for (int s = 0; s < numSets; s++) { // For each cardinality n
-				sb.append(" " + size[s] + " " + PrintfFormat.f(10, 5, mean[s]) +
-				          " " + PrintfFormat.f(7, 2, logVar[s]) + "\n");
-			}
-		}
+		if (details) sb.append(dataLogForPlot());
 		sb.append (formatRegression (regressionLogVariance (numSkip)));
 		// sb.append("  Slope of log(var) = " + PrintfFormat.f(8, 5, regCoeff[1]) + "\n");
 		// sb.append("    constant term      = " + PrintfFormat.f(8, 5, regCoeff[0]) + "\n\n");
@@ -293,7 +287,7 @@ public class RQMCExperimentSeries {
 	 * 
 	 * @return Report as a string.
 	 */
-	public String plotData() {
+	public String dataForPlot() {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("    n      mean       variance \n");
 		for (int s = 0; s < numSets; s++)  // For each cardinality n
@@ -303,11 +297,11 @@ public class RQMCExperimentSeries {
 	}
 
 	/**
-	 * Similar to plotData, but for the log(variance) in terms of log n.
+	 * Similar to dataForPlot, but for the log(variance) in terms of log n.
 	 * 
 	 * @return Report as a string.
 	 */
-	public String plotLogData() {
+	public String dataLogForPlot() {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("   log n      mean       log(variance) \n");
 		for (int s = 0; s < numSets; s++)  // For each cardinality n
@@ -315,7 +309,47 @@ public class RQMCExperimentSeries {
 			        + PrintfFormat.f(10, 5, logVar[s]) + "\n");
 		return sb.toString();
 	}
+	
+	/**
+	 * Returns the data on the mean and variance for each n, in an appropriate format to produce a
+	 * plot with the pgfplot package.
+	 * 
+	 * @return Report as a string.
+	 */
+	public String formatPgfCurve (String curveName) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("      \\addplot+[no marks] table[x=n,y=variance] {" + "\n");
+		sb.append( dataForPlot() + " } \n");
+		sb.append("      \\addlegendentry{" + curveName + "}\n"); 
+		sb.append("      % \n");
+		return sb.toString();
+	}
 
+	/**
+	 * Returns a string that contains a tikzpicture for the pgfplot package,
+	 * showing the variance as a function of n, in a log-log scale.
+	 * 
+	 * @return Report as a string.
+	 */
+	public String drawPgfPlot(String title, String curveName) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("\begin{center} \n");
+		sb.append("  \begin{tikzpicture} \n");
+		sb.append("    \begin{loglogaxis}[ \n");
+		sb.append("      xlabel=$n$,\n");
+		sb.append("      ylabel=variance,\n");
+		sb.append("      title ={" + title  + "},\n");
+		sb.append("      ymax=1e-5,\n");
+		sb.append("      legend style={xshift=-3em,yshift=-2em}]\n");
+		sb.append("      % \n");
+		sb.append(formatPgfCurve (curveName));
+		sb.append("    \\end{loglogaxis}"); 
+		sb.append("  \\end{tikzpicture}"); 
+		sb.append("\\end{center} \n");
+		sb.append("  "); 
+		return sb.toString();
+	}
+	  
 	/**
 	 * Performs an experiment (testVarianceRate) for each point set series in the given list,
 	 * and returns a report as a string. 
@@ -331,11 +365,39 @@ public class RQMCExperimentSeries {
 		for(RQMCPointSet[] ptSeries : list) {
 			init (ptSeries, base);
 			testVarianceRate (model, m);
-			sb.append (report (numSkip, details));			
+			sb.append (reportVarianceRate (numSkip, details));			
 		}
 		return sb.toString();
 	}
 	
+	/**
+	 * Returns a string that contains a tikzpicture for the pgfplot package,
+	 * showing the variance as a function of n, in a log-log scale.
+	 * 
+	 * @return Report as a string.
+	 */
+	public String drawPgfPlotManyCurves (String title, String[] curveNames) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("\begin{center} \n");
+		sb.append("  \begin{tikzpicture} \n");
+		sb.append("    \begin{loglogaxis}[ \n");
+		sb.append("      xlabel=$n$,\n");
+		sb.append("      ylabel=variance,\n");
+		sb.append("      title ={" + title  + "},\n");
+		sb.append("      ymax=1e-5,\n");
+		sb.append("      legend style={xshift=-3em,yshift=-2em}]\n");
+		sb.append("      % \n");
+		// For here, each RQMC point set must have a short name to identify the curve.
+
+		sb.append(formatPgfCurve (curveNames[0]));
+		
+		sb.append("    \\end{loglogaxis}"); 
+		sb.append("  \\end{tikzpicture}"); 
+		sb.append("\\end{center} \n");
+		sb.append("  "); 
+		return sb.toString();
+	}
+	  
 	/**
 	 * Performs an experiment (testVarianceRate) for each point set series in the given list,
 	 * and returns a report as a string. 
