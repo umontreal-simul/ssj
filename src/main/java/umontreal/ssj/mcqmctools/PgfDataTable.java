@@ -2,13 +2,13 @@ package umontreal.ssj.mcqmctools;
 
 import java.util.ArrayList;
 
-import umontreal.ssj.hups.RQMCPointSet;
-import umontreal.ssj.util.PrintfFormat;
-
 /**
  * Represents a data table that could be used to produce LaTeX code to draw two-dimensional
- * plots  with the pgfplot package.  
- * 
+ * plots with the pgfplot package.  Each table has a name, a number of observations (rows),
+ * a number of fields (columns), an array that contains the names (identifiers) of the fields, 
+ * and a two-dimensional array that contains the data.  Methods are available to format the table,
+ * or selected columns of the table, or to produce LaTeX code to draw a plot of one field against
+ * another field in pgfplot.
  */
 
 public class PgfDataTable {
@@ -17,15 +17,23 @@ public class PgfDataTable {
 	String[] fields;      // The names of the fields.  Should be short.
 	double[][] data;      // The data points. data[s][j] for observation s, field j.
 	int numFields;        // Number of fields for each data point.
-	int numDataPoints;    // Number of observations (data points).
+	int numObservations;  // Number of observations (data points).
 	
+	/**
+	 * Constructs a table with the given table name, array of field names, and data observations.
+	 * 
+	 * @param tableName    Name of the table, to be used in plots to identify curves.
+	 * @param fields       The names of the fields (the variables).
+	 * @param data         The data points; the array @ref data[s] contains observation s.
+	 * @return the table as a string.
+	 */
 	public PgfDataTable (String tableName, String[] fields, double[][] data) {
 		super();
 		this.tableName = tableName;
 		this.fields = fields;
 		this.data = data;
 		numFields = fields.length;
-		numDataPoints = data[0].length;
+		numObservations = data[0].length;
 	}
 
 	/**
@@ -41,7 +49,7 @@ public class PgfDataTable {
 		for (int j = 0; j < numFields; j++)  // For each field j
 	       sb.append(fields[j] + "  ");
 		sb.append("\n");
-		for (int s = 0; s < numDataPoints; s++)  // For each cardinality n
+		for (int s = 0; s < numObservations; s++)  // For each cardinality n
 			for (int j = 0; j < numFields; j++)  // For each field j
 			   sb.append(data[s][j] + "  ");
 		    sb.append("\n");
@@ -52,13 +60,15 @@ public class PgfDataTable {
 	 * Similar to @ref formatTable, but retains only two selected columns of the table 
 	 * (i.e., two selected fields), specified by j1 and j2.  Note that the fields are numbered from 0.
 	 * 
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
 	 * @return the table as a string.
 	 */
 	public String formatTableTwoFields (int j1, int j2) {
 		StringBuffer sb = new StringBuffer("");
 		sb.append(tableName + "\n");
 	    sb.append(fields[j1] + "  " + fields[j2] + " \n");
-		for (int s = 0; s < numDataPoints; s++)  // For each cardinality n
+		for (int s = 0; s < numObservations; s++)  // For each cardinality n
 		    sb.append(data[s][j1] + "  " + data[s][j2] + " \n");
 		return sb.toString();
 	}
@@ -67,7 +77,9 @@ public class PgfDataTable {
 	 * Similar to @ref formatTableTwoFields, but outputs complete LaTeX code in an appropriate format
 	 * that adds a curve of the field j2 against field j1 with the pgfplot package.
 	 * 
-	 * @param  plotoptions  is used to specify the options of addplot: <tt addplot[plotoptions]/tt>
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
+	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
 	 * @return LaTeX code as a string.
 	 */
 	public String formatPgfCurveAddPlot (int j1, int j2, String plotoptions) {
@@ -84,9 +96,11 @@ public class PgfDataTable {
 	 * Returns a string that contains a complete tikzpicture for the pgfplot package,
 	 * showing the field j2 against field j1.  
 	 * 
-	 * @param  title  is the title of the plot
+	 * @param  title  is the title of the plot.
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
 	 * @param  loglog  says if we want a log-log plot (true) or not (false).
-	 * @param  plotoptions  is used to specify the options of addplot: <tt addplot[plotoptions]/tt>
+	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
 	 * @return LaTeX code as a string.
 	 */
 	public String drawPgfPlotSingleCurve (String title, int j1, int j2, boolean loglog, String plotoptions) {
@@ -113,9 +127,12 @@ public class PgfDataTable {
 	 * showing the field j2 against field j1, for all the curves that belong to listCurves.
 	 * 
 	 * 
-	 * @param  title  is the title of the plot
+	 * @param  title  is the title of the plot.
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
+	 * @param  listCurves there will be one curve for each table in this list.
 	 * @param  loglog  says if we want a log-log plot (true) or not (false).
-	 * @param  plotoptions  is used to specify the options of addplot: <tt addplot[plotoptions]/tt>
+	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
 	 * @return LaTeX code as a string.
 	 */
 	public static String drawPgfPlotManyCurves (String title, int j1, int j2, 

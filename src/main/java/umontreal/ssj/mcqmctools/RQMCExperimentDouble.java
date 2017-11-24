@@ -16,8 +16,8 @@ public class RQMCExperimentDouble extends MonteCarloExperimentDouble {
 
 
 	/**
-	 * Simulate <tt>m/tt> replications with #prqmc and return the #m RQMC average observations 
-	 * in statReps.  These <tt>m/tt> observations are usually independent if the randomizations 
+	 * Simulate <tt>m</tt> replications with #prqmc and return the #m RQMC average observations 
+	 * in statReps.  These <tt>m</tt> observations are usually independent if the randomizations 
 	 * used in the RQMC point set #prqmc are independent.
 	 */
 	public static void simulReplicatesRQMC (MonteCarloModelDouble model, RQMCPointSet prqmc, 
@@ -26,7 +26,7 @@ public class RQMCExperimentDouble extends MonteCarloExperimentDouble {
 	}
 
 	/**
-	 * Simulate <tt>m/tt> replications and return the #m RQMC average observations in statReps.
+	 * Simulate <tt>m</tt> replications and return the #m RQMC average observations in statReps.
 	 * Here the QMC point set #p and its randomization #rand are specified directly.
 	 */
 	public static void simulReplicatesRQMC (MonteCarloModelDouble model, PointSet p, 
@@ -47,8 +47,8 @@ public class RQMCExperimentDouble extends MonteCarloExperimentDouble {
 	/**
 	 * Same as @ref simulReplicatesRQMC, except that all the n observations for each the 
 	 * m replications are saved and returned in a new two-dimensional array @data, which is 
-	 * an array of <tt>m/tt> arrays of size <tt>n/tt>, i.e., <tt>double[m][n]/tt>, created inside this method.
-	 * Each array of size <tt>n/tt> is sorted by increasing order.
+	 * an array of <tt>m</tt> arrays of size <tt>n</tt>, i.e., <tt>double[m][n]</tt>, created inside this method.
+	 * Each array of size <tt>n</tt> is sorted by increasing order.
 	 * This is useful for density and cdf estimation, or for further processing of the data, for example.
 	 */
 	public static void simulReplicatesRQMC (MonteCarloModelDouble model, RQMCPointSet prqmc, 

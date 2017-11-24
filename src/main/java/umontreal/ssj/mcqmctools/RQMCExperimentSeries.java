@@ -1,5 +1,5 @@
 /*
- * Class:        RQMCPointSetSeries
+ * Class:        RQMCExperimentSeries
  * Description:  randomized quasi-Monte Carlo simulations
  * Environment:  Java
  * Software:     SSJ
@@ -38,7 +38,7 @@ import java.util.ArrayList;
  * of the variance when estimating a mean (expectation) with a series of RQMC 
  * point sets usually of the same type, but different size @f$n@f.
  * The series of RQMC point sets of different sizes can be passed in an array 
- * to the constructor.   The method @f$testVarianceRate@f$ performs an experiment 
+ * to the constructor. The method @ref testVarianceRate performs an experiment 
  * with a given @ref MonteCarloModelDouble and the series of point sets.  
  * One can recover the average, the variance, their logs in any base, etc., in arrays, 
  * as well as the estimated linear regression of log(variance) as a function of log(n). 
@@ -57,6 +57,8 @@ public class RQMCExperimentSeries {
 	double[] variance = new double[numSets]; // variance for each point set
 	double[] logn = new double[numSets];   // log_base n 
 	double[] logVar = new double[numSets]; // log_base (variance)
+	String[] tableFields = {"n", "mean", "variance", "logn", "log(variance)"};
+	                                       // Names of fields for table.
 	boolean displayExec = false;   // When true, prints a display of execution in real time
 	int numReplicates;    // last value of m
 	MonteCarloModelDouble model;
@@ -282,6 +284,27 @@ public class RQMCExperimentSeries {
 	}
 	
 	/**
+	 * Takes the data from the most recent experiment and returns it in a @ref PgfDataTable.
+	 * This will typically be used to plot the data.
+	 * 
+	 * @param tableName  Name (short identifier) of the table.
+	 * @return Report as a string.
+	 */
+	public PgfDataTable toPgfDataTable(String tableName) {
+        double[][] data = new double[5][numSets];
+		for (int s = 0; s < numSets; s++) { // For each cardinality n
+			data[0][s] = size[s];
+		    data[1][s] = mean[s];
+		    data[2][s] = variance[s];
+		    data[3][s] = logn[s];
+		    data[4][s] = logVar[s];
+		}
+		return new PgfDataTable (tableName, tableFields, data);
+	}
+
+	
+
+	/**
 	 * Returns the data on the mean and variance for each n, in an appropriate format to produce a
 	 * plot with the pgfplot package.
 	 * 
@@ -312,11 +335,11 @@ public class RQMCExperimentSeries {
 	
 	/**
 	 * Returns the data on the mean and variance for each n, in an appropriate format to produce a
-	 * plot with the pgfplot package.
+	 * plot with the pgfplot package.   This is OBSOLETE.
 	 * 
 	 * @return Report as a string.
 	 */
-	public String formatPgfCurve (String curveName) {
+	public String XformatPgfCurve (String curveName) {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("      \\addplot+[no marks] table[x=n,y=variance] {" + "\n");
 		sb.append( dataForPlot() + " } \n");
@@ -324,32 +347,8 @@ public class RQMCExperimentSeries {
 		sb.append("      % \n");
 		return sb.toString();
 	}
+	
 
-	/**
-	 * Returns a string that contains a tikzpicture for the pgfplot package,
-	 * showing the variance as a function of n, in a log-log scale.
-	 * 
-	 * @return Report as a string.
-	 */
-	public String drawPgfPlot(String title, String curveName) {
-		StringBuffer sb = new StringBuffer("");
-		sb.append("\begin{center} \n");
-		sb.append("  \begin{tikzpicture} \n");
-		sb.append("    \begin{loglogaxis}[ \n");
-		sb.append("      xlabel=$n$,\n");
-		sb.append("      ylabel=variance,\n");
-		sb.append("      title ={" + title  + "},\n");
-		sb.append("      ymax=1e-5,\n");
-		sb.append("      legend style={xshift=-3em,yshift=-2em}]\n");
-		sb.append("      % \n");
-		sb.append(formatPgfCurve (curveName));
-		sb.append("    \\end{loglogaxis}"); 
-		sb.append("  \\end{tikzpicture}"); 
-		sb.append("\\end{center} \n");
-		sb.append("  "); 
-		return sb.toString();
-	}
-	  
 	/**
 	 * Performs an experiment (testVarianceRate) for each point set series in the given list,
 	 * and returns a report as a string. 
@@ -357,47 +356,24 @@ public class RQMCExperimentSeries {
 	 * @param model
 	 * @param list
 	 * @param m
+	 * @return  a report on the experiment.
 	 */
-	public String testRQMCManyPointTypes (MonteCarloModelDouble model, 
-			ArrayList<RQMCPointSet[]> list, int m, int numSkip, boolean details) {
+	public String testVarianceRateManyPointTypes (MonteCarloModelDouble model, 
+			ArrayList<RQMCPointSet[]> list,
+			int m, int numSkip, 
+			boolean makePgfTable, boolean printReport, boolean details,
+			ArrayList<PgfDataTable> listCurves) {
 		StringBuffer sb = new StringBuffer("");
-		numReplicates = m;	
+	    if (makePgfTable)  listCurves = new ArrayList<PgfDataTable>();
 		for(RQMCPointSet[] ptSeries : list) {
 			init (ptSeries, base);
-			testVarianceRate (model, m);
-			sb.append (reportVarianceRate (numSkip, details));			
+			this.testVarianceRate (model, m);
+			if (printReport) sb.append (reportVarianceRate (numSkip, details));			
+            if (makePgfTable)  listCurves.add (toPgfDataTable (ptSeries[0].getLabel()));
 		}
 		return sb.toString();
 	}
-	
-	/**
-	 * Returns a string that contains a tikzpicture for the pgfplot package,
-	 * showing the variance as a function of n, in a log-log scale.
-	 * 
-	 * @return Report as a string.
-	 */
-	public String drawPgfPlotManyCurves (String title, String[] curveNames) {
-		StringBuffer sb = new StringBuffer("");
-		sb.append("\begin{center} \n");
-		sb.append("  \begin{tikzpicture} \n");
-		sb.append("    \begin{loglogaxis}[ \n");
-		sb.append("      xlabel=$n$,\n");
-		sb.append("      ylabel=variance,\n");
-		sb.append("      title ={" + title  + "},\n");
-		sb.append("      ymax=1e-5,\n");
-		sb.append("      legend style={xshift=-3em,yshift=-2em}]\n");
-		sb.append("      % \n");
-		// For here, each RQMC point set must have a short name to identify the curve.
 
-		sb.append(formatPgfCurve (curveNames[0]));
-		
-		sb.append("    \\end{loglogaxis}"); 
-		sb.append("  \\end{tikzpicture}"); 
-		sb.append("\\end{center} \n");
-		sb.append("  "); 
-		return sb.toString();
-	}
-	  
 	/**
 	 * Performs an experiment (testVarianceRate) for each point set series in the given list,
 	 * and returns a report as a string. 
