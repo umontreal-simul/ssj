@@ -49,7 +49,7 @@ import java.util.ArrayList;
 
 public class RQMCExperimentSeries {
 	int numSets = 0;   // Number of point sets in the series.
-    RQMCPointSet[] theSets = null;   
+    RQMCPointSet[] theSets;   
     double base = 2.0;    // Base for the logs (in base 2 by default)
     double logOfBase;       // Math.log(base)
 	double[] size = new double[numSets];    // values of n
@@ -57,14 +57,14 @@ public class RQMCExperimentSeries {
 	double[] variance = new double[numSets]; // variance for each point set
 	double[] logn = new double[numSets];   // log_base n 
 	double[] logVar = new double[numSets]; // log_base (variance)
-	String[] tableFields = {"n", "mean", "variance", "logn", "log(variance)"};
+	String[] tableFields = {"n", "mean", "variance", "log(n)", "log(variance)"};
 	                                       // Names of fields for table.
 	boolean displayExec = false;   // When true, prints a display of execution in real time
 	int numReplicates;    // last value of m
 	MonteCarloModelDouble model;
 	// int numSkipRegression = 0; // Number of values of n that are skipped for the regression
-	String cpuTime;       // time for last experiment
-
+	String cpuTime;       // time for last experiment\
+    String title;
 
    /**
     * Constructor with a give series of RQMC point sets.
@@ -272,7 +272,7 @@ public class RQMCExperimentSeries {
 		sb.append("RQMC simulation for mean estimation: \n ");
 		sb.append("Model: " + model.toString() + "\n");
 		sb.append(" Number of indep copies m  = " + numReplicates + "\n");
-		sb.append(" Point sets: " + this.toString() + "\n\n");
+		sb.append(" RQMC point sets: " + theSets[0].toString() + "\n\n");
 		sb.append("RQMC variance \n");
 		if (details) sb.append(dataLogForPlot());
 		sb.append (formatRegression (regressionLogVariance (numSkip)));
@@ -290,16 +290,20 @@ public class RQMCExperimentSeries {
 	 * @param tableName  Name (short identifier) of the table.
 	 * @return Report as a string.
 	 */
-	public PgfDataTable toPgfDataTable(String tableName) {
-        double[][] data = new double[5][numSets];
+	public PgfDataTable toPgfDataTable(String tableName, String tableLabel) {
+        double[][] data = new double[numSets][5];
 		for (int s = 0; s < numSets; s++) { // For each cardinality n
-			data[0][s] = size[s];
-		    data[1][s] = mean[s];
-		    data[2][s] = variance[s];
-		    data[3][s] = logn[s];
-		    data[4][s] = logVar[s];
+			data[s][0] = size[s];
+		    data[s][1] = mean[s];
+		    data[s][2] = variance[s];
+		    data[s][3] = logn[s];
+		    data[s][4] = logVar[s];
 		}
-		return new PgfDataTable (tableName, tableFields, data);
+		return new PgfDataTable (tableName, tableLabel, tableFields, data);
+	}
+
+	public PgfDataTable toPgfDataTable(String tableLabel) {
+		return toPgfDataTable (title, tableLabel);
 	}
 
 	
@@ -326,7 +330,7 @@ public class RQMCExperimentSeries {
 	 */
 	public String dataLogForPlot() {
 		StringBuffer sb = new StringBuffer("");
-		sb.append("   log n      mean       log(variance) \n");
+		sb.append("   log(n)      mean       log(variance) \n");
 		for (int s = 0; s < numSets; s++)  // For each cardinality n
 			sb.append(" " + logn[s] + " " + PrintfFormat.f(10, 5, mean[s]) + " "
 			        + PrintfFormat.f(10, 5, logVar[s]) + "\n");
@@ -364,12 +368,15 @@ public class RQMCExperimentSeries {
 			boolean makePgfTable, boolean printReport, boolean details,
 			ArrayList<PgfDataTable> listCurves) {
 		StringBuffer sb = new StringBuffer("");
-	    if (makePgfTable)  listCurves = new ArrayList<PgfDataTable>();
+	    // if (makePgfTable)  
+	    //	listCurves = new ArrayList<PgfDataTable>();
 		for(RQMCPointSet[] ptSeries : list) {
 			init (ptSeries, base);
-			this.testVarianceRate (model, m);
+			testVarianceRate (model, m);
+			if (printReport)  System.out.println(reportVarianceRate (numSkip, details));			
 			if (printReport) sb.append (reportVarianceRate (numSkip, details));			
-            if (makePgfTable)  listCurves.add (toPgfDataTable (ptSeries[0].getLabel()));
+            if (makePgfTable == true)  listCurves.add (toPgfDataTable 
+            		(ptSeries[0].getLabel()));
 		}
 		return sb.toString();
 	}
@@ -379,7 +386,6 @@ public class RQMCExperimentSeries {
 	 * and returns a report as a string. 
 	 */
 	public String toString () {
-		//  TO DO ...
-		return theSets[0].toString();
+		return ("RQMC Experiment:" + title);   // theSets[0].toString();
 	}
 }

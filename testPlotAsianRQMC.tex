@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\usepackage{xcolor}
+\usetikzlibrary{shapes,decorations,arrows,automata,plotmarks,patterns}
+\usepackage{tikz-inet}
+\usepgfplotslibrary{groupplots}
+%
+\pgfplotscreateplotcyclelist{defaultcolorlist}{%
+  {blue!85!black,line width=0.9pt,mark=*,solid},
+  {red!85!black,line width=0.9pt,mark=square*,dashed},
+  {lime!60!black,line width=0.9pt,mark=triangle*,dotted},
+  {orange!90!black,line width=0.9pt,mark=diamond*,loosely dashed},
+  {black,mark=star,loosely dotted},
+  {violet!85!black,mark=o,solid},
+  {brown!85!black,mark=square,dashed},
+  {purple!85!black,mark=triangle,dotted}}
+%
+\pgfplotsset{
+  every axis/.append style={
+    font=\footnotesize,
+    width=.8\columnwidth,
+    height=.6\columnwidth,
+    %!line width=0.6pt,
+    legend style={at={(1.02,1)}, anchor={north west}},
+    cycle list name=defaultcolorlist,
+  },
+  every axis title/.style={
+    at={(0.5,1)},
+    below
+  },
+%
+\begin{document}
+
+  \begin{tikzpicture} 
+    \begin{loglogaxis}[ 
+      title ={Korobov and Sobol},
+      xlabel=n,
+      ylabel=variance,
+      log basis x=2, log basis y=2,
+       grid,
+,
+      ] 
+      \addplot table[x=n,y=variance] { 
+      n  variance 
+      512.0  0.11536320691650873 
+      1024.0  0.0386330797299519 
+      2048.0  0.0068763554051423275 
+      4096.0  0.002998638977556226 
+      8192.0  0.09895715525836624 
+ }; 
+      \addlegendentry{Lattice+baker}
+      \label{Lattice+baker}
+%   
+      \addplot table[x=n,y=variance] { 
+      n  variance 
+      512.0  0.02430688296636259 
+      1024.0  0.007086599488403852 
+      2048.0  0.0035739671374160208 
+      4096.0  0.0011769218144772001 
+      8192.0  2.8928614130859545E-4 
+ }; 
+      \addlegendentry{Sobol+LMS+Shift}
+      \label{Sobol+LMS+Shift}
+%   
+    \end{loglogaxis}
+  \end{tikzpicture}
+  \end{document}

@@ -127,6 +127,7 @@ public class RQMCPointSet {
     * @return  the label.
     */
    public String toString() {
-      return label;
+	  // StringBuffer sb = new StringBuffer("");
+      return ("RQMC with point set" + set.toString() + "  " + rand.toString());
    }
 }

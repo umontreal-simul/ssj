@@ -142,10 +142,10 @@ public class MonteCarloExperimentDouble {
 	public static String simulateRunsDefaultReportStudent (MonteCarloModelDouble model, int n,
 			RandomStream stream, Tally statValue, double level, int d, Chrono timer) {
 	    PrintfFormat str = new PrintfFormat();
-		str.append(model.toString());
 		timer.init();
 		simulateRuns(model, n, stream, statValue);
 		statValue.setConfidenceIntervalStudent ();
+		str.append(model.toString()  + "\n");
 		str.append(statValue.report(level, d));
 		//  str.append("Variance per run: " + statValue.variance() + "\n");
 	    str.append (7 + 5, 5, 4, statValue.variance());
@@ -174,7 +174,7 @@ public class MonteCarloExperimentDouble {
 		simulateRunsCV (model, n, stream, statWithCV);
 		statWithCV.estimateBeta();  // Computes the variances and covariances!
 		// statWithCV.setConfidenceIntervalStudent();
-		str.append(model.toString());
+		str.append(model.toString()  + "\n");
 		// str.append(statWithCV.report(0.95, 4));
 		double[] centerAndRadius = new double[2];
         statWithCV.confidenceIntervalStudentWithCV (0, level, centerAndRadius);
@@ -198,7 +198,7 @@ public class MonteCarloExperimentDouble {
 		timer.init();
 		simulateRunsCV (model, n, stream, meanPayoff, varPayoff);
 		// statWithCV.setConfidenceIntervalStudent();
-		str.append(model.toString());
+		str.append(model.toString()  + "\n");
 		// str.append(statWithCV.report(0.95, 4));
 		str.append("Average, no CV:  " + meanPayoff[0]);
 		str.append("Average WITH CV:  " + meanPayoff[1]);

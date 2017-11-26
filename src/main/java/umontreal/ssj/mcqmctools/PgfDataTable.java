@@ -1,5 +1,6 @@
 package umontreal.ssj.mcqmctools;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 
 public class PgfDataTable {
 
-	String tableName;     // The name of the table.  Will be used to identify the corresponding curve on a plot.
+	String tableName;     // The name of the table, as a character string.
+	String tableLabel;         // A label (short name) that might be used to identify the curve in plots.
 	String[] fields;      // The names of the fields.  Should be short.
 	double[][] data;      // The data points. data[s][j] for observation s, field j.
 	int numFields;        // Number of fields for each data point.
@@ -22,14 +24,16 @@ public class PgfDataTable {
 	/**
 	 * Constructs a table with the given table name, array of field names, and data observations.
 	 * 
-	 * @param tableName    Name of the table, to be used in plots to identify curves.
+	 * @param tableName    Name (descriptor) of the table.
+	 * @param tableLabel   A label (very short name) for the table, to be used in plots to identify curves.
 	 * @param fields       The names of the fields (the variables).
 	 * @param data         The data points; the array @ref data[s] contains observation s.
 	 * @return the table as a string.
 	 */
-	public PgfDataTable (String tableName, String[] fields, double[][] data) {
+	public PgfDataTable (String tableName, String tableLabel, String[] fields, double[][] data) {
 		super();
 		this.tableName = tableName;
+		this.tableLabel = tableLabel;
 		this.fields = fields;
 		this.data = data;
 		numFields = fields.length;
@@ -45,14 +49,15 @@ public class PgfDataTable {
 	 */
 	public String formatTable() {
 		StringBuffer sb = new StringBuffer("");
-		sb.append("% " + tableName + "\n");
+		sb.append("%      " + tableName + "\n      ");
 		for (int j = 0; j < numFields; j++)  // For each field j
 	       sb.append(fields[j] + "  ");
 		sb.append("\n");
-		for (int s = 0; s < numObservations; s++)  // For each cardinality n
+		for (int s = 0; s < numObservations; s++) { // For each cardinality n
 			for (int j = 0; j < numFields; j++)  // For each field j
-			   sb.append(data[s][j] + "  ");
+			   sb.append("      " + data[s][j]);
 		    sb.append("\n");
+		}
 		return sb.toString();
 	}
 
@@ -66,10 +71,10 @@ public class PgfDataTable {
 	 */
 	public String formatTableTwoFields (int j1, int j2) {
 		StringBuffer sb = new StringBuffer("");
-		sb.append(tableName + "\n");
-	    sb.append(fields[j1] + "  " + fields[j2] + " \n");
+		// sb.append("%     " + tableName + "\n");
+	    sb.append("      " + fields[j1] + "  " + fields[j2] + " \n");
 		for (int s = 0; s < numObservations; s++)  // For each cardinality n
-		    sb.append(data[s][j1] + "  " + data[s][j2] + " \n");
+		    sb.append("      " + data[s][j1] + "  " + data[s][j2] + " \n");
 		return sb.toString();
 	}
 
@@ -84,13 +89,22 @@ public class PgfDataTable {
 	 */
 	public String formatPgfCurveAddPlot (int j1, int j2, String plotoptions) {
 		StringBuffer sb = new StringBuffer("");
-		sb.append("      \\addplot+[" + plotoptions + 
-				"] table[x=" + fields[j1] + ",y=" + fields[j2] + "] { \n");
-		sb.append( formatTableTwoFields (j1, j2) + " } \n");
-		sb.append("      \\addlegendentry{" + tableName + "}\n"); 
-		sb.append("      % \n");
+		sb.append("      \\addplot "   //  [" + plotoptions + "] 
+			 + "table[x=" + fields[j1] + ",y=" + fields[j2] + "] { \n");
+		sb.append( formatTableTwoFields (j1, j2) + " }; \n");
+		sb.append("      \\addlegendentry{" + tableLabel + "}\n"); 
+		sb.append("      \\label{" + tableLabel + "}\n"); 
+		sb.append("%   \n");
 		return sb.toString();
 	}
+
+
+	public String formatPgfCurveAddPlot (String xaxis, String yaxis, String plotoptions) {
+		int j1 = Arrays.asList(fields).indexOf(xaxis);
+		int j2 = Arrays.asList(fields).indexOf(yaxis);
+		return formatPgfCurveAddPlot (j1, j2, plotoptions);
+	}
+
 
 	/**
 	 * Returns a string that contains a complete tikzpicture for the pgfplot package,
@@ -103,25 +117,35 @@ public class PgfDataTable {
 	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
 	 * @return LaTeX code as a string.
 	 */
-	public String drawPgfPlotSingleCurve (String title, int j1, int j2, boolean loglog, String plotoptions) {
-		String axistype;
-		if (loglog) axistype = "loglogaxis"; else axistype = "axis";
+	public String drawPgfPlotSingleCurve (String title, String axistype, String xaxis, String yaxis, 
+			 int logbasis, String axisoptions, String plotoptions) {
+		int j1 = Arrays.asList(fields).indexOf(xaxis);
+		int j2 = Arrays.asList(fields).indexOf(yaxis);
+        return drawPgfPlotSingleCurve (title, axistype, j1, j2, 
+ 			   logbasis, axisoptions, plotoptions);
+	}
+
+	public String drawPgfPlotSingleCurve (String title, String axistype, int j1, int j2, 
+			   int logbasis, String axisoptions, String plotoptions) {
 		StringBuffer sb = new StringBuffer("");
-		sb.append("  \begin{tikzpicture} \n");
-		sb.append("    \begin{" + axistype + "}[ \n");
+		sb.append("  \\begin{tikzpicture} \n");
+		sb.append("    \\begin{" + axistype + "}[ \n");
+		sb.append("      title ={" + title  + "},\n");
 		sb.append("      xlabel=" + fields[j1] + ",\n");
 		sb.append("      ylabel=" + fields[j2] + ",\n");
-		sb.append("      title ={" + title  + "},\n");
-		sb.append("      ymax=1e-5,\n");
-		sb.append("      legend style={xshift=-3em,yshift=-2em}]\n");
-		sb.append("      % \n");
+		if (axistype == "loglogaxis") 
+			sb.append("     log basis x=" + logbasis + ", log basis y=" + logbasis + ",\n");
+		sb.append("       grid,\n");
+		sb.append( axisoptions + ",\n");
+		sb.append("      ] \n");
 		sb.append( formatPgfCurveAddPlot (j1, j2, plotoptions));
-		sb.append("    \\end{" + axistype + "}"); 
-		sb.append("  \\end{tikzpicture}"); 
+		sb.append("    \\end{" + axistype + "}\n"); 
+		sb.append("  \\end{tikzpicture}\n"); 
 		sb.append("  "); 
 		return sb.toString();
 	}
 
+	
 	/**
 	 * Returns a string that contains a complete tikzpicture for the pgfplot package,
 	 * showing the field j2 against field j1, for all the curves that belong to listCurves.
@@ -135,26 +159,69 @@ public class PgfDataTable {
 	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
 	 * @return LaTeX code as a string.
 	 */
-	public static String drawPgfPlotManyCurves (String title, int j1, int j2, 
-			ArrayList<PgfDataTable> listCurves, boolean loglog, String plotoptions) {
-		String axistype;
-		if (loglog) axistype = "loglogaxis"; else axistype = "axis";
+	public static String drawPgfPlotManyCurves (String title, String axistype, int j1, int j2, 
+			ArrayList<PgfDataTable> listCurves, int logbasis, String axisoptions, String plotoptions) {
 		StringBuffer sb = new StringBuffer("");
-		sb.append("  \begin{tikzpicture} \n");
-		sb.append("    \begin{" + axistype + "}[ \n");
+		sb.append("  \\begin{tikzpicture} \n");
+		sb.append("    \\begin{" + axistype + "}[ \n");
+		sb.append("      title ={" + title  + "},\n");
 		sb.append("      xlabel=" + listCurves.get(0).fields[j1] + ",\n");
 		sb.append("      ylabel=" + listCurves.get(0).fields[j2] + ",\n");
-		sb.append("      title ={" + title  + "},\n");
-		sb.append("      ymax=1e-5,\n");
-		sb.append("      legend style={xshift=-3em,yshift=-2em}]\n");
-		sb.append("      % \n");
-		for (PgfDataTable curve : listCurves)
-			curve.formatPgfCurveAddPlot (j1, j2, plotoptions);
-		sb.append("    \\end{" + axistype + "}"); 
-		sb.append("  \\end{tikzpicture}"); 
+		if (axistype == "loglogaxis") 
+			sb.append("      log basis x=" + logbasis + ", log basis y=" + logbasis + ",\n");
+		sb.append("       grid,\n");
+		sb.append( axisoptions + ",\n");
+		// sb.append("      legend style={xshift=-3em,yshift=-2em}\n");
+		sb.append("      ] \n");
+		for (PgfDataTable curve : listCurves) {
+			sb.append(curve.formatPgfCurveAddPlot (j1, j2, plotoptions));
+		}
+		sb.append("    \\end{" + axistype + "}\n"); 
+		sb.append("  \\end{tikzpicture}\n"); 
 		sb.append("  "); 
 		return sb.toString();
 	}
-
 	
+	
+	public static String pgfplotFileHeader () {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("\\documentclass[12pt]{article}\n" + 
+         "\\usepackage{pgfplots}\n" + 
+         "\\pgfplotsset{compat=1.12}\n" + 
+         "\\usepackage{xcolor}\n" + 
+         "\\usetikzlibrary{shapes,decorations,arrows,automata,plotmarks,patterns}\n" + 
+         "\\usepackage{tikz-inet}\n" + 
+         "\\usepgfplotslibrary{groupplots}\n" + 
+         "%\n" + 
+         "\\pgfplotscreateplotcyclelist{defaultcolorlist}{%\n" + 
+         "  {blue!85!black,line width=0.9pt,mark=*,solid},\n" + 
+         "  {red!85!black,line width=0.9pt,mark=square*,dashed},\n" + 
+         "  {lime!60!black,line width=0.9pt,mark=triangle*,dotted},\n" + 
+         "  {orange!90!black,line width=0.9pt,mark=diamond*,loosely dashed},\n" + 
+         "  {black,mark=star,loosely dotted},\n" + 
+         "  {violet!85!black,mark=o,solid},\n" + 
+         "  {brown!85!black,mark=square,dashed},\n" + 
+         "  {purple!85!black,mark=triangle,dotted}}\n" + 
+         "%\n" + 
+         "\\pgfplotsset{\n" + 
+         "  every axis/.append style={\n" + 
+         "    font=\\footnotesize,\n" + 
+         "    width=.8\\columnwidth,\n" + 
+         "    height=.6\\columnwidth,\n" + 
+         "    %!line width=0.6pt,\n" + 
+         "    legend style={at={(1.02,1)}, anchor={north west}},\n" + 
+         "    cycle list name=defaultcolorlist,\n" + 
+         "  },\n" + 
+         "  every axis title/.style={\n" + 
+         "    at={(0.5,1)},\n" + 
+         "    below\n" + 
+         "  },\n" + 
+         "%\n" + 
+         "\\begin{document}\n\n");
+        return sb.toString();
+	}
+	
+	public static String pgfplotEndDocument () {
+		return "\\end{document}\n";
+	}
 }
