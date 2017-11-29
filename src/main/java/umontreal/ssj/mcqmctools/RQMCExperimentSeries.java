@@ -103,6 +103,7 @@ public class RQMCExperimentSeries {
     */
    public void setBase (double b) {
       base = b;
+      //  Must recompute logs !!!
    }
 
    /**

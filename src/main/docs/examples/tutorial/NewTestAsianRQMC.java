@@ -73,7 +73,7 @@ public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
 			p = new BakerTransformedPointSet(new KorobovLattice(N[i], a[i], dim));
 			theRQMCSetLattice[i] = new RQMCPointSet(p, rand);
 		}
-		theRQMCSetLattice[0].setLabel("Lattice+baker");
+		theRQMCSetLattice[0].setLabel("Lattice+baker+shift");
 		listOfSeries.add(theRQMCSetLattice);
 
 		// Sobol + LMS + shift
@@ -97,7 +97,7 @@ public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
 		ArrayList<PgfDataTable> listCurves = new ArrayList<PgfDataTable>();
 		System.out.println (experSeries.testVarianceRateManyPointTypes (model, listOfSeries, m, numSkipReg,
 				true, true, true, listCurves));
-				System.out.println ("\n Now printing data table for the two curves  *****  \n\n\n");
+		System.out.println ("\n Now printing data table for the two curves  *****  \n\n\n");
 		// Prints the data of each curve as a table.		
 		for (PgfDataTable curve : listCurves)
 			System.out.println (curve.formatTable());

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class PgfDataTable {
 
 	String tableName;     // The name of the table, as a character string.
-	String tableLabel;         // A label (short name) that might be used to identify the curve in plots.
+	String tableLabel;    // A label (short name) that might be used to identify the curve in plots.
 	String[] fields;      // The names of the fields.  Should be short.
 	double[][] data;      // The data points. data[s][j] for observation s, field j.
 	int numFields;        // Number of fields for each data point.
@@ -215,7 +215,7 @@ public class PgfDataTable {
          "  every axis title/.style={\n" + 
          "    at={(0.5,1)},\n" + 
          "    below\n" + 
-         "  },\n" + 
+         "  },\n }\n" + 
          "%\n" + 
          "\\begin{document}\n\n");
         return sb.toString();
