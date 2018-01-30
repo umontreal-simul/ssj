@@ -53,7 +53,6 @@ public class KernelDensity {
          if ((z >= a) && (z <= b))
             sum += kern.density(z);
       }
-
       sum /= (h*n);
       return sum;
    }
@@ -85,10 +84,45 @@ public class KernelDensity {
     * getBaseBandwidth(dist)} in package `randvar`.
     */
    public static double[] computeDensity (EmpiricalDist dist,
-                                          ContinuousDistribution kern,
-                                          double[] Y) {
+                            ContinuousDistribution kern,
+                            double[] Y) {
       double h = KernelDensityGen.getBaseBandwidth(dist);
       return computeDensity (dist, kern, h, Y);
    }
+   
+   /**
+    * Similar to computeDensity (dist, kern, h, evalPoints), but much more efficient
+    * for very large n. We assume that the kernel is unimodal (increasing, then decreasing).
+    * For each evaluation point j, in the sum that defines the density estimator, we add
+    * only the terms that contribute more than epsilon0 to the sum.
+    * We stop adding as soon as the new term is < epsilon0. 
+    * One can try epsilon0 = E-10 for example. 
+    * We have also replaced dist by a sorted array: double[] data.
+    * 
+    */
+   public void evalDensity (double data[],
+                 ContinuousDistribution kern,  double h, 
+                 double[] evalPoints, double[] density, double epsilon0) {
+      int m = evalPoints.length;
+      // density = new double[m];    // Maybe not needed, but perhaps safer.
+      int n = data.length;
+      double invhn = 1.0 / (h * n); 
+      double invh = 1.0 / h; 
+      double y;
+      double sum = 0.0;
+      double term;    // A term to be added to the sum that defines the density estimate.
+      int imin = 0;   // We know that the terms for i < imin do not contribute significantly.
+      for (int j = 0; j < m; j++) {  // Evaluation points are indexed by j.
+    	  y = evalPoints[j];
+          term = kern.density ((y-data[imin]) * invh);
+          while ((term < epsilon0) & (imin < n))
+              term = kern.density ((y-data[++imin]) * invh);
+   	      sum = term;   // The first significant term.
+    	  for (int i = imin+1; (i < n) & (term > epsilon0); i++)   // Data indexed by i.
+              sum += (term = kern.density ((y-data[i]) * invh));
+          density[j] = sum + invhn;
+      }
+   }
+
 
 }

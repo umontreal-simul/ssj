@@ -39,12 +39,17 @@ import java.util.ArrayList;
  * point sets usually of the same type, but different size @f$n@f.
  * The series of RQMC point sets of different sizes can be passed in an array 
  * to the constructor. The method @ref testVarianceRate performs an experiment 
- * with a given @ref MonteCarloModelDouble and the series of point sets.  
- * One can recover the average, the variance, their logs in any base, etc., in arrays, 
+ * with a given @ref MonteCarloModelDouble and the series of point sets. 
+ * In this experiment, for each size @f$n@f of point set, @f$m@f independent replicates 
+ * of the RQMC estimator (which is an average over RQMC @f$n@f points) are computed.
+ * One can then recover the average and the empirical variance of these @f$m@f replicates
+ * of the @f$n@f-point average, their logs in any base, etc., in arrays, 
  * as well as the estimated linear regression of log(variance) as a function of log(n). 
  * 
- * Note:  Also many point set series on the same model, and same plot.
- *   Also many different estimators for the same model and same point sets.
+ * One can also perform experiments with many such series of point sets for the same model, 
+ * and display the results for the different series on the same plot.
+ * Likewise, one can also perform an experiment with many different estimators 
+ * for the same model and same point sets.
  */
 
 public class RQMCExperimentSeries {
@@ -54,7 +59,7 @@ public class RQMCExperimentSeries {
     double logOfBase;       // Math.log(base)
 	double[] size = new double[numSets];    // values of n
 	double[] mean = new double[numSets];    // average performance for each point set 
-	double[] variance = new double[numSets]; // variance for each point set
+	double[] variance = new double[numSets]; // variance of the average for each point set
 	double[] logn = new double[numSets];   // log_base n 
 	double[] logVar = new double[numSets]; // log_base (variance)
 	String[] tableFields = {"n", "mean", "variance", "log(n)", "log(variance)"};
@@ -103,7 +108,7 @@ public class RQMCExperimentSeries {
     */
    public void setBase (double b) {
       base = b;
-      //  Must recompute logs !!!
+	  logOfBase = Math.log(base);
    }
 
    /**
@@ -122,35 +127,37 @@ public class RQMCExperimentSeries {
    }
 
    /**
-    * Returns the vector of values of n.
+    * Returns the vector of values of n, after an experiment.
     */
    public double[] getValuesn() {
       return size;
    }
 
    /**
-    * Returns the vector of log_base(n).
+    * Returns the vector of log_base(n), after an experiment.
     */
    public double[] getLogn() {
       return logn;
    }
 
   /**
-    * Returns the vector of means from last experiment.
+    * Returns the vector of means from last experiment, after an experiment.
     */
    public double[] getMeans() {
       return mean;
    }
 
    /**
-    * Returns the vector of variances from last experiment.
+    * Returns the vector of variances from the last experiment.  
+    * Each variance in the vector is the empirical variance of the m replicates
+    * of the RQMC estimator. To obtain the variance per run, it must be multiplied by n.
     */
    public double[] getVariances() {
       return variance;
    }
 
    /**
-    * Returns the vector of log_base of variances from last experiment.
+    * Returns the vector of log_base of variances from the last experiment.
     */
    public double[] getLogVariances() {
       return logVar;
@@ -158,7 +165,9 @@ public class RQMCExperimentSeries {
 
     /**
     * Performs an RQMC experiment with the given model, with this series of RQMC point sets.  
-    * For each set in the series, computes the average, the variance, its log in given base.
+    * For each set in the series, computes m replicates of the RQMC estimator, 
+    * the computes the average and the variance of these m replicates, 
+    * and the logs of n and of the variance in the given base.
     */
    public void testVarianceRate (MonteCarloModelDouble model, int m) {
 		int n;
