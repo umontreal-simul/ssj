@@ -3,10 +3,10 @@ package umontreal.ssj.mcqmctools;
 import umontreal.ssj.rng.*;
 
 /**
- * An interface for a simulation model for which Monte Carlo (MC) and RQMC
+ * An interface for a simple simulation model with which Monte Carlo (MC) and RQMC
  * experiments are to be performed. It generalizes @ref MonteCarloModelDouble.
- * This interface allows the output (performance) from the model to be of arbitrary type.
- * 
+ * This interface allows the output (performance) from the model to be of arbitrary type @ref E.
+ * It could be a scalar, an array, etc.
  */
 
 public interface MonteCarloModel<E> {
@@ -17,7 +17,7 @@ public interface MonteCarloModel<E> {
 	// Simulates the model for one run
 	public void simulate (RandomStream stream);
 
-	// Recovers the realization of the performance measure $X$.
+	// Recovers the realization of the performance measure, of type E.
 	public E getPerformance();
 
 	// Returns the max number of uniforms required to simulate the model.

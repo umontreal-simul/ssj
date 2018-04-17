@@ -5,7 +5,7 @@ package umontreal.ssj.mcqmctools;
  * experiments are to be performed. This interface is used by the classes
  * MCExperiment and RQMCExperimentDensity, among others, to run the model.  
  * The interface assumes that the output from the model is a random
- * variable X with some density, mostly over the interval [a,b], i.e., 
+ * variable X whose support is limited to the interval [a,b], i.e., 
  * it can be neglected outside of that interval when estimating the density.
  */
 

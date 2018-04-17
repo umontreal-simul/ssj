@@ -25,7 +25,7 @@
 package umontreal.ssj.gof;
 
 import umontreal.ssj.probdist.*;
-import umontreal.ssj.randvar.KernelDensityGen;
+// import umontreal.ssj.randvar.KernelDensityGen;
 
 /**
  * This static class provides methods to compute a kernel density estimator from a set of @f$n@f$
@@ -65,11 +65,13 @@ public class KernelDensity {
 
 	/**
 	 * Given the empirical distribution `dist`, this method computes the kernel density estimate at
-	 * each of the @f$m@f$ points <tt>Y[</tt>@f$j@f$<tt>]</tt>, @f$j= 0, 1, …, (m-1)@f$,
-	 * where @f$m@f$ is the length of `Y`, the kernel is `kern.density(x)`, and the bandwidth
+	 * each of the @f$m@f$ evaluation points <tt>evalPoints[</tt>@f$j@f$<tt>]</tt>, @f$j= 0, 1, …, (m-1)@f$,
+	 * where @f$m@f$ is the length of `EvalPoints`, the kernel is `kern.density(x)`, and the bandwidth
 	 * is @f$h@f$. Returns the estimates as an array of @f$m@f$ values.
+	 * Note that the evaluation points do not have to cover the entire support of the density;
+	 * they can cover only a small a small interval.
 	 * 
-	 * Note: One way to choose @f$h@f$ is via the method
+	 * One way to choose @f$h@f$ is via the method
 	 * {@link umontreal.ssj.randvar.KernelDensityGen.getBaseBandwidth(EmpiricalDist)
 	 * getBaseBandwidth(dist)} in package `randvar`.
 	 */
@@ -105,7 +107,7 @@ public class KernelDensity {
 		for (int j = 0; j < m; j++) {  // Evaluation points are indexed by j.
 			y = evalPoints[j];
 			term = kern.density((y - data[imin]) * invh);
-			while ((term < epsilon0) && (imin < n - 1) && (data[imin] < y))
+			while ((term < epsilon0) & (imin < n - 1) && (data[imin] < y))
 				term = kern.density((y - data[++imin]) * invh);
 			sum = term;   // The first significant term.
 			for (int i = imin + 1; (i < n) && ((term > epsilon0) || (data[i] < y)); i++)
