@@ -28,14 +28,9 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
-import umontreal.ssj.util.PrintfFormat;
 import umontreal.ssj.simevents.Event;
 import umontreal.ssj.util.PrintfFormat;
 
-/**
- *  Implantation de l'interface EventList ayant comme structure de
- *  donnees un arbre binaire.
- */
 
 /**
  * An implementation of  @ref EventList using a binary search tree. Every
@@ -55,24 +50,25 @@ public class BinaryTree implements EventList {
    // racine de l'arbre
    private Entry root = null;
 
-   // liste d'objets qui peuvent etre reutilises
-   private Entry freeEntries = null;
-
    // compteur de modifications sur l'iterateur.
    private int modCount = 0;
+   
+   @Override
    public boolean isEmpty() {
       return root == null;
    }
 
+   @Override
    public void clear() {
       while (root != null)
          remove (root);
    }
 
+   @Override
    public void add (Event ev) {
       // fonction qui ajoute un evenement dans l'arbre
       // note : si deux evenements ont le meme temps, alors il faut
-      //        toujours faire en sorte que ces evenements se retrouvement
+      //        toujours faire en sorte que ces evenements se retrouvent
       //        comme les fils droits les uns des autres
 
       Entry cursor = root;
@@ -101,6 +97,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addFirst (Event ev) {
    /**
     * Ajoute "ev" comme premier evenement dans l'arbre.
@@ -128,6 +125,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Entry otherEntry = findEntry (other);
       Entry evEntry    = add (ev , null);
@@ -164,6 +162,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       // on va chercher le "Entry" de other
       Entry otherEntry = findEntry (other);
@@ -183,6 +182,7 @@ public class BinaryTree implements EventList {
       ++modCount;
    }
 
+   @Override
    public Event getFirst() {
       if (root==null)
          return null;
@@ -192,6 +192,7 @@ public class BinaryTree implements EventList {
       return cursor.event;
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Entry cursor = root;
       if (root != null)
@@ -207,6 +208,7 @@ public class BinaryTree implements EventList {
    }
 
    @SuppressWarnings("unchecked")
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Entry cursor = root;
       if (root != null)
@@ -221,14 +223,17 @@ public class BinaryTree implements EventList {
       return null;
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new BTItr();
    }
 
+   @Override
    public boolean remove (Event ev) {
       Entry evEntry = findEntry(ev);
       if (evEntry == null)
@@ -237,6 +242,7 @@ public class BinaryTree implements EventList {
          return remove(evEntry);
    }
 
+   @Override
    public Event removeFirst() {
       if (root == null)
          return null;
@@ -251,8 +257,9 @@ public class BinaryTree implements EventList {
       return first;
    }
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer ("Contents of the event list BinaryTree:");
+      StringBuilder sb = new StringBuilder ("Contents of the event list BinaryTree:");
       Entry cursor = root;
 
       if (root != null)
@@ -271,19 +278,7 @@ public class BinaryTree implements EventList {
    }
 
    private Entry add (Event ev, Entry father) {
-      // On regarde la liste freeEntries
-      if (freeEntries != null) {
-         Entry tempo = freeEntries;
-         freeEntries = freeEntries.right;
-         tempo.event = ev;
-         tempo.left  = null;
-         tempo.right = null;
-         tempo.father = father;
-         return tempo;
-      }
-      // on cree un nouvel objet
-      else
-         return new Entry(ev, null, null, father);
+      return new Entry(ev, null, null, father);
    }
 
    private boolean remove (Entry e) {
@@ -345,9 +340,6 @@ public class BinaryTree implements EventList {
             while (cursor.left != null)
                cursor = cursor.left;
 
-            // echange entre e et cursor et elimination de e
-            cursor.father.left = cursor.right;
-
             if (isRoot)
                root = cursor;
             else if (filsGauche)
@@ -355,6 +347,7 @@ public class BinaryTree implements EventList {
             else
                e.father.right = cursor;
 
+            // echange entre e et cursor et elimination de e
             cursor.father.left = cursor.right;
             if (cursor.right != null)
                cursor.right.father = cursor.father;
@@ -369,11 +362,10 @@ public class BinaryTree implements EventList {
       }
 
       // recupere l'espace du noeud
-      e.right = freeEntries;
+      e.right = null;
       e.left =  null;
       e.event = null;
-      freeEntries = e;
-      e = null;
+
       ++modCount;
       return true;
    }
@@ -465,6 +457,7 @@ public class BinaryTree implements EventList {
          nextIndex = 0;
       }
 
+      @Override
       public void add(Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -519,18 +512,21 @@ public class BinaryTree implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public boolean hasNext() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != null;
       }
 
+      @Override
       public boolean hasPrevious() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return prev != null;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -543,6 +539,7 @@ public class BinaryTree implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -550,6 +547,7 @@ public class BinaryTree implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -562,6 +560,7 @@ public class BinaryTree implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -569,6 +568,7 @@ public class BinaryTree implements EventList {
          return nextIndex - 1;
       }
 
+      @Override
       public void remove() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -586,6 +586,7 @@ public class BinaryTree implements EventList {
          ++expectedModCount;
       }
 
+      @Override
       public void set (Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();

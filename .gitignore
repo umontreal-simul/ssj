@@ -1,6 +1,6 @@
 .gradle
 build
-/.nb-gradle/
+/.nb-gradle
 .nb-gradle-properties
 hs_err*
 /bin/
