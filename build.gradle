@@ -24,7 +24,7 @@ group = 'ca.umontreal.iro.simul'
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
-version = '3.2.0'
+version = '3.2.1'
 
 
 repositories {

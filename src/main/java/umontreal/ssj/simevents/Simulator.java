@@ -26,7 +26,6 @@ package umontreal.ssj.simevents;
 
 import umontreal.ssj.simevents.eventlist.EventList;
 import umontreal.ssj.simevents.eventlist.SplayTree;
-import java.util.ListIterator;
 
 /**
  * Represents the executive of a discrete-event simulator. This class
@@ -66,14 +65,14 @@ public class Simulator {
 
    protected ContinuousState continuousState = null;
 
-/**
- * Represents the default simulator being used by the class  @ref Sim, and
- * the no-argument constructor of  @ref Event. This simulator is usually
- * obtained with the  #getDefaultSimulator method, which initializes it if
- * needed. But it might also be initialized differently, e.g., if
- * process-driven simulation is required.
- */
-public static Simulator defaultSimulator = null;
+   /**
+    * Represents the default simulator being used by the class  @ref Sim, and
+    * the no-argument constructor of  @ref Event. This simulator is usually
+    * obtained with the  #getDefaultSimulator method, which initializes it if
+    * needed. But it might also be initialized differently, e.g., if
+    * process-driven simulation is required.
+    */
+   public static Simulator defaultSimulator = null;
 
    /**
     * Constructs a new simulator using a splay tree for the event list.
@@ -95,8 +94,7 @@ public static Simulator defaultSimulator = null;
     * Returns the current value of the simulation clock.
     *  @return the current simulation time
     */
-   public double time()
-   {
+   public double time() {
       return currentTime;
    }
 
@@ -111,22 +109,23 @@ public static Simulator defaultSimulator = null;
    }
 
    /**
-    * Same as  #init, but also chooses `evlist` as the event list to be
-    * used. For example, `init (new DoublyLinked())` initializes the
-    * simulation with a doubly linked linear structure for the event list.
-    * To initialize the current `Simulator` with a not empty eventList is
-    * also possible, but the events scheduled in the eventList will be
-    * linked with the current simulator only.
+    * Same as  #init, but also sets `evlist` as the event list to be
+    * used. For example, `init(new DoublyLinked())` initializes the
+    * simulator with a doubly linked linear structure 
+    * @ref umontreal.ssj.simevents.eventlist.DoublyLinked for the event list.
+    * Note that this method will clear the event list, so any 
+    * existing events in `evlist` will be removed.
+    *
+    * To initialize the simulator with a non-empty event list,
+    * one can extend the class `Simulator` and define his own initialization method.
+    *
     *  @param evlist       selected event list implementation
     */
    public void init (EventList evlist) {
       if (evlist == null)
          throw new NullPointerException();
       eventList = evlist;
-      ListIterator iter = eventList.listIterator();
-      while(iter.hasNext())
-         ((Event)iter.next()).setSimulator(this);
-      init();
+      init();  // will clear the events in evlist
    }
 
    /**

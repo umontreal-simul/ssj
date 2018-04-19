@@ -1,4 +1,8 @@
+package tutorial;
 import umontreal.ssj.rng.*;
+
+import java.io.IOException;
+
 import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
@@ -27,7 +31,7 @@ public class AsianQMC extends Asian {
    }
 
 
-   public static void main (String[] args) {
+   public static void main (String[] args)  throws IOException {
       int s = 12;
       double[] zeta = new double[s+1];
       for (int j=0; j<=s; j++)

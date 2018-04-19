@@ -135,7 +135,7 @@ public class HilbertCurveSort implements MultiDimSort01<MultiDim01> {
 
    /**
     * Constructs a  @ref HilbertCurveSort object with a given mapping of
-    * the Hilbert curve in the unit hybercube.
+    * the Hilbert curve in the unit hypercube.
     *  @param map          the mapping of the Hilbert curve
     */
    public HilbertCurveSort (HilbertCurveMap map) {

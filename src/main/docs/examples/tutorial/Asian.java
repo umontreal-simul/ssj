@@ -1,4 +1,8 @@
+package tutorial;
 import umontreal.ssj.rng.*;
+
+import java.io.IOException;
+
 import umontreal.ssj.probdist.NormalDist;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.*;
@@ -56,7 +60,7 @@ public class Asian {
       }
    }
 
-   public static void main (String[] args) {
+   public static void main ()  throws IOException {
       int s = 12;
       double[] zeta = new double[s+1];   zeta[0] = 0.0;
       for (int j=1; j<=s; j++)

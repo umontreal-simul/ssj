@@ -1,3 +1,4 @@
+package tutorial;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 import umontreal.ssj.randvar.*;

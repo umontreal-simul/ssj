@@ -1,3 +1,5 @@
+package tutorial;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -30,7 +32,7 @@ public class CompareOutputs {
                  { "tutorial", QueueEv.class,      null },
                  { "tutorial", QueueLindley.class, null },
                  { "tutorial", QueueObs.class,     null },
-                 { "probdistmulti/norta", ExampleNortaInitDisc.class, null }
+                 // { "probdistmulti/norta", ExampleNortaInitDisc.class, null }
         });
     }
 
