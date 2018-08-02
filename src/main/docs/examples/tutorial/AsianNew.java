@@ -60,7 +60,7 @@ public class AsianNew implements MonteCarloModelDouble {
 	}
 
 	
-    public static void main ()  throws IOException {
+    public static void main (String args[])  throws IOException {
       int s = 12;
       double[] zeta = new double[s+1];   zeta[0] = 0.0;
       for (int j=1; j<=s; j++)
