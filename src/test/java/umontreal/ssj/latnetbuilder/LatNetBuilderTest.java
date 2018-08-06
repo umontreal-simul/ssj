@@ -104,4 +104,24 @@ public class LatNetBuilderTest {
 		System.out.println(net.toString());
 	    net.printGeneratorMatrices(5);
 	}
+
+	@Test
+	public void testInterlacedDigitalNet(){
+		System.out.println("====================");
+		DigitalNetSearch search = new DigitalNetSearch("explicit");
+		search.setInterlacing(4);
+		search.setDimension(5);
+		search.setSizeParameter("2^10");
+		search.setFigureOfMerit("CU:IB");
+		search.setNormType("1");
+		search.addWeight("product:1");
+		search.setExplorationMethod("random-CBC:10");
+		System.out.println(search.toString());
+		DigitalNetBase2 net = search.search();
+		System.out.println("Result:");
+		System.out.println("Merit: " + search.merit());
+		System.out.println("Time: " + search.time());
+		System.out.println(net.toString());
+	    net.printGeneratorMatrices(5);
+	}
 }

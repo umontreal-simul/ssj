@@ -1,3 +1,27 @@
+/*
+ * Class:        Search
+ * Description:
+ * Environment:  Java
+ * Software:     SSJ
+ * Copyright (C) 2018  Pierre L'Ecuyer and Universite de Montreal
+ * Organization: DIRO, Universite de Montreal
+ * @author Maxime Godin and Pierre Marion
+ * @since August 2018
+ *
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 package umontreal.ssj.latnetbuilder;
 
 import java.io.BufferedReader;
@@ -17,7 +41,7 @@ abstract public class Search {
 
 	String pathToOutputFolder;
 	
-	static String PATH_TO_LATNETBUILDER = "/Users/maximegodin/latnetbuilder/install/bin";
+	static String PATH_TO_LATNETBUILDER = ""; // path to the directory containing the latnetbuilder executable
 	
 	String sizeParameter;
 	int dimension; // dimension of the point set
@@ -107,10 +131,11 @@ abstract public class Search {
 	
 			try {
 				p.waitFor();
+				String res = "";
 				if (p.exitValue() != 0) {
 					while (stderr.ready())
-						System.err.println(stderr.readLine());
-					throw new RuntimeException("LatNet Builder exited with status " + p.exitValue() + ": " + cmd);
+						res = res + "\n" + stderr.readLine();
+					throw new RuntimeException("LatNet Builder exited with status " + p.exitValue() + "\nCOMMAND LINE: " + cmd + res);
 				}
 			} catch (InterruptedException e) {
 				throw new RuntimeException("LatNet Builder interrupted");
@@ -129,16 +154,16 @@ abstract public class Search {
 		}
 		finally { 
 			try {
-				br.close();
+				if (br != null){
+					br.close();
+				}
 			} catch (IOException e) {
-				throw new RuntimeException("Error in the communication with LatNet Builder");
-			} catch (NullPointerException e) {
 				throw new RuntimeException("Error in the communication with LatNet Builder");
 			}
 		}
 	}
 	
-	abstract public PointSet search();
+	abstract public PointSet search() throws RuntimeException;
 
 	public double merit(){
 		return this.merit;
