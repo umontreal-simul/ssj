@@ -27,25 +27,43 @@ package umontreal.ssj.latnetbuilder;
 
 import umontreal.ssj.latnetbuilder.DigitalNetSearch;
 
+/**
+ * Class for the search of good polynomial lattice rules using LatNet Builder.
+*/
 public class PolynomialLatticeSearch extends DigitalNetSearch{
 
 	String pointSetType;
 	
+	/**
+	 * Constructor.
+	 * @param pointSetType Point set type (lattice or net). Used to switch between
+	 * the two implementation of polynomial lattice rules in LatNet Builder.
+	 */
 	public PolynomialLatticeSearch(String pointSetType){
 		super("polynomial");
 		this.pointSetType = pointSetType;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String pointSetType(){
 		return pointSetType;
 	}
 	
+	/**
+	 * Changes the point set type to use when searching.
+	 * @param pointSetType Point set type (lattice or net).
+	 */
 	public void changePointSetTypeView(String pointSetType)
 	{
 		this.pointSetType = pointSetType;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void setConstruction(String construction) {
 		return;
