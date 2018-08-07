@@ -93,7 +93,7 @@ abstract public class Search {
 	abstract public String construction();
 	
 	private String constructCommandLine() {
-		StringBuffer sb = new StringBuffer(new File(PATH_TO_LATNETBUILDER,"latnetbuilder").toString() +" -v 2");
+		StringBuffer sb = new StringBuffer(new File(PATH_TO_LATNETBUILDER,"latnetbuilder").toString() +" -v 0");
 		sb.append(" -t " +  pointSetType());
 		sb.append(" -c " +  construction());
 		sb.append(" -M " +  multilevel);

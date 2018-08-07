@@ -41,8 +41,9 @@ public class DigitalNetSearch extends Search {
 			this.numPoints = 1 << this.numCols;
 			this.dim = dim;
 			this.genMat = matrices;
-			this.outDigits = MAXBITS;
-			this.normFactor = 1.0 / ( (double) (1L << this.numRows) );
+			// this.outDigits = MAXBITS;
+			this.outDigits = this.numRows;
+			this.normFactor = 1.0 / ( (double) (1L << this.outDigits) );
 		}
 	}
 	
@@ -83,6 +84,7 @@ public class DigitalNetSearch extends Search {
 				genMat[coord * numCols + col] = 0;
 				for(int row = 0; row < trueNumRows; ++row){
 					genMat[coord * numCols + col] += (1 << (trueNumRows - 1 - row)) * mats[coord*interlacing + row % interlacing][row/interlacing][col];
+					// genMat[coord * numCols + col] += (1 << (31 - 1 - row)) * mats[coord*interlacing + row % interlacing][row/interlacing][col];
 				}
 			}
 		}
