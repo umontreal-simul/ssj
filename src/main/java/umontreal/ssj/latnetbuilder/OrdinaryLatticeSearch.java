@@ -31,8 +31,14 @@ import umontreal.ssj.hups.Rank1Lattice;
 
 import java.util.ArrayList;
 
+/**
+ * Class for the search of good rank-1 ordinary lattice rules using LatNet Builder.
+ */
 public class OrdinaryLatticeSearch extends Search{
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Rank1Lattice search() throws RuntimeException
 	{
@@ -49,18 +55,27 @@ public class OrdinaryLatticeSearch extends Search{
 		return new Rank1Lattice(numPoints, genVec, dimension);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String pointSetType()
 	{
 		return "lattice";
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int interlacing()
 	{
 		return 1;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String construction(){
 		return "ordinary";

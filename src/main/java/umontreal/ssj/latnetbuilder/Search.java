@@ -36,15 +36,18 @@ import java.util.ArrayList;
 import umontreal.ssj.hups.PointSet;
 
 /**
+ * Abstract class for the search of highly uniform point sets with LatNet Builder.
+ * See the <a href="http://umontreal-simul.github.io/latnetbuilder/de/db5/cmdtut_summary.html">Summary of Command-Line Options</a>
+ * of LatNet Builder for details about the various fields of this class.
  */
 abstract public class Search {
 
 	String pathToOutputFolder;
 	
-	static String PATH_TO_LATNETBUILDER = ""; // path to the directory containing the latnetbuilder executable
+	static String PATH_TO_LATNETBUILDER = "latnetbuilder"; // path to the latnetbuilder executable
 	
 	String sizeParameter;
-	int dimension; // dimension of the point set
+	int dimension;
 	boolean multilevel;
 	String combiner;
 	String explorationMethod;
@@ -57,6 +60,9 @@ abstract public class Search {
 	double merit;
 	double time;
 	
+	/**
+	 * Constructor.
+	 */
 	protected Search()
 	{
 		this.pathToOutputFolder = "latnetbuilder_results";
@@ -69,6 +75,9 @@ abstract public class Search {
 	}
 	
 	@Override
+	/**
+	 * Format the search for printing.
+	 */
 	public String toString() {
 		return "Point Set Type: " + pointSetType() + "\n" +
 				"Construction method: " + construction() + "\n" +
@@ -86,14 +95,23 @@ abstract public class Search {
 				
 	}
 	
+	/**
+	 * Returns the type of the searched point set.
+	 */
 	abstract public String pointSetType();
 	
+	/**
+	 * Returns the interlacing factor of the search.
+	 */
 	abstract public int interlacing();
 	
 	abstract public String construction();
 	
+	/**
+	 * Constructs the command-line for the LatNet Builder executable.
+	 */
 	private String constructCommandLine() {
-		StringBuffer sb = new StringBuffer(new File(PATH_TO_LATNETBUILDER,"latnetbuilder").toString() +" -v 0");
+		StringBuffer sb = new StringBuffer(PATH_TO_LATNETBUILDER + " -v 0");
 		sb.append(" -t " +  pointSetType());
 		sb.append(" -c " +  construction());
 		sb.append(" -M " +  multilevel);
@@ -122,6 +140,9 @@ abstract public class Search {
 		return sb.toString();
 	}
 	
+	/**
+	 * Executes the command-line and reads the content of the outputMachine.txt file.
+	 */
 	protected ArrayList<String> executeCommandLine() {
 		String cmd = constructCommandLine();
 		BufferedReader br = null;
@@ -163,64 +184,123 @@ abstract public class Search {
 		}
 	}
 	
+	/**
+	 * Executes the search and returns the corresponding point set.
+	 */
 	abstract public PointSet search() throws RuntimeException;
 
+	/**
+	 * Returns the merit value of the point set.
+	 */
 	public double merit(){
 		return this.merit;
 	}
 
+	/**
+	 * Returns the elapsed CPU time taken for the search.
+	 */
 	public double time(){
 		return this.time;
 	}
 
+	/**
+	 * Returns a boolean indicating if the search was successful.
+	 */
 	public boolean successful(){
 		return this.successful;
 	}
 	
+	/**
+	 * Sets the path to the latnetbuilder executable.
+	 * @param path Path to the latnetbuilder executable.
+	 */
 	public void setPathToLatNetBuilder(String path) {
 		PATH_TO_LATNETBUILDER = path;
 	}
 	
+	/**
+	 * Sets the dimension of the searched point set.
+	 * @param dimension Dimension of the point set.
+	 */
 	public void setDimension(int dimension) {
 		this.dimension = dimension;
 	}
 	
+	/**
+	 * Sets the size parameter of the point set
+	 * @param sizeParameter Modulus for lattices and number of points for digital nets.
+	 */
 	public void setSizeParameter(String sizeParameter) {
 		this.sizeParameter = sizeParameter;
 	}
 	
+	/**
+	 * Sets the search to the multilevel mode.
+	 * @param multilevel Flag for the multilevel mode.
+	 */
 	public void setMultilevel(boolean multilevel) {
 		this.multilevel = multilevel;
 	}
 	
+	/**
+	 * Sets the combiner for the merit in the multilevel mode case.
+	 * @param combiner Combiner.
+	 */
 	public void setCombiner(String combiner) {
 		this.combiner = combiner;
 	}
 	
+	/**
+	 * Sets the exploration method of the search.
+	 * @param explorationMethod Exploration method.
+	 */
 	public void setExplorationMethod(String explorationMethod) {
 		this.explorationMethod = explorationMethod;
 	}
 	
+	/**
+	 * Sets the figure of merit of the search.
+	 * @param figure Figure of merit.
+	 */
 	public void setFigureOfMerit(String figure) {
 		this.figure = figure;
 	}
 	
+	/**
+	 * Sets the norm-type for the figure of merit of the search.
+	 * @param normType Norm-type.
+	 */
 	public void setNormType(String normType) {
 		this.normType = normType;
 	}
 	
+	/**
+	 * Sets the weights to the figure of merit of the search.
+	 * @param weights List of weights.
+	 */
 	public void setWeights(List<String> weights) {
 		this.weights = new ArrayList<String>(weights);
 	}
 	
+	/**
+	 * Add a weight to the figure of merit of the search.
+	 * @param weight Weight.
+	 */
 	public void addWeight(String weight) {
 		this.weights.add(weight);
 	}
 	
+	/**
+	 * Sets the filters of the search.
+	 * @param filters List of filters.
+	 */
 	public void setFilters(List<String> filters) {
 		this.filters = new ArrayList<String>(filters);
 	}
 
+	/**
+	 * Sets the path to the output folder.
+	 */
 	public void setPathToOutputFolder(String path) {
 		this.pathToOutputFolder = path;
 	}

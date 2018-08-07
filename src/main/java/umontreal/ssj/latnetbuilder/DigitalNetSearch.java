@@ -31,8 +31,14 @@ import java.util.ArrayList;
 
 import java.lang.Math;
 
+/**
+ * Class for the search of good digital nets using LatNet Builder.
+ */
 public class DigitalNetSearch extends Search {
 
+	/**
+	 * Class for the construction od digital nets.
+	 */
 	protected class DigitalNetBase2FromLatNetBuilder extends DigitalNetBase2{
 		
 		public DigitalNetBase2FromLatNetBuilder(int numRows, int numCols, int dim, int[] matrices) {
@@ -50,6 +56,10 @@ public class DigitalNetSearch extends Search {
 	String construction;
 	int interlacing;
 	
+	/**
+	 * Constructor.
+	 * @param construction Type of construction (eg. sobol, explicit, polynomial, ...). 
+	 */
 	public DigitalNetSearch(String construction)
 	{
 		super();
@@ -57,6 +67,9 @@ public class DigitalNetSearch extends Search {
 		this.interlacing = 1;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public DigitalNetBase2 search() throws RuntimeException
 	{
@@ -94,6 +107,9 @@ public class DigitalNetSearch extends Search {
 		return new DigitalNetBase2FromLatNetBuilder(trueNumRows, numCols, dimension, genMat);
 	}
 	
+	/**
+	 * Offset for the parsing of generating matrices.
+	 */
 	private int offsetForParsingGeneratingMatrix(int dimension){
 		if (construction=="sobol"){
 			return 7 + dimension;
@@ -107,27 +123,44 @@ public class DigitalNetSearch extends Search {
 		}
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String pointSetType()
 	{
 		return "net";
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int interlacing()
 	{
 		return interlacing;
 	}
 
+	/**
+	 * Sets the interlacing factor of the searched digital net.
+	 * @param interlacing Interlacing factor.
+	 */
 	public void setInterlacing(int interlacing){
 		this.interlacing = interlacing;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String construction(){
 		return construction;
 	}
 	
+	/**
+	 * Sets the construciton method of the searched digital net.
+	 * @param construction Type of construction (eg. sobol, explicit, polynomial, ...).
+	 */
 	public void setConstruction(String construction){
 		this.construction = construction;
 	}
