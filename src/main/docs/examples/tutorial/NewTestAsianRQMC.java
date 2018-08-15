@@ -6,6 +6,7 @@ import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.mcqmctools.*;
 import umontreal.ssj.stat.Tally;
+import umontreal.ssj.stat.PgfDataTable;
 
 public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
 
@@ -47,7 +48,7 @@ public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
 		// RQMCExperimentDouble exper = new RQMCExperimentDouble();
 		int n = 10000;
 		System.out.println("Ordinary MC:\n");
-		System.out.println (MonteCarloExperimentDouble.simulateRunsDefaultReportStudent
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportStudent
 				(model, n, new MRG32k3a(), statValue, 0.95, s));
 
 		int base = 2;        // Basis for the loglog plots.

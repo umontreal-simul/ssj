@@ -26,6 +26,7 @@ package umontreal.ssj.mcqmctools;
 
 import umontreal.ssj.functionfit.LeastSquares;
 import umontreal.ssj.hups.*;
+import umontreal.ssj.stat.PgfDataTable;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stat.list.lincv.ListOfTalliesWithCV;
 import umontreal.ssj.util.Chrono;
@@ -189,7 +190,7 @@ public class RQMCExperimentSeries {
 			logn[s] = Math.log(n) / logOfBase;
 			// System.out.println(" n = " + n + ", log n = " + logn[s] + "\n"); // ****
 			// System.out.println("  " + n + "     " + timer.format());
-			RQMCExperimentDouble.simulReplicatesRQMC (model, theSets[s], m, statReps);
+			RQMCExperiment.simulReplicatesRQMC (model, theSets[s], m, statReps);
 			mean[s] = statReps.average();
 			variance[s] = statReps.variance();
 		    logVar[s] = Math.log(variance[s]) / logOfBase;
@@ -227,7 +228,7 @@ public class RQMCExperimentSeries {
 			logn[s] = Math.log(n) / logOfBase;
 			// System.out.println(" n = " + n + ", log n = " + logn[s] + "\n"); // ****
 			// System.out.println("  " + n + "     " + timer.format());
-			RQMCExperimentDouble.simulReplicatesRQMCCV (model, theSets[s], m, statWithCV);
+			RQMCExperiment.simulReplicatesRQMCCV (model, theSets[s], m, statWithCV);
 			statWithCV.estimateBeta();    // This is where the var. and covar. are computed!
 			mean[s] = statWithCV.averageWithCV(0);
 			variance[s] = statWithCV.covarianceWithCV(0, 0);

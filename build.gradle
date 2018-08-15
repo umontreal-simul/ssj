@@ -3,14 +3,14 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.ysb33r.gradle:doxygen:0.2'
+        classpath 'org.ysb33r.gradle:doxygen:0.3.2'
     }
 }
 
 plugins {
     id 'java'
     id 'c'
-    id 'org.ysb33r.doxygen' version '0.2'
+    id 'org.ysb33r.doxygen' version '0.3.2'
     id 'distribution'
     id 'maven-publish'
     id 'com.jfrog.bintray' version '1.4'
@@ -468,7 +468,7 @@ distTar.extension = 'tar.bz2'
 // ****************************** WRAPPER ******************************
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '4.10'
 }
 
 task showClasspath(dependsOn: configurations.runtime) << {

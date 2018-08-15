@@ -1,4 +1,4 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 public interface ObservationCollector<E> {
 

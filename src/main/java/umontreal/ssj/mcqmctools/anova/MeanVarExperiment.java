@@ -1,5 +1,6 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
+import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
 

@@ -1,4 +1,4 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 /**
  * Does nothing but counting the total number of observations.

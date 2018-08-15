@@ -1,9 +1,10 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.hups.PointSetIterator;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stat.list.ListOfTallies;
+import umontreal.ssj.mcqmctools.*;
 
 public class MonteCarloIntegrator extends MonteCarloSampler implements RandomIntegrator {
 

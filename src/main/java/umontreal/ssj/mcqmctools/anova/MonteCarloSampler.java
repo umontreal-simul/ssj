@@ -1,8 +1,9 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.hups.PointSetIterator;
+import umontreal.ssj.mcqmctools.*;
 
 /**
  * Monte Carlo sampler.
