@@ -12,7 +12,7 @@ import umontreal.ssj.stat.list.lincv.ListOfTalliesWithCV;
  * @author Pierre L'Ecuyer
  * 
  */
-public class RQMCExperimentDouble extends MonteCarloExperimentDouble {
+public class RQMCExperiment extends MonteCarloExperiment {
 
 
 	/**

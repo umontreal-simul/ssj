@@ -1,5 +1,7 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
+import umontreal.ssj.mcqmctools.MonteCarloModel;
+import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 import umontreal.ssj.stat.*;
 
 public interface Sampler {

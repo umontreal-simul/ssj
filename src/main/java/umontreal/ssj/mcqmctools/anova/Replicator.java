@@ -1,9 +1,10 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stat.list.ListOfTallies;
 import umontreal.ssj.rng.*;
-import umontreal.ssj.hups.*;
+// import umontreal.ssj.hups.*;
+import umontreal.ssj.mcqmctools.*;
 
 /**
  * Replicator class.

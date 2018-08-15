@@ -1,9 +1,9 @@
 package umontreal.ssj.mcqmctools.anova;
 
-import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.hups.RQMCPointSet;
+// import umontreal.ssj.rng.RandomStream;
+// import umontreal.ssj.hups.RQMCPointSet;
 import umontreal.ssj.mcqmctools.*;
-import umontreal.ssj.mcqmctools.anova.*;
+// import umontreal.ssj.mcqmctools.anova.*;
 
 /**
  * This class automates the process of replicating estimators of the ANOVA variances.

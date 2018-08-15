@@ -1,8 +1,9 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.hups.*;
+import umontreal.ssj.mcqmctools.*;
 
 /**
  * QMC sampler.

@@ -1,4 +1,4 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.stat;
 
 import java.util.Arrays;
 import java.util.ArrayList;

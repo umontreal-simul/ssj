@@ -1,8 +1,8 @@
-package umontreal.ssj.mcqmctools;
+package umontreal.ssj.mcqmctools.anova;
 
 import umontreal.ssj.rng.RandomStream;
 
-public interface RandomIntegrator extends Integrator {
+public interface RandomSampler extends Sampler {
    /**
     * Use \c stream as the source of randomness.
     *

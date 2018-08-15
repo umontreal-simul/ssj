@@ -8,7 +8,7 @@ package umontreal.ssj.mcqmctools;
  * variable X with known density and pdf (for the purpose of the experiment).
  */
 
-public interface MonteCarloModelDensityKnown extends MonteCarloModelBounded {
+public interface MonteCarloModelDensityKnown extends MonteCarloModelDouble {
 
 	// Recovers the density of X evaluated at x.
 	public double density(double x);
