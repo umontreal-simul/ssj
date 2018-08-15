@@ -111,7 +111,7 @@ abstract public class Search {
 	 * Constructs the command-line for the LatNet Builder executable.
 	 */
 	private String constructCommandLine() {
-		StringBuffer sb = new StringBuffer(PATH_TO_LATNETBUILDER + " -v 2");
+		StringBuffer sb = new StringBuffer(PATH_TO_LATNETBUILDER + " -v 0");
 		sb.append(" -t " +  pointSetType());
 		sb.append(" -c " +  construction());
 		sb.append(" -M " +  multilevel);
