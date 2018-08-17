@@ -1,3 +1,5 @@
+package latnetbuilder;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.latnetbuilder.DigitalNetSearch;

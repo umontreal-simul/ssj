@@ -1,0 +1,10 @@
+digraph "ScatterChart"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="ScatterChart",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="XYChart",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html",tooltip="This class provides tools to create charts from data in a simple way. "];
+}

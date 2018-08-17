@@ -1,0 +1,14 @@
+digraph "CycleBasedPointSetBase2.CycleBasedPointSetBase2Iterator"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="CycleBasedPointSetBase2.\lCycleBasedPointSetBase2Iterator",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CycleBasedPointSet.Cycle\lBasedPointSetIterator",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet_1_1CycleBasedPointSetIterator.html"];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DefaultPointSetIterator",height=0.2,width=0.4,color="grey75"];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" curCycle" ,fontname="Helvetica"];
+  Node6 [label="AbstractList",height=0.2,width=0.4,color="grey75"];
+}
