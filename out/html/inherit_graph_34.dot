@@ -1,0 +1,17 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node606 [label="Comparator",height=0.2,width=0.4,color="grey75"];
+  Node606 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="DigitalNetFromFile.NetComparator",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile_1_1NetComparator.html"];
+  Node606 -> Node608 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node608 [label="DoubleArrayComparator",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1sort_1_1DoubleArrayComparator.html",tooltip="This provides an implementation of Comparator in which arrays of double in  dimensions are compared b..."];
+  Node606 -> Node609 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node609 [label="HilbertCurveSort.LongIndex\lComparator2",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html",tooltip="The comparator class used by sortIndexOfLong2. "];
+  Node606 -> Node610 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node610 [label="MultiDimComparator\l\< T extends MultiDimComparable\l\<? super T \>",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparator.html",tooltip="This class is useful if one wishes to perform an ordinary one-dimensional sort on MultiDimComparable<..."];
+}

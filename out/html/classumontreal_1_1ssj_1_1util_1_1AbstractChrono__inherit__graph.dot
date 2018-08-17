@@ -1,0 +1,18 @@
+digraph "AbstractChrono"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="AbstractChrono",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="Chrono",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1Chrono.html",tooltip="The Chrono class extends the umontreal.ssj.util.AbstractChrono class and computes the CPU time for th..."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ChronoSingleThread",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1ChronoSingleThread.html",tooltip="This class is deprecated but kept for compatibility with older versions of SSJ. "];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GlobalCPUTimeChrono",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1GlobalCPUTimeChrono.html",tooltip="Extends the AbstractChrono class to compute the global CPU time used by the Java Virtual Machine..."];
+  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SystemTimeChrono",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1SystemTimeChrono.html",tooltip="Extends the AbstractChrono class to compute the total system time using Java’s builtin System..."];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ThreadCPUTimeChrono",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1util_1_1ThreadCPUTimeChrono.html",tooltip="Extends the AbstractChrono class to compute the CPU time for a single thread. "];
+}

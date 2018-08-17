@@ -61,11 +61,11 @@ public class AntitheticStream implements RandomStream {
       st.resetNextSubstream();
    }
 
-/**
- * Returns a string starting with `"Antithetic of "` and finishing with the
- * result of the call to the `toString` method of the generator.
- */
-public String toString() {
+	/**
+	 * Returns a string starting with `"Antithetic of "` and finishing with the result of the call
+	 * to the `toString` method of the generator.
+	 */
+	public String toString() {
       return "Antithetic of " + st.toString();
    }
 

@@ -1,0 +1,20 @@
+digraph "HistogramChart"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2 [label="HistogramChart",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="XYChart",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html",tooltip="This class provides tools to create charts from data in a simple way. "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" chart" ,fontname="Helvetica"];
+  Node4 [label="JFreeChart",height=0.2,width=0.4,color="grey75"];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" XAxis\nYAxis" ,fontname="Helvetica"];
+  Node5 [label="Axis",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1charts_1_1Axis.html",tooltip="Represents an axis of a chart encapsulated by an instance of XYChart. "];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dataset" ,fontname="Helvetica"];
+  Node6 [label="SSJXYSeriesCollection",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html",tooltip="Stores data used in a XYChart. "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" seriesCollection" ,fontname="Helvetica"];
+  Node7 [label="XYDataset",height=0.2,width=0.4,color="grey75"];
+  Node8 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" renderer" ,fontname="Helvetica"];
+  Node8 [label="XYItemRenderer",height=0.2,width=0.4,color="grey75"];
+}

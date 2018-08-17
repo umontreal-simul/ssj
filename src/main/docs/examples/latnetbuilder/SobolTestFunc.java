@@ -1,3 +1,5 @@
+package latnetbuilder;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.*;

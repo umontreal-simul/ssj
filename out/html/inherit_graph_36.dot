@@ -1,0 +1,37 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Discrepancy",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html",tooltip="This abstract class is the base class of all discrepancy classes. "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="BigDiscrepancy",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscrepancy.html",tooltip="This abstract class is the base class of all discrepancy classes programmed with floating-point numbe..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BigDiscShiftBaker1",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1.html",tooltip="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1 [see eq..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="BigDiscShiftBaker1Lattice",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1Lattice.html",tooltip="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1Lattice [see ..."];
+  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DiscL2Hickernell",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Hickernell.html",tooltip="This class computes the Hickernell -star discrepancy in   (eq. "];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DiscL2Star",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Star.html",tooltip="This class computes the traditional -star discrepancy  for a set of  points  , ,  . "];
+  Node0 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="DiscL2Symmetric",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Symmetric.html",tooltip="COMPLÉTER LA DOC ICI. "];
+  Node0 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="DiscL2Unanchored",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Unanchored.html",tooltip="A discrepancy is said to be reflection-invariant if it has the same value when the points are reflect..."];
+  Node0 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="DiscShift1",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1.html",tooltip="This class computes the discrepancy for randomly shifted points of a set    (eq. ..."];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="DiscShift1Lattice",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1Lattice.html",tooltip="This class computes the same discrepancy for randomly shifted points of a set  as given in eq..."];
+  Node0 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="DiscShift2",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2.html",tooltip="This class computes the discrepancy in   (eq. "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="DiscShift2Lattice",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2Lattice.html",tooltip="This class computes the same discrepancy for randomly shifted points of a set  as given in eq..."];
+  Node0 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="DiscShiftBaker1",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1.html",tooltip="This class computes the discrepancy for randomly shifted, then baker folded points of a set ..."];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="DiscShiftBaker1Lattice",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1Lattice.html",tooltip="This class computes the same discrepancy in   (eq. "];
+  Node0 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Palpha",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1discrepancy_1_1Palpha.html",tooltip="Extends the class Discrepancy and implements the methods required to compute the  figure of merit for..."];
+}
