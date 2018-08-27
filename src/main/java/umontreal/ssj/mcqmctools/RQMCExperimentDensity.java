@@ -30,6 +30,8 @@ import umontreal.ssj.stat.density.DensityEstimator;
 public class RQMCExperimentDensity {  //  extends RQMCExperimentDouble {
 
 
+
+	
 	/**
 	 * Takes data from previous simulations (m independent replications, with n data points each).
 	 * and a density estimator de.

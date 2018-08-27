@@ -37,7 +37,7 @@ public class PgfDataTable {
 		this.fields = fields;
 		this.data = data;
 		numFields = fields.length;
-		numObservations = data[0].length;
+		numObservations = data.length;
 	}
 
 	/**
