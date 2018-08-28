@@ -153,23 +153,25 @@ public class DEHistogram extends DEBandwidthBased {
 		return "Histogram estimator with " + m + " bins.";
 	}
 
+	
+	/**
+	 * Overrides the method in \ref DensityEstimator so that the number of points is reset
+	 * to the minimum of \a numPoints and {@link #m}.
+	 * 
+	 * @param numPoints
+	 *            the number of points to be returned.
+	 * @return an array of equidistant points over \f$[a,b]\f$.
+	 */
+	//TODO: does this work???
 	@Override
-	public void evalDensity(double[] evalPoints, double[] density) {
-		int t = evalPoints.length;
-		for(int i = 0; i < t; i++)
-			density[t] = evalDensity(evalPoints[t]);
-	}
+	protected double[] equidistantPoints(int numPoints) {
+		int trueNumPoints = Math.max(numPoints, m);
+		double evalPoints[] = new double[trueNumPoints];
+		double delta = (b - a) / (trueNumPoints);
+		for (int j = 0; j < trueNumPoints; j++)
+			evalPoints[j] = a + delta * (0.5 + j);
 
-	@Override
-	public double getMin() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getMax() {
-		// TODO Auto-generated method stub
-		return 0;
+		return evalPoints;
 	}
 
 }
