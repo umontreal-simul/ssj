@@ -2,7 +2,7 @@
  * @mainpage SSJ User's Guide.
  * 
  * 
- * 
+ ********************************************************************** 
  * @section REF_0_sec_01 Introduction and overview
  * 
  * SSJ (Stochastic Simulation in Java) is a Java library offering tools
@@ -57,20 +57,6 @@
  *
  * The packages currently offered are the following:
  * 
- * ## Basic utilities:
- *
- *  @ref umontreal.ssj.util 
- *  contains basic utility classes used in the
- * implementation of SSJ, and which can be useful elsewhere. For example,
- * there are timers (for CPU usage), utilities to read or format numbers and
- * arrays from/to text, operations on binary vectors and matrices, some
- * mathematical functions and constants, root-finding tools, and so on.
- *
- *  @ref umontreal.ssj.util.sort 
- * contains utility classes to sort multi-dimensional points.
- * This is useful for Array-RQMC, for example.
- *
- *
  * ## Probability distributions, random number and random variate generation, and quasi-Monte Carlo.
  * 
  *  @ref umontreal.ssj.probdist 
@@ -92,6 +78,12 @@
  * values, and other types of simple random objects such as random
  * permutations.  The basic type of object here is a *stream* of random numbers.
  *
+ *  @ref umontreal.ssj.latnetbuilder
+ *  is essentially an interface to the LatNet Builder software
+ *  to constructs quasi-Monte Carlo point sets and sequences of various types
+ *  (lattices, polynomial lattices, digital nets, etc.) for arbitrary dimension
+ *  and cardinality, various uniformity criteria, etc.
+ *   
  *  @ref umontreal.ssj.hups 
  *  provides classes implementing highly uniform
  * point sets and sequences (HUPS), also called low-discrepancy sets and
@@ -105,7 +97,7 @@
  *
  *  @ref umontreal.ssj.randvarmulti 
  *  provides a collection of classes for
- * random number generators for some multi-dimensional distributions.
+ *  random number generators for some multi-dimensional distributions.
  *
  *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
  * processes.
@@ -135,6 +127,7 @@
  *
  *  @ref umontreal.ssj.density 
  *  offers tools to construct histograms and estimate densities from data.
+ *
  *
  * ## Discrete-event simulation
  *
@@ -180,6 +173,29 @@
  * randomized quasi-Monte Carlo, e.g., via Array-RQMC.
  *
  * 
+ *  * ## Basic utilities:
+ *
+ *  @ref umontreal.ssj.util 
+ *  contains basic utility classes used in the
+ * implementation of SSJ, and which can be useful elsewhere. For example,
+ * there are timers (for CPU usage), utilities to read or format numbers and
+ * arrays from/to text, operations on binary vectors and matrices, some
+ * mathematical functions and constants, root-finding tools, and so on.
+ *
+ *  @ref umontreal.ssj.util.sort 
+ * contains utility classes to sort multi-dimensional points.
+ * This is useful for Array-RQMC, for example.
+ *
+ *  @ref umontreal.ssj.functions
+ * implements certain functions that can be passed as objects.
+ *
+ *  @ref umontreal.ssj.functionfit
+ * implements some elementary function approximation methods such as polynomial 
+ * interpolation, splines, linear regression, etc.
+ *
+ *
+ *
+ ********************************************************************** 
  * @section REF_0_sec_02 Dependence on other libraries
  * 
  * 
