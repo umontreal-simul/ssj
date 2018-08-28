@@ -15,7 +15,7 @@
 </g>
 <!-- Node0 -->
 <g id="node2" class="node"><title>Node0</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1ContainerPointSet_1_1ContainerPointSetIterator.html" target="_top" xlink:title="ContainerPointSet.Container\lPointSetIterator">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1ContainerPointSet_1_1ContainerPointSetIterator.html" target="_top" target="_top" xlink:title="ContainerPointSet.Container\lPointSetIterator">
 <polygon fill="none" stroke="black" points="152,-49.5 152,-79.5 293,-79.5 293,-49.5 152,-49.5"/>
 <text text-anchor="start" x="160" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContainerPointSet.Container</text>
 <text text-anchor="middle" x="222.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node520 -->
 <g id="node5" class="node"><title>Node520</title>
-<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet_1_1CycleBasedPointSetIterator.html" target="_top" xlink:title="CycleBasedPointSet.Cycle\lBasedPointSetIterator">
+<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet_1_1CycleBasedPointSetIterator.html" target="_top" target="_top" xlink:title="CycleBasedPointSet.Cycle\lBasedPointSetIterator">
 <polygon fill="none" stroke="black" points="154.5,-0.5 154.5,-30.5 290.5,-30.5 290.5,-0.5 154.5,-0.5"/>
 <text text-anchor="start" x="162.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSet.Cycle</text>
 <text text-anchor="middle" x="222.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasedPointSetIterator</text>
@@ -43,7 +43,7 @@
 </g>
 <!-- Node1 -->
 <g id="node3" class="node"><title>Node1</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet_1_1AntitheticPointSetIterator.html" target="_top" xlink:title="AntitheticPointSet.Antithetic\lPointSetIterator">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet_1_1AntitheticPointSetIterator.html" target="_top" target="_top" xlink:title="AntitheticPointSet.Antithetic\lPointSetIterator">
 <polygon fill="none" stroke="black" points="342,-98.5 342,-128.5 482,-128.5 482,-98.5 342,-98.5"/>
 <text text-anchor="start" x="350" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">AntitheticPointSet.Antithetic</text>
 <text text-anchor="middle" x="412" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
@@ -57,7 +57,7 @@
 </g>
 <!-- Node2 -->
 <g id="node4" class="node"><title>Node2</title>
-<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet_1_1BakerTransformedPointSetIterator.html" target="_top" xlink:title="BakerTransformedPointSet.\lBakerTransformedPointSetIterator">
+<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet_1_1BakerTransformedPointSetIterator.html" target="_top" target="_top" xlink:title="BakerTransformedPointSet.\lBakerTransformedPointSetIterator">
 <polygon fill="none" stroke="black" points="329.5,-49.5 329.5,-79.5 494.5,-79.5 494.5,-49.5 329.5,-49.5"/>
 <text text-anchor="start" x="337.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedPointSet.</text>
 <text text-anchor="middle" x="412" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedPointSetIterator</text>
@@ -71,7 +71,7 @@
 </g>
 <!-- Node521 -->
 <g id="node6" class="node"><title>Node521</title>
-<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2_1_1CycleBasedPointSetBase2Iterator.html" target="_top" xlink:title="CycleBasedPointSetBase2.\lCycleBasedPointSetBase2Iterator">
+<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2_1_1CycleBasedPointSetBase2Iterator.html" target="_top" target="_top" xlink:title="CycleBasedPointSetBase2.\lCycleBasedPointSetBase2Iterator">
 <polygon fill="none" stroke="black" points="329,-0.5 329,-30.5 495,-30.5 495,-0.5 329,-0.5"/>
 <text text-anchor="start" x="337" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSetBase2.</text>
 <text text-anchor="middle" x="412" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSetBase2Iterator</text>

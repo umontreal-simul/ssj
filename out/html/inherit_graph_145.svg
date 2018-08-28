@@ -15,7 +15,7 @@
 </g>
 <!-- Node0 -->
 <g id="node2" class="node"><title>Node0</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1util_1_1TransformingList.html" target="_top" xlink:title="Represents a list that dynamically transforms the elements of another list. ">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1util_1_1TransformingList.html" target="_top" target="_top" xlink:title="Represents a list that dynamically transforms the elements of another list. ">
 <polygon fill="none" stroke="black" points="105,-0.5 105,-30.5 221,-30.5 221,-0.5 105,-0.5"/>
 <text text-anchor="start" x="113" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">TransformingList&lt; OE,</text>
 <text text-anchor="middle" x="163" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"> IE &gt;</text>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node1 -->
 <g id="node3" class="node"><title>Node1</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html" target="_top" xlink:title="Implements a list with integrated statistical probes to provide automatic collection of statistics on...">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html" target="_top" target="_top" xlink:title="Implements a list with integrated statistical probes to provide automatic collection of statistics on...">
 <polygon fill="none" stroke="black" points="257,-6 257,-25 352,-25 352,-6 257,-6"/>
 <text text-anchor="middle" x="304.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">ListWithStat&lt; E &gt;</text>
 </a>
@@ -42,7 +42,7 @@
 </g>
 <!-- Node2 -->
 <g id="node4" class="node"><title>Node2</title>
-<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html" target="_top" xlink:title="This class extends ListWithStat, and uses a linked list as the internal data structure. ">
+<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html" target="_top" target="_top" xlink:title="This class extends ListWithStat, and uses a linked list as the internal data structure. ">
 <polygon fill="none" stroke="black" points="388,-6 388,-25 492,-25 492,-6 388,-6"/>
 <text text-anchor="middle" x="440" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">LinkedListStat&lt; E &gt;</text>
 </a>
