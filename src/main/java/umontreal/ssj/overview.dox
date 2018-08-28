@@ -133,6 +133,8 @@
  * contains tools for performing univariate
  * goodness-of-fit (GOF) statistical tests.
  *
+ *  @ref umontreal.ssj.density 
+ *  offers tools to construct histograms and estimate densities from data.
  *
  * ## Discrete-event simulation
  *
@@ -318,24 +320,6 @@
  * operations on each variate generation, which can become inefficient. 
  * 
  * 
- * ## Running Simulation Experiments
- * 
- * 
- * SSJ supports discrete-event, process-driven, continuous or mixed
- * simulation. The discrete-event and continuous simulation are managed by
- * the package  @ref umontreal.ssj.simevents. This package manages the
- * simulation clock and the event list, two essential components for all
- * discrete-event simulations. The simulation clock tracks the simulation
- * time whereas the event list stores the scheduled events to execute them in
- * the right order. Events are user-defined subclasses of
- * @ref umontreal.ssj.simevents.Event. When an event occurs, any type of
- * actions can then be taken. The package provides a class called
- * @ref umontreal.ssj.simevents.LinkedListStat<E> which implements a linked list
- * supporting statistical collection. Continuous simulation can be performed
- * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
- * event framework to resolve differential equations numerically at fixed
- * steps in the simulation time.
- *
  * 
  * ## Statistical Tools 
  * 
@@ -363,6 +347,24 @@
  * significance of the test.
  * 
  * 
+ * ## Running Simulation Experiments
+ *  
+ * SSJ supports discrete-event, process-driven, continuous or mixed
+ * simulation. The discrete-event and continuous simulation are managed by
+ * the package  @ref umontreal.ssj.simevents. This package manages the
+ * simulation clock and the event list, two essential components for all
+ * discrete-event simulations. The simulation clock tracks the simulation
+ * time whereas the event list stores the scheduled events to execute them in
+ * the right order. Events are user-defined subclasses of
+ * @ref umontreal.ssj.simevents.Event. When an event occurs, any type of
+ * actions can then be taken. The package provides a class called
+ * @ref umontreal.ssj.simevents.LinkedListStat<E> which implements a linked list
+ * supporting statistical collection. Continuous simulation can be performed
+ * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
+ * event framework to resolve differential equations numerically at fixed
+ * steps in the simulation time.
+ *
+ *
  *********************************************************************** 
  * @section REF_0_sec_04  Documentation
  * 
