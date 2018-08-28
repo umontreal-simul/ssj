@@ -9,9 +9,11 @@ import umontreal.ssj.probdist.EmpiricalDist;
  * \f$n\f$ individual observations \f$x_0, …, x_{n-1}\f$, and returns its value
  * at a set of selected points.
  * 
- * This estimator takes a fixed bandwidth \f$ h>0\f$ as well as a kernel function \f$K\f$, which is also referred to
- * as kernel density. The kernel density should be non-negative and integrate to one. For \f$x\in[a,b]\f$, the KDE itself is defined as
- * \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} k\left( \frac{x - x_i}{h} \right). \f]
+ * This estimator takes a fixed bandwidth \f$ h>0\f$ as well as a kernel
+ * function \f$K\f$, which is also referred to as kernel density. The kernel
+ * density should be non-negative and integrate to one. For \f$x\in[a,b]\f$, the
+ * KDE itself is defined as \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh}
+ * \sum_{i = 0}^{n-1} k\left( \frac{x - x_i}{h} \right). \f]
  * 
  * @author puchhamf
  *
@@ -20,13 +22,15 @@ import umontreal.ssj.probdist.EmpiricalDist;
 public class DEKernelDensity extends DEBandwidthBased {
 
 	private EmpiricalDist dist;
-	/** < container for the observations */
+	/**<container for the observations */
 	private ContinuousDistribution kernel;
-	/** < the kernel density function */
-	private double eps = 1.0E-10; /**< threshold value for density-evaluation. Contributions smaller than this
-									 * value are considered negligible.
-									 */
-	
+	/**<the kernel density function */
+	private double eps = 1.0E-10;
+
+	/**
+	 *<threshold value for density-evaluation. Contributions smaller than this
+	 * value are considered negligible.
+	 */
 
 	/**
 	 * Constructs a KDE over the interval \f$[a,b]\f$.
@@ -43,7 +47,7 @@ public class DEKernelDensity extends DEBandwidthBased {
 
 	/**
 	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function
-	 * <tt>kernel</tt>.
+	 * \a kernel.
 	 * 
 	 * @param a
 	 *            the left boundary of the interval
@@ -77,8 +81,8 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function
-	 * \p kernel and bandwidth \f$h\f$.
+	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function \a
+	 * kernel and bandwidth \f$h\f$.
 	 * 
 	 * @param a
 	 *            the left boundary of the interval
@@ -91,13 +95,13 @@ public class DEKernelDensity extends DEBandwidthBased {
 	 */
 	public DEKernelDensity(double a, double b, double h, ContinuousDistribution kernel) {
 
-		this(a, b,kernel);
+		this(a, b, kernel);
 		setH(h);
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function
-	 * \p kernel and an array of bandwidths \p theHs.
+	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function \a
+	 * kernel and an array of bandwidths \a theHs.
 	 * 
 	 * @param a
 	 *            the left boundary of the interval
@@ -116,8 +120,8 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with an array of bandwidths
-	 * \p theHs.
+	 * Constructs a KDE over the interval \f$[a,b]\f$ with an array of bandwidths \a
+	 * theHs.
 	 * 
 	 * @param a
 	 *            the left boundary of the interval
@@ -143,7 +147,7 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * Sets the kernel density function to \p kernel.
+	 * Sets the kernel density function to \a kernel.
 	 * 
 	 * @param kernel
 	 *            the kernel density function to be used.
@@ -163,7 +167,7 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * Sets the threshold-level for the evaluation of the density to \p eps.
+	 * Sets the threshold-level for the evaluation of the density to \a eps.
 	 * Contributions of observations smaller than this value are considered
 	 * negligible.
 	 * 

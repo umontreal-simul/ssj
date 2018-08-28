@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rac2',['RAC2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a0b22089b39adb19fefdf014105ad08bd',1,'umontreal::ssj::util::Num']]]
+  ['order',['order',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#ac85d5511fdb8d162a7278bfb440ae420',1,'umontreal::ssj::stat::density::DensityDerivativeEstimator']]]
 ];

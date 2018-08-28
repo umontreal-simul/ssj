@@ -1,9 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // INTERACTIVE_SVG=YES
-  bgcolor="transparent";
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="RadicalInverse",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html",tooltip="This class implements basic methods for working with radical inverses of integers in an arbitrary bas..."];
-}

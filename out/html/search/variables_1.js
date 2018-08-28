@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cm',['CM',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a482aa77b2d290d5a290847725e78fd4c',1,'umontreal::ssj::gof::GofFormat']]],
-  ['cor',['COR',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ada4130e7cd57a86ffd0cf06c42d3c977',1,'umontreal::ssj::gof::GofFormat']]]
+  ['b',['b',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073',1,'umontreal::ssj::stat.density.DEBandwidthBased.b()'],['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1510a66dacf9cf3586de5fc89ae2a073',1,'umontreal::ssj::stat.density.DensityEstimator.b()'],['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adf085adbf76beb194ac436d42cd1d725',1,'umontreal::ssj::stat.density.DEBandwidthBased.B()']]],
+  ['beta',['beta',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9424343761f8c4f4c1afe8f5b6bf471b',1,'umontreal::ssj::stat::density::DEBandwidthBased']]]
 ];

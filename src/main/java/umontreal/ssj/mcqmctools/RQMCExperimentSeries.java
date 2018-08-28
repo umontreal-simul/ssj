@@ -37,14 +37,14 @@ import java.util.ArrayList;
 /**
  * This class offers facilities to perform experiments on the convergence
  * of the variance when estimating a mean (expectation) with a series of RQMC 
- * point sets usually of the same type, but different size @f$n@f.
+ * point sets usually of the same type, but different size @f$n@f$.
  * The series of RQMC point sets of different sizes can be passed in an array 
  * to the constructor. The method @ref testVarianceRate performs an experiment 
  * with a given @ref MonteCarloModelDouble and the series of point sets. 
- * In this experiment, for each size @f$n@f of point set, @f$m@f independent replicates 
- * of the RQMC estimator (which is an average over RQMC @f$n@f points) are computed.
- * One can then recover the average and the empirical variance of these @f$m@f replicates
- * of the @f$n@f-point average, their logs in any base, etc., in arrays, 
+ * In this experiment, for each size @f$n@f$ of point set, @f$m@f$ independent replicates 
+ * of the RQMC estimator (which is an average over RQMC @f$n@f$ points) are computed.
+ * One can then recover the average and the empirical variance of these @f$m@f$ replicates
+ * of the @f$n@f$-point average, their logs in any base, etc., in arrays, 
  * as well as the estimated linear regression of log(variance) as a function of log(n). 
  * 
  * One can also perform experiments with many such series of point sets for the same model, 
@@ -74,7 +74,8 @@ public class RQMCExperimentSeries {
 
    /**
     * Constructor with a give series of RQMC point sets.
-    *  @param theSets      the RQMC point sets
+    *  @param theSets      the RQMC point sets.
+    *  @param base 		the base used for all logarithms.
     */
    public RQMCExperimentSeries (RQMCPointSet[] theSets, double base) {
 	   init(theSets, base);

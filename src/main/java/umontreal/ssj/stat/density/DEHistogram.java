@@ -5,16 +5,18 @@ import umontreal.ssj.stat.TallyHistogram;
 
 /**
  * This class provides methods to compute a histogram density estimator for
- * univariate densities over an interval @f$[a,b]@f$ from a set of @f$n@f$
- * individual observations @f$x_0, …, x_{n-1}@f$, and returns its value at a set
+ * univariate densities over an interval \f$[a,b]\f$ from a set of \f$n\f$
+ * individual observations \f$x_0, …, x_{n-1}\f$, and returns its value at a set
  * of selected points.
  * 
- * For a fixed number of bins \f$ m>0\f$ we partition the interval \f$[a,b]\f$
+ * For a fixed number of bins \f$m>0\f$ we partition the interval \f$[a,b]\f$
  * into \f$m\f$ subintervals of equal lengths \f$h\f$. Observe that
- * \f$h=(b-a)\mf$ and, hence, Histogram estimators can also be parametrized by a
+ * \f$h=(b-a)/m\f$ and, hence, Histogram estimators can also be parametrized by a
  * bandwidth \f$h>0\f$, as long as the resulting number of bins is an integer.
- * The estimator itself is defined by \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) =
- * \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), j=1,\dots,m, \f] where
+ * The estimator itself is defined by 
+ * \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) =
+ * \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), j=1,\dots,m, \f] 
+ * where
  * \f$n_j\f$ denotes the number of observations that fall in this interval.
  * 
  * Note that, due to the fact that the partition into \f$m\f$ bins relies on
@@ -29,7 +31,7 @@ import umontreal.ssj.stat.TallyHistogram;
 public class DEHistogram extends DEBandwidthBased {
 
 	private int m;
-	/** < the number of bins */
+	/**<the number of bins */
 	private ScaledHistogram histDensity;
 	private TallyHistogram hist;
 
@@ -153,16 +155,15 @@ public class DEHistogram extends DEBandwidthBased {
 		return "Histogram estimator with " + m + " bins.";
 	}
 
-	
 	/**
-	 * Overrides the method in \ref DensityEstimator so that the number of points is reset
-	 * to the minimum of \a numPoints and {@link #m}.
+	 * Overrides the method in \ref DensityEstimator so that the number of points is
+	 * reset to the minimum of \a numPoints and {@link #m}.
 	 * 
 	 * @param numPoints
 	 *            the number of points to be returned.
 	 * @return an array of equidistant points over \f$[a,b]\f$.
 	 */
-	//TODO: does this work???
+	// TODO: does this work???
 	@Override
 	protected double[] equidistantPoints(int numPoints) {
 		int trueNumPoints = Math.max(numPoints, m);

@@ -1,0 +1,5 @@
+<map id="PartialVarianceEstimator" name="PartialVarianceEstimator">
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModel.html" title="An interface for a simple simulation model with which Monte Carlo (MC) and RQMC experiments are to be..." alt="" coords="35,5,226,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates. " alt="" coords="78,56,183,83"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="48,173,213,200"/>
+</map>

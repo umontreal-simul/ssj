@@ -21,18 +21,26 @@ import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 public abstract class DEBandwidthBased extends DensityEstimator {
 
 	protected double h;
-	/** < bandwidth */
+	/**<bandwidth */
 	protected double[] theHs;
-	/** < array containing various bandwidths */
+	/**<array containing various bandwidths */
 
-	protected double alpha, beta, delta, C, B;
-	/** < model parameters for IV and ISB */
+	protected double alpha;
+	/**<model parameters for ISB */
+	protected double beta;
+	/**<model parameters for IV */
+	protected double delta;
+	/**<model parameters for IV */
+	protected double C;
+	/**<model parameters for IV */
+	protected double B;
+	/**<model parameters for ISB */
 
 	protected double a;
-	/** < left boundary of the interval over which we estimate. */
+	/**<left boundary of the interval over which we estimate. */
 	protected double b;
 
-	/** < right boundary of the interval over which we estimate. */
+	/**<right boundary of the interval over which we estimate. */
 
 	/**
 	 * Gives the bandwidth.
@@ -64,7 +72,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 
 	/**
 	 * Sets the optional array containing various bandwidths {@link #theHs} to the
-	 * value of \f$tH\f$.
+	 * value of \a tH.
 	 * 
 	 * @param tH
 	 *            the desired array of bandwidths
@@ -85,7 +93,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	}
 
 	/**
-	 * Sets the current value of {@link #alpha} to \f$\alpha\f$.
+	 * Sets the current value of {@link #alpha} to \a alpha.
 	 * 
 	 * @param alpha
 	 *            the desired value for {@link #alpha}.
@@ -104,7 +112,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	}
 
 	/**
-	 * Sets the current value of {@link #B} to \f$B\f$.
+	 * Sets the current value of {@link #B} to \a B.
 	 * 
 	 * @param B
 	 *            the desired value for {@link #B}
@@ -114,10 +122,10 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	}
 
 	/**
-	 * Sets the current value of {@link #beta} to \f$\beta\f$.
+	 * Sets the current value of {@link #beta} to \a beta$.
 	 * 
-	 * @param the
-	 *            desired value for {@link #beta}.
+	 * @param beta
+	 *            the desired value for {@link #beta}.
 	 */
 	public void setBeta(double beta) {
 		this.beta = beta;
@@ -133,10 +141,10 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	}
 
 	/**
-	 * Sets the current value of {@link #C} to \f$C\f$.
+	 * Sets the current value of {@link #C} to \a C.
 	 * 
-	 * @param the
-	 *            desired value for {@link #C}.
+	 * @param C
+	 *            the desired value for {@link #C}.
 	 */
 	public void setC(double C) {
 		this.C = C;
@@ -161,10 +169,10 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	}
 
 	/**
-	 * Sets the current value of {@link #delta} to \f$\delta\f$.
+	 * Sets the current value of {@link #delta} to \a delta.
 	 * 
-	 * @param the
-	 *            desired value for {@link #delta}.
+	 * @param delta
+	 *            the desired value for {@link #delta}.
 	 */
 	public void setDelta(double delta) {
 		this.delta = delta;
@@ -185,7 +193,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 
 	/**
 	 * Gives the estimated ISB for when the exact density of the underlying model is
-	 * not known, based on its asymptotic value \f$Bh^{alpha}. Note that this
+	 * not known, based on its asymptotic value \f$Bh^{alpha}\f$. Note that this
 	 * requires the parameter \a B to be set.
 	 * 
 	 * @return the estimated ISB.
@@ -360,10 +368,11 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 
 		return traitsVals;
 	}
-	
+
 	/**
-	 * Same as {@link #computeDensityTraits(ArrayList, double[][], double[])} but with \a numEvalPoints 
-	 * equidistant evaluation points. 
+	 * Same as {@link #computeDensityTraits(ArrayList, double[][], double[])} but
+	 * with \a numEvalPoints equidistant evaluation points.
+	 * 
 	 * @param traitsList
 	 *            the traits which shall be computed.
 	 * 
@@ -373,55 +382,65 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	 *            matrix containing the observations of \f$m\f$ independent
 	 *            repetitions.
 	 * @param numEvalPoints
-	 *            the number of equidistant points at which the density estimator is evaluated to compute
-	 *            the traits.
+	 *            the number of equidistant points at which the density estimator is
+	 *            evaluated to compute the traits.
 	 * @return the values of the specified traits.
 	 */
 	public double[] computeDensityTraits(ArrayList<String> traitsList, double[][] data, int numEvalPoints) {
-		return computeDensityTraits(traitsList,data,equidistantPoints(numEvalPoints));
+		return computeDensityTraits(traitsList, data, equidistantPoints(numEvalPoints));
 	}
-	
+
 	/**
-	 * Same as {@link #computeDensityTraits(ArrayList, double[][], double[])} but with the dummy argument \a model
-	 * to overload {@link #computeDensityTraits(ArrayList, MonteCarloModelDouble, double[][], double[])}
+	 * Same as {@link #computeDensityTraits(ArrayList, double[][], double[])} but
+	 * with the dummy argument \a model to overload
+	 * {@link #computeDensityTraits(ArrayList, MonteCarloModelDouble, double[][], double[])}
 	 * for cases where the true density is not known.
-	 * @param traitsList the traits which shall be computed.
+	 * 
+	 * @param traitsList
+	 *            the traits which shall be computed.
 	 * 
 	 *            The computed traits are returned in an array in the same order as
 	 *            they appear in \a traitsList.
 	 * @param model
-	 * @param data matrix containing the observations of \f$m\f$ independent
+	 * @param data
+	 *            matrix containing the observations of \f$m\f$ independent
 	 *            repetitions.
 	 * @param evalPoints
 	 *            the points at which the density estimator is evaluated to compute
 	 *            the traits.
 	 * @return the values of the specified traits.
 	 */
-	
-	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDouble model, double[][] data, double[] evalPoints) {
-		return computeDensityTraits(traitsList,data,evalPoints);
+
+	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDouble model, double[][] data,
+			double[] evalPoints) {
+		return computeDensityTraits(traitsList, data, evalPoints);
 	}
 
 	/**
-	 * Same as {@link #computeDensityTraits(ArrayList, double[][], int)} but with the dummy argument \a model
-	 * to overload {@link #computeDensityTraits(ArrayList, MonteCarloModelDouble, double[][], int)}
+	 * Same as {@link #computeDensityTraits(ArrayList, double[][], int)} but with
+	 * the dummy argument \a model to overload
+	 * {@link #computeDensityTraits(ArrayList, MonteCarloModelDouble, double[][], int)}
 	 * for cases where the true density is not known.
-	 * @param traitsList the traits which shall be computed.
+	 * 
+	 * @param traitsList
+	 *            the traits which shall be computed.
 	 * 
 	 *            The computed traits are returned in an array in the same order as
 	 *            they appear in \a traitsList.
 	 * @param model
-	 * @param data matrix containing the observations of \f$m\f$ independent
+	 * @param data
+	 *            matrix containing the observations of \f$m\f$ independent
 	 *            repetitions.
 	 * @param numEvalPoints
-	 *            the number of equidistant points at which the density estimator is evaluated to compute
-	 *            the traits.
+	 *            the number of equidistant points at which the density estimator is
+	 *            evaluated to compute the traits.
 	 * @return the values of the specified traits.
 	 */
-	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDouble model, double[][] data, int numEvalPoints) {
-		return computeDensityTraits(traitsList,data,numEvalPoints);
+	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDouble model, double[][] data,
+			int numEvalPoints) {
+		return computeDensityTraits(traitsList, data, numEvalPoints);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

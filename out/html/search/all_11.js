@@ -113,6 +113,6 @@ var searchData=
   ['rqmcexperimentseries',['RQMCExperimentSeries',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html',1,'RQMCExperimentSeries'],['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a339496e1644df9b943133157e051656e',1,'umontreal::ssj::mcqmctools.RQMCExperimentSeries.RQMCExperimentSeries()']]],
   ['rqmcpointset',['RQMCPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html',1,'RQMCPointSet'],['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html#acef79f87cf4b0b351ea723db24d282cf',1,'umontreal::ssj::hups.RQMCPointSet.RQMCPointSet()']]],
   ['rqmcsampler',['RQMCSampler',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html',1,'umontreal::ssj::mcqmctools::anova']]],
-  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'RunClass'],['../classRunClass.html',1,'RunClass']]],
-  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'RunClass.RunClassException'],['../classRunClass_1_1RunClassException.html',1,'RunClass.RunClassException']]]
+  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'tutorial']]],
+  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'tutorial::RunClass']]]
 ];

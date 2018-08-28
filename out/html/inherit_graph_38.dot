@@ -1,9 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // INTERACTIVE_SVG=YES
-  bgcolor="transparent";
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="DiscreteDistIntChart",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1charts_1_1DiscreteDistIntChart.html",tooltip="This class provides tools to plot the mass function and the cumulative probability of a discrete prob..."];
-}

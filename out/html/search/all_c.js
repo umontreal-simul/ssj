@@ -31,6 +31,7 @@ var searchData=
   ['maxtwoexp',['MAXTWOEXP',['../classumontreal_1_1ssj_1_1util_1_1Num.html#ae0075294f8dff071e38bb9bb5e3b1002',1,'umontreal::ssj::util::Num']]],
   ['mean',['MEAN',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ade0ce44c8b2b8a568c71616a3d13cb6b',1,'umontreal::ssj::gof::GofFormat']]],
   ['meanvarexperiment',['MeanVarExperiment',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MeanVarExperiment.html',1,'umontreal::ssj::mcqmctools::anova']]],
+  ['merit',['merit',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#ada116ac64888cc3454a3596ecee9a457',1,'umontreal::ssj::latnetbuilder::Search']]],
   ['microsecond',['MICROSECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a752955570acb9a507ab8877f6c881cba',1,'umontreal::ssj::util::TimeUnit']]],
   ['millisecond',['MILLISECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a9788f3cd68e899bc14c2795920c28cd0',1,'umontreal::ssj::util::TimeUnit']]],
   ['min',['min',['../classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#adc03a7477e854fd344ce34e130f8b714',1,'umontreal::ssj::stat.FunctionOfMultipleMeansTally.min()'],['../classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#adc03a7477e854fd344ce34e130f8b714',1,'umontreal::ssj::stat.StatProbe.min()']]],
