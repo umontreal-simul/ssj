@@ -453,17 +453,17 @@ public abstract class DensityEstimator {
 
 	/**
 	 * Generates \a numPoints equidistant points over \f$[a,b]\f$ by fixing the
-	 * distance between two points as \f$\delta = (b-a)/\textrm{numEvalPoints}\f$
+	 * distance between two points as \f$\delta = (b-a)/k\f$
 	 * and set the first point as \f$a + \delta/2\f$.
 	 * 
-	 * @param numPoints
+	 * @param k
 	 *            the number of points to be returned.
 	 * @return an array of equidistant points over \f$[a,b]\f$.
 	 */
-	protected double[] equidistantPoints(int numPoints) {
-		double evalPoints[] = new double[numPoints];
-		double delta = (b - a) / (numPoints);
-		for (int j = 0; j < numPoints; j++)
+	protected double[] equidistantPoints(int k) {
+		double evalPoints[] = new double[k];
+		double delta = (b - a) / (k);
+		for (int j = 0; j < k; j++)
 			evalPoints[j] = a + delta * (0.5 + j);
 
 		return evalPoints;
@@ -509,12 +509,12 @@ public abstract class DensityEstimator {
 	 * 
 	 * For observed data \f$y=(y_1,y_2,\dots,y_n)\f$ and estimated data \f$
 	 * f=(f_1,f_2,\dots,f_n)\f$ this is defined as \f[ R^2 = 1 -
-	 * \frac{\textrm{SS}_{\text{res}}}{\textrm{SS}_{\text{tot}}} \f], where \f$
+	 * \frac{\textrm{SS}_{\text{res}}}{\textrm{SS}_{\text{tot}}}, \f] where \f$
 	 * \textrm{SS}_{\text{res}} \f$ denotes the sum of squares of the residuals \f[
-	 * \textrm{SS}_{\text{res}} = \sum{i=1}^n (f_i - y_i)^2 \f] and where
-	 * \textrm{SS}_{\text{tot}} is the total sum of squares \f[
-	 * \textrm{SS}_{\text{tot}} = \sum{i=1}^n (y_i - \bar{y})^2 \f]. The closer this
-	 * quantity is to one, the better the approximation of $y$ by $f$.
+	 * \textrm{SS}_{\text{res}} = \sum_{i=1}^n (f_i - y_i)^2 \f] and where
+	 * \f$\textrm{SS}_{\text{tot}}\f$ is the total sum of squares \f[
+	 * \textrm{SS}_{\text{tot}} = \sum_{i=1}^n (y_i - \bar{y})^2. \f] The closer this
+	 * quantity is to one, the better the approximation of \f$y\f$ by \f$f\f$.
 	 * 
 	 * @param data
 	 *            the observed data

@@ -24,13 +24,13 @@ if (edges && edges.length) {
                 <circle id="rim" cx="0" cy="0" r="7"/>
                 <circle id="rim2" cx="0" cy="0" r="3.5"/>
                 <g id="zoomPlus">
-                        <use xlink:href="#rim" target="_top" fill="#404040">
+                        <use xlink:href="#rim" fill="#404040">
                                 <set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/>
                         </use>
                         <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
                 </g>
                 <g id="zoomMin">
-                        <use xlink:href="#rim" target="_top" fill="#404040">
+                        <use xlink:href="#rim" fill="#404040">
                                 <set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/>
                         </use>
                         <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
@@ -39,7 +39,7 @@ if (edges && edges.length) {
                         <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
                <g id="resetDef">
-                       <use xlink:href="#rim2" target="_top" fill="#404040">
+                       <use xlink:href="#rim2" fill="#404040">
                                <set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/>
                        </use>
                </g>
@@ -50,7 +50,7 @@ var viewWidth = 799;
 var viewHeight = 652;
 var sectionId = 'dynsection-0';
 </script>
-<script xlink:href="svgpan.js" target="_top"/>
+<script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>RandomStream</title>
@@ -61,7 +61,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" target="_top" xlink:title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser...">
+<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser...">
 <polygon fill="none" stroke="black" points="154.5,-465.5 154.5,-484.5 239.5,-484.5 239.5,-465.5 154.5,-465.5"/>
 <text text-anchor="middle" x="197" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </a>
@@ -74,7 +74,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node8 -->
 <g id="node9" class="node"><title>Node8</title>
-<g id="a_node9"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html" target="_top" target="_top" xlink:title="This container class allows the user to force any RandomStream to return antithetic variates...">
+<g id="a_node9"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html" target="_top" xlink:title="This container class allows the user to force any RandomStream to return antithetic variates...">
 <polygon fill="none" stroke="black" points="152.5,-394.5 152.5,-413.5 241.5,-413.5 241.5,-394.5 152.5,-394.5"/>
 <text text-anchor="middle" x="197" y="-401.5" font-family="Helvetica,sans-Serif" font-size="10.00">AntitheticStream</text>
 </a>
@@ -87,7 +87,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node9 -->
 <g id="node10" class="node"><title>Node9</title>
-<g id="a_node10"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html" target="_top" target="_top" xlink:title="This container class permits one to apply the baker’s transformation to the output of any RandomStre...">
+<g id="a_node10"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html" target="_top" xlink:title="This container class permits one to apply the baker’s transformation to the output of any RandomStre...">
 <polygon fill="none" stroke="black" points="133,-356.5 133,-375.5 261,-375.5 261,-356.5 133,-356.5"/>
 <text text-anchor="middle" x="197" y="-363.5" font-family="Helvetica,sans-Serif" font-size="10.00">BakerTransformedStream</text>
 </a>
@@ -100,7 +100,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node10 -->
 <g id="node11" class="node"><title>Node10</title>
-<g id="a_node11"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" target="_top" target="_top" xlink:title="CloneableRandomStream extends RandomStream and Cloneable. ">
+<g id="a_node11"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" target="_top" xlink:title="CloneableRandomStream extends RandomStream and Cloneable. ">
 <polygon fill="none" stroke="black" points="133,-318.5 133,-337.5 261,-337.5 261,-318.5 133,-318.5"/>
 <text text-anchor="middle" x="197" y="-325.5" font-family="Helvetica,sans-Serif" font-size="10.00">CloneableRandomStream</text>
 </a>
@@ -113,7 +113,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node27 -->
 <g id="node28" class="node"><title>Node27</title>
-<g id="a_node28"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandomStreamWithCache.html" target="_top" target="_top" xlink:title="This class represents a random stream whose uniforms are cached for more efficiency when using common...">
+<g id="a_node28"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandomStreamWithCache.html" target="_top" xlink:title="This class represents a random stream whose uniforms are cached for more efficiency when using common...">
 <polygon fill="none" stroke="black" points="130,-280.5 130,-299.5 264,-299.5 264,-280.5 130,-280.5"/>
 <text text-anchor="middle" x="197" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStreamWithCache</text>
 </a>
@@ -126,7 +126,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node28 -->
 <g id="node29" class="node"><title>Node28</title>
-<g id="a_node29"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1TruncatedRandomStream.html" target="_top" target="_top" xlink:title="Represents a container random stream generating numbers in an interval &#160;instead of in ...">
+<g id="a_node29"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1TruncatedRandomStream.html" target="_top" xlink:title="Represents a container random stream generating numbers in an interval &#160;instead of in ...">
 <polygon fill="none" stroke="black" points="133,-242.5 133,-261.5 261,-261.5 261,-242.5 133,-242.5"/>
 <text text-anchor="middle" x="197" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">TruncatedRandomStream</text>
 </a>
@@ -139,7 +139,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node29 -->
 <g id="node30" class="node"><title>Node29</title>
-<g id="a_node30"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH_1_1NonRandomStream.html" target="_top" target="_top" xlink:title="NonRandomStream: Given a double array, this class will return those values as if it where a random st...">
+<g id="a_node30"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH_1_1NonRandomStream.html" target="_top" xlink:title="NonRandomStream: Given a double array, this class will return those values as if it where a random st...">
 <polygon fill="none" stroke="black" points="121,-193 121,-223 273,-223 273,-193 121,-193"/>
 <text text-anchor="start" x="129" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">InverseGaussianProcessMSH.</text>
 <text text-anchor="middle" x="197" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">NonRandomStream</text>
@@ -153,7 +153,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" target="_top" xlink:title="PointSet.DefaultPointSet\lIterator">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="PointSet.DefaultPointSet\lIterator">
 <polygon fill="none" stroke="black" points="309,-525 309,-555 435,-555 435,-525 309,-525"/>
 <text text-anchor="start" x="317" y="-543" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet.DefaultPointSet</text>
 <text text-anchor="middle" x="372" y="-532" font-family="Helvetica,sans-Serif" font-size="10.00">Iterator</text>
@@ -167,7 +167,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CachedPointSet_1_1CachedPointSetIterator.html" target="_top" target="_top" xlink:title="CachedPointSet.CachedPoint\lSetIterator">
+<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CachedPointSet_1_1CachedPointSetIterator.html" target="_top" xlink:title="CachedPointSet.CachedPoint\lSetIterator">
 <polygon fill="none" stroke="black" points="471,-613 471,-643 618,-643 618,-613 471,-613"/>
 <text text-anchor="start" x="479" y="-631" font-family="Helvetica,sans-Serif" font-size="10.00">CachedPointSet.CachedPoint</text>
 <text text-anchor="middle" x="544.5" y="-620" font-family="Helvetica,sans-Serif" font-size="10.00">SetIterator</text>
@@ -181,7 +181,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
-<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIterator.html" target="_top" target="_top" xlink:title="DigitalNet.DigitalNetIterator">
+<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIterator.html" target="_top" xlink:title="DigitalNet.DigitalNetIterator">
 <polygon fill="none" stroke="black" points="476,-574.5 476,-593.5 613,-593.5 613,-574.5 476,-574.5"/>
 <text text-anchor="middle" x="544.5" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalNet.DigitalNetIterator</text>
 </a>
@@ -194,7 +194,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node6 -->
 <g id="node7" class="node"><title>Node6</title>
-<g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice_1_1Rank1LatticeIterator.html" target="_top" target="_top" xlink:title="Rank1Lattice.Rank1Lattice\lIterator">
+<g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice_1_1Rank1LatticeIterator.html" target="_top" xlink:title="Rank1Lattice.Rank1Lattice\lIterator">
 <polygon fill="none" stroke="black" points="477,-525 477,-555 612,-555 612,-525 477,-525"/>
 <text text-anchor="start" x="485" y="-543" font-family="Helvetica,sans-Serif" font-size="10.00">Rank1Lattice.Rank1Lattice</text>
 <text text-anchor="middle" x="544.5" y="-532" font-family="Helvetica,sans-Serif" font-size="10.00">Iterator</text>
@@ -208,7 +208,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node7 -->
 <g id="node8" class="node"><title>Node7</title>
-<g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1SortedAndCutPointSet_1_1SortedAndCutPointSetIterator.html" target="_top" target="_top" xlink:title="SortedAndCutPointSet.Sorted\lAndCutPointSetIterator">
+<g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1SortedAndCutPointSet_1_1SortedAndCutPointSetIterator.html" target="_top" xlink:title="SortedAndCutPointSet.Sorted\lAndCutPointSetIterator">
 <polygon fill="none" stroke="black" points="471,-476 471,-506 618,-506 618,-476 471,-476"/>
 <text text-anchor="start" x="479" y="-494" font-family="Helvetica,sans-Serif" font-size="10.00">SortedAndCutPointSet.Sorted</text>
 <text text-anchor="middle" x="544.5" y="-483" font-family="Helvetica,sans-Serif" font-size="10.00">AndCutPointSetIterator</text>
@@ -222,7 +222,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node5 -->
 <g id="node6" class="node"><title>Node5</title>
-<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIteratorNoGray.html" target="_top" target="_top" xlink:title="DigitalNet.DigitalNetIterator\lNoGray">
+<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIteratorNoGray.html" target="_top" xlink:title="DigitalNet.DigitalNetIterator\lNoGray">
 <polygon fill="none" stroke="black" points="654,-569 654,-599 791,-599 791,-569 654,-569"/>
 <text text-anchor="start" x="662" y="-587" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalNet.DigitalNetIterator</text>
 <text text-anchor="middle" x="722.5" y="-576" font-family="Helvetica,sans-Serif" font-size="10.00">NoGray</text>
@@ -236,7 +236,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node11 -->
 <g id="node12" class="node"><title>Node11</title>
-<g id="a_node12"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandMrg.html" target="_top" target="_top" xlink:title="USE MRG32k3a INSTEAD of this class. ">
+<g id="a_node12"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandMrg.html" target="_top" xlink:title="USE MRG32k3a INSTEAD of this class. ">
 <polygon fill="none" stroke="black" points="344,-318.5 344,-337.5 400,-337.5 400,-318.5 344,-318.5"/>
 <text text-anchor="middle" x="372" y="-325.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandMrg</text>
 </a>
@@ -249,7 +249,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node12 -->
 <g id="node13" class="node"><title>Node12</title>
-<g id="a_node13"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" target="_top" target="_top" xlink:title="This class provides a convenient foundation on which RNGs can be built. ">
+<g id="a_node13"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" target="_top" xlink:title="This class provides a convenient foundation on which RNGs can be built. ">
 <polygon fill="none" stroke="black" points="318.5,-247.5 318.5,-266.5 425.5,-266.5 425.5,-247.5 318.5,-247.5"/>
 <text text-anchor="middle" x="372" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStreamBase</text>
 </a>
@@ -262,7 +262,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node13 -->
 <g id="node14" class="node"><title>Node13</title>
-<g id="a_node14"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1SplitStream.html" target="_top" target="_top" xlink:title="Implements a random stream that mixes two input streams by using a coordinate mask. ">
+<g id="a_node14"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1SplitStream.html" target="_top" xlink:title="Implements a random stream that mixes two input streams by using a coordinate mask. ">
 <polygon fill="none" stroke="black" points="510.5,-437.5 510.5,-456.5 578.5,-456.5 578.5,-437.5 510.5,-437.5"/>
 <text text-anchor="middle" x="544.5" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">SplitStream</text>
 </a>
@@ -275,7 +275,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node14 -->
 <g id="node15" class="node"><title>Node14</title>
-<g id="a_node15"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1GenF2w32.html" target="_top" target="_top" xlink:title="Implements the RandomStream interface via inheritance from RandomStreamBase. ">
+<g id="a_node15"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1GenF2w32.html" target="_top" xlink:title="Implements the RandomStream interface via inheritance from RandomStreamBase. ">
 <polygon fill="none" stroke="black" points="512.5,-399.5 512.5,-418.5 576.5,-418.5 576.5,-399.5 512.5,-399.5"/>
 <text text-anchor="middle" x="544.5" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">GenF2w32</text>
 </a>
@@ -288,7 +288,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node15 -->
 <g id="node16" class="node"><title>Node15</title>
-<g id="a_node16"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1LFSR113.html" target="_top" target="_top" xlink:title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ...">
+<g id="a_node16"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1LFSR113.html" target="_top" xlink:title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ...">
 <polygon fill="none" stroke="black" points="515.5,-361.5 515.5,-380.5 573.5,-380.5 573.5,-361.5 515.5,-361.5"/>
 <text text-anchor="middle" x="544.5" y="-368.5" font-family="Helvetica,sans-Serif" font-size="10.00">LFSR113</text>
 </a>
@@ -301,7 +301,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node16 -->
 <g id="node17" class="node"><title>Node16</title>
-<g id="a_node17"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1LFSR258.html" target="_top" target="_top" xlink:title="Extends RandomStreamBase using a 64&#45;bit composite linear feedback shift register (LFSR) (or Tausworth...">
+<g id="a_node17"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1LFSR258.html" target="_top" xlink:title="Extends RandomStreamBase using a 64&#45;bit composite linear feedback shift register (LFSR) (or Tausworth...">
 <polygon fill="none" stroke="black" points="515.5,-323.5 515.5,-342.5 573.5,-342.5 573.5,-323.5 515.5,-323.5"/>
 <text text-anchor="middle" x="544.5" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">LFSR258</text>
 </a>
@@ -314,7 +314,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node17 -->
 <g id="node18" class="node"><title>Node17</title>
-<g id="a_node18"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MRG31k3p.html" target="_top" target="_top" xlink:title="Extends the abstract class RandomStreamBase, thus implementing the RandomStream interface indirectly...">
+<g id="a_node18"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MRG31k3p.html" target="_top" xlink:title="Extends the abstract class RandomStreamBase, thus implementing the RandomStream interface indirectly...">
 <polygon fill="none" stroke="black" points="511.5,-285.5 511.5,-304.5 577.5,-304.5 577.5,-285.5 511.5,-285.5"/>
 <text text-anchor="middle" x="544.5" y="-292.5" font-family="Helvetica,sans-Serif" font-size="10.00">MRG31k3p</text>
 </a>
@@ -327,7 +327,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18 -->
 <g id="node19" class="node"><title>Node18</title>
-<g id="a_node19"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MRG32k3a.html" target="_top" target="_top" xlink:title="Extends the abstract class RandomStreamBase by using as a backbone (or main) generator the combined m...">
+<g id="a_node19"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MRG32k3a.html" target="_top" xlink:title="Extends the abstract class RandomStreamBase by using as a backbone (or main) generator the combined m...">
 <polygon fill="none" stroke="black" points="511.5,-247.5 511.5,-266.5 577.5,-266.5 577.5,-247.5 511.5,-247.5"/>
 <text text-anchor="middle" x="544.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">MRG32k3a</text>
 </a>
@@ -340,7 +340,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node19 -->
 <g id="node20" class="node"><title>Node19</title>
-<g id="a_node20"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MRG32k3aL.html" target="_top" target="_top" xlink:title="The same generator as MRG32k3a, except here it is implemented with type long instead of double...">
+<g id="a_node20"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MRG32k3aL.html" target="_top" xlink:title="The same generator as MRG32k3a, except here it is implemented with type long instead of double...">
 <polygon fill="none" stroke="black" points="509,-209.5 509,-228.5 580,-228.5 580,-209.5 509,-209.5"/>
 <text text-anchor="middle" x="544.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">MRG32k3aL</text>
 </a>
@@ -353,7 +353,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node20 -->
 <g id="node21" class="node"><title>Node20</title>
-<g id="a_node21"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MT19937.html" target="_top" target="_top" xlink:title="Implements the RandomStream interface via inheritance from RandomStreamBase. ">
+<g id="a_node21"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1MT19937.html" target="_top" xlink:title="Implements the RandomStream interface via inheritance from RandomStreamBase. ">
 <polygon fill="none" stroke="black" points="516,-171.5 516,-190.5 573,-190.5 573,-171.5 516,-171.5"/>
 <text text-anchor="middle" x="544.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">MT19937</text>
 </a>
@@ -366,7 +366,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node21 -->
 <g id="node22" class="node"><title>Node21</title>
-<g id="a_node22"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandRijndael.html" target="_top" target="_top" xlink:title="Implements a RNG using the Rijndael block cipher algorithm (AES) with key and block lengths of 128 bi...">
+<g id="a_node22"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1RandRijndael.html" target="_top" xlink:title="Implements a RNG using the Rijndael block cipher algorithm (AES) with key and block lengths of 128 bi...">
 <polygon fill="none" stroke="black" points="507,-133.5 507,-152.5 582,-152.5 582,-133.5 507,-133.5"/>
 <text text-anchor="middle" x="544.5" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandRijndael</text>
 </a>
@@ -379,7 +379,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node22 -->
 <g id="node23" class="node"><title>Node22</title>
-<g id="a_node23"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL1024.html" target="_top" target="_top" xlink:title="Implements the RandomStream interface via inheritance from RandomStreamBase. ">
+<g id="a_node23"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL1024.html" target="_top" xlink:title="Implements the RandomStream interface via inheritance from RandomStreamBase. ">
 <polygon fill="none" stroke="black" points="512,-95.5 512,-114.5 577,-114.5 577,-95.5 512,-95.5"/>
 <text text-anchor="middle" x="544.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">WELL1024</text>
 </a>
@@ -392,7 +392,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node23 -->
 <g id="node24" class="node"><title>Node23</title>
-<g id="a_node24"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL512.html" target="_top" target="_top" xlink:title="This class implements the RandomStream interface via inheritance from RandomStreamBase. ">
+<g id="a_node24"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL512.html" target="_top" xlink:title="This class implements the RandomStream interface via inheritance from RandomStreamBase. ">
 <polygon fill="none" stroke="black" points="515,-57.5 515,-76.5 574,-76.5 574,-57.5 515,-57.5"/>
 <text text-anchor="middle" x="544.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">WELL512</text>
 </a>
@@ -405,7 +405,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node24 -->
 <g id="node25" class="node"><title>Node24</title>
-<g id="a_node25"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL607base.html" target="_top" target="_top" xlink:title="WELL607base">
+<g id="a_node25"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL607base.html" target="_top" xlink:title="WELL607base">
 <polygon fill="none" stroke="black" points="504.5,-19.5 504.5,-38.5 584.5,-38.5 584.5,-19.5 504.5,-19.5"/>
 <text text-anchor="middle" x="544.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">WELL607base</text>
 </a>
@@ -418,7 +418,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node25 -->
 <g id="node26" class="node"><title>Node25</title>
-<g id="a_node26"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1F2NL607.html" target="_top" target="_top" xlink:title="Implements the RandomStream interface by using as a backbone generator the combination of the WELL607...">
+<g id="a_node26"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1F2NL607.html" target="_top" xlink:title="Implements the RandomStream interface by using as a backbone generator the combination of the WELL607...">
 <polygon fill="none" stroke="black" points="694.5,-38.5 694.5,-57.5 750.5,-57.5 750.5,-38.5 694.5,-38.5"/>
 <text text-anchor="middle" x="722.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">F2NL607</text>
 </a>
@@ -431,7 +431,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node26 -->
 <g id="node27" class="node"><title>Node26</title>
-<g id="a_node27"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL607.html" target="_top" target="_top" xlink:title="This class implements the RandomStream interface via inheritance from RandomStreamBase. ">
+<g id="a_node27"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1WELL607.html" target="_top" xlink:title="This class implements the RandomStream interface via inheritance from RandomStreamBase. ">
 <polygon fill="none" stroke="black" points="693,-0.5 693,-19.5 752,-19.5 752,-0.5 693,-0.5"/>
 <text text-anchor="middle" x="722.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">WELL607</text>
 </a>
@@ -446,29 +446,29 @@ var sectionId = 'dynsection-0';
 </svg>
         <g id="navigator" transform="translate(0 0)" fill="#404254">
                 <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
-                <use id="zoomplus" xlink:href="#zoomPlus" target="_top" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
-                <use id="zoomminus" xlink:href="#zoomMin" target="_top" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
-                <use id="reset" xlink:href="#resetDef" target="_top" x="30" y="36" onmousedown="handleReset()"/>
-                <g id="arrowUp" xlink:href="#dirArrow" target="_top" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
-                  <use xlink:href="#rim" target="_top" fill="#404040">
+                <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
+                <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
+                <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
+                <g id="arrowUp" xlink:href="#dirArrow" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
+                  <use xlink:href="#rim" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowUp.mouseover" end="arrowUp.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowRight" xlink:href="#dirArrow" target="_top" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
-                  <use xlink:href="#rim" target="_top" fill="#404040">
+                <g id="arrowRight" xlink:href="#dirArrow" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
+                  <use xlink:href="#rim" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowRight.mouseover" end="arrowRight.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowDown" xlink:href="#dirArrow" target="_top" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
-                  <use xlink:href="#rim" target="_top" fill="#404040">
+                <g id="arrowDown" xlink:href="#dirArrow" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
+                  <use xlink:href="#rim" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowDown.mouseover" end="arrowDown.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowLeft" xlink:href="#dirArrow" target="_top" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
-                  <use xlink:href="#rim" target="_top" fill="#404040">
+                <g id="arrowLeft" xlink:href="#dirArrow" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
+                  <use xlink:href="#rim" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowLeft.mouseover" end="arrowLeft.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
@@ -476,7 +476,7 @@ var sectionId = 'dynsection-0';
         </g>
         <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
          <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream__inherit__graph_org.svg" target="_top" target="_base">
+          <a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream__inherit__graph_org.svg" target="_base">
            <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
                 fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
            <path id="arrow"

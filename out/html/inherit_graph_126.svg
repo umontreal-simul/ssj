@@ -10,7 +10,7 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node378 -->
 <g id="node1" class="node"><title>Node378</title>
-<g id="a_node1"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" target="_top" target="_top" xlink:title="Integrator">
+<g id="a_node1"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" target="_top" xlink:title="Integrator">
 <polygon fill="none" stroke="black" points="104.5,-76.5 104.5,-95.5 162.5,-95.5 162.5,-76.5 104.5,-76.5"/>
 <text text-anchor="middle" x="133.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">Integrator</text>
 </a>
@@ -18,7 +18,7 @@
 </g>
 <!-- Node379 -->
 <g id="node2" class="node"><title>Node379</title>
-<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" target="_top" target="_top" xlink:title="RandomIntegrator">
+<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" target="_top" xlink:title="RandomIntegrator">
 <polygon fill="none" stroke="black" points="218,-76.5 218,-95.5 313,-95.5 313,-76.5 218,-76.5"/>
 <text text-anchor="middle" x="265.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomIntegrator</text>
 </a>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node4 -->
 <g id="node3" class="node"><title>Node4</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloIntegrator.html" target="_top" target="_top" xlink:title="MonteCarloIntegrator">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloIntegrator.html" target="_top" xlink:title="MonteCarloIntegrator">
 <polygon fill="none" stroke="black" points="353,-38.5 353,-57.5 461,-57.5 461,-38.5 353,-38.5"/>
 <text text-anchor="middle" x="407" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">MonteCarloIntegrator</text>
 </a>
@@ -44,7 +44,7 @@
 </g>
 <!-- Node380 -->
 <g id="node4" class="node"><title>Node380</title>
-<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Replicator.html" target="_top" target="_top" xlink:title="Replicator class. ">
+<g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Replicator.html" target="_top" xlink:title="Replicator class. ">
 <polygon fill="none" stroke="black" points="376.5,-76.5 376.5,-95.5 437.5,-95.5 437.5,-76.5 376.5,-76.5"/>
 <text text-anchor="middle" x="407" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">Replicator</text>
 </a>
@@ -57,7 +57,7 @@
 </g>
 <!-- Node0 -->
 <g id="node5" class="node"><title>Node0</title>
-<g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html" target="_top" target="_top" xlink:title="Sampler">
+<g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html" target="_top" xlink:title="Sampler">
 <polygon fill="none" stroke="black" points="0,-19.5 0,-38.5 53,-38.5 53,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="26.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sampler</text>
 </a>
@@ -65,7 +65,7 @@
 </g>
 <!-- Node1 -->
 <g id="node6" class="node"><title>Node1</title>
-<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1QMCSampler.html" target="_top" target="_top" xlink:title="QMC sampler. ">
+<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1QMCSampler.html" target="_top" xlink:title="QMC sampler. ">
 <polygon fill="none" stroke="black" points="95.5,-38.5 95.5,-57.5 171.5,-57.5 171.5,-38.5 95.5,-38.5"/>
 <text text-anchor="middle" x="133.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">QMCSampler</text>
 </a>
@@ -78,7 +78,7 @@
 </g>
 <!-- Node2 -->
 <g id="node7" class="node"><title>Node2</title>
-<g id="a_node7"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomSampler.html" target="_top" target="_top" xlink:title="RandomSampler">
+<g id="a_node7"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomSampler.html" target="_top" xlink:title="RandomSampler">
 <polygon fill="none" stroke="black" points="89,-0.5 89,-19.5 178,-19.5 178,-0.5 89,-0.5"/>
 <text text-anchor="middle" x="133.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomSampler</text>
 </a>
@@ -91,7 +91,7 @@
 </g>
 <!-- Node3 -->
 <g id="node8" class="node"><title>Node3</title>
-<g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html" target="_top" target="_top" xlink:title="Monte Carlo sampler. ">
+<g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html" target="_top" xlink:title="Monte Carlo sampler. ">
 <polygon fill="none" stroke="black" points="214,-38.5 214,-57.5 317,-57.5 317,-38.5 214,-38.5"/>
 <text text-anchor="middle" x="265.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">MonteCarloSampler</text>
 </a>
@@ -104,7 +104,7 @@
 </g>
 <!-- Node5 -->
 <g id="node9" class="node"><title>Node5</title>
-<g id="a_node9"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html" target="_top" target="_top" xlink:title="QMC sampler. ">
+<g id="a_node9"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html" target="_top" xlink:title="QMC sampler. ">
 <polygon fill="none" stroke="black" points="224,-0.5 224,-19.5 307,-19.5 307,-0.5 224,-0.5"/>
 <text text-anchor="middle" x="265.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">RQMCSampler</text>
 </a>

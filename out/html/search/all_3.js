@@ -29,6 +29,7 @@ var searchData=
   ['density01',['density01',['../classumontreal_1_1ssj_1_1probdist_1_1NormalDist.html#a75f1dc3ab16361f86d5068f3814906d4',1,'umontreal::ssj::probdist::NormalDist']]],
   ['densityderivativeestimator',['DensityDerivativeEstimator',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html',1,'umontreal::ssj::stat::density']]],
   ['densityestimator',['DensityEstimator',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html',1,'umontreal::ssj::stat::density']]],
+  ['densityfunctionalgaussian',['densityFunctionalGaussian',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DDEGaussian.html#a2bf3a1692fa07b3264801007552390f1',1,'umontreal::ssj::stat::density::DDEGaussian']]],
   ['densityivestimation',['DensityIVEstimation',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityIVEstimation.html',1,'umontreal::ssj::stat::density']]],
   ['departure',['Departure',['../classtutorial_1_1BankEv_1_1Departure.html',1,'BankEv.Departure'],['../classtutorial_1_1QueueEv_1_1Departure.html',1,'QueueEv.Departure']]],
   ['deriv',['deriv',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NortaInitDisc.html#a5f8ada5ceb4f7edb11cd620172fc5dcf',1,'umontreal::ssj::probdistmulti::norta::NortaInitDisc']]],

@@ -15,7 +15,7 @@
 </g>
 <!-- Node0 -->
 <g id="node2" class="node"><title>Node0</title>
-<g id="a_node2"><a xlink:href="classtutorial_1_1RunClass_1_1RunClassException.html" target="_top" target="_top" xlink:title="RunClass.RunClassException">
+<g id="a_node2"><a xlink:href="classtutorial_1_1RunClass_1_1RunClassException.html" target="_top" xlink:title="RunClass.RunClassException">
 <polygon fill="none" stroke="black" points="96,-38.5 96,-57.5 246,-57.5 246,-38.5 96,-38.5"/>
 <text text-anchor="middle" x="171" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">RunClass.RunClassException</text>
 </a>
@@ -28,7 +28,7 @@
 </g>
 <!-- Node398 -->
 <g id="node3" class="node"><title>Node398</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1util_1_1NameConflictException.html" target="_top" target="_top" xlink:title="This exception is thrown by a ClassFinder when two or more fully qualified class names can be associa...">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1util_1_1NameConflictException.html" target="_top" xlink:title="This exception is thrown by a ClassFinder when two or more fully qualified class names can be associa...">
 <polygon fill="none" stroke="black" points="111,-0.5 111,-19.5 231,-19.5 231,-0.5 111,-0.5"/>
 <text text-anchor="middle" x="171" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">NameConflictException</text>
 </a>

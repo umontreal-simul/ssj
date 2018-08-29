@@ -41,7 +41,7 @@
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
-<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" target="_top" xlink:title="This class implements a density derivative estimator (DDE) based on a kernel density estimator (KDE) ...">
+<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" target="_top" xlink:title="This class implements a density derivative estimator (DDE) over a finite interval &#160;based on a kernel ...">
 <polygon fill="none" stroke="black" points="204.5,-56.5 204.5,-75.5 341.5,-75.5 341.5,-56.5 204.5,-56.5"/>
 <text text-anchor="middle" x="273" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">DensityDerivativeEstimator</text>
 </a>

@@ -15,7 +15,7 @@
 </g>
 <!-- Node0 -->
 <g id="node2" class="node"><title>Node0</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalSequenceBase2_1_1DigitalNetBase2IteratorShiftGenerators.html" target="_top" target="_top" xlink:title="DigitalSequenceBase2.Digital\lNetBase2IteratorShiftGenerators">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalSequenceBase2_1_1DigitalNetBase2IteratorShiftGenerators.html" target="_top" xlink:title="DigitalSequenceBase2.Digital\lNetBase2IteratorShiftGenerators">
 <polygon fill="none" stroke="black" points="155,-49.5 155,-79.5 314,-79.5 314,-49.5 155,-49.5"/>
 <text text-anchor="start" x="163" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalSequenceBase2.Digital</text>
 <text text-anchor="middle" x="234.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">NetBase2IteratorShiftGenerators</text>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node506 -->
 <g id="node3" class="node"><title>Node506</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalSequenceBase2_1_1DigitalNetBase2IteratorShiftNoGray.html" target="_top" target="_top" xlink:title="DigitalSequenceBase2.Digital\lNetBase2IteratorShiftNoGray">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalSequenceBase2_1_1DigitalNetBase2IteratorShiftNoGray.html" target="_top" xlink:title="DigitalSequenceBase2.Digital\lNetBase2IteratorShiftNoGray">
 <polygon fill="none" stroke="black" points="161.5,-0.5 161.5,-30.5 307.5,-30.5 307.5,-0.5 161.5,-0.5"/>
 <text text-anchor="start" x="169.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalSequenceBase2.Digital</text>
 <text text-anchor="middle" x="234.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">NetBase2IteratorShiftNoGray</text>

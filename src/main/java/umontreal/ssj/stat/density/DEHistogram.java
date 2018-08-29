@@ -6,7 +6,7 @@ import umontreal.ssj.stat.TallyHistogram;
 /**
  * This class provides methods to compute a histogram density estimator for
  * univariate densities over an interval \f$[a,b]\f$ from a set of \f$n\f$
- * individual observations \f$x_0, …, x_{n-1}\f$, and returns its value at a set
+ * individual observations \f$X_0, …, X_{n-1}\f$, and returns its value at a set
  * of selected points.
  * 
  * For a fixed number of bins \f$m>0\f$ we partition the interval \f$[a,b]\f$
@@ -15,7 +15,7 @@ import umontreal.ssj.stat.TallyHistogram;
  * bandwidth \f$h>0\f$, as long as the resulting number of bins is an integer.
  * The estimator itself is defined by 
  * \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) =
- * \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), j=1,\dots,m, \f] 
+ * \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), \quad j=1,\dots,m, \f] 
  * where
  * \f$n_j\f$ denotes the number of observations that fall in this interval.
  * 

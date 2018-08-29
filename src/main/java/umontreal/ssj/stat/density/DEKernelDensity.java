@@ -6,7 +6,7 @@ import umontreal.ssj.probdist.EmpiricalDist;
 /**
  * This class provides methods to compute a kernel density estimator (KDE) for
  * univariate unimodal densities over an interval \f$[a,b]\f$ from a set of
- * \f$n\f$ individual observations \f$x_0, …, x_{n-1}\f$, and returns its value
+ * \f$n\f$ individual observations \f$X_0, …, X_{n-1}\f$, and returns its value
  * at a set of selected points.
  * 
  * This estimator takes a fixed bandwidth \f$ h>0\f$ as well as a kernel
@@ -27,10 +27,8 @@ public class DEKernelDensity extends DEBandwidthBased {
 	/**<the kernel density function */
 	private double eps = 1.0E-10;
 
-	/**
-	 *<threshold value for density-evaluation. Contributions smaller than this
-	 * value are considered negligible.
-	 */
+	/**<threshold value for density-evaluation. Contributions smaller than this
+	 * value are considered negligible. */
 
 	/**
 	 * Constructs a KDE over the interval \f$[a,b]\f$.
@@ -191,7 +189,7 @@ public class DEKernelDensity extends DEBandwidthBased {
 	 * Returns the value of the density evaluated at point \f$x\f$. For this
 	 * evaluation method to work we assume that {@link #kernel} is unimodal, i.e.
 	 * increasing then decreasing. This algorithm works by summing up all
-	 * contributions of all observations \f$x_0, \ldots, x_{n-1}\f$ which are larger
+	 * contributions of all observations \f$X_0, \ldots, X_{n-1}\f$ which are larger
 	 * than {@link #eps}.
 	 * 
 	 * @param x

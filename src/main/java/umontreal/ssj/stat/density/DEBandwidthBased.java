@@ -193,7 +193,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 
 	/**
 	 * Gives the estimated ISB for when the exact density of the underlying model is
-	 * not known, based on its asymptotic value \f$Bh^{alpha}\f$. Note that this
+	 * not known, based on its asymptotic value \f$Bh^{\alpha}\f$. Note that this
 	 * requires the parameter \a B to be set.
 	 * 
 	 * @return the estimated ISB.
@@ -283,7 +283,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	 * @param model
 	 * @param data
 	 *            the observations to construct the density.
-	 * @param evalPoints
+	 * @param numEvalPoints
 	 *            the points used to compute the empirical IV.
 	 * @return the semi-empirical MISE.
 	 */
