@@ -33,7 +33,7 @@ public class DEHistogram extends DEBandwidthBased {
 	private int m;
 	/**<the number of bins */
 	private ScaledHistogram histDensity;
-	private TallyHistogram hist;
+//	private TallyHistogram hist;
 
 	/**
 	 * Constructs a histogram estimator over the interval \f$[a,b]\f$.
@@ -133,7 +133,8 @@ public class DEHistogram extends DEBandwidthBased {
 	 */
 	@Override
 	public void constructDensity(double[] data) {
-		hist = new TallyHistogram(geta(), getb(), m);
+//		hist = new TallyHistogram(geta(), getb(), m);
+		TallyHistogram hist = new TallyHistogram(geta(), getb(), m);
 		hist.fillFromArray(data);
 		histDensity = new ScaledHistogram(hist, 1.0);
 	}
@@ -144,10 +145,11 @@ public class DEHistogram extends DEBandwidthBased {
 	 * @param tallyHist 
 	 */
 	public void constructDensity(TallyHistogram tallyHist) {
-		a = hist.getA();
-		b = hist.getB();
-		m = hist.getNumBins();
-		histDensity = new ScaledHistogram(hist, 1.0);
+		a = tallyHist.getA();
+		b = tallyHist.getB();
+		m = tallyHist.getNumBins();
+		h = tallyHist.getH();
+		histDensity = new ScaledHistogram(tallyHist, 1.0);
 	}
 	
 	/**
@@ -167,7 +169,7 @@ public class DEHistogram extends DEBandwidthBased {
 	 */
 	@Override
 	public double evalDensity(double x) {
-		double h = hist.getH();
+//		double h = hist.getH();
 		return histDensity.getHeights()[(int) ((x - geta()) / h)];
 	}
 
