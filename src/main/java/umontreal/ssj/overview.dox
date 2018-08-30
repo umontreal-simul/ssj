@@ -47,9 +47,13 @@
  *
  * The facilities offered are grouped into different well-documented packages
  * that are connected to each other.  In addition to the online documentation 
- * (produced by Doxygen), there is a reference manual in the form of a .pdf file. 
+ * (produced by Doxygen), there will be a reference manual in the form of a .pdf file. 
+ * (This manual is not yet available for the current version; for now, one can 
+ * use the old .pdf manuals available at
+ * [Old pdf doc](http://www-labs.iro.umontreal.ca/~simul/ssj-2/doc/pdf/),
+ * which can be useful even if not up to date.)
  * There is also a tutorial guide that contains a set of commented examples of 
- * simulation programs, together with the Java code.
+ * simulation programs, together with the Java code (see the Documentation section below).
  * Some of these examples are taken from books such as @cite sLAW14a, 
  * and @cite fGLA04a, for example. The best way to start learning SSJ is to study 
  * these examples and refer to the reference manual or the online documentation when needed. 
@@ -242,7 +246,7 @@
  * **jcommon-*.jar**. JFreeChart (and JCommon) are used in the SSJ package
  * **charts** to create different kinds of charts.
  *
- * SSJ also provides an interface to the
+ * SSJ provides an interface to the
  * [UNURAN](http://statistik.wu-wien.ac.at/unuran/)
  *  library for nonuniform random number generation @cite iLEY02a&thinsp;, in
  * the  @ref umontreal.ssj.randvar package. UNURAN does not have to be
@@ -250,11 +254,19 @@
  * appropriate SSJ native library. However, the UNURAN documentation will be
  * required to take full advantage of the library.
  * 
- * #Update:  use of jcommon, concurrent, ...   interface to Latnet Builder.
+ * The package @ref umontreal.ssj.latnetbuilder provides an interface to
+ * [LatNet Builder](http://umontreal-simul.github.io/latnetbuilder/)
+ *  which is a C++ library and tool to construct highly-uniform point sets
+ *  such as lattice rules, polynomial lattice rules, and digital nets in base 2. 
+ * LatNet Builder must be installed to be able to use this package.
+ *  
+ * #AnythingElse?:  concurrent?  hamcrest?  junit?
  * 
  * 
  ************************************************************************
  * @section REF_0_sec_03  Structure of the Library (Quick Overview)
+ * 
+ * Note:  This overview needs to be updated!
  * 
  * ## Random Number and Random Variate Generation
  * 
@@ -385,15 +397,11 @@
  * @section REF_0_sec_04  Documentation
  * 
  * 
- * The `example.pdf` file, in the `doc/pdf` subdirectory of the SSJ
+ * The `examples.pdf` file, in the `doc/pdf` subdirectory of the SSJ
  * distribution, explains simulation examples implemented using SSJ. This may
  * be the best starting point to learn SSJ.
- * O
- * ne can find additional information and references in the PDF version of
- * this documentation, available in the <tt>doc/pdf</tt> subdirectory of the
- * SSJ distribution.
- *
- *  very package introduced here contains its own reference documentation as
+ * For following has yet to be done:
+ * Every package introduced here contains its own reference documentation as
  * a PDF file, in the `doc/pdf` subdirectory. This documentation describes in
  * more details how to use the package and provides a description of each
  * class and method.
@@ -409,8 +417,8 @@
  *
  * Mathieu Bague, Sylvain Bonnet, Éric Buist, Wyean Chan, Maxime Dion, Yves Edel, Regina
  * H. S. Hong, Alexander Keller, Pierre L'Ecuyer, Étienne Marcotte, Lakhdar
- * Meliani, David Munger, François Panneton, Florian Puchhammer, Jean-Sebastien Parent-Chartier, Richard
- * Simard, Clément Teule, Pierre-Alexandre Tremblay, Jean Vaucher.
+ * Meliani, David Munger, François Panneton, Florian Puchhammer, Jean-Sebastien Parent-Chartier, 
+ * Richard Simard, Clément Teule, Pierre-Alexandre Tremblay, Jean Vaucher.
  *
  * The development of SSJ has been supported by NSERC-Canada grant No. ODGP0110050,
  * NATEQ-Québec grant No. 02ER3218, a Killam fellowship, and a Canada
