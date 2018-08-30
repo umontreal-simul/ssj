@@ -200,7 +200,7 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 	 */
 	public static double hOptAmise(DensityDerivativeEstimator dde, double[] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
 			int maxDerivative, double init ) {
-		return hOptAmise(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init); 
+		return hOptAmise(dde,data,mu2,mu2Derivatives, dde.getEquidistantPoints(numEvalPoints),maxDerivative,init); 
 	}
 	
 	/**
@@ -381,4 +381,6 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 			int maxDerivative, double init,	DEKernelDensity de) {
 		return computeB(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init,de);
 	}
+	
+	
 }

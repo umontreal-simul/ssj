@@ -2,6 +2,7 @@ package umontreal.ssj.stat.density;
 
 import java.util.ArrayList;
 
+import umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown;
 import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 
 /**
@@ -187,7 +188,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	 *            the number of observations.
 	 * @return the estimated IV.
 	 */
-	public double computeDensityEstimatedIV(int n) {
+	public double computeEstimatedIV(int n) {
 		return C * Math.pow(n, -beta) * Math.pow(h, -delta);
 	}
 
@@ -198,262 +199,112 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	 * 
 	 * @return the estimated ISB.
 	 */
-	public double computeDensityISB() {
+	public double computeEstimatedISB() {
 		return B * Math.pow(h, alpha);
 	}
 
 	/**
-	 * Same as {@link #computeDensityISB()} with dummy arguments to overload
-	 * {@link #computeDensityISB(umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown, double[][], double[])}
+	 * Same as {@link #computeEstimatedISB()} with dummy arguments to overload
+	 * {@link #computeISB(MonteCarloModelDensityKnown, double[][], double[])}
 	 * for situations, where the true density is not known.
 	 * 
 	 * @return the estimated ISB.
 	 */
-	public double computeDensityISB(MonteCarloModelDouble model, double[][] data, double[] evalPoints) {
-		return computeDensityISB();
+	public double computeISB(MonteCarloModelDouble model, double[][] estDensities, double[] evalPoints) {
+		return computeEstimatedISB();
 	}
 
-	/**
-	 * Same as {@link #computeDensityISB()} with dummy arguments to overload
-	 * {@link #computeDensityISB(umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown, double[][], int)}
-	 * for situations, where the true density is not known.
-	 * 
-	 * @return the estimated ISB.
-	 */
-	public double computeDensityISB(MonteCarloModelDouble model, double[][] data, int numEvalPoints) {
-		return computeDensityISB();
-	}
 
 	/**
 	 * Computes the estimated MISE, i.e. the sum of
-	 * {@link #computeDensityEstimatedIV(int)} and {@link #computeDensityISB()}.
+	 * {@link #computeEstimatedIV(int)} and {@link #computeDensityISB()}.
 	 * 
 	 * @param n
 	 *            the number of observations.
 	 * @return the estimated MISE
 	 */
-	public double computeDensityEstimatedMISE(int n) {
-		return computeDensityISB() + computeDensityEstimatedIV(n);
+	public double computeEstimatedMISE(int n) {
+		return computeEstimatedISB() + computeEstimatedIV(n);
 	}
 
 	/**
 	 * Computes the semi-empirical MISE for situations, where the true density is
 	 * not known. I.e., it takes the sum of the empirical IV
-	 * {@link #computeDensityIV(double[][], double[])} and the estimated ISB
-	 * {@link #computeDensityISB()}.
+	 * {@link #computeIV(double[][])} and the estimated ISB
+	 * {@link #computeEstimatedISB()}. 
 	 * 
-	 * @param data
+	 * The estimate of the empirical IV is based on \f$m\f$ realizations of the density estimator,
+	 * which have previously been evaluated at the \f$k\f$ points stored in \a
+	 * evalPoints. The matrix \a estDensities has
+	 * dimensions \f$m\times k \f$, i.e. each row contains the evaluations of one
+	 * density estimator.
+	 * 
+	 * @param the \f$m\times k\f$matrix containing the results of evaluating
+	 *            \f$m\f$ densities at \f$k\f$ evaluation points.
 	 *            the observations to construct the density.
-	 * @param evalPoints
-	 *            the points used to compute the empirical IV.
 	 * @return the semi-empirical MISE
 	 */
-	public double computeDensityMISE(double[][] data, double[] evalPoints) {
-		double iv = computeDensityIV(data, evalPoints);
-		return iv + computeDensityISB();
+	public double computeMISE(double[][] estDensities) {
+		double iv = computeIV(estDensities);
+		return iv + computeEstimatedISB();
 	}
 
-	public double computeDensityMISE(double[][] data, int numEvalPoints) {
-		return computeDensityMISE(data, getEquidistantPoints(numEvalPoints));
-	}
 
 	/**
-	 * Same as {@link #computeDensityMISE(double[][], double[])} but with a dummy
+	 * Same as {@link #computeMISE(double[][], double[])} but with a dummy
 	 * argument \a model to overload
-	 * {@link #computeDensityMISE(umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown, double[][], double[])}
+	 * {@link #computeMISE(MonteCarloModelDensityKnown, double[][], double[])}
 	 * for cases where the true density is not known.
 	 * 
 	 * @param model
-	 * @param data
+	 * @param estDensities
+	 *           the \f$m\times k\f$matrix containing the results of evaluating
+	 *            \f$m\f$ densities at \f$k\f$ evaluation points.
 	 *            the observations to construct the density.
-	 * @param evalPoints
-	 *            the points used to compute the empirical IV.
-	 * @return the semi-empirical MISE
+	 * @return an estimate for the MISE
 	 */
-	public double computeDensityMISE(MonteCarloModelDouble model, double[][] data, double[] evalPoints) {
-		return computeDensityMISE(data, evalPoints);
+	public double computeMISE(MonteCarloModelDouble model, double[][] estDensities, double[] evalPoints) {
+		return computeMISE(estDensities);
 	}
 
 	/**
-	 * Same as {@link #computeDensityIV(double[][], int)} but with a dummy argument
-	 * \a model to overload
-	 * {@link #computeDensityMISE(umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown, double[][], double[])}
-	 * for cases where the true density is not known.
+	 * This method estimates the 
+	 * IV, ISB, and MISE based on \f$m\f$ realizations of the density estimator,
+	 * which have previously been evaluated at the \f$k\f$ points stored in \a
+	 * evalPoints, and returns them in an array in this order. The matrix \a estDensities has
+	 * dimensions \f$m\times k \f$, i.e. each row contains the evaluations of one
+	 * density estimator.
+	 * 
+	 * The estimate for the IV is obtained from an estimate of the empirical IV {@link #computeIV(double[][])},
+	 * the ISB is estimated by {@link #computeEstimatedISB()}, and the MISE-estimate is obtained by their sum.
+	 * 
+	 * 
+	 * @param estDensities
+	 *            the \f$m\times k\f$matrix containing the results of evaluating
+	 *            \f$m\f$ densities at \f$k\f$ evaluation points.
+	 * @return estimates for the IV, the ISB, and the MISE.
+	 */
+	public double[] computeIVandISBandMISE(double[][] estDensities) {
+		double iv = computeIV(estDensities);
+		double isb = computeEstimatedISB();
+		double[] res = {iv,isb,iv+isb};
+		return res;
+	}
+	
+	/**
+	 * Same as {@link #computeIVandISBandMISE(double[][])} but with dummy arguments to overload
+	 * {@link #computeIVandISBandMISE(MonteCarloModelDensityKnown, double[][], double[])} when the
+	 * true density is not known.
 	 * 
 	 * @param model
-	 * @param data
-	 *            the observations to construct the density.
-	 * @param numEvalPoints
-	 *            the points used to compute the empirical IV.
-	 * @return the semi-empirical MISE.
-	 */
-	public double computeDensityMISE(MonteCarloModelDouble model, double[][] data, int numEvalPoints) {
-		return computeDensityMISE(data, numEvalPoints);
-	}
-
-	/**
-	 * Computes all traits for the bandwidth based density estimator that are
-	 * specified in the list \a traitList. The possible choices of traits are "isb",
-	 * "iv", "estimatediv", "mise" and "estimatedmise", with deviations due to
-	 * letter-capitalization considered.
-	 * 
-	 * Note that in order to be able to compute the traits, several parameters of
-	 * the density estimator need to be known and set in advance. Conversely, if
-	 * only the ISB is to be computed, \a data and \a evalPoints can be empty.
-	 * 
-	 * @param traitsList
-	 *            the traits which shall be computed.
-	 * 
-	 *            The computed traits are returned in an array in the same order as
-	 *            they appear in \a traitsList.
-	 * @param data
-	 *            matrix containing the observations of \f$m\f$ independent
-	 *            repetitions.
+	 * @param estDensities
 	 * @param evalPoints
-	 *            the points at which the density estimator is evaluated to compute
-	 *            the traits.
-	 * @return the values of the specified traits.
+	 * @return
 	 */
-	public double[] computeDensityTraits(ArrayList<String> traitsList, double[][] data, double[] evalPoints) {
-		int t = traitsList.size();
-		double[] traitsVals = new double[t];
-		String traitName;
-		//
-		double iv = 0.0;
-		double isb = 0.0;
-
-		// check if "mise" is in the list. Not done with "contains", because "mise"
-		// might be written in uppercase, etc.
-		boolean containsMise = false;
-		for (int s = 0; s < t; s++) {
-			traitName = traitsList.get(s).toLowerCase();
-			if (traitName == "mise")
-				containsMise = true;
-		}
-
-		// if "mise" is in the list compute iv and isb automatically
-		if (containsMise) {
-			iv = computeDensityIV(data, evalPoints);
-			isb = computeDensityISB();
-		}
-
-		// go through all traits of the list and add value to output array. If "mise" is
-		// not included in the list, also compute the traits.
-		for (int s = 0; s < t; s++) {
-			traitName = traitsList.get(s).toLowerCase();
-			switch (traitName) {
-			case "iv":
-				if (!containsMise) {
-					iv = computeDensityIV(data, evalPoints);
-				}
-				traitsVals[s] = iv;
-				break;
-			case "estimatediv":
-				traitsVals[s] = computeDensityEstimatedIV(data[0].length);
-				break;
-			case "isb":
-				if (!containsMise)
-					isb = computeDensityISB();
-				traitsVals[s] = isb;
-				break;
-			case "mise":
-				traitsVals[s] = iv + isb;
-			case "estimatedmise":
-				traitsVals[s] = computeDensityEstimatedMISE(data[0].length);
-			default:
-				System.out.println("The trait " + traitName
-						+ " cannot be interpreted. Supported traits are 'isb', 'iv', and 'mise'.");
-			}
-		}
-
-		return traitsVals;
-	}
-
-	/**
-	 * Same as {@link #computeDensityTraits(ArrayList, double[][], double[])} but
-	 * with \a numEvalPoints equidistant evaluation points.
-	 * 
-	 * @param traitsList
-	 *            the traits which shall be computed.
-	 * 
-	 *            The computed traits are returned in an array in the same order as
-	 *            they appear in \a traitsList.
-	 * @param data
-	 *            matrix containing the observations of \f$m\f$ independent
-	 *            repetitions.
-	 * @param numEvalPoints
-	 *            the number of equidistant points at which the density estimator is
-	 *            evaluated to compute the traits.
-	 * @return the values of the specified traits.
-	 */
-	public double[] computeDensityTraits(ArrayList<String> traitsList, double[][] data, int numEvalPoints) {
-		return computeDensityTraits(traitsList, data, getEquidistantPoints(numEvalPoints));
-	}
-
-	/**
-	 * Same as {@link #computeDensityTraits(ArrayList, double[][], double[])} but
-	 * with the dummy argument \a model to overload
-	 * {@link #computeDensityTraits(ArrayList, MonteCarloModelDouble, double[][], double[])}
-	 * for cases where the true density is not known.
-	 * 
-	 * @param traitsList
-	 *            the traits which shall be computed.
-	 * 
-	 *            The computed traits are returned in an array in the same order as
-	 *            they appear in \a traitsList.
-	 * @param model
-	 * @param data
-	 *            matrix containing the observations of \f$m\f$ independent
-	 *            repetitions.
-	 * @param evalPoints
-	 *            the points at which the density estimator is evaluated to compute
-	 *            the traits.
-	 * @return the values of the specified traits.
-	 */
-
-	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDouble model, double[][] data,
+	public double[] computeIVandISBandMISE(MonteCarloModelDouble model, double[][] estDensities,
 			double[] evalPoints) {
-		return computeDensityTraits(traitsList, data, evalPoints);
+		return computeIVandISBandMISE(estDensities);
 	}
 
-	/**
-	 * Same as {@link #computeDensityTraits(ArrayList, double[][], int)} but with
-	 * the dummy argument \a model to overload
-	 * {@link #computeDensityTraits(ArrayList, MonteCarloModelDouble, double[][], int)}
-	 * for cases where the true density is not known.
-	 * 
-	 * @param traitsList
-	 *            the traits which shall be computed.
-	 * 
-	 *            The computed traits are returned in an array in the same order as
-	 *            they appear in \a traitsList.
-	 * @param model
-	 * @param data
-	 *            matrix containing the observations of \f$m\f$ independent
-	 *            repetitions.
-	 * @param numEvalPoints
-	 *            the number of equidistant points at which the density estimator is
-	 *            evaluated to compute the traits.
-	 * @return the values of the specified traits.
-	 */
-	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDouble model, double[][] data,
-			int numEvalPoints) {
-		return computeDensityTraits(traitsList, data, numEvalPoints);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public abstract void constructDensity(double[] data);
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public abstract double evalDensity(double x);
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public abstract String toString();
 
 }
