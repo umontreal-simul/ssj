@@ -114,7 +114,7 @@ public class DEHistogram extends DEBandwidthBased {
 	 */
 	public void setM(int m) {
 		this.m = m;
-		setH((getMax() - getMin()) / (double) m);
+		setH((geta() - getb()) / (double) m);
 	}
 
 	/**
@@ -124,8 +124,8 @@ public class DEHistogram extends DEBandwidthBased {
 	 */
 	@Override
 	public void setH(double h) {
-		this.m = (int) ((getMax() - getMin()) / h);
-		this.h = (getMax() - getMin()) / (double) m;
+		this.m = (int) ((geta() - getb()) / h);
+		this.h = (geta() - getb()) / (double) m;
 	}
 
 	/**
@@ -133,9 +133,33 @@ public class DEHistogram extends DEBandwidthBased {
 	 */
 	@Override
 	public void constructDensity(double[] data) {
-		hist = new TallyHistogram(getMin(), getMax(), m);
+		hist = new TallyHistogram(geta(), getb(), m);
 		hist.fillFromArray(data);
 		histDensity = new ScaledHistogram(hist, 1.0);
+	}
+	
+	/**
+	 * Constructs a histogram density estimator from a \ref TallyHistogram. Furthermore, it automatically
+	 * sets the parameters, {@link #a}, {@link #b} and {@link #m} to the values stored in \a tallyHist.
+	 * @param tallyHist 
+	 */
+	public void constructDensity(TallyHistogram tallyHist) {
+		a = hist.getA();
+		b = hist.getB();
+		m = hist.getNumBins();
+		histDensity = new ScaledHistogram(hist, 1.0);
+	}
+	
+	/**
+	 * Constructs a histogram density estimator from a \ref ScaledHistogram. Furthermore, it automatically
+	 * sets the parameters, {@link #a}, {@link #b} and {@link #m} to the values stored in \a scaledHist.
+	 * @param hist
+	 */
+	public void constructDensity(ScaledHistogram scaledHist) {
+		a = scaledHist.getA();
+		b = scaledHist.getB();
+		m = scaledHist.getNumBins();
+		histDensity = scaledHist;
 	}
 
 	/**
@@ -144,7 +168,7 @@ public class DEHistogram extends DEBandwidthBased {
 	@Override
 	public double evalDensity(double x) {
 		double h = hist.getH();
-		return histDensity.getHeights()[(int) ((x - getMin()) / h)];
+		return histDensity.getHeights()[(int) ((x - geta()) / h)];
 	}
 
 	/**
@@ -165,7 +189,7 @@ public class DEHistogram extends DEBandwidthBased {
 	 */
 	// TODO: does this work???
 	@Override
-	protected double[] equidistantPoints(int numPoints) {
+	protected double[] getEquidistantPoints(int numPoints) {
 		int trueNumPoints = Math.max(numPoints, m);
 		double evalPoints[] = new double[trueNumPoints];
 		double delta = (b - a) / (trueNumPoints);

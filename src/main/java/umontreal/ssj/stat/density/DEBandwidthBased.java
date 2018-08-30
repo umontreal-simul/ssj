@@ -254,7 +254,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	}
 
 	public double computeDensityMISE(double[][] data, int numEvalPoints) {
-		return computeDensityMISE(data, equidistantPoints(numEvalPoints));
+		return computeDensityMISE(data, getEquidistantPoints(numEvalPoints));
 	}
 
 	/**
@@ -387,7 +387,7 @@ public abstract class DEBandwidthBased extends DensityEstimator {
 	 * @return the values of the specified traits.
 	 */
 	public double[] computeDensityTraits(ArrayList<String> traitsList, double[][] data, int numEvalPoints) {
-		return computeDensityTraits(traitsList, data, equidistantPoints(numEvalPoints));
+		return computeDensityTraits(traitsList, data, getEquidistantPoints(numEvalPoints));
 	}
 
 	/**

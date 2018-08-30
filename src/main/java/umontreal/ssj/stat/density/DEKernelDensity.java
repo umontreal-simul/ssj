@@ -223,6 +223,42 @@ public class DEKernelDensity extends DEBandwidthBased {
 		// System.out.println(density);
 		return density;
 	}
+	
+	/**
+	 * Returns in array \a density the value of the estimator at the evaluation
+	 * points in \a evalPoints. These two arrays must have the same size and \evalPoints
+	 * needs to be sorted in increasing order.
+	 * 
+	 * This algorithm is more efficient than the default implementation in that it keeps track of
+	 * which observations are already too far to the left of the current evaluation point to contribute more
+	 * than {@link #eps} to the estimated value. Avoiding the overhead of computing such negligible contributions 
+	 * can significantly reduce computational cost.
+	 */
+	@Override
+	public void evalDensity(double[] evalPoints, double[]density) {
+		int m = evalPoints.length;
+		// density = new double[m]; // Maybe not needed, but perhaps safer.
+		int n = dist.getN();
+		double invhn = 1.0 / (h * n);
+		double invh = 1.0 / h;
+		double y;
+		double sum = 0.0;
+		double term; // A term to be added to the sum that defines the density
+						// estimate.
+		int imin = 0; // We know that the terms for i < imin do not contribute
+						// significantly.
+		for (int j = 0; j < m; j++) { // Evaluation points are indexed by j.
+			y = evalPoints[j];
+			term = kernel.density((y - dist.getObs(imin)) * invh);
+			while ((term < eps) && (imin < n - 1) && (dist.getObs(imin) < y))
+				term = kernel.density((y - dist.getObs(++imin)) * invh);
+			sum = term; // The first significant term.
+			for (int i = imin + 1; (i < n) && ((term > eps) || (dist.getObs(i) < y)); i++)
+				// Data indexed by i.
+				sum += (term = kernel.density((y - dist.getObs(i)) * invh));
+			density[j] = sum * invhn;
+		}
+	}
 
 	/**
 	 * {@inheritDoc}

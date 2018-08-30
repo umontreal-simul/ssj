@@ -189,7 +189,7 @@ public class DDEGaussian extends DensityDerivativeEstimator {
 	 */
 	public static double computeB(DDEGaussian dde, double[][] data, int numEvalPoints, int maxDerivative, double init,
 			DEHistogram de) {
-		return computeB(dde, data, dde.equidistantPoints(numEvalPoints), maxDerivative, init, de);
+		return computeB(dde, data, dde.getEquidistantPoints(numEvalPoints), maxDerivative, init, de);
 	}
 
 	/**
@@ -271,6 +271,6 @@ public class DDEGaussian extends DensityDerivativeEstimator {
 	 */
 	public static double computeB(DDEGaussian dde, double[][] data, int numEvalPoints, int maxDerivative, double init,
 			DEKernelDensity de) {
-		return computeB(dde, data, dde.equidistantPoints(numEvalPoints), maxDerivative, init, de);
+		return computeB(dde, data, dde.getEquidistantPoints(numEvalPoints), maxDerivative, init, de);
 	}
 }

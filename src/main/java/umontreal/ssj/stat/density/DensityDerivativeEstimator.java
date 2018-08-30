@@ -166,7 +166,7 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 			roughnessFunctional = 0.0;
 			for (int i = 0; i < numEvalPoints; i++)
 				roughnessFunctional += estDensDerivative[i] * estDensDerivative[i];
-			roughnessFunctional *= (dde.getMax() - dde.getMin()) / (double) numEvalPoints;
+			roughnessFunctional *= (dde.geta() - dde.getb()) / (double) numEvalPoints;
 
 			h = hAmise(order, mu2,mu2Derivatives[derIndex],roughnessFunctional,n);
 			order -= 2;
@@ -200,7 +200,7 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 	 */
 	public static double hOptAmise(DensityDerivativeEstimator dde, double[] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
 			int maxDerivative, double init ) {
-		return hOptAmise(dde,data,mu2,mu2Derivatives,dde.equidistantPoints(numEvalPoints),maxDerivative,init); 
+		return hOptAmise(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init); 
 	}
 	
 	/**
@@ -244,8 +244,8 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 			int maxDerivative, double init,	DEHistogram de) {
 		int m = data.length;
 		double B = 0.0;
-		double a = de.getMin();
-		double b = de.getMax();
+		double a = de.geta();
+		double b = de.getb();
 
 		int numEvalPoints = evalPoints.length;
 		double[] estDensDerivative = new double[numEvalPoints];
@@ -293,7 +293,7 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 
 	public static double computeB(DensityDerivativeEstimator dde, double[][] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
 			int maxDerivative, double init,	DEHistogram de) {
-		return computeB(dde,data,mu2,mu2Derivatives,dde.equidistantPoints(numEvalPoints),maxDerivative,init,de);
+		return computeB(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init,de);
 	}
 
 	/**
@@ -331,8 +331,8 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 			int maxDerivative, double init,	DEKernelDensity de) {
 		int m = data.length;
 		double B = 0.0;
-		double a = de.getMin();
-		double b = de.getMax();
+		double a = de.geta();
+		double b = de.getb();
 
 		int numEvalPoints = evalPoints.length;
 		double[] estDensDerivative = new double[numEvalPoints];
@@ -379,6 +379,6 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 
 	public static double computeB(DensityDerivativeEstimator dde, double[][] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
 			int maxDerivative, double init,	DEKernelDensity de) {
-		return computeB(dde,data,mu2,mu2Derivatives,dde.equidistantPoints(numEvalPoints),maxDerivative,init,de);
+		return computeB(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init,de);
 	}
 }

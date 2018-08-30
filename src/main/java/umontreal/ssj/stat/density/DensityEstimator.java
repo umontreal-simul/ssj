@@ -79,7 +79,7 @@ public abstract class DensityEstimator {
 	 * 
 	 * @return the left boundary of the interval
 	 */
-	public double getMin() {
+	public double geta() {
 		return a;
 	}
 
@@ -88,7 +88,7 @@ public abstract class DensityEstimator {
 	 * 
 	 * @return the right boundary of the interval
 	 */
-	public double getMax() {
+	public double getb() {
 		return b;
 	}
 
@@ -157,7 +157,7 @@ public abstract class DensityEstimator {
 	 * @return the empirical IV.
 	 */
 	public double computeDensityIV(double[][] data, int numEvalPoints) {
-		return computeDensityIV(data, equidistantPoints(numEvalPoints));
+		return computeDensityIV(data, getEquidistantPoints(numEvalPoints));
 	}
 
 	/**
@@ -234,7 +234,7 @@ public abstract class DensityEstimator {
 	 * @return the empirical ISB
 	 */
 	public double computeDensityISB(MonteCarloModelDensityKnown model, double[][] data, int numEvalPoints) {
-		return computeDensityISB(model, data, equidistantPoints(numEvalPoints));
+		return computeDensityISB(model, data, getEquidistantPoints(numEvalPoints));
 	}
 
 	/**
@@ -300,7 +300,7 @@ public abstract class DensityEstimator {
 	 * @return the empirical MISE
 	 */
 	public double computeDensityMISE(MonteCarloModelDensityKnown model, double[][] data, int numEvalPoints) {
-		return computeDensityMISE(model, data, equidistantPoints(numEvalPoints));
+		return computeDensityMISE(model, data, getEquidistantPoints(numEvalPoints));
 	}
 
 	/**
@@ -448,7 +448,7 @@ public abstract class DensityEstimator {
 	 */
 	public double[] computeDensityTraits(ArrayList<String> traitsList, MonteCarloModelDensityKnown model,
 			double[][] data, int numEvalPoints) {
-		return computeDensityTraits(traitsList, model, data, equidistantPoints(numEvalPoints));
+		return computeDensityTraits(traitsList, model, data, getEquidistantPoints(numEvalPoints));
 	}
 
 	/**
@@ -460,7 +460,7 @@ public abstract class DensityEstimator {
 	 *            the number of points to be returned.
 	 * @return an array of equidistant points over \f$[a,b]\f$.
 	 */
-	protected double[] equidistantPoints(int k) {
+	protected double[] getEquidistantPoints(int k) {
 		double evalPoints[] = new double[k];
 		double delta = (b - a) / (k);
 		for (int j = 0; j < k; j++)
