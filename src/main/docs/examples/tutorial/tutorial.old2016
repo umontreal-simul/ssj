@@ -1,155 +1,303 @@
 /**
- * @page examples  SSJ introduction and tutorial by examples
+ * @page examples Tutorial
+ * 
+ * SSJ introduction and tutorial by examples.
+ * 
+ * 
  * 
  * 
  * @section REF_examples_sec_01 Introduction
  * 
  * 
  * The aim of this document is to provide an introduction to SSJ via a brief
- * overview and a series of examples.
- * We first give an overview of how SSJ is organized in various packages
- * that are somehow inter-related.
- * Then, we start our series of examples with elementary Monte Carlo experiments
- * in which we show how to generate random variates to simulate a model,
- * collect statistics, and make some plots from the results.
- * We show how to generate vectors from multivariate distributions and stochastic processes, 
- * and how the random numbers can be replaced by randomized quasi-Monte Carlo points.
- * Later, we provide more elaborate examples of discrete-event simulations.
- * The Java code of all the examples is available with the SSJ source code....
- *  *(say where)*
+ * overview and a series of examples. The examples are collected in three
+ * groups:
  *
- * While studying the examples, one can refer to the functional
- * definitions (the APIs) of the SSJ classes.  
- * Before that, we recommand reading the quick overview of the different packages of SSJ
- * given in the  @ref REF_0_sec_01 Section on the main page,
- * and then the overview at the beginning of the documentation of each package, 
- * to have a general idea of what is available and where.
+ * <ul><li>
+ * those that need no event or process scheduling;
+ * </li>
+ * <li>
+ * those based on the discrete-event simulation paradigm and implemented with
+ * an *event view* using the package `simevents`.
+ * </li>
+ * </ul>
+ *
+ *  Sections&nbsp; @ref REF_examples_sec_simple to
+ * @ref REF_examples_sec_event of this guide correspond to these three
+ * groups. Some examples (e.g., the single-server queue) are carried across
+ * two or three sections to illustrate different ways of implementing the
+ * same model. The Java code of all these examples is available on-line from
+ * the SSJ web page (just type “SSJ iro” in Google).
+ *
+ * While studying the examples, the reader can refer to the functional
+ * definitions (the APIs) of the SSJ classes and methods in the guides of the
+ * corresponding packages. Each package in SSJ has its own user’s guide in
+ * the form of a `.pdf` document that contains the detailed API and complete
+ * documentation, and starts with an overview of one or two pages. We
+ * strongly recommend reading each of these overviews. We also recommend to
+ * refer to the `.pdf` versions of the guides, because they contain a more
+ * detailed and complete documentation than the `.html` versions, which are
+ * better suited for quick on-line referencing for those who are already
+ * familiar with SSJ.
+ *
+ * In Section&nbsp; @ref REF_examples_sec_queue, we start with a very simple
+ * classical example: a single queue. We give different variants of this
+ * example, illustrating the mixture of processes and events. In
+ * Section&nbsp; @ref REF_examples_sec_preypred, we give a small example of a
+ * deterministic continuous simulation. In Sections&nbsp;
+ * @ref REF_examples_sec_jobshop and  @ref REF_examples_sec_timeshared, we
+ * give examples of a job shop model and a time-shared computer model,
+ * adapted from @cite sLAW00a&thinsp;. A queuing model of a bank, taken from
+ * @cite sBRA87a&thinsp;, is programmed in Section&nbsp;
+ * @ref REF_examples_sec_bank, with both the process and event views. In
+ * Section&nbsp; @ref REF_examples_sec_visits, we simulate a model of guided
+ * tours for groups of people, where the process synchronization is slightly
+ * more complicated than for the earlier models. In Section&nbsp;
+ * @ref REF_examples_sec_ingots, we give an example of a mixed
+ * discrete-continuous simulation. In Section&nbsp;
+ * @ref REF_examples_sec_robot, we give a more elaborate example, for a model
+ * discussed in @cite sLEC91a&thinsp;, where a robot maintains a series of
+ * machines subject to random failures. It illustrates the idea of modular
+ * design.
  * 
  * 
- * %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- * 
- * @section REF_examples_sec_overview  Quick Overview of Some Key Packages
- * 
- * @subsection REF_examples_sec_random   Random number and variate generation
+ * @section REF_examples_sec_02 Overview of SSJ
  * 
  * 
- * Random numbers feed simulation models and Monte Carlo experiments.
- * To generate random numbers from a given probability distribution, 
- * one typically starts from independent uniform random numbers, uniformly distributed over the
- * interval @f$[0,1)@f$, and transform these numbers appropriately to obtain the 
- * desired distribution. 
- * In reality, the so-called *uniform random numbers* produced by SSJ and other simulation software
- * are *not* truly random and independent. They are only imitations produced by 
- * deterministic mathematical algorithms, and are sometimes called *pseudorandom*.
- * Nevertheless, they are very good imitations from a statistical viewpoint,
- * and we follow the common usage in the Monte Carlo simulation community to just 
- * call them random numbers, for simplicity @cite rLEC17h.
- * As an important consequence of the deterministic nature of these algorithmic 
- * random number generators (RNGs), if you run the same simulation program several times, 
- * by default you will get exactly the same results each time.  
- * This is really not like throwing a dice or flipping a coin, and this is normal.
- * In fact, the ability to replicate Monte Carlo experiments with exactly the same 
- * random numbers is a key advantage (and requirement) in modern simulation software
- * @cite sLAW14a, @cite rLEC12a, @cite rLEC15a, @cite rLEC17h, @cite rLEC17p.  
+ * SSJ is an organized set of packages whose purpose is to facilitate
+ * stochastic simulation programming in the Java language. The facilities
+ * offered are grouped into different packages, each one having its own
+ * user’s guide as a `.pdf` file. This is the official documentation. There
+ * is also a simplified on-line documentation in HTML format, produced via
+ * `javadoc`. Early descriptions of SSJ are given in @cite sLEC02a,
+ * @cite sLEC05a&thinsp;. Some of the tools can also be used for modeling
+ * (e.g., selecting and fitting distributions). SSJ is still growing
+ * actively. New packages, classes, and methods will be added in forthcoming
+ * years and others will be refined.
+ *
+ * The packages currently offered are the following:
+ *
+ *   @ref umontreal.ssj.util contains utility classes used in the
+ * implementation of SSJ, and which are often useful elsewhere. For example,
+ * there are timers (for CPU usage), utilities to read or format numbers and
+ * arrays from/to text, operations on binary vectors and matrices, some
+ * mathematical functions and constants, root-finding tools, facilities for
+ * SQL database interface, and so on.
+ *
+ *  @ref umontreal.ssj.probdist contains a set of Java classes providing
+ * methods to compute mass, density, distribution, complementary
+ * distribution, and inverse distribution functions for many discrete and
+ * continuous probability distributions, as well as estimating the parameters
+ * of these distributions.
+ *
+ *  @ref umontreal.ssj.probdistmulti contains a set of Java classes providing
+ * methods to compute mass, density, distribution, complementary
+ * distribution, for some multi-dimensionnal discrete and continuous
+ * probability distributions.
+ *
+ *  @ref umontreal.ssj.rng provides facilities for generating uniform random
+ * numbers over the interval @f$(0,1)@f$, or over a given range of integer
+ * values, and other types of simple random objects such as random
+ * permutations.
+ *
+ *  @ref umontreal.ssj.hups provides classes implementing highly uniform
+ * point sets and sequences (HUPS), also called low-discrepancy sets and
+ * sequences, and tools for their randomization.
+ *
+ *  @ref umontreal.ssj.randvar provides a collection of classes for
+ * non-uniform random variate generation, primarily from standard
+ * distributions.
+ *
+ *  @ref umontreal.ssj.randvarmulti provides a collection of classes for
+ * random number generators for some multi-dimensional distributions.
+ *
+ *  @ref umontreal.ssj.gof contains tools for performing univariate
+ * goodness-of-fit (GOF) statistical tests.
+ *
+ *  @ref umontreal.ssj.stat provides elementary tools for collecting
+ * statistics and computing confidence intervals.
+ *
+ *  @ref umontreal.ssj.stat.matrix this subpackage of `stat` provides
+ * facilities to create and manage rectangular two-dimensional arrays of
+ * statistical collectors.
+ *
+ *  @ref umontreal.ssj.stat.list this subpackage of `stat` provides support
+ * to manage lists of statistical collectors.
+ *
+ *  @ref umontreal.ssj.stat.list.lincv this subpackage of `stat.list`
+ * provides classes that help implement control variables on lists of
+ * collectors.
+ *
+ *  @ref umontreal.ssj.simevents provides and manages the event-driven
+ * simulation facilities as well as the simulation clock. Can manage several
+ * simulations in parallel, in the same program.
+ *
+ *  @ref umontreal.ssj.simevents.eventlist this subpackage of `simevents`
+ * offers several kinds of event list implementations.
+ *
+ *  @ref umontreal.ssj.functions contains classes that allow one to pass an
+ * arbitrary function of one variable as argument to a method and to apply
+ * elementary mathematical operations on generic functions.
+ *
+ *  @ref umontreal.ssj.functionfit provides basic facilities for curve
+ * fitting and interpolation with polynomials.
+ *
+ *  @ref umontreal.ssj.simexp provides facilities for performing simulation
+ * experiments using independent replications as well as simulations using
+ * batch means.
+ *
+ *  @ref umontreal.ssj.charts provides tools for easy construction,
+ * visualization, and customization of @f$xy@f$ plots, histograms, and
+ * empirical styled charts from a Java program.
+ *
+ *  @ref umontreal.ssj.discrepancy contains classes and methods to compute
+ * several kind of discrepancies for point sets.
+ *
+ *  @ref umontreal.ssj.markovchainrqmc contains classes related to Markov
+ *  chains simulation using randomized quasi-Monte Carlo.
+ *
+ *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
+ * processes.
  * 
- *  
- * Selection of an RNG is based on several
+ * 
+ * @subsection REF_examples_sec_03 Dependence on other libraries
+ * 
+ * 
+ * SSJ uses some classes from other free Java libraries.
+ *
+ * The [Colt library](http://acs.lbl.gov/software/colt/)
+ * , developed at the Centre Européen de Recherche Nucléaire (CERN) in Geneva
+ * @cite iHOS04a&thinsp;, is a large library that provides a wide range of
+ * facilities for high performance scientific and technical computing in
+ * Java. SSJ uses the class  DoubleArrayList from Colt in a few of its
+ * classes, namely in packages  @ref umontreal.ssj.stat and
+ * @ref umontreal.ssj.hups. The reason is that this class provides a very
+ * efficient and convenient implementation of an (automatically) extensible
+ * array of <tt>double</tt>, together with several methods for computing
+ * statistics for the observations stored in the array (see, e.g.,
+ * <tt>Descriptive</tt>). The Colt library is distributed with the SSJ
+ * package as **colt.jar**. It must be added in the CLASSPATH environment
+ * variable.
+ *
+ * The <strong>linear_algebra</strong> library is based on public domain
+ * LINPACK routines. They were translated from Fortran to Java by Steve
+ * Verrill at the USDA Forest Products Laboratory Madison, Wisconsin, USA.
+ * The optimization package of Steve Verrill includes Java translations of
+ * the [MINPACK](http://simul.iro.umontreal.ca/Uncmin_f77/Minpack_f77.html)
+ *  routines @cite iMOR80a&thinsp; for nonlinear least squares problems as
+ * well as [UNCMIN](http://simul.iro.umontreal.ca/Uncmin_f77/Uncmin_f77.html)
+ *  routines @cite iSCHa&thinsp; for unconstrained optimization. They were
+ * translated from Fortran to Java by Steve Verrill and are in the public
+ * domain. They are included in the SSJ distribution as the
+ * **optimization.jar** archive. It is used only in the `probdist` package to
+ * compute maximum likelihood estimators.
+ *
+ * [JFreeChart](http://www.jfree.org/jfreechart/index.html)
+ *  is a free Java library that can generate a wide variety of charts and
+ * plots for use in applications, applets and servlets. **JFreeChart**
+ * currently supports, amongst others, bar charts, pie charts, line charts,
+ * XY-plots, histograms, scatter plots and time series plots. It is
+ * distributed with SSJ as **jfreechart-*.jar**.
+ * [JCommon](http://www.jfree.org/jcommon/index.php)
+ *  is a free general purpose Java library containing many useful classes
+ * used by JFreeChart and other Java packages. It is distributed with SSJ as
+ * **jcommon-*.jar**. JFreeChart (and JCommon) are used in the SSJ package
+ * **charts** to create different kinds of charts.
+ *
+ * SSJ also provides an interface to the
+ * [UNURAN](http://statistik.wu-wien.ac.at/unuran/)
+ *  library for nonuniform random number generation @cite iLEY02a&thinsp;, in
+ * the  @ref umontreal.ssj.randvar package. UNURAN does not have to be
+ * installed to be used with SSJ, because it is linked statically with the
+ * appropriate SSJ native library. However, the UNURAN documentation will be
+ * required to take full advantage of the library.
+ * 
+ * 
+ * @subsection REF_examples_sec_04 random number generation
+ * 
+ * 
+ * Random numbers feed simulation models and allow one to compute statistics.
+ * To generate random numbers from any probability distribution, uniform
+ * random numbers are required. Such numbers are uniformly distributed in the
+ * @f$[0,1)@f$ interval, i.e., the probability of getting a given number
+ * @f$x@f$ in that interval is the same for all values of @f$x\in[0,1)@f$.
+ * Any generated number @f$x@f$ is also independent from any previous or
+ * future generated numbers. Although the generated uniforms are not truly
+ * independent since one uniform is obtained from the previous uniforms by a
+ * mathematical formula, one can consider them independent for simulation
+ * purposes. Selection of a random number generator is based on several
  * criteria such as uniformity, performance, and portability
- * @cite rLEC94a, @cite rLEC12a&thinsp;. 
- * The package  @ref umontreal.ssj.rng provides basic tools to generate
- * random numbers. It defines an interface called
- * @ref umontreal.ssj.rng.RandomStream implemented by any RNG supported by SSJ. 
- * This interface requires that each RNG provides multiple streams and substreams 
- * of random numbers.  Such facilities are very useful when performing multiple
- * simulation runs and comparing similar systems by simulation, for example
- * @cite rLEC15a, @cite rLEC15c, @cite rLEC17p.
- * The interface permits one to easily interchange RNGs without touching the code of the 
- * simulator, because they are accessed through the
- * same set of methods specified by the interface. 
- * The selected type of RNG is specified when creating the @ref umontreal.ssj.rng.RandomStream
- * object. 
+ * @cite rLEC01d&thinsp;. The package  @ref umontreal.ssj.rng contains the
+ * needed tools to generate such numbers. It defines an interface called
+ * @ref umontreal.ssj.rng.RandomStream implemented by any random number
+ * generator supported by SSJ. This interface allows one to easily
+ * interchange random number generators since they are accessed through the
+ * same set of methods specified by the interface. Only the random number
+ * generator setup depends on the type of generator that was chosen.
  *
- * One can easily replace the 'independent' random numbers with (possibly randomized) 
- * highly-uniform (quasi-Monte Carlo) point sets implemented the package  
- * @ref umontreal.ssj.hups&thinsp;, again without changing the simulation code.
- * The point set objects all inherit
+ * If one wants to replace uniform random numbers with low-discrepancy point
+ * sets for variance reduction, the package  @ref umontreal.ssj.hups contains
+ * all the necessary facilities. Such highly uniform point sets all inherit
  * from the  @ref umontreal.ssj.hups.PointSet which provides a
- * @ref umontreal.ssj.hups.PointSetIterator that implements the same 
- * @ref umontreal.ssj.rng.RandomStream interface as the RNGs.
- * The replacement can be easily done
- * without modifying the model implementation, 
- * except for the setup code that creates the point sets.
+ * @ref umontreal.ssj.hups.PointSetIterator extending
+ * @ref umontreal.ssj.rng.RandomStream. The replacement can be easily done
+ * without modifying the model implementation, except the setup-time code.
  *
- *  
- * To generate non-uniform random numbers, one can select a probability distribution
- * from the @ref umontreal.ssj.probdist package and a @ref umontreal.ssj.rng.RandomStream
- * object as a source of randomness.
- * The probability distribution may have been estimated in a modeling phase
- * based on data from the system of interest, or selected in any other way.
- * The package
- * @ref umontreal.ssj.probdist contains several commonly-used discrete and continuous distributions,
- * implemented as subclasses of the abstract classes
+ * To generate non-uniform random numbers, one must select a probability
+ * distribution based on the empirical data @cite sLAW00a&thinsp;. SSJ does
+ * not provide probability distribution estimation tools, but goodness of fit
+ * tests are included to help in model validation. The package
+ * @ref umontreal.ssj.probdist contains several standard, commonly-used,
+ * probability distributions. It supports discrete and continuous
+ * distributions through two different abstract base classes:
  * @ref umontreal.ssj.probdist.ContinuousDistribution and
- * @ref umontreal.ssj.probdist.DiscreteDistribution.
- * The methods to access the density or mass, cdf, complementary cdf, inverse cdf, 
- * mean, variance, etc., are common to all distributions, so much of the code may be written
- * independently of the selected distribution.
- * Static methods are also available for the case where one does not want to create 
- * a distribution object with fixed parameters, which often involves significant overhead
- * because it precomputes constants and tables.
- * This precomputation setup is often worthwhile if the same distribution (with same parameters)
- * is used many times, but not if the parameters change all the time so the setup has to be redone
- * each time anyway.
- * 
- * The default (most general) way of defining a non-uniform generator is to match
- * a distribution with a #RandomStream.  The package  @ref umontreal.ssj.rng.randvar
- * provides facilities to do that.  
- * By default, the random variates are obtained by applying the inverse cdf 
- * (computed via the #inverseF method) the uniform random numbers obtained from the stream.
- *  
- * However, inversion is sometimes too slow or inapplicable (the inverse cdf or even a good
- * approximation of it is unknown).   The package  @ref umontreal.ssj.randvar
- * permits one to generate non-uniform randm variates in many other ways than by inversion.
- * In particular, it offers classes to generate random variates from specific disctere and 
- * continuous distributions by specific methods, without relying on the #probdist package.
- * These specific generators inherit from the common classes
+ * @ref umontreal.ssj.probdist.DiscreteDistribution, respectively. Again,
+ * since the distributions inherit from a common class, their access can be
+ * independent from the selected distribution, except for the setup case. One
+ * can compute the density/mass, distribution, complementary, and inverse
+ * distribution functions. These facilities are also accessible through
+ * static methods implemented in each distribution class if one does not want
+ * to create objects or needs distributions whose parameters vary in time.
+ * However, setup-time operations must be performed for each operation, which
+ * can be inefficient for certain distributions.
+ *
+ * To generate non-uniform random numbers, the packages
+ * @ref umontreal.ssj.rng (or  @ref umontreal.ssj.hups ) and
+ * @ref umontreal.ssj.probdist must be used together. The simplest generation
+ * method is to generate a uniform random number using a generator
+ * implementing  @ref umontreal.ssj.rng.RandomStream (or get a coordinate
+ * using a point set iterator) and to apply inversion by using the selected
+ * @ref umontreal.ssj.probdist distribution’s
+ * umontreal.ssj.probdist.ContinuousDistribution.inverseF method. However,
+ * inversion is not the only generation method and sometimes not the most
+ * efficient. For some distributions, closed-form inverse functions or fast
+ * inversion algorithms exist. For others, inversion is performed using
+ * binary or even linear search. In such cases, the performance and precision
+ * depends on the complexity of the distribution function which is calculated
+ * several times for one inverse. The package  @ref umontreal.ssj.randvar
+ * acts as glue between uniform random number generators and probability
+ * distributions. Continuous or discrete random number generators also
+ * inherits from common base classes, namely
  * @ref umontreal.ssj.randvar.RandomVariateGen and
- * @ref umontreal.ssj.randvar.RandomVariateGenInt
- * Each specialized class provides a static method which can be preferable to use 
- * when it is not worthwhile to create a generator object and make the associated precomputations.
- * One drawback is these static methods have signatures that are specific to the distribution,
- * because they must contain the distribution parameters, and they have to perform setup-time
- * operations on each variate generation.
- * 
- * The packages @ref umontreal.ssj.probdistmulti  and @ref umontreal.ssj.randvarmulti
- * are the counterparts of #probdist and #randvar, but for multivariate distributions.
- * The package @ref umontreal.ssj.stochprocess  offers tools to generate discretely observed
- * sample paths (skeletons) of various types of stochastic processes.
- * 
- * The package @ref umontreal.ssj.hups  implements different types of highly uniform (or low-discrepancy)
- * point sets and sequences (hups), and randomized versions of these points.
- * These points and sequences can be used in (randomized) quasi-Monte Carlo methods,
- * where the random numbers are replaced by more uniform point sets. 
- *  @ref umontreal.ssj.latnetbuilder provides an interface to the LatNet Builder software,
- * implemented in C++, which provides tools to construct hups of various types
- * such as lattices, polynomial lattices, digital nets, etc., in arbitrary dimension,
- * for an arbitrary number of points, a rich variety of uniformity criteria, etc.
- *  
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. All generators use a
+ * random stream and a probability distribution for their construction. As
+ * opposed to  @ref umontreal.ssj.probdist, one can directly instantiate
+ * @ref umontreal.ssj.randvar.RandomVariateGen or
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. However, in such cases,
+ * only inversion generation method will be available. To use an alternate
+ * generation method, one must instantiate a specialized generator class and
+ * switch to the given generation algorithm using an object method. Each
+ * specialized class also provides static method which perform the same
+ * action. Although they allow one to avoid object creation, their signatures
+ * are specific to the used distribution and they have to perform setup-time
+ * operations on each variate generation, which can become inefficient. The
+ * @ref umontreal.ssj.randvar package also provides the class
+ * @ref umontreal.ssj.randvar.RandomVariateTrans to apply transformations to
+ * a generator. This allows, for example, to generate variates from a
+ * truncated distribution.
  * 
  * 
- * @subsection REF_examples_sec_stat   Collecting statistics
- * 
- * In SSJ, output from simulations is collected in what we call *statistical collectors*, 
- * which are implemented in the  * @ref umontreal.ssj.stat  package.
- * A collector is an object to which we give (one by one) observations that may 
- * come from running a simulation.  An observation can be a single real number 
- * or can be an array of real numbers, whose dimension is the number of fields 
- * on which data is collected.  After n observations are collected, the collector
- * will contain (virtually) a table whose rows are the observations and whose columns are the fields.  
- * 
- * 
- * 
- * @subsection REF_examples_sec_05 Running simulations
+ * @subsection REF_examples_sec_05 Performing simulation
  * 
  * 
  * SSJ supports discrete-event, process-driven, continuous or mixed
@@ -194,10 +342,18 @@
  * possible to compute the @f$p@f$-value which is useful to evaluate the
  * significance of the test.
  * 
-
+ * 
+ * @subsection REF_examples_sec_07 Related documentation
  * 
  * 
- ** ************************************************************************
+ * The `example.pdf` file, in the `doc/pdf` subdirectory of the SSJ
+ * distribution, explains simulation examples implemented using SSJ. This may
+ * be the best starting point to learn SSJ.
+ *  Every package introduced here contains its own reference documentation as
+ * a PDF file, in the `doc/pdf` subdirectory. This documentation describes in
+ * more details how to use the package and provides a description of each
+ * class and method.
+ * 
  * 
  * @section REF_examples_sec_simple Some Elementary Examples
  * 

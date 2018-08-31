@@ -104,8 +104,8 @@
  *  provides a collection of classes for
  *  random number generators for some multi-dimensional distributions.
  *
- *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
- * processes.
+ *  @ref umontreal.ssj.stochprocess implements various kinds of stochastic
+ * processes and methods to generate their sample paths.
  * 
  *
  * ## Statistical tools
