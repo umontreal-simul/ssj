@@ -3,33 +3,35 @@
  *
  * Probability Distributions.
  *
- * This package contains a set of Java classes providing methods to compute
- * mass, density, distribution, complementary distribution, and inverse
- * distribution functions for some discrete and continuous probability
- * distributions. It also provides methods to estimate the parameters of some
- * distributions from empirical data. It does not generate random variates;
- * for that, see the package  @ref umontreal.ssj.randvar. It is possible to
- * plot the density or the cumulative probabilities of a distribution
- * function either on screen, or in a LaTeX file, but for this, one has to
- * use the package  @ref umontreal.ssj.charts.
+ * This package contains a set of Java classes that implement discrete and continuous
+ * univariate probability distributions.  
+ * It provides methods to evaluate the probability density (or mass) function (pdf),
+ * the cumulative distribution function (cdf), the complementary cdf, the inverse cdf,
+ * some moments, etc.
+ * It also offers methods to estimate the parameters of some
+ * distributions from empirical data.  
+ * It does not generate random variates;
+ * for that, see the package  @ref umontreal.ssj.randvar. 
+ * One can plot the density or the cdf of a distribution either on screen, 
+ * or in a LaTeX file, by using the package  @ref umontreal.ssj.charts.
  *
  * ## Distributions
  *
- * We recall that the *distribution function* of a *continuous* random
- * variable @f$X@f$ with *density* @f$f@f$ over the real line is
+ * We recall that the *cumulative distribution function* (cdf) of a *continuous* random
+ * variable @f$X@f$ with *probability density function* (pdf) @f$f@f$ over the real line is
  * @anchor REF_probdist_overview_eq_FDist
  * @f[
  *   F(x) = P[X\le x] = \int_{-\infty}^x f(s)ds \tag{FDist}
  * @f]
- * while that of a *discrete* random variable @f$X@f$ with *mass function*
+ * while the cdf of a *discrete* random variable @f$X@f$ with *probability mass function*
  * @f$p@f$ over a fixed set of real numbers @f$x_0 < x_1 < x_2 < \cdots@f$
  * is
  * @anchor REF_probdist_overview_eq_FDistDisc
  * @f[
  *   F(x) = P[X\le x] = \sum_{x_i\le x} p(x_i), \tag{FDistDisc}
  * @f]
- * where @f$p(x_i) = P[X = x_i]@f$. For a discrete distribution over the set
- * of integers, one has
+ * where @f$p(x_i) = P[X = x_i]@f$. 
+ * Sometimes, the mass function is just called the pdf as well.
  * @anchor REF_probdist_overview_eq_FDistDiscInt
  * @f[
  *   F (x) = P[X\le x] = \sum_{s=-\infty}^x p(s), \tag{FDistDiscInt}
@@ -49,7 +51,7 @@
  * more convenient especially for computing @f$p@f$-values in goodness-of-fit
  * tests.
  *
- * The *inverse distribution function* is defined as
+ * The *inverse cumulative distribution function* is defined as
  * @anchor REF_probdist_overview_eq_inverseF
  * @f[
  *   F^{-1}(u) = \inf\{x\in\mathbb{R}: F (x)\ge u\}, \tag{inverseF}
@@ -94,7 +96,7 @@
  * static methods as soon as two or three calls are made, unless the
  * parameters are large.
  *
- * In fact, only the non-negligible probability terms (those that exceed the
+ * Only the non-negligible probability terms (those that exceed the
  * threshold  umontreal.ssj.probdist.DiscreteDistributionInt.EPSILON ) are
  * stored in the tables. For @f$F@f$ and @f$\bar{F}@f$, a single table
  * actually contains @f$F (x)@f$ for @f$F (x) \le1/2@f$ and @f$1-F (x)@f$

@@ -1,217 +1,34 @@
 /**
- * @page examples Tutorial
- * 
- * SSJ introduction and tutorial by example.
- * 
- * 
+ * @page examples  SSJ introduction and tutorial by examples
  * 
  * 
  * @section REF_examples_sec_01 Introduction
  * 
  * 
  * The aim of this document is to provide an introduction to SSJ via a brief
- * overview and a series of examples. The examples are collected in three
- * groups:
+ * overview and a series of examples.
+ * We first give an overview of how SSJ is organized in various packages
+ * that are somehow inter-related.
+ * Then, we start our series of examples with elementary Monte Carlo experiments
+ * in which we show how to generate random variates to simulate a model,
+ * collect statistics, and make some plots from the results.
+ * We show how to generate vectors from multivariate distributions and stochastic processes, 
+ * and how the random numbers can be replaced by randomized quasi-Monte Carlo points.
+ * Later, we provide more elaborate examples of discrete-event simulations.
+ * The Java code of all the examples is available with the SSJ source code....
+ *  *(say where)*
  *
- * <ul><li>
- * those that need no event or process scheduling;
- * </li>
- * <li>
- * those based on the discrete-event simulation paradigm and implemented with
- * an *event view* using the package `simevents`.
- * </li>
- * </ul>
- *
- *  Sections&nbsp; @ref REF_examples_sec_simple to
- * @ref REF_examples_sec_event of this guide correspond to these three
- * groups. Some examples (e.g., the single-server queue) are carried across
- * two or three sections to illustrate different ways of implementing the
- * same model. The Java code of all these examples is available on-line from
- * the SSJ web page (just type “SSJ iro” in Google).
- *
- * While studying the examples, the reader can refer to the functional
- * definitions (the APIs) of the SSJ classes and methods in the guides of the
- * corresponding packages. Each package in SSJ has its own user’s guide in
- * the form of a `.pdf` document that contains the detailed API and complete
- * documentation, and starts with an overview of one or two pages. We
- * strongly recommend reading each of these overviews. We also recommend to
- * refer to the `.pdf` versions of the guides, because they contain a more
- * detailed and complete documentation than the `.html` versions, which are
- * better suited for quick on-line referencing for those who are already
- * familiar with SSJ.
- *
- * In Section&nbsp; @ref REF_examples_sec_queue, we start with a very simple
- * classical example: a single queue. We give different variants of this
- * example, illustrating the mixture of processes and events. In
- * Section&nbsp; @ref REF_examples_sec_preypred, we give a small example of a
- * deterministic continuous simulation. In Sections&nbsp;
- * @ref REF_examples_sec_jobshop and  @ref REF_examples_sec_timeshared, we
- * give examples of a job shop model and a time-shared computer model,
- * adapted from @cite sLAW00a&thinsp;. A queuing model of a bank, taken from
- * @cite sBRA87a&thinsp;, is programmed in Section&nbsp;
- * @ref REF_examples_sec_bank, with both the process and event views. In
- * Section&nbsp; @ref REF_examples_sec_visits, we simulate a model of guided
- * tours for groups of people, where the process synchronization is slightly
- * more complicated than for the earlier models. In Section&nbsp;
- * @ref REF_examples_sec_ingots, we give an example of a mixed
- * discrete-continuous simulation. In Section&nbsp;
- * @ref REF_examples_sec_robot, we give a more elaborate example, for a model
- * discussed in @cite sLEC91a&thinsp;, where a robot maintains a series of
- * machines subject to random failures. It illustrates the idea of modular
- * design.
+ * While studying the examples, one can refer to the functional
+ * definitions (the APIs) of the SSJ classes.  
+ * Before that, we recommand reading the quick overview of the different packages of SSJ
+ * given in the  @ref REF_0_sec_01 Section on the main page,
+ * and then the overview at the beginning of the documentation of each package, 
+ * to have a general idea of what is available and where.
  * 
  * 
- * @section REF_examples_sec_02 Overview of SSJ
+ * %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  * 
- * 
- * SSJ is an organized set of packages whose purpose is to facilitate
- * stochastic simulation programming in the Java language. The facilities
- * offered are grouped into different packages, each one having its own
- * user’s guide as a `.pdf` file. This is the official documentation. There
- * is also a simplified on-line documentation in HTML format, produced via
- * `javadoc`. Early descriptions of SSJ are given in @cite sLEC02a,
- * @cite sLEC05a&thinsp;. Some of the tools can also be used for modeling
- * (e.g., selecting and fitting distributions). SSJ is still growing
- * actively. New packages, classes, and methods will be added in forthcoming
- * years and others will be refined.
- *
- * The packages currently offered are the following:
- *
- *   @ref umontreal.ssj.util contains utility classes used in the
- * implementation of SSJ, and which are often useful elsewhere. For example,
- * there are timers (for CPU usage), utilities to read or format numbers and
- * arrays from/to text, operations on binary vectors and matrices, some
- * mathematical functions and constants, root-finding tools, facilities for
- * SQL database interface, and so on.
- *
- *  @ref umontreal.ssj.probdist contains a set of Java classes providing
- * methods to compute mass, density, distribution, complementary
- * distribution, and inverse distribution functions for many discrete and
- * continuous probability distributions, as well as estimating the parameters
- * of these distributions.
- *
- *  @ref umontreal.ssj.probdistmulti contains a set of Java classes providing
- * methods to compute mass, density, distribution, complementary
- * distribution, for some multi-dimensionnal discrete and continuous
- * probability distributions.
- *
- *  @ref umontreal.ssj.rng provides facilities for generating uniform random
- * numbers over the interval @f$(0,1)@f$, or over a given range of integer
- * values, and other types of simple random objects such as random
- * permutations.
- *
- *  @ref umontreal.ssj.hups provides classes implementing highly uniform
- * point sets and sequences (HUPS), also called low-discrepancy sets and
- * sequences, and tools for their randomization.
- *
- *  @ref umontreal.ssj.randvar provides a collection of classes for
- * non-uniform random variate generation, primarily from standard
- * distributions.
- *
- *  @ref umontreal.ssj.randvarmulti provides a collection of classes for
- * random number generators for some multi-dimensional distributions.
- *
- *  @ref umontreal.ssj.gof contains tools for performing univariate
- * goodness-of-fit (GOF) statistical tests.
- *
- *  @ref umontreal.ssj.stat provides elementary tools for collecting
- * statistics and computing confidence intervals.
- *
- *  @ref umontreal.ssj.stat.matrix this subpackage of `stat` provides
- * facilities to create and manage rectangular two-dimensional arrays of
- * statistical collectors.
- *
- *  @ref umontreal.ssj.stat.list this subpackage of `stat` provides support
- * to manage lists of statistical collectors.
- *
- *  @ref umontreal.ssj.stat.list.lincv this subpackage of `stat.list`
- * provides classes that help implement control variables on lists of
- * collectors.
- *
- *  @ref umontreal.ssj.simevents provides and manages the event-driven
- * simulation facilities as well as the simulation clock. Can manage several
- * simulations in parallel, in the same program.
- *
- *  @ref umontreal.ssj.simevents.eventlist this subpackage of `simevents`
- * offers several kinds of event list implementations.
- *
- *  @ref umontreal.ssj.functions contains classes that allow one to pass an
- * arbitrary function of one variable as argument to a method and to apply
- * elementary mathematical operations on generic functions.
- *
- *  @ref umontreal.ssj.functionfit provides basic facilities for curve
- * fitting and interpolation with polynomials.
- *
- *  @ref umontreal.ssj.simexp provides facilities for performing simulation
- * experiments using independent replications as well as simulations using
- * batch means.
- *
- *  @ref umontreal.ssj.charts provides tools for easy construction,
- * visualization, and customization of @f$xy@f$ plots, histograms, and
- * empirical styled charts from a Java program.
- *
- *  @ref umontreal.ssj.discrepancy contains classes and methods to compute
- * several kind of discrepancies for point sets.
- *
- *  @ref umontreal.ssj.markovchainrqmc contains classes related to Markov
- *  chains simulation using randomized quasi-Monte Carlo.
- *
- *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
- * processes.
- * 
- * 
- * @subsection REF_examples_sec_03 Dependence on other libraries
- * 
- * 
- * SSJ uses some classes from other free Java libraries.
- *
- * The [Colt library](http://acs.lbl.gov/software/colt/)
- * , developed at the Centre Européen de Recherche Nucléaire (CERN) in Geneva
- * @cite iHOS04a&thinsp;, is a large library that provides a wide range of
- * facilities for high performance scientific and technical computing in
- * Java. SSJ uses the class  DoubleArrayList from Colt in a few of its
- * classes, namely in packages  @ref umontreal.ssj.stat and
- * @ref umontreal.ssj.hups. The reason is that this class provides a very
- * efficient and convenient implementation of an (automatically) extensible
- * array of <tt>double</tt>, together with several methods for computing
- * statistics for the observations stored in the array (see, e.g.,
- * <tt>Descriptive</tt>). The Colt library is distributed with the SSJ
- * package as **colt.jar**. It must be added in the CLASSPATH environment
- * variable.
- *
- * The <strong>linear_algebra</strong> library is based on public domain
- * LINPACK routines. They were translated from Fortran to Java by Steve
- * Verrill at the USDA Forest Products Laboratory Madison, Wisconsin, USA.
- * The optimization package of Steve Verrill includes Java translations of
- * the [MINPACK](http://simul.iro.umontreal.ca/Uncmin_f77/Minpack_f77.html)
- *  routines @cite iMOR80a&thinsp; for nonlinear least squares problems as
- * well as [UNCMIN](http://simul.iro.umontreal.ca/Uncmin_f77/Uncmin_f77.html)
- *  routines @cite iSCHa&thinsp; for unconstrained optimization. They were
- * translated from Fortran to Java by Steve Verrill and are in the public
- * domain. They are included in the SSJ distribution as the
- * **optimization.jar** archive. It is used only in the `probdist` package to
- * compute maximum likelihood estimators.
- *
- * [JFreeChart](http://www.jfree.org/jfreechart/index.html)
- *  is a free Java library that can generate a wide variety of charts and
- * plots for use in applications, applets and servlets. **JFreeChart**
- * currently supports, amongst others, bar charts, pie charts, line charts,
- * XY-plots, histograms, scatter plots and time series plots. It is
- * distributed with SSJ as **jfreechart-*.jar**.
- * [JCommon](http://www.jfree.org/jcommon/index.php)
- *  is a free general purpose Java library containing many useful classes
- * used by JFreeChart and other Java packages. It is distributed with SSJ as
- * **jcommon-*.jar**. JFreeChart (and JCommon) are used in the SSJ package
- * **charts** to create different kinds of charts.
- *
- * SSJ also provides an interface to the
- * [UNURAN](http://statistik.wu-wien.ac.at/unuran/)
- *  library for nonuniform random number generation @cite iLEY02a&thinsp;, in
- * the  @ref umontreal.ssj.randvar package. UNURAN does not have to be
- * installed to be used with SSJ, because it is linked statically with the
- * appropriate SSJ native library. However, the UNURAN documentation will be
- * required to take full advantage of the library.
- * 
+ * @section REF_examples_sec_02  Quick Overview of Some Key Packages
  * 
  * @subsection REF_examples_sec_04 random number generation
  * 
@@ -342,18 +159,10 @@
  * possible to compute the @f$p@f$-value which is useful to evaluate the
  * significance of the test.
  * 
+
  * 
- * @subsection REF_examples_sec_07 Related documentation
  * 
- * 
- * The `example.pdf` file, in the `doc/pdf` subdirectory of the SSJ
- * distribution, explains simulation examples implemented using SSJ. This may
- * be the best starting point to learn SSJ.
- *  Every package introduced here contains its own reference documentation as
- * a PDF file, in the `doc/pdf` subdirectory. This documentation describes in
- * more details how to use the package and provides a description of each
- * class and method.
- * 
+ ** ************************************************************************
  * 
  * @section REF_examples_sec_simple Some Elementary Examples
  * 

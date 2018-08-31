@@ -41,10 +41,11 @@
  * fast response time is required.
  *
  * SSJ, on the other hand, is very flexible and designed to facilitate efficient
- * simulation programming in the Java language. A first version was described 
- * in @cite sLEC02a&thinsp;.  Some of the tools can also be used for modeling
- * (e.g., selecting and fitting distributions).  
- *
+ * simulation modeling and programming in the Java language. A first version was described 
+ * in @cite sLEC02a and  @cite sLEC05a&thinsp;.  
+ * It is still growing actively: new packages, classes, and methods are added regularly.
+ * It can be used freely by anyone and the source code is also freely available.
+ 
  * The facilities offered are grouped into different well-documented packages
  * that are connected to each other.  In addition to the online documentation 
  * (produced by Doxygen), there will be a reference manual in the form of a .pdf file. 
@@ -68,7 +69,7 @@
  * methods to compute mass, density, distribution, complementary
  * distribution, and inverse distribution functions for many discrete and
  * continuous probability distributions, as well as estimating the parameters
- * of these distributions.
+ * of these distributions from given data.
  *
  *  @ref umontreal.ssj.probdistmulti 
  *  contains a set of Java classes providing
