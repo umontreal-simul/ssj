@@ -70,16 +70,15 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
-<a href="#pac-attribs">Package Attributes</a> &#124;
 <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DensityEstimator Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This abstract class implements a univariate density estimator over a finite interval \([a,b]\).  
+<p>This abstract class implements a univariate density estimator (DE).  
  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DensityEstimator:</div>
@@ -89,75 +88,64 @@ Inheritance diagram for DensityEstimator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a02833779487be666bb0ecb217d4e7ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a02833779487be666bb0ecb217d4e7ff7">setRange</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>)</td></tr>
-<tr class="memdesc:a02833779487be666bb0ecb217d4e7ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the interval \([a,b]\) over which we estimate.  <a href="#a02833779487be666bb0ecb217d4e7ff7">More...</a><br /></td></tr>
-<tr class="separator:a02833779487be666bb0ecb217d4e7ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d66a4d697c0b411722a0053e7c2280"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ae1d66a4d697c0b411722a0053e7c2280">constructDensity</a> (double[] data)</td></tr>
-<tr class="memdesc:ae1d66a4d697c0b411722a0053e7c2280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the estimator from the data points in vector <em>data</em>.  <a href="#ae1d66a4d697c0b411722a0053e7c2280">More...</a><br /></td></tr>
-<tr class="separator:ae1d66a4d697c0b411722a0053e7c2280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86fe8be449d76c9e8ec7eef54735cd5c"><td class="memItemLeft" align="right" valign="top">abstract double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c">evalDensity</a> (double x)</td></tr>
-<tr class="memdesc:a86fe8be449d76c9e8ec7eef54735cd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the estimator evaluated at point <em>x</em>.  <a href="#a86fe8be449d76c9e8ec7eef54735cd5c">More...</a><br /></td></tr>
+<tr class="memdesc:a86fe8be449d76c9e8ec7eef54735cd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">left boundary of the interval over which we want to estimate  <a href="#a86fe8be449d76c9e8ec7eef54735cd5c">More...</a><br /></td></tr>
 <tr class="separator:a86fe8be449d76c9e8ec7eef54735cd5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaba40c7de60bdf42d018c0e10d55bd1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aaba40c7de60bdf42d018c0e10d55bd1a">evalDensity</a> (double[] evalPoints, double[] density)</td></tr>
 <tr class="memdesc:aaba40c7de60bdf42d018c0e10d55bd1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns in array <em>density</em> the value of the estimator at the evaluation points in <em>evalPoints</em>.  <a href="#aaba40c7de60bdf42d018c0e10d55bd1a">More...</a><br /></td></tr>
 <tr class="separator:aaba40c7de60bdf42d018c0e10d55bd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3257ff710a4329a6f5b615f619d20b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3257ff710a4329a6f5b615f619d20b44">evalDensity</a> (double[][] data, double[] evalPoints, double[][] density)</td></tr>
-<tr class="memdesc:a3257ff710a4329a6f5b615f619d20b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method constructs \(m\) independent realizations of a density estimator and evaluates them at <em>evalPoints</em>.  <a href="#a3257ff710a4329a6f5b615f619d20b44">More...</a><br /></td></tr>
-<tr class="separator:a3257ff710a4329a6f5b615f619d20b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b8b0380e0ff4c8923eede28a8fff9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ab1b8b0380e0ff4c8923eede28a8fff9c">evalDensity</a> (double[][] data, int k, double[][] density)</td></tr>
-<tr class="memdesc:ab1b8b0380e0ff4c8923eede28a8fff9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as #evalDensity(double[][], double[], double[][]) but using <em>k</em> equidistant evaluation points over \([a,b]\) generated by #equidistantPoints(int).  <a href="#ab1b8b0380e0ff4c8923eede28a8fff9c">More...</a><br /></td></tr>
-<tr class="separator:ab1b8b0380e0ff4c8923eede28a8fff9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe606a2a85264950df5aa235b5cba9b7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#abe606a2a85264950df5aa235b5cba9b7">geta</a> ()</td></tr>
-<tr class="memdesc:abe606a2a85264950df5aa235b5cba9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the left boundary <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a> of the interval over which we estimate.  <a href="#abe606a2a85264950df5aa235b5cba9b7">More...</a><br /></td></tr>
-<tr class="separator:abe606a2a85264950df5aa235b5cba9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea76e3aecf7d9be77535553c3e9df066"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aea76e3aecf7d9be77535553c3e9df066">getb</a> ()</td></tr>
-<tr class="memdesc:aea76e3aecf7d9be77535553c3e9df066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the right boundary <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a> of the interval over which we estimate.  <a href="#aea76e3aecf7d9be77535553c3e9df066">More...</a><br /></td></tr>
-<tr class="separator:aea76e3aecf7d9be77535553c3e9df066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0a73f96d54d27f25c9f1d066e1e1cf"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a9a0a73f96d54d27f25c9f1d066e1e1cf">plotDensity</a> (double [] evalPoints, double [] density)</td></tr>
+<tr class="memdesc:a9a0a73f96d54d27f25c9f1d066e1e1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method constructs \(m\) independent realizations of a density estimator and evaluates them at <em>evalPoints</em>.  <a href="#a9a0a73f96d54d27f25c9f1d066e1e1cf">More...</a><br /></td></tr>
+<tr class="separator:a9a0a73f96d54d27f25c9f1d066e1e1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77e2151cf49df9f80a4999e0e9e54d55"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a77e2151cf49df9f80a4999e0e9e54d55">toString</a> ()</td></tr>
 <tr class="memdesc:a77e2151cf49df9f80a4999e0e9e54d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives a short description of the estimator.  <a href="#a77e2151cf49df9f80a4999e0e9e54d55">More...</a><br /></td></tr>
 <tr class="separator:a77e2151cf49df9f80a4999e0e9e54d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a992898aa7d56ce7c822ecc535526f2ab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a992898aa7d56ce7c822ecc535526f2ab">computeIV</a> (double[][] estDensities)</td></tr>
-<tr class="memdesc:a992898aa7d56ce7c822ecc535526f2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the empirical IV based on \(m\) realizations of the density estimator which have previously been evaluated at \(k\) predetermined points.  <a href="#a992898aa7d56ce7c822ecc535526f2ab">More...</a><br /></td></tr>
-<tr class="separator:a992898aa7d56ce7c822ecc535526f2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ad76a04c867da5364d604987b031af5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a5ad76a04c867da5364d604987b031af5">computeISB</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">MonteCarloModelDensityKnown</a> model, double[][] estDensities, double[] evalPoints)</td></tr>
-<tr class="memdesc:a5ad76a04c867da5364d604987b031af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown</a> this method estimates the empirical ISB based on \(m\) realizations of the density estimator which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>.  <a href="#a5ad76a04c867da5364d604987b031af5">More...</a><br /></td></tr>
-<tr class="separator:a5ad76a04c867da5364d604987b031af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a781c2a3027c2f983f2ba36558c2508e9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a781c2a3027c2f983f2ba36558c2508e9">computeMISE</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">MonteCarloModelDensityKnown</a> model, double[][] estDensities, double[] evalPoints)</td></tr>
-<tr class="memdesc:a781c2a3027c2f983f2ba36558c2508e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a MonteCarloModelDensityKnown this method estimates the empirical MISE based on \(m\) realizations of the density estimator which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>.  <a href="#a781c2a3027c2f983f2ba36558c2508e9">More...</a><br /></td></tr>
-<tr class="separator:a781c2a3027c2f983f2ba36558c2508e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f7b62743c04adc7c2b02b2553bab3f6"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2f7b62743c04adc7c2b02b2553bab3f6">computeIVandISBandMISE</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">MonteCarloModelDensityKnown</a> model, double[][] estDensities, double[] evalPoints)</td></tr>
-<tr class="memdesc:a2f7b62743c04adc7c2b02b2553bab3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a MonteCarloModelDensityKnown this method estimates the empirical IV, ISB, and MISE based on \(m\) realizations of the density estimator, which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>, and returns them in an array in this order.  <a href="#a2f7b62743c04adc7c2b02b2553bab3f6">More...</a><br /></td></tr>
-<tr class="separator:a2f7b62743c04adc7c2b02b2553bab3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a7ae5f448299b43bd63741804fa7faff8"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a7ae5f448299b43bd63741804fa7faff8">getEquidistantPoints</a> (int k)</td></tr>
-<tr class="memdesc:a7ae5f448299b43bd63741804fa7faff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates <em>numPoints</em> equidistant points over \([a,b]\) by fixing the distance between two points as \(\delta = (b-a)/k\) and set the first point as \(a + \delta/2\).  <a href="#a7ae5f448299b43bd63741804fa7faff8">More...</a><br /></td></tr>
-<tr class="separator:a7ae5f448299b43bd63741804fa7faff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5fe218a3516be365aeb11dfb8ed376ee"><td class="memItemLeft" align="right" valign="top">static ArrayList&lt; double[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a5fe218a3516be365aeb11dfb8ed376ee">evalDensity</a> (ArrayList&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a> &gt; listDE, double [] evalPoints)</td></tr>
+<tr class="memdesc:a5fe218a3516be365aeb11dfb8ed376ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">extension of #evalDensity(double[], double[]) to lists of DE's  <a href="#a5fe218a3516be365aeb11dfb8ed376ee">More...</a><br /></td></tr>
+<tr class="separator:a5fe218a3516be365aeb11dfb8ed376ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66378fb15c3964dbb8f23d9db70fd4fe"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a66378fb15c3964dbb8f23d9db70fd4fe">computeIV</a> (ArrayList&lt; double[]&gt; listEvalDensities, double a, double b)</td></tr>
+<tr class="memdesc:a66378fb15c3964dbb8f23d9db70fd4fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the empirical IV based on \(m\) realizations of the density estimator which have previously been evaluated at \(k\) predetermined points.  <a href="#a66378fb15c3964dbb8f23d9db70fd4fe">More...</a><br /></td></tr>
+<tr class="separator:a66378fb15c3964dbb8f23d9db70fd4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c6a262365b88209286a0bbae68000b"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a29c6a262365b88209286a0bbae68000b">computeISB</a> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> dist, ArrayList&lt; double[]&gt; listEvalDensities, double[] evalPoints, double a, double b)</td></tr>
+<tr class="memdesc:a29c6a262365b88209286a0bbae68000b"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown</a> this method estimates the empirical ISB based on \(m\) realizations of the density estimator which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>.  <a href="#a29c6a262365b88209286a0bbae68000b">More...</a><br /></td></tr>
+<tr class="separator:a29c6a262365b88209286a0bbae68000b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8ecf4e4f03b05762a309b09402ec55"><td class="memItemLeft" align="right" valign="top"><a id="a2b8ecf4e4f03b05762a309b09402ec55"></a>
+static double&#160;</td><td class="memItemRight" valign="bottom"><b>computeISB</b> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> dist, ArrayList&lt; double[]&gt; listEvalDensities, double[] evalPoints)</td></tr>
+<tr class="separator:a2b8ecf4e4f03b05762a309b09402ec55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6032d490e2e52b0165a75f8c222e281"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ad6032d490e2e52b0165a75f8c222e281">computeMISE</a> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> dist, ArrayList&lt; double[]&gt; listEvalDensities, double[] evalPoints, double a, double b)</td></tr>
+<tr class="memdesc:ad6032d490e2e52b0165a75f8c222e281"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a MonteCarloModelDensityKnown this method estimates the empirical MISE based on \(m\) realizations of the density estimator which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>.  <a href="#ad6032d490e2e52b0165a75f8c222e281">More...</a><br /></td></tr>
+<tr class="separator:ad6032d490e2e52b0165a75f8c222e281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9db1483e264de11fb7acfe96b40aba8"><td class="memItemLeft" align="right" valign="top"><a id="af9db1483e264de11fb7acfe96b40aba8"></a>
+static double&#160;</td><td class="memItemRight" valign="bottom"><b>computeMISE</b> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> dist, ArrayList&lt; double[]&gt; listEvalDensities, double[] evalPoints)</td></tr>
+<tr class="separator:af9db1483e264de11fb7acfe96b40aba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceae033263d52b00a05f5d747e603480"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aceae033263d52b00a05f5d747e603480">computeIVandISBandMISE</a> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> dist, ArrayList&lt; double[]&gt; listEvalDensities, double[] evalPoints, double a, double b)</td></tr>
+<tr class="memdesc:aceae033263d52b00a05f5d747e603480"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a MonteCarloModelDensityKnown this method estimates the empirical IV, ISB, and MISE based on \(m\) realizations of the density estimator, which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>, and returns them in an array in this order.  <a href="#aceae033263d52b00a05f5d747e603480">More...</a><br /></td></tr>
+<tr class="separator:aceae033263d52b00a05f5d747e603480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9cba488f5d38a68ac80b574a2f0233"><td class="memItemLeft" align="right" valign="top"><a id="aeb9cba488f5d38a68ac80b574a2f0233"></a>
+static double []&#160;</td><td class="memItemRight" valign="bottom"><b>computeIVandISBandMISE</b> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> dist, ArrayList&lt; double[]&gt; listEvalDensities, double[] evalPoints)</td></tr>
+<tr class="separator:aeb9cba488f5d38a68ac80b574a2f0233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:aaed284fc420587d57290bc5bea026fcc"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aaed284fc420587d57290bc5bea026fcc">estimateMeanAndStdDeviation</a> (double[][] data)</td></tr>
-<tr class="memdesc:aaed284fc420587d57290bc5bea026fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the mean and the standard deviation of the observations of \(m\) simulations given in <em>data</em>.  <a href="#aaed284fc420587d57290bc5bea026fcc">More...</a><br /></td></tr>
+<tr class="memdesc:aaed284fc420587d57290bc5bea026fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates <em>numPoints</em> equidistant points over \([a,b]\) by fixing the distance between two points as \(\delta = (b-a)/k\) and set the first point as \(a + \delta/2\).  <a href="#aaed284fc420587d57290bc5bea026fcc">More...</a><br /></td></tr>
 <tr class="separator:aaed284fc420587d57290bc5bea026fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b36eb5320db688d7745431380f95299"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a6b36eb5320db688d7745431380f95299">coefficientOfDetermination</a> (double[] data, double[] dataEstimated)</td></tr>
 <tr class="memdesc:a6b36eb5320db688d7745431380f95299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Coefficient of determination \(R^2\) of the observed data <em>data</em> and the estimated data <em>dataEstimated</em>.  <a href="#a6b36eb5320db688d7745431380f95299">More...</a><br /></td></tr>
 <tr class="separator:a6b36eb5320db688d7745431380f95299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
-Package Attributes</h2></td></tr>
-<tr class="memitem:a1031d0e0a97a340abfe0a6ab9e831045"><td class="memItemLeft" align="right" valign="top"><a id="a1031d0e0a97a340abfe0a6ab9e831045"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a></td></tr>
-<tr class="memdesc:a1031d0e0a97a340abfe0a6ab9e831045"><td class="mdescLeft">&#160;</td><td class="mdescRight">left boundary of the interval over which we want to estimate <br /></td></tr>
-<tr class="separator:a1031d0e0a97a340abfe0a6ab9e831045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1510a66dacf9cf3586de5fc89ae2a073"><td class="memItemLeft" align="right" valign="top"><a id="a1510a66dacf9cf3586de5fc89ae2a073"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a></td></tr>
-<tr class="memdesc:a1510a66dacf9cf3586de5fc89ae2a073"><td class="mdescLeft">&#160;</td><td class="mdescRight">right boundary of the interval over which we want to estimate <br /></td></tr>
-<tr class="separator:a1510a66dacf9cf3586de5fc89ae2a073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This abstract class implements a univariate density estimator over a finite interval \([a,b]\). </p>
-<p>The density is constructed from a set of \(n\) observations. Some of these observations can lie outside the interval \([a,b]\).</p>
+<div class="textblock"><p>This abstract class implements a univariate density estimator (DE). </p>
+<p>To this end, it provides basic tools to evaluate the DE at one point \(x\) or at an array of points \(\{x_1, x_2, \dots, x_k\} \). More precisely, the single point evaluation <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c" title="left boundary of the interval over which we want to estimate ">evalDensity(double)</a> is abstract, since it will most likely differ between realizations. For the evaluation on a set of points, #evalDensity(double[], double[]), a default implementation is provided, but very often specific estimators will have more efficient evaluation algorithms. Furthermore, this class includes a method to plot the estimated density.</p>
+<p>There are also several more involved methods covered by this class, most of which are concerned with the convergence behavior of DEs. Nevertheless, they can be useful in many other cases beyond convergence behavior. As these usually require more than one realization of a DE, they are implemented as static methods. For instance, #evalDensity(ArrayList, double[]) allows to evaluate several DEs passed in a list at the same evaluation points.</p>
+<p>For measuring the performance of a DE, we need to confine ourselves to estimation over a finite interval \([a,b]\). One standard way to assess the quality of a DE is via the mean integrated square error (MISE). It can be further decomposed into the integrated variance (IV), and the integrated square bias (ISB) </p><p class="formulaDsp">
+\[ \textrm{MISE} = \int_a^b\mathbb{E} [\hat{f} - f(x)]^2\mathrm{d}x = , \]
+</p>
+<p> where \(f\) denotes the true density and \(\hat{f}\) the DE. The result of this can subsequently be used to compute the integrated</p>
+<p>over a finite interval \([a,b]\). The density is constructed from a set of \(n\) observations. Some of these observations can lie outside the interval \([a,b]\).</p>
 <p>The density can be evaluated at a single point \(x\) or on a grid of evaluation points.</p>
 <p>Furthermore, this class implements basic routines for the computation of the integrated variance (IV) as well as for calculating basic error measures, such as the integrated square bias (ISB) and the mean integrated square error (MISE) in case the true density is known. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -206,6 +194,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 \[ \textrm{SS}_{\text{tot}} = \sum_{i=1}^n (y_i - \bar{y})^2. \]
 </p>
 <p> The closer this quantity is to one, the better the approximation of \(y\) by \(f\).</p>
+<dl class="section remark"><dt>Remarks</dt><dd><b>Florian:</b> this should probably go somewhere else (stat? we do not need it for dens. est. per-se).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the observed data </td></tr>
@@ -217,29 +206,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a id="a5ad76a04c867da5364d604987b031af5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ad76a04c867da5364d604987b031af5">&#9670;&nbsp;</a></span>computeISB()</h2>
+<a id="a29c6a262365b88209286a0bbae68000b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c6a262365b88209286a0bbae68000b">&#9670;&nbsp;</a></span>computeISB()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double computeISB </td>
+          <td class="memname">static double computeISB </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">MonteCarloModelDensityKnown</a>&#160;</td>
-          <td class="paramname"><em>model</em>, </td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a>&#160;</td>
+          <td class="paramname"><em>dist</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>estDensities</em>[][], </td>
+          <td class="paramtype">ArrayList&lt; double[]&gt;&#160;</td>
+          <td class="paramname"><em>listEvalDensities</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>evalPoints</em>&#160;</td>
+          <td class="paramname"><em>evalPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -247,6 +251,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>For a <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown</a> this method estimates the empirical ISB based on \(m\) realizations of the density estimator which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>. </p>
@@ -264,20 +273,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a id="a992898aa7d56ce7c822ecc535526f2ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a992898aa7d56ce7c822ecc535526f2ab">&#9670;&nbsp;</a></span>computeIV()</h2>
+<a id="a66378fb15c3964dbb8f23d9db70fd4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66378fb15c3964dbb8f23d9db70fd4fe">&#9670;&nbsp;</a></span>computeIV()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double computeIV </td>
+          <td class="memname">static double computeIV </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>estDensities</em>[][]</td><td>)</td>
+          <td class="paramtype">ArrayList&lt; double[]&gt;&#160;</td>
+          <td class="paramname"><em>listEvalDensities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>This method estimates the empirical IV based on \(m\) realizations of the density estimator which have previously been evaluated at \(k\) predetermined points. </p>
@@ -292,29 +325,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a id="a2f7b62743c04adc7c2b02b2553bab3f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f7b62743c04adc7c2b02b2553bab3f6">&#9670;&nbsp;</a></span>computeIVandISBandMISE()</h2>
+<a id="aceae033263d52b00a05f5d747e603480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceae033263d52b00a05f5d747e603480">&#9670;&nbsp;</a></span>computeIVandISBandMISE()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [] computeIVandISBandMISE </td>
+          <td class="memname">static double [] computeIVandISBandMISE </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">MonteCarloModelDensityKnown</a>&#160;</td>
-          <td class="paramname"><em>model</em>, </td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a>&#160;</td>
+          <td class="paramname"><em>dist</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>estDensities</em>[][], </td>
+          <td class="paramtype">ArrayList&lt; double[]&gt;&#160;</td>
+          <td class="paramname"><em>listEvalDensities</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>evalPoints</em>&#160;</td>
+          <td class="paramname"><em>evalPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -322,6 +370,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>For a MonteCarloModelDensityKnown this method estimates the empirical IV, ISB, and MISE based on \(m\) realizations of the density estimator, which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>, and returns them in an array in this order. </p>
@@ -340,29 +393,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a id="a781c2a3027c2f983f2ba36558c2508e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a781c2a3027c2f983f2ba36558c2508e9">&#9670;&nbsp;</a></span>computeMISE()</h2>
+<a id="ad6032d490e2e52b0165a75f8c222e281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6032d490e2e52b0165a75f8c222e281">&#9670;&nbsp;</a></span>computeMISE()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double computeMISE </td>
+          <td class="memname">static double computeMISE </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html">MonteCarloModelDensityKnown</a>&#160;</td>
-          <td class="paramname"><em>model</em>, </td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a>&#160;</td>
+          <td class="paramname"><em>dist</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>estDensities</em>[][], </td>
+          <td class="paramtype">ArrayList&lt; double[]&gt;&#160;</td>
+          <td class="paramname"><em>listEvalDensities</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>evalPoints</em>&#160;</td>
+          <td class="paramname"><em>evalPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -370,6 +438,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>For a MonteCarloModelDensityKnown this method estimates the empirical MISE based on \(m\) realizations of the density estimator which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>. </p>
@@ -384,40 +457,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the empirical MISE </dd></dl>
-
-</div>
-</div>
-<a id="ae1d66a4d697c0b411722a0053e7c2280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1d66a4d697c0b411722a0053e7c2280">&#9670;&nbsp;</a></span>constructDensity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void constructDensity </td>
-          <td>(</td>
-          <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs the estimator from the data points in vector <em>data</em>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>the data points. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -445,7 +484,15 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </table>
 </div><div class="memdoc">
 
-<p>Computes the mean and the standard deviation of the observations of \(m\) simulations given in <em>data</em>. </p>
+<p>Generates <em>numPoints</em> equidistant points over \([a,b]\) by fixing the distance between two points as \(\delta = (b-a)/k\) and set the first point as \(a + \delta/2\). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>the number of points to be returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an array of equidistant points over \([a,b]\). Computes the mean and the standard deviation of the observations of \(m\) simulations given in <em>data</em>.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><b>Florian:</b> this should probably go somewhere else (DEDerivative as Private?)</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the observations. </td></tr>
@@ -457,7 +504,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div>
 </div>
 <a id="a86fe8be449d76c9e8ec7eef54735cd5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86fe8be449d76c9e8ec7eef54735cd5c">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fe8be449d76c9e8ec7eef54735cd5c">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -480,10 +527,16 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </table>
 </div><div class="memdoc">
 
-<p>Returns the value of the estimator evaluated at point <em>x</em>. </p>
-<p>It assumes that the density has been constructed before.</p>
+<p>left boundary of the interval over which we want to estimate </p>
+<p>right boundary of the interval over which we want to estimate Gives the left boundary <a class="el" href="">a</a> of the interval over which we estimate.</p>
+<dl class="section return"><dt>Returns</dt><dd>the left boundary of the interval Gives the right boundary <a class="el" href="">b</a> of the interval over which we estimate.</dd>
+<dd>
+the right boundary of the interval Sets the interval \([a,b]\) over which we estimate.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">a</td><td>left boundary of the interval. </td></tr>
+    <tr><td class="paramname">b</td><td>right boundary of the interval. Constructs the estimator from the data points in vector <em>data</em>.</td></tr>
+    <tr><td class="paramname">data</td><td>the data points. Returns the value of the estimator evaluated at point <em>x</em>. It assumes that the density has been constructed before.</td></tr>
     <tr><td class="paramname">x</td><td>the point at which the density is to be evaluated. </td></tr>
   </table>
   </dd>
@@ -493,7 +546,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div>
 </div>
 <a id="aaba40c7de60bdf42d018c0e10d55bd1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaba40c7de60bdf42d018c0e10d55bd1a">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba40c7de60bdf42d018c0e10d55bd1a">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -520,7 +573,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 <p>Returns in array <em>density</em> the value of the estimator at the evaluation points in <em>evalPoints</em>. </p>
 <p>These two arrays must have the same size. This method assumes that the density has been constructed before.</p>
-<p>By default, it calls <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c" title="Returns the value of the estimator evaluated at point x. ">evalDensity(double)</a> for each element of <em>evalpoints</em>.</p>
+<p>By default, it calls <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c" title="left boundary of the interval over which we want to estimate ">evalDensity(double)</a> for each element of <em>evalpoints</em>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evalPoints</td><td>the evaluation points </td></tr>
@@ -531,29 +584,69 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a id="a3257ff710a4329a6f5b615f619d20b44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3257ff710a4329a6f5b615f619d20b44">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[3/4]</span></h2>
+<a id="a5fe218a3516be365aeb11dfb8ed376ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe218a3516be365aeb11dfb8ed376ee">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ArrayList&lt;double[]&gt; evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">ArrayList&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a> &gt;&#160;</td>
+          <td class="paramname"><em>listDE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>evalPoints</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>extension of #evalDensity(double[], double[]) to lists of DE's </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listDE</td><td></td></tr>
+    <tr><td class="paramname">evalPoints</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9a0a73f96d54d27f25c9f1d066e1e1cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a0a73f96d54d27f25c9f1d066e1e1cf">&#9670;&nbsp;</a></span>plotDensity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void evalDensity </td>
+          <td class="memname">String plotDensity </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>data</em>[][], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">double []&#160;</td>
           <td class="paramname"><em>evalPoints</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>density</em>[][]&#160;</td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>density</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -565,168 +658,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 <p>This method constructs \(m\) independent realizations of a density estimator and evaluates them at <em>evalPoints</em>. </p>
 <p>More precisely, the matrix <em>data</em> contains the results of \(m\) independent simulations of the underlying model. From each such simulation result, this method constructs a density estimator, evaluates it at <em>evalPoints</em>, and writes the resulting vector to the corresponding row of <em>density</em>.</p>
-<p>Note that this method works essentially different than <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c" title="Returns the value of the estimator evaluated at point x. ">evalDensity(double)</a> and <a class="el" href="">evalDensity(double[], double[])</a> in that it constructs \(m\) m density estimators and evaluates them, instead of considering only one estimator, which needs to be constructed beforehand.</p>
+<p>Note that this method works essentially different than <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c" title="left boundary of the interval over which we want to estimate ">evalDensity(double)</a> and <a class="el" href="">evalDensity(double[], double[])</a> in that it constructs \(m\) m density estimators and evaluates them, instead of considering only one estimator, which needs to be constructed beforehand. </p><dl class="section remark"><dt>Remarks</dt><dd><b>Florian:</b></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>the result of \(m\) simulations of the underlying model. </td></tr>
     <tr><td class="paramname">evalPoints</td><td>the points at which the estimators shall be evaluated. </td></tr>
-    <tr><td class="paramname">density</td><td>the values of the densities at the evaluation points. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab1b8b0380e0ff4c8923eede28a8fff9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1b8b0380e0ff4c8923eede28a8fff9c">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void evalDensity </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>data</em>[][], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>density</em>[][]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Same as #evalDensity(double[][], double[], double[][]) but using <em>k</em> equidistant evaluation points over \([a,b]\) generated by #equidistantPoints(int). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>the result of \(m\) simulations of the underlying model. </td></tr>
+    <tr><td class="paramname">density</td><td>the values of the densities at the evaluation points. Same as #evalDensity(double[][], double[], double[][]) but using <em>k</em> equidistant evaluation points over \([a,b]\) generated by #equidistantPoints(int).</td></tr>
     <tr><td class="paramname">k</td><td>the number of equidistant points at which the estimators shall be evaluated. </td></tr>
     <tr><td class="paramname">density</td><td>the values of the densities at the evaluation points. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abe606a2a85264950df5aa235b5cba9b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe606a2a85264950df5aa235b5cba9b7">&#9670;&nbsp;</a></span>geta()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double geta </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gives the left boundary <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a> of the interval over which we estimate. </p>
-<dl class="section return"><dt>Returns</dt><dd>the left boundary of the interval </dd></dl>
-
-</div>
-</div>
-<a id="aea76e3aecf7d9be77535553c3e9df066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea76e3aecf7d9be77535553c3e9df066">&#9670;&nbsp;</a></span>getb()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double getb </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gives the right boundary <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a> of the interval over which we estimate. </p>
-<dl class="section return"><dt>Returns</dt><dd>the right boundary of the interval </dd></dl>
-
-</div>
-</div>
-<a id="a7ae5f448299b43bd63741804fa7faff8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ae5f448299b43bd63741804fa7faff8">&#9670;&nbsp;</a></span>getEquidistantPoints()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double [] getEquidistantPoints </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>k</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates <em>numPoints</em> equidistant points over \([a,b]\) by fixing the distance between two points as \(\delta = (b-a)/k\) and set the first point as \(a + \delta/2\). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">k</td><td>the number of points to be returned. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>an array of equidistant points over \([a,b]\). </dd></dl>
-
-</div>
-</div>
-<a id="a02833779487be666bb0ecb217d4e7ff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02833779487be666bb0ecb217d4e7ff7">&#9670;&nbsp;</a></span>setRange()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setRange </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the interval \([a,b]\) over which we estimate. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>left boundary of the interval. </td></tr>
-    <tr><td class="paramname">b</td><td>right boundary of the interval. </td></tr>
   </table>
   </dd>
 </dl>

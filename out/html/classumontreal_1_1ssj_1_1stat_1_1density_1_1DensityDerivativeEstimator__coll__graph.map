@@ -1,6 +1,6 @@
 <map id="DensityDerivativeEstimator" name="DensityDerivativeEstimator">
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html" title="Implements an abstract class for density estimators that rely on the selection of a bandwidth &#160;such a..." alt="" coords="5,157,144,184"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class implements a univariate density estimator over a finite interval ..." alt="" coords="11,81,133,108"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class implements a univariate density estimator (DE). " alt="" coords="11,81,133,108"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1EmpiricalDist.html" title="Extends DiscreteDistribution to an empirical distribution function, based on the observations &#160;(sorte..." alt="" coords="170,157,270,184"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistribution.html" title="This class implements discrete distributions over a finite set of real numbers (also over integers as..." alt="" coords="158,81,295,108"/>
 <area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="183,5,271,32"/>

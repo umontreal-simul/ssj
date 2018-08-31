@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class implements a univariate density estimator over a finite interval ..." alt="" coords="5,56,128,83"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class implements a univariate density estimator (DE). " alt="" coords="5,56,128,83"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html" title="Implements an abstract class for density estimators that rely on the selection of a bandwidth &#160;such a..." alt="" coords="176,56,315,83"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="This class provides methods to compute a histogram density estimator for univariate densities over an..." alt="" coords="403,5,505,32"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html" title="This class provides methods to compute a kernel density estimator (KDE) for univariate unimodal densi..." alt="" coords="393,56,515,83"/>

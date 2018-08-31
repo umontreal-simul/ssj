@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a',['a',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045',1,'umontreal::ssj::stat.density.DEBandwidthBased.a()'],['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a1031d0e0a97a340abfe0a6ab9e831045',1,'umontreal::ssj::stat.density.DensityEstimator.a()']]],
+  ['a',['a',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045',1,'umontreal::ssj::stat::density::DEBandwidthBased']]],
   ['abstractchrono',['AbstractChrono',['../classumontreal_1_1ssj_1_1util_1_1AbstractChrono.html',1,'umontreal::ssj::util']]],
   ['abstractdatareader',['AbstractDataReader',['../classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataReader.html',1,'umontreal::ssj::util::io']]],
   ['abstractdatawriter',['AbstractDataWriter',['../classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataWriter.html',1,'umontreal::ssj::util::io']]],

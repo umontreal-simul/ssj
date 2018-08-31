@@ -1,12 +1,40 @@
 
 package umontreal.ssj.stat.density;
 
-import umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown;
+import java.util.ArrayList;
+
+import umontreal.ssj.probdist.ContinuousDistribution;
 
 /**
- * This abstract class implements a univariate density estimator over a finite
- * interval \f$[a,b]\f$. The density is constructed from a set of \f$n\f$
- * observations. Some of these observations can lie outside the interval
+ * This abstract class implements a univariate density estimator (DE). To this
+ * end, it provides basic tools to evaluate the DE at one point \f$x\f$ or at an
+ * array of points \f$\{x_1, x_2, \dots, x_k\} \f$. More precisely, the single
+ * point evaluation #evalDensity(double) is abstract, since it will most likely
+ * differ between realizations. For the evaluation on a set of points,
+ * #evalDensity(double[], double[]), a default implementation is provided, but
+ * very often specific estimators will have more efficient evaluation
+ * algorithms. Furthermore, this class includes a method to plot the estimated
+ * density.
+ * 
+ * There are also several more involved methods covered by this class, most of
+ * which are concerned with the convergence behavior of DEs. Nevertheless, they
+ * can be useful in many other cases beyond convergence behavior. As these
+ * usually require more than one realization of a DE, they are implemented as
+ * static methods. For instance, #evalDensity(ArrayList, double[]) allows to
+ * evaluate several DEs passed in a list at the same evaluation points.
+ * 
+ * For measuring the performance of a DE, we need to confine ourselves to
+ * estimation over a finite interval \f$[a,b]\f$. One standard way to assess the
+ * quality of a DE is via the mean integrated square error (MISE). It can be
+ * further decomposed into the integrated variance (IV), and the integrated
+ * square bias (ISB) \f[ \textrm{MISE} = \int_a^b\mathbb{E} [\hat{f} -
+ * f(x)]^2\mathrm{d}x = \int_a^b\textrm{Var}[\hat{f}(x)], \f] where \f$f\f$
+ * denotes the true density and \f$\hat{f}\f$ the DE. The result of this can
+ * subsequently be used to compute the integrated
+ * 
+ * 
+ * over a finite interval \f$[a,b]\f$. The density is constructed from a set of
+ * \f$n\f$ observations. Some of these observations can lie outside the interval
  * \f$[a,b]\f$.
  * 
  * The density can be evaluated at a single point \f$x\f$ or on a grid of
@@ -19,50 +47,80 @@ import umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown;
  */
 public abstract class DensityEstimator {
 
-	double a;
-	/**<left boundary of the interval over which we want to estimate */
+	// ************ ******************************************************
+	// Manipulating the interval --> handled in each realization individually.
+	// For KDE it's not really important and for Histogram, e.g., you should
+	// not be able to change [a,b] unless you change everything.
+	// TODO: explain that [a,b] is more important for some estimators than for
+	// others;
+	// need it for IV, etc.
+	//
+	// /**left boundary of the interval over which we want to estimate */
+	// double a;
+	// /**right boundary of the interval over which we want to estimate */
+	// double b;
+	//
+	// /**
+	// * Gives the left boundary {@link #a} of the interval over which we estimate.
+	// *
+	// * @return the left boundary of the interval
+	// */
+	// public double geta() {
+	// return a;
+	// }
+	//
+	// /**
+	// * Gives the right boundary {@link #b} of the interval over which we estimate.
+	// *
+	// * @return the right boundary of the interval
+	// */
+	// public double getb() {
+	// return b;
+	// }
+	//
+	// /**
+	// * Sets the interval @f$[a,b]@f$ over which we estimate.
+	// *
+	// * @param a
+	// * left boundary of the interval.
+	// * @param b
+	// * right boundary of the interval.
+	// */
+	// public void setRange(double a, double b) {
+	// this.a = a;
+	// this.b = b;
+	// }
+	//
 
-	double b;
-	/**<right boundary of the interval over which we want to estimate */
+	// **********************************************************************
+	// Should not be done this way. Shall be handled by the constructor!
+	// Reason: it does not do anything for the KDE, DEDirect, etc.
+	// /**
+	// * Constructs the estimator from the data points in vector \a data.
+	// *
+	// * @param data
+	// * the data points.
+	// */
+	// public abstract void constructDensity(double[] data);
+	//
+	// /**
+	// * Returns the value of the estimator evaluated at point \a x. It assumes that
+	// * the density has been constructed before.
+	// *
+	// * @param x
+	// * the point at which the density is to be evaluated.
+	// * @return the value of the estimated density at x.
+	// */
 
-	/**
-	 * Sets the interval @f$[a,b]@f$ over which we estimate.
-	 * 
-	 * @param a
-	 *            left boundary of the interval.
-	 * @param b
-	 *            right boundary of the interval.
-	 */
-	public void setRange(double a, double b) {
-		this.a = a;
-		this.b = b;
-	}
-
-	/**
-	 * Constructs the estimator from the data points in vector \a data.
-	 * 
-	 * @param data
-	 *            the data points.
-	 */
-	public abstract void constructDensity(double[] data);
-
-	/**
-	 * Returns the value of the estimator evaluated at point \a x. It assumes that
-	 * the density has been constructed before.
-	 * 
-	 * @param x
-	 *            the point at which the density is to be evaluated.
-	 * @return the value of the estimated density at x.
-	 */
 	public abstract double evalDensity(double x);
 
 	/**
+	 * TODO: keep this one, but implement one that adds data[].
 	 * Returns in array \a density the value of the estimator at the evaluation
 	 * points in \a evalPoints. These two arrays must have the same size. This
 	 * method assumes that the density has been constructed before.
 	 * 
-	 * By default, it calls #evalDensity(double) for each element of \a
-	 * evalpoints.
+	 * By default, it calls #evalDensity(double) for each element of \a evalpoints.
 	 * 
 	 * @param evalPoints
 	 *            the evaluation points
@@ -74,69 +132,75 @@ public abstract class DensityEstimator {
 			density[i] = evalDensity(evalPoints[i]);
 	}
 
+	// ***********************************************************************
+	// This does not work without "constructDensity(...)" that way.
+	// /**
+	// * This method constructs \f$m\f$ independent realizations of a density
+	// * estimator and evaluates them at \a evalPoints. More precisely, the matrix
+	// \a
+	// * data contains the results of \f$m\f$ independent simulations of the
+	// * underlying model. From each such simulation result, this method constructs
+	// a
+	// * density estimator, evaluates it at \a evalPoints, and writes the resulting
+	// * vector to the corresponding row of \a density.
+	// *
+	// * Note that this method works essentially different than #evalDensity(double)
+	// * and {@link #evalDensity(double[], double[])} in that it constructs \f$m\f$
+	// m density
+	// * estimators and evaluates them, instead of considering only one estimator,
+	// * which needs to be constructed beforehand.
+	// * @remark **Florian:**
+	// *
+	// * @param evalPoints
+	// * the points at which the estimators shall be evaluated.
+	// * @param density
+	// * the values of the densities at the evaluation points.
+	// */
+	// public void evalDensity( double[] evalPoints, double[][] density) {
+	// int m = density.length;
+	// int numEvalPoints = evalPoints.length;
+	// for (int rep = 0; rep < m; rep++) {
+	// density[rep] = new double[numEvalPoints];
+	// evalDensity(evalPoints, density[rep]);
+	// }
+	// }
+	//
+	// /**
+	// * Same as #evalDensity(double[][], double[], double[][]) but using \a k
+	// * equidistant evaluation points over @f$[a,b]@f$ generated by
+	// * #equidistantPoints(int).
+	// *
+	// * @param k
+	// * the number of equidistant points at which the estimators shall be
+	// * evaluated.
+	// * @param density
+	// * the values of the densities at the evaluation points.
+	// */
+	// public void evalDensity(int k, double[][] density) {
+	// evalDensity(getEquidistantPoints(k), density);
+	// }
+
+	public String plotDensity(double[] evalPoints, double[] density) {
+		return "Still todo";
+	}
+
 	/**
-	 * This method constructs \f$m\f$ independent realizations of a density
-	 * estimator and evaluates them at \a evalPoints. More precisely, the matrix \a
-	 * data contains the results of \f$m\f$ independent simulations of the
-	 * underlying model. From each such simulation result, this method constructs a
-	 * density estimator, evaluates it at \a evalPoints, and writes the resulting
-	 * vector to the corresponding row of \a density.
+	 * TODO: check what is faster: void & passing or create list each call.
+	 * TODO: add data[][]
+	 * extension of #evalDensity(double[], double[]) to lists of DE's
 	 * 
-	 * Note that this method works essentially different than #evalDensity(double)
-	 * and {@link #evalDensity(double[], double[])} in that it constructs \f$m\f$ m density
-	 * estimators and evaluates them, instead of considering only one estimator,
-	 * which needs to be constructed beforehand.
-	 * 
-	 * @param data
-	 *            the result of \f$m\f$ simulations of the underlying model.
+	 * @param listDE
 	 * @param evalPoints
-	 *            the points at which the estimators shall be evaluated.
-	 * @param density
-	 *            the values of the densities at the evaluation points.
+	 * @return
 	 */
-	public void evalDensity(double[][] data, double[] evalPoints, double[][] density) {
-		int m = data.length;
-		int numEvalPoints = evalPoints.length;
-		for (int rep = 0; rep < m; rep++) {
-			density[rep] = new double[numEvalPoints];
-			constructDensity(data[rep]);
-			evalDensity(evalPoints, density[rep]);
+	public static ArrayList<double[]> evalDensity (ArrayList<DensityEstimator> listDE, double[] evalPoints) {
+		ArrayList<double[]> listEvalDens = new ArrayList<double[]>();
+		for (DensityEstimator de : listDE) {
+			double[] density = new double[evalPoints.length];
+			de.evalDensity(evalPoints, density);
+			listEvalDens.add(density);
 		}
-	}
-
-	/**
-	 * Same as #evalDensity(double[][], double[], double[][]) but using \a k
-	 * equidistant evaluation points over @f$[a,b]@f$ generated by
-	 * #equidistantPoints(int).
-	 * 
-	 * @param data
-	 *            the result of \f$m\f$ simulations of the underlying model.
-	 * @param k
-	 *            the number of equidistant points at which the estimators shall be
-	 *            evaluated.
-	 * @param density
-	 *            the values of the densities at the evaluation points.
-	 */
-	public void evalDensity(double[][] data, int k, double[][] density) {
-		evalDensity(data, getEquidistantPoints(k), density);
-	}
-
-	/**
-	 * Gives the left boundary {@link #a} of the interval over which we estimate.
-	 * 
-	 * @return the left boundary of the interval
-	 */
-	public double geta() {
-		return a;
-	}
-
-	/**
-	 * Gives the right boundary {@link #b} of the interval over which we estimate.
-	 * 
-	 * @return the right boundary of the interval
-	 */
-	public double getb() {
-		return b;
+		return listEvalDens;
 	}
 
 	/**
@@ -147,6 +211,8 @@ public abstract class DensityEstimator {
 	public abstract String toString();
 
 	/**
+	 * TODO: return variance at each point
+	 * TODO: make clear that it's only an estimate
 	 * This method estimates the empirical IV based on \f$m\f$ realizations of the
 	 * density estimator which have previously been evaluated at \f$k\f$
 	 * predetermined points. The matrix \a estDensities has dimensions \f$m\times k
@@ -157,14 +223,11 @@ public abstract class DensityEstimator {
 	 *            \f$m\f$ densities at \f$k\f$ evaluation points.
 	 * @return the estimated empirical IV
 	 */
-	public double computeIV(double[][] estDensities) {
-		int m = estDensities.length;
-		int k = estDensities[0].length;
+	public static double computeIV(ArrayList<double[]> listEvalDensities, double a, double b) {
+		int m = listEvalDensities.size();
+		int k = listEvalDensities.get(0).length;
 
 		double x, y;
-		// TO DO:
-		// If the density estimator is a histogram, here we may reset numEvalPoints to
-		// the number of bins of the histogram.
 		// int numEvalPoints = evalPoints.length();
 		double meanDens[] = new double[k]; // Average value over the rep replicates
 		double varDens[] = new double[k]; // Variance at each evaluation point
@@ -175,7 +238,7 @@ public abstract class DensityEstimator {
 			// Update the empirical mean and sum of squares of centered observations at each
 			// evaluation point.
 			for (int j = 0; j < k; j++) {
-				x = estDensities[rep][j];
+				x = (listEvalDensities.get(rep))[j];
 				y = x - meanDens[j];
 				meanDens[j] += y / (double) (rep + 1);
 				varDens[j] += y * (x - meanDens[j]);
@@ -188,11 +251,11 @@ public abstract class DensityEstimator {
 	}
 
 	/**
-	 * For a \ref umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown this method estimates the empirical
-	 * ISB based on \f$m\f$ realizations of the density estimator which have
-	 * previously been evaluated at the \f$k\f$ points stored in \a evalPoints. The
-	 * matrix \a estDensities has dimensions \f$m\times k \f$, i.e. each row
-	 * contains the evaluations of one density estimator.
+	 * For a \ref umontreal.ssj.mcqmctools.MonteCarloModelDensityKnown this method
+	 * estimates the empirical ISB based on \f$m\f$ realizations of the density
+	 * estimator which have previously been evaluated at the \f$k\f$ points stored
+	 * in \a evalPoints. The matrix \a estDensities has dimensions \f$m\times k \f$,
+	 * i.e. each row contains the evaluations of one density estimator.
 	 * 
 	 * This is particularly useful for testing the density estimator with a toy
 	 * model.
@@ -207,10 +270,11 @@ public abstract class DensityEstimator {
 	 *            evaluated.
 	 * @return the empirical ISB
 	 */
-	public double computeISB(MonteCarloModelDensityKnown model, double[][] estDensities, double[] evalPoints) {
+	public static double computeISB(ContinuousDistribution dist, ArrayList<double[]> listEvalDensities,
+			double[] evalPoints, double a, double b) {
 
 		int k = evalPoints.length;
-		int m = estDensities.length;
+		int m = listEvalDensities.size();
 
 		double meanDens[] = new double[k];
 		double sqBiasDens[] = new double[k]; // squared bias
@@ -221,7 +285,7 @@ public abstract class DensityEstimator {
 			// Update the empirical mean and sum of squares of centered
 			// observations at each evaluation point.
 			for (int j = 0; j < k; j++) {
-				x = estDensities[rep][j];
+				x = (listEvalDensities.get(rep))[j];
 				y = x - meanDens[j];
 				meanDens[j] += y / (double) (rep + 1);
 			}
@@ -229,7 +293,7 @@ public abstract class DensityEstimator {
 		}
 
 		for (int j = 0; j < k; j++) {
-			z = (meanDens[j] - model.density(evalPoints[j]));
+			z = (meanDens[j] - dist.density(evalPoints[j]));
 			sqBiasDens[j] = z * z;
 		}
 
@@ -239,6 +303,11 @@ public abstract class DensityEstimator {
 
 		return isb * (b - a) / ((double) k);
 
+	}
+
+	public static double computeISB(ContinuousDistribution dist, ArrayList<double[]> listEvalDensities,
+			double[] evalPoints) {
+		return computeISB(dist, listEvalDensities, evalPoints, evalPoints[0], evalPoints[evalPoints.length - 1]);
 	}
 
 	/**
@@ -262,9 +331,10 @@ public abstract class DensityEstimator {
 	 * @return the empirical MISE
 	 */
 
-	public double computeMISE(MonteCarloModelDensityKnown model, double[][] estDensities, double[] evalPoints) {
+	public static double computeMISE(ContinuousDistribution dist, ArrayList<double[]> listEvalDensities,
+			double[] evalPoints, double a, double b) {
 
-		int m = estDensities.length;
+		int m = listEvalDensities.size();
 		int k = evalPoints.length;
 
 		double mseDens[] = new double[k]; // mse at evalPoints
@@ -273,7 +343,7 @@ public abstract class DensityEstimator {
 		for (int rep = 0; rep < m; rep++) {
 
 			for (int j = 0; j < k; j++) {
-				y = estDensities[rep][j] - model.density(evalPoints[j]); // model.density(x);
+				y = listEvalDensities.get(rep)[j] - dist.density(evalPoints[j]); // model.density(x);
 				mseDens[j] += y * y;
 			}
 		}
@@ -285,7 +355,13 @@ public abstract class DensityEstimator {
 		return sumMISE * fact;
 	}
 
+	public static double computeMISE(ContinuousDistribution dist, ArrayList<double[]> listEvalDensities,
+			double[] evalPoints) {
+		return computeMISE(dist, listEvalDensities, evalPoints, evalPoints[0], evalPoints[evalPoints.length - 1]);
+	}
+
 	/**
+	 * TODO: merge with computeMISE.
 	 * For a \ref MonteCarloModelDensityKnown this method estimates the empirical
 	 * IV, ISB, and MISE based on \f$m\f$ realizations of the density estimator,
 	 * which have previously been evaluated at the \f$k\f$ points stored in \a
@@ -309,12 +385,13 @@ public abstract class DensityEstimator {
 	 *            evaluated.
 	 * @return the estimated empirical IV, ISB, and MISE.
 	 */
-	public double[] computeIVandISBandMISE(MonteCarloModelDensityKnown model, double[][] estDensities,
-			double[] evalPoints) {
+	public static double[] computeIVandISBandMISE(ContinuousDistribution dist, ArrayList<double[]> listEvalDensities,
+			double[] evalPoints, double a, double b) {
+
 		double x, y, z;
 		double dens;
 		int k = evalPoints.length;
-		int m = estDensities.length;
+		int m = listEvalDensities.size();
 
 		double meanDens[] = new double[k]; // Average value over m
 											// replicates
@@ -327,9 +404,9 @@ public abstract class DensityEstimator {
 			// Update the empirical mean, sum of squares, and mse of
 			// observations at each evaluation point.
 			for (int j = 0; j < k; j++) {
-				x = estDensities[rep][j];
+				x = (listEvalDensities.get(rep))[j];
 				y = x - meanDens[j];
-				dens = model.density(evalPoints[j]);
+				dens = dist.density(evalPoints[j]);
 				z = x - dens;
 
 				meanDens[j] += y / (double) (rep + 1);
@@ -357,34 +434,46 @@ public abstract class DensityEstimator {
 
 	}
 
-	/**
-	 * Generates \a numPoints equidistant points over \f$[a,b]\f$ by fixing the
-	 * distance between two points as \f$\delta = (b-a)/k\f$ and set the first point
-	 * as \f$a + \delta/2\f$.
-	 * 
-	 * @param k
-	 *            the number of points to be returned.
-	 * @return an array of equidistant points over \f$[a,b]\f$.
-	 */
-	protected double[] getEquidistantPoints(int k) {
-		double evalPoints[] = new double[k];
-		double delta = (b - a) / (k);
-		for (int j = 0; j < k; j++)
-			evalPoints[j] = a + delta * (0.5 + j);
-
-		return evalPoints;
+	public static double[] computeIVandISBandMISE(ContinuousDistribution dist, ArrayList<double[]> listEvalDensities,
+			double[] evalPoints) {
+		return computeIVandISBandMISE(dist, listEvalDensities, evalPoints, evalPoints[0],
+				evalPoints[evalPoints.length - 1]);
 	}
+
+	// *********************************************************************************************
+	// This is not needed for now. If we decide do keep it, make it private?
+	// Would also need to rethink [a,b] if we kept it.
+	// /**
+	// * Generates \a numPoints equidistant points over \f$[a,b]\f$ by fixing the
+	// * distance between two points as \f$\delta = (b-a)/k\f$ and set the first
+	// point
+	// * as \f$a + \delta/2\f$.
+	// *
+	// * @param k
+	// * the number of points to be returned.
+	// * @return an array of equidistant points over \f$[a,b]\f$.
+	// */
+	// private double[] getEquidistantPoints(int k) {
+	// double evalPoints[] = new double[k];
+	// double delta = (b - a) / (k);
+	// for (int j = 0; j < k; j++)
+	// evalPoints[j] = a + delta * (0.5 + j);
+	//
+	// return evalPoints;
+	// }
 
 	/**
 	 * Computes the mean and the standard deviation of the observations of @f$m@f$
 	 * simulations given in \a data.
 	 * 
+	 * @remark **Florian:** this should probably go somewhere else (DEDerivative as
+	 *         Private?)
 	 * 
 	 * @param data
 	 *            the observations.
 	 * @return the mean and standard deviation.
 	 */
-	// TODO: This should go somewhere else.
+
 	protected static double[] estimateMeanAndStdDeviation(double[][] data) {
 		double[] result = new double[2];
 		int m = data.length;
@@ -423,13 +512,16 @@ public abstract class DensityEstimator {
 	 * \textrm{SS}_{\text{tot}} = \sum_{i=1}^n (y_i - \bar{y})^2. \f] The closer
 	 * this quantity is to one, the better the approximation of \f$y\f$ by \f$f\f$.
 	 * 
+	 * @remark **Florian:** this should probably go somewhere else (stat? we do not
+	 *         need it for dens. est. per-se).
+	 * 
 	 * @param data
 	 *            the observed data
 	 * @param dataEstimated
 	 *            the estimated data
 	 * @return the Coefficient of determination \f$R^2\f$
 	 */
-	// TODO: should probably be put somewhere else.
+
 	protected static double coefficientOfDetermination(double[] data, double[] dataEstimated) {
 		int i;
 		int max = data.length;

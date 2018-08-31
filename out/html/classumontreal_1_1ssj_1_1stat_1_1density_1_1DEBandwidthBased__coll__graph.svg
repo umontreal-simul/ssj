@@ -15,7 +15,7 @@
 </g>
 <!-- Node7 -->
 <g id="node2" class="node"><title>Node7</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" target="_top" xlink:title="This abstract class implements a univariate density estimator over a finite interval ...">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" target="_top" xlink:title="This abstract class implements a univariate density estimator (DE). ">
 <polygon fill="none" stroke="black" points="6,-56.5 6,-75.5 98,-75.5 98,-56.5 6,-56.5"/>
 <text text-anchor="middle" x="52" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">DensityEstimator</text>
 </a>

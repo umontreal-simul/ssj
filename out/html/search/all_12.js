@@ -153,7 +153,6 @@ var searchData=
   ['setrandomization',['setRandomization',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#ad942d399f2ca51b66a77644b8596d315',1,'umontreal::ssj::markovchainrqmc::ArrayOfComparableChains']]],
   ['setrandomizeparent',['setRandomizeParent',['../classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html#ae263a65c1458cecc0dc8b8553d364366',1,'umontreal::ssj::hups::CachedPointSet']]],
   ['setrandomstreamclass',['setRandomStreamClass',['../classumontreal_1_1ssj_1_1rng_1_1BasicRandomStreamFactory.html#a63f39685fbbe822fa1e07e2c96af2ec6',1,'umontreal::ssj::rng::BasicRandomStreamFactory']]],
-  ['setrange',['setRange',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a02833779487be666bb0ecb217d4e7ff7',1,'umontreal::ssj::stat::density::DensityEstimator']]],
   ['setrenderer',['setRenderer',['../classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html#a2c0d42dc9c519ace277f9ed8713e3313',1,'umontreal::ssj::charts.SSJCategorySeriesCollection.setRenderer()'],['../classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html#a41573e134d30a34f04ac4611552dffe5',1,'umontreal::ssj::charts.SSJXYSeriesCollection.setRenderer()']]],
   ['setrows',['setRows',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a39a765793741d610b54598153e430b6e',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['setscrambledata',['setScrambleData',['../classumontreal_1_1ssj_1_1rng_1_1F2NL607.html#ab368337446341d4870b03600207eaad5',1,'umontreal::ssj::rng::F2NL607']]],

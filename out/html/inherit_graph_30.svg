@@ -10,7 +10,7 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<g id="a_node1"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" target="_top" xlink:title="This abstract class implements a univariate density estimator over a finite interval ...">
+<g id="a_node1"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" target="_top" xlink:title="This abstract class implements a univariate density estimator (DE). ">
 <polygon fill="none" stroke="black" points="0,-38.5 0,-57.5 92,-57.5 92,-38.5 0,-38.5"/>
 <text text-anchor="middle" x="46" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">DensityEstimator</text>
 </a>
