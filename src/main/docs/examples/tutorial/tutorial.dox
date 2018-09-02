@@ -139,23 +139,45 @@
  * 
  * @subsection REF_examples_sec_stat   Collecting statistics
  * 
- * In SSJ, output from simulations is collected in what we call *statistical collectors*, 
- * which are implemented in the  * @ref umontreal.ssj.stat  package.
- * A collector is an object to which we give (one by one) observations that may 
- * come from running a simulation.  An observation can be a single real number 
- * or can be an array of real numbers, whose dimension is the number of fields 
- * on which data is collected.  After n observations are collected, the collector
+ * Output from simulations is collected in *statistical probes*, 
+ * available in the  @ref umontreal.ssj.stat  package, 
+ * and which implement the abstract class
+ * @ref umontreal.ssj.stat.StatProbe. 
+ * There are two main types of probes:
+ * @ref umontreal.ssj.stat.Tally probes collect series of observations of the form
+ * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate probes collect
+ * statistics for a continuous variable evolving in (simulated) time. During
+ * the simulation, one can add observations to such probes. After the
+ * simulation (or at any time), measures such as the sample average, the sample
+ * standard deviation, confidence intervals, etc., can be observed. 
+ * Statistical reports can also be obtained for the different probes, in the form of
+ * a character #String that can be displayed or printed. 
+ * The #stat package also provides a way to detach
+ * statistical collection from the model implementation by using bound properties.
+ * 
+ * The observations given to a statistical probe can be arrays of real numbers,
+ * whose dimension is the number of fields on which data is collected.  
+ * After n observations are collected, the probe
  * will contain (virtually) a table whose rows are the observations and whose columns are the fields.  
+ * In addition to the empirical means, variances, etc., for the individual fields,
+ * one can also obtain empirical covariances and correlations between the fields,
+ * and other measures of dependence. 
+ * 
+ * Subpackages of #stat provide facilities to manage lists or arrays of statistical probes.
+ * The package  @ref umontreal.ssj.gof implements goodness-of-fit tests such as 
+ * Kolmogorov-Smirnov and Anderson-Darling tests.
+ * 
+ * @ref umontreal.ssj.simexp and   @ref umontreal.ssj.mcqmctools
+ * provide additional facilities for performing simulation experiments using independent replications, 
+ * batch means, and (randomized) quasi-Monte Carlo methods.
+ *
+ * 
+ * @subsection REF_examples_sec_discrete-event   Running discrete-event simulations
  * 
  * 
- * 
- * @subsection REF_examples_sec_05 Running simulations
- * 
- * 
- * SSJ supports discrete-event, process-driven, continuous or mixed
- * simulation. The discrete-event and continuous simulation are managed by
- * the package  @ref umontreal.ssj.simevents. This package manages the
- * simulation clock and the event list, two essential components for all
+ * SSJ supports discrete-event, continuous, and mixed simulation,
+ * via the package  @ref umontreal.sssimevents. This package manages the
+ * simulation clock and the event list, two essential components of
  * discrete-event simulations. The simulation clock tracks the simulation
  * time whereas the event list stores the scheduled events to execute them in
  * the right order. Events are user-defined subclasses of
@@ -164,42 +186,15 @@
  * @ref umontreal.ssj.simevents.List which implements a linked list
  * supporting statistical collection. Continuous simulation can be performed
  * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
- * event framework to resolve differential equations numerically at fixed
- * steps in the simulation time.
+ * event framework to (approximately) simulate differential equations numerically
+ * with time discretization.
  *
  * 
- * @subsection REF_examples_sec_06 Other tools
- * 
- * 
- * The package  @ref umontreal.ssj.stat provides basic tools for statistical
- * collection. Statistics are collected using statistical probes, i.e,
- * objects implementing the abstract class
- * @ref umontreal.ssj.stat.StatProbe. Two types of probes are supported. The
- * @ref umontreal.ssj.stat.Tally allows to collect observations of the form
- * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate collects
- * statistics for a continuous variable evolving in simulation time. During
- * the simulation, one can add observations to such probes. After the
- * simulation, measures can be obtained, such as sample average, sample
- * standard deviation or confidence interval. A statistical report can be
- * obtained for all probes. The package also provides a way to detach
- * statistical collection from the model implementation by using bound
- * properties.
- *
- * To test a proposed model against empirical data, goodness of fit tests are
- * provided in the package  @ref umontreal.ssj.gof. Such tests, e.g.
- * Kolmogorov-Smirnov or Anderson-Darling, compute a statistic using the
- * empirical observations and the proposed distribution. The empirical
- * observations are given as an array whereas the distribution is given as a
- * @ref umontreal.ssj.probdist object. From the computed statistic, it is
- * possible to compute the @f$p@f$-value which is useful to evaluate the
- * significance of the test.
- * 
-
  * 
  * 
  ** ************************************************************************
  * 
- * @section REF_examples_sec_simple Some Elementary Examples
+ * @section REF_examples_sec_simple   Some Elementary Examples
  * 
  * 
  * We start with elementary examples that illustrate how to generate uniform

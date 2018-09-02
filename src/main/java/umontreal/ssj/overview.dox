@@ -143,15 +143,6 @@
  *  @ref umontreal.ssj.simevents.eventlist this subpackage of `simevents`
  * offers several kinds of event list implementations.
  *
- *  @ref umontreal.ssj.functions 
- *  contains classes that allow one to pass an
- * arbitrary function of one variable as argument to a method and to apply
- * elementary mathematical operations on generic functions.
- *
- *  @ref umontreal.ssj.functionfit 
- *  provides basic facilities for curve
- * fitting and interpolation with polynomials.
- *
  *
  * ## Simulation experiments with MC and RQMC
  * 
