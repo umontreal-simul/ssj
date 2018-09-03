@@ -19,7 +19,7 @@ public class Nonuniform {
 	      (stream, new LognormalDist (mu, sigma));  // For W_j
 
    // Generates and returns X.
-   public double generateX () {
+   public double simulate () {
       int N;  int M;  int j;  double X = 0.0;
       N = genN.nextInt();
       M = GeometricDist.inverseF (p, stream.nextDouble());  // Uses static method
@@ -29,19 +29,20 @@ public class Nonuniform {
    }
 
    // Performs n indep. runs and collects statistics in statX.
-   public void simulateRuns (int n) {
-      TallyStore statX = new TallyStore (n);
-      for (int i=0; i<n; i++) statX.add (generateX ());
+   public void simulateRuns (int n, TallyStore statX) {
+	   for (int i=0; i<n; i++) statX.add (simulate ());
+    }
+
+   public static void main (String[] args) {
+	  int n = 10000;
+	  TallyStore statX = new TallyStore (n);
+      (new Nonuniform ()).simulateRuns (n, statX);
       System.out.println (statX.report ());
       statX.quickSort();
       double[] data = statX.getArray();
-      System.out.printf ("0.10 quantile: %9.3f%n", data[(int)(0.10 * n)]);
-      System.out.printf ("0.50 quantile: %9.3f%n", data[(int)(0.50 * n)]);
-      System.out.printf ("0.90 quantile: %9.3f%n", data[(int)(0.90 * n)]);
-      System.out.printf ("0.99 quantile: %9.3f%n", data[(int)(0.99 * n)]);
-   }
-
-   public static void main (String[] args) {
-      (new Nonuniform ()).simulateRuns (10000);
-   }
+      System.out.printf ("0.10 quantile: %9.1f%n", data[(int)(0.10 * n)]);
+      System.out.printf ("0.50 quantile: %9.1f%n", data[(int)(0.50 * n)]);
+      System.out.printf ("0.90 quantile: %9.1f%n", data[(int)(0.90 * n)]);
+      System.out.printf ("0.99 quantile: %9.1f%n", data[(int)(0.99 * n)]);
+  }
 }

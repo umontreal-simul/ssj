@@ -12,22 +12,22 @@
  * distributions and variate generators for them, functions to simulate certain types 
  * of stochastic processes, efficient event-list management tools for 
  * discrete-event simulation, support for an extensive collection of randomized
- * quasi-Monte Carlo methods, statistical collectors to collect data in simulation
+ * quasi-Monte Carlo methods, statistical probes to collect data from simulation
  * experiments, statistical estimation and goodness-of-fit methods, 
  * some tools to produce plots in LaTeX, and various other classes and methods 
  * that can be useful for simulation.
  * 
- * These tools are organized in a powerful and very flexible system (or framework)
+ * These tools are organized in a powerful and flexible system (or framework)
  * of packages and classes.
  * SSJ can be used to write simulation programs for stochastic models of various types
- * of real-life systems, simple or very complex.  
- * It is also appropriate for implementing Monte Carlo methods in various areas
+ * of real-life systems, simple or very complex.
+ * It is also appropriate for implementing Monte Carlo methods for various types
  * of applications.
  * 
  * For discrete-event simulation, commercial tools with
  * drag-and-drop graphical interfaces such as *AnyLogic*, *Arena*, *Automod*,
- * *ProModel*, *Simio*, *Simul8*, *Witness*, and many others, are very widely used.
- * Among their main advantages, these tools do
+ * *ProModel*, *Simio*, *Simul8*, *Witness*, and many others, are widely used.
+ * Among their advantages, these tools do
  * not require knowledge of a programming language, provide graphical
  * animation, have automatic facilities to collect statistics and perform
  * experiments, and can sometimes perform optimization to a certain extent.
@@ -43,26 +43,27 @@
  * SSJ, on the other hand, is very flexible and designed to facilitate efficient
  * simulation modeling and programming in the Java language. A first version was described 
  * in @cite sLEC02a and  @cite sLEC05a&thinsp;.  
- * It is still growing actively: new packages, classes, and methods are added regularly.
+ * It is growing actively: new packages, classes, and methods are added regularly.
  * It can be used freely by anyone and the source code is also freely available.
  
- * The facilities offered are grouped into different well-documented packages
- * that are connected to each other.  In addition to the online documentation 
- * (produced by Doxygen), there will be a reference manual in the form of a .pdf file. 
- * (This manual is not yet available for the current version; for now, one can 
- * use the old .pdf manuals available at
- * [Old pdf doc](http://www-labs.iro.umontreal.ca/~simul/ssj-2/doc/pdf/),
- * which can be useful even if not up to date.)
- * There is also a tutorial guide that contains a set of commented examples of 
- * simulation programs, together with the Java code (see the Documentation section below).
- * Some of these examples are taken from books such as @cite sLAW14a, 
- * and @cite fGLA04a, for example. The best way to start learning SSJ is to study 
- * these examples and refer to the reference manual or the online documentation when needed. 
- *
- *
- * The packages currently offered are the following:
+ * The facilities offered are grouped into different packages
+ * that are connected to each other.
+ * All the packages and classes have a detailed documentation produced by Doxygen.
+ * One may also want to look at the old .pdf manuals available at
+ * [Old pdf doc](http://www-labs.iro.umontreal.ca/~simul/ssj-2/doc/pdf/);
+ * they are out of date but contains more detailed explanations in some parts.
+ * (A detailed `.pdf` manual will be available in the future.)
  * 
- * ## Probability distributions, random number and random variate generation, and quasi-Monte Carlo.
+ * There is also a tutorial guide that contains a set of commented-out examples of 
+ * simulation programs, together with the Java code (see the Documentation section below).
+ * Some of these examples are taken from books such as @cite sLAW14a
+ * and @cite fGLA04a, for example. The best way to start learning SSJ is to study 
+ * these examples and refer to the online detailed documentation when needed. 
+ *
+ *
+ * The packages currently offered are the following.
+ * 
+ *  **Probability distributions, random number and random variate generation, and quasi-Monte Carlo:**
  * 
  *  @ref umontreal.ssj.probdist 
  *  contains a set of Java classes providing
@@ -83,18 +84,6 @@
  * values, and other types of simple random objects such as random
  * permutations.  The basic type of object here is a *stream* of random numbers.
  *
- *  @ref umontreal.ssj.latnetbuilder
- *  is essentially an interface to the LatNet Builder software
- *  to constructs quasi-Monte Carlo point sets and sequences of various types
- *  (lattices, polynomial lattices, digital nets, etc.) for arbitrary dimension
- *  and cardinality, various uniformity criteria, etc.
- *   
- *  @ref umontreal.ssj.hups 
- *  provides classes implementing highly uniform
- * point sets and sequences (HUPS), also called low-discrepancy sets and
- * sequences, used for quasi-Monte Carlo methods, and tools for their randomization
- * (for randomized quasi-Monte Carlo).  
- *
  *  @ref umontreal.ssj.randvar 
  *  provides a collection of classes for
  * non-uniform random variate generation, primarily from standard
@@ -107,8 +96,23 @@
  *  @ref umontreal.ssj.stochprocess implements various kinds of stochastic
  * processes and methods to generate their sample paths.
  * 
+ *   
+ *  **Tools for quasi-Monte Carlo:**
  *
- * ## Statistical tools
+ *  @ref umontreal.ssj.hups 
+ *  provides classes implementing highly uniform
+ * point sets and sequences (HUPS), also called low-discrepancy sets and
+ * sequences, used for quasi-Monte Carlo methods, and tools for their randomization
+ * (for randomized quasi-Monte Carlo).  
+ *
+ *  @ref umontreal.ssj.latnetbuilder
+ *  is essentially an interface to the LatNet Builder software
+ *  to constructs quasi-Monte Carlo point sets and sequences of various types
+ *  (lattices, polynomial lattices, digital nets, etc.) for arbitrary dimension
+ *  and cardinality, various uniformity criteria, etc.
+ * 
+ *
+ * **Statistical tools:**
  *
  *  @ref umontreal.ssj.stat provides elementary tools for collecting
  * statistics and computing confidence intervals.
@@ -134,7 +138,7 @@
  *  offers tools to construct histograms and estimate densities from data.
  *
  *
- * ## Discrete-event simulation
+ * **Discrete-event simulation:**
  *
  *  @ref umontreal.ssj.simevents provides and manages the event-driven
  * simulation facilities as well as the simulation clock. Can manage several
@@ -144,7 +148,7 @@
  * offers several kinds of event list implementations.
  *
  *
- * ## Simulation experiments with MC and RQMC
+ * **Simulation experiments with MC and RQMC:**
  * 
  *
  *  @ref umontreal.ssj.charts 
@@ -169,7 +173,7 @@
  * randomized quasi-Monte Carlo, e.g., via Array-RQMC.
  *
  * 
- *  * ## Basic utilities:
+ *  **General utilities:**
  *
  *  @ref umontreal.ssj.util 
  *  contains basic utility classes used in the
@@ -209,7 +213,9 @@
  * efficient and convenient implementation of an (automatically) extensible
  * array of <tt>double</tt>, together with several methods for computing
  * statistics for the observations stored in the array (see, e.g.,
- * <tt>Descriptive</tt>). The Colt library is distributed with the SSJ
+ * <tt>Descriptive</tt>).  Using Colt was more efficient than using what was available in Java,
+ * at least when we decided to do that around 2002.  
+ * The Colt library is distributed with the SSJ
  * package as **colt.jar**. It must be added in the CLASSPATH environment
  * variable.
  *
@@ -252,9 +258,9 @@
  *  such as lattice rules, polynomial lattice rules, and digital nets in base 2. 
  * LatNet Builder must be installed to be able to use this package.
  *  
- * #AnythingElse?:  concurrent?  hamcrest?  junit?
+ * \if  AnythingElse?:  concurrent?  hamcrest?  junit?   \endif
  * 
- * 
+ * \if
  ************************************************************************
  * @section REF_0_sec_03  Structure of the Library (Quick Overview)
  * 
@@ -384,6 +390,7 @@
  * event framework to resolve differential equations numerically at fixed
  * steps in the simulation time.
  *
+ * \endif
  *
  *********************************************************************** 
  * @section REF_0_sec_04  Documentation

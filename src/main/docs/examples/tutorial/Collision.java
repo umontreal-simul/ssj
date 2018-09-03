@@ -16,7 +16,7 @@ public class Collision {
    }
 
    // Generates and returns the number of collisions.
-   public int generateC (RandomStream stream) {
+   public int simulate (RandomStream stream) {
       int C = 0;
       for (int i = 0; i < k; i++) used[i] = false;
       for (int j = 0; j < m; j++) {
@@ -30,15 +30,16 @@ public class Collision {
    // Performs n indep. runs using stream and collects statistics in statC.
    public void simulateRuns (int n, RandomStream stream, Tally statC) {
       statC.init();
-      for (int i=0; i<n; i++) statC.add (generateC (stream));
+      for (int i=0; i<n; i++) statC.add (simulate (stream));
       statC.setConfidenceIntervalStudent();
       System.out.println (statC.report (0.95, 3));
-      System.out.println (" Theoretical mean: " + lambda);
+      System.out.println (" Theoretical mean: lambda = " + lambda);
    }
 
    public static void main (String[] args) {
+	  int k = 10000;  int m = 500;
       Tally statC = new Tally ("Statistics on collisions");
-      Collision col = new Collision (10000, 500);
+      Collision col = new Collision (k, m);
       col.simulateRuns (100000, new MRG32k3a(), statC);
    }
 }

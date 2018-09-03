@@ -20,19 +20,27 @@ public interface MonteCarloModelDouble {
 	// Optional
 	// public void simulate ();
 
-	// Simulates the model for one run
+	/**
+	 * Simulates the model for one run
+	 */
 	public void simulate (RandomStream stream);
 
-	// Recovers the realization of the performance measure $X$ for the last run.
+	/** 
+	 * Recovers and returns the realization of the performance measure, of type E.
+	 */
 	public double getPerformance();
 
-	// Returns the max number of uniforms required to simulate the model.
-	// Can be useful for RQMC simulation.
-    // NOTE: Cannot always implement this, because often the model itself cannot know its dimension,
-	// for example if the dimension depends on the stochastic process that is used... !!!!!
+	/**
+	 * Returns the max number of uniforms required to simulate the model.
+	 * Can be useful for RQMC simulation.
+     * NOTE: Cannot always implement this exactly, because often the model itself cannot know its dimension,
+	 * for example if the dimension depends on the stochastic process that is used!	 * @return
+	 */
 	public int getDimension ();
 
-	// Returns a short description of the model and its parameters.
+	/** 
+	 * Returns a short description of the model and its parameters.
+	 */
 	public String toString();
 
 }

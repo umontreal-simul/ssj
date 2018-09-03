@@ -15,18 +15,18 @@
  * We show how to generate vectors from multivariate distributions and stochastic processes, 
  * and how the random numbers can be replaced by randomized quasi-Monte Carlo points.
  * Later, we provide more elaborate examples of discrete-event simulations.
- * The Java code of all the examples is available with the SSJ source code....
- *  *(say where)*
+ * The Java code of all the examples is available with the SSJ source code in the
+ * @ref  src/main/java/tutorial/  directory.
  *
  * While studying the examples, one can refer to the functional
- * definitions (the APIs) of the SSJ classes.  
- * Before that, we recommand reading the quick overview of the different packages of SSJ
+ * definitions (the APIs) of the SSJ classes.
+ * Before that, we recommand reading the short overview of the different packages of SSJ
  * given in the  @ref REF_0_sec_01 Section on the main page,
- * and then the overview at the beginning of the documentation of each package, 
- * to have a general idea of what is available and where.
+ * then the overview given below, and perhaps the overview of each package given at the beginning 
+ * of its documentation, to have a general idea of what is available and where.
  * 
  * 
- * %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ * **************************************************************************************************
  * 
  * @section REF_examples_sec_overview  Quick Overview of Some Key Packages
  * 
@@ -43,16 +43,17 @@
  * deterministic mathematical algorithms, and are sometimes called *pseudorandom*.
  * Nevertheless, they are very good imitations from a statistical viewpoint,
  * and we follow the common usage in the Monte Carlo simulation community to just 
- * call them random numbers, for simplicity @cite rLEC17h.
- * As an important consequence of the deterministic nature of these algorithmic 
- * random number generators (RNGs), if you run the same simulation program several times, 
- * by default you will get exactly the same results each time.  
- * This is really not like throwing a dice or flipping a coin, and this is normal.
- * In fact, the ability to replicate Monte Carlo experiments with exactly the same 
+ * call them random numbers, for simplicity @cite sLAW14a, @cite rLEC90a, @cite rLEC17h.
+ * An important consequence of the deterministic nature of these algorithmic 
+ * random number generators (RNGs) is that if you run the same simulation program several times, 
+ * unless you reset the seed of the RNG, you will get exactly the same results each time.
+ * This is really not like throwing a dice or flipping a coin, but 
+ * this is normal and actually desirable.
+ * Indeed, the ability to replicate Monte Carlo experiments with exactly the same 
  * random numbers is a key advantage (and requirement) in modern simulation software
  * @cite sLAW14a, @cite rLEC12a, @cite rLEC15a, @cite rLEC17h, @cite rLEC17p.  
  * 
- *  
+ * 
  * Selection of an RNG is based on several
  * criteria such as uniformity, performance, and portability
  * @cite rLEC94a, @cite rLEC12a&thinsp;. 
@@ -63,26 +64,25 @@
  * of random numbers.  Such facilities are very useful when performing multiple
  * simulation runs and comparing similar systems by simulation, for example
  * @cite rLEC15a, @cite rLEC15c, @cite rLEC17p.
- * The interface permits one to easily interchange RNGs without touching the code of the 
+ * The interface permits one to easily interchange RNGs without changing the code of the 
  * simulator, because they are accessed through the
  * same set of methods specified by the interface. 
- * The selected type of RNG is specified when creating the @ref umontreal.ssj.rng.RandomStream
- * object. 
+ * The selected type of RNG is specified when creating the `RandomStream` object. 
  *
- * One can easily replace the 'independent' random numbers with (possibly randomized) 
- * highly-uniform (quasi-Monte Carlo) point sets implemented the package  
+ * One can easily replace the 'independent' random numbers with (possibly randomized)
+ * highly-uniform (quasi-Monte Carlo) point sets implemented in the package
  * @ref umontreal.ssj.hups&thinsp;, again without changing the simulation code.
  * The point set objects all inherit
- * from the  @ref umontreal.ssj.hups.PointSet which provides a
+ * from @ref umontreal.ssj.hups.PointSet which provides a
  * @ref umontreal.ssj.hups.PointSetIterator that implements the same 
  * @ref umontreal.ssj.rng.RandomStream interface as the RNGs.
- * The replacement can be easily done
+ * The replacement of random numbers by quasi-random ones can be easily done
  * without modifying the model implementation, 
  * except for the setup code that creates the point sets.
  *
  *  
  * To generate non-uniform random numbers, one can select a probability distribution
- * from the @ref umontreal.ssj.probdist package and a @ref umontreal.ssj.rng.RandomStream
+ * from the @ref umontreal.ssj.probdist package and a `RandomStream`
  * object as a source of randomness.
  * The probability distribution may have been estimated in a modeling phase
  * based on data from the system of interest, or selected in any other way.
@@ -102,34 +102,34 @@
  * each time anyway.
  * 
  * The default (most general) way of defining a non-uniform generator is to match
- * a distribution with a #RandomStream.  The package  @ref umontreal.ssj.rng.randvar
+ * a distribution with a `RandomStream`.  The package  @ref umontreal.ssj.randvar
  * provides facilities to do that.  
  * By default, the random variates are obtained by applying the inverse cdf 
- * (computed via the #inverseF method) the uniform random numbers obtained from the stream.
+ * (computed via the `inverseF` method) to the uniform random numbers obtained from the stream.
  *  
  * However, inversion is sometimes too slow or inapplicable (the inverse cdf or even a good
  * approximation of it is unknown).   The package  @ref umontreal.ssj.randvar
  * permits one to generate non-uniform randm variates in many other ways than by inversion.
- * In particular, it offers classes to generate random variates from specific disctere and 
- * continuous distributions by specific methods, without relying on the #probdist package.
+ * In particular, it offers classes to generate random variates from specific discrete and 
+ * continuous distributions by specialized methods, without relying on the `probdist` package.
  * These specific generators inherit from the common classes
  * @ref umontreal.ssj.randvar.RandomVariateGen and
- * @ref umontreal.ssj.randvar.RandomVariateGenInt
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt&thinsp;.
  * Each specialized class provides a static method which can be preferable to use 
  * when it is not worthwhile to create a generator object and make the associated precomputations.
  * One drawback is these static methods have signatures that are specific to the distribution,
- * because they must contain the distribution parameters, and they have to perform setup-time
+ * because they must transmit the distribution parameters, and they have to perform setup
  * operations on each variate generation.
  * 
  * The packages @ref umontreal.ssj.probdistmulti  and @ref umontreal.ssj.randvarmulti
- * are the counterparts of #probdist and #randvar, but for multivariate distributions.
+ * are the counterparts of `probdist` and `randvar` for multivariate distributions.
  * The package @ref umontreal.ssj.stochprocess  offers tools to generate discretely observed
  * sample paths (skeletons) of various types of stochastic processes.
  * 
  * The package @ref umontreal.ssj.hups  implements different types of highly uniform (or low-discrepancy)
  * point sets and sequences (hups), and randomized versions of these points.
  * These points and sequences can be used in (randomized) quasi-Monte Carlo methods,
- * where the random numbers are replaced by more uniform point sets. 
+ * where the random numbers are replaced by more uniform point sets.  The package
  *  @ref umontreal.ssj.latnetbuilder provides an interface to the LatNet Builder software,
  * implemented in C++, which provides tools to construct hups of various types
  * such as lattices, polynomial lattices, digital nets, etc., in arbitrary dimension,
@@ -139,36 +139,34 @@
  * 
  * @subsection REF_examples_sec_stat   Collecting statistics
  * 
- * Output from simulations is collected in *statistical probes*, 
- * available in the  @ref umontreal.ssj.stat  package, 
- * and which implement the abstract class
- * @ref umontreal.ssj.stat.StatProbe. 
+ * Output from simulations is collected in *statistical probes* that implement the abstract class
+ * @ref umontreal.ssj.stat.StatProbe, available in the  @ref umontreal.ssj.stat  package.
  * There are two main types of probes:
  * @ref umontreal.ssj.stat.Tally probes collect series of observations of the form
  * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate probes collect
  * statistics for a continuous variable evolving in (simulated) time. During
  * the simulation, one can add observations to such probes. After the
  * simulation (or at any time), measures such as the sample average, the sample
- * standard deviation, confidence intervals, etc., can be observed. 
+ * standard deviation, confidence intervals, etc., can be observed.
  * Statistical reports can also be obtained for the different probes, in the form of
- * a character #String that can be displayed or printed. 
- * The #stat package also provides a way to detach
+ * a character `String` that can be displayed or printed.
+ * The `stat` package also provides a way to detach
  * statistical collection from the model implementation by using bound properties.
  * 
  * The observations given to a statistical probe can be arrays of real numbers,
- * whose dimension is the number of fields on which data is collected.  
+ * whose dimension is the number of fields on which data is collected.
  * After n observations are collected, the probe
- * will contain (virtually) a table whose rows are the observations and whose columns are the fields.  
+ * will contain (virtually) a table whose rows are the observations and whose columns are the fields.
  * In addition to the empirical means, variances, etc., for the individual fields,
  * one can also obtain empirical covariances and correlations between the fields,
- * and other measures of dependence. 
+ * and other measures of dependence.
  * 
- * Subpackages of #stat provide facilities to manage lists or arrays of statistical probes.
- * The package  @ref umontreal.ssj.gof implements goodness-of-fit tests such as 
+ * Subpackages of `stat` provide facilities to manage lists or arrays of statistical probes.
+ * The package  @ref umontreal.ssj.gof implements goodness-of-fit tests such as
  * Kolmogorov-Smirnov and Anderson-Darling tests.
  * 
  * @ref umontreal.ssj.simexp and   @ref umontreal.ssj.mcqmctools
- * provide additional facilities for performing simulation experiments using independent replications, 
+ * provide additional facilities for performing simulation experiments using independent replications,
  * batch means, and (randomized) quasi-Monte Carlo methods.
  *
  * 
@@ -176,15 +174,17 @@
  * 
  * 
  * SSJ supports discrete-event, continuous, and mixed simulation,
- * via the package  @ref umontreal.sssimevents. This package manages the
+ * via the package  @ref umontreal.ssj.simevents. This package manages the
  * simulation clock and the event list, two essential components of
  * discrete-event simulations. The simulation clock tracks the simulation
  * time whereas the event list stores the scheduled events to execute them in
  * the right order. Events are user-defined subclasses of
  * @ref umontreal.ssj.simevents.Event. When an event occurs, any type of
  * actions can then be taken. The package provides a class called
- * @ref umontreal.ssj.simevents.List which implements a linked list
- * supporting statistical collection. Continuous simulation can be performed
+ * @ref umontreal.ssj.simevents.ListWithStat which implements a linked list
+ * with integrated statistical probes to collect data on sojourn times in the list
+ * and the time-dependent size of the list. 
+ * Continuous simulation can be performed
  * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
  * event framework to (approximately) simulate differential equations numerically
  * with time discretization.
@@ -199,44 +199,44 @@
  * 
  * We start with elementary examples that illustrate how to generate uniform
  * and nonuniform random numbers, construct probability distributions,
- * collect elementary statistics, and compute confidence intervals, compare
- * similar systems, and use randomized quasi-Monte Carlo point sets, with
- * SSJ.
- *
+ * collect elementary statistics, compute confidence intervals, compare
+ * similar systems, and use randomized quasi-Monte Carlo point sets, with SSJ.
  * The models considered here are quite simple and some of the performance
  * measures can be computed by (more accurate) numerical methods rather than
- * by simulation. The fact that we use these models to give a first tasting
- * of SSJ should not be interpreted to mean that simulation is necessarily
- * the best tool for them.
+ * by simulation. The purpose of these very simple models is just to give a first tasting
+ * of SSJ. It should not be interpreted to mean that simulation is necessarily
+ * needed to study these models.
  * 
  * 
  * @subsection REF_examples_sec_collision Collisions in a hashing system
  * 
  * 
- * We want to estimate the expected number of collisions in a hashing system.
+ * We want to estimate the distribution of the number of collisions in a hashing system.
  * There are @f$k@f$ locations (or addresses) and @f$m@f$ distinct items.
  * Each item is assigned a random location, independently of the other items.
  * A *collision* occurs each time an item is assigned a location already
  * occupied. Let @f$C@f$ be the number of collisions. We want to estimate
- * @f$\mathbb E[C]@f$, the expected number of collisions, by simulation. A
+ * the probability distribution of the random variable @f$C@f$, and 
+ * the expected number of collisions @f$\mathbb E[C]@f$, by simulation. A
  * theoretical result states that when @f$k\to\infty@f$ while @f$\lambda=
  * m^2/(2k)@f$ is fixed, @f$C@f$ converges in distribution to a Poisson
- * random variable with mean @f$\lambda@f$. For finite values of @f$k@f$ and
- * @f$m@f$, we may want to approximate the distribution of @f$C@f$ by the
- * Poisson distribution with mean @f$\lambda@f$, and use Monte Carlo
- * simulation to assess the quality of this approximation. To do that, we can
+ * random variable with mean @f$\lambda@f$. We may want to use Monte Carlo
+ * simulation to assess the error made by this Poisson approximation
+ * for finite values of @f$k@f$ and @f$m@f$.  To do this, we can
  * generate @f$n@f$ independent realizations of @f$C@f$, say @f$C_1,…,C_n@f$,
  * compute their empirical distribution and empirical mean, and compare with
- * the Poisson distribution.
+ * the Poisson approximation.
  *
  * The Java program in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} simulates
- * @f$C_1,…,C_n@f$ and computes a 95% confidence interval on @f$\mathbb
+ * @f$C_1,…,C_n@f$, and computes the empirical distribution of $C$ as well as 
+ * a 95% confidence interval on @f$\mathbb
  * E[C]@f$. The results for @f$k = 10000@f$, @f$m = 500@f$, and @f$n =
  * 100000@f$, are in Listing&nbsp;
- * {@link REF_examples_res_Collision Collision}. The reported
- * confidence interval is @f$(12.25,  12.29)@f$, whereas @f$\lambda=
- * 12.5@f$. This indicates that the asymptotic result underestimates
+ * {@link REF_examples_res_Collision Collision}.  
+ * Here we have @f$\lambda=12.5@f$, whereas the reported
+ * confidence interval is @f$(12.25,  12.29)@f$.
+ *  This indicates that the asymptotic result underestimates
  * @f$\mathbb E[C]@f$ by nearly 2%.
  *
  * The Java program imports the SSJ packages `rng` and `stat`. It uses only
@@ -266,7 +266,7 @@
  * The class `Collision` offers the facilities to simulate copies of @f$C@f$.
  * Its constructor specifies @f$k@f$ and @f$m@f$, computes @f$\lambda@f$,
  * and constructs a boolean array of size @f$k@f$ to memorize the locations
- * used so far, in order to detect the collisions. The method `generateC`
+ * used so far, in order to detect the collisions. The method `simulate`
  * initializes the boolean array to `false`, generates the @f$m@f$ locations,
  * and computes @f$C@f$. The method `simulateRuns` first resets the
  * statistical collector `statC`, then generates @f$n@f$ independent copies
@@ -276,7 +276,7 @@
  * form of a character string. This report is printed, together with the
  * value of @f$\lambda@f$.
  *
- *  <strong>Results of the program <tt>Collision</tt></strong>
+ *  <strong>Results of the program  <tt>Collision</tt></strong>
  * &emsp;[Collision]
  * @anchor REF_examples_res_Collision
  * @include tutorial/Collision.txt
@@ -310,7 +310,7 @@
  * @anchor REF_examples_lst_Nonuniform
  * @include tutorial/Nonuniform.java
  *
- *  <strong>Results of the program <tt>Nonuniform</tt></strong>
+ *  <strong>Results of the program  <tt> Nonuniform</tt></strong>
  * &emsp;[Nonuniform]
  * @anchor REF_examples_res_Nonuniform
  * @include tutorial/Nonuniform.txt
@@ -350,7 +350,7 @@
  * given @f$\lambda@f$, so it is slower if we want to generate several
  * Poisson variates with the same @f$\lambda@f$. As an illustration, we use
  * the static method to generate the geometric random variates (in
- * <tt>generateX</tt>), instead of constructing a geometric distribution and
+ * `simulate`), instead of constructing a geometric distribution and
  * variate generator. To generate @f$M@f$, we invoke the static method
  * `inverseF` of the class `GeometricDist`, which evaluates the inverse
  * geometric distribution function for a given parameter @f$p@f$ and a given

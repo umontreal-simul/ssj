@@ -158,7 +158,6 @@ public void add (double x) {
              " observation");
          return Double.NaN;
       }
-
       return curSum2 / (numObs-1);
    }
 
@@ -396,11 +395,12 @@ public void add (double x) {
    public String report (double level, int d) {
       PrintfFormat str = new PrintfFormat();
       str.append ("REPORT on Tally stat. collector ==> " + name);
-      str.append (PrintfFormat.NEWLINE + "    num. obs.      min          max        average     standard dev." + PrintfFormat.NEWLINE);
+      str.append (PrintfFormat.NEWLINE + "    num. obs.      min          max        average     variance    standard dev." + PrintfFormat.NEWLINE);
       str.append (7 + d, (int)numObs);   str.append (" ");
       str.append (9 + d, d, d-1, (double)minValue);   str.append (" ");
       str.append (9 + d, d, d-1, (double)maxValue);   str.append (" ");
       str.append (9 + d, d, d-1, (double)average());  str.append (" ");
+      str.append (9 + d, d, d-1, (double)variance());  str.append (" ");
       str.append (9 + d, d, d-1, standardDeviation());
       str.append (PrintfFormat.NEWLINE);
 
@@ -424,6 +424,7 @@ public void add (double x) {
       pf.append (-8, "   min").append ("   ");
       pf.append (-8, "   max").append ("   ");
       pf.append (-8, "   average").append ("   ");
+      pf.append (-8, "   variance").append ("   ");
       pf.append (-8, "   std. dev.");
       if (confidenceInterval != CIType.CI_NONE)
          pf.append ("   ").append (-12, "conf. int.");
@@ -434,7 +435,7 @@ public void add (double x) {
 /**
  * Formats and returns a short statistical report for this tally. The
  * returned single-line report contains the minimum value, the maximum value,
- * the average, and the standard deviation, in that order, separated by three
+ * the average, the variance, and the standard deviation, in that order, separated by three
  * spaces. If the number of observations is shown in the short report, a
  * column containing the number of observations in this tally is added.
  *  @return the string containing the report.
@@ -446,10 +447,12 @@ public String shortReport() {
       pf.append (9, 3, 2, min()).append ("   ");
       pf.append (9, 3, 2, max()).append ("   ");
       pf.append (10, 3, 2, average()).append ("   ");
-      if (numberObs() >= 2)
+      if (numberObs() >= 2) {
+         pf.append (10, 3, 2, variance()).append ("   ");
          pf.append (11, 3, 2, standardDeviation());
+      }
       else
-         pf.append (11, "---");
+         pf.append (21, "---");
 
       if (confidenceInterval != CIType.CI_NONE) {
          double[] ci = new double[2];
@@ -465,7 +468,6 @@ public String shortReport() {
          pf.append (9, 3, 2, ci[0] - ci[1]).append (',');
          pf.append (9, 3, 2, ci[0] + ci[1]).append (")");
       }
-
       return pf.toString();
    }
 
