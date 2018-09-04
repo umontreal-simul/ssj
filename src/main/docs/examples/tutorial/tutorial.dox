@@ -323,8 +323,8 @@
  * {@link REF_examples_lst_Collision Collision} would require
  * more lines of code, but would provide more flexibility.
  *
- * The class initialization also constructs a `RandomStream` of type
- * `LFSR113` (this is a faster uniform generator that <tt>MRG32k3a</tt>),
+ * The class initialization constructs a `RandomStream` of type
+ * `LFSR113` (this is a faster uniform generator that <tt>MRG32k3a</tt>)
  * used to generate all the random numbers. For the generation of @f$N@f$, we
  * construct a Poisson distribution with mean @f$\lambda@f$ (without giving
  * it a name), and pass it together with the random stream to the constructor
@@ -351,7 +351,8 @@
  * Poisson variates with the same @f$\lambda@f$. As an illustration, we use
  * the static method to generate the geometric random variates (in
  * `simulate`), instead of constructing a geometric distribution and
- * variate generator. To generate @f$M@f$, we invoke the static method
+ * variate generator. For this particular distribution, the static method is 
+ * almost as fast.  To generate @f$M@f$, we invoke the static method
  * `inverseF` of the class `GeometricDist`, which evaluates the inverse
  * geometric distribution function for a given parameter @f$p@f$ and a given
  * uniform random variate.

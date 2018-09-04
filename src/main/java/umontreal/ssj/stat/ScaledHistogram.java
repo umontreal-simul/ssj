@@ -24,9 +24,7 @@ package umontreal.ssj.stat;
  * limitations under the License.
  *
  */
-// package umontreal.ssj.stat;
-import umontreal.ssj.stat.*;
-import java.util.logging.Level;
+
 import java.util.logging.Logger;
 import umontreal.ssj.util.PrintfFormat;
 
@@ -51,7 +49,6 @@ public class ScaledHistogram {
 	protected double m_b; // right boundary of last bin
 	protected double[] height; // rescaled counters: height[j] is the height of bin j.
 	protected double integral;  // Total area under the histogram, = (b-a) x sum of heights.
-	private Logger log = Logger.getLogger("umontreal.ssj.stat");
 
 	private ScaledHistogram() {}
 

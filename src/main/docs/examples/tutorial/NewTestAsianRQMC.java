@@ -25,7 +25,6 @@ public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
 		return getPayoff();
 	}
 
-	@Override
 	public int getDimension() {
 		return s;
 	}

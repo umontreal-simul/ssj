@@ -1,11 +1,5 @@
 package umontreal.ssj.stat;
 
-// package udem.iro.labSimul.ProjetSSJ;
-
-import umontreal.ssj.probdist.NormalDist;
-import umontreal.ssj.rng.MRG32k3a;
-import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.stat.*;
 //import   org.jfree.chart.ChartFactory;
 //import   org.jfree.chart.ChartPanel;
 //import   org.jfree.chart.axis.NumberAxis;
@@ -22,7 +16,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Formatter;
-import javax.xml.bind.JAXBException;
 
 public class HistogramChartToLatex {
 
@@ -72,7 +65,7 @@ public class HistogramChartToLatex {
 
 	/*
 	 * 
-	 * return tex file for an histogram by using a Saledhistogram object and can add the polygonal
+	 * return tex file for an histogram by using a Scaledhistogram object and can add the polygonal
 	 * histogram if the flag 'poly' is false.
 	 * 
 	 * @param scaledH a ScaledHistogram object
@@ -177,9 +170,8 @@ public class HistogramChartToLatex {
 	 * 
 	 * @param chaine is the the string to write
 	 */
-	public void writeStringTofile(String name, String chaine) throws IOException, JAXBException {
+	public void writeStringTofile(String name, String chaine) throws IOException {
 		String currentDir = System.getProperty("user.dir");
-		// File file=new File("/u/thiongam/HistLatex/"+name+".tex");
 		File file = new File(currentDir + "/" + name + ".tex");
 		if (file.exists()) {
 			file.delete(); // you might want to check if delete was successfull

@@ -193,18 +193,18 @@ public class TallyStore extends Tally {
    
    
     /**
-     * Returns a new TallyStore instance that contains aggregate observations from this TallyStore.
-     * This method sorts the observations and divides them into groups of size {@code gsize}.
-     * Then, it inserts the average of each group in a new TallyStore object.
+     * Returns a new `TallyStore` instance that contains aggregate observations from this `TallyStore`.
+     * This method divides the observations in blocks of size `gsize` successive observations,
+     * compute the average of each group, and then inserts the average of each group in a new `TallyStore` object.
      *
      * Note that this method does not sort the observations. It will aggregate
-     * the observations according to their order of insertion.
-     * To aggregate the observations sorted by values, the user should sort
-     * this TallyStore object before calling this method.
+     * the observations according to their actual order in the array.
+     * To aggregate the sorted observations (e.g., to plot a approximation of the cdf), the user should sort
+     * this `TallyStore` object before calling this method.
      *
      * @param gsize the group size to use when performing the aggregation
      *
-     * @return a new TallyStore object with aggregated observations
+     * @return a new `TallyStore` object with aggregated observations
      */
     public TallyStore aggregate (int gsize) {
         int numObs = this.numberObs();
@@ -231,6 +231,7 @@ public class TallyStore extends Tally {
         return t;
     } 
 
+ 
    /**
     * Returns the observations stored in this object as a `String`.
     */

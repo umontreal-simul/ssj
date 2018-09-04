@@ -1,5 +1,6 @@
 package umontreal.ssj.mcqmctools;
 import umontreal.ssj.hups.*;
+import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.stat.*;
 import umontreal.ssj.stat.list.lincv.ListOfTalliesWithCV;
 
@@ -77,6 +78,13 @@ public class RQMCExperiment extends MonteCarloExperiment {
 		}
 	}
 	
+	
+	public static void simulReplicatesRQMCDefaultReportCompare(MonteCarloModel model,
+			int m, PointSet p, PointSetRandomization rand, RandomStream noise,
+			Tally statRQMC, double varianceMC, double secondsMC) {
+		
+		
+	}
 	/**
 	 * Same as @ref simulReplicatesRQMC, except that this one uses control variates. 
 	 * It returns in <TT>statWithCV</TT> the statistics for m observations which corresponds
