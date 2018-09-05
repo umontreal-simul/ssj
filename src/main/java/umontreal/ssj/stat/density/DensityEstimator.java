@@ -46,6 +46,152 @@ import umontreal.ssj.probdist.ContinuousDistribution;
  * (MISE) in case the true density is known.
  */
 public abstract class DensityEstimator {
+	
+	/**
+	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
+	 * observations \a data, if necessary, and evaluates it at \a x.
+	 * @param x the evaluation point.
+	 * @param data the observations for constructing the density estimator.
+	 * @param a the left boundary of the interval.
+	 * @param b the right boundary of the interval
+	 * @return the density estimator evaluated at \f$x\f$.
+	 */
+	public abstract double evalDensity(double x, double data[], double a, double b);
+
+	/**
+	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
+	 * observations \a data, if necessary, and evaluates it at the points in \a x.
+	 * @param x the evaluation points.
+	 * 
+	 * By default, this method calls #evalDensity(double, double[], double, double)
+	 * for each entry of \a x. Many density estimators can handle evaluation
+	 * at a vector of points more efficiently than that. If so, it is suggested to
+	 * override this method in the implementation of the corresponding estimator.
+	 * Note that the construction of the density estimator -- if applicable --
+	 * needs to be handled by this method as well.
+	 * 
+	 * @param data the observations for constructing the density estimator.
+	 * @param a the left boundary of the interval.
+	 * @param b the right boundary of the interval
+	 * @return the density estimator evaluated at the points \a x.
+	 */
+	public  double [] evalDensity(double[] x, double[] data, double a, double b) {
+		int k = x.length;
+		double[] dens = new double[k];
+		for(int j = 0; j < k; j++)
+			dens[j] = evalDensity(x[j],data,a,b);
+		return dens;
+	}
+
+	/**
+	 * This method is particularly designed to evaluate the density estimator in such a way that the result can be easily used to
+	 * estimate the empirical IV and other convergence-related quantities.
+	 * 
+	 * Assume that we have \f$m\f$ independent realizations of the underlying model. For each such realization this method
+	 * constructs a density estimator over \f$[a,b]\f$ and evaluates it at the points from \a x. The independent realizations
+	 * are passed via the 2-dimensional \f$m\times n\f$array \a data, where \f$n\f$ denotes the number of observations per realization. 
+	 * Hence, its first index identifies the independent realization while its second
+	 * index identifies a specific observation of this realization.
+	 * 
+	 * The result is returned as a \f$m\times k\f$ matrix, where \f$k \f$ is the number of evaluation points, i.e., the length of \a x.
+	 * The first index, again, identifies the independent realization whereas the second index indicates at which point of \a x the
+	 * density estimator was evaluated.
+	 * 
+	 *
+	 * @param x the evaluation points.
+	 * @param data the two dimensional array carrying the observations of \f$m\f$ independent realizations of the underlying model.
+	 * @param a the left boundary of the interval.
+	 * @param b the right boundary of the interval.
+	 * @return the density estimator for each realization evaluated at \a x.
+	 */
+	public double [][] evalDensity(double[] x, double[][] data, double a, double b){
+		int m = data.length;
+		double [][] dens = new double[m][];
+		for(int r = 0; r < m; r++) 
+			dens[r] = evalDensity(x,data[r],a,b);
+		return dens;
+	}
+	
+	/**
+	 * This method computes the empirical variance based on the values given in
+	 * \a data. More precisely, \a density is a \f$m\times k\f$ matrix, whose entries
+	 * correspond to \f$m\f$ independent realizations of the density estimator, each evaluated
+	 * at \f$k\f$ evaluation points. Such a matrix can, for instance, be obtained by
+	 * #evalDensity(double[], double[][], double, double).
+	 * 
+	 * The empirical variance is computed at each of those \f$k \f$ evaluation points
+	 * and returned in an array of size \f$k\f$.
+	 * 
+	 * @param density the estimated density of \f$m\f$ independent realizations of the 
+	 * estimator, each evaluated at \f$k\f$ evaluation points. 
+	 * @return the empirical variance at those \f$k\f$ evaluation points.
+	 */
+	public static double [] computeVariance(double[][] density) {
+		int m = density.length; //number of indep. replications
+		int numEvalPoints = density[0].length; //number of evaluation points
+
+		double x, y;
+	
+		double meanDens[] = new double[numEvalPoints]; // Average value over the rep replicates
+		double varDens[] = new double[numEvalPoints]; // Variance at each evaluation point
+		// Arrays.fill(meanDens, 0.0);
+		// Arrays.fill(varDens, 0.0);
+		for (int r = 0; r < m; r++) {
+			// Update the empirical mean and variance at each evaluation point.
+			for (int j = 0; j < numEvalPoints; j++) {
+				x = density[r][j];
+				y = x - meanDens[j];
+				meanDens[j] += y / (double) (r + 1);
+				varDens[j] += y * (x - meanDens[j]);
+			}
+		}
+		
+		for(int j = 0; j < numEvalPoints; j++) //normalize
+			varDens[j] /= (double)(m - 1);
+		
+		return varDens;
+	}
+	
+	/**
+	 * This method estimates the empirical IV over the interval \f$[a,b]\f$. Based on the density estimates of \f$m\f$ independent
+	 * replications of the density estimator evaluated at \f$k\f$ evaluation points, which is provided by \a density, it computes
+	 * the empirical variance at each evaluation point and stores it in \a variance.
+	 * 
+	 * To estimate the empirical IV, we sum up the variance at the \f$k\f$ evaluation points and multiply by \f$(b-a)/k\f$, i.e. we
+	 * approximate the empirical IV by an equally weighted quadrature rule with aforementioned evaluation points as integration nodes.
+	 * Note that this is only an approximation of the true empirical IV and that the approximation quality significantly depends on
+	 * the choice of evaluation points.
+	 * 
+	 * The data for the variance are given in the two-dimensional \f$m\times k\f$ array \a density, which is also described in 
+	 *  #computeVariance(double[][]) and can be obtained by  #evalDensity(double[], double[][], double, double). The boundaries of
+	 *  the interval are given by \a a and \a b. Note that the array \a variance needs to be of length \f$k\f$.
+	 * 
+	 * 
+	 * @param density the \f$m\times k\f$ array that contains the data of evaluating \f$m\f$ replicates of the density estimator
+	 * at \f$k\f$ evaluation points
+	 * @param a the left boundary of the interval.
+	 * @param b the right boundary of the interval.
+	 * @param variance the array of length \f$k\f$ in which the variance at each evaluation point is stored.
+	 * @return the estimated empirical IV over \f$[a,b]\f$.
+	 */
+	public static double computeIV(double[][] density, double a, double b, double[] variance) {
+		variance = computeVariance(density);
+		int k = density[0].length;
+		double iv = 0.0;
+		for(double var : variance)
+			iv += var;
+		return iv * (b - a)/(double) k;
+	}
+	
+	public static double[] computeMISE(ContinuousDistribution dist, double[][] density, double a, double b, doubl)
+	
+	/**
+	 * Gives a short description of the estimator.
+	 * 
+	 * @return a short description.
+	 */
+	public abstract String toString();
+	
 
 	// ************ ******************************************************
 	// Manipulating the interval --> handled in each realization individually.
@@ -112,25 +258,7 @@ public abstract class DensityEstimator {
 	// * @return the value of the estimated density at x.
 	// */
 
-	public abstract double evalDensity(double x);
-
-	/**
-	 * TODO: keep this one, but implement one that adds data[].
-	 * Returns in array \a density the value of the estimator at the evaluation
-	 * points in \a evalPoints. These two arrays must have the same size. This
-	 * method assumes that the density has been constructed before.
-	 * 
-	 * By default, it calls #evalDensity(double) for each element of \a evalpoints.
-	 * 
-	 * @param evalPoints
-	 *            the evaluation points
-	 * @param density
-	 *            values of the density at these points
-	 */
-	public void evalDensity(double[] evalPoints, double[] density) {
-		for (int i = 0; i < evalPoints.length; i++)
-			density[i] = evalDensity(evalPoints[i]);
-	}
+	
 
 	// ***********************************************************************
 	// This does not work without "constructDensity(...)" that way.
@@ -203,13 +331,7 @@ public abstract class DensityEstimator {
 		return listEvalDens;
 	}
 
-	/**
-	 * Gives a short description of the estimator.
-	 * 
-	 * @return a short description.
-	 */
-	public abstract String toString();
-
+	
 	/**
 	 * TODO: return variance at each point
 	 * TODO: make clear that it's only an estimate
