@@ -4,22 +4,28 @@ import umontreal.ssj.stat.ScaledHistogram;
 import umontreal.ssj.stat.TallyHistogram;
 
 /**
- * This class provides methods to compute a histogram density estimator for
- * univariate densities over an interval \f$[a,b]\f$ from a set of \f$n\f$
- * individual observations \f$X_0, …, X_{n-1}\f$, and returns its value at a set
- * of selected points.
- * 
+ * This class provides methods to construct, manipulate, and evaluate a histogram density estimator for
+ * univariate densities. 
+ *  
+ * The construction of a histogram is based on a set of \f$n\f$
+ * individual observations \f$X_0, …, X_{n-1}\f$ which, in turn, can be realizations of a
+ *  \ref umontreal.ssj.mcqmctools.MonteCarloModelDouble, for instance. Note that it is essential 
+ *  to confine oneself to a finite interval \f$[a,b]\f$.
+ *
  * For a fixed number of bins \f$m>0\f$ we partition the interval \f$[a,b]\f$
  * into \f$m\f$ subintervals of equal lengths \f$h\f$. Observe that
- * \f$h=(b-a)/m\f$ and, hence, Histogram estimators can also be parametrized by a
- * bandwidth \f$h>0\f$, as long as the resulting number of bins is an integer.
+ * \f$h=(b-a)/m\f$ and, hence, Histogram estimators can also be parameterized by a
+ * binwidth \f$h>0\f$, as long as the resulting number of bins is an integer.
  * The estimator itself is defined by 
- * \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) =
- * \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), \quad j=1,\dots,m, \f] 
- * where
- * \f$n_j\f$ denotes the number of observations that fall in this interval.
  * 
- * Note that, due to the fact that the partition into \f$m\f$ bins relies on
+ *  \f[ 
+ *  \hat{f}_{n}(x) = \hat{f}_{n,h}(x) =
+ * \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), \quad j=1,\dots,m,
+ *  \f] 
+ *  
+ * where \f$n_j\f$ denotes the number of observations that fall in this interval.
+ * 
+ * It needs to be added that, due to the fact that the partition into \f$m\f$ bins relies on
  * half-open intervals, the boundary \f$b\f$ is not included in any of these
  * intervals. Since the probability of an observation being exactly equal to
  * \f$b\f$ is zero, we can effectively ignore this subtlety.
@@ -33,70 +39,22 @@ public class DEHistogram extends DensityEstimator {
 	/**the number of bins */
 	private int m;
 	
+	
+	/**the actual histogram*/
 	private ScaledHistogram histDensity;
 //	private TallyHistogram hist;
 
 	/**
-	 * Constructs a histogram estimator over the interval \f$[a,b]\f$.
+	 * Constructor for a histogram estimator with \a m bins.
 	 * 
-	 * @param a
-	 *            left boundary of the interval
-	 * @param b
-	 *            right boundary of the interval
+	 * @param m the number of bins.
 	 */
-	public DEHistogram(double a, double b) {
-		setRange(a, b);
-		setAlpha(2.0);
+	public DEHistogram(int m) {
+		this.m = m;
 	}
 
-	/**
-	 * Constructs a histogram estimator with bandwidth \f$h\f$ over the interval
-	 * \f$[a,b]\f$. Note that the actual bandwidth used might differ from \f$h\f$,
-	 * since the number of bins {@link #m} has to be an integer.
-	 * 
-	 * @param a
-	 *            left boundary of the interval
-	 * @param b
-	 *            right boundary of the interval
-	 * @param h
-	 *            the bandwidth
-	 */
-	public DEHistogram(double a, double b, double h) {
-		this(a, b);
-		setH(h);
-	}
-
-	/**
-	 * Constructs a histogram estimator with @f$m@f$ bins over the
-	 * interval @f$[a,b]@f$.
-	 * 
-	 * @param a
-	 *            left boundary of the interval
-	 * @param b
-	 *            right boundary of the interval
-	 * @param m
-	 *            the desired number of bins
-	 */
-	public DEHistogram(double a, double b, int m) {
-		this(a, b);
-		setM(m);
-	}
-
-	/**
-	 * 
-	 * @param a
-	 *            left boundary of the interval
-	 * @param b
-	 *            right boundary of the interval
-	 * @param theHs
-	 *            an array of bandwidths
-	 * 
-	 */
-	public DEHistogram(double a, double b, double[] theHs) {
-		this(a, b);
-		this.theHs = new double[theHs.length];
-		this.theHs = theHs;
-	}
+	
+	
 
 	/**
 	 * Gives the number of bins.
@@ -107,37 +65,25 @@ public class DEHistogram extends DensityEstimator {
 		return m;
 	}
 
-	/**
-	 * Sets the number of bins to \f$m\f$.
-	 * 
-	 * @param m
-	 *            the desired number of bins
-	 */
-	public void setM(int m) {
-		this.m = m;
-		setH((geta() - getb()) / (double) m);
+	public double getH() {
+		return (getB() - getA())/m;
+	}
+	
+	public double getA() {
+		return histDensity.getA();
+	}
+	
+	public double getB() {
+		return histDensity.getB();
 	}
 
-	/**
-	 * Sets the bandwidth to \f$h\f$. Note that the actual bandwidth used might
-	 * differ from \f$h\f$, since the number of bins {@link #m} has to be an
-	 * integer.
-	 */
-	@Override
-	public void setH(double h) {
-		this.m = (int) ((geta() - getb()) / h);
-		this.h = (geta() - getb()) / (double) m;
-	}
+	
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void constructDensity(double[] data) {
+	
+	public void constructDensity(double[] data, double a, double b) {
 //		hist = new TallyHistogram(geta(), getb(), m);
-		TallyHistogram hist = new TallyHistogram(geta(), getb(), m);
-		hist.fillFromArray(data);
-		histDensity = new ScaledHistogram(hist, 1.0);
+		TallyHistogram hist = new TallyHistogram(a, b, m);
+		constructDensity(hist);
 	}
 	
 	/**
@@ -146,10 +92,7 @@ public class DEHistogram extends DensityEstimator {
 	 * @param tallyHist 
 	 */
 	public void constructDensity(TallyHistogram tallyHist) {
-		a = tallyHist.getA();
-		b = tallyHist.getB();
 		m = tallyHist.getNumBins();
-		h = tallyHist.getH();
 		histDensity = new ScaledHistogram(tallyHist, 1.0);
 	}
 	
@@ -159,20 +102,11 @@ public class DEHistogram extends DensityEstimator {
 	 * @param hist
 	 */
 	public void constructDensity(ScaledHistogram scaledHist) {
-		a = scaledHist.getA();
-		b = scaledHist.getB();
 		m = scaledHist.getNumBins();
 		histDensity = scaledHist;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public double evalDensity(double x) {
-//		double h = hist.getH();
-		return histDensity.getHeights()[(int) ((x - geta()) / h)];
-	}
+	
 
 	/**
 	 * {@inheritDoc}
@@ -200,6 +134,12 @@ public class DEHistogram extends DensityEstimator {
 			evalPoints[j] = a + delta * (0.5 + j);
 
 		return evalPoints;
+	}
+
+	@Override
+	public double evalDensity(double x, double[] data, double a, double b) {
+		constructDensity(data,m,a,b);
+		return 0;
 	}
 
 }
