@@ -28,10 +28,11 @@ import umontreal.ssj.stat.TallyHistogram;
  *
  */
 
-public class DEHistogram extends DEBandwidthBased {
-
+public class DEHistogram extends DensityEstimator {
+	
+	/**the number of bins */
 	private int m;
-	/**<the number of bins */
+	
 	private ScaledHistogram histDensity;
 //	private TallyHistogram hist;
 
