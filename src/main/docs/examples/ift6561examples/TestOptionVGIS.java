@@ -5,7 +5,7 @@ import umontreal.ssj.probdist.GammaDist;
 // import umontreal.ssj.stat.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
-// import umontreal.ssj.mcrqmc.*;
+import umontreal.ssj.mcqmctools.*;
 
 /**
  * 
@@ -76,7 +76,7 @@ public class TestOptionVGIS {
 	/**
 	 * Simulate <tt>m/tt> replications and return the RQMC variance.
 	 */
-	public static void simulReplicatesRQMCReport (MonteCarloModel model, PointSet p, PointSetRandomization rand,
+	public static void simulReplicatesRQMCReport (MonteCarloModelDouble model, PointSet p, PointSetRandomization rand,
 	        int m, Tally statReps) {
 		Chrono timer = new Chrono();
 		statReps.init();
@@ -95,7 +95,7 @@ public class TestOptionVGIS {
         System.out.println("Total CPU time:      " + timer.format() + "\n");
 	}
 	
-	public class OptionVG1 implements MonteCarloModel {
+	public class OptionVG1 implements MonteCarloModelDouble {
 
 		double value;
 
@@ -109,7 +109,7 @@ public class TestOptionVGIS {
 			if (value < 0.0) value = 0.0;
 		}
 
-		public double getValue() {
+		public double getPerformance() {
 			return value;
 		}
 
@@ -204,9 +204,9 @@ public class TestOptionVGIS {
 		// Monte Carlo experiments first.
 		int n = 10000000;   // for MC.
 		System.out.println("  Ordinary MC:\n");
-		MonteCarloExperiment.simulateRunsDefaultReport(test.vg1, n, noise, statValue);
-		MonteCarloExperiment.simulateRunsDefaultReport(test.vgis1, n, noise, statValue);
-		MonteCarloExperiment.simulateRunsDefaultReport(test.vgis2, n, noise, statValue);
+		MonteCarloExperiment.simulateRunsDefaultReportStudent (test.vg1, n, noise, statValue, 0.95, 4);
+		MonteCarloExperiment.simulateRunsDefaultReportStudent (test.vgis1, n, noise, statValue, 0.95, 4);
+		MonteCarloExperiment.simulateRunsDefaultReportStudent (test.vgis2, n, noise, statValue, 0.95, 4);
 
 		System.out.println("-----------------------------------------------------\n");
 

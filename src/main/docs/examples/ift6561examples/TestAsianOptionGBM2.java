@@ -51,14 +51,14 @@ public class TestAsianOptionGBM2 {
 		Tally statRQMC = new Tally("Stats on payoff with RQMC");
         if (asian.getNumObsTimes() <= 2) {
  		    RQMCExperiment.simulReplicatesRQMCDefaultReportCompare(asian, pStrat, rShift,
-			   	   m, noise, statRQMC, varianceMC, secondsMC);
+			   	   m, statRQMC, varianceMC, secondsMC);
         }
         RQMCExperiment.simulReplicatesRQMCDefaultReportCompare(asian, pLCG, rShift,
-				m, noise, statRQMC, varianceMC, secondsMC);
+				m, statRQMC, varianceMC, secondsMC);
 		// RQMCExperiment.simulateRQMCDefaultReportCompare(asian, pLCGBaker,
 		// rShift, m, noise, statRQMC, varianceMC, secondsMC);
 		RQMCExperiment.simulReplicatesRQMCDefaultReportCompare(asian, pSobol,
-				dShift, m, noise, statRQMC, varianceMC, secondsMC);
+				dShift, m, statRQMC, varianceMC, secondsMC);
 		Chrono timer = new Chrono();
 		RQMCExperiment.simulReplicatesRQMC(asian, pLCG0, noShift, m, statRQMC);
 		System.out.println(pLCG0.toString());

@@ -101,7 +101,7 @@ public class MonteCarloExperiment {
 	 * model but with a parameter that differs by delta, this gives a finite-difference estimator of
 	 * the derivative of the performance with respect to this parameter.
 	 */
-	public static void simulFDReplicatesCRN(MonteCarloModelDouble model1,
+	public static void simulFDReplicatesCRN (MonteCarloModelDouble model1,
 	        MonteCarloModelDouble model2, double delta, int n, RandomStream stream,
 	        Tally statDiff) {
 		statDiff.init();
@@ -120,7 +120,7 @@ public class MonteCarloExperiment {
 	 * Similar to @ref simulFDReplicatesCRN, but using independent random numbers (IRN) across the
 	 * two models. One substream is used for each run of each model, for a total of 2n substreams.
 	 */
-	public static void simulFDReplicatesIRN(MonteCarloModelDouble model1,
+	public static void simulFDReplicatesIRN (MonteCarloModelDouble model1,
 	        MonteCarloModelDouble model2, double delta, int n, RandomStream stream,
 	        Tally statDiff) {
 		statDiff.init();
@@ -161,6 +161,15 @@ public class MonteCarloExperiment {
 	        RandomStream stream, Tally statValue, double level, int d) {
 		Chrono timer = new Chrono();
 		return simulateRunsDefaultReportStudent(model, n, stream, statValue, level, d, timer);
+	}
+
+	/**
+	 * A short-hand equivalent for `simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4)`
+	 */
+	public static String simulateRunsDefaultReport (MonteCarloModelDouble model, int n,
+	        RandomStream stream, Tally statValue) {
+		Chrono timer = new Chrono();
+		return simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, timer);
 	}
 
 	/**

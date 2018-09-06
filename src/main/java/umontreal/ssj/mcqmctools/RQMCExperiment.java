@@ -1,8 +1,11 @@
 package umontreal.ssj.mcqmctools;
+
 import umontreal.ssj.hups.*;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.stat.*;
 import umontreal.ssj.stat.list.lincv.ListOfTalliesWithCV;
+import umontreal.ssj.util.Chrono;
+import umontreal.ssj.util.PrintfFormat;
 
 /**
  * Provides basic generic tools to perform RQMC experiments
@@ -78,13 +81,46 @@ public class RQMCExperiment extends MonteCarloExperiment {
 		}
 	}
 	
-	
-	public static void simulReplicatesRQMCDefaultReportCompare(MonteCarloModel model,
-			int m, PointSet p, PointSetRandomization rand, RandomStream noise,
-			Tally statRQMC, double varianceMC, double secondsMC) {
-		
-		
+
+	public static String simulReplicatesRQMCDefaultReport (MonteCarloModelDouble model, 
+			PointSet p, PointSetRandomization rand, int m, RandomStream noise,
+			Tally statRQMC) {
+		PrintfFormat str = new PrintfFormat();
+		Chrono timer = new Chrono();
+		simulReplicatesRQMC(model, p, rand, m, statRQMC);
+		statRQMC.setConfidenceIntervalStudent();
+		str.append (model.toString());
+		str.append (p.toString());
+		str.append (rand.toString());
+		str.append (statRQMC.report(0.95, 4));
+		str.append ("Total CPU time:      " + timer.format() + "\n");
+		return str.toString();
 	}
+
+	public static String simulReplicatesRQMCDefaultReportCompare (MonteCarloModelDouble model,
+			PointSet p, PointSetRandomization rand, int m,
+			Tally statRQMC, double varianceMC, double secondsMC) {
+		PrintfFormat str = new PrintfFormat();
+		Chrono timer = new Chrono();
+		simulReplicatesRQMC(model, p, rand, m, statRQMC);
+		double secondsRQMC = timer.getSeconds() / (m * p.getNumPoints());
+		double varianceRQMC = p.getNumPoints() * statRQMC.variance();
+		statRQMC.setConfidenceIntervalStudent();
+		str.append (model.toString());
+		str.append (p.toString());
+		str.append (rand.toString());
+		str.append (statRQMC.report(0.95, 4));
+		str.append ("Total CPU time:      " + timer.format() + "\n");
+		str.append ("Variance per run: ");
+		str.append(12, 5, 4, varianceRQMC);
+		str.append ("Variance ratio:   ");
+		str.append(12, 5, 4, varianceMC / varianceRQMC);
+		str.append ("Efficiency ratio: ");
+		str.append(12, 5, 4, (varianceMC * secondsMC) / (varianceRQMC * secondsRQMC));
+		str.append ("-------------------------------------------\n");
+		return str.toString();
+	}
+	
 	/**
 	 * Same as @ref simulReplicatesRQMC, except that this one uses control variates. 
 	 * It returns in <TT>statWithCV</TT> the statistics for m observations which corresponds
@@ -125,6 +161,26 @@ public class RQMCExperiment extends MonteCarloExperiment {
 			for (int k=0; k < numCV; k++) 
 				sumValuesCV[k] /= (double)n;
 			statWithCV.add (sumValues/(double)n, sumValuesCV);
+		}
+	}
+	
+	/**
+	 * To estimate a derivative via a finite difference.
+	 */	
+	public static void simulFDReplicatesRQMC (MonteCarloModelDouble model1, MonteCarloModelDouble model2, double delta,
+			PointSet p, PointSetRandomization rand, int m, Tally statDiffRQMC) {
+		Tally statValue = new Tally("stat on value");
+		statDiffRQMC.init();
+		double average1; 
+		PointSetIterator stream = p.iterator();
+		for (int j = 0; j < m; j++) {
+			rand.randomize(p);
+			stream.resetStartStream();
+			simulateRuns(model1, p.getNumPoints(), stream, statValue);
+			average1 = statValue.average();
+			stream.resetStartStream();
+			simulateRuns(model2, p.getNumPoints(), stream, statValue);
+			statDiffRQMC.add((statValue.average() - average1) / delta);
 		}
 	}
 }

@@ -3,6 +3,7 @@ import umontreal.ssj.stochprocess.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.*;
+import umontreal.ssj.mcqmctools.*;
 import umontreal.ssj.util.Chrono;
 
 public class TestAsianVGRQMC2017 {
@@ -75,7 +76,7 @@ public class TestAsianVGRQMC2017 {
 	      n = 1000000;   // for MC.
 	      System.out.println ("Ordinary MC:\n");	      
 		  asian.setProcess(spBGSS);
-	      MonteCarloExperiment.simulateRunsDefaultReport(asian, n, noise, statValue, timer); 
+	      MonteCarloExperiment.simulateRunsDefaultReportStudent (asian, n, noise, statValue, 0.95, 4, timer); 
 	      double varMC = statValue.variance();
 	      double secondsMC = timer.getSeconds() / n;
 
@@ -153,8 +154,8 @@ public class TestAsianVGRQMC2017 {
 					   new GammaProcessSymmetricalBridge(0.0, dummy, dummy, noise)));
 		  asian.setProcess(spDGBS);
 		  asian2.setProcess(spDGBSdelta);
-	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, m, pSobol, randLMS, 
-	    		  noise,  statRQMC);
+	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, pSobol, randLMS, m,
+	    		  statRQMC);
 	      System.out.println ("delta = " + delta);
 		  System.out.println(statRQMC.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statRQMC.variance() * pSobol.getNumPoints() + "\n");
@@ -166,8 +167,8 @@ public class TestAsianVGRQMC2017 {
 					   new GammaProcessSymmetricalBridge(0.0, dummy, dummy, noise)));
 		  asian.setProcess(spDGBS);
 		  asian2.setProcess(spDGBSdelta);
-	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, m, pSobol, randLMS, 
-	    		  noise,  statRQMC);
+	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, pSobol, randLMS, m,
+	    		  statRQMC);
 	      System.out.println ("delta = " + delta);
 		  System.out.println(statRQMC.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statRQMC.variance() * pSobol.getNumPoints() + "\n");
@@ -179,8 +180,8 @@ public class TestAsianVGRQMC2017 {
 					   new GammaProcessSymmetricalBridge(0.0, dummy, dummy, noise)));
 		  asian.setProcess(spDGBS);
 		  asian2.setProcess(spDGBSdelta);
-	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, m, pSobol, randLMS, 
-	    		  noise,  statRQMC);
+	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, pSobol, randLMS, m,
+	    		  statRQMC);
 	      System.out.println ("delta = " + delta);
 		  System.out.println(statRQMC.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statRQMC.variance() * pSobol.getNumPoints() + "\n");

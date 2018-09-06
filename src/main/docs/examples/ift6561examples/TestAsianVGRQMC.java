@@ -1,9 +1,11 @@
 package ift6561examples;
+
 import umontreal.ssj.stochprocess.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.*;
 import umontreal.ssj.util.Chrono;
+import umontreal.ssj.mcqmctools.*;
 
 public class TestAsianVGRQMC {
 
@@ -74,65 +76,65 @@ public class TestAsianVGRQMC {
 	      n = 1000000;   // for MC.
 	      System.out.println ("Ordinary MC:\n");	      
 		  asian.setProcess(spBGSS);
-	      MonteCarloExperiment.simulateRunsDefaultReport(asian, n, noise, statValue, timer); 
+		  System.out.println (MonteCarloExperiment.simulateRunsDefaultReportStudent (asian, n, noise, statValue, 0.95, 4, timer));
 	      double varMC = statValue.variance();
 	      double secondsMC = timer.getSeconds() / n;
-
-		  // asian.setProcess(spBGBS);
+	    	  
+	      // asian.setProcess(spBGBS);
 	      // MonteCarloExperiment.simulateRunsDefaultReport(asian, n, noise, statValue, timer); 
 
 		  // asian.setProcess(spDGBS);
 	      // MonteCarloExperiment.simulateRunsDefaultReport(asian, n, noise, statValue, timer); 
 
-	      System.out.println ("-----------------------------------------------------\n");
+	      System.out.println ("---------------------------------------------\n");
 	      
 	      // Brownian gamma sequential sampling
 	      System.out.println ("\n *****  Brownian gamma sequential sampling (BGSS)   *****\n");
 		  asian.setProcess(spBGSS);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pSobol, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pSobol, randLMS, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pKor, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pKorBaker, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pLat1, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pLat1Baker, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pSobol, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pSobol, randLMS, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pKor, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pKorBaker, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pLat1, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pLat1Baker, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
 
           // Brownian gamma bridge sampling
 	      System.out.println ("\n *****  Brownian gamma bridge sampling (BGBS)   *****\n");
 		  asian.setProcess(spBGBS);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pSobol, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pSobol, randLMS, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pKor, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pKorBaker, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pLat1, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pLat1Baker, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pSobol, randShift, m, 
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pSobol, randLMS, m, 
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pKor, randShift, m, 
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pKorBaker, randShift, m, 
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pLat1, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pLat1Baker, randShift, m, 
+	    		  statRQMC, varMC, secondsMC));
 
           // Double gamma bridge sampling
 	      System.out.println ("\n *****  Double gamma bridge sampling (DGBS)   *****\n");
 		  asian.setProcess(spDGBS);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pSobol, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pSobol, randLMS, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pKor, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pKorBaker, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pLat1, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
-	      RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, m, pLat1Baker, randShift, 
-	    		  noise,  statRQMC, varMC, secondsMC);
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pSobol, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pSobol, randLMS, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pKor, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pKorBaker, randShift, m, 
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pLat1, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
+		  System.out.println (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (asian, pLat1Baker, randShift, m,
+	    		  statRQMC, varMC, secondsMC));
 	      
 	      
           // Estimating the derivative w.r.t. nu.
@@ -152,8 +154,8 @@ public class TestAsianVGRQMC {
 					   new GammaProcessSymmetricalBridge(0.0, dummy, dummy, noise)));
 		  asian.setProcess(spDGBS);
 		  asian2.setProcess(spDGBSdelta);
-	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, m, pSobol, randLMS, 
-	    		  noise,  statRQMC);
+		  RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, pSobol, randLMS, m,
+	    		  statRQMC);
 	      System.out.println ("delta = " + delta);
 		  System.out.println(statRQMC.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statRQMC.variance() * pSobol.getNumPoints() + "\n");
@@ -165,8 +167,8 @@ public class TestAsianVGRQMC {
 					   new GammaProcessSymmetricalBridge(0.0, dummy, dummy, noise)));
 		  asian.setProcess(spDGBS);
 		  asian2.setProcess(spDGBSdelta);
-	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, m, pSobol, randLMS, 
-	    		  noise,  statRQMC);
+		  RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, pSobol, randLMS, m,
+	    		  statRQMC);
 	      System.out.println ("delta = " + delta);
 		  System.out.println(statRQMC.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statRQMC.variance() * pSobol.getNumPoints() + "\n");
@@ -178,19 +180,19 @@ public class TestAsianVGRQMC {
 					   new GammaProcessSymmetricalBridge(0.0, dummy, dummy, noise)));
 		  asian.setProcess(spDGBS);
 		  asian2.setProcess(spDGBSdelta);
-	      RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, m, pSobol, randLMS, 
-	    		  noise,  statRQMC);
+		  RQMCExperiment.simulFDReplicatesRQMC (asian, asian2, delta, pSobol, randLMS, m,
+	    		  statRQMC);
 	      System.out.println ("delta = " + delta);
 		  System.out.println(statRQMC.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statRQMC.variance() * pSobol.getNumPoints() + "\n");
 		  
 		    // To estimate a derivative via a finite difference.
-		  MonteCarloExperiment.simulFDReplicatesCRN (asian, asian2, delta, n, noise, statDiff);
+	      MonteCarloExperiment.simulFDReplicatesCRN (asian, asian2, delta, n, noise, statDiff);
 	      System.out.println ("Ordinary MC with CRNs");
 		  System.out.println(statDiff.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statDiff.variance() + "\n");
 				
-		  MonteCarloExperiment.simulFDReplicatesIRN (asian, asian2, delta, n, noise, statDiff);
+	      MonteCarloExperiment.simulFDReplicatesIRN (asian, asian2, delta, n, noise, statDiff);
 	      System.out.println ("Ordinary MC with IRNs");
 		  System.out.println(statDiff.report(0.95, 6));
 	      System.out.println ("Variance per run: " + statDiff.variance() + "\n");
