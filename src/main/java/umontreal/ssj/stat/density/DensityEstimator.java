@@ -132,7 +132,7 @@ public abstract class DensityEstimator {
 	 *            the left boundary of the interval.
 	 * @param b
 	 *            the right boundary of the interval.
-	 * @return the density estimator for each realization evaluated at \a x.
+	 * @return the density estimator for each realization evaluated at \a evalPoints.
 	 */
 	public double[][] evalDensity(double[] evalPoints, double[][] data, double a, double b) {
 		int m = data.length;

@@ -1,7 +1,7 @@
 <map id="DensityEstimator" name="DensityEstimator">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html" title="Implements an abstract class for density estimators that rely on the selection of a bandwidth &#160;such a..." alt="" coords="123,80,261,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="This class provides methods to compute a histogram density estimator for univariate densities over an..." alt="" coords="5,155,107,181"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html" title="This class provides methods to compute a kernel density estimator (KDE) for univariate unimodal densi..." alt="" coords="131,155,253,181"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" title="This class implements a density derivative estimator (DDE) over a finite interval &#160;based on a kernel ..." alt="" coords="278,155,461,181"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DDEGaussian.html" title="This class implements a density derivative estimator (DDE) based on a KDE with a Gaussian Kernel..." alt="" coords="316,229,423,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html" title="Implements an abstract class for density estimators that rely on the selection of a bandwidth &#160;such a..." alt="" coords="85,80,224,107"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="This class provides methods to construct, manipulate, and evaluate a histogram density estimator for ..." alt="" coords="248,80,349,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html" title="This class provides methods to compute a kernel density estimator (KDE) for univariate unimodal densi..." alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" title="This class implements a density derivative estimator (DDE) over a finite interval &#160;based on a kernel ..." alt="" coords="153,155,335,181"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DDEGaussian.html" title="This class implements a density derivative estimator (DDE) based on a KDE with a Gaussian Kernel..." alt="" coords="191,229,297,256"/>
 </map>
