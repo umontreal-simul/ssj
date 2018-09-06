@@ -5,11 +5,13 @@
  * @section REF_examples_sec_01 Introduction
  * 
  * 
- * The aim of this document is to provide an introduction to SSJ via a brief
- * overview and a series of examples.
- * We first give an overview of how SSJ is organized in various packages
- * that are somehow inter-related.
- * Then, we start our series of examples with elementary Monte Carlo experiments
+ * This document provides an introduction to SSJ via a series of examples.
+ * We first give a brief overview of some basic facilities to generate random
+ * numbers, handle probability distributions, collect statistics, and manage event lists,
+ * for example. 
+ * An overview of how SSJ is organized in various inter-related packages can be found
+ * on the main page, in the  @ref REF_0_sec_01 Section.
+ * Our series of examples start with elementary Monte Carlo experiments
  * in which we show how to generate random variates to simulate a model,
  * collect statistics, and make some plots from the results.
  * We show how to generate vectors from multivariate distributions and stochastic processes, 
@@ -20,9 +22,9 @@
  *
  * While studying the examples, one can refer to the functional
  * definitions (the APIs) of the SSJ classes.
- * Before that, we recommand reading the short overview of the different packages of SSJ
- * given in the  @ref REF_0_sec_01 Section on the main page,
- * then the overview given below, and perhaps the overview of each package given at the beginning 
+ * Before that, we recommand looking at the short overview of the different packages
+ * in the @ref REF_0_sec_01 on the main page, then the overview given below, 
+ * and perhaps the overview of each package given at the beginning 
  * of its documentation, to have a general idea of what is available and where.
  * 
  * 
@@ -34,30 +36,30 @@
  * 
  * 
  * Random numbers feed simulation models and Monte Carlo experiments.
- * To generate random numbers from a given probability distribution, 
+ * To simulate random variables from a given probability distribution, 
  * one typically starts from independent uniform random numbers, uniformly distributed over the
  * interval @f$[0,1)@f$, and transform these numbers appropriately to obtain the 
  * desired distribution. 
- * In reality, the so-called *uniform random numbers* produced by SSJ and other simulation software
- * are *not* truly random and independent. They are only imitations produced by 
+ * The so-called *uniform random numbers* produced by SSJ and other simulation software
+ * are of course *not* truly random and independent. They are only imitations produced by 
  * deterministic mathematical algorithms, and are sometimes called *pseudorandom*.
  * Nevertheless, they are very good imitations from a statistical viewpoint,
- * and we follow the common usage in the Monte Carlo simulation community to just 
- * call them random numbers, for simplicity @cite sLAW14a, @cite rLEC90a, @cite rLEC17h.
+ * and we follow the common usage in the simulation community of just 
+ * calling them random numbers @cite sLAW14a, @cite rLEC90a, @cite rLEC17h.
  * An important consequence of the deterministic nature of these algorithmic 
  * random number generators (RNGs) is that if you run the same simulation program several times, 
  * unless you reset the seed of the RNG, you will get exactly the same results each time.
  * This is really not like throwing a dice or flipping a coin, but 
- * this is normal and actually desirable.
- * Indeed, the ability to replicate Monte Carlo experiments with exactly the same 
+ * this behavior is actually desirable.
+ * The ability to reproduce Monte Carlo experiments with exactly the same 
  * random numbers is a key advantage (and requirement) in modern simulation software
  * @cite sLAW14a, @cite rLEC12a, @cite rLEC15a, @cite rLEC17h, @cite rLEC17p.  
  * 
  * 
- * Selection of an RNG is based on several
+ * The selection of an RNG is based on several
  * criteria such as uniformity, performance, and portability
  * @cite rLEC94a, @cite rLEC12a&thinsp;. 
- * The package  @ref umontreal.ssj.rng provides basic tools to generate
+ * The package  @ref umontreal.ssj.rng provides basic tools to generate uniform 
  * random numbers. It defines an interface called
  * @ref umontreal.ssj.rng.RandomStream implemented by any RNG supported by SSJ. 
  * This interface requires that each RNG provides multiple streams and substreams 
@@ -69,7 +71,7 @@
  * same set of methods specified by the interface. 
  * The selected type of RNG is specified when creating the `RandomStream` object. 
  *
- * One can easily replace the 'independent' random numbers with (possibly randomized)
+ * One can also easily replace the 'independent' random numbers with (possibly randomized)
  * highly-uniform (quasi-Monte Carlo) point sets implemented in the package
  * @ref umontreal.ssj.hups&thinsp;, again without changing the simulation code.
  * The point set objects all inherit
@@ -79,7 +81,15 @@
  * The replacement of random numbers by quasi-random ones can be easily done
  * without modifying the model implementation, 
  * except for the setup code that creates the point sets.
- *
+ * 
+ * The package
+ *  @ref umontreal.ssj.latnetbuilder provides an interface to the *LatNet Builder* software,
+ * implemented in C++, which provides tools to construct hups of various types
+ * such as lattices, polynomial lattices, digital nets, etc., in arbitrary dimension,
+ * for an arbitrary number of points, a rich variety of uniformity criteria, etc.
+ * Note that LatNet Builder uses the NTL library and for this reason it does not run 
+ * under Windows, but only under Linux-type systems.
+ *  
  *  
  * To generate non-uniform random numbers, one can select a probability distribution
  * from the @ref umontreal.ssj.probdist package and a `RandomStream`
@@ -98,17 +108,16 @@
  * a distribution object with fixed parameters, which often involves significant overhead
  * because it precomputes constants and tables.
  * This precomputation setup is often worthwhile if the same distribution (with same parameters)
- * is used many times, but not if the parameters change all the time so the setup has to be redone
- * each time anyway.
+ * is used many times, but not if the parameters change all the time, 
+ * in which case the setup has to be redone each time.
  * 
  * The default (most general) way of defining a non-uniform generator is to match
  * a distribution with a `RandomStream`.  The package  @ref umontreal.ssj.randvar
- * provides facilities to do that.  
- * By default, the random variates are obtained by applying the inverse cdf 
+ * provides facilities to do that.
+ * By default, the random variates are obtained by applying the inverse cdf
  * (computed via the `inverseF` method) to the uniform random numbers obtained from the stream.
- *  
  * However, inversion is sometimes too slow or inapplicable (the inverse cdf or even a good
- * approximation of it is unknown).   The package  @ref umontreal.ssj.randvar
+ * approximation of it may be too hard to compute).  The package  @ref umontreal.ssj.randvar
  * permits one to generate non-uniform randm variates in many other ways than by inversion.
  * In particular, it offers classes to generate random variates from specific discrete and 
  * continuous distributions by specialized methods, without relying on the `probdist` package.
@@ -117,37 +126,30 @@
  * @ref umontreal.ssj.randvar.RandomVariateGenInt&thinsp;.
  * Each specialized class provides a static method which can be preferable to use 
  * when it is not worthwhile to create a generator object and make the associated precomputations.
- * One drawback is these static methods have signatures that are specific to the distribution,
- * because they must transmit the distribution parameters, and they have to perform setup
- * operations on each variate generation.
+ * One drawback of these static methods, however, is that their signatures that are specific to the distribution,
+ * because they must transmit the distribution parameters, and therefore one may have to change the simulation code 
+ * when changing a distribution.
+ * They may also have to perform setup operations on each variate generation.
  * 
  * The packages @ref umontreal.ssj.probdistmulti  and @ref umontreal.ssj.randvarmulti
  * are the counterparts of `probdist` and `randvar` for multivariate distributions.
  * The package @ref umontreal.ssj.stochprocess  offers tools to generate discretely observed
  * sample paths (skeletons) of various types of stochastic processes.
  * 
- * The package @ref umontreal.ssj.hups  implements different types of highly uniform (or low-discrepancy)
- * point sets and sequences (hups), and randomized versions of these points.
- * These points and sequences can be used in (randomized) quasi-Monte Carlo methods,
- * where the random numbers are replaced by more uniform point sets.  The package
- *  @ref umontreal.ssj.latnetbuilder provides an interface to the LatNet Builder software,
- * implemented in C++, which provides tools to construct hups of various types
- * such as lattices, polynomial lattices, digital nets, etc., in arbitrary dimension,
- * for an arbitrary number of points, a rich variety of uniformity criteria, etc.
- *  
  * 
  * 
  * @subsection REF_examples_sec_stat   Collecting statistics
  * 
  * Output from simulations is collected in *statistical probes* that implement the abstract class
- * @ref umontreal.ssj.stat.StatProbe, available in the  @ref umontreal.ssj.stat  package.
+ * @ref umontreal.ssj.stat.StatProbe from the  @ref umontreal.ssj.stat  package.
  * There are two main types of probes:
  * @ref umontreal.ssj.stat.Tally probes collect series of observations of the form
  * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate probes collect
- * statistics for a continuous variable evolving in (simulated) time. During
+ * statistics for a process that evolves in continuous (simulated) time, 
+ * with a piecewise-constant trajectory. During
  * the simulation, one can add observations to such probes. After the
  * simulation (or at any time), measures such as the sample average, the sample
- * standard deviation, confidence intervals, etc., can be observed.
+ * variance or standard deviation, confidence intervals, etc., can be observed.
  * Statistical reports can also be obtained for the different probes, in the form of
  * a character `String` that can be displayed or printed.
  * The `stat` package also provides a way to detach
@@ -202,10 +204,11 @@
  * collect elementary statistics, compute confidence intervals, compare
  * similar systems, and use randomized quasi-Monte Carlo point sets, with SSJ.
  * The models considered here are quite simple and some of the performance
- * measures can be computed by (more accurate) numerical methods rather than
- * by simulation. The purpose of these very simple models is just to give a first tasting
- * of SSJ. It should not be interpreted to mean that simulation is necessarily
- * needed to study these models.
+ * measures may be computed by numerical methods rather than
+ * by simulation. The purpose of these simple models is just to give a first idea
+ * of how to use SSJ. 
+ * # It should not be interpreted to mean that simulation is necessarily
+ * # needed to study these models.
  * 
  * 
  * @subsection REF_examples_sec_collision Collisions in a hashing system
@@ -216,16 +219,18 @@
  * Each item is assigned a random location, independently of the other items.
  * A *collision* occurs each time an item is assigned a location already
  * occupied. Let @f$C@f$ be the number of collisions. We want to estimate
- * the probability distribution of the random variable @f$C@f$, and 
- * the expected number of collisions @f$\mathbb E[C]@f$, by simulation. A
- * theoretical result states that when @f$k\to\infty@f$ while @f$\lambda=
- * m^2/(2k)@f$ is fixed, @f$C@f$ converges in distribution to a Poisson
- * random variable with mean @f$\lambda@f$. We may want to use Monte Carlo
- * simulation to assess the error made by this Poisson approximation
+ * the probability distribution of the random variable @f$C@f$, as well as
+ * its expectation  @f$\mathbb E[C]@f$ and variance  Var@f$[C]@f$, by simulation.
+ * A theorem states that when @f$k\to\infty@f$ while @f$\lambda=
+ * m^2/(2k)@f$ remains fixed, @f$C@f$ converges in distribution to a Poisson
+ * random variable with mean @f$\lambda@f$  @cite rLEC02c&nbsp;. Thus, this Poisson approximation 
+ * should be good when @f$k@f$ is very large and @f$\lambda@f$ is not too large. 
+ * We may want to use Monte Carlo
+ * simulation to assess the error made by the Poisson approximation
  * for finite values of @f$k@f$ and @f$m@f$.  To do this, we can
  * generate @f$n@f$ independent realizations of @f$C@f$, say @f$C_1,…,C_n@f$,
  * compute their empirical distribution and empirical mean, and compare with
- * the Poisson approximation.
+ * the Poisson distribution with mean .@f$\lambda@f$.
  *
  * The Java program in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} simulates
@@ -276,8 +281,8 @@
  * form of a character string. This report is printed, together with the
  * value of @f$\lambda@f$.
  *
- *  <strong>Results of the program  <tt>Collision</tt></strong>
- * &emsp;[Collision]
+ *  <strong>Results of the program  <tt> Collision</tt></strong>
+ * &emsp;[Collision results]
  * @anchor REF_examples_res_Collision
  * @include tutorial/Collision.txt
  * 
@@ -755,6 +760,8 @@
  * @include tutorial/AsianQMC.txt
  * 
  * 
+ * **************************************************************************************************
+ *
  * @section REF_examples_sec_event Discrete-Event Simulation
  * 
  * 
