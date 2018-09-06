@@ -126,8 +126,9 @@ public class DEHistogram extends DensityEstimator {
 	}
 
 	/**
-	 * Constructs a histogram with #numBins bins over the interval \f$[a,b]\f$ from
-	 * the observations passed in \a data. Note that the individual observations are
+	 * Constructs a histogram over the interval \f$[a,b]\f$ from
+	 * the observations passed in \a data. The number of bins is
+	 * taken as the value of #setNumBins(int). Note that the individual observations are
 	 * not being stored.
 	 * 
 	 * @param data

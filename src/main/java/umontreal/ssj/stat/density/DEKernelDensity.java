@@ -1,142 +1,102 @@
 package umontreal.ssj.stat.density;
 
 import umontreal.ssj.probdist.ContinuousDistribution;
-import umontreal.ssj.probdist.EmpiricalDist;
 
 /**
- * This class provides methods to compute a kernel density estimator (KDE) for
- * univariate unimodal densities over an interval \f$[a,b]\f$ from a set of
- * \f$n\f$ individual observations \f$X_0, …, X_{n-1}\f$, and returns its value
- * at a set of selected points.
+ * This class provides methods to construct a kernel density estimator (KDE) for
+ * univariate unimodal densities from a set of \f$n\f$ individual observations
+ * \f$X_0, …, X_{n-1}\f$, and to evaluate it at a single point or at a set of
+ * selected evaluation points. The observations can be realizations of a \ref
+ * umontreal.ssj.mcqmctools.MonteCarloModelDouble, for instance.
  * 
- * This estimator takes a fixed bandwidth \f$ h>0\f$ as well as a kernel
- * function \f$K\f$, which is also referred to as kernel density. The kernel
- * density should be non-negative and integrate to one. For \f$x\in[a,b]\f$, the
- * KDE itself is defined as \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh}
- * \sum_{i = 0}^{n-1} k\left( \frac{x - x_i}{h} \right). \f]
+ * The KDE takes a fixed bandwidth \f$ h>0\f$ as well as a kernel function
+ * \f$K\f$, which is also referred to as kernel density. The kernel density
+ * should be non-negative and integrate to one. For \f$x\in[a,b]\f$, the KDE
+ * itself is defined as
+ * 
+ * @anchor REF_stat_density_DEKernelDensity_KDE \f[ \hat{f}_{n}(x) =
+ *         \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} K\left( \frac{x -
+ *         X_i}{h} \right). \tag{KDE} \f]
+ * 
  * 
  * @author puchhamf
  *
  */
 
-public class DEKernelDensity extends DEBandwidthBased {
+public class DEKernelDensity extends DensityEstimator {
 
-	private EmpiricalDist dist;
-	/**<container for the observations */
+	/** the kernel function \f$K\f$. */
 	private ContinuousDistribution kernel;
-	/**<the kernel density function */
+
+	/**
+	 * threshold value for density-evaluation. Summands w.r.t. \f$i\f$ in (
+	 * {@link REF_stat_density_DEKernelDensity_KDE KDE} ) smaller than this value
+	 * are considered negligible. It is set to \f$ 10^{-10} by default\f$.
+	 */
 	private double eps = 1.0E-10;
-
-	/**<threshold value for density-evaluation. Contributions smaller than this
-	 * value are considered negligible. */
-
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$.
-	 * 
-	 * @param a
-	 *            the left boundary of the interval
-	 * @param b
-	 *            the right boundary of the interval
+	 * The bandwidth \f$h\f$.
 	 */
-	public DEKernelDensity(double a, double b) {
-		setRange(a, b);
-		setAlpha(4.0);
-	}
+	private double h;
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function
-	 * \a kernel.
+	 * Constructs a KDE with the kernel function \a kernel.
 	 * 
-	 * @param a
-	 *            the left boundary of the interval
-	 * @param b
-	 *            the right boundary of the interval
 	 * @param kernel
-	 *            the kernel density function
+	 *            the kernel density function.
 	 */
-	public DEKernelDensity(double a, double b, ContinuousDistribution kernel) {
-
-		this(a, b);
-		this.setKernel(kernel);
+	public DEKernelDensity(ContinuousDistribution kernel) {
+		setKernel(kernel);
 
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with bandwidth \f$h\f$ .
+	 * Constructs a KDE with bandwidth \f$h\f$.
 	 * 
-	 * @param a
-	 *            the left boundary of the interval
-	 * @param b
-	 *            the right boundary of the interval
 	 * @param h
-	 *            the bandwidth
+	 *            the bandwidth.
 	 */
-	public DEKernelDensity(double a, double b, double h) {
-
-		this(a, b);
+	public DEKernelDensity(double h) {
 		setH(h);
 
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function \a
-	 * kernel and bandwidth \f$h\f$.
+	 * Constructs a KDE with the kernel function \a kernel and bandwidth \a h.
 	 * 
-	 * @param a
-	 *            the left boundary of the interval
-	 * @param b
-	 *            the right boundary of the interval
 	 * @param h
 	 *            the bandwidth
 	 * @param kernel
 	 *            the kernel density function
 	 */
-	public DEKernelDensity(double a, double b, double h, ContinuousDistribution kernel) {
+	public DEKernelDensity(double h, ContinuousDistribution kernel) {
 
-		this(a, b, kernel);
+		this(kernel);
 		setH(h);
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with the kernel function \a
-	 * kernel and an array of bandwidths \a theHs.
+	 * Sets the bandwidth to \a h.
 	 * 
-	 * @param a
-	 *            the left boundary of the interval
-	 * @param b
-	 *            the right boundary of the interval
-	 * @param theHs
-	 *            an array of bandwidths
-	 * @param kernel
-	 *            the kernel density function
+	 * @param h
+	 *            the desired bandwidth.
 	 */
-	public DEKernelDensity(double a, double b, double[] theHs, ContinuousDistribution kernel) {
+	public void setH(double h) {
+		this.h = h;
 
-		this(a, b, kernel);
-		this.theHs = new double[theHs.length];
-		this.theHs = theHs;
 	}
 
 	/**
-	 * Constructs a KDE over the interval \f$[a,b]\f$ with an array of bandwidths \a
-	 * theHs.
+	 * Gives the bandwidth \f$h\f$.
 	 * 
-	 * @param a
-	 *            the left boundary of the interval
-	 * @param b
-	 *            the right boundary of the interval
-	 * @param theHs
-	 *            an array of bandwidths
+	 * @return the bandwidth.
 	 */
-	public DEKernelDensity(double a, double b, double[] theHs) {
-
-		this(a, b);
-		this.theHs = new double[theHs.length];
-		this.theHs = theHs;
+	public double getH() {
+		return h;
 	}
 
 	/**
-	 * Gives the kernel density function.
+	 * Gives the kernel density function \f$K\f$.
 	 * 
 	 * @return the kernel density function.
 	 */
@@ -155,8 +115,10 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * Gives the threshold-level for the evaluation of the density. Contributions of
-	 * observations smaller than this value are considered negligible.
+	 * Gives the threshold-level \f$\varepsilon\f$ for the evaluation of the
+	 * density. Summands w.r.t. \f$i\f$ in (
+	 * {@link REF_stat_density_DEKernelDensity_KDE KDE} ) smaller than this value
+	 * are considered negligible.
 	 * 
 	 * @return the threshold-level for evaluation.
 	 */
@@ -165,8 +127,9 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * Sets the threshold-level for the evaluation of the density to \a eps.
-	 * Contributions of observations smaller than this value are considered
+	 * Sets the threshold-level \f$\varepsilon\f$  for the evaluation of the density to \a eps.
+	 * Summands  w.r.t. \f$i\f$ in (
+	 * {@link REF_stat_density_DEKernelDensity_KDE KDE} ) smaller than this value are considered
 	 * negligible.
 	 * 
 	 * @param eps
@@ -177,87 +140,98 @@ public class DEKernelDensity extends DEBandwidthBased {
 	}
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void constructDensity(double[] data) {
-		dist = new EmpiricalDist(data);
-
-	}
-
-	/**
-	 * Returns the value of the density evaluated at point \f$x\f$. For this
-	 * evaluation method to work we assume that {@link #kernel} is unimodal, i.e.
-	 * increasing then decreasing. This algorithm works by summing up all
-	 * contributions of all observations \f$X_0, \ldots, X_{n-1}\f$ which are larger
-	 * than {@link #eps}.
+	 * Evaluates the KDE defined by the observations \a data at the evaluation point
+	 * \a x. Each summand w.r.t. \f$i\f$ in (
+	 * {@link REF_stat_density_DEKernelDensity_KDE KDE} ) is only considered if it
+	 * is larger than \f$\varepsilon\f$ . For this method the kernel function \f$K\f$ is assumed
+	 * to be unimodal, i.e. increasing and then decreasing.
 	 * 
 	 * @param x
-	 *            the point at which the density is to be evaluated.
-	 * @return the value of the estimated density at \f$x\f$.
+	 *            the evaluation point.
+	 * @param data
+	 *            the observations of the underlying model.
+	 * @return the value of the KDE at \a x.
 	 */
-	@Override
-	public double evalDensity(double x) {
+	public double evalDensity(double x, double[] data) {
 		double density;
-		int n = dist.getN();
-		double invhn = 1.0 / (h * (double) n);
+		int n = data.length;
 		double invh = 1.0 / h;
+		double invhn = invh / (double) n;
 		double sum = 0.0;
 		double term; // A term to be added to the sum that defines the density
 						// estimate.
 		int imin = 0; // We know that the terms for i < imin do not contribute
 						// significantly.
-		// Evaluation points are indexed by j.
-		// int imin= pmin;
-		term = kernel.density((x - dist.getObs(imin)) * invh);
-		while ((term < eps) && (imin < n - 1) && (dist.getObs(imin) < x))
-			term = kernel.density((x - dist.getObs(++imin)) * invh);
+
+		term = kernel.density((x - data[imin]) * invh);
+		while ((term < eps) && (imin < n - 1) && (data[imin] < x))
+			term = kernel.density((x - data[++imin]) * invh);
 		// System.out.println(imin);
 		// pmin=imin;
 		sum = term; // The first significant term.
-		for (int i = imin + 1; (i < n) && ((term > eps) || (dist.getObs(i) < x)); i++) // Data
-																						// indexed
+		for (int i = imin + 1; (i < n) && ((term > eps) || (data[i] < x)); i++) // Data
+																				// indexed
 			// by i.
-			sum += (term = kernel.density((x - dist.getObs(i)) * invh));
+			sum += (term = kernel.density((x - data[i]) * invh));
 		density = sum * invhn;
 		// System.out.println(density);
 		return density;
 	}
-	
+
 	/**
-	 * Returns in array \a density the value of the estimator at the evaluation
-	 * points in \a evalPoints. These two arrays must have the same size and \evalPoints
-	 * needs to be sorted in increasing order.
-	 * 
-	 * This algorithm is more efficient than the default implementation in that it keeps track of
-	 * which observations are already too far to the left of the current evaluation point to contribute more
-	 * than {@link #eps} to the estimated value. Avoiding the overhead of computing such negligible contributions 
-	 * can significantly reduce computational cost.
+	 * Same as #evalDensity(double, double[]) but with two placeholder arguments to
+	 * implement the corresponding function demanded by the abstract superclass \ref
+	 * umontreal.ssj.stat.density.DensityEstimator.
 	 */
 	@Override
-	public void evalDensity(double[] evalPoints, double[]density) {
-		int m = evalPoints.length;
-		// density = new double[m]; // Maybe not needed, but perhaps safer.
-		int n = dist.getN();
-		double invhn = 1.0 / (h * n);
+	public double evalDensity(double x, double[] data, double a, double b) {
+		return evalDensity(x, data);
+	}
+
+	/**
+	 * Evaluates the KDE defined by the observations \a data at each of the
+	 * evaluation points \a evalPoints and returns the results in an array. Each
+	 * summand w.r.t. \f$i\f$ in ( {@link REF_stat_density_DEKernelDensity_KDE KDE}
+	 * ) is only considered if it is larger than \f$\varepsilon\f$ .
+	 * 
+	 * For this method the kernel function \f$\K\f$  is assumed to be unimodal, i.e.
+	 * increasing and then decreasing, and that the points in \a evalPoints are
+	 * sorted in increasing order. This allows this method to avoid looping over all
+	 * \f$i\f$ for each evaluation point by remembering that some summands have
+	 * already been deemed too small.
+	 * 
+	 * @param evalPoints
+	 *            the evaluation points.
+	 * @param data
+	 *            the observations of the underlying model.
+	 * @return the value of the KDE at \a evalPoints.
+	 */
+
+	public double[] evalDensity(double[] evalPoints, double[] data) {
+		int k = evalPoints.length;
+		double[] density = new double[k];
+		int n = data.length;
 		double invh = 1.0 / h;
+		double invhn = invh / (double) n;
 		double y;
 		double sum = 0.0;
 		double term; // A term to be added to the sum that defines the density
 						// estimate.
 		int imin = 0; // We know that the terms for i < imin do not contribute
 						// significantly.
-		for (int j = 0; j < m; j++) { // Evaluation points are indexed by j.
+		for (int j = 0; j < k; j++) { // Evaluation points are indexed by j.
 			y = evalPoints[j];
-			term = kernel.density((y - dist.getObs(imin)) * invh);
-			while ((term < eps) && (imin < n - 1) && (dist.getObs(imin) < y))
-				term = kernel.density((y - dist.getObs(++imin)) * invh);
+			term = kernel.density((y - data[imin]) * invh);
+			while ((term < eps) && (imin < n - 1) && (data[imin] < y))
+				term = kernel.density((y - data[++imin]) * invh);
 			sum = term; // The first significant term.
-			for (int i = imin + 1; (i < n) && ((term > eps) || (dist.getObs(i) < y)); i++)
+			for (int i = imin + 1; (i < n) && ((term > eps) || (data[i] < y)); i++)
 				// Data indexed by i.
-				sum += (term = kernel.density((y - dist.getObs(i)) * invh));
+				sum += (term = kernel.density((y - data[i]) * invh));
 			density[j] = sum * invhn;
 		}
+
+		return density;
 	}
 
 	/**

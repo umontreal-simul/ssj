@@ -76,130 +76,61 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class provides methods to compute a kernel density estimator (KDE) for univariate unimodal densities over an interval \([a,b]\) from a set of \(n\) individual observations \(X_0, …, X_{n-1}\), and returns its value at a set of selected points.  
+<p>This class provides methods to construct a kernel density estimator (KDE) for univariate unimodal densities from a set of \(n\) individual observations \(X_0, …, X_{n-1}\), and to evaluate it at a single point or at a set of selected evaluation points.  
  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DEKernelDensity:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__inherit__graph.svg" width="150" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__inherit__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DEKernelDensity:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__coll__graph.svg" width="150" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__coll__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a96c03c5e06047c1e01a1c24fef229c15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a96c03c5e06047c1e01a1c24fef229c15">DEKernelDensity</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>)</td></tr>
-<tr class="memdesc:a96c03c5e06047c1e01a1c24fef229c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE over the interval \([a,b]\).  <a href="#a96c03c5e06047c1e01a1c24fef229c15">More...</a><br /></td></tr>
-<tr class="separator:a96c03c5e06047c1e01a1c24fef229c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d01993cea97e5c786e1eafab7cbc096"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a1d01993cea97e5c786e1eafab7cbc096">DEKernelDensity</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>, <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> kernel)</td></tr>
-<tr class="memdesc:a1d01993cea97e5c786e1eafab7cbc096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE over the interval \([a,b]\) with the kernel function <em>kernel</em>.  <a href="#a1d01993cea97e5c786e1eafab7cbc096">More...</a><br /></td></tr>
-<tr class="separator:a1d01993cea97e5c786e1eafab7cbc096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc500760288496c87dd0f77cfc8b6020"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#adc500760288496c87dd0f77cfc8b6020">DEKernelDensity</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8ee9be1b5aa75abae556de3088cba6d9">h</a>)</td></tr>
-<tr class="memdesc:adc500760288496c87dd0f77cfc8b6020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE over the interval \([a,b]\) with bandwidth \(h\) .  <a href="#adc500760288496c87dd0f77cfc8b6020">More...</a><br /></td></tr>
-<tr class="separator:adc500760288496c87dd0f77cfc8b6020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e10a70156e15c0baddc3ff7825ba27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#ae8e10a70156e15c0baddc3ff7825ba27">DEKernelDensity</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8ee9be1b5aa75abae556de3088cba6d9">h</a>, <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> kernel)</td></tr>
-<tr class="memdesc:ae8e10a70156e15c0baddc3ff7825ba27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE over the interval \([a,b]\) with the kernel function <em>kernel</em> and bandwidth \(h\).  <a href="#ae8e10a70156e15c0baddc3ff7825ba27">More...</a><br /></td></tr>
-<tr class="separator:ae8e10a70156e15c0baddc3ff7825ba27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d9dd7fe18756e6e41cb480e2cf92571"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a7d9dd7fe18756e6e41cb480e2cf92571">DEKernelDensity</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>, double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a5d3663d7c63e91861c9fd965284c6914">theHs</a>, <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> kernel)</td></tr>
-<tr class="memdesc:a7d9dd7fe18756e6e41cb480e2cf92571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE over the interval \([a,b]\) with the kernel function <em>kernel</em> and an array of bandwidths <em>theHs</em>.  <a href="#a7d9dd7fe18756e6e41cb480e2cf92571">More...</a><br /></td></tr>
-<tr class="separator:a7d9dd7fe18756e6e41cb480e2cf92571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a197d5582cfc42a72c819fd24b03817c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a197d5582cfc42a72c819fd24b03817c7">DEKernelDensity</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a>, double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a>, double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a5d3663d7c63e91861c9fd965284c6914">theHs</a>)</td></tr>
-<tr class="memdesc:a197d5582cfc42a72c819fd24b03817c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE over the interval \([a,b]\) with an array of bandwidths <em>theHs</em>.  <a href="#a197d5582cfc42a72c819fd24b03817c7">More...</a><br /></td></tr>
-<tr class="separator:a197d5582cfc42a72c819fd24b03817c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47a02f2b136bd91041e8cdf1bd39d2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#ad47a02f2b136bd91041e8cdf1bd39d2c">DEKernelDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> kernel)</td></tr>
+<tr class="memdesc:ad47a02f2b136bd91041e8cdf1bd39d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE with the kernel function <em>kernel</em>.  <a href="#ad47a02f2b136bd91041e8cdf1bd39d2c">More...</a><br /></td></tr>
+<tr class="separator:ad47a02f2b136bd91041e8cdf1bd39d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e0bfee5704f1a397b37901f7a0ae78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#ac3e0bfee5704f1a397b37901f7a0ae78">DEKernelDensity</a> (double h)</td></tr>
+<tr class="memdesc:ac3e0bfee5704f1a397b37901f7a0ae78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE with bandwidth \(h\).  <a href="#ac3e0bfee5704f1a397b37901f7a0ae78">More...</a><br /></td></tr>
+<tr class="separator:ac3e0bfee5704f1a397b37901f7a0ae78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0102ba07f7076d292592574f8f14d8d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a0102ba07f7076d292592574f8f14d8d8">DEKernelDensity</a> (double h, <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> kernel)</td></tr>
+<tr class="memdesc:a0102ba07f7076d292592574f8f14d8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a KDE with the kernel function <em>kernel</em> and bandwidth <em>h</em>.  <a href="#a0102ba07f7076d292592574f8f14d8d8">More...</a><br /></td></tr>
+<tr class="separator:a0102ba07f7076d292592574f8f14d8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3cb872607dbb4b3750373b4eb882bc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#aa3cb872607dbb4b3750373b4eb882bc5">setH</a> (double h)</td></tr>
+<tr class="memdesc:aa3cb872607dbb4b3750373b4eb882bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the bandwidth to <em>h</em>.  <a href="#aa3cb872607dbb4b3750373b4eb882bc5">More...</a><br /></td></tr>
+<tr class="separator:aa3cb872607dbb4b3750373b4eb882bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e9f7d0542f15bff4fe309cab52f286"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#ad6e9f7d0542f15bff4fe309cab52f286">getH</a> ()</td></tr>
+<tr class="memdesc:ad6e9f7d0542f15bff4fe309cab52f286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the bandwidth \(h\).  <a href="#ad6e9f7d0542f15bff4fe309cab52f286">More...</a><br /></td></tr>
+<tr class="separator:ad6e9f7d0542f15bff4fe309cab52f286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48a4cd751edfa1b5009be0473d5a4168"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a48a4cd751edfa1b5009be0473d5a4168">getKernel</a> ()</td></tr>
-<tr class="memdesc:a48a4cd751edfa1b5009be0473d5a4168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the kernel density function.  <a href="#a48a4cd751edfa1b5009be0473d5a4168">More...</a><br /></td></tr>
+<tr class="memdesc:a48a4cd751edfa1b5009be0473d5a4168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the kernel density function \(K\).  <a href="#a48a4cd751edfa1b5009be0473d5a4168">More...</a><br /></td></tr>
 <tr class="separator:a48a4cd751edfa1b5009be0473d5a4168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0db6ed6a4e15e477cbe833680a5c4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#aa0db6ed6a4e15e477cbe833680a5c4b3">setKernel</a> (<a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> kernel)</td></tr>
 <tr class="memdesc:aa0db6ed6a4e15e477cbe833680a5c4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the kernel density function to <em>kernel</em>.  <a href="#aa0db6ed6a4e15e477cbe833680a5c4b3">More...</a><br /></td></tr>
 <tr class="separator:aa0db6ed6a4e15e477cbe833680a5c4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47a014867973039428102a37dc4c491c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a47a014867973039428102a37dc4c491c">getEps</a> ()</td></tr>
-<tr class="memdesc:a47a014867973039428102a37dc4c491c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the threshold-level for the evaluation of the density.  <a href="#a47a014867973039428102a37dc4c491c">More...</a><br /></td></tr>
+<tr class="memdesc:a47a014867973039428102a37dc4c491c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the threshold-level \(\varepsilon\) for the evaluation of the density.  <a href="#a47a014867973039428102a37dc4c491c">More...</a><br /></td></tr>
 <tr class="separator:a47a014867973039428102a37dc4c491c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba07d6138f0764195b8856f6ff0e0731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#aba07d6138f0764195b8856f6ff0e0731">setEps</a> (double eps)</td></tr>
-<tr class="memdesc:aba07d6138f0764195b8856f6ff0e0731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold-level for the evaluation of the density to <em>eps</em>.  <a href="#aba07d6138f0764195b8856f6ff0e0731">More...</a><br /></td></tr>
+<tr class="memdesc:aba07d6138f0764195b8856f6ff0e0731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold-level \(\varepsilon\) for the evaluation of the density to <em>eps</em>.  <a href="#aba07d6138f0764195b8856f6ff0e0731">More...</a><br /></td></tr>
 <tr class="separator:aba07d6138f0764195b8856f6ff0e0731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d93ec25fe68511baeef02cae4d0c4d"><td class="memItemLeft" align="right" valign="top"><a id="a77d93ec25fe68511baeef02cae4d0c4d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a77d93ec25fe68511baeef02cae4d0c4d">constructDensity</a> (double[] data)</td></tr>
-<tr class="separator:a77d93ec25fe68511baeef02cae4d0c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f10f65162f9178cea44162784906638"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a9f10f65162f9178cea44162784906638">evalDensity</a> (double x)</td></tr>
-<tr class="memdesc:a9f10f65162f9178cea44162784906638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the density evaluated at point \(x\).  <a href="#a9f10f65162f9178cea44162784906638">More...</a><br /></td></tr>
-<tr class="separator:a9f10f65162f9178cea44162784906638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf61d45c38fa443be7c4465048870a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#abdf61d45c38fa443be7c4465048870a0">evalDensity</a> (double[] evalPoints, double[]density)</td></tr>
-<tr class="memdesc:abdf61d45c38fa443be7c4465048870a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns in array <em>density</em> the value of the estimator at the evaluation points in <em>evalPoints</em>.  <a href="#abdf61d45c38fa443be7c4465048870a0">More...</a><br /></td></tr>
-<tr class="separator:abdf61d45c38fa443be7c4465048870a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770a4214088d14a26861de7d7554e68e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a770a4214088d14a26861de7d7554e68e">evalDensity</a> (double x, double[] data)</td></tr>
+<tr class="memdesc:a770a4214088d14a26861de7d7554e68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the KDE defined by the observations <em>data</em> at the evaluation point <em>x</em>.  <a href="#a770a4214088d14a26861de7d7554e68e">More...</a><br /></td></tr>
+<tr class="separator:a770a4214088d14a26861de7d7554e68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7efa66a5e1e49eff7469b49e61e82d04"><td class="memItemLeft" align="right" valign="top"><a id="a7efa66a5e1e49eff7469b49e61e82d04"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a7efa66a5e1e49eff7469b49e61e82d04">evalDensity</a> (double x, double[] data, double a, double b)</td></tr>
+<tr class="memdesc:a7efa66a5e1e49eff7469b49e61e82d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as #evalDensity(double, double[]) but with two placeholder arguments to implement the corresponding function demanded by the abstract superclass <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">umontreal.ssj.stat.density.DensityEstimator</a>. <br /></td></tr>
+<tr class="separator:a7efa66a5e1e49eff7469b49e61e82d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35059e827b69531eee64a20bf584a098"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a35059e827b69531eee64a20bf584a098">evalDensity</a> (double[] evalPoints, double[] data)</td></tr>
+<tr class="memdesc:a35059e827b69531eee64a20bf584a098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the KDE defined by the observations <em>data</em> at each of the evaluation points <em>evalPoints</em> and returns the results in an array.  <a href="#a35059e827b69531eee64a20bf584a098">More...</a><br /></td></tr>
+<tr class="separator:a35059e827b69531eee64a20bf584a098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad146fa8579a5f8a876c4688cc5a68520"><td class="memItemLeft" align="right" valign="top"><a id="ad146fa8579a5f8a876c4688cc5a68520"></a>
 String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a> ()</td></tr>
 <tr class="separator:ad146fa8579a5f8a876c4688cc5a68520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html">DEBandwidthBased</a></td></tr>
-<tr class="memitem:ad6e9f7d0542f15bff4fe309cab52f286 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad6e9f7d0542f15bff4fe309cab52f286">getH</a> ()</td></tr>
-<tr class="memdesc:ad6e9f7d0542f15bff4fe309cab52f286 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the bandwidth.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad6e9f7d0542f15bff4fe309cab52f286">More...</a><br /></td></tr>
-<tr class="separator:ad6e9f7d0542f15bff4fe309cab52f286 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3cb872607dbb4b3750373b4eb882bc5 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aa3cb872607dbb4b3750373b4eb882bc5">setH</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8ee9be1b5aa75abae556de3088cba6d9">h</a>)</td></tr>
-<tr class="memdesc:aa3cb872607dbb4b3750373b4eb882bc5 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the bandwidth to the value of \(h\).  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aa3cb872607dbb4b3750373b4eb882bc5">More...</a><br /></td></tr>
-<tr class="separator:aa3cb872607dbb4b3750373b4eb882bc5 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ccaaf4f5e8aab69ecc2798d6b734f6 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a43ccaaf4f5e8aab69ecc2798d6b734f6">getTheHs</a> ()</td></tr>
-<tr class="memdesc:a43ccaaf4f5e8aab69ecc2798d6b734f6 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the array <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a5d3663d7c63e91861c9fd965284c6914">theHs</a> containing various bandwidths.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a43ccaaf4f5e8aab69ecc2798d6b734f6">More...</a><br /></td></tr>
-<tr class="separator:a43ccaaf4f5e8aab69ecc2798d6b734f6 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af72e1bcf8e26e9a902668409021fea1c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#af72e1bcf8e26e9a902668409021fea1c">setTheHs</a> (double[] tH)</td></tr>
-<tr class="memdesc:af72e1bcf8e26e9a902668409021fea1c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the optional array containing various bandwidths <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a5d3663d7c63e91861c9fd965284c6914">theHs</a> to the value of <em>tH</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#af72e1bcf8e26e9a902668409021fea1c">More...</a><br /></td></tr>
-<tr class="separator:af72e1bcf8e26e9a902668409021fea1c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4790d7a7282dd5f65c1d2291eca20127 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a4790d7a7282dd5f65c1d2291eca20127">getAlpha</a> ()</td></tr>
-<tr class="memdesc:a4790d7a7282dd5f65c1d2291eca20127 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a20f4c4490bc8ecbdd1ffcb79acce6035">alpha</a>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a4790d7a7282dd5f65c1d2291eca20127">More...</a><br /></td></tr>
-<tr class="separator:a4790d7a7282dd5f65c1d2291eca20127 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a9e67898a38f47fcee42d5bb360b883 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a6a9e67898a38f47fcee42d5bb360b883">setAlpha</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a20f4c4490bc8ecbdd1ffcb79acce6035">alpha</a>)</td></tr>
-<tr class="memdesc:a6a9e67898a38f47fcee42d5bb360b883 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a20f4c4490bc8ecbdd1ffcb79acce6035">alpha</a> to <em>alpha</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a6a9e67898a38f47fcee42d5bb360b883">More...</a><br /></td></tr>
-<tr class="separator:a6a9e67898a38f47fcee42d5bb360b883 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0869957b5bd1065718a5dc15aa07f2f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#af0869957b5bd1065718a5dc15aa07f2f">getB</a> ()</td></tr>
-<tr class="memdesc:af0869957b5bd1065718a5dc15aa07f2f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adf085adbf76beb194ac436d42cd1d725">B</a>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#af0869957b5bd1065718a5dc15aa07f2f">More...</a><br /></td></tr>
-<tr class="separator:af0869957b5bd1065718a5dc15aa07f2f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa28e9469470e284668ea725ad56118fa inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aa28e9469470e284668ea725ad56118fa">setB</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adf085adbf76beb194ac436d42cd1d725">B</a>)</td></tr>
-<tr class="memdesc:aa28e9469470e284668ea725ad56118fa inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adf085adbf76beb194ac436d42cd1d725">B</a> to <em>B</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aa28e9469470e284668ea725ad56118fa">More...</a><br /></td></tr>
-<tr class="separator:aa28e9469470e284668ea725ad56118fa inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360ea77ead0b54c93889af0663af234e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a360ea77ead0b54c93889af0663af234e">setBeta</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a>)</td></tr>
-<tr class="memdesc:a360ea77ead0b54c93889af0663af234e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a> to <em>beta$</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a360ea77ead0b54c93889af0663af234e">More...</a><br /></td></tr>
-<tr class="separator:a360ea77ead0b54c93889af0663af234e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3129c7ec34e49f1714249faafdfd311a inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a3129c7ec34e49f1714249faafdfd311a">getBeta</a> ()</td></tr>
-<tr class="memdesc:a3129c7ec34e49f1714249faafdfd311a inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a3129c7ec34e49f1714249faafdfd311a">More...</a><br /></td></tr>
-<tr class="separator:a3129c7ec34e49f1714249faafdfd311a inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7fd29070f99852d4a7801dde110d1d1 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad7fd29070f99852d4a7801dde110d1d1">setC</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8987032f6f7d7cfaa0ff4e2a62ae08fe">C</a>)</td></tr>
-<tr class="memdesc:ad7fd29070f99852d4a7801dde110d1d1 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8987032f6f7d7cfaa0ff4e2a62ae08fe">C</a> to <em>C</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad7fd29070f99852d4a7801dde110d1d1">More...</a><br /></td></tr>
-<tr class="separator:ad7fd29070f99852d4a7801dde110d1d1 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6a27e3b844adae13dbf6b465823a21e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad6a27e3b844adae13dbf6b465823a21e">getC</a> ()</td></tr>
-<tr class="memdesc:ad6a27e3b844adae13dbf6b465823a21e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8987032f6f7d7cfaa0ff4e2a62ae08fe">C</a>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad6a27e3b844adae13dbf6b465823a21e">More...</a><br /></td></tr>
-<tr class="separator:ad6a27e3b844adae13dbf6b465823a21e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dbc13a34d401b81a0dbb8b6e608776b inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a0dbc13a34d401b81a0dbb8b6e608776b">getDelta</a> ()</td></tr>
-<tr class="memdesc:a0dbc13a34d401b81a0dbb8b6e608776b inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9ea1a8f5ef3e6d20b362385e1288c72c">delta</a>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a0dbc13a34d401b81a0dbb8b6e608776b">More...</a><br /></td></tr>
-<tr class="separator:a0dbc13a34d401b81a0dbb8b6e608776b inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a63721099e4516b3da4d603ec1d2b48 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9a63721099e4516b3da4d603ec1d2b48">setDelta</a> (double <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9ea1a8f5ef3e6d20b362385e1288c72c">delta</a>)</td></tr>
-<tr class="memdesc:a9a63721099e4516b3da4d603ec1d2b48 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9ea1a8f5ef3e6d20b362385e1288c72c">delta</a> to <em>delta</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9a63721099e4516b3da4d603ec1d2b48">More...</a><br /></td></tr>
-<tr class="separator:a9a63721099e4516b3da4d603ec1d2b48 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae8277dde5ed2ff67b441a9752b6c171 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aae8277dde5ed2ff67b441a9752b6c171">computeEstimatedIV</a> (int n)</td></tr>
-<tr class="memdesc:aae8277dde5ed2ff67b441a9752b6c171 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the estimated IV based on the (local) model assumption \(Cn^{-\beta}h^{-\delta} \).  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aae8277dde5ed2ff67b441a9752b6c171">More...</a><br /></td></tr>
-<tr class="separator:aae8277dde5ed2ff67b441a9752b6c171 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a914edaa6ccf5e2fd1975c2199c12afd6 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a914edaa6ccf5e2fd1975c2199c12afd6">computeEstimatedISB</a> ()</td></tr>
-<tr class="memdesc:a914edaa6ccf5e2fd1975c2199c12afd6 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the estimated ISB for when the exact density of the underlying model is not known, based on its asymptotic value \(Bh^{\alpha}\).  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a914edaa6ccf5e2fd1975c2199c12afd6">More...</a><br /></td></tr>
-<tr class="separator:a914edaa6ccf5e2fd1975c2199c12afd6 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc5911c64d6074925d8ef8b5248e174c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adc5911c64d6074925d8ef8b5248e174c">computeISB</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, double[][] estDensities, double[] evalPoints)</td></tr>
-<tr class="memdesc:adc5911c64d6074925d8ef8b5248e174c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a914edaa6ccf5e2fd1975c2199c12afd6">computeEstimatedISB()</a> with dummy arguments to overload <a class="el" href="">computeISB(MonteCarloModelDensityKnown, double[][], double[])</a> for situations, where the true density is not known.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adc5911c64d6074925d8ef8b5248e174c">More...</a><br /></td></tr>
-<tr class="separator:adc5911c64d6074925d8ef8b5248e174c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80e2445f5d95cba3ce21009efd03fd6f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a80e2445f5d95cba3ce21009efd03fd6f">computeEstimatedMISE</a> (int n)</td></tr>
-<tr class="memdesc:a80e2445f5d95cba3ce21009efd03fd6f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the estimated MISE, i.e.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a80e2445f5d95cba3ce21009efd03fd6f">More...</a><br /></td></tr>
-<tr class="separator:a80e2445f5d95cba3ce21009efd03fd6f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a949c926f3807fb640fb5ebe5673e2adc inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a949c926f3807fb640fb5ebe5673e2adc">computeMISE</a> (double[][] estDensities)</td></tr>
-<tr class="memdesc:a949c926f3807fb640fb5ebe5673e2adc inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the semi-empirical MISE for situations, where the true density is not known.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a949c926f3807fb640fb5ebe5673e2adc">More...</a><br /></td></tr>
-<tr class="separator:a949c926f3807fb640fb5ebe5673e2adc inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3b4bff96ee2063d4459f11a615d5bb9 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aa3b4bff96ee2063d4459f11a615d5bb9">computeMISE</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, double[][] estDensities, double[] evalPoints)</td></tr>
-<tr class="memdesc:aa3b4bff96ee2063d4459f11a615d5bb9 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="">computeMISE(double[][], double[])</a> but with a dummy argument <em>model</em> to overload <a class="el" href="">computeMISE(MonteCarloModelDensityKnown, double[][], double[])</a> for cases where the true density is not known.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#aa3b4bff96ee2063d4459f11a615d5bb9">More...</a><br /></td></tr>
-<tr class="separator:aa3b4bff96ee2063d4459f11a615d5bb9 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad798af13cc00cf1b674af6cb222458b0 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad798af13cc00cf1b674af6cb222458b0">computeIVandISBandMISE</a> (double[][] estDensities)</td></tr>
-<tr class="memdesc:ad798af13cc00cf1b674af6cb222458b0 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method estimates the IV, ISB, and MISE based on \(m\) realizations of the density estimator, which have previously been evaluated at the \(k\) points stored in <em>evalPoints</em>, and returns them in an array in this order.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad798af13cc00cf1b674af6cb222458b0">More...</a><br /></td></tr>
-<tr class="separator:ad798af13cc00cf1b674af6cb222458b0 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84c5c3eaf0c99f73f324bc45a5541c5e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a84c5c3eaf0c99f73f324bc45a5541c5e">computeIVandISBandMISE</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, double[][] estDensities, double[] evalPoints)</td></tr>
-<tr class="memdesc:a84c5c3eaf0c99f73f324bc45a5541c5e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#ad798af13cc00cf1b674af6cb222458b0">computeIVandISBandMISE(double[][])</a> but with dummy arguments to overload <a class="el" href="">computeIVandISBandMISE(MonteCarloModelDensityKnown, double[][], double[])</a> when the true density is not known.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a84c5c3eaf0c99f73f324bc45a5541c5e">More...</a><br /></td></tr>
-<tr class="separator:a84c5c3eaf0c99f73f324bc45a5541c5e inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td></tr>
 <tr class="memitem:a4ae7a74e0d3483a0988280dd0eb64507 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">abstract double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a4ae7a74e0d3483a0988280dd0eb64507">evalDensity</a> (double x, double data[], double a, double b)</td></tr>
 <tr class="memdesc:a4ae7a74e0d3483a0988280dd0eb64507 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a density estimator over the interval \([a,b]\) based on the observations <em>data</em>, if necessary, and evaluates it at <em>x</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a4ae7a74e0d3483a0988280dd0eb64507">More...</a><br /></td></tr>
@@ -245,51 +176,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a6b36eb5320db688d7745431380f95299 inherit pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a6b36eb5320db688d7745431380f95299">coefficientOfDetermination</a> (double[] data, double[] dataEstimated)</td></tr>
 <tr class="memdesc:a6b36eb5320db688d7745431380f95299 inherit pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Coefficient of determination \(R^2\) of the observed data <em>data</em> and the estimated data <em>dataEstimated</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a6b36eb5320db688d7745431380f95299">More...</a><br /></td></tr>
 <tr class="separator:a6b36eb5320db688d7745431380f95299 inherit pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html">DEBandwidthBased</a></td></tr>
-<tr class="memitem:a8ee9be1b5aa75abae556de3088cba6d9 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="a8ee9be1b5aa75abae556de3088cba6d9"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8ee9be1b5aa75abae556de3088cba6d9">h</a></td></tr>
-<tr class="memdesc:a8ee9be1b5aa75abae556de3088cba6d9 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">bandwidth <br /></td></tr>
-<tr class="separator:a8ee9be1b5aa75abae556de3088cba6d9 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d3663d7c63e91861c9fd965284c6914 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="a5d3663d7c63e91861c9fd965284c6914"></a>
-double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a5d3663d7c63e91861c9fd965284c6914">theHs</a></td></tr>
-<tr class="memdesc:a5d3663d7c63e91861c9fd965284c6914 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">array containing various bandwidths <br /></td></tr>
-<tr class="separator:a5d3663d7c63e91861c9fd965284c6914 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f4c4490bc8ecbdd1ffcb79acce6035 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="a20f4c4490bc8ecbdd1ffcb79acce6035"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a20f4c4490bc8ecbdd1ffcb79acce6035">alpha</a></td></tr>
-<tr class="memdesc:a20f4c4490bc8ecbdd1ffcb79acce6035 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">model parameters for ISB <br /></td></tr>
-<tr class="separator:a20f4c4490bc8ecbdd1ffcb79acce6035 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9424343761f8c4f4c1afe8f5b6bf471b inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="a9424343761f8c4f4c1afe8f5b6bf471b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9424343761f8c4f4c1afe8f5b6bf471b">beta</a></td></tr>
-<tr class="memdesc:a9424343761f8c4f4c1afe8f5b6bf471b inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">model parameters for IV <br /></td></tr>
-<tr class="separator:a9424343761f8c4f4c1afe8f5b6bf471b inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ea1a8f5ef3e6d20b362385e1288c72c inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="a9ea1a8f5ef3e6d20b362385e1288c72c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9ea1a8f5ef3e6d20b362385e1288c72c">delta</a></td></tr>
-<tr class="memdesc:a9ea1a8f5ef3e6d20b362385e1288c72c inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">model parameters for IV <br /></td></tr>
-<tr class="separator:a9ea1a8f5ef3e6d20b362385e1288c72c inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8987032f6f7d7cfaa0ff4e2a62ae08fe inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="a8987032f6f7d7cfaa0ff4e2a62ae08fe"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a8987032f6f7d7cfaa0ff4e2a62ae08fe">C</a></td></tr>
-<tr class="memdesc:a8987032f6f7d7cfaa0ff4e2a62ae08fe inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">model parameters for IV <br /></td></tr>
-<tr class="separator:a8987032f6f7d7cfaa0ff4e2a62ae08fe inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf085adbf76beb194ac436d42cd1d725 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top"><a id="adf085adbf76beb194ac436d42cd1d725"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#adf085adbf76beb194ac436d42cd1d725">B</a></td></tr>
-<tr class="memdesc:adf085adbf76beb194ac436d42cd1d725 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">model parameters for ISB <br /></td></tr>
-<tr class="separator:adf085adbf76beb194ac436d42cd1d725 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1031d0e0a97a340abfe0a6ab9e831045 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">a</a></td></tr>
-<tr class="memdesc:a1031d0e0a97a340abfe0a6ab9e831045 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">left boundary of the interval over which we estimate.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045">More...</a><br /></td></tr>
-<tr class="separator:a1031d0e0a97a340abfe0a6ab9e831045 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1510a66dacf9cf3586de5fc89ae2a073 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">b</a></td></tr>
-<tr class="memdesc:a1510a66dacf9cf3586de5fc89ae2a073 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="mdescLeft">&#160;</td><td class="mdescRight">right boundary of the interval over which we estimate.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a1510a66dacf9cf3586de5fc89ae2a073">More...</a><br /></td></tr>
-<tr class="separator:a1510a66dacf9cf3586de5fc89ae2a073 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class provides methods to compute a kernel density estimator (KDE) for univariate unimodal densities over an interval \([a,b]\) from a set of \(n\) individual observations \(X_0, …, X_{n-1}\), and returns its value at a set of selected points. </p>
-<p>This estimator takes a fixed bandwidth \( h&gt;0\) as well as a kernel function \(K\), which is also referred to as kernel density. The kernel density should be non-negative and integrate to one. For \(x\in[a,b]\), the KDE itself is defined as </p><p class="formulaDsp">
-\[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} k\left( \frac{x - x_i}{h} \right). \]
+<div class="textblock"><p>This class provides methods to construct a kernel density estimator (KDE) for univariate unimodal densities from a set of \(n\) individual observations \(X_0, …, X_{n-1}\), and to evaluate it at a single point or at a set of selected evaluation points. </p>
+<p>The observations can be realizations of a <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">umontreal.ssj.mcqmctools.MonteCarloModelDouble</a>, for instance.</p>
+<p>The KDE takes a fixed bandwidth \( h&gt;0\) as well as a kernel function \(K\), which is also referred to as kernel density. The kernel density should be non-negative and integrate to one. For \(x\in[a,b]\), the KDE itself is defined as</p>
+<p><a class="anchor" id="REF_stat_density_DEKernelDensity_KDE"></a></p><p class="formulaDsp">
+\[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} k\left( \frac{x - X_i}{h} \right). \tag{KDE} \]
 </p>
 <dl class="section author"><dt>Author</dt><dd>puchhamf </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a96c03c5e06047c1e01a1c24fef229c15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96c03c5e06047c1e01a1c24fef229c15">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[1/6]</span></h2>
+<a id="ad47a02f2b136bd91041e8cdf1bd39d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47a02f2b136bd91041e8cdf1bd39d2c">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,80 +195,25 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
         <tr>
           <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html">DEKernelDensity</a> </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs a KDE over the interval \([a,b]\). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>the left boundary of the interval </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1d01993cea97e5c786e1eafab7cbc096"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d01993cea97e5c786e1eafab7cbc096">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[2/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html">DEKernelDensity</a> </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a>&#160;</td>
-          <td class="paramname"><em>kernel</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>kernel</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a KDE over the interval \([a,b]\) with the kernel function <em>kernel</em>. </p>
+<p>Constructs a KDE with the kernel function <em>kernel</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>the left boundary of the interval </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
-    <tr><td class="paramname">kernel</td><td>the kernel density function </td></tr>
+    <tr><td class="paramname">kernel</td><td>the kernel density function. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="adc500760288496c87dd0f77cfc8b6020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc500760288496c87dd0f77cfc8b6020">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[3/6]</span></h2>
+<a id="ac3e0bfee5704f1a397b37901f7a0ae78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3e0bfee5704f1a397b37901f7a0ae78">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,42 +222,24 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
           <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html">DEKernelDensity</a> </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>h</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>h</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a KDE over the interval \([a,b]\) with bandwidth \(h\) . </p>
+<p>Constructs a KDE with bandwidth \(h\). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>the left boundary of the interval </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
-    <tr><td class="paramname">h</td><td>the bandwidth </td></tr>
+    <tr><td class="paramname">h</td><td>the bandwidth. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ae8e10a70156e15c0baddc3ff7825ba27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8e10a70156e15c0baddc3ff7825ba27">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[4/6]</span></h2>
+<a id="a0102ba07f7076d292592574f8f14d8d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0102ba07f7076d292592574f8f14d8d8">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,18 +247,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
         <tr>
           <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html">DEKernelDensity</a> </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>h</em>, </td>
         </tr>
@@ -451,11 +264,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a KDE over the interval \([a,b]\) with the kernel function <em>kernel</em> and bandwidth \(h\). </p>
+<p>Constructs a KDE with the kernel function <em>kernel</em> and bandwidth <em>h</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>the left boundary of the interval </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
     <tr><td class="paramname">h</td><td>the bandwidth </td></tr>
     <tr><td class="paramname">kernel</td><td>the kernel density function </td></tr>
   </table>
@@ -464,104 +275,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a id="a7d9dd7fe18756e6e41cb480e2cf92571"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d9dd7fe18756e6e41cb480e2cf92571">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[5/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html">DEKernelDensity</a> </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>theHs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a>&#160;</td>
-          <td class="paramname"><em>kernel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs a KDE over the interval \([a,b]\) with the kernel function <em>kernel</em> and an array of bandwidths <em>theHs</em>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>the left boundary of the interval </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
-    <tr><td class="paramname">theHs</td><td>an array of bandwidths </td></tr>
-    <tr><td class="paramname">kernel</td><td>the kernel density function </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a197d5582cfc42a72c819fd24b03817c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a197d5582cfc42a72c819fd24b03817c7">&#9670;&nbsp;</a></span>DEKernelDensity() <span class="overload">[6/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html">DEKernelDensity</a> </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>theHs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs a KDE over the interval \([a,b]\) with an array of bandwidths <em>theHs</em>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>the left boundary of the interval </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
-    <tr><td class="paramname">theHs</td><td>an array of bandwidths </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9f10f65162f9178cea44162784906638"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f10f65162f9178cea44162784906638">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[1/2]</span></h2>
+<a id="a770a4214088d14a26861de7d7554e68e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770a4214088d14a26861de7d7554e68e">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -570,41 +286,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
           <td class="memname">double evalDensity </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the value of the density evaluated at point \(x\). </p>
-<p>For this evaluation method to work we assume that <a class="el" href="">kernel</a> is unimodal, i.e. increasing then decreasing. This algorithm works by summing up all contributions of all observations \(X_0, \ldots, X_{n-1}\) which are larger than <a class="el" href="">eps</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>the point at which the density is to be evaluated. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the value of the estimated density at \(x\). </dd></dl>
-
-</div>
-</div>
-<a id="abdf61d45c38fa443be7c4465048870a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdf61d45c38fa443be7c4465048870a0">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void evalDensity </td>
-          <td>(</td>
-          <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>evalPoints</em>, </td>
+          <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double []&#160;</td>
-          <td class="paramname"><em>density</em>&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -614,9 +302,56 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 
-<p>Returns in array <em>density</em> the value of the estimator at the evaluation points in <em>evalPoints</em>. </p>
-<p>These two arrays must have the same size and  needs to be sorted in increasing order.</p>
-<p>This algorithm is more efficient than the default implementation in that it keeps track of which observations are already too far to the left of the current evaluation point to contribute more than <a class="el" href="">eps</a> to the estimated value. Avoiding the overhead of computing such negligible contributions can significantly reduce computational cost. </p>
+<p>Evaluates the KDE defined by the observations <em>data</em> at the evaluation point <em>x</em>. </p>
+<p>Each summand w.r.t. \(i\) in ( <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#REF_stat_density_DEKernelDensity_KDE">KDE</a> ) is only considered if it is larger than \(\varepsilon\) . For this method the kernel function \(K\) is assumed to be unimodal, i.e. increasing and then decreasing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the evaluation point. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations of the underlying model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the value of the KDE at <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a35059e827b69531eee64a20bf584a098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35059e827b69531eee64a20bf584a098">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double [] evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>evalPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the KDE defined by the observations <em>data</em> at each of the evaluation points <em>evalPoints</em> and returns the results in an array. </p>
+<p>Each summand w.r.t. \(i\) in ( <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#REF_stat_density_DEKernelDensity_KDE">KDE</a> ) is only considered if it is larger than \(\varepsilon\) .</p>
+<p>For this method the kernel function \(\K\) is assumed to be unimodal, i.e. increasing and then decreasing, and that the points in <em>evalPoints</em> are sorted in increasing order. This allows this method to avoid looping over all \(i\) for each evaluation point by remembering that some summands have already been deemed too small.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations of the underlying model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the value of the KDE at <em>evalPoints</em>. </dd></dl>
 
 </div>
 </div>
@@ -635,9 +370,29 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 
-<p>Gives the threshold-level for the evaluation of the density. </p>
-<p>Contributions of observations smaller than this value are considered negligible.</p>
+<p>Gives the threshold-level \(\varepsilon\) for the evaluation of the density. </p>
+<p>Summands w.r.t. \(i\) in ( <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#REF_stat_density_DEKernelDensity_KDE">KDE</a> ) smaller than this value are considered negligible.</p>
 <dl class="section return"><dt>Returns</dt><dd>the threshold-level for evaluation. </dd></dl>
+
+</div>
+</div>
+<a id="ad6e9f7d0542f15bff4fe309cab52f286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e9f7d0542f15bff4fe309cab52f286">&#9670;&nbsp;</a></span>getH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getH </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gives the bandwidth \(h\). </p>
+<dl class="section return"><dt>Returns</dt><dd>the bandwidth. </dd></dl>
 
 </div>
 </div>
@@ -656,7 +411,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 
-<p>Gives the kernel density function. </p>
+<p>Gives the kernel density function \(K\). </p>
 <dl class="section return"><dt>Returns</dt><dd>the kernel density function. </dd></dl>
 
 </div>
@@ -677,11 +432,37 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 
-<p>Sets the threshold-level for the evaluation of the density to <em>eps</em>. </p>
-<p>Contributions of observations smaller than this value are considered negligible.</p>
+<p>Sets the threshold-level \(\varepsilon\) for the evaluation of the density to <em>eps</em>. </p>
+<p>Summands w.r.t. \(i\) in ( <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#REF_stat_density_DEKernelDensity_KDE">KDE</a> ) smaller than this value are considered negligible.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">eps</td><td>the threshold-level for evaluation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3cb872607dbb4b3750373b4eb882bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cb872607dbb4b3750373b4eb882bc5">&#9670;&nbsp;</a></span>setH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setH </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the bandwidth to <em>h</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>the desired bandwidth. </td></tr>
   </table>
   </dd>
 </dl>
