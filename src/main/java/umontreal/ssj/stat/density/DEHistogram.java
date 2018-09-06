@@ -116,30 +116,71 @@ public class DEHistogram extends DensityEstimator {
 		return "Histogram estimator with " + m + " bins.";
 	}
 
-	/**
-	 * Overrides the method in \ref DensityEstimator so that the number of points is
-	 * reset to the minimum of \a numPoints and {@link #m}.
-	 * 
-	 * @param numPoints
-	 *            the number of points to be returned.
-	 * @return an array of equidistant points over \f$[a,b]\f$.
-	 */
-	// TODO: does this work???
-	@Override
-	protected double[] getEquidistantPoints(int numPoints) {
-		int trueNumPoints = Math.max(numPoints, m);
-		double evalPoints[] = new double[trueNumPoints];
-		double delta = (b - a) / (trueNumPoints);
-		for (int j = 0; j < trueNumPoints; j++)
-			evalPoints[j] = a + delta * (0.5 + j);
-
-		return evalPoints;
-	}
+	
 
 	@Override
 	public double evalDensity(double x, double[] data, double a, double b) {
-		constructDensity(data,m,a,b);
-		return 0;
+		constructDensity(data,a,b);
+		return histDensity.getHeights()[(int) ((x - a)/getH())];
+	}
+	
+	@Override
+	public double[] evalDensity(double[] evalPoints, double[] data, double a, double b) {
+		int k = evalPoints.length;
+		double[] density = new double[k];
+		
+		constructDensity(data,a,b);
+		
+		
+		for(int j = 0; j < k; j++)
+			density[j] = histDensity.getHeights()[(int) ((evalPoints[j] - getA())/getH())];
+		
+		return density;
+		
+	}
+	
+//	TODO: eval density without eval points
+	
+	public double evalDensity(double x, TallyHistogram tallyHist) {
+		constructDensity(tallyHist);
+		return histDensity.getHeights()[(int) ((x - getA())/getH())];
+	}
+	
+	
+	
+	public double[] evalDensity(double[] evalPoints, TallyHistogram tallyHist) {
+		int k = evalPoints.length;
+		double[] density = new double[k];
+		
+		constructDensity(tallyHist);
+		
+		
+		for(int j = 0; j < k; j++)
+			density[j] = histDensity.getHeights()[(int) ((evalPoints[j] - getA())/getH())];
+		
+		return density;
+	}
+	
+	public double evalDensity(double x, ScaledHistogram scaledHist) {
+		constructDensity(scaledHist);
+		
+		return histDensity.getHeights()[(int) ((x - getA())/getH())];
+	}
+	
+	public double[] evalDensity(double[] evalPoints, ScaledHistogram scaledHist) {
+		int k = evalPoints.length;
+		double[] density = new double[k];
+		
+		constructDensity(scaledHist);
+		
+		
+		for(int j = 0; j < k; j++)
+			density[j] = histDensity.getHeights()[(int) ((evalPoints[j] - getA())/getH())];
+		
+		return density;
+	}
+	
+	public static double computeIV(double[][] densities, double[] variance) {
 	}
 
 }
