@@ -60,6 +60,7 @@ bintray {
             'quasi-Monte Carlo',
             'random number generators',
             'probability distributions'
+            'Java simulation'
         ]
         publicDownloadNumbers = true
         version {

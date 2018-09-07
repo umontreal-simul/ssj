@@ -234,11 +234,12 @@
  *
  * The Java program in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} simulates
- * @f$C_1,…,C_n@f$, and computes the empirical distribution of $C$ as well as 
+ * @f$C_1,…,C_n@f$, and computes the empirical distribution of $C$,
+ * its mean and variance, and 
  * a 95% confidence interval on @f$\mathbb
  * E[C]@f$. The results for @f$k = 10000@f$, @f$m = 500@f$, and @f$n =
  * 100000@f$, are in Listing&nbsp;
- * {@link REF_examples_res_Collision Collision}.  
+ * {@link REF_examples_res_Collision Collision results}.  
  * Here we have @f$\lambda=12.5@f$, whereas the reported
  * confidence interval is @f$(12.25,  12.29)@f$.
  *  This indicates that the asymptotic result underestimates
@@ -261,7 +262,7 @@
  * return these statistics or compute a confidence interval for the
  * theoretical mean of these observations, assuming that they are independent
  * and identically distributed with the normal distribution. Other types of
- * collectors that memorize the observations are also available in SSJ.
+ * collectors that memorize the observations are also available in `stat`.
  *
  *  **Simulating the number of collisions in a hashing system**
  * &emsp;[Collision]
@@ -279,7 +280,15 @@
  * method `add`. The method `statC.report` computes a confidence interval
  * from these @f$n@f$ observations and returns a statistical report in the
  * form of a character string. This report is printed, together with the
- * value of @f$\lambda@f$.
+ * value of @f$\lambda@f$. See Listing&nbsp;
+ * {@link REF_examples_res_Collision Collision results}.
+ * 
+ * In addition to the `statC` collector, the program maintains an array of counters 
+ * to count how many times each value of @f$C@f$ has been observed.
+ * The values larger or equal to `maxCounts` are aggregated in the same counter.
+ * These counts for @f$C = 0@f$ to ``maxCounts` are printed in the output,
+ * together with their expected values according to the Poisson model,
+ * for comparison.
  *
  *  <strong>Results of the program  <tt> Collision</tt></strong>
  * &emsp;[Collision results]
@@ -290,7 +299,7 @@
  * @subsection REF_examples_sec_nonuniform Nonuniform variate generation and simple quantile estimates
  * 
  * 
- * The program of Listing&nbsp;
+ * The program in Listing&nbsp;
  * {@link REF_examples_lst_Nonuniform Nonuniform} simulates the
  * following artificial model. Define the random variable
  * @f[
@@ -300,9 +309,9 @@
  * with parameter @f$p@f$, the @f$Y_j@f$’s are gamma with parameters
  * @f$(\alpha, \beta)@f$, the @f$W_j@f$’s are lognormal with parameters
  * @f$(\mu,\sigma)@f$, and all these random variables are independent. We
- * want to generate @f$n@f$ copies of @f$X@f$, say @f$X_1,…,X_n@f$, and
- * estimate the 0.10, 0.50, 0.90, and 0.99 quantiles of the distribution of
- * @f$X@f$, simply from the quantiles of the empirical distribution.
+ * want to generate @f$n@f$ copies of @f$X@f$, say @f$X_1,…,X_n@f$, 
+ * estimate the distribution of @f$X@f$ by a histogram, 
+ * and get the 0.10, 0.50, 0.90, and 0.99 quantiles of its empirical distribution.
  *
  * The method `simulateRuns` generates @f$n@f$ copies of @f$X@f$ and pass
  * them to a statistical collector of class `TallyStore`, that stores the
@@ -315,7 +324,7 @@
  * @anchor REF_examples_lst_Nonuniform
  * @include tutorial/Nonuniform.java
  *
- *  <strong>Results of the program  <tt> Nonuniform</tt></strong>
+ *  <strong>Results of the program  <tt> Nonuniform results</tt></strong>
  * &emsp;[Nonuniform]
  * @anchor REF_examples_res_Nonuniform
  * @include tutorial/Nonuniform.txt

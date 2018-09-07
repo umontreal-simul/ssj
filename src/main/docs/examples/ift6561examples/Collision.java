@@ -1,4 +1,5 @@
 package ift6561examples;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.stat.*;
 import umontreal.ssj.probdist.*;
@@ -14,9 +15,9 @@ public class Collision {
 	int C; // Number of collisions.
 	double lambda; // Theoretical expectation of C (asymptotic approx.).
 	boolean[] used; // Locations already used.
-	int maxCounts;
+	int maxCounts; // Values of C >= maxCounts are aggregated.
 	int[] counts; // Counts the number of occurrences of each value of C.
-	PoissonDist poisson;
+	PoissonDist poisson; // Will be a Poisson distribution with mean lambda.
 
 	public Collision(int k, int m, int maxCounts) {
 		this.k = k;
@@ -45,9 +46,8 @@ public class Collision {
 	}
 
 	public String toString() {
-		String s = "Collisions in a hashing system\n" + "k = " + k
-				+ " locations \n" + "m = " + m + " items \n"
-				+ "Theorical mean = lambda = " + lambda + "\n";
+		String s = "Collisions in a hashing system\n" + "k = " + k + " locations \n" + "m = " + m
+		        + " items \n" + "Theorical mean = lambda = " + lambda + "\n";
 		return s;
 	}
 
@@ -80,11 +80,9 @@ public class Collision {
 		statC.setConfidenceIntervalStudent();
 		System.out.println(statC.report(0.95, 3));
 
-		System.out.println("Counters:\n"
-				+ "c  count  fraction  Poisson prob.\n");
+		System.out.println("Counters:\n" + "c  count  fraction  Poisson prob.\n");
 		for (int c = 0; c <= col.maxCounts; c++) {
-			System.out.printf(c + "  " + col.counts[c] + "  %10.6g%n", n
-					* col.poisson.prob(c));
+			System.out.printf(c + "  " + col.counts[c] + "  %10.6g%n", n * col.poisson.prob(c));
 		}
 	}
 }
