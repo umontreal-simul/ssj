@@ -15,7 +15,7 @@ import umontreal.ssj.stat.PgfDataTable;
  * set of points one can use #evalDensity(double[], double[], double, double).
  * Note that, even though a default implementation is provided, very often
  * specific estimators will have more efficient evaluation algorithms. So,
- * overriding this method can be benificial in many cases. Furthermore, this
+ * overriding this method can be beneficial in many cases. Furthermore, this
  * class includes a method to plot the estimated density.
  * 
  * There are also several more involved methods covered by this class, most of

@@ -1,4 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classtutorial_1_1RunClass_1_1RunClassException.html" title="RunClass.RunClassException" alt="" coords="133,5,333,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1NameConflictException.html" title="This exception is thrown by a ClassFinder when two or more fully qualified class names can be associa..." alt="" coords="153,56,313,83"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" title="Integrator" alt="" coords="145,5,222,32"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="296,5,423,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloIntegrator.html" title="MonteCarloIntegrator" alt="" coords="476,56,620,83"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Replicator.html" title="Replicator class. " alt="" coords="507,5,589,32"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html" title="Sampler" alt="" coords="5,81,76,108"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1QMCSampler.html" title="QMC sampler. " alt="" coords="133,56,234,83"/>
+<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomSampler.html" title="RandomSampler" alt="" coords="124,107,243,133"/>
+<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html" title="Monte Carlo sampler. " alt="" coords="291,56,428,83"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html" title="QMC sampler. " alt="" coords="304,107,415,133"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2_1_1DigitalNetBase2Iterator.html" title="DigitalNetBase2.DigitalNet\lBase2Iterator" alt="" coords="175,5,353,47"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalSequence_1_1DigitalNetIteratorShiftGenerators.html" title="DigitalSequence.DigitalNet\lIteratorShiftGenerators" alt="" coords="175,71,353,112"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalSequence_1_1DigitalNetIteratorShiftNoGray.html" title="DigitalSequence.DigitalNet\lIteratorShiftNoGray" alt="" coords="175,136,353,177"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2_1_1DigitalNetBase2IteratorNoGray.html" title="DigitalNetBase2.DigitalNet\lBase2IteratorNoGray" alt="" coords="401,5,580,47"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile_1_1NetComparator.html" title="DigitalNetFromFile.NetComparator" alt="" coords="144,5,368,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1DoubleArrayComparator.html" title="This provides an implementation of Comparator in which arrays of double in &#160;dimensions are compared b..." alt="" coords="175,56,337,83"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html" title="The comparator class used by sortIndexOfLong2. " alt="" coords="165,107,347,149"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparator.html" title="This class is useful if one wishes to perform an ordinary one&#45;dimensional sort on MultiDimComparable&lt;..." alt="" coords="147,173,365,229"/>
 </map>
