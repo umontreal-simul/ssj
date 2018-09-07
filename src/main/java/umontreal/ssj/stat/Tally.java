@@ -266,7 +266,7 @@ public void add (double x) {
       double ci[] = new double[2];
       confidenceIntervalNormal (level, ci);
       str.append ("  " + (100*level) + "%");
-      str.append (" confidence interval for mean (normal): (");
+      str.append (" conf. interval for the mean (normal approx.): (");
       str.append (7 + d, d-1, d, ci[0] - ci[1]).append (',');
       str.append (7 + d, d-1, d, ci[0] + ci[1]).append (" )" + PrintfFormat.NEWLINE);
       return str.toString();
@@ -299,7 +299,7 @@ public void add (double x) {
       double ci[] = new double[2];
       confidenceIntervalStudent (level, ci);
       str.append ("  " + (100*level) + "%");
-      str.append (" confidence interval for mean (student): (");
+      str.append (" conf. interval for the mean (Student approx.): (");
       str.append (7 + d, d, d-1, ci[0] - ci[1]).append (',');
       str.append (7 + d, d, d-1, ci[0] + ci[1]).append (" )" + PrintfFormat.NEWLINE);
       return str.toString();
@@ -369,7 +369,7 @@ public void add (double x) {
       double ci[] = new double[2];
       confidenceIntervalVarianceChi2 (level, ci);
       str.append ("  " + (100*level) + "%");
-      str.append (" confidence interval for variance (chi2): (");
+      str.append (" conf. interval for the variance (chi2 approx.): (");
       str.append (7 + d, d, d-1, ci[0]).append (',');
       str.append (7 + d, d, d-1, ci[1]).append (" )" + PrintfFormat.NEWLINE);
       return str.toString();
@@ -575,7 +575,7 @@ public String shortReport() {
       try {
          return (Tally)super.clone();
       } catch (CloneNotSupportedException e) {
-         throw new IllegalStateException ("Tally can't clone");
+         throw new IllegalStateException ("This Tally cannot be cloned");
       }
    }
 

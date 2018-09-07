@@ -230,7 +230,7 @@
  * for finite values of @f$k@f$ and @f$m@f$.  To do this, we can
  * generate @f$n@f$ independent realizations of @f$C@f$, say @f$C_1,…,C_n@f$,
  * compute their empirical distribution and empirical mean, and compare with
- * the Poisson distribution with mean .@f$\lambda@f$.
+ * the Poisson distribution with mean @f$\lambda@f$.
  *
  * The Java program in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} simulates
@@ -245,12 +245,15 @@
  *  This indicates that the asymptotic result underestimates
  * @f$\mathbb E[C]@f$ by about 2.6%.
  *
- * The Java program imports the SSJ packages `rng` and `stat`. It uses only
- * two types of objects from SSJ: a `RandomStream` object, defined in the
- * `rng` package, that generates a stream of independent random numbers from
- * the uniform distribution, and a `Tally` object, from the `stat` package,
- * to collect statistical observations and produce the report. In SSJ,
- * `RandomStream` is actually just an interface that specifies all the
+ * The Java program imports the SSJ packages `rng`, `probdist`, and `stat`. It uses only
+ * three types of objects from SSJ: 
+ * (1) a `RandomStream` object from the package @ref umontreal.ssj.rng, 
+ * that generates a stream of independent random numbers from the uniform distribution;
+ * (2) a `PoissonDist` object from the package @ref umontreal.ssj.probdist,
+ * which implements a Poisson distribution with mean @f$\lambda@f$;
+ * and (3) a `Tally` object, from the package @ref umontreal.ssj.stat,
+ * used to collect the  @f$n@f$  realizations of @f$C@f$ and produce a statistiscal report. 
+ * In SSJ, `RandomStream` is actually just an interface that specifies all the
  * methods that must be provided by its different implementations, which
  * correspond to different brands of random streams (i.e., different types of
  * uniform random number generators). The class `MRG32k3a`, whose constructor
@@ -286,9 +289,10 @@
  * In addition to the `statC` collector, the program maintains an array of counters 
  * to count how many times each value of @f$C@f$ has been observed.
  * The values larger or equal to `maxCounts` are aggregated in the same counter.
- * These counts for @f$C = 0@f$ to ``maxCounts` are printed in the output,
- * together with their expected values according to the Poisson model,
- * for comparison.
+ * These counts for @f$C=@f$ 0 to `maxCounts` are printed in the output,
+ * together with their expected values according to the Poisson (approximation) model,
+ * for comparison.  The `poisson` object is used to calculate these values.
+ *
  *
  *  <strong>Results of the program  <tt> Collision</tt></strong>
  * &emsp;[Collision results]
@@ -330,9 +334,9 @@
  * @include tutorial/Nonuniform.txt
  *
  * To simplify the program, all the parameters are fixed as constants at the
- * beginning of the class. This is simpler, but not recommended in general
+ * beginning of the class. This is much simpler, but not recommended in general
  * because it does not permit one to perform experiments with different
- * parameter sets in a single program. Passing the parameters to the
+ * parameter sets with the same program. Passing the parameters to the
  * constructor as in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} would require
  * more lines of code, but would provide more flexibility.
@@ -376,14 +380,16 @@
  * To make the program general, one could pass them as parameters in the constructor,
  * or read them in a file inside the constructor.
  *
- * The results of this program, with @f$n = 10000@f$, are in Listing&nbsp;
+ * The results of this program, with @f$n = 100000@f$, are in Listing&nbsp;
  * {@link REF_examples_res_Nonuniform Nonuniform}. We see that
  * @f$X@f$ has a coefficient of variation larger than 1, and the quantiles
- * indicate that the distribution is skewed, with a long thick tail to the
- * right. We have @f$X < 553@f$ about half the time, but values over several
+ * indicate that the distribution is skewed, with a long tail to the
+ * right. We have @f$X < 439@f$ about half the time, whereas the average is 685.6
+ * and values over several
  * thousands are not uncommon. This probably happens when @f$N@f$ or @f$M@f$
- * takes a large value. There are also cases where @f$N=M=0@f$, in which case
- * @f$X=0@f$.
+ * takes a large value. There are also many cases where @f$N=M=0@f$, in which case
+ * @f$X=0@f$.  Looking at the histogram confirms this evaluation and provides a 
+ * clearer idea of the distribution.
  * 
  * 
  * @subsection REF_examples_sec_inventory A discrete-time inventory system
@@ -410,7 +416,7 @@
  * simulation @f$n@f$ times independently to estimate the expected profit per
  * day over a time horizon of @f$m@f$ days. Eventually, we might want to
  * *optimize* the values of the decision parameters @f$(s,S)@f$ via
- * simulation, but we do not do that here. (In practice, this is usually done
+ * simulation. (In practice, this is usually done
  * for more complicated models.)
  *
  *  **A simulation program for the simple inventory system**
@@ -419,8 +425,8 @@
  * @include tutorial/Inventory.java
  *
  * Listing&nbsp; {@link REF_examples_lst_Inventory Inventory}
- * gives a Java program, based on the SSJ library, that performs the required
- * simulation for @f$n=500@f$, @f$m=2000@f$, @f$s=80@f$, @f$S=200@f$,
+ * gives a Java program that performs a  
+ * simulation experiment for @f$n=500@f$, @f$m=2000@f$, @f$s=80@f$, @f$S=200@f$,
  * @f$\lambda=100@f$, @f$c=2@f$, @f$h=0.1@f$, @f$K=10@f$, @f$k=1@f$, and
  * @f$p=0.95@f$.
  *
@@ -446,7 +452,7 @@
  * in the interval @f$[0,1)@f$ according to the uniform probability
  * distribution.
  *
- * The method `simulateOneRun` simulates the system for @f$m@f$ days, with a
+ * The method `simulate` simulates the system for @f$m@f$ days, with a
  * given policy, and returns the average profit per day. For each day, we
  * generate the demand @f$D_j@f$, compute the stock @f$Y_j@f$ at the end of
  * the day, and add the sales revenues minus the leftover inventory costs to
@@ -463,9 +469,9 @@
  * the report. It also creates a timer that computes the total CPU time to
  * execute the program, and prints it. The results are in Listing&nbsp;
  * {@link REF_examples_res_Inventory Inventory}. The average
- * profit per day is approximately 85. It took 0.39 seconds (on a 2.4 GHz
- * computer running Linux) to simulate the system for 2000 days, compute the
- * statistics, and print the results.
+ * profit per day is approximately 85. It took 0.17 seconds (on a 2.4 GHz  (???) 
+ * computer running Windows 10 and Eclipse) to simulate the system 500 times for 2000 days each, 
+ * compute the statistics, and print the results.
  *
  *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory]
  * @anchor REF_examples_res_Inventory

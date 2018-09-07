@@ -25,12 +25,12 @@ package umontreal.ssj.stat;
  *
  */
 
-import java.util.logging.Logger;
-import umontreal.ssj.util.PrintfFormat;
+// import java.util.logging.Logger;
+// import umontreal.ssj.util.PrintfFormat;
 
 /**
 * This class provides histograms for which the bin counts (heights of rectangles)
-*  are replaced by real-valued frequencies (in double).  
+*  are replaced by real-valued frequencies (in `double`).  
 * The histogram is over a bounded interval @f$[a,b]@f$ and has a fixed number 
 * of bins of equal width @f$h@f$.
 *  The frequencies can be chosen (rescaled) so that the integral of the 
@@ -67,9 +67,9 @@ public class ScaledHistogram {
 		init(a, b, numBins);
 	}
 
-	/*
-	 * Constructs a @ref ScaledHistogram from @ref hist by normalizing the bin counts so
-	 * that the integral of the histogram is equal to @ref integral.
+	/**
+	 * Constructs a `ScaledHistogram` from `hist` by normalizing the bin counts so
+	 * that the integral of the histogram is equal to `integral`.
 	 */
 	public ScaledHistogram (TallyHistogram hist, double integral) {
 		init (hist, integral);
@@ -101,9 +101,9 @@ public class ScaledHistogram {
 	}
 
 	/**
-	 * Initializes this `ScaledHistogram` using the @ref TallyHistogram hist.
+	 * Initializes this `ScaledHistogram` using the @ref TallyHistogram `hist`.
 	 * It uses the same interval @f$[a,b]@f$, same bins, and rescaled the counters
-	 * so the integral of the histogram equal the specified value.
+	 * so the integral of the histogram equal the value specified by `integral`.
 	 */
 	public void init (TallyHistogram hist, double integral) {
 		m_a = hist.getA();
@@ -164,7 +164,7 @@ public class ScaledHistogram {
 	}
 
 	/*
-	 * Similar to AverageShiftedHistogram, except that it assumes that the density 
+	 * Similar to @ref AverageShiftedHistogram, except that it assumes that the density 
 	 * is over a close interval @f$[a,b]@f$ and is rescaled differently for the intervals 
 	 * that are near the boundary, to account for the fact that the intervals 
 	 * outside the boundaries are not counted.
@@ -196,9 +196,9 @@ public class ScaledHistogram {
 	}
 
 	/*
-	 * Similar to AverageShiftedHistogram, except that uses a weighted average.
+	 * Similar to @ref AverageShiftedHistogram, except that uses a weighted average.
 	 * For the new average in a given bin, any neighbor bin at distance @f$\ell < r@f$ is given 
-	 * a weight proportional to @ref w[i]. The given weights do not have to sum to 1;
+	 * a weight proportional to `w[i]`. The given weights do not have to sum to 1;
 	 * they are rescaled so the sum of weights that go to any given bin is 1.
 	 */
 	public ScaledHistogram averageShiftedHistogram (int r, double[] w) {
@@ -229,9 +229,9 @@ public class ScaledHistogram {
 		
 		
 	/*
-	 * Similar to AverageShiftedHistogramTrunc, except that uses a weighted average.
+	 * Similar to @ref AverageShiftedHistogramTrunc, except that uses a weighted average.
 	 * For the new average in a given bin, any neighbor bin at distance @f$\ell < r@f$ is given 
-	 * a weight proportional to @ref w[i]. The given weights do not have to sum to 1;
+	 * a weight proportional to `w[i]`. The given weights do not have to sum to 1;
 	 * they are rescaled so the sum of weights that go to any given bin is 1 (not counting 
 	 * the weights given to bins that fall outside the interval).
 	 */
@@ -295,7 +295,7 @@ public class ScaledHistogram {
 	
 
 	/*
-	 * This is supposed to be a faster implementation of @ref averageShiftedHistogram(r).
+	 * This is supposed to be a faster implementation of `averageShiftedHistogram(r)`.
 	 */
 	public ScaledHistogram averageShiftedHistogram1 (int r) {
 		ScaledHistogram image = clone();

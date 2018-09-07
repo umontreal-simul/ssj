@@ -40,11 +40,11 @@ public class Nonuniform {
 	  int n = 100000;
 	  TallyStore statX = new TallyStore (n); // To store the n observations of X.
       (new Nonuniform ()).simulateRuns (n, statX);  // Simulate X n times.
-      System.out.println (statX.report ());
+      System.out.println (statX.report (0.95, 1));
+
+      // Compute and print the empirical quantiles.
       statX.quickSort();
       double[] data = statX.getArray();  // The sorted observations.
-
-      // Print the empirical quantiles.
       System.out.printf (" 0.10 quantile: %9.1f%n", data[(int)(0.10 * n)]);
       System.out.printf (" 0.50 quantile: %9.1f%n", data[(int)(0.50 * n)]);
       System.out.printf (" 0.90 quantile: %9.1f%n", data[(int)(0.90 * n)]);

@@ -14,8 +14,8 @@ public class InventoryCRN extends Inventory {
    public void simulateDiff (int n, int m, int s1, int S1, int s2, int S2) {
       statDiff.init();
       for (int i = 0; i < n; i++) {
-         double value1 = simulateOneRun (m, s1, S1);
-         double value2 = simulateOneRun (m, s2, S2);
+         double value1 = simulate (m, s1, S1);
+         double value2 = simulate (m, s2, S2);
          statDiff.add (value2 - value1);
       }
    }
@@ -25,10 +25,10 @@ public class InventoryCRN extends Inventory {
       streamDemand.resetStartStream();
       streamOrder.resetStartStream();
       for (int i = 0; i < n; i++) {
-         double value1 = simulateOneRun (m, s1, S1);
+         double value1 = simulate (m, s1, S1);
          streamDemand.resetStartSubstream();
          streamOrder.resetStartSubstream();
-         double value2 = simulateOneRun (m, s2, S2);
+         double value2 = simulate (m, s2, S2);
          statDiff.add (value2 - value1);
          streamDemand.resetNextSubstream();
          streamOrder.resetNextSubstream();
