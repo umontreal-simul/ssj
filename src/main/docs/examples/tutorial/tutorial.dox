@@ -241,9 +241,9 @@
  * 100000@f$, are in Listing&nbsp;
  * {@link REF_examples_res_Collision Collision results}.  
  * Here we have @f$\lambda=12.5@f$, whereas the reported
- * confidence interval is @f$(12.25,  12.29)@f$.
+ * confidence interval is @f$(12.268, 12.272)@f$.
  *  This indicates that the asymptotic result underestimates
- * @f$\mathbb E[C]@f$ by nearly 2%.
+ * @f$\mathbb E[C]@f$ by about 2.6%.
  *
  * The Java program imports the SSJ packages `rng` and `stat`. It uses only
  * two types of objects from SSJ: a `RandomStream` object, defined in the
@@ -369,7 +369,12 @@
  * almost as fast.  To generate @f$M@f$, we invoke the static method
  * `inverseF` of the class `GeometricDist`, which evaluates the inverse
  * geometric distribution function for a given parameter @f$p@f$ and a given
- * uniform random variate.
+ * uniform random variate.   One important drawback of using the static method
+ * inside the `simulate` method is that changing the geometric distribution for
+ * another one would require changing the code inside `simulate`.
+ * Also here the three other distributions are hardcoded at the beginning of the class.
+ * To make the program general, one could pass them as parameters in the constructor,
+ * or read them in a file inside the constructor.
  *
  * The results of this program, with @f$n = 10000@f$, are in Listing&nbsp;
  * {@link REF_examples_res_Nonuniform Nonuniform}. We see that

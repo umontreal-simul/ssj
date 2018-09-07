@@ -1,8 +1,8 @@
 REPORT on Tally stat. collector ==> null
-    num. obs.      min          max        average     standard dev.
-     10000        0.000    15839.396     1000.890     1285.771
+    num. obs.      min          max        average     variance    standard dev.
+    100000        0.000     9890.168      685.620     606102.125      778.526
 
-0.10 quantile:     9.485
-0.50 quantile:   545.338
-0.90 quantile:  2628.177
-0.99 quantile:  5860.238
+ 0.10 quantile:       9.4
+ 0.50 quantile:     439.1
+ 0.90 quantile:    1693.5
+ 0.99 quantile:    3501.5
