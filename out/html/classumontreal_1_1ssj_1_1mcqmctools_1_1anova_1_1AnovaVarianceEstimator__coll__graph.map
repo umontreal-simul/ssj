@@ -1,7 +1,7 @@
 <map id="AnovaVarianceEstimator" name="AnovaVarianceEstimator">
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModel.html" title="An interface for a simple simulation model with which Monte Carlo (MC) and RQMC experiments are to be..." alt="" coords="35,5,226,32"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVarianceEstimator.html" title="Partial variance estimator. " alt="" coords="388,101,555,128"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="408,204,535,231"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVarianceEstimator.html" title="Partial variance estimator. " alt="" coords="388,101,553,128"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="407,181,534,208"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" title="Integrator" alt="" coords="92,233,169,260"/>
 <area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates. " alt="" coords="78,65,183,92"/>
 <area shape="rect" id="node8" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="48,183,213,209"/>

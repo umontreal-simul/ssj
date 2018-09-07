@@ -106,6 +106,7 @@ var searchData=
   ['rijndael_5falgorithm',['Rijndael_Algorithm',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Algorithm.html',1,'umontreal::ssj::rng']]],
   ['rijndael_5fproperties',['Rijndael_Properties',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Properties.html',1,'umontreal::ssj::rng']]],
   ['rootfinder',['RootFinder',['../classumontreal_1_1ssj_1_1util_1_1RootFinder.html',1,'umontreal::ssj::util']]],
+  ['roughnessfunctional',['roughnessFunctional',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3a88d2d3720ac775f5953b35ac0a504a',1,'umontreal::ssj::stat::density::DensityEstimator']]],
   ['rowreport',['rowReport',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a0bc6f51e04799773c32a41a85b716d05',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rows',['rows',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a8db75abaedab913d9c6a593539fbbd3e',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rqmcexperiment',['RQMCExperiment',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html',1,'umontreal::ssj::mcqmctools']]],

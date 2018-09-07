@@ -128,7 +128,7 @@ public class DEHistogram extends DensityEstimator {
 	/**
 	 * Constructs a histogram over the interval \f$[a,b]\f$ from
 	 * the observations passed in \a data. The number of bins is
-	 * taken as the value of #setNumBins(int). Note that the individual observations are
+	 * taken as the value of #getNumBins(). Note that the individual observations are
 	 * not being stored.
 	 * 
 	 * @param data
@@ -407,6 +407,10 @@ public class DEHistogram extends DensityEstimator {
 		for (int r = 0; r < m; r++)
 			dens[r] = evalDensity(scaledHistArray[r]);
 		return dens;
+	}
+	
+	public  double roughnessFunctional(double[] density) {
+		return roughnessFunctional(density,getA(),getB());
 	}
 
 	// TODO: do those methods make sense???

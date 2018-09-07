@@ -91,6 +91,7 @@ var searchData=
   ['restoreimports',['restoreImports',['../classumontreal_1_1ssj_1_1util_1_1ClassFinder.html#ac81b51677e70df103c8e277350a1958b',1,'umontreal::ssj::util::ClassFinder']]],
   ['reversedigits',['reverseDigits',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a27794ffe653befffef136bdd96e8b337',1,'umontreal::ssj::hups::RadicalInverse']]],
   ['rightmatrixscramble',['rightMatrixScramble',['../classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html#a8e877c1dcc9bbcf21f77b0fdc7ad80bb',1,'umontreal::ssj::hups::DigitalNet']]],
+  ['roughnessfunctional',['roughnessFunctional',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3a88d2d3720ac775f5953b35ac0a504a',1,'umontreal::ssj::stat::density::DensityEstimator']]],
   ['rowreport',['rowReport',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a0bc6f51e04799773c32a41a85b716d05',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rows',['rows',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a8db75abaedab913d9c6a593539fbbd3e',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rqmcexperimentseries',['RQMCExperimentSeries',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a339496e1644df9b943133157e051656e',1,'umontreal::ssj::mcqmctools::RQMCExperimentSeries']]],

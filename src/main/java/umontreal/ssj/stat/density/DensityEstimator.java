@@ -93,7 +93,7 @@ public abstract class DensityEstimator {
 	 *            the left boundary of the interval.
 	 * @param b
 	 *            the right boundary of the interval
-	 * @return the density estimator evaluated at the points \a x.
+	 * @return the density estimator evaluated at the points \a evalPoints.
 	 */
 	public double[] evalDensity(double[] evalPoints, double[] data, double a, double b) {
 		int k = evalPoints.length;
@@ -511,6 +511,28 @@ public abstract class DensityEstimator {
 		sb.append(PgfDataTable.pgfplotEndDocument());
 		return sb.toString();
 	}
+	
+	/**
+	 * Estimates the roughness functional
+	 * 
+	 * \f[ R(g) = \int_a^b g^2(x)\mathrm{d}x\f]
+	 * 
+	 * of a function \f$g\f$ over the interval \f$[a,b]\f$. This is done via a
+	 * quadrature rule using predetermined values of \f$g\f$ passed by the user via
+	 * \a density as integration nodes.
+	 * @param density the function evaluations.
+	 * @param a the left boundary of the interval
+	 * @param b the right boundary of the interval
+	 * @return
+	 */
+	public static double roughnessFunctional(double[] density, double a, double b) {
+		double fac = (b - a)/(double) density.length;
+		double sum = 0.0;
+		for(double d:density) {
+			sum += d*d;
+		}
+		return fac * sum;
+	}
 
 	/**
 	 * Computes the mean and the standard deviation of the observations of @f$m@f$
@@ -588,7 +610,9 @@ public abstract class DensityEstimator {
 		}
 		return 1.0 - SSres / SStot;
 	}
+	
 }
+	
 
 // ************ ******************************************************
 // Manipulating the interval --> handled in each realization individually.

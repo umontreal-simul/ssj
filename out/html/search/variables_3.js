@@ -11,7 +11,6 @@ var searchData=
   ['default_5fcolumn_5fseparator',['DEFAULT_COLUMN_SEPARATOR',['../classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html#a92f5ae65c1b55f3acdf8ff52a97bc5f1',1,'umontreal::ssj::util::io::TextDataWriter']]],
   ['default_5fheader_5fprefix',['DEFAULT_HEADER_PREFIX',['../classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html#a24e25f9ef65a3e8819ea9d4aaef3bf5d',1,'umontreal::ssj::util::io::TextDataWriter']]],
   ['defaultsimulator',['defaultSimulator',['../classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a92fb72ba344f3426eb371d7b6f975f0e',1,'umontreal::ssj::simevents::Simulator']]],
-  ['delta',['delta',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEBandwidthBased.html#a9ea1a8f5ef3e6d20b362385e1288c72c',1,'umontreal::ssj::stat::density::DEBandwidthBased']]],
-  ['dist',['dist',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#ad117945632da802afa13a5d212786cca',1,'umontreal::ssj::stat::density::DensityDerivativeEstimator']]],
+  ['delta',['delta',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a9ea1a8f5ef3e6d20b362385e1288c72c',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
   ['dists',['dists',['../classumontreal_1_1ssj_1_1randvar_1_1MixtureGen.html#abfebf4f0b1b54fd3e560206f2fcc33cd',1,'umontreal::ssj::randvar::MixtureGen']]]
 ];

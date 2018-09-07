@@ -1,59 +1,81 @@
 package umontreal.ssj.stat.density;
 
-import umontreal.ssj.probdist.EmpiricalDist;
-
 /**
- * This class implements a density derivative estimator (DDE) over a finite
- * interval \f$[a,b] \f$ based on a kernel density estimator (KDE) with kernel
- * \f$k\f$. Such an estimator is of the form \f[ \hat{f}^{(r)}_n(x) = \frac{1}{n
- * h^{r + 1}} \sum_{i = 0}^{n - 1} k^{(r)}\left( \frac{x - X_i}{h} \right), \f]
- * where \f$X_0,X_1,\dots,X_{n-1} \f$ denote \f$n\f$ observations simulated from
- * the underlying model and \f$h\f$ the bandwidth.
+ * This class implements a density derivative estimator (DDE) based on a kernel
+ * density estimator (KDE) with kernel function \f$K\f$, see \ref
+ * umontreal.ssj.stat.density.DEKernelDensity. Such an estimator is used to find
+ * the \f$r\f$-th derivative of an unknown density based on \f$n\f$ observations
+ * \f$X_0,X_1,\dots,X_{n-1} \f$ of an underlying model. It is of the form
  * 
- * This class is particularly useful for estimating optimal bandwidths and/or
- * the constant value in the asymptotic bias for histograms and KDEs. Recall
- * that asymptotically, in both cases, \f$\textrm{ISB} \approx B h^{\alpha}\f$.
- * Now, for MC and hence for RQMC too, it is known (see \cite tSCO15a) that \f$
- * B = R(f')/12 \f$ for histograms and \f$B = \mu_2(k)R(f'')/4 \f$ for KDEs,
- * where \f[ R(g) = \int_a^b g^2(x)\mathrm{d}\!x\f] denotes the roughness
- * functional and where \f$\mu_k \f$ denotes the \f$k\f$th moment. Thus, in
- * order to estimate \f$B\f$ one needs to estimate derivatives of the sought
- * density.
+ * \f[ \hat{f}^{(r)}_n(x) = \hat{f}^{(r)}_{n,h}(x)=\frac{1}{n h^{r + 1}} \sum_{i
+ * = 0}^{n - 1} k^{(r)}\left( \frac{x - X_i}{h} \right), \f]
  * 
- * To select the asymptotically optimal (w.r.t. the MISE) bandwidth for a DDE
- * for the \f$r\f$-th derivative using \f$n\f$ observations one can use the
- * formula given in \cite tRAY06a \f[ h_{\text{AMISE}}^{(r)} = \left[
- * \frac{\mu_2(k^{(r)}) (2r+1)}{\mu^2_2(k) R(f^{(r+2)})n} \right]^{1/(2r+5)}.
- * \f]
+ * where \f$h\f$ denotes the bandwidth. So, as a matter of fact, it is the
+ * \f$r\f$-th derivative of a KDE. This class provides basic tools to construct
+ * and evaluate these kinds of estimators. Note that sufficient smoothness of
+ * the kernel function \f$K\f$ as well as of the unknown density \f$f\f$ is
+ * required.
  * 
- * So, in order to get a good estimate for \f$f^{(r)} \f$ we would need a good
- * estimate for \f$f^{(r+2)}\f$. When estimating \f$ B\f$, one usually resorts
- * to taking a reasonably good estimate for \f$f^{(r+2)}\f$ as initial value and
- * then proceeding iteratively up to the first or second derivative. To obtain
- * such a reasonable initial value, one can, for instance, assume \f$ f \f$ to
- * be a known density \f$p\f$ whose parameters can be estimated from the
- * observations \f$X_0,X_1,\dots,X_{n-1}\f$ and for which the roughness
- * functional \f$R(p^{(r+2)})\f$ can be estimated or even computed analytically.
+ * Moreover, for observations gained from a Monte Carlo simulation, the
+ * asymptotically optimal (w.r.t. the mean integrated square error) bandwidth
+ * \f$ h_{\text{AMISE}}^{(r)} \f$ can be computed explicitely via the formula
+ * (see \cite tRAY06a)
  * 
- * It is worth mentioning that the second moment of \f$f^{(r)}\f$ can also be
+ * @anchor REF_stat_density_DensityDerivativeEstimator_hopt
+ * 
+ * \f[ h_{\text{AMISE}}^{(r)} = \left[ \frac{\mu_2(k^{(r)}) (2r+1)}{\mu^2_2(k)
+ * R(f^{(r+2)})n} \right]^{1/(2r+5)},\tag{hopt} \f]
+ * 
+ * So, in order to obtain a good estimate for \f$f^{(r)} \f$ one requires a good
+ * estimate for \f$f^{(r+2)}\f$. A way to break out of this cyclic argument is
+ * to resort to taking a reasonably good estimate for \f$f^{(r+2)}\f$ as initial
+ * value. This is implemented as #hAmiseR(int, double, double, double, int). To
+ * obtain such a reasonable initial value, one can, for instance, assume that
+ * \f$ f \f$ belongs to a known family of distributions (e.g. normal
+ * distributions), such that its defining parameters (e.g. mean, standard
+ * deviation) can be estimated from the observations \f$X_0,X_1,\dots,X_{n-1}\f$
+ * and for which the roughness functional \f$R(p^{(r+2)})\f$ (see
+ * umontreal.ssj.stat.density.DensityEstimator#roughnessFunctional(double[],
+ * double, double) ) can be easily estimated or even computed analytically.
+ * 
+ * Certainly, one can also try obtain a good approximation of \f$f^{(r+2t)} \f$
+ * and iterate ({@link REF_stat_density_DensityDerivativeEstimator_hopt hopt})
+ * \f$t\f$ times. The function link #hAmiseR(int, int, double, double[], double,
+ * DensityDerivativeEstimator, double[], double[], double, double) implements
+ * this recursion.
+ * 
+ * Since the above methods to compute \f$h_{\text{AMISE}}^{(r)}\f$ rely on initial
+ * values for the second moments of derivatives of the unknown density, it is 
+ * probably worth mentioning that the second moment of \f$f^{(r)}\f$ can also be
  * expressed in terms of \f$\Phi_{2r}(f)\f$, the so-called density functional of
- * even order \f$2r \f$ , i.e. \f[\mu_2(f^(r)) = (-1)^r \int
- * f^{(2r)}(x)f(x)\mathrm{d}\!x = (-1)^r \mathbb{E}[f^{(2r)}] = \Phi_{2r}(f).\f]
+ * even order \f$2r \f$ , i.e.
  * 
+ * \f[\mu_2(f^{(r)}) = (-1)^r \int_{-\infty}^{\infty} f^{(2r)}(x)f(x)\mathrm{d}x = (-1)^r
+ * \mathbb{E}[f^{(2r)}] = \Phi_{2r}(f). \f]
+ * 
+ * For such an initial value, one could, for instance, assume that the target
+ * density is a normal distribution with standard deviation \f$\sigma\f$.
+ * To this end, we include  the method #densityFunctionalGaussian(int, double).
+ * 
+ * This class is particularly useful for estimating optimal bandwidths for histogram
+ * estimators and KDEs, see \ref
+ * umontreal.ssj.stat.density.DEModelBandwidthBased, and may be also beneficial
+ * in other instances of a \ref
+ * umontreal.ssj.stat.density.DensityEstimationModel
  * 
  * @author puchhamf
  *
  */
-public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
+public abstract class DensityDerivativeEstimator extends DensityEstimator {
 
-	protected int order;
-	/**<order of the derivative we want to estimate */
-	protected EmpiricalDist dist;
-	/**<contains the observations \f$X_0,\dots,X_{n-1}\f$. */
+	/** order of the derivative we want to estimate. */
+	private int order;
 
-	
+	/** the bandwith \f$h\f$ */
+	private double h;
+
 	/**
-	 * Gives the {@link #order} of the DDE.
+	 * Gives the order \f$r\f$ of the DDE.
 	 * 
 	 * @return the order of the DDE.
 	 */
@@ -62,325 +84,150 @@ public abstract class DensityDerivativeEstimator extends DEBandwidthBased {
 	}
 
 	/**
-	 * Sets the {@link #order} of the DDE to \a order
+	 * Sets the order \f$r\f$ of the DDE to \a order
 	 * 
-	 * @param order
-	 *            the desired order.
+	 * @param order the desired order.
 	 */
 	public void setOrder(int order) {
 		this.order = order;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Gives the current bandwidth \f$h\f$.
+	 * 
+	 * @return the bandwidth.
 	 */
-	@Override
-	public void constructDensity(double[] data) {
-		dist = new EmpiricalDist(data);
+	public double getH() {
+		return h;
+	}
 
+	/**
+	 * Sets the bandwidth \f$h\f$ to \a h
+	 * 
+	 * @param h the desired bandwidth.
+	 */
+	public void setH(double h) {
+		this.h = h;
 	}
 
 	/**
 	 * Given a value \a init for the roughness functional of \f$ f^{(r+2)}\f$, \a
-	 * mu2 the second moment of \f$k\f$, and \a mu2Derivative the second moment of
-	 * \f$k^{(r)}\f$ this method computes the asymptotically optimal bandwidth for
-	 * the DDE based on @f$n@f$ observations for the @f$r@f$-th derivative of the
-	 * sought density @f$f@f$.
+	 * mu2 the second moment of the kernel function \f$K\f$, and \a mu2Derivative
+	 * the second moment of \f$K^{(r)}\f$, this method computes the asymptotically
+	 * optimal bandwidth for the DDE based on @f$n@f$ observations simulated by
+	 * Monte Carlo for the @f$r@f$-th derivative of the sought density @f$f@f$.
 	 * 
-	 * @param r
-	 *            the order of the sought derivative.
-	 * @param mu2
-	 *            the second moment of \f$k\f$.
-	 * @param mu2Derivative
-	 *            the second moment of \f$k^{(r)}\f$.
-	 * @param init
-	 *            estimate of the roughness functional of the @f$(r+2)@f$-th
-	 *            derivative of the density
-	 * @param n
-	 *            the number of observations.
-	 * @return the asymptotically optimal bandwidth.
+	 * @param r             the order of the sought derivative.
+	 * @param mu2           the second moment of \f$K\f$.
+	 * @param mu2Derivative the second moment of \f$K^{(r)}\f$.
+	 * @param init          estimate of the roughness functional of
+	 *                      the @f$(r+2)@f$-th derivative of the density
+	 * @param n             the number of observations.
+	 * @return the asymptotically optimal bandwidth for the DDE of the \f$r\f$-th
+	 *         derivative of the unknown density.
 	 */
-	public static double hAmise(int r, double mu2, double mu2Derivative, double init, int n) {
+	public static double hAmiseR(int r, double mu2, double mu2Derivative, double init, int n) {
 		double invN = 1.0 / (double) n;
 		double sign = r % 2 == 0 ? 1.0 : -1.0;
 		double h = sign * mu2Derivative * (2.0 * (double) r + 1.0) * invN / (mu2 * init);
-		// System.out.println("densFuncGaus = " + h);
 		double exp = 1.0 / (2.0 * (double) r + 5.0);
 		return Math.pow(h, exp);
 	}
 
 	/**
-	 * Depending on whether \a maxDerivative is even or odd, this method computes
-	 * \f$ h_{\text{AMISE}}^{(r_0)}\f$  for \f$r_0=2\f$ or \f$r_0=1\f$, respectively.
-	 * This is done by recursively applying the formula from above. The recursion
-	 * starts at @f$r=\text{maxDerivative} - 2@f$ with the initial value \a init
-	 * for @f$R(f^{(r+2)})@f$. The second moment of \f$k\f$ is given by \a mu2 and the
-	 * second moments of the derivatives \f$k^{(r)},k^{(r-2)},\dots,k^{(r_0)} \f$ are passed via
-	 * \a mu2Derivatives. It is assumed that the elements of \a mu2Derivatives are sorted
-	 * by order of derivative in a decreasing manner, the first one being \f$\mu_2(k^{(r)})\f$.
+	 * Given an estimate of \f$R(f^{(r+2t)})\f$ via \a init as initial value, this
+	 * function iterates over
+	 * ({@link REF_stat_density_DensityDerivativeEstimator_hopt hopt}) \f$t\f$ times
+	 * to obtain the asymptotically optimal bandwidth for the DDE based on @f$n@f$
+	 * observations simulated by Monte Carlo for the @f$r@f$-th derivative of the
+	 * sought density @f$f@f$.
 	 * 
-	 * @param dde the DDE to use in the recursion.
-	 * @param data
-	 *            observations from one simulation.
-	 * @param mu2
-	 * 			the second moment of \f$k\f$.
-	 * @param mu2Derivatives
-	 * 			the second moments of the derivatives of \f$k\f$.
-	 * @param evalPoints
-	 *            the integration nodes.
-	 * @param maxDerivative
-	 *            the highest order of the density derivative considered.
-	 * @param init
-	 *            initial value of the roughness functional in the denominator.
-	 * @return either \f$ h_{\text{AMISE}}^{(2)}\f$ or \f$
-	 *         h_{\text{AMISE}}^{(1)}\f$, depending on whether \a maxDerivative is
-	 *         even or odd.
+	 * Each recursion step calls #hAmiseR(int, double, double, double, int). The
+	 * thereby obtained bandwidth can be used for estimating the density in the next
+	 * step. The new initial value for the function call is computed by estimating
+	 * the roughness functional of the corresponding derivative by \ref
+	 * umontreal.ssj.stat.density.DensityEstimator#roughnessFunctional(double[],
+	 * double, double) over \f$[a,b]\f$ with the quadrature points \a evalPoints.
+	 * 
+	 * The second moments of the derivatives of the ernel function
+	 * \f$\mu_2\left(K^{(r+2(t-1))}\right),
+	 * \mu_2\left(K^{r+2(t-2)}\right),\dots,\mu_2\left(K^{(r)}\right)\f$ are passed
+	 * in the array \a mu2Derivative of length \f$t\f$ in exactly this order.
+	 * 
+	 * Note that the kernel function and the density have to be at least
+	 * \f$(r+2(t-1))\f$ times and \f$(r+2t)\f$ times differentiable, respectively,
+	 * to make use of this method.
+	 * 
+	 * @param r             the order of the sought derivative.
+	 * @param t             the number of iteration steps.
+	 * @param mu2           the second moment of the kernel function.
+	 * @param mu2Derivative the second moments of the derivatives of the kernel
+	 *                      function.
+	 * @param init          the estimate of the roughness functional of the
+	 *                      \f$(r+2t)\f$-th derivative of the sought density.
+	 * @param dde           the DDE used for estimating the bandwidth.
+	 * @param data          the observations of the underlying model.
+	 * @param evalPoints    the quadrature points used for estimating the roughness
+	 *                      functionals
+	 * @param a             the left boundary of the interval considered.
+	 * @param b             the right boundary of the interval considered.
+	 * @return the asymptotically optimal bandwidth for the DDE of the \f$r\f$-th
+	 *         derivative of the unknown.
 	 */
-	public static double hOptAmise(DensityDerivativeEstimator dde, double[] data, double mu2, double[] mu2Derivatives, double[] evalPoints,
-			int maxDerivative, double init ) {
 
+	public static double hAmiseR(int r, int t, double mu2, double[] mu2Derivative, double init,
+			DensityDerivativeEstimator dde, double[] data, double[] evalPoints, double a, double b) {
+		double h;
+		int k = evalPoints.length;
+		double[] estDensity = new double[k];
 		int n = data.length;
-		int order = maxDerivative - 2;
-		//Index of the right derivative in mu2Derivatives
-		int derIndex = 0;
-		
 
-		int numEvalPoints = evalPoints.length;
-
-		double[] estDensDerivative = new double[numEvalPoints];
-		// Arrays.fill(estDensDerivative, 0.0);
-
-		double h = hAmise(order,mu2,mu2Derivatives[derIndex],init, n);
-		// System.out.println("hAmiseGaussian = " + h);
-		order -= 2;
-		derIndex++;
-		double roughnessFunctional = init;
-		// only enters loop when the last computed h is not already h^(2) or
-		// h^(1)
-		while (order > 0) {
-
-			dde.setOrder(order+2);
+		for (int tau = t - 1; tau >= 1; tau--) {
+			h = hAmiseR(r + 2 * tau, mu2, mu2Derivative[tau], init, n);
 			dde.setH(h);
-			dde.constructDensity(data);
-			dde.evalDensity(evalPoints, estDensDerivative);
-			roughnessFunctional = 0.0;
-			for (int i = 0; i < numEvalPoints; i++)
-				roughnessFunctional += estDensDerivative[i] * estDensDerivative[i];
-			roughnessFunctional *= (dde.geta() - dde.getb()) / (double) numEvalPoints;
-
-			h = hAmise(order, mu2,mu2Derivatives[derIndex],roughnessFunctional,n);
-			order -= 2;
-			derIndex++;
-
+			dde.setOrder(r + 2 * tau);
+			estDensity = dde.evalDensity(evalPoints, data, a, b);
+			init = roughnessFunctional(estDensity, a, b);
 		}
 
-		return h;
+		return hAmiseR(r, mu2, mu2Derivative[0], init, n);
 	}
 	
 	/**
-	 * Same as {@link #hOptAmise(DensityDerivativeEstimator, double[], double, double[], double[], int, double)}
-	 * but with \a numEvalPoints equidistant points as integration nodes.
-	 * @param dde the DDE to use in the recursion.
-	 * @param data
-	 *            observations from one simulation.
-	 * @param mu2
-	 * 			the second moment of \f$k\f$.
-	 * @param mu2Derivatives
-	 * 			the second moments of the derivatives of \f$k\f$.
-	 * @param numEvalPoints
-	 *            the number of equidistant integration nodes.
-	 * @param maxDerivative
-	 *            the highest order of the density derivative considered.
-	 * @param init
-	 *            initial value of the roughness functional in the denominator.
-	 * @return either \f$ h_{\text{AMISE}}^{(2)}\f$ or \f$
-	 *         h_{\text{AMISE}}^{(1)}\f$, depending on whether \a maxDerivative is
-	 *         even or odd.
-	 * @return
+	 * Computes \f$\Phi_{2r}(p)\f$, i.e. the density functional of order @f$2r@f$ of
+	 * a normal density \f$p\f$ with standard deviation \a sigma,
+	 * 
+	 * @f[\Phi_{2r}(p) = \int_{-\infty}^{\infty} p^{(2r)}(x) p(x)\mathrm{d}x@f]
+	 * 
+	 * and it can be comuted as
+	 * 
+	 * \f[\Phi_{2r}(p) = \frac{(-1)^r (2r)!}{(2\sigma)^{2r+1} r! \sqrt{\pi}}. \f]
+	 * 
+	 * 
+	 * @param r
+	 *            the order of the functional. Has to be even.
+	 * @param sigma
+	 *            the standard deviation of the normal density considered.
+	 * @return the density functional of order @f$2r@f$.
 	 */
-	public static double hOptAmise(DensityDerivativeEstimator dde, double[] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
-			int maxDerivative, double init ) {
-		return hOptAmise(dde,data,mu2,mu2Derivatives, dde.getEquidistantPoints(numEvalPoints),maxDerivative,init); 
-	}
-	
-	/**
-	 * Computes the asymptotically optimal multiplicative constant in the ISB for a
-	 * histogram as described above. The bandwidth in these density derivate
-	 * estimates is computed recursively via
-	 * {@link #hOptAmise(DensityDerivativeEstimator, double[], double, double[], double[], int, double)}
-	 * starting with initial value \a init for the roughness functional of the
-	 * derivative of the density of order \a maxDerivative. Each occuring
-	 * integration, e.g. for evaluating a roughness-functional, is carried out by a
-	 * quadrature rule using the integration nodes \a evalPoints.
-	 * 
-	 * Analogously to
-	 * {@link #hOptAmise(DensityDerivativeEstimator, double[], double, double[], double[], int, double)}
-	 * \a mu2 is the second moment of the kernel and \a mu2Derivatives contains the
-	 * second moments of the derivatives of \f$k\f$ decreasing w.r.t. the order of
-	 * the derivatives, starting with order \a maxDerivative - 2.
-	 * 
-	 * Note that for a histogram estimator \a maxDerivative has to be odd!
-	 * 
-	 * @param dde
-	 *            the DDE we use for determining the optimal bandwidth.
-	 * @param data
-	 *            the observations gained from @f$m@f$ independent simulations.
-	 * @param mu2
-	 *            the second moment of \f$k\f$.
-	 * @param mu2Derivatives
-	 *            the second moments of the derivatives of \f$k\f$.
-	 * @param evalPoints
-	 *            the integration nodes.
-	 * @param maxDerivative
-	 *            the highest order of the density derivative considered.
-	 * @param init
-	 *            initial value of the roughness functional in the denominator.
-	 * @param de
-	 *            the histogram estimator for the sought density.
-	 * @return the asymptotically optimal multiplicative constant in the ISB.
-	 */
-	//TODO: add exception if maxDerivative is odd!
-	public static double computeB(DensityDerivativeEstimator dde, double[][] data, double mu2, double[] mu2Derivatives, double[] evalPoints,
-			int maxDerivative, double init,	DEHistogram de) {
-		int m = data.length;
-		double B = 0.0;
-		double a = de.geta();
-		double b = de.getb();
-
-		int numEvalPoints = evalPoints.length;
-		double[] estDensDerivative = new double[numEvalPoints];
-//		Arrays.fill(estDensDerivative, 0.0);
-
-		for (int r = 0; r < m; r++) {
-			double h = hOptAmise(dde, data[r],mu2,mu2Derivatives, evalPoints, maxDerivative, init);
-			// System.out.println("h = " + h);
-			dde.setOrder(1);
-			dde.setH(h);
-			dde.constructDensity(data[r]);
-			dde.evalDensity(evalPoints, estDensDerivative);
-			double roughnessFunctional = 0.0;
-			for (int i = 0; i < numEvalPoints; i++)
-				roughnessFunctional += estDensDerivative[i] * estDensDerivative[i];
-			roughnessFunctional *= (b - a) / (double) numEvalPoints;
-
-			B += roughnessFunctional;
+	// TODO: look for formulas with odd r.
+	public static double densityFunctionalGaussian(int r, double sigma) {
+		double sign = (r % 2 == 0 ? 1.0 : -1.0);
+		double facTerm = 1.0;
+		for (int i = r + 1; i <= 2 * r; i++) {
+			facTerm *= (double) i;
 		}
+		double denom = Math.pow(2.0 * sigma, (double) (2.0 * r + 1.0));
 
-		
-			return B / (12.0 * (double) m);
+		denom *= Math.sqrt(Math.PI);
 
-		
-
-	}
-	/**
-	 * Same as {@link #computeB(DensityDerivativeEstimator, double[][], double, double[], double[], int, double, DEHistogram)}
-	 * but with \a numEvalPoints equidistant integration nodes.
-	 * @param dde the DDE we use for determining the optimal bandwidth.
-	 * @param data the observations gained from @f$m@f$ independent simulations. 
-	 * @param mu2
-	 * 			the second moment of \f$k\f$.
-	 * @param mu2Derivatives
-	 * 			the second moments of the derivatives of \f$k\f$.
-	 * @param numEvalPoints
-	 *            the number of equidistant integration nodes.
-	 * @param maxDerivative
-	 *            the highest order of the density derivative considered.
-	 * @param init
-	 *            initial value of the roughness functional in the denominator.
-	 * @param de the histogram estimator for the sought density. 
-	 * @return the asymptotically optimal multiplicative constant in the ISB. 
-	 */
-
-	public static double computeB(DensityDerivativeEstimator dde, double[][] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
-			int maxDerivative, double init,	DEHistogram de) {
-		return computeB(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init,de);
-	}
-
-	/**
-	 * Computes the asymptotically optimal multiplicative constant in the ISB for a KDE as described above.
-	 *  The bandwidth in these density derivate estimates is computed recursively via 
-	 *  {@link #hOptAmise(DensityDerivativeEstimator, double[], double, double[], double[], int, double)}
-	 * starting  with initial value \a init  for the roughness functional of the  derivative of the density
-	 * of order \a maxDerivative.
-	 * Each occuring integration, e.g. for evaluating a roughness-functional,
-	 * is carried out by a quadrature rule using the integration nodes \a evalPoints.
-	 * 
-	 * Analogously to {@link #hOptAmise(DensityDerivativeEstimator, double[], double, double[], double[], int, double)}
-	 * \a mu2 is the second moment of the kernel and \a mu2Derivatives contains the second moments of the derivatives
-	 * of \f$k\f$ decreasing w.r.t. the order of the derivatives, starting with order \a maxDerivative - 2.
-	 * 
-	 * Note that for a KDE \a maxDerivative has to be even!
-	 * 
-	 * @param dde the DDE we use for determining the optimal bandwidth.
-	 * @param data the observations gained from @f$m@f$ independent simulations. 
-	 * @param * @param mu2
-	 * 			the second moment of \f$k\f$.
-	 * @param mu2Derivatives
-	 * 			the second moments of the derivatives of \f$k\f$.
-	 * @param evalPoints
-	 *            the integration nodes.
-	 * @param maxDerivative
-	 *            the highest order of the density derivative considered.
-	 * @param init
-	 *            initial value of the roughness functional in the denominator.
-	 * @param de the KDE for the sought density. 
-	 * @return the asymptotically optimal multiplicative constant in the ISB. 
-	 */
-	//TODO: add exception that maxDerivative has to be even!
-	public static double computeB(DensityDerivativeEstimator dde, double[][] data, double mu2, double[] mu2Derivatives, double[] evalPoints,
-			int maxDerivative, double init,	DEKernelDensity de) {
-		int m = data.length;
-		double B = 0.0;
-		double a = de.geta();
-		double b = de.getb();
-
-		int numEvalPoints = evalPoints.length;
-		double[] estDensDerivative = new double[numEvalPoints];
-//		Arrays.fill(estDensDerivative, 0.0);
-
-		for (int r = 0; r < m; r++) {
-			double h = hOptAmise(dde, data[r],mu2,mu2Derivatives, evalPoints, maxDerivative, init);
-			// System.out.println("h = " + h);
-			dde.setOrder(2);
-			dde.setH(h);
-			dde.constructDensity(data[r]);
-			dde.evalDensity(evalPoints, estDensDerivative);
-			double roughnessFunctional = 0.0;
-			for (int i = 0; i < numEvalPoints; i++)
-				roughnessFunctional += estDensDerivative[i] * estDensDerivative[i];
-			roughnessFunctional *= (b - a) / (double) numEvalPoints;
-
-			B += roughnessFunctional;
-		}
-
-		
-			return 0.25 * mu2 * B / (double) m;	
-
+		return sign * facTerm / denom;
 	}
 	
 	/**
-	 * Same as {@link #computeB(DensityDerivativeEstimator, double[][], double, double[], double[], int, double, DEKernelDensity)}
-	 * but with \a numEvalPoints equidistant integration nodes.
-	 * @param dde the DDE we use for determining the optimal bandwidth.
-	 * @param data the observations gained from @f$m@f$ independent simulations. 
-	 * @param mu2
-	 * 			the second moment of \f$k\f$.
-	 * @param mu2Derivatives
-	 * 			the second moments of the derivatives of \f$k\f$.
-	 * @param numEvalPoints
-	 *            the number of equidistant integration nodes.
-	 * @param maxDerivative
-	 *            the highest order of the density derivative considered.
-	 * @param init
-	 *            initial value of the roughness functional in the denominator.
-	 * @param de the KDE for the sought density. 
-	 * @return the asymptotically optimal multiplicative constant in the ISB. 
+	 * {@inheritDoc}
 	 */
-
-	public static double computeB(DensityDerivativeEstimator dde, double[][] data, double mu2, double[] mu2Derivatives, int numEvalPoints,
-			int maxDerivative, double init,	DEKernelDensity de) {
-		return computeB(dde,data,mu2,mu2Derivatives,dde.getEquidistantPoints(numEvalPoints),maxDerivative,init,de);
+	public String toString() {
+		return "DDE [h = " + h + "]";
 	}
-	
-	
 }
