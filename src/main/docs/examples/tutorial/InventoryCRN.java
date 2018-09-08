@@ -2,6 +2,7 @@ package tutorial;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
 
+// Class to simulate and compare two different (S,s) policies with CRNs.
 public class InventoryCRN extends Inventory {
 
    Tally statDiff = new Tally ("stats on difference");
@@ -39,14 +40,14 @@ public class InventoryCRN extends Inventory {
       InventoryCRN system = new InventoryCRN (100.0, 2.0, 0.1, 10.0, 1.0, 0.95);
       Chrono timer = new Chrono();
 
-      system.simulateDiff (5000, 200, 80, 198, 80, 200);
+      system.simulateDiff (500, 2000, 80, 198, 80, 200);
       system.statDiff.setConfidenceIntervalStudent();
       System.out.println (system.statDiff.report (0.9, 3));
       double varianceIndep = system.statDiff.variance();
       System.out.println ("Total CPU time: " + timer.format() + "\n");
-
+      
       timer.init();
-      system.simulateDiffCRN (5000, 200, 80, 198, 80, 200);
+      system.simulateDiffCRN (500, 2000, 80, 198, 80, 200);
       System.out.println (system.statDiff.report (0.9, 3));
       double varianceCRN = system.statDiff.variance();
       System.out.println ("Total CPU time: " + timer.format());

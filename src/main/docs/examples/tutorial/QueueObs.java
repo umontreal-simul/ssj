@@ -1,7 +1,6 @@
 package tutorial;
 import java.util.*;
 import umontreal.ssj.stat.*;
-import umontreal.ssj.simevents.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;
 
@@ -21,7 +20,7 @@ public class QueueObs {
       waitingTimes.addObservationListener (new LargeWaitsCollector (2.0));
    }
 
-   public double simulateOneRun (int numCust) {
+   public double simulate (int numCust) {
       waitingTimes.init();
       double Wi = 0.0;
       waitingTimes.add (Wi);
@@ -36,7 +35,7 @@ public class QueueObs {
    public void simulateRuns (int n, int numCust) {
       averageWaits.init();
       for (int i=0; i<n; i++)
-	  averageWaits.add (simulateOneRun (numCust));
+	     averageWaits.add (simulate (numCust));
    }
 
    public class ObservationTrace implements ObservationListener {

@@ -477,16 +477,14 @@
  * @anchor REF_examples_res_Inventory
  * @include tutorial/Inventory.txt
  *
- * In Listing&nbsp; {@link REF_examples_lst_InventoryCRN
- * InventoryCRN}, we extend the `Inventory` class to a class `InventoryCRN`
- * that compares two sets of values of the inventory control policy
- * parameters @f$(s,S)@f$.
- *
  *  **Comparing two inventory policies with common random numbers**
  * &emsp;[InventoryCRN]
  * @anchor REF_examples_lst_InventoryCRN
  * @include tutorial/InventoryCRN.java
  *
+ * In Listing&nbsp; {@link REF_examples_lst_InventoryCRN
+ * InventoryCRN}, we extend the `Inventory` class to a class `InventoryCRN`
+ * that compares two sets of parameters  @f$(s,S)@f$ for the inventory control policy.
  * The method `simulateDiff` simulates the system with policies @f$(s_1,
  * S_1)@f$ and @f$(s_2, S_2)@f$ independently, computes the difference in
  * profits, and repeats this @f$n@f$ times. These @f$n@f$ differences are
@@ -515,7 +513,7 @@
  * Listing&nbsp; {@link REF_examples_lst_InventoryCRN
  * InventoryCRN} ensures at least that the random numbers are used for the
  * same purpose for the two policies. For more explanations and examples
- * about common random numbers, see @cite sLAW00a, @cite sLEC09a&thinsp;.
+ * about common random numbers, see @cite sLAW00a, @cite vLEC94b, @cite sLEC09a&thinsp;.
  *
  * The main program estimates the expected difference in average daily
  * profits for policies @f$(s_1, S_1) = (80, 198)@f$ and @f$(s_2, S_2) = (80,
@@ -523,7 +521,9 @@
  * numbers. The other parameters are the same as before. The results are in
  * Listing&nbsp; {@link REF_examples_res_InventoryCRN
  * InventoryCRN}. We see that use of common random numbers reduces the
- * variance by a factor of approximately 19 in this case.
+ * variance by a factor of about 20 in this case.
+ * This means that with CRNs, one needs about 20 times less simulation than 
+ * with independent random numbers to estimate the difference with the same accuracy.
  *
  *  <strong>Results of the program `InventoryCRN`</strong>
  * &emsp;[InventoryCRN]
@@ -544,9 +544,10 @@
  * initially starts empty. We want to simulate the first @f$m@f$ customers in
  * the system and compute the mean waiting time per customer.
  *
- * This simple model is well-known in queuing theory: It is called an
+ * This simple model is well-known in queuing theory and is called an
  * @f$M/M/1@f$ queue. Simple formulas are available for this model to compute
- * the average waiting time per customer, average queue length, etc., over an
+ * the average waiting time per customer, average queue length, 
+ * probability that a customers waits more than @f$x@f$ seconds, etc., over an
  * *infinite* time horizon @cite pKLE75a&thinsp;. For a finite number of
  * customers or a finite time horizon, these expectations can also be
  * computed by numerical methods, but here we just want to show how it can be
@@ -584,6 +585,11 @@
  * @endcode
  *
  *  which directly implements inversion of the exponential distribution.
+ *  Hardcoding the exponential distributions in the `simulate` method as we do here
+ *  makes the program simpler, but it has the drawback that one cannot reuse the same
+ *  class for other distributions than the exponential.  
+ *  To make it more general, the distributions could be created outside the class and
+ *  passed to the constructor.
  * 
  * 
  * @subsection REF_examples_sec_observer Using the observer design pattern
@@ -596,7 +602,8 @@
  * processing. It can be very helpful in large simulation programs or
  * libraries, where different objects may need to process the same data in
  * different ways. These objects may have the task of storing observations or
- * displaying statistics in different formats, for example, and they are not
+ * displaying statistics in different formats, or putting them in files for 
+ * treatment by other software such as R, for example, and they are not
  * necessarily fixed in advance.
  *
  * The *observer* pattern, supported by the
@@ -608,14 +615,15 @@
  * object that implements the interface
  * @ref umontreal.ssj.stat.ObservationListener can register as an observer.
  *
- * `StatProbe` in package `stat`, as well as its subclasses `Tally` and
+ * A `StatProbe` object from package `stat`, or an instance of its subclasses `Tally` and
  * `Accumulate`, contains a list of <tt>ObservationListener</tt>’s. Whenever
- * they receive a new statistical observation, e.g., via `Tally.add` or
+ * it receives a new statistical observation, e.g., via `Tally.add` or
  * `Accumulate.update`, they send the new value to all registered observers.
  * To register as an observer, an object must implement the interface
  * @ref umontreal.ssj.stat.ObservationListener This implies that it must
  * provide an implementation of the method `newObservation`, whose purpose is
- * to recover the information that the object has registered for.
+ * to recover the information that the object has registered for, 
+ * usually to do somethinmg with it.
  *
  * In the example, the statistical collector `waitingTimes` transmits to all
  * its registered listeners each new statistical observation that it receives
@@ -623,14 +631,14 @@
  * `waitingTimes.add(x)` generates in the background a call to
  * `o.newObservation(waitingTimes, x)` for all registered observers `o`.
  *
- *  The method `notifyObs` is used to turn the tally into such an agency. In
- * fact, the collector is both a tally and a distribution agency, but its
+ *  The method `notifyObs` is used to turn the tally into such a notifying agency. 
+ * In fact, the collector is both a tally and a distribution agency, but its
  * tally functionality can be disabled using the `stopCollectStat` method.
  * This can be useful when the registered observers already perform
  * statistical collection.
  *
- * Two observers register to receive observations from `waitingTimes` in the
- * example. They are anonymous objects of classes `ObservationTrace` and
+ * In our example, two observers register to receive observations from `waitingTimes`.
+ * They are anonymous objects of classes `ObservationTrace` and
  * `LargeWaitsCollector`, respectively. Each one is informed of any new
  * observation @f$W_i@f$ via its `newObservation` method. The task of the
  * `ObservationTrace` observer is to print the waiting times @f$W_5@f$,
