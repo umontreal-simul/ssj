@@ -734,27 +734,22 @@
  *
  * The program in Listing&nbsp;
  * {@link REF_examples_lst_AsianGBMQMC AsianGBMQMC} extends the class
- * `AsianGBM` to `AsianGBMQMC`, whose method <tt>simulateQMC</tt> estimates the
- * option value via randomized quasi-Monte Carlo (RQMC). It uses @f$m@f$
- * independently randomized copies of digital net `p` and puts the results in
- * statistical collector `statAverage`. The randomization is a left matrix
- * scramble followed by a digital random shift, applied before each batch of
- * @f$n@f$ simulation runs.
+ * `AsianGBM` to `AsianGBMQMC`, whose method `simulateRunsRQMC` estimates the
+ * option value via randomized quasi-Monte Carlo (RQMC). This method takes as input 
+ * an RQMC point set, and makes @f$m@f$ independent randomizations of it.
+ * For each randomization, it computes the average payoff over the @f$n@f$ points 
+ * of the point set.  The @f$m@f$ independent averages are given to the collector 
+ * `statRQMC`, which is returned by the method.
  *
- *  **Pricing an Asian option on a GMB process with randomized quasi-Monte Carlo**
- * &emsp;[AsianGBMQMC]
- * @anchor REF_examples_lst_AsianGBMQMC
- * @include tutorial/AsianGBMQMC.java
- *
- * The random number stream passed to the method `simulateRuns` is an
- * iterator that enumerates the points and coordinates of the randomized
- * point set `p`. These point set iterators, available for each type of point
+ * The method `simulateRunsRQMC` creates an iterator `stream` which will be used 
+ * to enumerate the points. 
+ * These point set iterators, available for each type of point
  * set in package `hups`, implement the `RandomStream` interface and permit
- * one to easily replace the uniform random numbers by (randomized)
- * highly-uniform point sets or sequences, without changing the code of the
+ * one to easily replace the uniform random numbers by QMC or RQMC points or sequences, 
+ * without changing the code of the
  * model itself. The method `resetStartStream`, invoked immediately after
- * each randomization, resets the iterator to the first coordinate of the
- * first point of the point set `p`. The number @f$n@f$ of simulation runs is
+ * each randomization of `prqmc`, resets the iterator to the first coordinate of the
+ * first point. The number @f$n@f$ of simulation runs is
  * equal to the number of points. The points correspond to substreams in the
  * `RandomStream` interface. The method `resetNextSubstream`, invoked after
  * each simulation run in `simulateRuns`, resets the iterator to the first
@@ -762,19 +757,30 @@
  * (directly or indirectly) with this stream during the simulation moves the
  * iterator to the next coordinate of the current point.
  *
- * The point set used in this example is a *Sobol’ net* with @f$n = 2^{16}@f$
- * points in @f$t@f$ dimensions. The `main` program passes this point set to
- * `simulateRQMC` and asks for @f$m=20@f$ independent randomizations. It then
- * computes the empirical variance and CPU time *per simulation run* for both
+ *  **Pricing an Asian option on a GMB process with randomized quasi-Monte Carlo**
+ * &emsp;[AsianGBMQMC]
+ * @anchor REF_examples_lst_AsianGBMQMC
+ * @include tutorial/AsianGBMQMC.java
+ *
+ * The `main` program constructs an `AsianGBMQMC` object and first makes a Monte Carlo (MC)
+ * experiment.  Then it constructs the point set and its randomization for the RQMC experiment.
+ * The point set `p` used in this example is a *Sobol’ net* with @f$n = 2^{16}@f$
+ * points in @f$t@f$ dimensions. 
+ * The randomization `rand` is a left matrix scramble followed by a random digital shift.  
+ * See @ref umontreal.ssj.hups for more details on what these classes are doing.
+ * By putting together `p`  and `rand`, we obtain the `RQMCPointSet` `prqmc`.
+ * 
+ * The program invokes `simulateRunsRQMC` to make the RQMC experiment.
+ * It then computes the empirical variance and CPU time *per simulation run* for both
  * MC and RQMC. It prints the ratio of variances, which can be
  * interpreted as the estimated *variance reduction factor* obtained when
  * using RQMC instead of MC in this example, and the ratio of efficiencies,
  * which can be interpreted as the estimated *efficiency improvement factor*.
  * (The efficiency of an estimator is defined as 1/(variance @f$\times@f$
  * CPU time per run.) The results are in Listing&nbsp;
- * {@link REF_examples_res_AsianRQMC AsianRQMC}: RQMC reduces the
+ * {@link REF_examples_res_AsianGBMRQMC AsianGBMRQMC}: RQMC reduces the
  * variance by a factor of around 250 and improves the efficiency by a factor
- * of about 656. RQMC not only reduces the variance, it also runs
+ * of about 646. RQMC not only reduces the variance, it also runs
  * faster than MC. The main reason for this is the call to
  * `resetNextSubstream` in `simulateRuns`, which is a bit costly for a
  * random number stream of class `MRG32k3a` (with the current implementation)
