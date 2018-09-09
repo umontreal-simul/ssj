@@ -687,26 +687,25 @@
  *   \tag{arithmetic-average} \bar{S} = \frac{1}{t} \sum_{j=1}^t S(\zeta_j),
  * @f]
  * for some fixed observation times @f$0 < \zeta_1 < \cdots< \zeta_t =
- * T@f$. The value (or fair price) of the Asian option is @f$c = E[X]@f$
+ * T@f$. The value (or fair price) of the Asian option is @f$v = E[X]@f$
  * where the expectation is taken under the so-called risk-neutral measure
  * (which means that the parameters @f$r@f$ and @f$\sigma@f$ have to be
  * selected in a particular way; see @cite fGLA04a&thinsp;).
  *
- * This value @f$c@f$ can be estimated by simulation as follows. Generate
+ * This value @f$v@f$ can be estimated by simulation as follows. Generate
  * @f$t@f$ independent and identically distributed (i.i.d.) @f$N(0,1)@f$
  * random variables @f$Z_1,…,Z_t@f$ and put @f$B(\zeta_j) = B(\zeta_{j-1})
  * + \sqrt{\zeta_j - \zeta_{j-1}} Z_j@f$, for @f$j=1,…,t@f$, where
  * @f$B(\zeta_0) = \zeta_0 = 0@f$. Then,
  * @anchor REF_examples_examples_eq_Szetaj
  * @f[
- *   S(\zeta_j) = S(0) e^{(r-\sigma^2/2)\zeta_j + \sigma B(\zeta_j)} = S(\zeta_{j-1}) e^{(r-\sigma^2/2)(\zeta_j-\zeta_{j-1}) + \sigma\sqrt{\zeta_j - \zeta_{j-1}} Z_j} \tag{Szetaj}
+ *   S(\zeta_j) = S(0) e^{(r-\sigma^2/2)\zeta_j + \sigma B(\zeta_j)}
  * @f]
- * for @f$j = 1,…,t@f$ and the payoff can be computed via (
- * {@link REF_examples_eq_payasian payasian} ). This can be
+ * for @f$j = 1,…,t@f$ and the payoff can be computed via 
+ * ({@link REF_examples_eq_payasian payasian}). This can be
  * replicated @f$n@f$ times, independently, and the option value is estimated
  * by the average discounted payoff. The Java program of Listing&nbsp;
- * {@link REF_examples_lst_Asian Asian} implement this
- * procedure.
+ * {@link REF_examples_lst_AsianGBM AsianGBM} implement this procedure.
  *
  * Note that generating the sample path and computing the payoff is done in
  * two different methods. This way, other methods could eventually be added
@@ -714,27 +713,28 @@
  * geometric average, or with barriers, etc.) over the same generated sample
  * path.
  *
- *  **Pricing an Asian option on a GMB process** &emsp;[Asian]
- * @anchor REF_examples_lst_Asian
- * @include tutorial/Asian.java
+ *  **Pricing an Asian option on a GMB process** &emsp;[AsianGBM]
+ * @anchor REF_examples_lst_AsianGBM
+ * @include tutorial/AsianGBM.java
  *
  * The method `simulateRuns` performs @f$n@f$ independent simulation runs
  * using the given random number stream and put the @f$n@f$ observations of
  * the net payoff in the statistical collector `statValue`. In the `main`
- * program, we first specify the 12 observation times @f$\zeta_j = j/12@f$
+ * program, we first specify the @f$d=12@f$ observation times @f$\zeta_j = j/12@f$
  * for @f$j=1,…,12@f$, and put them in the array `zeta` (of size 13) together
- * with @f$\zeta_0=0@f$. We then construct an `Asian` object with parameters
+ * with @f$\zeta_0=0@f$. We then construct an `AsianGBM` object with parameters
  * @f$r=0.05@f$, @f$\sigma=0.5@f$, @f$K = 100@f$, @f$S(0)=100@f$,
- * @f$t=12@f$, and the observation times contained in array `zeta`. We then
+ * @f$d=12@f$, and the observation times contained in array `zeta`. We then
  * create the statistical collector `statValue`, perform @f$10^5@f$
  * simulation runs, and print the results. The discount factor @f$e^{-rT}@f$
  * and the constants @f$\sigma\sqrt{\zeta_j - \zeta_{j-1}}@f$ and
  * @f$(r-\sigma^2/2)(\zeta_j - \zeta_{j-1})@f$ are precomputed in the
- * constructor `Asian`, to speed up the simulation.
+ * constructor `AsianGBM`, to speed up the simulation.
+ *
  *
  * The program in Listing&nbsp;
- * {@link REF_examples_lst_AsianQMC AsianQMC} extends the class
- * `Asian` to `AsianQMC`, whose method <tt>simulateQMC</tt> estimates the
+ * {@link REF_examples_lst_AsianGBMQMC AsianGBMQMC} extends the class
+ * `AsianGBM` to `AsianGBMQMC`, whose method <tt>simulateQMC</tt> estimates the
  * option value via randomized quasi-Monte Carlo. It uses @f$m@f$
  * independently randomized copies of digital net `p` and puts the results in
  * statistical collector `statAverage`. The randomization is a left matrix
@@ -742,9 +742,9 @@
  * @f$n@f$ simulation runs.
  *
  *  **Pricing an Asian option on a GMB process with quasi-Monte Carlo**
- * &emsp;[AsianQMC]
- * @anchor REF_examples_lst_AsianQMC
- * @include tutorial/AsianQMC.java
+ * &emsp;[AsianGBMQMC]
+ * @anchor REF_examples_lst_AsianGBMQMC
+ * @include tutorial/AsianGBMQMC.java
  *
  * The random number stream passed to the method `simulateRuns` is an
  * iterator that enumerates the points and coordinates of the randomized

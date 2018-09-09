@@ -7,7 +7,7 @@ import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
 
-public class AsianQMC extends Asian {
+public class AsianQMC extends AsianGBM {
 
    public AsianQMC (double r, double sigma, double strike,
                     double s0, int s, double[] zeta) {
