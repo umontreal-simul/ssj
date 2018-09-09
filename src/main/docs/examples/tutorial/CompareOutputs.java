@@ -20,7 +20,7 @@ public class CompareOutputs {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                  { "tutorial", AsianGBM.class,        null },
-                 { "tutorial", AsianQMC.class,     null },
+                 { "tutorial", AsianGBMQMC.class,     null },
                  { "tutorial", BankEv.class,       null },
                  { "tutorial", CallCenter.class,   new String[]{"tutorial/CallCenter.dat"} },
                  { "tutorial", CallEv.class,       new String[]{"tutorial/CallEv.dat"} },

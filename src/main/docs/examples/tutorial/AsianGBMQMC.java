@@ -1,15 +1,15 @@
 package tutorial;
-import umontreal.ssj.rng.*;
 
 import java.io.IOException;
-
+import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.Chrono;
 
-public class AsianQMC extends AsianGBM {
+// An extension of AsianGBM that uses RQMC point sets.
+public class AsianGBMQMC extends AsianGBM {
 
-   public AsianQMC (double r, double sigma, double strike,
+   public AsianGBMQMC (double r, double sigma, double strike,
                     double s0, int s, double[] zeta) {
        super (r, sigma, strike, s0, s, zeta);
    }
@@ -17,16 +17,14 @@ public class AsianQMC extends AsianGBM {
    // Makes m independent randomizations of the digital net p using stream
    // noise. For each of them, performs one simulation run for each point
    // of p, and adds the average over these points to the collector statQMC.
-   public void simulateQMC (int m, DigitalNet p,
-                            RandomStream noise, Tally statQMC) {
+   public void simulateRQMC (int m, RQMCPointSet prqmc, Tally statRQMC) {
       Tally statValue  = new Tally ("stat on value of Asian option");
-      PointSetIterator stream = p.iterator ();
+      PointSetIterator stream = prqmc.iterator ();
       for (int j=0; j<m; j++) {
-          p.leftMatrixScramble (noise);
-          p.addRandomShift (0, p.getDimension(), noise);
+    	  prqmc.randomize();
           stream.resetStartStream();
-          simulateRuns (p.getNumPoints(), stream, statValue);
-          statQMC.add (statValue.average());
+          simulateRuns (prqmc.getNumPoints(), stream, statValue);
+          statRQMC.add (statValue.average());
       }
    }
 
@@ -36,9 +34,9 @@ public class AsianQMC extends AsianGBM {
       double[] zeta = new double[s+1];
       for (int j=0; j<=s; j++)
          zeta[j] = (double)j / (double)s;
-      AsianQMC process = new AsianQMC (0.05, 0.5, 100.0, 100.0, s, zeta);
+      AsianGBMQMC process = new AsianGBMQMC (0.05, 0.5, 100.0, 100.0, s, zeta);
       Tally statValue  = new Tally ("value of Asian option");
-      Tally statQMC = new Tally ("QMC averages for Asian option");
+      Tally statRQMC = new Tally ("RQMC averages for Asian option under GBM");
 
       Chrono timer = new Chrono();
       int n = 100000;
@@ -53,15 +51,17 @@ public class AsianQMC extends AsianGBM {
 
       timer.init();
       DigitalNet p = new SobolSequence (16, 31, s); // 2^{16} points.
-      n = p.getNumPoints();
-      int m = 20;                     // Number of QMC randomizations.
-      process.simulateQMC (m, p, new MRG32k3a(), statQMC);
+      PointSetRandomization rand = new LMScrambleShift (new MRG32k3a());
+      RQMCPointSet prqmc = new RQMCPointSet (p, rand);
+      n = p.getNumPoints();           // Number of RQMC points.
+      int m = 20;                     // Number of RQMC randomizations.
+      process.simulateRQMC (m, prqmc, statRQMC);
       System.out.println ("QMC with Sobol point set with " + n +
           " points and affine matrix scramble:\n");
-      statQMC.setConfidenceIntervalStudent();
-      System.out.println (statQMC.report (0.95, 3));
+      statRQMC.setConfidenceIntervalStudent();
+      System.out.println (statRQMC.report (0.95, 3));
       System.out.println ("Total CPU time: " + timer.format() + "\n");
-      double varQMC = p.getNumPoints() * statQMC.variance();
+      double varQMC = p.getNumPoints() * statRQMC.variance();
       double cpuQMC = timer.getSeconds() / (m * n);
       System.out.printf ("Variance ratio:   %9.4g%n", varMC/varQMC);
       System.out.printf ("Efficiency ratio: %9.4g%n",

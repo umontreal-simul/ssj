@@ -725,7 +725,7 @@
  * with @f$\zeta_0=0@f$. We then construct an `AsianGBM` object with parameters
  * @f$r=0.05@f$, @f$\sigma=0.5@f$, @f$K = 100@f$, @f$S(0)=100@f$,
  * @f$d=12@f$, and the observation times contained in array `zeta`. We then
- * create the statistical collector `statValue`, perform @f$10^5@f$
+ * create the statistical collector `statValue`, perform @f$10^6@f$
  * simulation runs, and print the results. The discount factor @f$e^{-rT}@f$
  * and the constants @f$\sigma\sqrt{\zeta_j - \zeta_{j-1}}@f$ and
  * @f$(r-\sigma^2/2)(\zeta_j - \zeta_{j-1})@f$ are precomputed in the
@@ -735,13 +735,13 @@
  * The program in Listing&nbsp;
  * {@link REF_examples_lst_AsianGBMQMC AsianGBMQMC} extends the class
  * `AsianGBM` to `AsianGBMQMC`, whose method <tt>simulateQMC</tt> estimates the
- * option value via randomized quasi-Monte Carlo. It uses @f$m@f$
+ * option value via randomized quasi-Monte Carlo (RQMC). It uses @f$m@f$
  * independently randomized copies of digital net `p` and puts the results in
  * statistical collector `statAverage`. The randomization is a left matrix
  * scramble followed by a digital random shift, applied before each batch of
  * @f$n@f$ simulation runs.
  *
- *  **Pricing an Asian option on a GMB process with quasi-Monte Carlo**
+ *  **Pricing an Asian option on a GMB process with randomized quasi-Monte Carlo**
  * &emsp;[AsianGBMQMC]
  * @anchor REF_examples_lst_AsianGBMQMC
  * @include tutorial/AsianGBMQMC.java
@@ -764,28 +764,28 @@
  *
  * The point set used in this example is a *Sobol’ net* with @f$n = 2^{16}@f$
  * points in @f$t@f$ dimensions. The `main` program passes this point set to
- * `simulateQMC` and asks for @f$m=20@f$ independent randomizations. It then
+ * `simulateRQMC` and asks for @f$m=20@f$ independent randomizations. It then
  * computes the empirical variance and CPU time *per simulation run* for both
- * MC and randomized QMC. It prints the ratio of variances, which can be
+ * MC and RQMC. It prints the ratio of variances, which can be
  * interpreted as the estimated *variance reduction factor* obtained when
- * using QMC instead of MC in this example, and the ratio of efficiencies,
+ * using RQMC instead of MC in this example, and the ratio of efficiencies,
  * which can be interpreted as the estimated *efficiency improvement factor*.
  * (The efficiency of an estimator is defined as 1/(variance @f$\times@f$
  * CPU time per run.) The results are in Listing&nbsp;
- * {@link REF_examples_res_AsianQMC AsianQMC}: QMC reduces the
+ * {@link REF_examples_res_AsianRQMC AsianRQMC}: RQMC reduces the
  * variance by a factor of around 250 and improves the efficiency by a factor
- * of over 500. Randomized QMC not only reduces the variance, it also runs
+ * of about 656. RQMC not only reduces the variance, it also runs
  * faster than MC. The main reason for this is the call to
- * `resetNextSubstream` in `simulateRuns`, which is rather costly for a
+ * `resetNextSubstream` in `simulateRuns`, which is a bit costly for a
  * random number stream of class `MRG32k3a` (with the current implementation)
  * and takes negligible time for an iterator over a digital net in base 2. In
  * fact, in the the case of MC, the call to `resetNextSubstream` is not
- * really needed. Removing it for that case reduces the CPU time by more than
- * 40%.
+ * really needed. Removing it for that case would reduce the CPU time.
+ * // by more than 40%.
  *
- *  <strong>Results of the program `AsianQMC`</strong> &emsp;[AsianQMC]
- * @anchor REF_examples_res_AsianQMC
- * @include tutorial/AsianQMC.txt
+ *  <strong>Results of the program `AsianGBMQMC`</strong> &emsp;[AsianGBMQMC]
+ * @anchor REF_examples_res_AsianGBMQMC
+ * @include tutorial/AsianGBMQMC.txt
  * 
  * 
  * **************************************************************************************************
