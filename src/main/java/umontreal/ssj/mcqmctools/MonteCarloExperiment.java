@@ -45,8 +45,8 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Performs n runs using #stream and collects statistics for a model with a single real-valued
-	 * control variate C. The statistics on X and C are collected in #statX and #statC.
+	 * Performs n runs using `stream` and collects statistics for a model with a single real-valued
+	 * control variate C. The statistics on X and C are collected in `statX` and `statC`.
 	 */
 	public static void simulateRunsCV (MonteCarloModelCV model, int n, RandomStream stream,
 	        TallyStore statX, TallyStore statC) {
@@ -63,8 +63,8 @@ public class MonteCarloExperiment {
 	/**
 	 * Performs n runs using #stream and collects statistics for a model with a single real-valued
 	 * control variate C. The statistics are collected, and the mean and variance of the estimators
-	 * with and without the control variate are returned in the two-dimensional vectors #mean and
-	 * #variance, as in #computeMeanVarCV.
+	 * with and without the control variate are returned in the two-dimensional vectors `mean` and
+	 * `variance`, as in `computeMeanVarCV`.
 	 */
 	public static void simulateRunsCV (MonteCarloModelCV model, int n, RandomStream stream,
 	        double[] mean, double[] variance) {
@@ -75,9 +75,9 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Given statistics collected in #statX and #statC as with @ref simulateRunsCV, this method
+	 * Given statistics collected in `statX` and `statC` as with @ref simulateRunsCV, this method
 	 * computes the mean and variance of the estimators with and without the CV and returns them in
-	 * the two-dimensional vectors #mean and #variance (mean[0] is the value without CV, mean[1] the
+	 * the two-dimensional vectors `mean` and `variance` (mean[0] is the value without CV, mean[1] the
 	 * value with CV, and similarly for the variance.
 	 */
 	public static void computeMeanVarCV (TallyStore statX, TallyStore statC, double[] mean,
@@ -93,12 +93,12 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Performs n simulation runs to estimate the difference in performance between #model2 and
-	 * #model1, divided by #delta, using common random numbers (CRN) across the two models. One
-	 * substream is used for each run and the same n substreams are used for the two models. Returns
-	 * the statistics on the n differences in #statDiff. By taking #delta = 1, this just estimates
-	 * the difference. By taking #delta > 0 very small, and if the two models are in fact the same
-	 * model but with a parameter that differs by delta, this gives a finite-difference estimator of
+	 * Performs `n` simulation runs to estimate the difference in performance between `model2` and
+	 * `model1`, divided by `delta`, using common random numbers (CRN) across the two models. One
+	 * substream is used for each run and the same `n` substreams are used for the two models. Returns
+	 * the statistics on the `n` differences in `statDiff`. By taking `delta` = 1, this just estimates
+	 * the difference. By taking `delta` > 0 very small, and if the two models are in fact the same
+	 * model but with a parameter that differs by `delta`, this gives a finite-difference estimator of
 	 * the derivative of the performance with respect to this parameter.
 	 */
 	public static void simulFDReplicatesCRN (MonteCarloModelDouble model1,

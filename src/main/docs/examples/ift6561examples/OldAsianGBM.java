@@ -8,7 +8,7 @@ import umontreal.ssj.mcqmctools.*;
 // of a GMB process, but it turns out that the more general
 // AsianOption with sp = GeometricBrownianMotion  is at least as fast!
 //
-public class AsianGBM implements MonteCarloModelDouble {
+public class OldAsianGBM implements MonteCarloModelDouble {
 	double strike; // Strike price.
 	int d; // Number of observation times.
 	double discount; // Discount factor exp(-r * zeta[t]).
@@ -18,9 +18,9 @@ public class AsianGBM implements MonteCarloModelDouble {
 
 	// double[] normals; // To store the standard normals.
 
-	// obsTimes[0..s+1] must contain obsTimes[0]=0.0, plus the s observation
+	// obsTimes[0..d+1] must contain obsTimes[0]=0.0, plus the s observation
 	// times.
-	public AsianGBM(double r, double sigma, double strike, double s0, int d,
+	public OldAsianGBM(double r, double sigma, double strike, double s0, int d,
 			double[] obsTimes) {
 		this.strike = strike;
 		this.d = d;
@@ -65,7 +65,7 @@ public class AsianGBM implements MonteCarloModelDouble {
 		obsTimes[0] = 0.0;
 		for (int j = 1; j <= d; j++)
 			obsTimes[j] = (double) j / (double) d;
-		AsianGBM asian = new AsianGBM(0.05, 0.5, 100.0, 100.0, d, obsTimes);
+		OldAsianGBM asian = new OldAsianGBM(0.05, 0.5, 100.0, 100.0, d, obsTimes);
 		Tally statValue = new Tally("Stats on value of Asian option");
 
 		int n = 1000000;

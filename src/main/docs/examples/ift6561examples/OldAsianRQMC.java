@@ -5,9 +5,9 @@ import umontreal.ssj.hups.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stochprocess.*;
 
-public class AsianRQMC extends AsianOption {
+public class OldAsianRQMC extends AsianOption {
 	
-   public AsianRQMC (double r, int d, double[] obsTimes, double strike)  {
+   public OldAsianRQMC (double r, int d, double[] obsTimes, double strike)  {
        super (r, d, obsTimes, strike);
    }
 
@@ -43,7 +43,7 @@ public class AsianRQMC extends AsianOption {
 	   double s0 = 100.0; 				
 	   double v = 0.3;	
 	   int m = 32;                     // Number of QMC randomizations.
-	   AsianRQMC asian = new AsianRQMC(0.1, d, obsTimes, 101.0);
+	   OldAsianRQMC asian = new OldAsianRQMC(0.1, d, obsTimes, 101.0);
 
 
 	  StochasticProcess process = new GeometricVarianceGammaProcess(s0, r,

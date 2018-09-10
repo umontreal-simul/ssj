@@ -3,9 +3,7 @@ package ift6561examples;
 
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stochprocess.*;
-// import umontreal.ssj.util.Chrono;
 import umontreal.ssj.rng.*;
-// import umontreal.ssj.randvar.*;
 import umontreal.ssj.mcqmctools.*;
 
 /**
@@ -79,7 +77,7 @@ public class AsianOption implements MonteCarloModelDouble {
 	}
 
 	/**
-	 * Here the numObsTimes observation times are equally spaced, from T1 to T.
+	 * Here the d observation times are equally spaced, from T1 to T.
 	 */
 	public AsianOption(double r, int d, double T1, double T, double strike) {
 		this.d = d;
@@ -132,7 +130,7 @@ public class AsianOption implements MonteCarloModelDouble {
 	 */
 	public void simulate(RandomStream stream) {
 		path = priceProcess.generatePath(stream);
-		// Note: Cannot generate RQMC points here and call 
+		// Note: We cannot generate RQMC points here and call 
 		// generatePath(points), because not defined for all process types.
 	}
 

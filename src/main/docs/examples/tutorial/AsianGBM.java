@@ -15,7 +15,7 @@ public class AsianGBM {
    double[] logS;    // Log of the GBM process: logS[t] = log (S[t]).
 
    // Array zeta[0..s] must contain zeta[0]=0.0, plus the d observation times.
-   // This constructor pre-computes several quantities to speedup the simulation.
+   // This constructor precomputes several quantities to speedup the simulation.
    public AsianGBM (double r, double sigma, double strike,
                     double s0, int d, double[] zeta) {
       this.strike = strike;

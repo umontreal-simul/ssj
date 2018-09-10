@@ -76,6 +76,14 @@ public class Tally extends StatProbe implements Cloneable {
    }
 
 
+   /**
+    * Set the name of this `Tally` to `name`.
+    *  @param name         name of the tally
+    */
+   public void setName (String name) {
+      this.name = name;
+   }
+
    public void init() {
        maxValue = Double.NEGATIVE_INFINITY;
        minValue = Double.POSITIVE_INFINITY;

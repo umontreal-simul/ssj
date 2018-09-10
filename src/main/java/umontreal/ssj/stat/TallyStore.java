@@ -191,6 +191,24 @@ public class TallyStore extends Tally {
       return t;
    }
    
+   /**
+    * Returns a new `TallyStore` instance that contains all the observations of this `TallyStore`
+    * than are in the interval (a, b).  This method does not sort the observations. 
+    *
+    * @return a new `TallyStore` object with the selected observations
+    */
+   public TallyStore extractSubrange (double a, double b) {
+       int numObs = this.numberObs();
+       double[] obs = this.getArray();
+       double x;
+       TallyStore t = new TallyStore ();
+       for (int i = 0; i < numObs; i++) {
+    	   x = obs[i];
+    	   if ((x > a) & (x < b))  t.add(x);
+       }
+       return t;
+   } 
+
    
     /**
      * Returns a new `TallyStore` instance that contains aggregate observations from this `TallyStore`.
