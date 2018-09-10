@@ -297,7 +297,7 @@
  *  <strong>Results of the program  <tt> Collision</tt></strong>
  * &emsp;[Collision results]
  * @anchor REF_examples_res_Collision
- * @include tutorial/Collision.txt
+ * @include tutorial/Collision.res
  * 
  * 
  * @subsection REF_examples_sec_nonuniform Nonuniform variate generation and simple quantile estimates
@@ -331,7 +331,7 @@
  *  <strong>Results of the program  <tt> Nonuniform results</tt></strong>
  * &emsp;[Nonuniform results]
  * @anchor REF_examples_res_Nonuniform
- * @include tutorial/Nonuniform.txt
+ * @include tutorial/Nonuniform.res
  *
  * To simplify the program, all the parameters are fixed as constants at the
  * beginning of the class. This is much simpler, but not recommended in general
@@ -475,7 +475,7 @@
  *
  *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory results]
  * @anchor REF_examples_res_Inventory
- * @include tutorial/Inventory.txt
+ * @include tutorial/Inventory.res
  *
  *  **Comparing two inventory policies with common random numbers**
  * &emsp;[InventoryCRN]
@@ -528,7 +528,7 @@
  *  <strong>Results of the program `InventoryCRN`</strong>
  * &emsp;[InventoryCRN results]
  * @anchor REF_examples_res_InventoryCRN
- * @include tutorial/InventoryCRN.txt
+ * @include tutorial/InventoryCRN.res
  * 
  * 
  * @subsection REF_examples_sec_queue_lindley A single-server queue with Lindley’s recurrence
@@ -791,7 +791,7 @@
  *
  *  <strong>Results of the program `AsianGBMQMC`</strong> &emsp;[AsianGBMQMC results]
  * @anchor REF_examples_res_AsianGBMQMC
- * @include tutorial/AsianGBMQMC.txt
+ * @include tutorial/AsianGBMQMC.res
  * 
  * 
  * **************************************************************************************************
@@ -922,7 +922,7 @@
  *
  *  <strong>Results of the program `QueueEv`</strong> &emsp;[QueueEv]
  * @anchor REF_examples_res_QueueEv
- * @include tutorial/QueueEv.txt
+ * @include tutorial/QueueEv.res
  * 
  * 
  * @subsection REF_examples_sec_preypred Continuous simulation: A prey-predator system
@@ -1095,7 +1095,7 @@
  *
  *  <strong>Results of the `BankEv` program</strong> &emsp;[Bank results]
  * @anchor REF_examples_res_Bank
- * @include tutorial/BankEv.txt
+ * @include tutorial/BankEv.res
  * 
  * 
  * @subsection REF_examples_sec_call_center A call center
@@ -1169,7 +1169,7 @@
  * `Locale.setDefault(Locale.US)` is added because real numbers in the data
  * file are read in the anglo-saxon form 8.3 instead of the form 8,3 used by
  * many other countries. The `main` program then simulates @f$n =
- * 10000@f$ operating days and prints the value of @f$a@f$, as well as 90%
+ * 100000@f$ operating days and prints the value of @f$a@f$, as well as 90%
  * confidence intervals on @f$a@f$, @f$w@f$, @f$g(s)@f$, and @f$\ell@f$,
  * based on their estimators @f$\bar{A}_n@f$, @f$\bar{W}_n/a@f$,
  * @f$\bar{G}_n(s)/a@f$, and @f$\bar{L}_n/a@f$, assuming that these
@@ -1248,7 +1248,7 @@
  *
  *  **Simulation of a simplified call center** &emsp;[CallCenter results]
  * @anchor REF_examples_res_CallCenter
- * @include tutorial/CallCenter.txt
+ * @include tutorial/CallCenter.res
  *
  * This model is certainly an oversimplification of actual call centers. It
  * can be embellished and made more realistic by considering different types
