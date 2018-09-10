@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['a',['a',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a1031d0e0a97a340abfe0a6ab9e831045',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
   ['abstractchrono',['AbstractChrono',['../classumontreal_1_1ssj_1_1util_1_1AbstractChrono.html',1,'umontreal::ssj::util']]],
   ['abstractdatareader',['AbstractDataReader',['../classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataReader.html',1,'umontreal::ssj::util::io']]],
   ['abstractdatawriter',['AbstractDataWriter',['../classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataWriter.html',1,'umontreal::ssj::util::io']]],
@@ -37,7 +36,6 @@ var searchData=
   ['aggregatebins',['aggregateBins',['../classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#a5f0c3c3fbd191ae159548746ae3938b8',1,'umontreal::ssj::stat::TallyHistogram']]],
   ['allcoordinates',['allCoordinates',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSetLong.html#a684a9b7e5bdc8d1dbdb4af6efab971f2',1,'umontreal::ssj::mcqmctools::anova::CoordinateSetLong']]],
   ['allocatecapacity',['allocateCapacity',['../classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html#aa7e2a20f8e69eca5f8189e8ccf5ffc40',1,'umontreal::ssj::simexp::BatchMeansSim']]],
-  ['alpha',['alpha',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a20f4c4490bc8ecbdd1ffcb79acce6035',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
   ['and',['and',['../classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#acc0d81e699a6555191282fccf922a221',1,'umontreal::ssj::util.BitMatrix.and()'],['../classumontreal_1_1ssj_1_1util_1_1BitVector.html#a77fc10b7eeaf7833f521215fe06e31da',1,'umontreal::ssj::util.BitVector.and()']]],
   ['andersondarling',['andersonDarling',['../classumontreal_1_1ssj_1_1gof_1_1GofStat.html#ad178073b587e36fa6c63264acc129eac',1,'umontreal::ssj::gof.GofStat.andersonDarling(DoubleArrayList sortedData)'],['../classumontreal_1_1ssj_1_1gof_1_1GofStat.html#a2a9561abe5e75184d82f2137808fa577',1,'umontreal::ssj::gof.GofStat.andersonDarling(double[] sortedData)'],['../classumontreal_1_1ssj_1_1gof_1_1GofStat.html#a6ea804fc9514e5fba022aff7cd9a3ea2',1,'umontreal::ssj::gof.GofStat.andersonDarling(double[] data, ContinuousDistribution dist)']]],
   ['andersondarlingdist',['AndersonDarlingDist',['../classumontreal_1_1ssj_1_1probdist_1_1AndersonDarlingDist.html',1,'AndersonDarlingDist'],['../classumontreal_1_1ssj_1_1probdist_1_1AndersonDarlingDist.html#a53aeb874c396a6d6ac8da90fd726b897',1,'umontreal::ssj::probdist.AndersonDarlingDist.AndersonDarlingDist()']]],

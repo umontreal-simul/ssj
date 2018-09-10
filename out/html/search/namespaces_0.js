@@ -1,6 +1,7 @@
 var searchData=
 [
   ['charts',['charts',['../namespaceumontreal_1_1ssj_1_1charts.html',1,'umontreal::ssj']]],
+  ['density',['density',['../namespaceumontreal_1_1ssj_1_1stat_1_1density.html',1,'umontreal::ssj::stat']]],
   ['discrepancy',['discrepancy',['../namespaceumontreal_1_1ssj_1_1discrepancy.html',1,'umontreal::ssj']]],
   ['eventlist',['eventlist',['../namespaceumontreal_1_1ssj_1_1simevents_1_1eventlist.html',1,'umontreal::ssj::simevents']]],
   ['functionfit',['functionfit',['../namespaceumontreal_1_1ssj_1_1functionfit.html',1,'umontreal::ssj']]],

@@ -1,7 +1,7 @@
 /**
- * @package umontreal.ssj.stat.list
+ * @package umontreal.ssj.stat.density
  *
- *@anchor REF_stat_list_overview_over_dens Tools for density estimation.
+ *
  * 
  *          This package provides tools for estimating univariate densities
  *          based on several observations \f$X_0,X_1,\dots,X_{n-1}\f$. These
