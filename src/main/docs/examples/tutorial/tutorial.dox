@@ -329,7 +329,7 @@
  * @include tutorial/Nonuniform.java
  *
  *  <strong>Results of the program  <tt> Nonuniform results</tt></strong>
- * &emsp;[Nonuniform]
+ * &emsp;[Nonuniform results]
  * @anchor REF_examples_res_Nonuniform
  * @include tutorial/Nonuniform.txt
  *
@@ -473,7 +473,7 @@
  * computer running Windows 10 and Eclipse) to simulate the system 500 times for 2000 days each, 
  * compute the statistics, and print the results.
  *
- *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory]
+ *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory results]
  * @anchor REF_examples_res_Inventory
  * @include tutorial/Inventory.txt
  *
@@ -520,13 +520,13 @@
  * 200)@f$, first with independent random numbers, then with common random
  * numbers. The other parameters are the same as before. The results are in
  * Listing&nbsp; {@link REF_examples_res_InventoryCRN
- * InventoryCRN}. We see that use of common random numbers reduces the
+ * InventoryCRN results}. We see that use of common random numbers reduces the
  * variance by a factor of about 20 in this case.
  * This means that with CRNs, one needs about 20 times less simulation than 
  * with independent random numbers to estimate the difference with the same accuracy.
  *
  *  <strong>Results of the program `InventoryCRN`</strong>
- * &emsp;[InventoryCRN]
+ * &emsp;[InventoryCRN results]
  * @anchor REF_examples_res_InventoryCRN
  * @include tutorial/InventoryCRN.txt
  * 
@@ -778,7 +778,7 @@
  * which can be interpreted as the estimated *efficiency improvement factor*.
  * (The efficiency of an estimator is defined as 1/(variance @f$\times@f$
  * CPU time per run.) The results are in Listing&nbsp;
- * {@link REF_examples_res_AsianGBMRQMC AsianGBMRQMC}: RQMC reduces the
+ * {@link REF_examples_res_AsianGBMRQMC AsianGBMRQMC results}: RQMC reduces the
  * variance by a factor of around 250 and improves the efficiency by a factor
  * of about 646. RQMC not only reduces the variance, it also runs
  * faster than MC. The main reason for this is the call to
@@ -787,15 +787,16 @@
  * and takes negligible time for an iterator over a digital net in base 2. In
  * fact, in the the case of MC, the call to `resetNextSubstream` is not
  * really needed. Removing it for that case would reduce the CPU time.
- * // by more than 40%.
+ * # by more than 40%.
  *
- *  <strong>Results of the program `AsianGBMQMC`</strong> &emsp;[AsianGBMQMC]
+ *  <strong>Results of the program `AsianGBMQMC`</strong> &emsp;[AsianGBMQMC results]
  * @anchor REF_examples_res_AsianGBMQMC
  * @include tutorial/AsianGBMQMC.txt
  * 
  * 
  * **************************************************************************************************
- *
+ * @f$\vskip 2cm @f$
+ * 
  * @section REF_examples_sec_event Discrete-Event Simulation
  * 
  * 
@@ -818,7 +819,7 @@
  *
  * Listing&nbsp; {@link REF_examples_lst_QueueEv QueueEv} gives
  * an event-oriented simulation program, where a subclass of the class
- * `Event` is defined for each type of event that can occur in the
+ * @ref umontreal.ssj.simevents.Event is defined for each type of event that can occur in the
  * simulation: arrival of a customer (<tt>Arrival</tt>), departure of a
  * customer (<tt>Departure</tt>), and end of the simulation
  * (<tt>EndOfSim</tt>). Each event *instance* is inserted into the *event
@@ -846,13 +847,7 @@
  * `java.util.LinkedList`. However, with our current implementation, the
  * automatic statistical collection in that `LinkedListStat` class would not
  * count the customers whose waiting time is zero, because they are never
- * placed in the list.  Here we use the class `List` from package
- * `simevents`. This class is equivalent to the standard class
- * `java.util.LinkedList`, except that its implementation is more efficient
- * than the current one in JDK and it can also collect statistics
- * automatically. However, the automatic statistical collection on `waitList`
- * would not count the customers whose waiting time is zero, because they are
- * never placed in this list, so we do not use this facility.
+ * placed in the list.
  *
  * The statistical probe `custWaits` collects statistics on the customer’s
  * waiting times. It is of the class `Tally`, which is appropriate when the
@@ -950,21 +945,22 @@
  *   = 
  *    -s z(t) + d x(t) z(t)
  * @f}
- * with initial values @f$x(0)=x_0>0@f$ et @f$z(0)=z_0>0@f$. This is a
+ * with initial values @f$x(0)=x_0>0@f$ and @f$z(0)=z_0>0@f$. This is a
  * *Lotka-Volterra* system of differential equations, which has a known
  * analytical solution. Here, in the program of Listing&nbsp;
- * {@link REF_examples_lst_PreyPred PreyPred}, we simply
+ * {@link REF_examples_lst_PreyPred PreyPred}, we just show how to
  * simulate its evolution, to illustrate the continuous simulation facilities
- * of SSJ.
+ * of SSJ.  Instead of using the default simulator as in the other examples of
+ * this section, this program explicitly
+ * creates a discrete-event  @ref umontreal.ssj.simevents.Simulator object `sim` to
+ * manage the execution of the simulation.  This is only to illustrate how this 
+ * can be done.  One could actually create several such `Simulator` objects that could run
+ * in parallel, each one having its own event list.
  *
  *  **Simulation of the prey-predator system** &emsp;[PreyPred]
  * @anchor REF_examples_lst_PreyPred
  * @include tutorial/PreyPred.java
  *
- * Note that, instead of using the default simulator, this program explicitly
- * creates a discrete-event  @ref umontreal.ssj.simevents.Simulator object to
- * manage the execution of the simulation, unlike the other examples in this
- * section.
  *
  * The program prints the triples @f$(t, x(t), z(t))@f$ at values of @f$t@f$
  * that are multiples of `h`, one triple per line. This is done by an event
@@ -979,14 +975,15 @@
  * @subsection REF_examples_sec_bank A simplified bank
  * 
  * 
- * This is Example&nbsp;1.4.1 of @cite sBRA87a&thinsp;, page&nbsp;14. A bank
+ * This is the old Example&nbsp;1.4.1 of @cite sBRA87a&thinsp;, page&nbsp;14. A bank
  * has a random number of tellers every morning. On any given day, the bank
  * has @f$t@f$ tellers with probability @f$q_t@f$, where @f$q_3 = 0.80@f$,
  * @f$q_2 = 0.15@f$, and @f$q_1 = 0.05@f$. All the tellers are assumed to be
  * identical from the modeling viewpoint.
  *
- *  @image html examples_examples_01.svg
  * <!--
+ *  @image html examples_examples_01.svg
+ * 
  * LaTeX code used to generate the picture:
  *
  * \itemsep=0.0pt
@@ -998,11 +995,11 @@
  * \shaderectangleson \putrectangle corners at 0.75 0.0 and 2.0 0.5
  * \putrectangle corners at 2.0 0.0 and 5.0 1.0 \putrectangle corners at 5.0
  * 0.0 and 6.0 0.5 \endpicture
- * -->
  *
  * <center>Arrival rate of customers to the bank.</center>
- *
+ *  
  *  @anchor REF_examples_fig_blambda
+ * -->
  *
  *  **Event-oriented simulation of the bank model** &emsp;[BankEv]
  * @anchor REF_examples_lst_BankEv
@@ -1011,7 +1008,9 @@
  * The bank opens at 10:00 and closes at 15:00 (i.e., 3 p.m.). The customers
  * arrive randomly according to a Poisson process with piecewise constant
  * rate @f$\lambda(t)@f$, @f$t\ge0@f$. The arrival rate @f$\lambda(t)@f$
+ * <!--
  * (see Fig.&nbsp; {@link REF_examples_fig_blambda blambda} )
+ * -->
  * is 0.5 customer per minute from 9:45 until 11:00 and from 14:00 until
  * 15:00, and one customer per minute from 11:00 until 14:00. The customers
  * who arrive between 9:45 and 10:00 join a FIFO queue and wait for the bank
@@ -1046,7 +1045,8 @@
  *
  * Listing&nbsp; {@link REF_examples_lst_BankEv BankEv} gives
  * and event-oriented simulation program for this bank model. There are
- * events at the fixed times 9:45, 10:00, etc. At 9:45, the counters are
+ * events at the fixed times 9:45, 10:00, 11:00, 14:00, and 15:00. 
+ *  At 9:45, the counters are
  * initialized and the arrival process is started. The time until the first
  * arrival, or the time between one arrival and the next one, is
  * (tentatively) an exponential with a mean of 2 minutes. However, as soon as
@@ -1091,9 +1091,9 @@
  * number of customers served during the day and their total waiting time.
  *
  * The results are given in Listing&nbsp;
- * {@link REF_examples_res_Bank Bank}.
+ * {@link REF_examples_res_Bank Bank results}.
  *
- *  <strong>Results of the `BankEv` program</strong> &emsp;[Bank]
+ *  <strong>Results of the `BankEv` program</strong> &emsp;[Bank results]
  * @anchor REF_examples_res_Bank
  * @include tutorial/BankEv.txt
  * 
@@ -1128,7 +1128,8 @@
  * with mean @f$(t_2 - t_1) B \lambda_j@f$ and that the arrival counts in
  * any disjoint time intervals are independent random variables. This arrival
  * process model is motivated and studied in @cite ccWHI99c&thinsp; and
- * @cite ccAVR04a&thinsp;.
+ * @cite ccAVR04a&thinsp;.  More refined and realistic arrival process models
+ * can be found in @cite ccIBR12b, @cite ccIBR16b, @cite ccORE16a, 
  *
  * Incoming calls form a FIFO queue for the agents. A call is *lost*
  * (abandons the queue) when its waiting time exceed its *patience time*. The
@@ -1167,8 +1168,8 @@
  * parameters are read from a file by the method `readData`. The line
  * `Locale.setDefault(Locale.US)` is added because real numbers in the data
  * file are read in the anglo-saxon form 8.3 instead of the form 8,3 used by
- * most countries in the world. The `main` program then simulates @f$n =
- * 1000@f$ operating days and prints the value of @f$a@f$, as well as 90%
+ * many other countries. The `main` program then simulates @f$n =
+ * 10000@f$ operating days and prints the value of @f$a@f$, as well as 90%
  * confidence intervals on @f$a@f$, @f$w@f$, @f$g(s)@f$, and @f$\ell@f$,
  * based on their estimators @f$\bar{A}_n@f$, @f$\bar{W}_n/a@f$,
  * @f$\bar{G}_n(s)/a@f$, and @f$\bar{L}_n/a@f$, assuming that these
@@ -1243,9 +1244,9 @@
  *
  * The results of this program, with the data in file `CallCenter.dat`, are
  * shown in Listing&nbsp; {@link REF_examples_res_CallCenter
- * CallCenter}.
+ * CallCenter results}.
  *
- *  **Simulation of a simplified call center** &emsp;[CallCenter]
+ *  **Simulation of a simplified call center** &emsp;[CallCenter results]
  * @anchor REF_examples_res_CallCenter
  * @include tutorial/CallCenter.txt
  *
@@ -1258,5 +1259,8 @@
  * generated by calls and the operating costs for running the center, and use
  * the simulation model to compare alternative operating strategies in terms
  * of the expected net revenue, for example.
+ * 
+ * A more elaborate simulation library for call centers, built over SSJ, 
+ * can be found at @cite ccBUI05a, @cite iBUI12a. 
  * 
  */

@@ -2,9 +2,8 @@
 Num. calls expected = 1660.0
 
 Report for CallCenter:
-                                    num obs.     min        max        average      std. dev.   conf. int.  
-Number of arrivals per day          1000      460.000    4206.000     1639.507       513.189   90.0% ( 1612.789, 1666.225)
-Average waiting time per customer   1000        0.000     570.757       11.834        34.078   90.0% (   10.060,   13.608)
-Proportion of waiting times < s     1000        0.277       1.155        0.853         0.169   90.0% (    0.844,    0.862)
-Proportion of calls lost            1000        0.000       0.844        0.034         0.061   90.0% (    0.031,    0.037)
-
+                                    num obs.     min        max        average      variance      std. dev.   conf. int.  
+Number of arrivals per day          10000     331.000    4206.000     1661.266   279517.232       528.694   90.0% ( 1652.569, 1669.963)
+Average waiting time per customer   10000       0.000     570.757       12.736      897.937        29.966   90.0% (   12.243,   13.229)
+Proportion of waiting times < s     10000       0.199       1.196        0.854        0.028         0.168   90.0% (    0.852,    0.857)
+Proportion of calls lost            10000       0.000       0.844        0.037       3.5E-3         0.059   90.0% (    0.036,    0.038)
