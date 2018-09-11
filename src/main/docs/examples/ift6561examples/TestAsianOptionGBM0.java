@@ -30,7 +30,6 @@ public class TestAsianOptionGBM0 {
 		statValueMC.setConfidenceIntervalStudent();
 		System.out.println(asian.toString());
 		System.out.println(statValueMC.report(0.95, 4));
-		System.out.printf("Var. per run: %9.4g%n", statValueMC.variance());
 		System.out.println("Total CPU time:      " + timer.format() + "\n");
 	}
 

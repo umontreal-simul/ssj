@@ -20,7 +20,7 @@ public class MonteCarloExperiment {
 	 * Performs #n simulation runs of #model using #stream and collects statistics in #statValue.
 	 * The #stream is reset to a new substream for each run.
 	 */
-	public static void simulateRuns(MonteCarloModelDouble model, int n, RandomStream stream,
+	public static void simulateRuns (MonteCarloModelDouble model, int n, RandomStream stream,
 	        Tally statValue) {
 		statValue.init();
 		for (int i = 0; i < n; i++) {
@@ -34,7 +34,7 @@ public class MonteCarloExperiment {
 	 * Performs n runs of model using #stream and collects statistics for a model with a vector of
 	 * control variates. The results are returned in #statWithCV.
 	 */
-	public static void simulateRunsCV(MonteCarloModelCV model, int n, RandomStream stream,
+	public static void simulateRunsCV (MonteCarloModelCV model, int n, RandomStream stream,
 	        ListOfTalliesWithCV<Tally> statWithCV) {
 		statWithCV.init();
 		for (int i = 0; i < n; i++) {
@@ -84,9 +84,9 @@ public class MonteCarloExperiment {
 	        double[] variance) {
 		mean[0] = statX.average();
 		variance[0] = statX.variance();
+		double meanC = statC.average();
 		double varC = statC.variance();
 		double covCX = statC.covariance(statX);
-		double meanC = statC.average();
 		double beta = covCX / varC;
 		mean[1] = mean[0] - beta * meanC;      // CV has mean 0.
 		variance[1] = variance[0] + beta * beta * varC - 2 * beta * covCX;
@@ -189,8 +189,8 @@ public class MonteCarloExperiment {
 		double[] centerAndRadius = new double[2];
 		statWithCV.confidenceIntervalStudentWithCV(0, level, centerAndRadius);
 		str.append("Average: " + statWithCV.averageWithCV(0) + "\n");
-		str.append("Variance per run (Cov[0,0]): " + statWithCV.covarianceWithCV(0, 0) + "\n");
-		double[] varCV = new double[2];
+		str.append("Variance per run, no CV: " + statWithCV.covarianceWithCV(0, 0) + "\n");
+		double[] varCV = new double[1];
 		statWithCV.varianceWithCV(varCV);
 		str.append("Variance per run with CV: " + varCV[0] + "\n");
 		str.append("Center of CI:  " + centerAndRadius[0] + "\n");
