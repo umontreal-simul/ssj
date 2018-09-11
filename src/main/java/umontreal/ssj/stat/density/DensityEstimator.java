@@ -132,7 +132,8 @@ public abstract class DensityEstimator {
 	 *            the left boundary of the interval.
 	 * @param b
 	 *            the right boundary of the interval.
-	 * @return the density estimator for each realization evaluated at \a evalPoints.
+	 * @return the density estimator for each realization evaluated at \a
+	 *         evalPoints.
 	 */
 	public double[][] evalDensity(double[] evalPoints, double[][] data, double a, double b) {
 		int m = data.length;
@@ -511,7 +512,7 @@ public abstract class DensityEstimator {
 		sb.append(PgfDataTable.pgfplotEndDocument());
 		return sb.toString();
 	}
-	
+
 	/**
 	 * Estimates the roughness functional
 	 * 
@@ -520,23 +521,26 @@ public abstract class DensityEstimator {
 	 * of a function \f$g\f$ over the interval \f$[a,b]\f$. This is done via a
 	 * quadrature rule using predetermined values of \f$g\f$ passed by the user via
 	 * \a density as integration nodes.
-	 * @param density the function evaluations.
-	 * @param a the left boundary of the interval
-	 * @param b the right boundary of the interval
+	 * 
+	 * @param density
+	 *            the function evaluations.
+	 * @param a
+	 *            the left boundary of the interval
+	 * @param b
+	 *            the right boundary of the interval
 	 * @return
 	 */
 	public static double roughnessFunctional(double[] density, double a, double b) {
-		double fac = (b - a)/(double) density.length;
+		double fac = (b - a) / (double) density.length;
 		double sum = 0.0;
-		for(double d:density) {
-			sum += d*d;
+		for (double d : density) {
+			sum += d * d;
 		}
 		return fac * sum;
 	}
 
 	/**
-	 * Computes the mean and the standard deviation of the observations of @f$m@f$
-	 * simulations given in \a data.
+	 * Computes the mean and the standard deviation of the observations given in \a data.
 	 * 
 	 * @remark **Florian:** this should probably go somewhere else (DEDerivative as
 	 *         Private?)
@@ -546,28 +550,22 @@ public abstract class DensityEstimator {
 	 * @return the mean and standard deviation.
 	 */
 
-	protected static double[] estimateMeanAndStdDeviation(double[][] data) {
+	protected static double[] estimateMeanAndStdDeviation(double[] data) {
 		double[] result = new double[2];
-		int m = data.length;
-		int n = data[0].length;
-		double stdDeviation = 0.0;
+		int n = data.length;
 		double x, y;
-		double meanSum = 0.0;
-		for (int r = 0; r < m; r++) {
 
-			double mean = 0.0;
-			double var = 0.0;
-			for (int i = 0; i < n; i++) {
-				x = data[r][i];
-				y = x - mean;
-				mean += y / ((double) (i + 1.0));
-				var += y * (x - mean);
-			}
-			stdDeviation += Math.sqrt(var / ((double) n - 1.0));
-			meanSum += mean;
+		double mean = 0.0;
+		double var = 0.0;
+		for (int i = 0; i < n; i++) {
+			x = data[i];
+			y = x - mean;
+			mean += y / ((double) (i + 1.0));
+			var += y * (x - mean);
 		}
-		result[0] = meanSum / (double) m;
-		result[1] = stdDeviation / (double) m;
+
+		result[0] = mean;
+		result[1] = Math.sqrt(var / ((double) n - 1.0));
 		return result;
 	}
 
@@ -610,9 +608,8 @@ public abstract class DensityEstimator {
 		}
 		return 1.0 - SSres / SStot;
 	}
-	
+
 }
-	
 
 // ************ ******************************************************
 // Manipulating the interval --> handled in each realization individually.
