@@ -148,7 +148,7 @@ public class MonteCarloExperiment {
 		str.append(model.toString() + "\n");
 		str.append(statValue.report(level, d));
 		// str.append("Variance per run: " + statValue.variance() + "\n");
-		str.append(7 + 5, 5, 4, statValue.variance());
+		// str.append(7 + 5, 5, 4, statValue.variance());
 		str.append("\n");
 		str.append("Total CPU time:      " + timer.format() + "\n");
 		return str.toString();
@@ -188,13 +188,13 @@ public class MonteCarloExperiment {
 		// str.append(statWithCV.report(0.95, 4));
 		double[] centerAndRadius = new double[2];
 		statWithCV.confidenceIntervalStudentWithCV(0, level, centerAndRadius);
-		str.append("Average: " + statWithCV.averageWithCV(0));
-		str.append("Variance per run (Cov[0,0]): " + statWithCV.covarianceWithCV(0, 0));
+		str.append("Average: " + statWithCV.averageWithCV(0) + "\n");
+		str.append("Variance per run (Cov[0,0]): " + statWithCV.covarianceWithCV(0, 0) + "\n");
 		double[] varCV = new double[2];
 		statWithCV.varianceWithCV(varCV);
-		str.append("Variance per run with CV: " + varCV[0]);
-		str.append("Center of CI:  " + centerAndRadius[0]);
-		str.append("Radius of CI:  " + centerAndRadius[1]);
+		str.append("Variance per run with CV: " + varCV[0] + "\n");
+		str.append("Center of CI:  " + centerAndRadius[0] + "\n");
+		str.append("Radius of CI:  " + centerAndRadius[1] + "\n");
 		str.append("Total CPU time:     " + timer.format() + "\n");
 		return str.toString();
 	}
@@ -203,18 +203,18 @@ public class MonteCarloExperiment {
 	 * This one uses a single real-valued CV, as in @ref simulateRunsCV.
 	 */
 	public static String simulateRunsDefaultReportCV (MonteCarloModelCV model, int n,
-	        RandomStream stream, double[] meanPayoff, double[] varPayoff, double level, int d,
+	        RandomStream stream, double[] mean, double[] variance, double level, int d,
 	        Chrono timer) {
 		PrintfFormat str = new PrintfFormat();
 		timer.init();
-		simulateRunsCV(model, n, stream, meanPayoff, varPayoff);
+		simulateRunsCV(model, n, stream, mean, variance);
 		// statWithCV.setConfidenceIntervalStudent();
 		str.append(model.toString() + "\n");
 		// str.append(statWithCV.report(0.95, 4));
-		str.append("Average, no CV:  " + meanPayoff[0]);
-		str.append("Average WITH CV:  " + meanPayoff[1]);
-		str.append("Variance, no CV:  " + varPayoff[0]);
-		str.append("Variance WITH CV:  " + varPayoff[1]);
+		str.append("Average, no CV:  " + mean[0] + "\n");
+		str.append("Average with CV:  " + mean[1] + "\n");
+		str.append("Variance, no CV:  " + variance[0] + "\n");
+		str.append("Variance with CV:  " + variance[1] + "\n");
 		str.append("Total CPU time:      " + timer.format() + "\n");
 		return str.toString();
 	}

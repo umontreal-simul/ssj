@@ -25,25 +25,22 @@ public class TestAsianOptionGBMCV {
 				sigma, new BrownianMotion(0, 0, 1, gen));
 		asian.setProcess(gbmSeq);
 		TallyStore statValueMC = new TallyStore ("Stats on payoff with crude MC");
-		TallyStore statValueCV = new TallyStore ("Stats on values of CV");
+		// TallyStore statValueCV = new TallyStore ("Stats on values of CV");
 
-		
-		
 		int n = 1000000;
 
 		Chrono timer = new Chrono();
-		MonteCarloExperiment.simulateRuns (asian, n, new MRG32k3a(), statValueMC);
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport (asian, n, noise, statValueMC));
+
 		// Extract positive payoffs and put them in collector statValuePosMC.
 		TallyStore statValuePosMC = statValueMC.extractSubrange (0.00000000001, 1.0E200);
 		statValuePosMC.setName ("Stats on positive payoffs with crude MC");
-		statValueMC.setConfidenceIntervalStudent();
-		System.out.println(asian.toString());
-		System.out.println(statValueMC.report(0.95, 4));
-		System.out.printf("Var. per run: %9.4g%n", statValueMC.variance() * n);
-		System.out.println("Total CPU time:      " + timer.format() + "\n");
+		System.out.println(statValuePosMC.report(0.95, 4));
 
-		MonteCarloExperiment.simulateRunsCV (asian, n, new MRG32k3a(), statValueMC, statValueCV);
-
+		double[] mean = new double[2];
+		double[] variance = new double[2];
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportCV 
+				(asian, n, noise, mean, variance, 0.95, 4, timer));
 	}
 
 }
