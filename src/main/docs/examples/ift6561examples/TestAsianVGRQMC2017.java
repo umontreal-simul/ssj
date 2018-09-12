@@ -1,4 +1,5 @@
 package ift6561examples;
+
 import umontreal.ssj.stochprocess.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.hups.*;

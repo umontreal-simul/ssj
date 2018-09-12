@@ -26,6 +26,8 @@ public class TestAsianOptionGBMCV {
 		double s0 = 100.0;
 		double r = 0.05;
 		double sigma = 0.5;
+		int n = 1000000;   // Number of simulation runs.
+
 		AsianOptionGBMCV asian = new AsianOptionGBMCV (r, numObsTimes, T1, T, strike);
 		RandomStream noise = new LFSR113();
 		NormalGen gen = new NormalGen(noise);
@@ -33,10 +35,10 @@ public class TestAsianOptionGBMCV {
 				sigma, new BrownianMotion(0, 0, 1, gen));
 		asian.setProcess(gbmSeq);
 		TallyStore statValueMC = new TallyStore ("Stats on payoff with crude MC");
-		int n = 1000000;   // Number of simulation runs.
 
 		Chrono timer = new Chrono();
-		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport (asian, n, noise, statValueMC));
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport 
+				(asian, n, noise, statValueMC));
 
 		// Extract positive payoffs, put them in collector statValuePosMC, and print report.
 		TallyStore statValuePosMC = statValueMC.extractSubrange (0.00000000001, 1.0E200);
@@ -56,10 +58,10 @@ public class TestAsianOptionGBMCV {
 		hist.view(800, 500);
 		hist.toLatexFile ("asianHist.tex", 10.0, 8.0);  // Stand-alone Latex file.
 
-		double[] mean = new double[2];
-		double[] variance = new double[2];
-		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportCV 
-				(asian, n, noise, mean, variance, 0.95, 4, timer));
+		// double[] mean = new double[2];
+		// double[] variance = new double[2];
+		// System.out.println (MonteCarloExperiment.simulateRunsDefaultReportCV 
+		//		(asian, n, noise, mean, variance, 0.95, 4, timer));
 		
 		ListOfTalliesWithCV<Tally> list = ListOfTalliesWithCV.createWithTally (1, 1);
 		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportCV 

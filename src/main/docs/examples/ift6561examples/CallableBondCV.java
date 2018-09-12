@@ -35,7 +35,7 @@ public class CallableBondCV extends CallableBond {
             double[] rates = ornUhl.generatePath();
             double[] expectedDiscount = ornUhl.getExpectedFutureDiscount(postDecisionPaymentTimes);
             
-            double callableValue = priceCallableBondForOneSimulation(rates, expectedDiscount);
+            double callableValue = priceCallableBond (rates, expectedDiscount);
             
             double uncallableValue = protectionPeriodValue;
             for (int iTime = 1; iTime <= nDecisions; iTime++) 

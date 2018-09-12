@@ -1,15 +1,15 @@
-package umontreal.ssj.stochprocess;
+package ift6561examples;
 
 import umontreal.ssj.randvar.*;
 import umontreal.ssj.randvarmulti.*;
+import umontreal.ssj.stochprocess.OrnsteinUhlenbeckProcess;
 import cern.colt.matrix.impl.*;
 
-
 /** 
- * Generates a Ornstein-Uhlenbeck process as in {@link OrnsteinUhlenbeckProcess OrnsteinUhlenbeckProcess},
- * but also generates the integral of the process, $\int_{t_0}^{t} X(\tau) d\tau$. 
- * <p>
- * The correlation matrix (2x2 of R(t) and its integral) is decomposed with PCA.
+ * This class is custom-made for the `CallableBond` example.  
+ * It generates an Ornstein-Uhlenbeck process as in @ref umontreal.ssj.stochprocess.OrnsteinUhlenbeckProcess,
+ * but it also computes the integral of the process,  $\int_{t_0}^{t} X(\tau) d\tau$. 
+ * The 2 x 2 correlation matrix for the process R(t) and its integral is decomposed with PCA.
  */
 public class OrnsteinUhlenbeckWithIntegratedProcess extends OrnsteinUhlenbeckProcess {
     double[] integratedPath; // length [d + 1]

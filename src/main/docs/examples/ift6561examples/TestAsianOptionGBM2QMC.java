@@ -7,8 +7,8 @@ import umontreal.ssj.stat.*;
 import umontreal.ssj.util.*;
 import umontreal.ssj.mcqmctools.*;
 
-// QMC and RQMC examples in book introduction, in 2 and 12 dimensions.
-public class TestAsianOptionGBM2 {
+// Program for QMC and RQMC examples in the introduction of my book, in 2 and 12 dimensions.
+public class TestAsianOptionGBM2QMC {
 
 	AsianOption asian;
 	RandomStream noise = new MRG32k3a();
@@ -23,7 +23,7 @@ public class TestAsianOptionGBM2 {
 	double secondsMC;
 	double varianceMC;
 
-	public TestAsianOptionGBM2(AsianOption asian) {
+	public TestAsianOptionGBM2QMC(AsianOption asian) {
 		this.asian = asian;
 	}
 
@@ -81,7 +81,7 @@ public class TestAsianOptionGBM2 {
 		AsianOption asian = new AsianOption(r, numObsTimes, T1, T, strike);
 		asian.setProcess(new GeometricBrownianMotion(s0, r, sigma,
 				new BrownianMotion(0, 0, 1, gen)));
-		TestAsianOptionGBM2 test = new TestAsianOptionGBM2(asian);
+		TestAsianOptionGBM2QMC test = new TestAsianOptionGBM2QMC(asian);
 
 		Tally statValueMC = new Tally("Stats on payoff with crude MC");
 		int n = 10000000; // 10 million runs for Monte Carlo.

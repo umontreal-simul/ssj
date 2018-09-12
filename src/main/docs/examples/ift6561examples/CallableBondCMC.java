@@ -1,10 +1,11 @@
 package ift6561examples;
+
 import umontreal.ssj.stat.TallyStore;
 import umontreal.ssj.randvar.NormalGen;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.rng.MRG32k3a;
 import umontreal.ssj.charts.XYLineChart;
-
+import umontreal.ssj.mcqmctools.MonteCarloExperiment;
 
 /**
  * Estimates the value of a callable bond where the coupons are paid at
@@ -87,35 +88,30 @@ public class CallableBondCMC extends CallableBond {
         System.out.println(chart.toLatex(4.0, 4.0));
     }
 
-
-    @Override public TallyStore simulate(int nSimulations) {
-        throw new UnsupportedOperationException("Use simulate(nSimulations, thresholdRate) instead");
-    }
-
     
     public static void main(String[] args) {
-        int nSimulations = 100000;
+        int n = 100000;
 
         RandomStream randomStream = new MRG32k3a();
-        CallableBond callableBond = new CallableBond(randomStream);
-        for (int iThreshold = 1; iThreshold < callableBond.getThresholdRates().length; iThreshold++)
-            callableBond.getThresholdRates()[iThreshold] = Double.NEGATIVE_INFINITY;
-        TallyStore tally = callableBond.simulate(nSimulations);
-        tally.setName("Callable bond value with single threshold (-0.124) and no CMC");
-        System.out.println(tally.reportAndCIStudent(0.95, 4));
+        CallableBond bond = new CallableBond(randomStream);
+        for (int iThreshold = 1; iThreshold < bond.getThresholdRates().length; iThreshold++)
+            bond.getThresholdRates()[iThreshold] = Double.NEGATIVE_INFINITY;
+		TallyStore statValue = new TallyStore ("Callable bond value with single threshold (-0.124) and no CMC");
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport 
+				(bond, n, new MRG32k3a(), statValue));
 
-        CallableBondCMC callableBondCMC = new CallableBondCMC(randomStream);
+        CallableBondCMC bondCMC = new CallableBondCMC(randomStream);
         double thresholdRate = -0.124;
-        TallyStore tallyCMC = callableBondCMC.simulateCMC(nSimulations, thresholdRate);
+        TallyStore tallyCMC = bondCMC.simulateCMC(n, thresholdRate);
         System.out.println(tallyCMC.reportAndCIStudent(0.95, 4));
-        System.out.printf("%n*** variance reduction factor from CMC = %.1f%n%n%n", (tally.variance() / tallyCMC.variance()));
+        System.out.printf("%n*** variance reduction factor from CMC = %.1f%n%n%n", (statValue.variance() / tallyCMC.variance()));
 
         boolean doUseCommonRandomNumbers = true;
         double[] thresholdRateTrials = {-0.20, -0.12, -0.08, -0.06, -0.05, -0.04, -0.03, -0.02, 0.00, 0.08};
 
-        callableBondCMC.evaluateBondAtVariousThresholds(thresholdRateTrials, nSimulations, doUseCommonRandomNumbers);
+        bondCMC.evaluateBondAtVariousThresholds(thresholdRateTrials, n, doUseCommonRandomNumbers);
 
         doUseCommonRandomNumbers = false;
-        callableBondCMC.evaluateBondAtVariousThresholds(thresholdRateTrials, nSimulations, doUseCommonRandomNumbers);
+        bondCMC.evaluateBondAtVariousThresholds(thresholdRateTrials, n, doUseCommonRandomNumbers);
     }
 }

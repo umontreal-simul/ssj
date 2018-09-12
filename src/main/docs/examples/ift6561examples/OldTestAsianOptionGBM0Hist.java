@@ -9,7 +9,7 @@ import umontreal.ssj.randvar.NormalGen;
 import umontreal.ssj.stat.*;
 import umontreal.ssj.util.Chrono;
 
-public class TestAsianOptionGBM0Hist {
+public class OldTestAsianOptionGBM0Hist {
 
 	// For testing with a GBM process, MC only.
 	public static void main(String[] args) throws IOException {
