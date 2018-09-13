@@ -1,5 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1UnuranException.html" title="This type of unchecked exception is thrown when an error occurs inside the UNURAN package..." alt="" coords="229,5,351,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamInstantiationException.html" title="This exception is thrown when a random stream factory cannot instantiate a stream on a call to its um..." alt="" coords="198,57,382,98"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1BitMatrix_1_1IncompatibleDimensionException.html" title="Runtime exception raised when the dimensions of the BitMatrix are not appropriate for the operation..." alt="" coords="183,122,397,163"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="5,81,77,108"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1EmpiricalChart.html" title="This class provides additional tools to create and manage empirical plots. " alt="" coords="129,5,237,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1HistogramChart.html" title="This class provides tools to create and manage histograms. " alt="" coords="125,56,240,83"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1ScatterChart.html" title="This class provides tools to create and manage scatter plots. " alt="" coords="135,107,231,133"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html" title="This class provides tools to create and manage curve plots. " alt="" coords="135,157,231,184"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1charts_1_1PPPlot.html" title="This class implements PP&#45;plot (or probability&#45;probability plot) objects that compare two probability ..." alt="" coords="299,107,361,133"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1charts_1_1QQPlot.html" title="This class implements QQ&#45;plot (or quantile&#45;quantile plot) objects that compare two probability distri..." alt="" coords="297,157,363,184"/>
+<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1charts_1_1YListChart.html" title="This class extends the class umontreal.ssj.charts.XYLineChart. " alt="" coords="288,208,372,235"/>
 </map>

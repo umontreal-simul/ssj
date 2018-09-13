@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MultiFunction.html" title="This interface should be implemented by classes which represent multivariate mathematical functions..." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title="MultiDimSortComparable\&lt; T \&gt;" alt="" coords="5,140,205,167"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort.html" title="This class implements a MultiDimSortComparable that performs a batch sort on multivariate arrays..." alt="" coords="285,5,441,61"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveBatchSort.html" title="This sort is similar to BatchSortPow2, except that after applying the batch sort, the objects are giv..." alt="" coords="253,85,472,141"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1OneDimSort.html" title="This class implements a MultiDimSortComparable that simply sorts the objects according to a given sor..." alt="" coords="281,165,445,221"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1SplitSort.html" title="Implements a MultiDimSortComparable that performs a split sort on a MultiDimComparable&lt;T&gt; array based..." alt="" coords="285,245,441,301"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSortPow2.html" title="This is a subclass of BatchSort for which the batch numbers &#160;are always powers of 2..." alt="" coords="520,20,633,47"/>
 </map>

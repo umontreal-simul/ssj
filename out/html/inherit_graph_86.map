@@ -1,5 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="5,50,136,77"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort points ..." alt="" coords="202,5,385,47"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort objects..." alt="" coords="184,71,403,127"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html" title="MultiDimSort01\&lt; MultiDim01 \&gt;" alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort.html" title="This class implements a MultiDimSort01&lt;T extends MultiDim01&gt; that can sort an array of points in the ..." alt="" coords="256,5,375,32"/>
 </map>

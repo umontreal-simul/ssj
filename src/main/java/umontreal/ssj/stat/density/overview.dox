@@ -28,6 +28,16 @@
  * very similarly and it makes perfect sense to have the same methods as those that
  * are implemented for common density estimators.
  * 
- 
+ * Unfortunately, many of the quantities targeting at the convergence behavior of
+ * a density estimator, such as the bias or the mean square error, are only
+ * computable when the true density is known, as is typically the case in model
+ * problems only. To this end, models that further describe or parameterize the
+ * class of densities that one seeks to approximate can be useful. One implementation
+ * of such a model for smooth target densities and density estimators which rely on
+ * a band- or bin width (e.g. @ref DEHistogram and @ref DEKernelDensity), is due to
+ * (TODO: cite our density paper) and is implemented in
+ * @ref umontreal.ssj.stat.density.DEModelBandwidthBased.
+ * 
+ * 
  * 
  */
