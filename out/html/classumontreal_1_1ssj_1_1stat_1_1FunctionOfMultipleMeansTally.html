@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a statistical collector for estimating a function of multiple means with a confidence interval based on the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[190]</a>&thinsp;.  
+<p>Represents a statistical collector for estimating a function of multiple means with a confidence interval based on the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[193]</a>&thinsp;.  
  <a href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for FunctionOfMultipleMeansTally:</div>
@@ -130,7 +130,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setName</b> (String n
 <tr class="memdesc:a9700684b591fb372f144f8323a02317d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the square root of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#af60d2a30adec3b0efc1d86668825734d" title="Estimates  where  is the number of vectors of observations given to this collector since the last ini...">variance</a>.  <a href="#a9700684b591fb372f144f8323a02317d">More...</a><br /></td></tr>
 <tr class="separator:a9700684b591fb372f144f8323a02317d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7bf1e0517ef3c4b1cad2f50cf29cbf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#aa7bf1e0517ef3c4b1cad2f50cf29cbf3">confidenceIntervalDelta</a> (double level, double[] centerAndRadius)</td></tr>
-<tr class="memdesc:aa7bf1e0517ef3c4b1cad2f50cf29cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a confidence interval with confidence level <code>level</code> on \(\nu=g(\boldsymbol{\mu})\), using the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[190]</a>&thinsp;.  <a href="#aa7bf1e0517ef3c4b1cad2f50cf29cbf3">More...</a><br /></td></tr>
+<tr class="memdesc:aa7bf1e0517ef3c4b1cad2f50cf29cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a confidence interval with confidence level <code>level</code> on \(\nu=g(\boldsymbol{\mu})\), using the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[193]</a>&thinsp;.  <a href="#aa7bf1e0517ef3c4b1cad2f50cf29cbf3">More...</a><br /></td></tr>
 <tr class="separator:aa7bf1e0517ef3c4b1cad2f50cf29cbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f7c5d0736d11da1722c253b3c7c1748"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#a2f7c5d0736d11da1722c253b3c7c1748">formatCIDelta</a> (double level, int d)</td></tr>
 <tr class="memdesc:a2f7c5d0736d11da1722c253b3c7c1748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to #confidenceIntervalDelta(double,double[]), but returns the confidence interval in a formatted string of the form "&lt;tt&gt;95%
@@ -295,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aaea802d8acb080ce3803e377455bfdc0 inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1StatProbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a statistical collector for estimating a function of multiple means with a confidence interval based on the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[190]</a>&thinsp;. </p>
+<div class="textblock"><p>Represents a statistical collector for estimating a function of multiple means with a confidence interval based on the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[193]</a>&thinsp;. </p>
 <p>Let \(\bar{\mathbf{X}}_n=(\bar{X}_{n, 0}, …, \bar{X}_{n, d-1})\) be a random vector computed by averaging vectors of observations: </p><p class="formulaDsp">
 \[ \bar{\mathbf{X}}_n=(1/n)\sum_{i=0}^{n-1}\mathbf{X}_i. \]
 </p>
@@ -539,7 +539,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes a confidence interval with confidence level <code>level</code> on \(\nu=g(\boldsymbol{\mu})\), using the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[190]</a>&thinsp;. </p>
+<p>Computes a confidence interval with confidence level <code>level</code> on \(\nu=g(\boldsymbol{\mu})\), using the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[193]</a>&thinsp;. </p>
 <p>Returns, in elements 0 and 1 of the array object <code>centerAndRadius[]</code>, the center and half-length (radius) of a confidence interval on the true function of means \(\nu\), with confidence level <code>level</code>, assuming that the vectors of observations given to this collector are independent and identically distributed (i.i.d.) copies of \(\mathbf{X}\), and that \(\bar{\mathbf{X}}_n\) has the \(d\)-dimensional normal distribution, which is approximately true if \(n\) is large enough. With this assumption, as \(n\to\infty\), </p><p class="formulaDsp">
 \[ \sqrt{n}(\bar{\mathbf{X}}_n - \boldsymbol{\mu}) \]
 </p>
@@ -935,7 +935,7 @@ confidence interval for function of means: (32.431,  32.487)&lt;/tt&gt;", usin
 </div><div class="memdoc">
 
 <p>Estimates \(n\mathrm{Var}(g(\bar{\mathbf{X}}_n))\) where \(n\) is the number of vectors of observations given to this collector since the last initialization. </p>
-<p>Assuming that, as \(n\to\infty\), \(\sqrt{n}(\bar{\mathbf{X}}_n - \boldsymbol{\mu})\) converges to a random vector \(\mathbf{Y}\) with mean \(\mathbf{0}\) and covariance matrix \(\boldsymbol{\Sigma}\) ( \(\boldsymbol{\Sigma}\) is also the covariance matrix of \(\mathbf{X}\)), the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[190]</a>&thinsp; shows that \(\sqrt{n}(g(\bar{\mathbf{X}}_n) - g(\boldsymbol{\mu}))\Rightarrow(\nabla g(\boldsymbol{\mu}))^{\mathsf{t}}\mathbf{Y}\). As a result, \(n\mathrm{Var}[g(\bar{\mathbf{X}}_n)]=n\mathrm{Var}[g(\bar{\mathbf{X}}_n) - g(\boldsymbol{\mu})]=\mathrm{Var}[\sqrt{n}(g(\bar{\mathbf{X}}_n) - g(\boldsymbol{\mu}))]\to\mathrm{Var}[(\nabla g(\boldsymbol{\mu}))^{\mathsf{t}}\mathbf{Y}]=(\nabla g(\boldsymbol{\mu}))^{\mathsf{t}}\boldsymbol{\Sigma}\nabla g(\boldsymbol{\mu})=\sigma^2\). Here, \(\nabla g(\boldsymbol{\mu})\) is the gradient of \(g(\boldsymbol{\mu})\). This method computes </p><p class="formulaDsp">
+<p>Assuming that, as \(n\to\infty\), \(\sqrt{n}(\bar{\mathbf{X}}_n - \boldsymbol{\mu})\) converges to a random vector \(\mathbf{Y}\) with mean \(\mathbf{0}\) and covariance matrix \(\boldsymbol{\Sigma}\) ( \(\boldsymbol{\Sigma}\) is also the covariance matrix of \(\mathbf{X}\)), the delta theorem <a class="el" href="citelist.html#CITEREF_tSER80a">[193]</a>&thinsp; shows that \(\sqrt{n}(g(\bar{\mathbf{X}}_n) - g(\boldsymbol{\mu}))\Rightarrow(\nabla g(\boldsymbol{\mu}))^{\mathsf{t}}\mathbf{Y}\). As a result, \(n\mathrm{Var}[g(\bar{\mathbf{X}}_n)]=n\mathrm{Var}[g(\bar{\mathbf{X}}_n) - g(\boldsymbol{\mu})]=\mathrm{Var}[\sqrt{n}(g(\bar{\mathbf{X}}_n) - g(\boldsymbol{\mu}))]\to\mathrm{Var}[(\nabla g(\boldsymbol{\mu}))^{\mathsf{t}}\mathbf{Y}]=(\nabla g(\boldsymbol{\mu}))^{\mathsf{t}}\boldsymbol{\Sigma}\nabla g(\boldsymbol{\mu})=\sigma^2\). Here, \(\nabla g(\boldsymbol{\mu})\) is the gradient of \(g(\boldsymbol{\mu})\). This method computes </p><p class="formulaDsp">
 \[ S_n^2 = (\nabla g(\bar{\mathbf{X}}_n))^{\mathsf{t}}\mathbf{S}_n\nabla g(\bar{\mathbf{X}}_n), \]
 </p>
 <p> where \(\mathbf{S}_n\) is the matrix of empirical covariances of \(\mathbf{X}\). When \(n\to\infty\), \(S_n^2\to\sigma^2\) if \(\mathbf{S}_n\to\boldsymbol{\Sigma}\), and \(\nabla g(\bar{\mathbf{X}}_n)\to\nabla g(\boldsymbol{\mu})\). Therefore, \(S_n^2\) is a biased but consistent estimator of \(n\mathrm{Var}(g(\bar{\mathbf{X}}_n))\). </p><dl class="section return"><dt>Returns</dt><dd>the estimate of the variance. </dd></dl>

@@ -79,7 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class represents a gamma process \(\{ S(t) = G(t; \mu, \nu) : t \geq0 \}\) with mean parameter \(\mu\) and variance parameter \(\nu\), sampled using the <em>gamma bridge</em> method (see for example <a class="el" href="citelist.html#CITEREF_fRIB02a">[184]</a>, <a class="el" href="citelist.html#CITEREF_fAVR03a">[10]</a>&thinsp;).  
+<p>This class represents a gamma process \(\{ S(t) = G(t; \mu, \nu) : t \geq0 \}\) with mean parameter \(\mu\) and variance parameter \(\nu\), sampled using the <em>gamma bridge</em> method (see for example <a class="el" href="citelist.html#CITEREF_fRIB02a">[187]</a>, <a class="el" href="citelist.html#CITEREF_fAVR03a">[10]</a>&thinsp;).  
  <a href="classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessBridge.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GammaProcessBridge:</div>
@@ -334,7 +334,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS</b
 <tr class="separator:aa53cb17a306a6462b4a5a5083bc8ccb6 inherit pro_static_attribs_classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class represents a gamma process \(\{ S(t) = G(t; \mu, \nu) : t \geq0 \}\) with mean parameter \(\mu\) and variance parameter \(\nu\), sampled using the <em>gamma bridge</em> method (see for example <a class="el" href="citelist.html#CITEREF_fRIB02a">[184]</a>, <a class="el" href="citelist.html#CITEREF_fAVR03a">[10]</a>&thinsp;). </p>
+<div class="textblock"><p>This class represents a gamma process \(\{ S(t) = G(t; \mu, \nu) : t \geq0 \}\) with mean parameter \(\mu\) and variance parameter \(\nu\), sampled using the <em>gamma bridge</em> method (see for example <a class="el" href="citelist.html#CITEREF_fRIB02a">[187]</a>, <a class="el" href="citelist.html#CITEREF_fAVR03a">[10]</a>&thinsp;). </p>
 <p>This is analogous to the bridge sampling used in <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionBridge.html">BrownianMotionBridge</a>.</p>
 <p>Note that gamma bridge sampling requires not only gamma variates, but also <em>beta</em> variates. The latter generally take a longer time to generate than the former. The class <code>GammaSymmetricalBridgeProcess</code> provides a faster implementation when the number of observation times is a power of two.</p>
 <p>The warning from class <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionBridge.html">BrownianMotionBridge</a> applies verbatim to this class.</p>
@@ -427,7 +427,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS</b
 </div><div class="memdoc">
 
 <p>Constructs a new <code><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessBridge.html" title="This class represents a gamma process  with mean parameter  and variance parameter ...">GammaProcessBridge</a></code>. </p>
-<p>Uses the random variate generators <code>Ggen</code> and <code>Bgen</code> to generate the gamma and beta variates, respectively. Note that both generator uses the same <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a>. Furthermore, the parameters of the <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html">umontreal.ssj.randvar.GammaGen</a> and <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1BetaGen.html">umontreal.ssj.randvar.BetaGen</a> objects are not important since the implementation forces the generators to use the correct parameters. (as defined in <a class="el" href="citelist.html#CITEREF_fRIB02a">[184]</a>&thinsp; (page 7)). </p>
+<p>Uses the random variate generators <code>Ggen</code> and <code>Bgen</code> to generate the gamma and beta variates, respectively. Note that both generator uses the same <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a>. Furthermore, the parameters of the <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html">umontreal.ssj.randvar.GammaGen</a> and <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1BetaGen.html">umontreal.ssj.randvar.BetaGen</a> objects are not important since the implementation forces the generators to use the correct parameters. (as defined in <a class="el" href="citelist.html#CITEREF_fRIB02a">[187]</a>&thinsp; (page 7)). </p>
 
 </div>
 </div>

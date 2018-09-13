@@ -703,7 +703,20 @@ LAYOUT_FILE            =
 # LATEX_BIB_STYLE. To use this feature you need bibtex and perl available in the
 # search path. See also \cite for info how to create references.
 
-CITE_BIB_FILES         = /u/puchhamf/misc/workspace_clean/ssj/src/main/docs/ssj.bib
+CITE_BIB_FILES         = /u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/callc.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/fin.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/ift.bib \ 
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/math.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/optim.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/prob.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/rail.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/random.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/simul.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/stat.bib \
+/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/vrt.bib
+
+#/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/bibtex-database/
+#/u/puchhamf/misc/workspace_clean/ssj/src/main/docs/ssj.bib
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages

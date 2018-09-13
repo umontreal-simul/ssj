@@ -146,8 +146,8 @@ import umontreal.ssj.util.PrintfFormat;
  * 
  * Finally, if the user wants to use this class for other estimators than \ref
  * DEHistogram or \ref DEKernelDensity this can easily be achieved by
- * implementing the methods #setH(DensityEstimator, double) and
- * #setAlpha(DensityEstimator) specifically for this estimator.
+ * implementing the methods #setH(DensityEstimator, double),
+ * #setAlpha(DensityEstimator), and #parametersISBEstimate specifically for this estimator.
  */
 
 public class DEModelBandwidthBased {
@@ -1228,7 +1228,17 @@ public class DEModelBandwidthBased {
 
 		return sb.toString();
 	}
-
+	
+	/**
+	 * Same as #parametersISBEstimate(MonteCarloModelDouble, RQMCPointSet, int, DEKernelDensity, double[]) but
+	 * for a histogram instead of a kernel density estimator.
+	 * @param model the underlying model.
+	 * @param rqmc the RQMC point set used.
+	 * @param m the number of independent replications.
+	 * @param de the kernel density estimator.
+	 * @param evalPoints the evaluation points used to estimate the roughness functionals.
+	 * @return a formatted report on the experiment.
+	 */
 	public String parametersISBEstimate(MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DEHistogram de,
 			double[] evalPoints) {
 		StringBuffer sb = new StringBuffer("");
@@ -1245,12 +1255,26 @@ public class DEModelBandwidthBased {
 		return sb.toString();
 	}
 
+	/**
+	 * Fallback method for all density estimators \a de for which this method is not
+	 * specifically implemented. Throws an \ref UnsupportedOperationException.
+	 * @param model the underlying model.
+	 * @param rqmc the RQMC point set used.
+	 * @param m the number of independent replications.
+	 * @param de the kernel density estimator.
+	 * @param evalPoints the evaluation points used to estimate the roughness functionals.
+	 * @return a formatted report on the experiment.
+	 */
 	public String parametersISBEstimate(MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DensityEstimator de,
 			double[] evalPoints) {
 		throw new UnsupportedOperationException(
 				"parametersISBEstimate is not implemented for the DensityEstimator " + de.toString());
 	}
 
+	/**
+	 * Produces a formatted string containing the model parameters \f$\gamma,\kappa, K,\f$ and \f$\nu\f$.
+	 * @return a formatted string showing \f$\gamma,\kappa, K,\f$ and \f$\nu\f$.
+	 */
 	public String parametersMISEFormatCoefficients() {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("MISE-parameters: \n");
@@ -1265,9 +1289,8 @@ public class DEModelBandwidthBased {
 	}
 
 	/**
-	 * For parameter estimation of the IV this method produces a formatted string
-	 * carrying basic information that can be used as a introductory head for the
-	 * estimation of the IV parameters.
+	 * For running the experiment with the optimal \f$h_*\f$ this method produces a formatted string
+	 * carrying basic information that can be used as a introductory head.
 	 *
 	 * @param pointLabel
 	 *            a description of the point set employed.
