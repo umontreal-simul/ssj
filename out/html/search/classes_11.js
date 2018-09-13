@@ -33,10 +33,9 @@ var searchData=
   ['rijndael_5fproperties',['Rijndael_Properties',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Properties.html',1,'umontreal::ssj::rng']]],
   ['rootfinder',['RootFinder',['../classumontreal_1_1ssj_1_1util_1_1RootFinder.html',1,'umontreal::ssj::util']]],
   ['rqmcexperiment',['RQMCExperiment',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html',1,'umontreal::ssj::mcqmctools']]],
-  ['rqmcexperimentdensity',['RQMCExperimentDensity',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentDensity.html',1,'umontreal::ssj::mcqmctools']]],
   ['rqmcexperimentseries',['RQMCExperimentSeries',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html',1,'umontreal::ssj::mcqmctools']]],
   ['rqmcpointset',['RQMCPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html',1,'umontreal::ssj::hups']]],
   ['rqmcsampler',['RQMCSampler',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html',1,'umontreal::ssj::mcqmctools::anova']]],
-  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'RunClass'],['../classRunClass.html',1,'RunClass']]],
-  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'RunClass.RunClassException'],['../classRunClass_1_1RunClassException.html',1,'RunClass.RunClassException']]]
+  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'tutorial']]],
+  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'tutorial::RunClass']]]
 ];

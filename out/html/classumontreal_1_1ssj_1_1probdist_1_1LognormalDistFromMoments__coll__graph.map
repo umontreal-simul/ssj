@@ -1,0 +1,5 @@
+<map id="LognormalDistFromMoments" name="LognormalDistFromMoments">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1LognormalDist.html" title="Extends the class ContinuousDistribution for the lognormal distribution  . " alt="" coords="47,155,154,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="23,80,178,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="57,5,145,32"/>
+</map>

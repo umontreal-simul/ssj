@@ -2,26 +2,28 @@ package umontreal.ssj.mcqmctools;
 
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.stat.*;
+import umontreal.ssj.stat.list.ListOfTallies;
 import umontreal.ssj.stat.list.lincv.*;
 import umontreal.ssj.util.Chrono;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * Provides generic tools to perform simple Monte Carlo experiments with a simulation model that
- * implements one of the interfaces  
- * @ref MonteCarloModelDouble, @ref MonteCarloModelDoubleArray, or @ref MonteCarloModelCV. 
- * The experiment consists of n independent simulation runs and the results are returned in @ref Tally
- * satistical collectors. The #RandomStream is reset to a new substream after each run.
+ * Provides generic tools to perform simple Monte Carlo experiments with a
+ * simulation model that implements one of the interfaces
+ * 
+ * @ref MonteCarloModelDouble, @ref MonteCarloModelDoubleArray, or @ref
+ *      MonteCarloModelCV. The experiment consists of n independent simulation
+ *      runs and the results are returned in @ref Tally satistical collectors.
+ *      The #RandomStream is reset to a new substream after each run.
  */
 
 public class MonteCarloExperiment {
 
 	/**
-	 * Performs #n simulation runs of #model using #stream and collects statistics in #statValue.
-	 * The #stream is reset to a new substream for each run.
+	 * Performs #n simulation runs of #model using #stream and collects statistics
+	 * in #statValue. The #stream is reset to a new substream for each run.
 	 */
-	public static void simulateRuns(MonteCarloModelDouble model, int n, RandomStream stream,
-	        Tally statValue) {
+	public static void simulateRuns(MonteCarloModelDouble model, int n, RandomStream stream, Tally statValue) {
 		statValue.init();
 		for (int i = 0; i < n; i++) {
 			model.simulate(stream);
@@ -31,11 +33,33 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Performs n runs of model using #stream and collects statistics for a model with a vector of
-	 * control variates. The results are returned in #statWithCV.
+	 * Similar to
+	 * {@link #simulateRuns(MonteCarloModelDouble, int, RandomStream, Tally)} but
+	 * for a model of type @ref MonteCarloModelDoubleArray. Consequently, the statistics are collected
+	 *      in a @ref ListOfTallies. The \f$t\f$-th element of #statValueList
+	 *      collects the statistics for the \f$t\f$-th coordinate of the performance
+	 *      vector of #model.
+	 * @param model the underlying model.
+	 * @param n the number of simulation runs
+	 * @param stream the stream used to simulate the model
+	 * @param statValueList the collector of the statistical data. 
+	 */
+	public static void simulateRuns(MonteCarloModelDoubleArray model, int n, RandomStream stream,
+			ListOfTallies<? extends Tally> statValueList) {
+		statValueList.init();
+		for (int i = 0; i < n; i++) {
+			model.simulate(stream);
+			statValueList.add(model.getPerformance());
+			stream.resetNextSubstream();
+		}
+	}
+
+	/**
+	 * Performs n runs of model using #stream and collects statistics for a model
+	 * with a vector of control variates. The results are returned in #statWithCV.
 	 */
 	public static void simulateRunsCV(MonteCarloModelCV model, int n, RandomStream stream,
-	        ListOfTalliesWithCV<Tally> statWithCV) {
+			ListOfTalliesWithCV<Tally> statWithCV) {
 		statWithCV.init();
 		for (int i = 0; i < n; i++) {
 			model.simulate(stream);
@@ -45,11 +69,12 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Performs n runs using #stream and collects statistics for a model with a single real-valued
-	 * control variate C. The statistics on X and C are collected in #statX and #statC.
+	 * Performs n runs using #stream and collects statistics for a model with a
+	 * single real-valued control variate C. The statistics on X and C are collected
+	 * in #statX and #statC.
 	 */
-	public static void simulateRunsCV (MonteCarloModelCV model, int n, RandomStream stream,
-	        TallyStore statX, TallyStore statC) {
+	public static void simulateRunsCV(MonteCarloModelCV model, int n, RandomStream stream, TallyStore statX,
+			TallyStore statC) {
 		statX.init();
 		statC.init();
 		for (int i = 0; i < n; i++) {
@@ -61,13 +86,14 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Performs n runs using #stream and collects statistics for a model with a single real-valued
-	 * control variate C. The statistics are collected, and the mean and variance of the estimators
-	 * with and without the control variate are returned in the two-dimensional vectors #mean and
-	 * #variance, as in #computeMeanVarCV.
+	 * Performs n runs using #stream and collects statistics for a model with a
+	 * single real-valued control variate C. The statistics are collected, and the
+	 * mean and variance of the estimators with and without the control variate are
+	 * returned in the two-dimensional vectors #mean and #variance, as in
+	 * #computeMeanVarCV.
 	 */
-	public static void simulateRunsCV (MonteCarloModelCV model, int n, RandomStream stream,
-	        double[] mean, double[] variance) {
+	public static void simulateRunsCV(MonteCarloModelCV model, int n, RandomStream stream, double[] mean,
+			double[] variance) {
 		TallyStore statX = new TallyStore(n);
 		TallyStore statC = new TallyStore(n);
 		simulateRunsCV(model, n, stream, statX, statC);
@@ -75,35 +101,36 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Given statistics collected in #statX and #statC as with @ref simulateRunsCV, this method
-	 * computes the mean and variance of the estimators with and without the CV and returns them in
-	 * the two-dimensional vectors #mean and #variance (mean[0] is the value without CV, mean[1] the
-	 * value with CV, and similarly for the variance.
+	 * Given statistics collected in #statX and #statC as with @ref simulateRunsCV,
+	 * this method computes the mean and variance of the estimators with and without
+	 * the CV and returns them in the two-dimensional vectors #mean and #variance
+	 * (mean[0] is the value without CV, mean[1] the value with CV, and similarly
+	 * for the variance.
 	 */
-	public static void computeMeanVarCV (TallyStore statX, TallyStore statC, double[] mean,
-	        double[] variance) {
+	public static void computeMeanVarCV(TallyStore statX, TallyStore statC, double[] mean, double[] variance) {
 		mean[0] = statX.average();
 		variance[0] = statX.variance();
 		double varC = statC.variance();
 		double covCX = statC.covariance(statX);
 		double meanC = statC.average();
 		double beta = covCX / varC;
-		mean[1] = mean[0] - beta * meanC;      // CV has mean 0.
+		mean[1] = mean[0] - beta * meanC; // CV has mean 0.
 		variance[1] = variance[0] + beta * beta * varC - 2 * beta * covCX;
 	}
 
 	/**
-	 * Performs n simulation runs to estimate the difference in performance between #model2 and
-	 * #model1, divided by #delta, using common random numbers (CRN) across the two models. One
-	 * substream is used for each run and the same n substreams are used for the two models. Returns
-	 * the statistics on the n differences in #statDiff. By taking #delta = 1, this just estimates
-	 * the difference. By taking #delta > 0 very small, and if the two models are in fact the same
-	 * model but with a parameter that differs by delta, this gives a finite-difference estimator of
-	 * the derivative of the performance with respect to this parameter.
+	 * Performs n simulation runs to estimate the difference in performance between
+	 * #model2 and #model1, divided by #delta, using common random numbers (CRN)
+	 * across the two models. One substream is used for each run and the same n
+	 * substreams are used for the two models. Returns the statistics on the n
+	 * differences in #statDiff. By taking #delta = 1, this just estimates the
+	 * difference. By taking #delta > 0 very small, and if the two models are in
+	 * fact the same model but with a parameter that differs by delta, this gives a
+	 * finite-difference estimator of the derivative of the performance with respect
+	 * to this parameter.
 	 */
-	public static void simulFDReplicatesCRN(MonteCarloModelDouble model1,
-	        MonteCarloModelDouble model2, double delta, int n, RandomStream stream,
-	        Tally statDiff) {
+	public static void simulFDReplicatesCRN(MonteCarloModelDouble model1, MonteCarloModelDouble model2, double delta,
+			int n, RandomStream stream, Tally statDiff) {
 		statDiff.init();
 		double value1;
 		for (int i = 0; i < n; i++) {
@@ -117,12 +144,12 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Similar to @ref simulFDReplicatesCRN, but using independent random numbers (IRN) across the
-	 * two models. One substream is used for each run of each model, for a total of 2n substreams.
+	 * Similar to @ref simulFDReplicatesCRN, but using independent random numbers
+	 * (IRN) across the two models. One substream is used for each run of each
+	 * model, for a total of 2n substreams.
 	 */
-	public static void simulFDReplicatesIRN(MonteCarloModelDouble model1,
-	        MonteCarloModelDouble model2, double delta, int n, RandomStream stream,
-	        Tally statDiff) {
+	public static void simulFDReplicatesIRN(MonteCarloModelDouble model1, MonteCarloModelDouble model2, double delta,
+			int n, RandomStream stream, Tally statDiff) {
 		statDiff.init();
 		double value1;
 		for (int i = 0; i < n; i++) {
@@ -135,12 +162,13 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * Performs n independent runs using n substreams of #stream, collects statistics in #statValue,
-	 * and returns a report with a confidence interval of level #level, with #d decimal fractional
-	 * digits of precision for the output, computed via a Student distribution.
+	 * Performs n independent runs using n substreams of #stream, collects
+	 * statistics in #statValue, and returns a report with a confidence interval of
+	 * level #level, with #d decimal fractional digits of precision for the output,
+	 * computed via a Student distribution.
 	 */
-	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n,
-	        RandomStream stream, Tally statValue, double level, int d, Chrono timer) {
+	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n, RandomStream stream,
+			Tally statValue, double level, int d, Chrono timer) {
 		PrintfFormat str = new PrintfFormat();
 		timer.init();
 		simulateRuns(model, n, stream, statValue);
@@ -157,23 +185,23 @@ public class MonteCarloExperiment {
 	/**
 	 * In this version, there is no need to provide a #Chrono; it is created inside.
 	 */
-	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n,
-	        RandomStream stream, Tally statValue, double level, int d) {
+	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n, RandomStream stream,
+			Tally statValue, double level, int d) {
 		Chrono timer = new Chrono();
 		return simulateRunsDefaultReportStudent(model, n, stream, statValue, level, d, timer);
 	}
 
 	/**
-	 * Similar to @ref simulateRunsDefaultReport, but this one uses a vector of control variates. It
-	 * returns a report with a confidence interval for the estimator with the CV.
+	 * Similar to @ref simulateRunsDefaultReport, but this one uses a vector of
+	 * control variates. It returns a report with a confidence interval for the
+	 * estimator with the CV.
 	 */
-	public static String simulateRunsDefaultReportCV (MonteCarloModelCV model, int n,
-	        RandomStream stream, ListOfTalliesWithCV<Tally> statWithCV, double level, int d,
-	        Chrono timer) {
+	public static String simulateRunsDefaultReportCV(MonteCarloModelCV model, int n, RandomStream stream,
+			ListOfTalliesWithCV<Tally> statWithCV, double level, int d, Chrono timer) {
 		PrintfFormat str = new PrintfFormat();
 		timer.init();
 		simulateRunsCV(model, n, stream, statWithCV);
-		statWithCV.estimateBeta();  // Computes the variances and covariances!
+		statWithCV.estimateBeta(); // Computes the variances and covariances!
 		// statWithCV.setConfidenceIntervalStudent();
 		str.append(model.toString() + "\n");
 		// str.append(statWithCV.report(0.95, 4));
@@ -193,9 +221,8 @@ public class MonteCarloExperiment {
 	/**
 	 * This one uses a single real-valued CV, as in @ref simulateRunsCV.
 	 */
-	public static String simulateRunsDefaultReportCV (MonteCarloModelCV model, int n,
-	        RandomStream stream, double[] meanPayoff, double[] varPayoff, double level, int d,
-	        Chrono timer) {
+	public static String simulateRunsDefaultReportCV(MonteCarloModelCV model, int n, RandomStream stream,
+			double[] meanPayoff, double[] varPayoff, double level, int d, Chrono timer) {
 		PrintfFormat str = new PrintfFormat();
 		timer.init();
 		simulateRunsCV(model, n, stream, meanPayoff, varPayoff);

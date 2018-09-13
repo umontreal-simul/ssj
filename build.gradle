@@ -21,8 +21,8 @@ defaultTasks 'build'
 
 group = 'ca.umontreal.iro.simul'
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 version = '3.2.1'
 
@@ -139,7 +139,7 @@ doxygen {
 
     source new File(projectDir, 'src/main/java')
     source new File(projectDir, 'src/main/docs/examples/tutorial')
-    // image_path new File(projectDir, 'src/main/docs/images')
+    image_paths new File(projectDir, 'src/main/docs/images')
 
     template 'src/main/docs/Doxyfile'
 }
@@ -366,6 +366,7 @@ sourceSets {
         java {
             srcDir 'src/main/docs/examples'
             exclude 'markovchainrqmc/**' // FIXME: broken examples
+            // exclude 'ift6561examples/PlotPoints.java'
         }
     }
 }

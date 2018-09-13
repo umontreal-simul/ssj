@@ -17,12 +17,7 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ["script","noscript","style","textarea","pre"]
-  }
-});
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -72,7 +67,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>umontreal</b></li><li class="navelem"><b>ssj</b></li><li class="navelem"><a class="el" href="namespaceumontreal_1_1ssj_1_1stat.html">stat</a></li><li class="navelem"><a class="el" href="namespaceumontreal_1_1ssj_1_1stat_1_1density.html">density</a></li><li class="navelem"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityIVEstimation.html">DensityIVEstimation</a></li>  </ul>
+<li class="navelem"><b>umontreal</b></li><li class="navelem"><b>ssj</b></li><li class="navelem"><a class="el" href="namespaceumontreal_1_1ssj_1_1stat.html">stat</a></li><li class="navelem"><b>density</b></li><li class="navelem"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityIVEstimation.html">DensityIVEstimation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -171,7 +166,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Takes data from previous simulations (m independent replications, with n data points each), a density estimator de, and an array of evaluation points for this density over the interval [a,b]. </p>
-<p>Computes and returns the density estimator and the empirical integrated variance (IV) for this density estimator, obtained by estimating the variance at the numEvalPoints evaluation points provided and taking the average multiplied by (b-a). </p>
+<p>Computes and returns the density estimator and the empirical integrated variance (IV) for this density estimator, obtained by estimating the variance at the numEvalPoints evaluation points provided and taking the average multiplied by (b-a).</p>
+<dl class="section remark"><dt>Remarks</dt><dd>{<b>Florian</b>: <em>m</em> and <em>numEvalPoints</em> don't need to be passed. They can be extracted from <em>data</em> and <em>evalPoints</em>.} </dd></dl>
 
 </div>
 </div>
@@ -309,8 +305,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Similar to computeDensityVariance but does it for a list of density estimators, and returns the results (integrated variance for each DE) in array #integVariance. </p>
-<p>NOTE: In case we would like to provide more results, we may want to return them in a list like listDE. <br />
- We may also want a method somewhere that plots the densities in a listDE ... </p>
+<p>NOTE: In case we would like to provide more results, we may want to return them in a list like listDE.</p>
+<p>We may also want a method somewhere that plots the densities in a listDE ... </p>
 
 </div>
 </div>
