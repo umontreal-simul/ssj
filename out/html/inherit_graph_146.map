@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1UnuranException.html" title="This type of unchecked exception is thrown when an error occurs inside the UNURAN package..." alt="" coords="229,5,351,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamInstantiationException.html" title="This exception is thrown when a random stream factory cannot instantiate a stream on a call to its um..." alt="" coords="198,57,382,98"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1BitMatrix_1_1IncompatibleDimensionException.html" title="Runtime exception raised when the dimensions of the BitMatrix are not appropriate for the operation..." alt="" coords="183,122,397,163"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1TransformingList.html" title="Represents a list that dynamically transforms the elements of another list. " alt="" coords="145,5,299,47"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html" title="Implements a list with integrated statistical probes to provide automatic collection of statistics on..." alt="" coords="347,13,473,39"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html" title="This class extends ListWithStat, and uses a linked list as the internal data structure. " alt="" coords="521,13,660,39"/>
 </map>

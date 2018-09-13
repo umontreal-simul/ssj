@@ -122,7 +122,7 @@ import umontreal.ssj.util.PrintfFormat;
  * 
  */
 
-public class DEModelBandwidthBased implements DensityEstimationModel {
+public class DEModelBandwidthBased  {
 
 	/** Power of \f$h\f$ in ISB */
 	private double alpha;
@@ -386,6 +386,31 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 		this.delta = delta;
 	}
 
+	
+	public double estimateLogIV(double logH, double logN) {
+		return (Math.log(getC()) / Math.log(baseOfLog) - getBeta() * logN - getDelta() * logH);
+	}
+
+	public double estimateLogISB(double logH) {
+		return (Math.log(getB()) / Math.log(baseOfLog) + getAlpha() * logH);
+	}
+
+	public double estimateLogMISE(double logN) {
+		return (Math.log(getK()) / Math.log(baseOfLog) - getNu() * logN);
+	}
+
+	public static void setH(DEHistogram de, double h) {
+		de.setH(h);
+	}
+	
+	public static void setH(DEKernelDensity de, double h) {
+		de.setH(h);
+	}
+	
+	public static void setH(DensityEstimator de, double h) {
+		throw new UnsupportedOperationException (
+		         "setH is not implemented for the DensityEstimator " + de.toString());
+	}
 	/**
 	 * Gives #logH, the logs of the bin-/bandwidths in the test grid for
 	 * \f$(n,h)\f$.
@@ -394,6 +419,23 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 	 */
 	public double[] getLogH() {
 		return logH;
+	}
+	
+	public double getNu() {
+		return getAlpha() * getGamma();
+	}
+
+	public double getKappa() {
+		return Math.pow(getC() * getDelta() / (getB() * getAlpha()), 1.0 / (getAlpha() + getDelta()));
+	}
+
+	public double getGamma() {
+		return getBeta() / (getAlpha() + getDelta());
+	}
+
+	public double getK() {
+		double kappa = getKappa();
+		return getC() * Math.pow(kappa, -getDelta()) + getB() * Math.pow(kappa, getAlpha());
 	}
 
 	/**
@@ -747,63 +789,6 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 		rf /= (double) m;
 		setB(factor * rf);
 	}
-
-	public String parametersISBEstimate( MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DEKernelDensity de,
-			double[] evalPoints) {
-		StringBuffer sb = new StringBuffer("");
-		String str;
-
-		str = parametersISBFormatHead(rqmc.getLabel(), "Kernel density estimator", evalPoints.length, m,
-				rqmc.getNumPoints());
-		sb.append(str);
-		if (displayExec)
-			System.out.print(str);
-
-		int order = 2;
-		double factor = 0.25;
-
-		estimateB( model,rqmc, m, evalPoints, order, factor);
-
-		str = parametersISBFormatCoefficients();
-		if (displayExec)
-			System.out.print(str);
-
-		return sb.toString();
-	}
-
-	public void parametersISBEstimate(MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DEHistogram de,
-			double[] evalPoints) {
-		int order = 1;
-		double factor = 1.0 / 12.0;
-		estimateB( model, rqmc, m, evalPoints, order, factor);
-	}
-
-	public String parametersISBFormatHead(String pointLabel, String estimatorLabel, int numEvalPoints, int m, int n) {
-		StringBuffer sb = new StringBuffer("");
-		sb.append("Model parameter estimation for the ISB over the interval [" + a + ", " + b + "]\n");
-		sb.append("----------------------------------------------------------------\n\n");
-		sb.append("Estimator: " + estimatorLabel + "\n");
-		sb.append("Point set used: " + pointLabel + "\n");
-		sb.append("Number of points: " + n + "\n");
-		sb.append("Number of repititions: m = " + m + "\n");
-		sb.append("Evaluation points: " + numEvalPoints + "\n");
-		sb.append("----------------------------------------------------------------\n\n");
-		if(displayExec)
-			System.out.print(sb.toString());
-		return sb.toString();
-	}
-
-	public String parametersISBFormatCoefficients() {
-		String str = "ISB-parameters:\n";
-		str += "-------------------------------------\n";
-		str += "alpha =\t" + getAlpha() + "\n";
-		str += "B =\t" + getB() + "\n\n";
-		if(displayExec)
-			System.out.print(str);
-		return str;
-	}
-
-	
 	
 	public double setInitRoughnessFunctional(int order, double mu, double sigma) {
 		double result = 0.0;
@@ -841,6 +826,76 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 			         "setInitRoughnessFunctional is not implemented for the order " + order);
 		}
 	}
+	
+	public String parametersISBFormatHead(String pointLabel, String estimatorLabel, int numEvalPoints, int m, int n) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("Model parameter estimation for the ISB over the interval [" + a + ", " + b + "]\n");
+		sb.append("----------------------------------------------------------------\n\n");
+		sb.append("Estimator: " + estimatorLabel + "\n");
+		sb.append("Point set used: " + pointLabel + "\n");
+		sb.append("Number of points: " + n + "\n");
+		sb.append("Number of repititions: m = " + m + "\n");
+		sb.append("Evaluation points: " + numEvalPoints + "\n");
+		sb.append("----------------------------------------------------------------\n\n");
+		if(displayExec)
+			System.out.print(sb.toString());
+		return sb.toString();
+	}
+
+	public String parametersISBFormatCoefficients() {
+		String str = "ISB-parameters:\n";
+		str += "-------------------------------------\n";
+		str += "alpha =\t" + getAlpha() + "\n";
+		str += "B =\t" + getB() + "\n\n";
+		if(displayExec)
+			System.out.print(str);
+		return str;
+	}
+
+
+	public String parametersISBEstimate( MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DEKernelDensity de,
+			double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+
+		
+		sb.append(parametersISBFormatHead(rqmc.getLabel(), "Kernel density estimator", evalPoints.length, m,
+				rqmc.getNumPoints()));
+		
+		int order = 2;
+		double factor = 0.25;
+
+		estimateB( model,rqmc, m, evalPoints, order, factor);
+
+		sb.append( parametersISBFormatCoefficients());
+
+		return sb.toString();
+	}
+
+	public String parametersISBEstimate(MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DEHistogram de,
+			double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+		
+		sb.append(parametersISBFormatHead(rqmc.getLabel(), "Histogram", evalPoints.length, m,
+				rqmc.getNumPoints()));
+		
+		int order = 1;
+		double factor = 1.0 / 12.0;
+		
+		estimateB( model, rqmc, m, evalPoints, order, factor);
+		
+		sb.append( parametersISBFormatCoefficients());
+		
+		return sb.toString();
+	}
+
+	public String parametersISBEstimate(MonteCarloModelDouble model, RQMCPointSet rqmc, int m, DensityEstimator de,
+			double[] evalPoints) {
+		throw new UnsupportedOperationException (
+		         "parametersISBEstimate is not implemented for the DensityEstimator " + de.toString());		
+	}
+	
+	
+	
 
 	public String parametersMISEFormatCoefficients() {
 		StringBuffer sb = new StringBuffer("");
@@ -850,25 +905,12 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 		sb.append("kappa =\t" + getKappa() + "\n");
 		sb.append("K =\t" + getK() + "\n");
 		sb.append("nu =\t" + getNu() + "\n\n");
+		if(displayExec)
+			System.out.print(sb.toString());
 		return sb.toString();
 	}
 
-	public double getNu() {
-		return getAlpha() * getGamma();
-	}
-
-	public double getKappa() {
-		return Math.pow(getC() * getDelta() / (getB() * getAlpha()), 1.0 / (getAlpha() + getDelta()));
-	}
-
-	public double getGamma() {
-		return getBeta() / (getAlpha() + getDelta());
-	}
-
-	public double getK() {
-		double kappa = getKappa();
-		return getC() * Math.pow(kappa, -getDelta()) + getB() * Math.pow(kappa, getAlpha());
-	}
+	
 
 	/**
 	 * For parameter estimation of the IV this method produces a formatted string
@@ -885,7 +927,7 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 	 *            the number of independent replications of the observations.
 	 * @return a formatted introductory head for the parameter estimation of the IV.
 	 */
-	public String estimateMISERateOtimalHFormatHead(String pointLabel, String estimatorLabel, int numEvalPoints,
+	public String estimateMISEOptHFormatHead(String pointLabel, String estimatorLabel, String numEvalPoints,
 			int m) {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("Estimation of MISE rate with optimal h over [" + a + ", " + b + "]\n");
@@ -895,10 +937,17 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 		sb.append("Number of repititions: m = " + m + "\n");
 		sb.append("Evaluation points: " + numEvalPoints + "\n");
 		sb.append("----------------------------------------------------------------\n\n");
+		if(displayExec)
+			System.out.print(sb.toString());
 		return sb.toString();
 	}
+	
+	public String estimateMISEOptHFormatHead(String pointLabel, String estimatorLabel,
+			int m) {
+		return estimateMISEOptHFormatHead(pointLabel, estimatorLabel,"variable",m);
+	}
 
-	public void estimateMISERateOptimalHPreprocess(RQMCPointSet[] rqmcPts) {
+	public void estimateMISEOptHPreprocess(RQMCPointSet[] rqmcPts) {
 		logN = new double[rqmcPts.length];
 		logH = new double[logN.length];
 		for (int i = 0; i < rqmcPts.length; i++) {
@@ -918,32 +967,117 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 		logMISE = new double[logN.length];
 	}
 
-	public String estimateMISERateOtimalHProduceTableRow(double[][] density, int index) {
-		int numEvalPoints = density[0].length;
-		double[] variance = new double[numEvalPoints];
-
+	public String estimateMISEOptHComputeTable( MonteCarloModelDouble model, RQMCPointSet[] rqmcPts, int m, DEHistogram de) {
+		
+		StringBuffer sb = new StringBuffer("");
 		String str;
+		
+		str = "log(n)\t log(h*)\t estimated log(IV)\t estimated log(ISB)\t estimated log(MISE) \t empirical log(IV) \t empirical log(MISE)\n\n";
 
-		logIV[index] = DensityEstimator.computeIV(density, a, b, variance);
-		logMISE[index] = logIV[index] + logEstISB[index];
+		sb.append(str);
+		if (displayExec)
+			System.out.print(str);
 
-		str = PrintfFormat.f(3, 1, logN[index]) + "\t " + PrintfFormat.f(8, 6, logH[index]) + "\t "
-				+ PrintfFormat.f(8, 6, logEstIV[index]) + "\t " + PrintfFormat.f(8, 6, logEstISB[index]) + "\t "
-				+ PrintfFormat.f(8, 6, logEstMISE[index]) + "\t " + PrintfFormat.f(8, 6, logIV[index]) + "\t "
-				+ PrintfFormat.f(8, 6, logMISE[index]) + "\n ";
+		Tally statReps = new Tally();
+		double[][] data = new double[m][];
+		double[][] density;
+		double[] variance;
+		
+		for (int i = 0; i < rqmcPts.length; i++) {// rqmc point sets indexed by i
+			
+			RQMCExperiment.simulReplicatesRQMC(model, rqmcPts[i], m, statReps, data);
+			de.setH(Math.pow(baseOfLog, logH[i]));
+			density = new double[m][de.getNumBins()];
+			density = de.evalDensity(data, a, b);
+			
+			variance = new double[de.getNumBins()];
 
-		return str;
+			logIV[i] = DensityEstimator.computeIV(density, a, b, variance);
+			logMISE[i] = logIV[i] + logEstISB[i];
+			
+			str = PrintfFormat.f(3, 1, logN[i]) + "\t " + PrintfFormat.f(8, 6, logH[i]) + "\t "
+					+ PrintfFormat.f(8, 6, logEstIV[i]) + "\t " + PrintfFormat.f(8, 6, logEstISB[i]) + "\t "
+					+ PrintfFormat.f(8, 6, logEstMISE[i]) + "\t " + PrintfFormat.f(8, 6, logIV[i]) + "\t "
+					+ PrintfFormat.f(8, 6, logMISE[i]) + "\n ";
+			
+			
+			sb.append(str);
+			if (displayExec)
+				System.out.print(str);
+
+		
+		}
+		
+		str = "\n\n";
+		sb.append(str);
+		if (displayExec)
+			System.out.print(str);
+
+		return sb.toString();
+
+	}
+	
+	public String estimateMISEOptHComputeTable( MonteCarloModelDouble model, RQMCPointSet[] rqmcPts, int m, DensityEstimator de,
+			double[] evalPoints) {
+		
+		StringBuffer sb = new StringBuffer("");
+		String str;
+		
+		str = "log(n)\t log(h*)\t estimated log(IV)\t estimated log(ISB)\t estimated log(MISE) \t empirical log(IV) \t empirical log(MISE)\n\n";
+
+		sb.append(str);
+		if (displayExec)
+			System.out.print(str);
+
+		Tally statReps = new Tally();
+		double[][] data = new double[m][];
+		double[][] density;
+		double[] variance;
+		
+		for (int i = 0; i < rqmcPts.length; i++) {// rqmc point sets indexed by i
+			
+			RQMCExperiment.simulReplicatesRQMC(model, rqmcPts[i], m, statReps, data);
+			setH(de,Math.pow(baseOfLog, logH[i]));
+			density = new double[m][evalPoints.length];
+			density = de.evalDensity(evalPoints,data, a, b);
+			
+			variance = new double[evalPoints.length];
+
+			logIV[i] = DensityEstimator.computeIV(density, a, b, variance);
+			logMISE[i] = logIV[i] + logEstISB[i];
+			
+			str = PrintfFormat.f(3, 1, logN[i]) + "\t " + PrintfFormat.f(8, 6, logH[i]) + "\t "
+					+ PrintfFormat.f(8, 6, logEstIV[i]) + "\t " + PrintfFormat.f(8, 6, logEstISB[i]) + "\t "
+					+ PrintfFormat.f(8, 6, logEstMISE[i]) + "\t " + PrintfFormat.f(8, 6, logIV[i]) + "\t "
+					+ PrintfFormat.f(8, 6, logMISE[i]) + "\n ";
+			
+			
+			sb.append(str);
+			if (displayExec)
+				System.out.print(str);
+
+		
+		}
+		
+		str = "\n\n";
+		sb.append(str);
+		if (displayExec)
+			System.out.print(str);
+
+		return sb.toString();
 
 	}
 
-	public String estimateMISERateOptimalHRsqIV() {
+	public String estimateMISEOptHRsqIV() {
 		String str = "Coefficient of determination:\n";
 		str += "********************************************\n\n";
 		str += "R^2 for IV: " + DensityEstimator.coefficientOfDetermination(logIV, logEstIV) + "\n\n";
+		if(displayExec)
+			System.out.print(str);
 		return str;
 	}
 
-	public String estimateMISERateOptimalHSlopes() {
+	public String estimateMISEOptHSlopes() {
 		double[] regCoeffs = new double[2];
 
 		String str = "Regression data:\n";
@@ -958,91 +1092,82 @@ public class DEModelBandwidthBased implements DensityEstimationModel {
 		str += "Slope:\t" + regCoeffs[1] + "\n";
 		str += "Const.:\t" + regCoeffs[0] + "\n\n";
 
+		if(displayExec)
+			System.out.print(str);
 		return str;
 	}
 
-	public String estimateMISERateOptimalH(RQMCPointSet[] rqmcPts, MonteCarloModelDouble model, int m, DEHistogram de,
-			double[] evalPoints) {
+	public String estimateMISEOptH(MonteCarloModelDouble model, RQMCPointSet[] rqmcPts, int m, DEHistogram de) {
 		StringBuffer sb = new StringBuffer("");
-		String str = estimateMISERateOtimalHFormatHead(rqmcPts[0].getLabel(), "Histogram", evalPoints.length, m);
+		sb.append( estimateMISEOptHFormatHead(rqmcPts[0].getLabel(), "Histogram", m));
+		estimateMISEOptHPreprocess(rqmcPts);
+		sb.append( estimateMISEOptHComputeTable(model,rqmcPts,m,de));
+		sb.append(estimateMISEOptHRsqIV());
+		sb.append(estimateMISEOptHSlopes());
 
-		str += "log(n)\t log(h*)\t estimated log(IV)\t estimated log(ISB)\t estimated log(MISE) \t empirical log(IV) \t empirical log(MISE)\n\n";
-
-		sb.append(str);
-		if (displayExec)
-			System.out.print(str);
-
-		Tally statReps = new Tally();
-		double[][] data = new double[m][];
-		double[][] density;
-		for (int i = 0; i < rqmcPts.length; i++) {// rqmc point sets indexed by i
-			RQMCExperiment.simulReplicatesRQMC(model, rqmcPts[i], m, statReps, data);
-			de.setH(Math.pow(baseOfLog, logH[i]));
-			density = new double[m][de.getNumBins()];
-			density = de.evalDensity(data, a, b);
-
-			str = estimateMISERateOtimalHProduceTableRow(density, i);
-			sb.append(str);
-			if (displayExec)
-				System.out.print(str);
-
-		}
-
-		str = "\n\n";
-		str += estimateMISERateOptimalHRsqIV();
-		sb.append(str);
-		if (displayExec)
-			System.out.print(str);
-
-		str = "\n\n";
-		str += estimateMISERateOptimalHSlopes();
-		sb.append(str);
-		if (displayExec)
-			System.out.print(str);
+		return sb.toString();
+	}
+	
+	public String estimateMISEOptH(MonteCarloModelDouble model, RQMCPointSet[] rqmcPts, int m, DEHistogram de,double[] evalPoints) {
+		return estimateMISEOptH(model,rqmcPts,m,de);
+	}
+	
+	public String estimateMISEOptH(MonteCarloModelDouble model, RQMCPointSet[] rqmcPts, int m, DensityEstimator de, double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append( estimateMISEOptHFormatHead(rqmcPts[0].getLabel(), de.toString(), Integer.toString(evalPoints.length), m));
+		estimateMISEOptHPreprocess(rqmcPts);
+		sb.append( estimateMISEOptHComputeTable(model,rqmcPts,m,de,evalPoints));
+		sb.append(estimateMISEOptHRsqIV());
+		sb.append(estimateMISEOptHSlopes());
 
 		return sb.toString();
 	}
 
-	public double estimateLogIV(double logH, double logN) {
-		return (Math.log(getC()) / Math.log(baseOfLog) - getBeta() * logN - getDelta() * logH);
+	public String testMISERateFormatHead(MonteCarloModelDouble model) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("DENSITY ESTIMATION\n");
+		sb.append("************************************************\n");
+		sb.append("Density estimation with the bandwidth-based parametric model for\n");
+		sb.append(model.toString());
+		sb.append("----------------------------------------------------------------\n\n");
+		if(displayExec)
+			System.out.print(sb.toString());
+		return sb.toString();
 	}
-
-	public double estimateLogISB(double logH) {
-		return (Math.log(getB()) / Math.log(baseOfLog) + getAlpha() * logH);
-	}
-
-	public double estimateLogMISE(double logN) {
-		return (Math.log(getK()) / Math.log(baseOfLog) - getNu() * logN);
-	}
-
-	public static void setH(DEHistogram de, double h) {
-		de.setH(h);
+	public String testMISERate(MonteCarloModelDouble model, RQMCPointSet[] rqmcPts, int m, DensityEstimator de, double [] hArray, double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append(testMISERateFormatHead(model));
+		
+		sb.append(parametersIVEstimate( model, rqmcPts,  m,  de, hArray,  evalPoints));
+		sb.append(parametersISBEstimate( model,  rqmcPts[rqmcPts.length-1], m, de,
+			 evalPoints));
+		sb.append(parametersMISEFormatCoefficients());
+		sb.append(estimateMISEOptH( model, rqmcPts,  m,  de, evalPoints));
+				
+		return sb.toString();
 	}
 	
-	public static void setH(DEKernelDensity de, double h) {
-		de.setH(h);
+	public String testMISERate(MonteCarloModelDouble model, ArrayList<RQMCPointSet[]> rqmcPtsList, int m, DensityEstimator de, double[] hArray, double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+		for(RQMCPointSet [] rqmcPts : rqmcPtsList)
+			sb.append(testMISERate(model,rqmcPts,m,de,hArray,evalPoints));
+		
+		return sb.toString();
 	}
 	
-	public static void setH(DensityEstimator de, double h) {
-		throw new UnsupportedOperationException (
-		         "setH is not implemented for the DensityEstimator " + de.toString());
+	public String testMISERate(MonteCarloModelDouble model, ArrayList<RQMCPointSet[]> rqmcPtsList, int m, ArrayList<DensityEstimator> deList, double[] hArray, double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+		for(DensityEstimator de : deList)
+			sb.append(testMISERate(model,rqmcPtsList,m,de,hArray,evalPoints));
+		return sb.toString();
 	}
-	@Override
-	public double estimateIV(DensityEstimator de) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double estimateISB(DensityEstimator de) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double estimateMISE(DensityEstimator de) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	public String testMISERate(MonteCarloModelDouble model, ArrayList<RQMCPointSet[]> rqmcPtsList, int m, ArrayList<DensityEstimator> deList, ArrayList<double[]> hArrayList, double[] evalPoints) {
+		StringBuffer sb = new StringBuffer("");
+		int len = deList.size();
+		for(int l = 0; l < len; l++)
+			sb.append(testMISERate(model,rqmcPtsList,m,deList.get(l),hArrayList.get(l),evalPoints));
+		return sb.toString();
 	}
 
 }
