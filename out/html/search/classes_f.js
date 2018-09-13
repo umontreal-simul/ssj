@@ -25,6 +25,7 @@ var searchData=
   ['poissontiacgen',['PoissonTIACGen',['../classumontreal_1_1ssj_1_1randvar_1_1PoissonTIACGen.html',1,'umontreal::ssj::randvar']]],
   ['polinterp',['PolInterp',['../classumontreal_1_1ssj_1_1functionfit_1_1PolInterp.html',1,'umontreal::ssj::functionfit']]],
   ['polynomial',['Polynomial',['../classumontreal_1_1ssj_1_1functions_1_1Polynomial.html',1,'umontreal::ssj::functions']]],
+  ['polynomiallatticesearch',['PolynomialLatticeSearch',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1PolynomialLatticeSearch.html',1,'umontreal::ssj::latnetbuilder']]],
   ['powerdist',['PowerDist',['../classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html',1,'umontreal::ssj::probdist']]],
   ['powergen',['PowerGen',['../classumontreal_1_1ssj_1_1randvar_1_1PowerGen.html',1,'umontreal::ssj::randvar']]],
   ['powermathfunction',['PowerMathFunction',['../classumontreal_1_1ssj_1_1functions_1_1PowerMathFunction.html',1,'umontreal::ssj::functions']]],

@@ -7,3 +7,4 @@ hs_err*
 .classpath
 .project
 .settings
+/.metadata/

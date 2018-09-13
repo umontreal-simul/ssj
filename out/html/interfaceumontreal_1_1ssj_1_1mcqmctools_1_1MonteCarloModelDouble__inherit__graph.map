@@ -1,0 +1,6 @@
+<map id="MonteCarloModelDouble" name="MonteCarloModelDouble">
+<area shape="rect" id="node2" href="$classtutorial_1_1AsianNew.html" title="AsianNew" alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="$classtutorial_1_1NewTestAsianRQMC.html" title="NewTestAsianRQMC" alt="" coords="113,80,261,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An MonteCarloModelDouble that also implements a vector of control variates. " alt="" coords="285,80,427,107"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="451,80,661,107"/>
+</map>

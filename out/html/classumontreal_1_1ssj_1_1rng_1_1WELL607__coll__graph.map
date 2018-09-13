@@ -1,0 +1,6 @@
+<map id="WELL607" name="WELL607">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1WELL607base.html" title="WELL607base" alt="" coords="146,229,253,256"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built. " alt="" coords="128,155,271,181"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="37,80,207,107"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
+</map>

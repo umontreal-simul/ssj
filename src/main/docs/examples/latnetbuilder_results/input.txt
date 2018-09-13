@@ -1,0 +1,10 @@
+Task: NetBuilder Search - Net Construction : Explicit
+Number of components: 20
+Number of rows: 10 - Number of columns: 10
+Exploration method: CBC - Random Explorer - 10 samples
+Figure of merit: Coordinate Uniform with Kernel: IB - interlacing: 4
+Embedding type: Unilevel
+Weights: IPODWeights:
+    Kernel: IB - interlacing: 4,
+    Base Weights: PODWeights(OrderDependentWeights([], default=1), ProductWeights([], default=1))
+Norm type: 2

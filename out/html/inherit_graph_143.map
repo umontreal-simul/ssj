@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1TransformingList.html" title="Represents a list that dynamically transforms the elements of another list. " alt="" coords="145,5,300,47"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html" title="Implements a list with integrated statistical probes to provide automatic collection of statistics on..." alt="" coords="348,13,475,39"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html" title="This class extends ListWithStat, and uses a linked list as the internal data structure. " alt="" coords="523,13,661,39"/>
+</map>

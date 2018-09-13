@@ -12,7 +12,6 @@ var searchData=
   ['gammaprocesssymmetricalbridge',['GammaProcessSymmetricalBridge',['../classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessSymmetricalBridge.html',1,'umontreal::ssj::stochprocess']]],
   ['gammarejectionloglogisticgen',['GammaRejectionLoglogisticGen',['../classumontreal_1_1ssj_1_1randvar_1_1GammaRejectionLoglogisticGen.html',1,'umontreal::ssj::randvar']]],
   ['genf2w32',['GenF2w32',['../classumontreal_1_1ssj_1_1rng_1_1GenF2w32.html',1,'umontreal::ssj::rng']]],
-  ['genparams',['GenParams',['../structGenParams.html',1,'']]],
   ['geometricbrownianmotion',['GeometricBrownianMotion',['../classumontreal_1_1ssj_1_1stochprocess_1_1GeometricBrownianMotion.html',1,'umontreal::ssj::stochprocess']]],
   ['geometricdist',['GeometricDist',['../classumontreal_1_1ssj_1_1probdist_1_1GeometricDist.html',1,'umontreal::ssj::probdist']]],
   ['geometricgen',['GeometricGen',['../classumontreal_1_1ssj_1_1randvar_1_1GeometricGen.html',1,'umontreal::ssj::randvar']]],

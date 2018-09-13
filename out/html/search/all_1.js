@@ -53,5 +53,6 @@ var searchData=
   ['brownianmotionpcaequalsteps',['BrownianMotionPCAEqualSteps',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCAEqualSteps.html',1,'BrownianMotionPCAEqualSteps'],['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCAEqualSteps.html#a2f1728448fc32f19341f75493e5440fc',1,'umontreal::ssj::stochprocess.BrownianMotionPCAEqualSteps.BrownianMotionPCAEqualSteps(double x0, double mu, double sigma, RandomStream stream)'],['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCAEqualSteps.html#ad5173b70921e2c437ecc4786e637511b',1,'umontreal::ssj::stochprocess.BrownianMotionPCAEqualSteps.BrownianMotionPCAEqualSteps(double x0, double mu, double sigma, NormalGen gen)']]],
   ['browniantest',['BrownianTest',['../classmarkovchainrqmc_1_1BrownianTest.html',1,'markovchainrqmc']]],
   ['bspline',['BSpline',['../classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html',1,'BSpline'],['../classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html#afce63201bfdffdee8c722366be25199e',1,'umontreal::ssj::functionfit.BSpline.BSpline(final double[] x, final double[] y, final int degree)'],['../classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html#aaf90c2c49e8aadb5c008b370d3b844eb',1,'umontreal::ssj::functionfit.BSpline.BSpline(final double[] x, final double[] y, final double[] knots)']]],
-  ['bibliography',['Bibliography',['../citelist.html',1,'']]]
+  ['bibliography',['Bibliography',['../citelist.html',1,'']]],
+  ['bibtex_2ddatabase',['bibtex-database',['../md_bibtex-database_README.html',1,'']]]
 ];

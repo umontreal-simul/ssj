@@ -106,13 +106,13 @@ var searchData=
   ['rijndael_5falgorithm',['Rijndael_Algorithm',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Algorithm.html',1,'umontreal::ssj::rng']]],
   ['rijndael_5fproperties',['Rijndael_Properties',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Properties.html',1,'umontreal::ssj::rng']]],
   ['rootfinder',['RootFinder',['../classumontreal_1_1ssj_1_1util_1_1RootFinder.html',1,'umontreal::ssj::util']]],
+  ['roughnessfunctional',['roughnessFunctional',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3a88d2d3720ac775f5953b35ac0a504a',1,'umontreal::ssj::stat::density::DensityEstimator']]],
   ['rowreport',['rowReport',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a0bc6f51e04799773c32a41a85b716d05',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rows',['rows',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a8db75abaedab913d9c6a593539fbbd3e',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rqmcexperiment',['RQMCExperiment',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html',1,'umontreal::ssj::mcqmctools']]],
-  ['rqmcexperimentdensity',['RQMCExperimentDensity',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentDensity.html',1,'umontreal::ssj::mcqmctools']]],
   ['rqmcexperimentseries',['RQMCExperimentSeries',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html',1,'RQMCExperimentSeries'],['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a339496e1644df9b943133157e051656e',1,'umontreal::ssj::mcqmctools.RQMCExperimentSeries.RQMCExperimentSeries()']]],
   ['rqmcpointset',['RQMCPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html',1,'RQMCPointSet'],['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html#acef79f87cf4b0b351ea723db24d282cf',1,'umontreal::ssj::hups.RQMCPointSet.RQMCPointSet()']]],
   ['rqmcsampler',['RQMCSampler',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html',1,'umontreal::ssj::mcqmctools::anova']]],
-  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'RunClass'],['../classRunClass.html',1,'RunClass']]],
-  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'RunClass.RunClassException'],['../classRunClass_1_1RunClassException.html',1,'RunClass.RunClassException']]]
+  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'tutorial']]],
+  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'tutorial::RunClass']]]
 ];

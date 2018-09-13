@@ -1,0 +1,6 @@
+<map id="YListChart" name="YListChart">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html" title="This class provides tools to create and manage curve plots. " alt="" coords="93,275,189,301"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="105,199,176,225"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="117,95,165,121"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="189,95,348,121"/>
+</map>
