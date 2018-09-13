@@ -1,4 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classtutorial_1_1RunClass_1_1RunClassException.html" title="RunClass.RunClassException" alt="" coords="133,5,333,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1NameConflictException.html" title="This exception is thrown by a ClassFinder when two or more fully qualified class names can be associa..." alt="" coords="153,56,313,83"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html" title="Abstract class for the search of highly uniform point sets with LatNet Builder. " alt="" coords="5,31,68,57"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch.html" title="Class for the search of good digital nets using LatNet Builder. " alt="" coords="131,5,252,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1OrdinaryLatticeSearch.html" title="Class for the search of good rank&#45;1 ordinary lattice rules using LatNet Builder. " alt="" coords="116,56,267,83"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1PolynomialLatticeSearch.html" title="Class for the search of good polynomial lattice rules using LatNet Builder. " alt="" coords="315,5,481,32"/>
 </map>

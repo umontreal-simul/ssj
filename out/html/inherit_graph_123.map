@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html" title="This class offers facilities to perform experiments on the convergence of the variance when estimatin..." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$classtutorial_1_1RunClass_1_1RunClassException.html" title="RunClass.RunClassException" alt="" coords="133,5,333,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1NameConflictException.html" title="This exception is thrown by a ClassFinder when two or more fully qualified class names can be associa..." alt="" coords="153,56,313,83"/>
 </map>

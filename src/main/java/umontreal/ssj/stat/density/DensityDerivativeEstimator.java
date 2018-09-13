@@ -12,7 +12,7 @@ package umontreal.ssj.stat.density;
  * 
  * where \f$h\f$ denotes the bandwidth. So, as a matter of fact, it is the
  * \f$r\f$-th derivative of a KDE. This class provides basic tools to construct
- * and evaluate these kinds of estimators. Note that sufficient smoothness of
+ * and evaluate DDEs. Note that sufficient smoothness of
  * the kernel function \f$K\f$ as well as of the unknown density \f$f\f$ is
  * required.
  * 
@@ -40,7 +40,7 @@ package umontreal.ssj.stat.density;
  * 
  * Certainly, one can also try obtain a good approximation of \f$f^{(r+2t)} \f$
  * and iterate ({@link REF_stat_density_DensityDerivativeEstimator_hopt hopt})
- * \f$t\f$ times. The function link #hAmiseR(int, int, double, double[], double,
+ * \f$t\f$ times. The function #hAmiseR(int, int, double, double[], double,
  * DensityDerivativeEstimator, double[], double[], double, double) implements
  * this recursion.
  * 
@@ -59,9 +59,8 @@ package umontreal.ssj.stat.density;
  * 
  * This class is particularly useful for estimating optimal bandwidths for histogram
  * estimators and KDEs, see \ref
- * umontreal.ssj.stat.density.DEModelBandwidthBased, and may be also beneficial
- * in other instances of a \ref
- * umontreal.ssj.stat.density.DensityEstimationModel
+ * umontreal.ssj.stat.density.DEModelBandwidthBased, and may also be beneficial
+ * for other density estimation models.
  * 
  * @author puchhamf
  *

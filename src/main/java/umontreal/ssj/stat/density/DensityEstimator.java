@@ -8,8 +8,8 @@ import umontreal.ssj.stat.PgfDataTable;
 
 /**
  * This abstract class implements a univariate density estimator (DE). To this
- * end, it provides basic tools to evaluate the DE at one point \f$x\f$ or at an
- * array of points \f$\{x_1, x_2, \dots, x_k\} \f$. More precisely, the single
+ * end, it provides basic tools to evaluate the DE at one point \f$x\f$ or at a
+ * selection of points \f$\{x_1, x_2, \dots, x_k\} \f$. More precisely, the single
  * point evaluation #evalDensity(double, double[], double, double) is abstract,
  * since it will definitely differ between realizations. For the evaluation on a
  * set of points one can use #evalDensity(double[], double[], double, double).
@@ -20,12 +20,12 @@ import umontreal.ssj.stat.PgfDataTable;
  * 
  * There are also several more involved methods covered by this class, most of
  * which are concerned with the convergence behavior of DEs. Nevertheless, they
- * can be useful in many other cases beyond convergence behavior. As these
+ * can be useful in many other cases beyond convergence behavior too. As these
  * usually require more than one realization of a DE, or even a list of DE's,
  * they are implemented as static methods. For instance, #evalDensity(double[],
  * double[][], double, double) allows to evaluate several independent
  * replications of a DE at an array of evaluation points, and
- * #evalDensity(ArrayList, double[], double[][], double, double, ArrayList) does
+ * #evalDensity(ArrayList, double[], double[][], double, double, ArrayList)  does
  * the same but for more than one DE.
  * 
  * For measuring the performance of a DE, we need to confine ourselves to
@@ -36,7 +36,7 @@ import umontreal.ssj.stat.PgfDataTable;
  * 
  * \f[ \textrm{MISE} = \int_a^b\mathbb{E} [\hat{f}(x) - f(x)]^2\mathrm{d}x =
  * \int_a^b\textrm{Var}[\hat{f}(x)]\mathrm{d}x + \int_a^b \left(
- * \mathbb{E}[\hat{f}(x)] - f(x) \right)^2\mathrm{d}x, \f]
+ * \mathbb{E}[\hat{f}(x)] - f(x) \right)^2\mathrm{d}x = \textrm{IV} + \textrm{ISB}, \f]
  * 
  * where \f$f\f$ denotes the true density and \f$\hat{f}\f$ the DE.
  * 
@@ -53,14 +53,14 @@ import umontreal.ssj.stat.PgfDataTable;
  * #computeMISE(ContinuousDistribution, double[], double[][], double, double,
  * double[], double[], double[])} as well as for several DEs via
  * #computeMISE(ContinuousDistribution, double[], ArrayList, double, double,
- * ArrayList). Again, this merely gives an estimate of the empirical MISE.
+ * ArrayList). Again, as explained before for the IV, this merely gives an estimate of the empirical MISE.
  */
 
 public abstract class DensityEstimator {
 
 	/**
 	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
-	 * observations \a data, if necessary, and evaluates it at \a x.
+	 * observations \a data if necessary, and evaluates it at \a x.
 	 * 
 	 * @param x
 	 *            the evaluation point.
@@ -77,7 +77,7 @@ public abstract class DensityEstimator {
 
 	/**
 	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
-	 * observations \a data, if necessary, and evaluates it at the points in \a
+	 * observations \a data if necessary, and evaluates it at the points in \a
 	 * evalPoints. By default, this method calls #evalDensity(double, double[],
 	 * double, double) for each entry of \a evalPoints. Many density estimators can
 	 * handle evaluation at a set of points more efficiently than that. If so, it is
@@ -112,7 +112,7 @@ public abstract class DensityEstimator {
 	 * For each such realization this method constructs a density estimator over
 	 * \f$[a,b]\f$ and evaluates it at the points from \a evalPoints. The
 	 * independent realizations are passed via the 2-dimensional \f$m\times
-	 * n\f$array \a data, where \f$n\f$ denotes the number of observations per
+	 * n\f$ array \a data, where \f$n\f$ denotes the number of observations per
 	 * realization. Hence, its first index identifies the independent realization
 	 * while its second index identifies a specific observation of this realization.
 	 * 
@@ -346,7 +346,7 @@ public abstract class DensityEstimator {
 	 * umontreal.ssj.probdist.ContinuousDistribution. The evaluation points are
 	 * contained in \a evalPoints and the boundaries of the interval over which we
 	 * estimate are given by \a a and \a b. Note that the arrays \a variance, \a
-	 * sqBias, and \a mse need to be of length \f$k\f$.
+	 * sqBias, and \a mse all need to be of length \f$k\f$.
 	 * 
 	 * @param dist
 	 *            the true density.
@@ -442,7 +442,7 @@ public abstract class DensityEstimator {
 	 * @param evalPoints
 	 *            the \f$k\f$ evaluation points.
 	 * @param listDensity
-	 *            list containing \f$m\times k\f$ arrays that contain the data of
+	 *            list of \f$m\times k\f$ arrays that contain the data of
 	 *            evaluating \f$m\f$ replicates of each density estimator at \f$k\f$
 	 *            evaluation points \a evalPoints.
 	 * @param a
@@ -539,35 +539,7 @@ public abstract class DensityEstimator {
 		return fac * sum;
 	}
 
-	/**
-	 * Computes the mean and the standard deviation of the observations given in \a data.
-	 * 
-	 * @remark **Florian:** this should probably go somewhere else (DEDerivative as
-	 *         Private?)
-	 * 
-	 * @param data
-	 *            the observations.
-	 * @return the mean and standard deviation.
-	 */
-
-	protected static double[] estimateMeanAndStdDeviation(double[] data) {
-		double[] result = new double[2];
-		int n = data.length;
-		double x, y;
-
-		double mean = 0.0;
-		double var = 0.0;
-		for (int i = 0; i < n; i++) {
-			x = data[i];
-			y = x - mean;
-			mean += y / ((double) (i + 1.0));
-			var += y * (x - mean);
-		}
-
-		result[0] = mean;
-		result[1] = Math.sqrt(var / ((double) n - 1.0));
-		return result;
-	}
+	
 
 	/**
 	 * Computes the Coefficient of determination \f$R^2\f$ of the observed data \a

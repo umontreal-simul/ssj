@@ -1,7 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class implements a univariate density estimator (DE). " alt="" coords="5,56,128,83"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="This class provides methods to construct, manipulate, and evaluate a histogram density estimator for ..." alt="" coords="217,5,318,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html" title="This class provides methods to construct a kernel density estimator (KDE) for univariate unimodal den..." alt="" coords="206,56,329,83"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" title="This class implements a density derivative estimator (DDE) based on a kernel density estimator (KDE) ..." alt="" coords="176,107,359,133"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEDerivativeGaussian.html" title="This class implements a density derivative estimator (DDE) with a Gaussian ( i.e., standard normal) Kernel function. " alt="" coords="407,107,561,133"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile_1_1NetComparator.html" title="DigitalNetFromFile.NetComparator" alt="" coords="144,5,368,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1DoubleArrayComparator.html" title="This provides an implementation of Comparator in which arrays of double in &#160;dimensions are compared b..." alt="" coords="175,56,337,83"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html" title="The comparator class used by sortIndexOfLong2. " alt="" coords="165,107,347,149"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparator.html" title="This class is useful if one wishes to perform an ordinary one&#45;dimensional sort on MultiDimComparable&lt;..." alt="" coords="147,173,365,229"/>
 </map>

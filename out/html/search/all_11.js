@@ -110,7 +110,6 @@ var searchData=
   ['rowreport',['rowReport',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a0bc6f51e04799773c32a41a85b716d05',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rows',['rows',['../classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a8db75abaedab913d9c6a593539fbbd3e',1,'umontreal::ssj::stat::matrix::MatrixOfStatProbes']]],
   ['rqmcexperiment',['RQMCExperiment',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html',1,'umontreal::ssj::mcqmctools']]],
-  ['rqmcexperimentdensity',['RQMCExperimentDensity',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentDensity.html',1,'umontreal::ssj::mcqmctools']]],
   ['rqmcexperimentseries',['RQMCExperimentSeries',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html',1,'RQMCExperimentSeries'],['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a339496e1644df9b943133157e051656e',1,'umontreal::ssj::mcqmctools.RQMCExperimentSeries.RQMCExperimentSeries()']]],
   ['rqmcpointset',['RQMCPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html',1,'RQMCPointSet'],['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html#acef79f87cf4b0b351ea723db24d282cf',1,'umontreal::ssj::hups.RQMCPointSet.RQMCPointSet()']]],
   ['rqmcsampler',['RQMCSampler',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html',1,'umontreal::ssj::mcqmctools::anova']]],

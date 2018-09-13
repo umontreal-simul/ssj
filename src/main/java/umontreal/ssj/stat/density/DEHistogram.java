@@ -9,10 +9,10 @@ import umontreal.ssj.stat.TallyHistogram;
  * 
  * The construction of a histogram is based on a set of \f$n\f$ individual
  * observations \f$X_0, …, X_{n-1}\f$ which, in turn, can be realizations of a
- * \ref umontreal.ssj.mcqmctools.MonteCarloModelDouble, for instance. In any
- * case, this type of density estimator can by built from pure data stored in an
- * array, form a \ref umontreal.ssj.stat.TallyHistogram, or even from a \ref
- * umontreal.ssj.stat.ScaledHistogram.
+ * \ref umontreal.ssj.mcqmctools.MonteCarloModelDouble, collected data, etc. In
+ * any case, this type of density estimator can by built from pure data stored
+ * in an array, form a \ref umontreal.ssj.stat.TallyHistogram, or even from a
+ * \ref umontreal.ssj.stat.ScaledHistogram.
  * 
  * 
  * It is essential to confine oneself to a finite interval \f$[a,b]\f$. For a
@@ -30,8 +30,8 @@ import umontreal.ssj.stat.TallyHistogram;
  * structure of the histogram completely. Thus, after any alteration of these
  * parameters the histogram needs to be constructed afresh.
  * 
- * As histograms are constant within one bin certain quantities, such as the
- * variance, are not affected by shifting an evaluation point within its bin.
+ * As histograms are constant within one bin, certain quantities such as the
+ * variance are not affected by shifting an evaluation point within its bin.
  * Hence, selecting one evaluation point per bin is sufficient for such methods.
  * To this end, this class provides methods to evaluate the density estimator
  * once in each bin, without having to explicitly specify an array of evaluation
@@ -126,10 +126,9 @@ public class DEHistogram extends DensityEstimator {
 	}
 
 	/**
-	 * Constructs a histogram over the interval \f$[a,b]\f$ from
-	 * the observations passed in \a data. The number of bins is
-	 * taken as the value of #getNumBins(). Note that the individual observations are
-	 * not being stored.
+	 * Constructs a histogram over the interval \f$[a,b]\f$ from the observations
+	 * passed in \a data. The number of bins is taken as the value of #getNumBins().
+	 * Note that the individual observations are not being stored.
 	 * 
 	 * @param data
 	 *            the observations from the underlying model.
@@ -408,12 +407,11 @@ public class DEHistogram extends DensityEstimator {
 			dens[r] = evalDensity(scaledHistArray[r]);
 		return dens;
 	}
-	
-	public  double roughnessFunctional(double[] density) {
-		return roughnessFunctional(density,getA(),getB());
-	}
 
 	// TODO: do those methods make sense???
+	// public double roughnessFunctional(double[] density) {
+	// return roughnessFunctional(density, getA(), getB());
+	// }
 	// public double computeIV(double[][] densities, double[] variance) {
 	// return computeIV(densities,getA(),getB(),variance);
 	// }

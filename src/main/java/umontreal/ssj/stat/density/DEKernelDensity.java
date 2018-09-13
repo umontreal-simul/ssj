@@ -4,7 +4,7 @@ import umontreal.ssj.probdist.ContinuousDistribution;
 
 /**
  * This class provides methods to construct a kernel density estimator (KDE) for
- * univariate unimodal densities from a set of \f$n\f$ individual observations
+ * univariate  densities from a set of \f$n\f$ individual observations
  * \f$X_0, …, X_{n-1}\f$, and to evaluate it at a single point or at a set of
  * selected evaluation points. The observations can be realizations of a \ref
  * umontreal.ssj.mcqmctools.MonteCarloModelDouble, for instance.
@@ -194,7 +194,7 @@ public class DEKernelDensity extends DensityEstimator {
 	 * summand w.r.t. \f$i\f$ in ( {@link REF_stat_density_DEKernelDensity_KDE KDE}
 	 * ) is only considered if it is larger than \f$\varepsilon\f$ .
 	 * 
-	 * For this method the kernel function \f$\K\f$  is assumed to be unimodal, i.e.
+	 * For this method the kernel function \f$K\f$  is assumed to be unimodal, i.e.
 	 * increasing and then decreasing, and that the points in \a evalPoints are
 	 * sorted in increasing order. This allows this method to avoid looping over all
 	 * \f$i\f$ for each evaluation point by remembering that some summands have

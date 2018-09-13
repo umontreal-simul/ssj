@@ -4,7 +4,7 @@ import umontreal.ssj.probdist.NormalDist;
 
 /**
  * This class implements a density derivative estimator (DDE) with a Gaussian (
- * i.e., standard normal) Kernel function. While the many general methods are
+ * i.e., standard normal) kernel function. While many general methods are
  * already handled by its superclass, this class is mainly concerned with the
  * construction and evaluation of this kind of DDE. The formula specific to a
  * Gaussian DDE is given by

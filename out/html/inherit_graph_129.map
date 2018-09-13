@@ -1,6 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html" title="Abstract class for the search of highly uniform point sets with LatNet Builder. " alt="" coords="5,31,68,57"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch.html" title="Class for the search of good digital nets using LatNet Builder. " alt="" coords="131,5,252,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1OrdinaryLatticeSearch.html" title="Class for the search of good rank&#45;1 ordinary lattice rules using LatNet Builder. " alt="" coords="116,56,267,83"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1PolynomialLatticeSearch.html" title="Class for the search of good polynomial lattice rules using LatNet Builder. " alt="" coords="315,5,481,32"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1simexp_1_1SimExp.html" title="Represents a framework for performing experiments using simulation. " alt="" coords="5,31,73,57"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html" title="Performs a simulation experiment on an infinite horizon, for estimating steady&#45;state performance meas..." alt="" coords="121,5,240,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simexp_1_1RepSim.html" title="Performs a simulation experiment on a finite horizon, using a certain number of independent runs or r..." alt="" coords="146,56,215,83"/>
 </map>
