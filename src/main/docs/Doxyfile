@@ -680,7 +680,18 @@ LAYOUT_FILE            =
 # LATEX_BIB_STYLE. To use this feature you need bibtex and perl available in the
 # search path. See also \cite for info how to create references.
 
-CITE_BIB_FILES         = src/main/docs/bib/*.bib
+CITE_BIB_FILES  = \
+   src/main/docs/bib/random.bib \
+   src/main/docs/bib/stat.bib \
+   src/main/docs/bib/math.bib \
+   src/main/docs/bib/simul.bib \
+   src/main/docs/bib/vrt.bib \
+   src/main/docs/bib/fin.bib \
+   src/main/docs/bib/prob.bib \
+	 src/main/docs/bib/ift.bib \
+   src/main/docs/bib/random.optim \
+   src/main/docs/bib/random.callc
+
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages

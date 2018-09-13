@@ -21,7 +21,7 @@ public class QueueEv {
       genServ = new ExponentialGen (new MRG32k3a(), mu);
    }
 
-   public void simulateOneRun (double timeHorizon) {
+   public void simulate (double timeHorizon) {
       Sim.init();
       new EndOfSim().schedule (timeHorizon);
       new Arrival().schedule (genArr.nextDouble());
@@ -67,7 +67,7 @@ public class QueueEv {
 
    public static void main (String[] args) {
       QueueEv queue = new QueueEv (1.0, 2.0);
-      queue.simulateOneRun (1000.0);
+      queue.simulate (1000.0);
       System.out.println (queue.custWaits.report());
       System.out.println (queue.totWait.report());
    }

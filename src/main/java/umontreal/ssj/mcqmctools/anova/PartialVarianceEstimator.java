@@ -1,9 +1,9 @@
 package umontreal.ssj.mcqmctools.anova;
 
 import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.hups.PointSetIterator;
+// import umontreal.ssj.hups.PointSetIterator;
 import umontreal.ssj.mcqmctools.*;
-import umontreal.ssj.stat.Tally;
+// import umontreal.ssj.stat.Tally;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ import java.util.*;
 public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
 
    // model whose variance is to be estimated
-   protected MonteCarloModelDouble model;
+   protected MonteCarloModelDoubleRQMC model;
 
    // approximation to the average
    // the better it is, the better the variance estimator is
@@ -44,14 +44,14 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
       this.vars = null;
    }
 
-   public PartialVarianceEstimator (MonteCarloModelDouble model, double approxMean,
+   public PartialVarianceEstimator (MonteCarloModelDoubleRQMC model, double approxMean,
          List<CoordinateSet> coordSets) {
       setModel(model, approxMean);
       setCoordinateSets(coordSets);
       this.vars = null;
    }
 
-   public MonteCarloModelDouble getModel() {
+   public MonteCarloModelDoubleRQMC getModel() {
       return model;
    }
 
@@ -61,7 +61,7 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
     * Best precision is achieved when the mean value of the model is close to \c approxMean.
     *
     */
-   public void setModel (MonteCarloModelDouble model, double approxMean) {
+   public void setModel (MonteCarloModelDoubleRQMC model, double approxMean) {
       this.model = model;
       this.approxMean = approxMean;
    }
@@ -161,7 +161,7 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
     * Returns the number of input dimensions.
     *
     */
-   @Override public int getDimension() {
+   public int getDimension() {
       return (model == null) ? 0 : 2 * model.getDimension();
    }
    

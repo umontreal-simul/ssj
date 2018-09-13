@@ -7,10 +7,10 @@ import umontreal.ssj.util.*;
 
 public class Inventory {
 
-   double lambda;  // Mean demand size.
-   double c;       // Sale price.
+   double lambda;  // Mean demand size for a day.
+   double c;       // Sale price per item.
    double h;       // Inventory cost per item per day.
-   double K;       // Fixed ordering cost.
+   double K;       // Fixed ordering cost per order.
    double k;       // Marginal ordering cost per item.
    double p;       // Probability that an order arrives.
 
@@ -28,8 +28,9 @@ public class Inventory {
 
    // Simulates the system for m days, with the (s,S) policy,
    // and returns the average profit per day.
-   public double simulateOneRun (int m, int s, int S) {
-      int Xj = S, Yj;         // Stock in the morning and in the evening.
+   public double simulate (int m, int s, int S) {
+      int Xj = S;         // Stock in the morning.
+      int Yj;             // Stock in the evening.
       double profit = 0.0;    // Cumulated profit.
       for (int j = 0; j < m; j++) {
          Yj = Xj - genDemand.nextInt(); // Subtract demand for the day.
@@ -50,15 +51,15 @@ public class Inventory {
    // interval on the expected average profit per day.
    public void simulateRuns (int n, int m, int s, int S) {
       for (int i = 0; i < n; i++)
-         statProfit.add (simulateOneRun (m, s, S));
+         statProfit.add (simulate (m, s, S));
    }
 
    public static void main (String[] args) {
-      Chrono timer = new Chrono();
       Inventory system = new Inventory (100.0, 2.0, 0.1, 10.0, 1.0, 0.95);
+	  Chrono timer = new Chrono();
       system.simulateRuns (500, 2000, 80, 200);
       system.statProfit.setConfidenceIntervalStudent();
       System.out.println (system.statProfit.report (0.9, 3));
-      System.out.println ("Total CPU time: " + timer.format());
+      System.out.println ("Total CPU time: " + timer.format() + "\n");
    }
 }

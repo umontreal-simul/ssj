@@ -2,7 +2,7 @@ package umontreal.ssj.mcqmctools.anova;
 
 // import umontreal.ssj.rng.RandomStream;
 // import umontreal.ssj.hups.RQMCPointSet;
-import umontreal.ssj.mcqmctools.*;
+// import umontreal.ssj.mcqmctools.*;
 // import umontreal.ssj.mcqmctools.anova.*;
 
 /**
@@ -70,7 +70,7 @@ public class Anova {
     * Equivalent to estimate(model, approxMean, null)
     *
     */
-   public AnovaVarianceCollector estimate (MonteCarloModelDouble model, double approxMean) {
+   public AnovaVarianceCollector estimate (MonteCarloModelDoubleRQMC model, double approxMean) {
       return estimate(model, approxMean, null);
    }
 
@@ -81,7 +81,7 @@ public class Anova {
     * Best precision is achieved when the mean value of the model is close to \c approxMean.
     *
     */
-   public AnovaVarianceCollector estimate (MonteCarloModelDouble model, double approxMean, AnovaObserver observer) {
+   public AnovaVarianceCollector estimate (MonteCarloModelDoubleRQMC model, double approxMean, AnovaObserver observer) {
 
       int dimension = Math.min(maxCoordinate + 1, model.getDimension());
 

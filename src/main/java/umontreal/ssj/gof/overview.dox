@@ -3,6 +3,8 @@
  *
  * Goodness-of-fit test Statistics.
  *
+ * @anchor REF_gof_overview_sec_overview
+ *
  * This package contains tools for performing univariate *goodness-of-fit*
  * (GOF) statistical tests. Methods for computing (or approximating) the
  * distribution function @f$F(x)@f$ of certain GOF test statistics, as well

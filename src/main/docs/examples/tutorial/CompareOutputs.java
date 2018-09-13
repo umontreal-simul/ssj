@@ -19,11 +19,10 @@ public class CompareOutputs {
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                 { "tutorial", Asian.class,        null },
-                 { "tutorial", AsianQMC.class,     null },
+                 { "tutorial", AsianGBM.class,        null },
+                 { "tutorial", AsianGBMQMC.class,     null },
                  { "tutorial", BankEv.class,       null },
                  { "tutorial", CallCenter.class,   new String[]{"tutorial/CallCenter.dat"} },
-                 { "tutorial", CallEv.class,       new String[]{"tutorial/CallEv.dat"} },
                  { "tutorial", Collision.class,    null },
                  { "tutorial", InventoryCRN.class, null },
                  { "tutorial", Inventory.class,    null },
@@ -48,7 +47,7 @@ public class CompareOutputs {
 
     @Test
     public void runTutorialClass() throws RunClass.RunClassException, IOException {
-        String expected = RunClass.readFile(new File(prefix, targetClass.getSimpleName() + ".txt"));
+        String expected = RunClass.readFile(new File(prefix, targetClass.getSimpleName() + ".res"));
         String actual = RunClass.run(targetClass, args);
         RunClass.compareLineByLine(targetClass.getName(), expected, actual, ignorePat);
     }

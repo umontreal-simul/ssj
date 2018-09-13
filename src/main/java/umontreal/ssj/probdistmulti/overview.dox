@@ -9,7 +9,7 @@
  * does not generate random numbers for multivariate distributions; for that,
  * see the package  @ref umontreal.ssj.randvarmulti.
  *
- * ## Distributions
+ * ### Definitions
  *
  * We recall that the *distribution function* of a *continuous* random vector
  * @f$X= \{x_1, x_2, …, x_d\}@f$ with *density* @f$f(x_1, x_2, …, x_d)@f$

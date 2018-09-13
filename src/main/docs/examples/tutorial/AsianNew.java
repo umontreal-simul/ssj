@@ -8,6 +8,7 @@ import umontreal.ssj.mcqmctools.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.util.*;
 
+// Same as AsianGBM, but this version implements the interface MonteCarloModelDouble.
 public class AsianNew implements MonteCarloModelDouble {
    double strike;    // Strike price.
    int s;            // Number of observation times.
@@ -69,7 +70,7 @@ public class AsianNew implements MonteCarloModelDouble {
       Tally statValue = new Tally ("Stats on value of Asian option");
 
       Chrono timer = new Chrono();
-      int n = 100000;
+      int n = 1000000;
       MonteCarloExperiment.simulateRuns (model, n, new MRG32k3a(), statValue);
       statValue.setConfidenceIntervalStudent();
       System.out.println (statValue.report (0.95, 3));
