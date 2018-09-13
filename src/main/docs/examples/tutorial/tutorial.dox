@@ -206,9 +206,7 @@
  * The models considered here are quite simple and some of the performance
  * measures may be computed by numerical methods rather than
  * by simulation. The purpose of these simple models is just to give a first idea
- * of how to use SSJ. 
- * # It should not be interpreted to mean that simulation is necessarily
- * # needed to study these models.
+ * of how to use SSJ.
  * 
  * 
  * @subsection REF_examples_sec_collision Collisions in a hashing system
@@ -328,7 +326,7 @@
  * @anchor REF_examples_lst_Nonuniform
  * @include tutorial/Nonuniform.java
  *
- *  <strong>Results of the program  <tt> Nonuniform results</tt></strong>
+ *  <strong>Results of the program  <tt> Nonuniform </tt></strong>
  * &emsp;[Nonuniform results]
  * @anchor REF_examples_res_Nonuniform
  * @include tutorial/Nonuniform.res
@@ -787,15 +785,15 @@
  * and takes negligible time for an iterator over a digital net in base 2. In
  * fact, in the the case of MC, the call to `resetNextSubstream` is not
  * really needed. Removing it for that case would reduce the CPU time.
- * # by more than 40%.
  *
- *  <strong>Results of the program `AsianGBMQMC`</strong> &emsp;[AsianGBMQMC results]
+ *  <strong>Results of the program `AsianGBMQMC` </strong> &emsp;[AsianGBMQMC results]
  * @anchor REF_examples_res_AsianGBMQMC
  * @include tutorial/AsianGBMQMC.res
  * 
  * 
  * **************************************************************************************************
- * @f$\vskip 2cm @f$
+ * 
+ * @f$\ \ @f$
  * 
  * @section REF_examples_sec_event Discrete-Event Simulation
  * 
@@ -920,7 +918,7 @@
  * such an automatic update, the accumulator would integrate only up to the
  * last update time before the time horizon.
  *
- *  <strong>Results of the program `QueueEv`</strong> &emsp;[QueueEv]
+ *  <strong>Results of the program `QueueEv` </strong> &emsp;[QueueEv results]
  * @anchor REF_examples_res_QueueEv
  * @include tutorial/QueueEv.res
  * 
@@ -1093,7 +1091,7 @@
  * The results are given in Listing&nbsp;
  * {@link REF_examples_res_Bank Bank results}.
  *
- *  <strong>Results of the `BankEv` program</strong> &emsp;[Bank results]
+ *  <strong>Results of the `BankEv` program </strong> &emsp;[Bank results]
  * @anchor REF_examples_res_Bank
  * @include tutorial/BankEv.res
  * 
@@ -1261,6 +1259,6 @@
  * of the expected net revenue, for example.
  * 
  * A more elaborate simulation library for call centers, built over SSJ, 
- * can be found at @cite ccBUI05a, @cite iBUI12a. 
+ * can be found in @cite ccBUI05a, @cite iBUI12a. 
  * 
  */

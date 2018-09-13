@@ -3,7 +3,7 @@
  *
  * Probability Distributions.
  *
- * This package contains a set of Java classes that implement discrete and continuous
+ * This package contains Java classes that implement discrete and continuous
  * univariate probability distributions.  
  * It provides methods to evaluate the probability density (or mass) function (pdf),
  * the cumulative distribution function (cdf), the complementary cdf, the inverse cdf,
