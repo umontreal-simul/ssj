@@ -37,7 +37,7 @@ public class PgfDataTable {
 		this.fields = fields;
 		this.data = data;
 		numFields = fields.length;
-		numObservations = data[0].length;
+		numObservations = data.length;
 	}
 
 	/**
@@ -124,7 +124,8 @@ public class PgfDataTable {
         return drawPgfPlotSingleCurve (title, axistype, j1, j2, 
  			   logbasis, axisoptions, plotoptions);
 	}
-
+	
+	
 	public String drawPgfPlotSingleCurve (String title, String axistype, int j1, int j2, 
 			   int logbasis, String axisoptions, String plotoptions) {
 		StringBuffer sb = new StringBuffer("");
@@ -144,6 +145,8 @@ public class PgfDataTable {
 		sb.append("  "); 
 		return sb.toString();
 	}
+	
+	
 
 	
 	/**
@@ -182,6 +185,78 @@ public class PgfDataTable {
 		return sb.toString();
 	}
 	
+	/**
+	 * Similar to #formatTableTwoFields(int, int), but for three fields.
+	 * 
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
+	 * @param j3 third selected field.
+	 * @return the table as a string.
+	 */
+	public String formatTableThreeFields (int j1, int j2, int j3) {
+		StringBuffer sb = new StringBuffer("");
+		// sb.append("%     " + tableName + "\n");
+	   // sb.append("  (    " + fields[j1] + ",  " + fields[j2] + " , " + fields[j3]+ " )\n");
+		for (int s = 0; s < numObservations; s++)  // For each cardinality n
+		    sb.append("  (     " + data[s][j1] + " , " + data[s][j2] + "  ," + data[s][j3]+ ") \n");
+		return sb.toString();
+	}
+	
+	/**
+	 * Similar to @ref formatPgf, but outputs complete LaTeX code in an appropriate format
+	 * that adds a curve of the three fields  j3, j2, and j1 with the pgfplot package.
+	 * 
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
+	 * @param j3 third selected field.
+	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
+	 * @return LaTeX code as a string.
+	 */
+	public String formatPgfCurveAddPlot (int j1, int j2, int j3, String plotoptions) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("      \\addplot3 "   + "[" + plotoptions + "]" 
+			 + "coordinates"+" { \n");
+		sb.append( formatTableThreeFields (j1, j2,j3) + "      }; \n");
+		sb.append("      \\addlegendentry{" + tableLabel + "}\n"); 
+		sb.append("      \\label{" + tableLabel + "}\n"); 
+		// sb.append("%   \n");
+		return sb.toString();
+	}
+	
+	
+	/**
+	 * Same as #drawPgfPlotSingleCurve(String, String, int, int, int, String, String) but for three-dimensional plots.
+	 * @param titleis the title of the plot.
+	 * @param j1 first selected field.
+	 * @param j2 second selected field.
+	 * @param j3 third selected field.
+	 * @param  loglog  says if we want a log-log plot (true) or not (false).
+	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
+	 * @return LaTeX code as a string.
+	 * @return
+	 */
+	public String drawPgfPlotSingleCurve (String title, String axistype, int j1, int j2, int j3,
+			   int logbasis, String axisoptions, String plotoptions) {
+		StringBuffer sb = new StringBuffer("");
+		sb.append("  \\begin{tikzpicture} \n");
+		sb.append("    \\begin{" + axistype + "}[ \n");
+		sb.append("      title ={" + title  + "},\n");
+		sb.append("      xlabel=" + fields[j1] + ",\n");
+		sb.append("      ylabel=" + fields[j2] + ",\n");
+		sb.append("      zlabel=" + fields[j3] + ",\n");
+		
+		if (axistype == "loglogaxis") 
+			sb.append("     log basis x=" + logbasis + ", log basis y=" + logbasis + ",\n");
+		sb.append("       grid,\n");
+		sb.append("      " + axisoptions + ",\n");
+		sb.append("      ] \n");
+		sb.append( formatPgfCurveAddPlot (j1, j2, j3, plotoptions));
+		sb.append("    \\end{" + axistype + "}\n"); 
+		sb.append("  \\end{tikzpicture}\n"); 
+		sb.append("  "); 
+		return sb.toString();
+	}
+
 	
 	public static String pgfplotFileHeader () {
 		StringBuffer sb = new StringBuffer("");
