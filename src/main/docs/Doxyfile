@@ -689,8 +689,8 @@ CITE_BIB_FILES  = \
    src/main/docs/bib/fin.bib \
    src/main/docs/bib/prob.bib \
 	 src/main/docs/bib/ift.bib \
-   src/main/docs/bib/random.optim \
-   src/main/docs/bib/random.callc
+   src/main/docs/bib/optim.bib \
+   src/main/docs/bib/callc.bib
 
 
 #---------------------------------------------------------------------------
