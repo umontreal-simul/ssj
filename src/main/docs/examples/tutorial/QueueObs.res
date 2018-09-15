@@ -42,6 +42,6 @@ Customer 100 waited 0.6060216943922617 time units.
 
 
 REPORT on Tally stat. collector ==> Average wait
-    num. obs.      min          max        average     standard dev.
-         2        0.200        0.405        0.303        0.145
+    num. obs.      min          max        average     variance    standard dev.
+         2        0.200        0.405        0.303        0.021        0.145
 

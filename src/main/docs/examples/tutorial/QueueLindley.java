@@ -29,10 +29,10 @@ public class QueueLindley {
    }
 
    public static void main (String[] args) { 
-      Chrono timer = new Chrono();
+      // Chrono timer = new Chrono();
       QueueLindley queue = new QueueLindley();
       queue.simulateRuns (100, 10000, 1.0, 2.0);
       System.out.println (queue.averageWaits.report());
-      System.out.println ("Total CPU time: " + timer.format());
+      // System.out.println ("Total CPU time: " + timer.format());
    }
 }

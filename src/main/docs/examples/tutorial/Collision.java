@@ -57,7 +57,7 @@ public class Collision {
 		int n = 10000000;
 		Collision col = new Collision(k, m, maxCounts);
 		Tally statC = new Tally("Statistics on collisions");
-		System.out.println(col.toString());
+		// System.out.println(col.toString());
 		Chrono timer = new Chrono();
 		col.simulateRuns(n, new MRG32k3a(), statC);
 		System.out.println("Total CPU time:      " + timer.format() + "\n");
