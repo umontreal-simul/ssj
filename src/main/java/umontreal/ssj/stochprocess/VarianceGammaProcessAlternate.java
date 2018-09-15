@@ -34,7 +34,7 @@ public class VarianceGammaProcessAlternate extends VarianceGammaProcess {
 	    * and returns the path of the VG process. 
 	    */
 	   public double[] generatePath() {
-		   int d = getNbObservationTimes();
+		   int d = getNumObservationTimes();
 		   double[] points = new double[2*d]; 
 		   RandomStream stream = getStream();
 		   for (int j=0; j<2*d; j++)

@@ -4,12 +4,13 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 /**
- * Represents a data table that could be used to produce LaTeX code to draw two-dimensional
- * plots with the pgfplot package.  Each table has a name, a number of observations (rows),
+ * Represents a data table which has a name, a number of observations (rows),
  * a number of fields (columns), an array that contains the names (identifiers) of the fields, 
- * and a two-dimensional array that contains the data.  Methods are available to format the table,
+ * and a two-dimensional array that contains the data.  
+ * Methods are available to format the table,
  * or selected columns of the table, or to produce LaTeX code to draw a plot of one field against
- * another field in pgfplot.
+ * another field using the pgfplot LaTeX package.
+ * These types of tables can also be passed to other software to perform further operations.
  */
 
 public class PgfDataTable {
