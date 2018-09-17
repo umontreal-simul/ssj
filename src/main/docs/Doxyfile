@@ -2035,7 +2035,7 @@ EXTERNAL_PAGES         = YES
 # interpreter (i.e. the result of 'which perl').
 # The default file (with absolute path) is: /usr/bin/perl.
 
-PERL_PATH  = C:\Strawberry\     #  for Windows
+PERL_PATH  = C:\Strawberry\perl\bin     #  for Windows
 #            = /usr/bin/perl    #  for Linux
 
 #---------------------------------------------------------------------------

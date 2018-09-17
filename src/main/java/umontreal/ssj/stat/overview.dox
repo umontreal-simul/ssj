@@ -26,7 +26,10 @@
  * Data can also be collected directly in aggregated form in *histograms*
  * via `TallyHistogram` or `HistogramOnly`.  
  * 
- * `PgfDataTable`  ...
+ * `PgfDataTable` provides tools to construct tables of observations (rows)
+ * in which each observation has many fields (columns).
+ * These tables are in a appropriate format for the  pgfplot LaTeX package.
+ * They can also be forwarded to other software for visualization, etc.
  *
  * All classes that represent statistical probes support the *observer*
  * design pattern, well-known in software engineering
