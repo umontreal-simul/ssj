@@ -1,7 +1,0 @@
-<map id="PascalConvolutionGen" name="PascalConvolutionGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1PascalGen.html" title="Implements Pascal random variate generators, which is a special case of the negative binomial generat..." alt="" coords="69,247,155,273"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html" title="This is the base class for all generators of discrete random variates over the set of integers..." alt="" coords="37,171,187,197"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="45,95,179,121"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="5,5,93,32"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="118,5,231,32"/>
-</map>

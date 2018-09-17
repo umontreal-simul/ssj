@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="5,56,165,83"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1EmpiricalSeriesCollection.html" title="Stores data used in a EmpiricalChart. " alt="" coords="217,5,387,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1charts_1_1HistogramSeriesCollection.html" title="Stores data used in a HistogramChart. " alt="" coords="213,56,391,83"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html" title="This class extends umontreal.ssj.charts.SSJXYSeriesCollection. " alt="" coords="224,107,380,133"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1YListSeriesCollection.html" title="This class extends umontreal.ssj.charts.XYListSeriesCollection. " alt="" coords="439,107,585,133"/>
-</map>
