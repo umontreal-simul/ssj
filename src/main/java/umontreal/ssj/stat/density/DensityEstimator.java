@@ -2,62 +2,86 @@
 package umontreal.ssj.stat.density;
 
 import java.util.ArrayList;
-
 import umontreal.ssj.probdist.ContinuousDistribution;
 import umontreal.ssj.stat.PgfDataTable;
 
 /**
- * This abstract class implements a univariate density estimator (DE). To this
- * end, it provides basic tools to evaluate the DE at one point \f$x\f$ or at a
- * selection of points \f$\{x_1, x_2, \dots, x_k\} \f$. More precisely, the single
- * point evaluation #evalDensity(double, double[], double, double) is abstract,
- * since it will definitely differ between realizations. For the evaluation on a
- * set of points one can use #evalDensity(double[], double[], double, double).
- * Note that, even though a default implementation is provided, very often
+ * This abstract class represents a univariate density estimator (DE). 
+ * 
+ * Both static and non-static methods are offered.  
+ * In a majority of cases, on simply wishes to estimate the density at a finite set of evaluation
+ * points, from a given set of data, and perhaps plot the estimated density. 
+ * To do that, there is no need to create an object. 
+ * One can simply use a static `evalDensity` method followed by `plotDensity`.
+ * Note that calling the `evalDensity` method only once for a vector of evaluation points 
+ * is typically much faster than calling it separately for each evaluation point.
+ * 
+ * In case one plans to evaluate the same density several times with the same data,
+ * then it may be worthwhile to construct a `DensityEstimator` object and build the 
+ * density estimate from the given data.  After that, one can evaluate the density 
+ * at any given point, often much faster than by calling the static method. 
+ * In the case of a histogram or average shifted histogram, for example,
+ * constructing the density estimator takes time, but once it is constructed, 
+ * evaluating it is relatively fast.
+ * For a KDE with fixed bandwidth, the difference (or gain) may be small.
+ * 
+ * 
+ * 
+ * In a non-abstract subclass, it suffices (in principle) to implement the abstract method
+ * @ref evalDensity(double, double[], double, double), which evaluates the density
+ * at a single point \f$x\f$ given the data points.
+ * However, other methods will typically be overridden to make them more efficient.
+ * For example, evaluating the DE over a set of evaluation points 
+ * \f$\{x_0, x_1, \dots, x_{k-1}\} \f$ can often be performed more efficiently than 
+ * by calling `evalDensity(x)` repeatedly in a loop. 
+ * 
+ * More precisely, the single
+ * point evaluation `evalDensity(double, double[], double, double)` is abstract,
+ * since it will definitely differ between realizations.???   
+ * You mean across subclasses???   For the evaluation on a
+ * set of points one can use `evalDensity(double[], double[], double, double).`
+ * Even though a default implementation is provided, very often
  * specific estimators will have more efficient evaluation algorithms. So,
  * overriding this method can be beneficial in many cases. Furthermore, this
  * class includes a method to plot the estimated density.
  * 
- * There are also several more involved methods covered by this class, most of
- * which are concerned with the convergence behavior of DEs. Nevertheless, they
+ * This class also provides more elaborate methods that deal with the convergence 
+ * behavior of the DEs in terms of their IV, ISB, and MISE. 
+ * 
+ * Nevertheless, they
  * can be useful in many other cases beyond convergence behavior too. As these
  * usually require more than one realization of a DE, or even a list of DE's,
- * they are implemented as static methods. For instance, #evalDensity(double[],
+ * they are implemented as static methods. For instance, @ref evalDensity(double[],
  * double[][], double, double) allows to evaluate several independent
  * replications of a DE at an array of evaluation points, and
- * #evalDensity(ArrayList, double[], double[][], double, double, ArrayList)  does
+ * @ref evalDensity(ArrayList, double[], double[][], double, double, ArrayList)  does
  * the same but for more than one DE.
  * 
- * For measuring the performance of a DE, we need to confine ourselves to
- * estimation over a finite interval \f$[a,b]\f$. One standard way to assess the
- * quality of a DE is via the mean integrated square error (MISE). It can be
- * further decomposed into the integrated variance (IV), and the integrated
- * square bias (ISB)
- * 
- * \f[ \textrm{MISE} = \int_a^b\mathbb{E} [\hat{f}(x) - f(x)]^2\mathrm{d}x =
- * \int_a^b\textrm{Var}[\hat{f}(x)]\mathrm{d}x + \int_a^b \left(
- * \mathbb{E}[\hat{f}(x)] - f(x) \right)^2\mathrm{d}x = \textrm{IV} + \textrm{ISB}, \f]
- * 
- * where \f$f\f$ denotes the true density and \f$\hat{f}\f$ the DE.
- * 
  * This class also provides methods to estimate the empirical IV, see
- * #computeIV(double[][], double, double, double[]) for one individual DE and
- * #computeIV(ArrayList, double, double, ArrayList) for several DEs. Note that
- * these mehtods merely compute an estimate, since computing an exact integral
+ * @ref computeIV(double[][], double, double, double[]) for one individual DE and
+ * @ref computeIV(ArrayList, double, double, ArrayList) for several DEs. Note that
+ * these methods merely compute an estimate, since computing an exact integral
  * is out of reach for this class.
  * 
  * Note that the MISE can only be computed in situations where either the ISB is
  * zero or the true density is known. In the first case, the IV is the same as
  * the MISE, of course. For the second case this class provides the possibility
  * to estimate the empirical MISE for a single DE via
- * #computeMISE(ContinuousDistribution, double[], double[][], double, double,
+ * @ref computeMISE(ContinuousDistribution, double[], double[][], double, double,
  * double[], double[], double[])} as well as for several DEs via
- * #computeMISE(ContinuousDistribution, double[], ArrayList, double, double,
- * ArrayList). Again, as explained before for the IV, this merely gives an estimate of the empirical MISE.
+ * @ref computeMISE(ContinuousDistribution, double[], ArrayList, double, double,
+ * ArrayList). 
+ * Again, as explained before for the IV, this merely gives an estimate of the empirical MISE.
  */
 
 public abstract class DensityEstimator {
 
+	
+	/**
+	 * The data associated with this DensityEstimator object, if any.
+	 */
+    protected double[] data;
+	
 	/**
 	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
 	 * observations \a data if necessary, and evaluates it at \a x.
@@ -564,7 +588,7 @@ public abstract class DensityEstimator {
 	 * @return the Coefficient of determination \f$R^2\f$
 	 */
 
-	protected static double coefficientOfDetermination(double[] data, double[] dataEstimated) {
+	protected static double coefficientOfDetermination (double[] data, double[] dataEstimated) {
 		int i;
 		int max = data.length;
 		double maxInv = 1.0 / (double) max;

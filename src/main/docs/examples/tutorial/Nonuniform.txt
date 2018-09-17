@@ -1,8 +1,0 @@
-REPORT on Tally stat. collector ==> null
-    num. obs.      min          max        average     standard dev.
-     10000        0.000    15839.396     1000.890     1285.771
-
-0.10 quantile:     9.485
-0.50 quantile:   545.338
-0.90 quantile:  2628.177
-0.99 quantile:  5860.238

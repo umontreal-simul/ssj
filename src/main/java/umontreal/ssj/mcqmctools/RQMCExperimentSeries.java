@@ -37,7 +37,7 @@ import java.util.ArrayList;
 /**
  * This class offers facilities to perform experiments on the convergence
  * of the variance when estimating a mean (expectation) with a series of RQMC 
- * point sets usually of the same type, but different size @f$n@f$.
+ * point sets usually of the same type, but different sizes @f$n@f$.
  * The series of RQMC point sets of different sizes can be passed in an array 
  * to the constructor. The method @ref testVarianceRate performs an experiment 
  * with a given @ref MonteCarloModelDouble and the series of point sets. 

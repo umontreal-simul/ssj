@@ -1,7 +1,6 @@
 package tutorial;
 import java.util.*;
 import umontreal.ssj.stat.*;
-import umontreal.ssj.simevents.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;
 
@@ -9,8 +8,8 @@ public class QueueObs {
 
    Tally waitingTimes = new Tally ("Waiting times");
    Tally averageWaits = new Tally ("Average wait");
-   RandomVariateGen genArr;
-   RandomVariateGen genServ;
+   RandomVariateGen genArr;  // For interarrival times.
+   RandomVariateGen genServ; // For service times.
    int cust;    // Number of the current customer.
 
    public QueueObs (double lambda, double mu, int step) {
@@ -21,7 +20,7 @@ public class QueueObs {
       waitingTimes.addObservationListener (new LargeWaitsCollector (2.0));
    }
 
-   public double simulateOneRun (int numCust) {
+   public double simulate (int numCust) {
       waitingTimes.init();
       double Wi = 0.0;
       waitingTimes.add (Wi);
@@ -36,9 +35,10 @@ public class QueueObs {
    public void simulateRuns (int n, int numCust) {
       averageWaits.init();
       for (int i=0; i<n; i++)
-	  averageWaits.add (simulateOneRun (numCust));
+	     averageWaits.add (simulate (numCust));
    }
 
+   // A listener that observes each waiting time and prints every `step`th one.
    public class ObservationTrace implements ObservationListener {
       private int step;
 
@@ -51,6 +51,7 @@ public class QueueObs {
       }
    }
 
+   // A listener that observes waiting times and collects those larger than threshold.
    public class LargeWaitsCollector implements ObservationListener {
       double threshold;
       ArrayList<Double> largeWaits = new ArrayList<Double>();
@@ -63,9 +64,9 @@ public class QueueObs {
          if (x > threshold) largeWaits.add (x);
       }
 
+	  // Maybe print the list largeWaits. 
       public String formatLargeWaits () {
-	  // Should print the list largeWaits. 
-	  return "not yet implemented...";
+	     return "not yet implemented...";
       }
    }
 

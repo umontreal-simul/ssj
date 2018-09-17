@@ -1,0 +1,1381 @@
+/**
+ * @page examples Tutorial
+ * 
+ * SSJ introduction and tutorial by examples.
+ * 
+ * 
+ * 
+ * 
+ * @section REF_examples_sec_01 Introduction
+ * 
+ * 
+ * The aim of this document is to provide an introduction to SSJ via a brief
+ * overview and a series of examples. The examples are collected in three
+ * groups:
+ *
+ * <ul><li>
+ * those that need no event or process scheduling;
+ * </li>
+ * <li>
+ * those based on the discrete-event simulation paradigm and implemented with
+ * an *event view* using the package `simevents`.
+ * </li>
+ * </ul>
+ *
+ *  Sections&nbsp; @ref REF_examples_sec_simple to
+ * @ref REF_examples_sec_event of this guide correspond to these three
+ * groups. Some examples (e.g., the single-server queue) are carried across
+ * two or three sections to illustrate different ways of implementing the
+ * same model. The Java code of all these examples is available on-line from
+ * the SSJ web page (just type “SSJ iro” in Google).
+ *
+ * While studying the examples, the reader can refer to the functional
+ * definitions (the APIs) of the SSJ classes and methods in the guides of the
+ * corresponding packages. Each package in SSJ has its own user’s guide in
+ * the form of a `.pdf` document that contains the detailed API and complete
+ * documentation, and starts with an overview of one or two pages. We
+ * strongly recommend reading each of these overviews. We also recommend to
+ * refer to the `.pdf` versions of the guides, because they contain a more
+ * detailed and complete documentation than the `.html` versions, which are
+ * better suited for quick on-line referencing for those who are already
+ * familiar with SSJ.
+ *
+ * In Section&nbsp; @ref REF_examples_sec_queue, we start with a very simple
+ * classical example: a single queue. We give different variants of this
+ * example, illustrating the mixture of processes and events. In
+ * Section&nbsp; @ref REF_examples_sec_preypred, we give a small example of a
+ * deterministic continuous simulation. In Sections&nbsp;
+ * @ref REF_examples_sec_jobshop and  @ref REF_examples_sec_timeshared, we
+ * give examples of a job shop model and a time-shared computer model,
+ * adapted from @cite sLAW00a&thinsp;. A queuing model of a bank, taken from
+ * @cite sBRA87a&thinsp;, is programmed in Section&nbsp;
+ * @ref REF_examples_sec_bank, with both the process and event views. In
+ * Section&nbsp; @ref REF_examples_sec_visits, we simulate a model of guided
+ * tours for groups of people, where the process synchronization is slightly
+ * more complicated than for the earlier models. In Section&nbsp;
+ * @ref REF_examples_sec_ingots, we give an example of a mixed
+ * discrete-continuous simulation. In Section&nbsp;
+ * @ref REF_examples_sec_robot, we give a more elaborate example, for a model
+ * discussed in @cite sLEC91a&thinsp;, where a robot maintains a series of
+ * machines subject to random failures. It illustrates the idea of modular
+ * design.
+ * 
+ * 
+ * @section REF_examples_sec_02 Overview of SSJ
+ * 
+ * 
+ * SSJ is an organized set of packages whose purpose is to facilitate
+ * stochastic simulation programming in the Java language. The facilities
+ * offered are grouped into different packages, each one having its own
+ * user’s guide as a `.pdf` file. This is the official documentation. There
+ * is also a simplified on-line documentation in HTML format, produced via
+ * `javadoc`. Early descriptions of SSJ are given in @cite sLEC02a,
+ * @cite sLEC05a&thinsp;. Some of the tools can also be used for modeling
+ * (e.g., selecting and fitting distributions). SSJ is still growing
+ * actively. New packages, classes, and methods will be added in forthcoming
+ * years and others will be refined.
+ *
+ * The packages currently offered are the following:
+ *
+ *   @ref umontreal.ssj.util contains utility classes used in the
+ * implementation of SSJ, and which are often useful elsewhere. For example,
+ * there are timers (for CPU usage), utilities to read or format numbers and
+ * arrays from/to text, operations on binary vectors and matrices, some
+ * mathematical functions and constants, root-finding tools, facilities for
+ * SQL database interface, and so on.
+ *
+ *  @ref umontreal.ssj.probdist contains a set of Java classes providing
+ * methods to compute mass, density, distribution, complementary
+ * distribution, and inverse distribution functions for many discrete and
+ * continuous probability distributions, as well as estimating the parameters
+ * of these distributions.
+ *
+ *  @ref umontreal.ssj.probdistmulti contains a set of Java classes providing
+ * methods to compute mass, density, distribution, complementary
+ * distribution, for some multi-dimensionnal discrete and continuous
+ * probability distributions.
+ *
+ *  @ref umontreal.ssj.rng provides facilities for generating uniform random
+ * numbers over the interval @f$(0,1)@f$, or over a given range of integer
+ * values, and other types of simple random objects such as random
+ * permutations.
+ *
+ *  @ref umontreal.ssj.hups provides classes implementing highly uniform
+ * point sets and sequences (HUPS), also called low-discrepancy sets and
+ * sequences, and tools for their randomization.
+ *
+ *  @ref umontreal.ssj.randvar provides a collection of classes for
+ * non-uniform random variate generation, primarily from standard
+ * distributions.
+ *
+ *  @ref umontreal.ssj.randvarmulti provides a collection of classes for
+ * random number generators for some multi-dimensional distributions.
+ *
+ *  @ref umontreal.ssj.gof contains tools for performing univariate
+ * goodness-of-fit (GOF) statistical tests.
+ *
+ *  @ref umontreal.ssj.stat provides elementary tools for collecting
+ * statistics and computing confidence intervals.
+ *
+ *  @ref umontreal.ssj.stat.matrix this subpackage of `stat` provides
+ * facilities to create and manage rectangular two-dimensional arrays of
+ * statistical collectors.
+ *
+ *  @ref umontreal.ssj.stat.list this subpackage of `stat` provides support
+ * to manage lists of statistical collectors.
+ *
+ *  @ref umontreal.ssj.stat.list.lincv this subpackage of `stat.list`
+ * provides classes that help implement control variables on lists of
+ * collectors.
+ *
+ *  @ref umontreal.ssj.simevents provides and manages the event-driven
+ * simulation facilities as well as the simulation clock. Can manage several
+ * simulations in parallel, in the same program.
+ *
+ *  @ref umontreal.ssj.simevents.eventlist this subpackage of `simevents`
+ * offers several kinds of event list implementations.
+ *
+ *  @ref umontreal.ssj.functions contains classes that allow one to pass an
+ * arbitrary function of one variable as argument to a method and to apply
+ * elementary mathematical operations on generic functions.
+ *
+ *  @ref umontreal.ssj.functionfit provides basic facilities for curve
+ * fitting and interpolation with polynomials.
+ *
+ *  @ref umontreal.ssj.simexp provides facilities for performing simulation
+ * experiments using independent replications as well as simulations using
+ * batch means.
+ *
+ *  @ref umontreal.ssj.charts provides tools for easy construction,
+ * visualization, and customization of @f$xy@f$ plots, histograms, and
+ * empirical styled charts from a Java program.
+ *
+ *  @ref umontreal.ssj.discrepancy contains classes and methods to compute
+ * several kind of discrepancies for point sets.
+ *
+ *  @ref umontreal.ssj.markovchainrqmc contains classes related to Markov
+ *  chains simulation using randomized quasi-Monte Carlo.
+ *
+ *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
+ * processes.
+ * 
+ * 
+ * @subsection REF_examples_sec_03 Dependence on other libraries
+ * 
+ * 
+ * SSJ uses some classes from other free Java libraries.
+ *
+ * The [Colt library](http://acs.lbl.gov/software/colt/)
+ * , developed at the Centre Européen de Recherche Nucléaire (CERN) in Geneva
+ * @cite iHOS04a&thinsp;, is a large library that provides a wide range of
+ * facilities for high performance scientific and technical computing in
+ * Java. SSJ uses the class  DoubleArrayList from Colt in a few of its
+ * classes, namely in packages  @ref umontreal.ssj.stat and
+ * @ref umontreal.ssj.hups. The reason is that this class provides a very
+ * efficient and convenient implementation of an (automatically) extensible
+ * array of <tt>double</tt>, together with several methods for computing
+ * statistics for the observations stored in the array (see, e.g.,
+ * <tt>Descriptive</tt>). The Colt library is distributed with the SSJ
+ * package as **colt.jar**. It must be added in the CLASSPATH environment
+ * variable.
+ *
+ * The <strong>linear_algebra</strong> library is based on public domain
+ * LINPACK routines. They were translated from Fortran to Java by Steve
+ * Verrill at the USDA Forest Products Laboratory Madison, Wisconsin, USA.
+ * The optimization package of Steve Verrill includes Java translations of
+ * the [MINPACK](http://simul.iro.umontreal.ca/Uncmin_f77/Minpack_f77.html)
+ *  routines @cite iMOR80a&thinsp; for nonlinear least squares problems as
+ * well as [UNCMIN](http://simul.iro.umontreal.ca/Uncmin_f77/Uncmin_f77.html)
+ *  routines @cite iSCHa&thinsp; for unconstrained optimization. They were
+ * translated from Fortran to Java by Steve Verrill and are in the public
+ * domain. They are included in the SSJ distribution as the
+ * **optimization.jar** archive. It is used only in the `probdist` package to
+ * compute maximum likelihood estimators.
+ *
+ * [JFreeChart](http://www.jfree.org/jfreechart/index.html)
+ *  is a free Java library that can generate a wide variety of charts and
+ * plots for use in applications, applets and servlets. **JFreeChart**
+ * currently supports, amongst others, bar charts, pie charts, line charts,
+ * XY-plots, histograms, scatter plots and time series plots. It is
+ * distributed with SSJ as **jfreechart-*.jar**.
+ * [JCommon](http://www.jfree.org/jcommon/index.php)
+ *  is a free general purpose Java library containing many useful classes
+ * used by JFreeChart and other Java packages. It is distributed with SSJ as
+ * **jcommon-*.jar**. JFreeChart (and JCommon) are used in the SSJ package
+ * **charts** to create different kinds of charts.
+ *
+ * SSJ also provides an interface to the
+ * [UNURAN](http://statistik.wu-wien.ac.at/unuran/)
+ *  library for nonuniform random number generation @cite iLEY02a&thinsp;, in
+ * the  @ref umontreal.ssj.randvar package. UNURAN does not have to be
+ * installed to be used with SSJ, because it is linked statically with the
+ * appropriate SSJ native library. However, the UNURAN documentation will be
+ * required to take full advantage of the library.
+ * 
+ * 
+ * @subsection REF_examples_sec_04 random number generation
+ * 
+ * 
+ * Random numbers feed simulation models and allow one to compute statistics.
+ * To generate random numbers from any probability distribution, uniform
+ * random numbers are required. Such numbers are uniformly distributed in the
+ * @f$[0,1)@f$ interval, i.e., the probability of getting a given number
+ * @f$x@f$ in that interval is the same for all values of @f$x\in[0,1)@f$.
+ * Any generated number @f$x@f$ is also independent from any previous or
+ * future generated numbers. Although the generated uniforms are not truly
+ * independent since one uniform is obtained from the previous uniforms by a
+ * mathematical formula, one can consider them independent for simulation
+ * purposes. Selection of a random number generator is based on several
+ * criteria such as uniformity, performance, and portability
+ * @cite rLEC01d&thinsp;. The package  @ref umontreal.ssj.rng contains the
+ * needed tools to generate such numbers. It defines an interface called
+ * @ref umontreal.ssj.rng.RandomStream implemented by any random number
+ * generator supported by SSJ. This interface allows one to easily
+ * interchange random number generators since they are accessed through the
+ * same set of methods specified by the interface. Only the random number
+ * generator setup depends on the type of generator that was chosen.
+ *
+ * If one wants to replace uniform random numbers with low-discrepancy point
+ * sets for variance reduction, the package  @ref umontreal.ssj.hups contains
+ * all the necessary facilities. Such highly uniform point sets all inherit
+ * from the  @ref umontreal.ssj.hups.PointSet which provides a
+ * @ref umontreal.ssj.hups.PointSetIterator extending
+ * @ref umontreal.ssj.rng.RandomStream. The replacement can be easily done
+ * without modifying the model implementation, except the setup-time code.
+ *
+ * To generate non-uniform random numbers, one must select a probability
+ * distribution based on the empirical data @cite sLAW00a&thinsp;. SSJ does
+ * not provide probability distribution estimation tools, but goodness of fit
+ * tests are included to help in model validation. The package
+ * @ref umontreal.ssj.probdist contains several standard, commonly-used,
+ * probability distributions. It supports discrete and continuous
+ * distributions through two different abstract base classes:
+ * @ref umontreal.ssj.probdist.ContinuousDistribution and
+ * @ref umontreal.ssj.probdist.DiscreteDistribution, respectively. Again,
+ * since the distributions inherit from a common class, their access can be
+ * independent from the selected distribution, except for the setup case. One
+ * can compute the density/mass, distribution, complementary, and inverse
+ * distribution functions. These facilities are also accessible through
+ * static methods implemented in each distribution class if one does not want
+ * to create objects or needs distributions whose parameters vary in time.
+ * However, setup-time operations must be performed for each operation, which
+ * can be inefficient for certain distributions.
+ *
+ * To generate non-uniform random numbers, the packages
+ * @ref umontreal.ssj.rng (or  @ref umontreal.ssj.hups ) and
+ * @ref umontreal.ssj.probdist must be used together. The simplest generation
+ * method is to generate a uniform random number using a generator
+ * implementing  @ref umontreal.ssj.rng.RandomStream (or get a coordinate
+ * using a point set iterator) and to apply inversion by using the selected
+ * @ref umontreal.ssj.probdist distribution’s
+ * umontreal.ssj.probdist.ContinuousDistribution.inverseF method. However,
+ * inversion is not the only generation method and sometimes not the most
+ * efficient. For some distributions, closed-form inverse functions or fast
+ * inversion algorithms exist. For others, inversion is performed using
+ * binary or even linear search. In such cases, the performance and precision
+ * depends on the complexity of the distribution function which is calculated
+ * several times for one inverse. The package  @ref umontreal.ssj.randvar
+ * acts as glue between uniform random number generators and probability
+ * distributions. Continuous or discrete random number generators also
+ * inherits from common base classes, namely
+ * @ref umontreal.ssj.randvar.RandomVariateGen and
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. All generators use a
+ * random stream and a probability distribution for their construction. As
+ * opposed to  @ref umontreal.ssj.probdist, one can directly instantiate
+ * @ref umontreal.ssj.randvar.RandomVariateGen or
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. However, in such cases,
+ * only inversion generation method will be available. To use an alternate
+ * generation method, one must instantiate a specialized generator class and
+ * switch to the given generation algorithm using an object method. Each
+ * specialized class also provides static method which perform the same
+ * action. Although they allow one to avoid object creation, their signatures
+ * are specific to the used distribution and they have to perform setup-time
+ * operations on each variate generation, which can become inefficient. The
+ * @ref umontreal.ssj.randvar package also provides the class
+ * @ref umontreal.ssj.randvar.RandomVariateTrans to apply transformations to
+ * a generator. This allows, for example, to generate variates from a
+ * truncated distribution.
+ * 
+ * 
+ * @subsection REF_examples_sec_05 Performing simulation
+ * 
+ * 
+ * SSJ supports discrete-event, process-driven, continuous or mixed
+ * simulation. The discrete-event and continuous simulation are managed by
+ * the package  @ref umontreal.ssj.simevents. This package manages the
+ * simulation clock and the event list, two essential components for all
+ * discrete-event simulations. The simulation clock tracks the simulation
+ * time whereas the event list stores the scheduled events to execute them in
+ * the right order. Events are user-defined subclasses of
+ * @ref umontreal.ssj.simevents.Event. When an event occurs, any type of
+ * actions can then be taken. The package provides a class called
+ * @ref umontreal.ssj.simevents.List which implements a linked list
+ * supporting statistical collection. Continuous simulation can be performed
+ * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
+ * event framework to resolve differential equations numerically at fixed
+ * steps in the simulation time.
+ *
+ * 
+ * @subsection REF_examples_sec_06 Other tools
+ * 
+ * 
+ * The package  @ref umontreal.ssj.stat provides basic tools for statistical
+ * collection. Statistics are collected using statistical probes, i.e,
+ * objects implementing the abstract class
+ * @ref umontreal.ssj.stat.StatProbe. Two types of probes are supported. The
+ * @ref umontreal.ssj.stat.Tally allows to collect observations of the form
+ * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate collects
+ * statistics for a continuous variable evolving in simulation time. During
+ * the simulation, one can add observations to such probes. After the
+ * simulation, measures can be obtained, such as sample average, sample
+ * standard deviation or confidence interval. A statistical report can be
+ * obtained for all probes. The package also provides a way to detach
+ * statistical collection from the model implementation by using bound
+ * properties.
+ *
+ * To test a proposed model against empirical data, goodness of fit tests are
+ * provided in the package  @ref umontreal.ssj.gof. Such tests, e.g.
+ * Kolmogorov-Smirnov or Anderson-Darling, compute a statistic using the
+ * empirical observations and the proposed distribution. The empirical
+ * observations are given as an array whereas the distribution is given as a
+ * @ref umontreal.ssj.probdist object. From the computed statistic, it is
+ * possible to compute the @f$p@f$-value which is useful to evaluate the
+ * significance of the test.
+ * 
+ * 
+ * @subsection REF_examples_sec_07 Related documentation
+ * 
+ * 
+ * The `example.pdf` file, in the `doc/pdf` subdirectory of the SSJ
+ * distribution, explains simulation examples implemented using SSJ. This may
+ * be the best starting point to learn SSJ.
+ *  Every package introduced here contains its own reference documentation as
+ * a PDF file, in the `doc/pdf` subdirectory. This documentation describes in
+ * more details how to use the package and provides a description of each
+ * class and method.
+ * 
+ * 
+ * @section REF_examples_sec_simple Some Elementary Examples
+ * 
+ * 
+ * We start with elementary examples that illustrate how to generate uniform
+ * and nonuniform random numbers, construct probability distributions,
+ * collect elementary statistics, and compute confidence intervals, compare
+ * similar systems, and use randomized quasi-Monte Carlo point sets, with
+ * SSJ.
+ *
+ * The models considered here are quite simple and some of the performance
+ * measures can be computed by (more accurate) numerical methods rather than
+ * by simulation. The fact that we use these models to give a first tasting
+ * of SSJ should not be interpreted to mean that simulation is necessarily
+ * the best tool for them.
+ * 
+ * 
+ * @subsection REF_examples_sec_collision Collisions in a hashing system
+ * 
+ * 
+ * We want to estimate the expected number of collisions in a hashing system.
+ * There are @f$k@f$ locations (or addresses) and @f$m@f$ distinct items.
+ * Each item is assigned a random location, independently of the other items.
+ * A *collision* occurs each time an item is assigned a location already
+ * occupied. Let @f$C@f$ be the number of collisions. We want to estimate
+ * @f$\mathbb E[C]@f$, the expected number of collisions, by simulation. A
+ * theoretical result states that when @f$k\to\infty@f$ while @f$\lambda=
+ * m^2/(2k)@f$ is fixed, @f$C@f$ converges in distribution to a Poisson
+ * random variable with mean @f$\lambda@f$. For finite values of @f$k@f$ and
+ * @f$m@f$, we may want to approximate the distribution of @f$C@f$ by the
+ * Poisson distribution with mean @f$\lambda@f$, and use Monte Carlo
+ * simulation to assess the quality of this approximation. To do that, we can
+ * generate @f$n@f$ independent realizations of @f$C@f$, say @f$C_1,…,C_n@f$,
+ * compute their empirical distribution and empirical mean, and compare with
+ * the Poisson distribution.
+ *
+ * The Java program in Listing&nbsp;
+ * {@link REF_examples_lst_Collision Collision} simulates
+ * @f$C_1,…,C_n@f$ and computes a 95% confidence interval on @f$\mathbb
+ * E[C]@f$. The results for @f$k = 10000@f$, @f$m = 500@f$, and @f$n =
+ * 100000@f$, are in Listing&nbsp;
+ * {@link REF_examples_res_Collision Collision}. The reported
+ * confidence interval is @f$(12.25,  12.29)@f$, whereas @f$\lambda=
+ * 12.5@f$. This indicates that the asymptotic result underestimates
+ * @f$\mathbb E[C]@f$ by nearly 2%.
+ *
+ * The Java program imports the SSJ packages `rng` and `stat`. It uses only
+ * two types of objects from SSJ: a `RandomStream` object, defined in the
+ * `rng` package, that generates a stream of independent random numbers from
+ * the uniform distribution, and a `Tally` object, from the `stat` package,
+ * to collect statistical observations and produce the report. In SSJ,
+ * `RandomStream` is actually just an interface that specifies all the
+ * methods that must be provided by its different implementations, which
+ * correspond to different brands of random streams (i.e., different types of
+ * uniform random number generators). The class `MRG32k3a`, whose constructor
+ * is invoked in the main program, is one such implementation of
+ * `RandomStream`. This is the one we use here. The class `Tally` provides
+ * the simplest type of statistical collector. It receives observations one
+ * by one, and after each new observation, it updates the number, average,
+ * variance, minimum, and maximum of the observations. At any time, it can
+ * return these statistics or compute a confidence interval for the
+ * theoretical mean of these observations, assuming that they are independent
+ * and identically distributed with the normal distribution. Other types of
+ * collectors that memorize the observations are also available in SSJ.
+ *
+ *  **Simulating the number of collisions in a hashing system**
+ * &emsp;[Collision]
+ * @anchor REF_examples_lst_Collision
+ * @include tutorial/Collision.java
+ *
+ * The class `Collision` offers the facilities to simulate copies of @f$C@f$.
+ * Its constructor specifies @f$k@f$ and @f$m@f$, computes @f$\lambda@f$,
+ * and constructs a boolean array of size @f$k@f$ to memorize the locations
+ * used so far, in order to detect the collisions. The method `generateC`
+ * initializes the boolean array to `false`, generates the @f$m@f$ locations,
+ * and computes @f$C@f$. The method `simulateRuns` first resets the
+ * statistical collector `statC`, then generates @f$n@f$ independent copies
+ * of @f$C@f$ and pass these @f$n@f$ observations to the collector via the
+ * method `add`. The method `statC.report` computes a confidence interval
+ * from these @f$n@f$ observations and returns a statistical report in the
+ * form of a character string. This report is printed, together with the
+ * value of @f$\lambda@f$.
+ *
+ *  <strong>Results of the program <tt>Collision</tt></strong>
+ * &emsp;[Collision]
+ * @anchor REF_examples_res_Collision
+ * @include tutorial/Collision.txt
+ * 
+ * 
+ * @subsection REF_examples_sec_nonuniform Nonuniform variate generation and simple quantile estimates
+ * 
+ * 
+ * The program of Listing&nbsp;
+ * {@link REF_examples_lst_Nonuniform Nonuniform} simulates the
+ * following artificial model. Define the random variable
+ * @f[
+ *   X = Y_1 + \cdots+ Y_N + W_1 + …+ W_M,
+ * @f]
+ * where @f$N@f$ is Poisson with mean @f$\lambda@f$, @f$M@f$ is geometric
+ * with parameter @f$p@f$, the @f$Y_j@f$’s are gamma with parameters
+ * @f$(\alpha, \beta)@f$, the @f$W_j@f$’s are lognormal with parameters
+ * @f$(\mu,\sigma)@f$, and all these random variables are independent. We
+ * want to generate @f$n@f$ copies of @f$X@f$, say @f$X_1,…,X_n@f$, and
+ * estimate the 0.10, 0.50, 0.90, and 0.99 quantiles of the distribution of
+ * @f$X@f$, simply from the quantiles of the empirical distribution.
+ *
+ * The method `simulateRuns` generates @f$n@f$ copies of @f$X@f$ and pass
+ * them to a statistical collector of class `TallyStore`, that stores the
+ * individual observations. These observations are sorted in increasing order
+ * by invoking `quickSort`, and the appropriate empirical quantiles are
+ * printed, together with a short report.
+ *
+ *  **Simulating nonuniform variates and observing quantiles**
+ * &emsp;[Nonuniform]
+ * @anchor REF_examples_lst_Nonuniform
+ * @include tutorial/Nonuniform.java
+ *
+ *  <strong>Results of the program <tt>Nonuniform</tt></strong>
+ * &emsp;[Nonuniform]
+ * @anchor REF_examples_res_Nonuniform
+ * @include tutorial/Nonuniform.txt
+ *
+ * To simplify the program, all the parameters are fixed as constants at the
+ * beginning of the class. This is simpler, but not recommended in general
+ * because it does not permit one to perform experiments with different
+ * parameter sets in a single program. Passing the parameters to the
+ * constructor as in Listing&nbsp;
+ * {@link REF_examples_lst_Collision Collision} would require
+ * more lines of code, but would provide more flexibility.
+ *
+ * The class initialization also constructs a `RandomStream` of type
+ * `LFSR113` (this is a faster uniform generator that <tt>MRG32k3a</tt>),
+ * used to generate all the random numbers. For the generation of @f$N@f$, we
+ * construct a Poisson distribution with mean @f$\lambda@f$ (without giving
+ * it a name), and pass it together with the random stream to the constructor
+ * of class `PoissonGen`. The returned object `genN` is random number
+ * generator that generate Poisson random variables with mean @f$\lambda@f$,
+ * via inversion. As similar procedure is used to construct `genY` and
+ * `genW`, which generate gamma and lognormal random variates, respectively.
+ * Note that a `RandomVariateGenInt` produces integer-valued random variates,
+ * while a `RandomVariateGen` produces real-valued random variates. For the
+ * gamma distribution, we use a special type of random number generator based
+ * on a rejection method, which is faster than inversion. These constructors
+ * precompute some (hidden) constants once for all, to speedup the random
+ * variate generation. For the Poisson distribution with mean @f$\lambda@f$,
+ * the constructor of `PoissonDist` actually precomputes the distribution
+ * function in a table, and uses this table to compute the inverse
+ * distribution function each time a Poisson random variate needs to be
+ * generated with this particular distribution. This is possible because all
+ * Poisson random variates have the same parameter @f$\lambda@f$. If a
+ * different @f$\lambda@f$ was used for each variate, then we would use the
+ * static method of `PoissonDist` instead of constructing a Poisson
+ * distribution, otherwise we would have to reconstruct the distribution each
+ * time. The static method reconstructs part of the table each time, with the
+ * given @f$\lambda@f$, so it is slower if we want to generate several
+ * Poisson variates with the same @f$\lambda@f$. As an illustration, we use
+ * the static method to generate the geometric random variates (in
+ * <tt>generateX</tt>), instead of constructing a geometric distribution and
+ * variate generator. To generate @f$M@f$, we invoke the static method
+ * `inverseF` of the class `GeometricDist`, which evaluates the inverse
+ * geometric distribution function for a given parameter @f$p@f$ and a given
+ * uniform random variate.
+ *
+ * The results of this program, with @f$n = 10000@f$, are in Listing&nbsp;
+ * {@link REF_examples_res_Nonuniform Nonuniform}. We see that
+ * @f$X@f$ has a coefficient of variation larger than 1, and the quantiles
+ * indicate that the distribution is skewed, with a long thick tail to the
+ * right. We have @f$X < 553@f$ about half the time, but values over several
+ * thousands are not uncommon. This probably happens when @f$N@f$ or @f$M@f$
+ * takes a large value. There are also cases where @f$N=M=0@f$, in which case
+ * @f$X=0@f$.
+ * 
+ * 
+ * @subsection REF_examples_sec_inventory A discrete-time inventory system
+ * 
+ * 
+ * Consider a simple inventory system where the demands for a given product
+ * on successive days are independent Poisson random variables with mean
+ * @f$\lambda@f$. If @f$X_j@f$ is the stock level at the beginning of day
+ * @f$j@f$ and @f$D_j@f$ is the demand on that day, then there are
+ * @f$\min(D_j, X_j)@f$ sales, @f$\max(0, D_j - X_j)@f$ lost sales, and the
+ * stock at the end of the day is @f$Y_j = \max(0, X_j - D_j)@f$. There is a
+ * revenue @f$c@f$ for each sale and a cost @f$h@f$ for each unsold item at
+ * the end of the day. The inventory is controlled using a @f$(s,S)@f$
+ * policy: If @f$Y_j < s@f$, order @f$S - Y_j@f$ items, otherwise do not
+ * order. When an order is made in the evening, with probability @f$p@f$ it
+ * arrives during the night and can be used for the next day, and with
+ * probability @f$1-p@f$ it never arrives (in which case a new order will
+ * have to be made the next evening). When the order arrives, there is a
+ * fixed cost @f$K@f$ plus a marginal cost of @f$k@f$ per item. The stock at
+ * the beginning of the first day is @f$X_0 = S@f$.
+ *
+ * We want to simulate this system for @f$m@f$ days, for a given set of
+ * parameters and a given control policy @f$(s,S)@f$, and replicate this
+ * simulation @f$n@f$ times independently to estimate the expected profit per
+ * day over a time horizon of @f$m@f$ days. Eventually, we might want to
+ * *optimize* the values of the decision parameters @f$(s,S)@f$ via
+ * simulation, but we do not do that here. (In practice, this is usually done
+ * for more complicated models.)
+ *
+ *  **A simulation program for the simple inventory system**
+ * &emsp;[Inventory]
+ * @anchor REF_examples_lst_Inventory
+ * @include tutorial/Inventory.java
+ *
+ * Listing&nbsp; {@link REF_examples_lst_Inventory Inventory}
+ * gives a Java program, based on the SSJ library, that performs the required
+ * simulation for @f$n=500@f$, @f$m=2000@f$, @f$s=80@f$, @f$S=200@f$,
+ * @f$\lambda=100@f$, @f$c=2@f$, @f$h=0.1@f$, @f$K=10@f$, @f$k=1@f$, and
+ * @f$p=0.95@f$.
+ *
+ * The `import` statements at the beginning of the program retrieve the SSJ
+ * packages/classes that are needed. The `Inventory` class has a constructor
+ * that initializes the model parameters (saving their values in class
+ * variables) and constructs the required random number generators and the
+ * statistical collector. To generate the demands @f$D_j@f$ on successive
+ * days, we create (in the last line of the constructor) a random number
+ * stream and a Poisson distribution with mean @f$\lambda@f$, and then a
+ * Poisson random variate generator `genDemand` that uses this stream and
+ * this distribution. This mechanism will (automatically) precompute tables
+ * to ensure that the Poisson variate generation is efficient. This can be
+ * done because the value of @f$\lambda@f$ does not change during the
+ * simulation. The random number stream `streamOrder`, used to decide which
+ * orders are received, and the statistical collector `statProfit`, are also
+ * created when the `Inventory` constructor is invoked. The code that invokes
+ * their constructors is outside the `Inventory` constructor, but it could
+ * have been inside as well. On the other hand, `genDemand` must be
+ * constructed inside the `Inventory` constructor, because the value of
+ * @f$\lambda@f$ is not yet defined outside. The *random number streams* can
+ * be viewed as virtual random number generators that generate random numbers
+ * in the interval @f$[0,1)@f$ according to the uniform probability
+ * distribution.
+ *
+ * The method `simulateOneRun` simulates the system for @f$m@f$ days, with a
+ * given policy, and returns the average profit per day. For each day, we
+ * generate the demand @f$D_j@f$, compute the stock @f$Y_j@f$ at the end of
+ * the day, and add the sales revenues minus the leftover inventory costs to
+ * the profit. If @f$Y_j < s@f$, we generate a uniform random variable
+ * @f$U@f$ over the interval @f$(0,1)@f$ and an order of size @f$S - Y_j@f$
+ * is received the next morning if @f$U < p@f$ (that is, with probability
+ * @f$p@f$). In case of a successful order, we pay for it and the stock level
+ * is reset to @f$S@f$.
+ *
+ * The method `simulateRuns` performs @f$n@f$ independent simulation runs of
+ * this system and returns a report that contains a 90% confidence interval
+ * for the expected profit. The main program constructs an `Inventory` object
+ * with the desired parameters, asks for @f$n@f$ simulation runs, and prints
+ * the report. It also creates a timer that computes the total CPU time to
+ * execute the program, and prints it. The results are in Listing&nbsp;
+ * {@link REF_examples_res_Inventory Inventory}. The average
+ * profit per day is approximately 85. It took 0.39 seconds (on a 2.4 GHz
+ * computer running Linux) to simulate the system for 2000 days, compute the
+ * statistics, and print the results.
+ *
+ *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory]
+ * @anchor REF_examples_res_Inventory
+ * @include tutorial/Inventory.txt
+ *
+ * In Listing&nbsp; {@link REF_examples_lst_InventoryCRN
+ * InventoryCRN}, we extend the `Inventory` class to a class `InventoryCRN`
+ * that compares two sets of values of the inventory control policy
+ * parameters @f$(s,S)@f$.
+ *
+ *  **Comparing two inventory policies with common random numbers**
+ * &emsp;[InventoryCRN]
+ * @anchor REF_examples_lst_InventoryCRN
+ * @include tutorial/InventoryCRN.java
+ *
+ * The method `simulateDiff` simulates the system with policies @f$(s_1,
+ * S_1)@f$ and @f$(s_2, S_2)@f$ independently, computes the difference in
+ * profits, and repeats this @f$n@f$ times. These @f$n@f$ differences are
+ * tallied in statistical collector `statDiff`, to estimate the expected
+ * difference in average daily profits between the two policies.
+ *
+ * The method `simulateDiffCRN` does the same, but using *common random
+ * numbers* across pairs of simulation runs. After running the simulation
+ * with policy @f$(s_1, S_1)@f$, the two random number streams are reset to
+ * the start of their current substream, so that they produce exactly the
+ * same sequence of random numbers when the simulation is run with policy
+ * @f$(s_2, S_2)@f$. Then the difference in profits is given to the
+ * statistical collector `statDiff` as before and the two streams are reset
+ * to a new substream for the next pair of simulations.
+ *
+ * Why not use the same stream for both the demands and orders? In this
+ * example, we need one random number to generate the demand each day, and
+ * also one random number to know if the order arrives, but only on the days
+ * where we make an order. These days where we make an order are not
+ * necessarily the same for the two policies. So if we use a single stream
+ * for both the demands and orders, the random numbers will not necessarily
+ * be used for the same purpose across the two policies: a random number used
+ * to decide if the order arrives in one case may end up being used to
+ * generate a demand in the other case. This can greatly diminish the power
+ * of the common random numbers technology. Using two different streams as in
+ * Listing&nbsp; {@link REF_examples_lst_InventoryCRN
+ * InventoryCRN} ensures at least that the random numbers are used for the
+ * same purpose for the two policies. For more explanations and examples
+ * about common random numbers, see @cite sLAW00a, @cite sLEC09a&thinsp;.
+ *
+ * The main program estimates the expected difference in average daily
+ * profits for policies @f$(s_1, S_1) = (80, 198)@f$ and @f$(s_2, S_2) = (80,
+ * 200)@f$, first with independent random numbers, then with common random
+ * numbers. The other parameters are the same as before. The results are in
+ * Listing&nbsp; {@link REF_examples_res_InventoryCRN
+ * InventoryCRN}. We see that use of common random numbers reduces the
+ * variance by a factor of approximately 19 in this case.
+ *
+ *  <strong>Results of the program `InventoryCRN`</strong>
+ * &emsp;[InventoryCRN]
+ * @anchor REF_examples_res_InventoryCRN
+ * @include tutorial/InventoryCRN.txt
+ * 
+ * 
+ * @subsection REF_examples_sec_queue_lindley A single-server queue with Lindley’s recurrence
+ * 
+ * 
+ * We consider here a *single-server queue*, where customers arrive randomly
+ * and are served one by one in their order of arrival, i.e., *first in,
+ * first out* (FIFO). We suppose that the times between successive arrivals
+ * are exponential random variables with mean @f$1/\lambda@f$, that the
+ * service times are exponential random variables with mean @f$1/\mu@f$, and
+ * that all these random variables are mutually independent. The customers
+ * arriving while the server is busy must join the queue. The system
+ * initially starts empty. We want to simulate the first @f$m@f$ customers in
+ * the system and compute the mean waiting time per customer.
+ *
+ * This simple model is well-known in queuing theory: It is called an
+ * @f$M/M/1@f$ queue. Simple formulas are available for this model to compute
+ * the average waiting time per customer, average queue length, etc., over an
+ * *infinite* time horizon @cite pKLE75a&thinsp;. For a finite number of
+ * customers or a finite time horizon, these expectations can also be
+ * computed by numerical methods, but here we just want to show how it can be
+ * simulated.
+ *
+ * In a single-server queue, if @f$W_i@f$ and @f$S_i@f$ are the waiting time
+ * and service time of the @f$i@f$th customer, and @f$A_i@f$ is the time
+ * between the arrivals of the @f$i@f$th and @f$(i+1)@f$th customers, we have
+ * @f$W_1=0@f$ and the @f$W_i@f$’s follow the recurrence
+ * @anchor REF_examples_examples_eq_lindley
+ * @f[
+ *   W_{i+1} = \max(0,\; W_i + S_i - A_i), \tag{lindley}
+ * @f]
+ * known as *Lindley’s equation* @cite pKLE75a&thinsp;.
+ *
+ *  **A simulation based on Lindley’s recurrence** &emsp;[QueueLindley]
+ * @anchor REF_examples_lst_QueueLindley
+ * @include tutorial/QueueLindley.java
+ *
+ * The program of Listing&nbsp;
+ * {@link REF_examples_lst_QueueLindley QueueLindley} exploits
+ * ( {@link REF_examples_eq_lindley lindley} ) to compute the
+ * average waiting time of the first @f$m@f$ customers in the queue, repeats
+ * it @f$n@f$ times independently, and prints a summary of the results. Here,
+ * for a change, we pass the model parameters to the methods instead of to
+ * the constructor, and the random variates are generated by static methods
+ * instead of via a `RandomVariateGen` object as in the *Inventory* class
+ * (previous example). This illustrates various ways of doing the same thing.
+ * The instruction “<tt>Wi += …</tt>” could also be replaced by
+ *
+ * @code
+ *
+ *       Wi += - Math.log (1.0 - streamServ.nextDouble()) / mu
+ *             + Math.log (1.0 - streamArr.nextDouble()) / lambda;
+ * @endcode
+ *
+ *  which directly implements inversion of the exponential distribution.
+ * 
+ * 
+ * @subsection REF_examples_sec_observer Using the observer design pattern
+ * 
+ * 
+ * Listing&nbsp; {@link REF_examples_lst_QueueObs QueueObs}
+ * adds a few ingredients to the program `QueueLindley`, in order to
+ * illustrate the *observer* design pattern implemented in package `stat`.
+ * This mechanism permits one to separate data generation from data
+ * processing. It can be very helpful in large simulation programs or
+ * libraries, where different objects may need to process the same data in
+ * different ways. These objects may have the task of storing observations or
+ * displaying statistics in different formats, for example, and they are not
+ * necessarily fixed in advance.
+ *
+ * The *observer* pattern, supported by the
+ * @ref umontreal.ssj.stat.ObservationListener interface in SSJ, offers the
+ * appropriate flexibility for that kind of situation. A statistical probe
+ * maintains a list of registered
+ * @ref umontreal.ssj.stat.ObservationListener objects, and broadcasts
+ * information to all its registered observers whenever appropriate. Any
+ * object that implements the interface
+ * @ref umontreal.ssj.stat.ObservationListener can register as an observer.
+ *
+ * `StatProbe` in package `stat`, as well as its subclasses `Tally` and
+ * `Accumulate`, contains a list of <tt>ObservationListener</tt>’s. Whenever
+ * they receive a new statistical observation, e.g., via `Tally.add` or
+ * `Accumulate.update`, they send the new value to all registered observers.
+ * To register as an observer, an object must implement the interface
+ * @ref umontreal.ssj.stat.ObservationListener This implies that it must
+ * provide an implementation of the method `newObservation`, whose purpose is
+ * to recover the information that the object has registered for.
+ *
+ * In the example, the statistical collector `waitingTimes` transmits to all
+ * its registered listeners each new statistical observation that it receives
+ * via its `add` method. More specifically, each call to
+ * `waitingTimes.add(x)` generates in the background a call to
+ * `o.newObservation(waitingTimes, x)` for all registered observers `o`.
+ *
+ *  The method `notifyObs` is used to turn the tally into such an agency. In
+ * fact, the collector is both a tally and a distribution agency, but its
+ * tally functionality can be disabled using the `stopCollectStat` method.
+ * This can be useful when the registered observers already perform
+ * statistical collection.
+ *
+ * Two observers register to receive observations from `waitingTimes` in the
+ * example. They are anonymous objects of classes `ObservationTrace` and
+ * `LargeWaitsCollector`, respectively. Each one is informed of any new
+ * observation @f$W_i@f$ via its `newObservation` method. The task of the
+ * `ObservationTrace` observer is to print the waiting times @f$W_5@f$,
+ * @f$W_{10}@f$, @f$W_{15}@f$, …, whereas the `LargeWaitsCollector` observer
+ * stores in an array all waiting times that exceed 2. The statistical
+ * collector `waitingTimes` itself also stores appropriate information to be
+ * able to provide a statistical report when required.
+ *
+ * The `ObservationListener` interface specifies that `newObservation` must
+ * have two formal parameters, of classes `StatProbe` and `double`,
+ * respectively. The second parameter is the value of the observation. In the
+ * case where the observer registers to several `ObservationListener`
+ * objects, the first parameter of `newObservation` tells it which one is
+ * sending the information, so it can adopt the correct behavior for this
+ * sender.
+ *
+ *  **A simulation of Lindley’s recurrence using observers** &emsp;[QueueObs]
+ * @anchor REF_examples_lst_QueueObs
+ * @include tutorial/QueueObs.java
+ * 
+ * 
+ * @subsection REF_examples_sec_asian Pricing an Asian option
+ * 
+ * 
+ * A *geometric Brownian motion* (GBM) @f$\{S(\zeta), \zeta\ge0\}@f$
+ * satisfies
+ * @f[
+ *   S(\zeta) = S(0) \exp\left[(r - \sigma^2/2)\zeta+ \sigma B(\zeta)\right]
+ * @f]
+ * where @f$r@f$ is the *risk-free appreciation rate*, @f$\sigma@f$ is the
+ * *volatility parameter*, and @f$B@f$ is a standard Brownian motion, i.e., a
+ * stochastic process whose increments over disjoint intervals are
+ * independent normal random variables, with mean 0 and variance
+ * @f$\delta@f$ over an interval of length @f$\delta@f$ (see, e.g.,
+ * @cite fGLA04a&thinsp;). The GBM process is a popular model for the
+ * evolution in time of the market price of financial assets. A
+ * discretely-monitored *Asian option* on the arithmetic average of a given
+ * asset has discounted payoff
+ * @anchor REF_examples_examples_eq_payasian
+ * @f[
+ *   \tag{payasian} X = e^{-rT} \max[\bar{S} - K,  0]
+ * @f]
+ * where @f$K@f$ is a constant called the *strike price* and
+ * @anchor REF_examples_examples_eq_arithmetic_average
+ * @f[
+ *   \tag{arithmetic-average} \bar{S} = \frac{1}{t} \sum_{j=1}^t S(\zeta_j),
+ * @f]
+ * for some fixed observation times @f$0 < \zeta_1 < \cdots< \zeta_t =
+ * T@f$. The value (or fair price) of the Asian option is @f$c = E[X]@f$
+ * where the expectation is taken under the so-called risk-neutral measure
+ * (which means that the parameters @f$r@f$ and @f$\sigma@f$ have to be
+ * selected in a particular way; see @cite fGLA04a&thinsp;).
+ *
+ * This value @f$c@f$ can be estimated by simulation as follows. Generate
+ * @f$t@f$ independent and identically distributed (i.i.d.) @f$N(0,1)@f$
+ * random variables @f$Z_1,…,Z_t@f$ and put @f$B(\zeta_j) = B(\zeta_{j-1})
+ * + \sqrt{\zeta_j - \zeta_{j-1}} Z_j@f$, for @f$j=1,…,t@f$, where
+ * @f$B(\zeta_0) = \zeta_0 = 0@f$. Then,
+ * @anchor REF_examples_examples_eq_Szetaj
+ * @f[
+ *   S(\zeta_j) = S(0) e^{(r-\sigma^2/2)\zeta_j + \sigma B(\zeta_j)} = S(\zeta_{j-1}) e^{(r-\sigma^2/2)(\zeta_j-\zeta_{j-1}) + \sigma\sqrt{\zeta_j - \zeta_{j-1}} Z_j} \tag{Szetaj}
+ * @f]
+ * for @f$j = 1,…,t@f$ and the payoff can be computed via (
+ * {@link REF_examples_eq_payasian payasian} ). This can be
+ * replicated @f$n@f$ times, independently, and the option value is estimated
+ * by the average discounted payoff. The Java program of Listing&nbsp;
+ * {@link REF_examples_lst_Asian Asian} implement this
+ * procedure.
+ *
+ * Note that generating the sample path and computing the payoff is done in
+ * two different methods. This way, other methods could eventually be added
+ * to compute payoffs that are defined differently (e.g., based on the
+ * geometric average, or with barriers, etc.) over the same generated sample
+ * path.
+ *
+ *  **Pricing an Asian option on a GMB process** &emsp;[Asian]
+ * @anchor REF_examples_lst_Asian
+ * @include tutorial/Asian.java
+ *
+ * The method `simulateRuns` performs @f$n@f$ independent simulation runs
+ * using the given random number stream and put the @f$n@f$ observations of
+ * the net payoff in the statistical collector `statValue`. In the `main`
+ * program, we first specify the 12 observation times @f$\zeta_j = j/12@f$
+ * for @f$j=1,…,12@f$, and put them in the array `zeta` (of size 13) together
+ * with @f$\zeta_0=0@f$. We then construct an `Asian` object with parameters
+ * @f$r=0.05@f$, @f$\sigma=0.5@f$, @f$K = 100@f$, @f$S(0)=100@f$,
+ * @f$t=12@f$, and the observation times contained in array `zeta`. We then
+ * create the statistical collector `statValue`, perform @f$10^5@f$
+ * simulation runs, and print the results. The discount factor @f$e^{-rT}@f$
+ * and the constants @f$\sigma\sqrt{\zeta_j - \zeta_{j-1}}@f$ and
+ * @f$(r-\sigma^2/2)(\zeta_j - \zeta_{j-1})@f$ are precomputed in the
+ * constructor `Asian`, to speed up the simulation.
+ *
+ * The program in Listing&nbsp;
+ * {@link REF_examples_lst_AsianQMC AsianQMC} extends the class
+ * `Asian` to `AsianQMC`, whose method <tt>simulateQMC</tt> estimates the
+ * option value via randomized quasi-Monte Carlo. It uses @f$m@f$
+ * independently randomized copies of digital net `p` and puts the results in
+ * statistical collector `statAverage`. The randomization is a left matrix
+ * scramble followed by a digital random shift, applied before each batch of
+ * @f$n@f$ simulation runs.
+ *
+ *  **Pricing an Asian option on a GMB process with quasi-Monte Carlo**
+ * &emsp;[AsianQMC]
+ * @anchor REF_examples_lst_AsianQMC
+ * @include tutorial/AsianQMC.java
+ *
+ * The random number stream passed to the method `simulateRuns` is an
+ * iterator that enumerates the points and coordinates of the randomized
+ * point set `p`. These point set iterators, available for each type of point
+ * set in package `hups`, implement the `RandomStream` interface and permit
+ * one to easily replace the uniform random numbers by (randomized)
+ * highly-uniform point sets or sequences, without changing the code of the
+ * model itself. The method `resetStartStream`, invoked immediately after
+ * each randomization, resets the iterator to the first coordinate of the
+ * first point of the point set `p`. The number @f$n@f$ of simulation runs is
+ * equal to the number of points. The points correspond to substreams in the
+ * `RandomStream` interface. The method `resetNextSubstream`, invoked after
+ * each simulation run in `simulateRuns`, resets the iterator to the first
+ * coordinate of the next point. Each generation of a uniform random number
+ * (directly or indirectly) with this stream during the simulation moves the
+ * iterator to the next coordinate of the current point.
+ *
+ * The point set used in this example is a *Sobol’ net* with @f$n = 2^{16}@f$
+ * points in @f$t@f$ dimensions. The `main` program passes this point set to
+ * `simulateQMC` and asks for @f$m=20@f$ independent randomizations. It then
+ * computes the empirical variance and CPU time *per simulation run* for both
+ * MC and randomized QMC. It prints the ratio of variances, which can be
+ * interpreted as the estimated *variance reduction factor* obtained when
+ * using QMC instead of MC in this example, and the ratio of efficiencies,
+ * which can be interpreted as the estimated *efficiency improvement factor*.
+ * (The efficiency of an estimator is defined as 1/(variance @f$\times@f$
+ * CPU time per run.) The results are in Listing&nbsp;
+ * {@link REF_examples_res_AsianQMC AsianQMC}: QMC reduces the
+ * variance by a factor of around 250 and improves the efficiency by a factor
+ * of over 500. Randomized QMC not only reduces the variance, it also runs
+ * faster than MC. The main reason for this is the call to
+ * `resetNextSubstream` in `simulateRuns`, which is rather costly for a
+ * random number stream of class `MRG32k3a` (with the current implementation)
+ * and takes negligible time for an iterator over a digital net in base 2. In
+ * fact, in the the case of MC, the call to `resetNextSubstream` is not
+ * really needed. Removing it for that case reduces the CPU time by more than
+ * 40%.
+ *
+ *  <strong>Results of the program `AsianQMC`</strong> &emsp;[AsianQMC]
+ * @anchor REF_examples_res_AsianQMC
+ * @include tutorial/AsianQMC.txt
+ * 
+ * 
+ * @section REF_examples_sec_event Discrete-Event Simulation
+ * 
+ * 
+ * Examples of discrete-event simulation programs, based on the event view
+ * supported by the package `simevents`, are given in this section.
+ * 
+ * 
+ * @subsection REF_examples_sec_queue_event The single-server queue with an event view
+ * 
+ * 
+ * We return to the single-server queue considered in Section&nbsp;
+ * @ref REF_examples_sec_queue_lindley. This time, instead of simulating a
+ * fixed number of customers, we simulate the system for a fixed time horizon
+ * of 1000.
+ *
+ *  <strong>Event-oriented simulation of an @f$M/M/1@f$ queue</strong>
+ * &emsp;[QueueEv]
+ * @anchor REF_examples_lst_QueueEv
+ * @include tutorial/QueueEv.java
+ *
+ * Listing&nbsp; {@link REF_examples_lst_QueueEv QueueEv} gives
+ * an event-oriented simulation program, where a subclass of the class
+ * `Event` is defined for each type of event that can occur in the
+ * simulation: arrival of a customer (<tt>Arrival</tt>), departure of a
+ * customer (<tt>Departure</tt>), and end of the simulation
+ * (<tt>EndOfSim</tt>). Each event *instance* is inserted into the *event
+ * list* upon its creation, with a scheduled time of occurrence, and is
+ * *executed* when the simulation clock reaches this time. Executing an event
+ * means invoking its `actions` method. Each event subclass must implement
+ * this method. The simulation clock and the event list (i.e., the list of
+ * events scheduled to occur in the future) are maintained behind the scenes
+ * by the class `Sim` of package `simevents`.
+ *
+ * When `QueueEv` is instantiated by the `main` method, the program creates
+ * two streams of random numbers, two random variate generators, two lists,
+ * and two statistical probes (or collectors). The random number streams are
+ * attached to random variate generators `genArr` and `genServ` which are
+ * used to generate the times between successive arrivals and the service
+ * times, respectively. We can use such an attached generator because the
+ * means (parameters) do not change during simulation. The lists `waitList`
+ * and `servList` contain the customers waiting in the queue and the customer
+ * in service (if any), respectively. Maintaining a list for the customer in
+ * service may seem exaggerated, because this list never contains more than
+ * one object, but the current design has the advantage of working with very
+ * little change if the queuing model has more than one server, and in other
+ * more general situations. Note that we could have used the class
+ * `LinkedListStat` from package `simevents` instead of
+ * `java.util.LinkedList`. However, with our current implementation, the
+ * automatic statistical collection in that `LinkedListStat` class would not
+ * count the customers whose waiting time is zero, because they are never
+ * placed in the list.  Here we use the class `List` from package
+ * `simevents`. This class is equivalent to the standard class
+ * `java.util.LinkedList`, except that its implementation is more efficient
+ * than the current one in JDK and it can also collect statistics
+ * automatically. However, the automatic statistical collection on `waitList`
+ * would not count the customers whose waiting time is zero, because they are
+ * never placed in this list, so we do not use this facility.
+ *
+ * The statistical probe `custWaits` collects statistics on the customer’s
+ * waiting times. It is of the class `Tally`, which is appropriate when the
+ * statistical data of interest is a sequence of observations @f$X_1, X_2,
+ * …@f$ of which we might want to compute the sample mean, variance, and so
+ * on. A new observation is given to this probe by the `add` method each time
+ * a customer starts its service. Every `add` to a `Tally` probe brings a new
+ * observation @f$X_i@f$, which corresponds here to a customer’s waiting time
+ * in the queue. The other statistical probe, `totWait`, is of the class
+ * `Accumulate`, which means that it computes the integral (and, eventually,
+ * the time-average) of a continuous-time stochastic process with
+ * piecewise-constant trajectory. Here, the stochastic process of interest is
+ * the length of the queue as a function of time. One must call
+ * `totWait.update` whenever there is a change in the queue size, to update
+ * the (hidden) *accumulator* that keeps the current value of the integral of
+ * the queue length. This integral is equal, after each update, to the total
+ * waiting time in the queue, for all the customers, since the beginning of
+ * the simulation.
+ *
+ * Each customer is an object with two fields: `arrivTime` memorizes this
+ * customer’s arrival time to the system, and `servTime` memorizes its
+ * service time. This object is created, and its fields are initialized, when
+ * the customer arrives.
+ *
+ * The method `simulateOneRun` simulates this system for a fixed time
+ * horizon. It first invokes `Sim.init`, which initializes the clock and the
+ * event list. The method `Sim.start` actually starts the simulation by
+ * advancing the clock to the time of the first event in the event list,
+ * removing this event from the list, and executing it. This is repeated
+ * until either `Sim.stop` is called or the event list becomes empty.
+ * `Sim.time` returns the current time on the simulation clock. Here, two
+ * events are scheduled before starting the simulation: the end of the
+ * simulation at time horizon, and the arrival of the first customer at a
+ * random time that has the exponential distribution with *rate*
+ * @f$\lambda@f$ (i.e., *mean* @f$1/\lambda@f$), generated by `genArr`
+ * using inversion and its attached random stream. The method
+ * `genArr.nextDouble` returns this exponential random variate.
+ *
+ * The method `actions` of the class `Arrival` describes what happens when an
+ * arrival occurs. Arrivals are scheduled by a domino effect: the first
+ * action of each arrival event schedules the next event in a random number
+ * of time units, generated from the exponential distribution with rate
+ * @f$\lambda@f$. Then, the newly arrived customer is created, its arrival
+ * time is set to the current simulation time, and its service time is
+ * generated from the exponential distribution with mean @f$1/\mu@f$, using
+ * the random variate generator `genServ`. If the server is busy, this
+ * customer is inserted at the end of the queue (the list <tt>waitList</tt>)
+ * and the statistical probe `totWait`, that keeps track of the size of the
+ * queue, is updated. Otherwise, the customer is inserted in the server’s
+ * list `servList`, its departure is scheduled to happen in a number of time
+ * units equal to its service time, and a new observation of 0.0 is given to
+ * the statistical probe `custWaits` that collects the waiting times.
+ *
+ * When a `Departure` event occurs, the customer in service is removed from
+ * the list (and disappears). If the queue is not empty, the first customer
+ * is removed from the queue (<tt>waitList</tt>) and inserted in the server’s
+ * list, and its departure is scheduled. The waiting time of that customer
+ * (the current time minus its arrival time) is given as a new observation to
+ * the probe `custWaits`, and the probe `totWait` is also updated with the
+ * new (reduced) size of the queue.
+ *
+ * The event `EndOfSim` stops the simulation. Then the `main` routine regains
+ * control and prints statistical reports for the two probes. The results are
+ * shown in Listing&nbsp; {@link REF_examples_res_QueueEv
+ * QueueEv}. When calling `report` on an `Accumulate` object, an implicit
+ * update is done using the current simulation time and the last value given
+ * to `update`. In this example, this ensures that the `totWait` accumulator
+ * will integrate the total wait until the time horizon, because the
+ * simulation clock is still at that time when the report is printed. Without
+ * such an automatic update, the accumulator would integrate only up to the
+ * last update time before the time horizon.
+ *
+ *  <strong>Results of the program `QueueEv`</strong> &emsp;[QueueEv]
+ * @anchor REF_examples_res_QueueEv
+ * @include tutorial/QueueEv.txt
+ * 
+ * 
+ * @subsection REF_examples_sec_preypred Continuous simulation: A prey-predator system
+ * 
+ * 
+ * We consider a classical prey-predator system, where the preys are food for
+ * the predators (see, e.g., @cite sLAW00a&thinsp;, page 87). Let @f$x(t)@f$
+ * and @f$z(t)@f$ be the numbers of preys and predators at time @f$t@f$,
+ * respectively. These numbers are integers, but as an approximation, we
+ * shall assume that they are real-valued variables evolving according to the
+ * differential equations
+ * @f{align*}{
+ *    x’(t) 
+ *    & 
+ *   = 
+ *    r x(t) - c x(t) z(t)
+ *    \\ 
+ *   z’(t) 
+ *    & 
+ *   = 
+ *    -s z(t) + d x(t) z(t)
+ * @f}
+ * with initial values @f$x(0)=x_0>0@f$ et @f$z(0)=z_0>0@f$. This is a
+ * *Lotka-Volterra* system of differential equations, which has a known
+ * analytical solution. Here, in the program of Listing&nbsp;
+ * {@link REF_examples_lst_PreyPred PreyPred}, we simply
+ * simulate its evolution, to illustrate the continuous simulation facilities
+ * of SSJ.
+ *
+ *  **Simulation of the prey-predator system** &emsp;[PreyPred]
+ * @anchor REF_examples_lst_PreyPred
+ * @include tutorial/PreyPred.java
+ *
+ * Note that, instead of using the default simulator, this program explicitly
+ * creates a discrete-event  @ref umontreal.ssj.simevents.Simulator object to
+ * manage the execution of the simulation, unlike the other examples in this
+ * section.
+ *
+ * The program prints the triples @f$(t, x(t), z(t))@f$ at values of @f$t@f$
+ * that are multiples of `h`, one triple per line. This is done by an event
+ * of class `PrintPoint`, which is rescheduled at every `h` units of time.
+ * This output can be redirected to a file for later use, for example to plot
+ * a graph of the trajectory. The continuous variables `x` and `z` are
+ * instances of the classes `Preys` and `Preds`, whose method `derivative`
+ * give their derivative @f$x’(t)@f$ and @f$z’(t)@f$, respectively. The
+ * differential equations are integrated by a Runge-Kutta method of order 4.
+ * 
+ * 
+ * @subsection REF_examples_sec_bank A simplified bank
+ * 
+ * 
+ * This is Example&nbsp;1.4.1 of @cite sBRA87a&thinsp;, page&nbsp;14. A bank
+ * has a random number of tellers every morning. On any given day, the bank
+ * has @f$t@f$ tellers with probability @f$q_t@f$, where @f$q_3 = 0.80@f$,
+ * @f$q_2 = 0.15@f$, and @f$q_1 = 0.05@f$. All the tellers are assumed to be
+ * identical from the modeling viewpoint.
+ *
+ *  @image html examples_examples_01.svg
+ * <!--
+ * LaTeX code used to generate the picture:
+ *
+ * \itemsep=0.0pt
+ * \hsize =6.0in \beginpicture \setcoordinatesystem units <1.8cm,2cm>
+ * \setplotarea x from 0 to 6.5, y from 0 to 1 \axis left label {\lines
+ * {arrival \  \cr rate }} ticks length <2pt> withvalues 0.5 1 / at 0.5 1 / /
+ * \axis bottom label {\hbox to 5.4in {\hfill time}} ticks length <2pt>
+ * withvalues 9:00 9:45 11:00 14:00 15:00 / at 0.0 0.75 2.0 5.0 6.0 / /
+ * \shaderectangleson \putrectangle corners at 0.75 0.0 and 2.0 0.5
+ * \putrectangle corners at 2.0 0.0 and 5.0 1.0 \putrectangle corners at 5.0
+ * 0.0 and 6.0 0.5 \endpicture
+ * -->
+ *
+ * <center>Arrival rate of customers to the bank.</center>
+ *
+ *  @anchor REF_examples_fig_blambda
+ *
+ *  **Event-oriented simulation of the bank model** &emsp;[BankEv]
+ * @anchor REF_examples_lst_BankEv
+ * @include tutorial/BankEv.java
+ *
+ * The bank opens at 10:00 and closes at 15:00 (i.e., 3 p.m.). The customers
+ * arrive randomly according to a Poisson process with piecewise constant
+ * rate @f$\lambda(t)@f$, @f$t\ge0@f$. The arrival rate @f$\lambda(t)@f$
+ * (see Fig.&nbsp; {@link REF_examples_fig_blambda blambda} )
+ * is 0.5 customer per minute from 9:45 until 11:00 and from 14:00 until
+ * 15:00, and one customer per minute from 11:00 until 14:00. The customers
+ * who arrive between 9:45 and 10:00 join a FIFO queue and wait for the bank
+ * to open. At 15:00, the door is closed, but all the customers already in
+ * will be served. Service starts at 10:00.
+ *
+ * Customers form a FIFO queue for the tellers, with balking. An arriving
+ * customer will balk (walk out) with probability @f$p_k@f$ if there are
+ * @f$k@f$ customers ahead of him in the queue (not counting the people
+ * receiving service), where
+ * @f[
+ *   p_k = \begin{cases}
+ *    0 
+ *    & 
+ *    \text{if $k\le5$;} 
+ *    \\ 
+ *   (n-5)/5 
+ *    & 
+ *    \text{if $5 < k < 10$;} 
+ *    \\ 
+ *   1 
+ *    & 
+ *    \text{if $k\ge10$.} 
+ *   \end{cases}
+ * @f]
+ * The customer service times are independent Erlang random variables: Each
+ * service time is the sum of two independent exponential random variables
+ * with mean one.
+ *
+ * We want to estimate the expected number of customers served in a day, and
+ * the expected average wait for the customers served on a day.
+ *
+ * Listing&nbsp; {@link REF_examples_lst_BankEv BankEv} gives
+ * and event-oriented simulation program for this bank model. There are
+ * events at the fixed times 9:45, 10:00, etc. At 9:45, the counters are
+ * initialized and the arrival process is started. The time until the first
+ * arrival, or the time between one arrival and the next one, is
+ * (tentatively) an exponential with a mean of 2 minutes. However, as soon as
+ * an arrival turns out to be past 11:00, its time must be readjusted to take
+ * into account the increase of the arrival rate at 11:00. The event 11:00
+ * takes care of this readjustment, and the event at 14:00 makes a similar
+ * readjustment when the arrival rate decreases. We give the specific name
+ * `nextArriv` to the next planned arrival event in order to be able to
+ * reschedule that particular event to a different time. Note that a *single*
+ * arrival event is created at the beginning and this same event is scheduled
+ * over and over again. This can be done because there is never more than one
+ * arrival event in the event list. (We could have done that as well for the
+ * @f$M/M/1@f$ queue in Listing
+ * {@link REF_examples_lst_QueueEv QueueEv}.)
+ *
+ * At the bank opening at 10:00, an event generates the number of tellers and
+ * starts the service for the corresponding customers. The event at 15:00
+ * cancels the next arrival.
+ *
+ * Upon arrival, a customer checks if a teller is free. If so, one teller
+ * becomes busy and the customer generates its service time and schedules his
+ * departure, otherwise the customer either balks or joins the queue. The
+ * balking decision is computed by the method `balk`, using the random number
+ * stream `streamBalk`. The arrival event also generates the next scheduled
+ * arrival. Upon departure, the customer frees the teller, and the first
+ * customer in the queue, if any, can start its service. The generator
+ * `genServ` is an `ErlangConvolutionGen` generator, so that the Erlang
+ * variates are generated by adding two exponentials instead of using
+ * inversion.
+ *
+ * The method `simulateDays` simulates the bank for `numDays` days and prints
+ * a statistical report. If @f$X_i@f$ is the number of customers served on
+ * day @f$i@f$ and @f$Q_i@f$ the total waiting time on day @f$i@f$, the
+ * program estimates @f$E[X_i]@f$ and @f$E[Q_i]@f$ by their sample averages
+ * @f$\bar{X}_n@f$ and @f$\bar{Q}_n@f$ with @f$n = @f$<tt>numDays</tt>. For
+ * each simulation run (each day), `simulOneDay` initializes the clock, event
+ * list, and statistical probe for the waiting times, schedules the
+ * deterministic events, and runs the simulation. After 15:00, no more
+ * arrival occurs and the event list becomes empty when the last customer
+ * departs. At that point, the program returns to right after the
+ * `Sim.start()` statement and updates the statistical counters for the
+ * number of customers served during the day and their total waiting time.
+ *
+ * The results are given in Listing&nbsp;
+ * {@link REF_examples_res_Bank Bank}.
+ *
+ *  <strong>Results of the `BankEv` program</strong> &emsp;[Bank]
+ * @anchor REF_examples_res_Bank
+ * @include tutorial/BankEv.txt
+ * 
+ * 
+ * @subsection REF_examples_sec_call_center A call center
+ * 
+ * 
+ * We consider here a simplified model of a telephone contact center (or
+ * <em>call center</em>) where agents answer incoming calls. Each day, the
+ * center operates for @f$m@f$ hours. The number of agents answering calls
+ * and the arrival rate of calls vary during the day; we shall assume that
+ * they are constant within each hour of operation but depend on the hour.
+ * Let @f$n_j@f$ be the number of agents in the center during hour @f$j@f$,
+ * for @f$j=0,…,m-1@f$. For example, if the center operates from 8 am to 9
+ * pm, then @f$m=13@f$ and hour @f$j@f$ starts at (@f$j+8@f$) o’clock. All
+ * agents are assumed to be identical. When the number of occupied agents at
+ * the end of hour @f$j@f$ is larger than @f$n_{j+1}@f$, ongoing calls are
+ * all completed but new calls are answered only when there are less than
+ * @f$n_{j+1}@f$ agents busy. After the center closes, ongoing calls are
+ * completed and calls already in the queue are answered, but no additional
+ * incoming call is taken.
+ *
+ * The calls arrive according to a Poisson process with piecewise constant
+ * rate, equal to @f$R_j = B \lambda_j@f$ during hour @f$j@f$, where the
+ * @f$\lambda_j@f$ are constants and @f$B@f$ is a random variable having the
+ * gamma distribution with parameters @f$(\alpha_0,\alpha_0)@f$. Thus,
+ * @f$B@f$ has mean 1 and variance @f$1/\alpha_0@f$, and it represents the
+ * *busyness* of the day; it is more busy than usual when @f$B > 1@f$ and
+ * less busy when @f$B < 1@f$. The Poisson process assumption means that
+ * conditional on @f$B@f$, the number of incoming calls during any
+ * subinterval @f$(t_1, t_2]@f$ of hour @f$j@f$ is a Poisson random variable
+ * with mean @f$(t_2 - t_1) B \lambda_j@f$ and that the arrival counts in
+ * any disjoint time intervals are independent random variables. This arrival
+ * process model is motivated and studied in @cite ccWHI99c&thinsp; and
+ * @cite ccAVR04a&thinsp;.
+ *
+ * Incoming calls form a FIFO queue for the agents. A call is *lost*
+ * (abandons the queue) when its waiting time exceed its *patience time*. The
+ * patience times of calls are assumed to be i.i.d. random variables with the
+ * following distribution: with probability @f$p@f$ the patience time is 0
+ * (so the person hangs up unless there is an agent available immediately),
+ * and with probability @f$1-p@f$ it is exponential with mean @f$1/\nu@f$.
+ * The service times are i.i.d. gamma random variables with parameters
+ * @f$(\alpha,\beta)@f$.
+ *
+ * We want to estimate the following quantities *in the long run* (i.e., over
+ * an infinite number of days): (a) @f$w@f$, the average waiting time per
+ * call, (b) @f$g(s)@f$, the fraction of calls whose waiting time is less
+ * than @f$s@f$ seconds for a given threshold @f$s@f$, and (c) @f$\ell@f$,
+ * the fraction of calls lost due to abandonment.
+ *
+ * Suppose we simulate the model for @f$n@f$ days. For each day @f$i@f$, let
+ * @f$A_i@f$ be the number of arrivals, @f$W_i@f$ the total waiting time of
+ * all calls, @f$G_i(s)@f$ the number of calls who waited less than @f$s@f$
+ * seconds, and @f$L_i@f$ the number of abandonments. For this model, the
+ * expected number of incoming calls in a day is @f$a = E[A_i] =
+ * \sum_{j=0}^{m-1} \lambda_j@f$. Then, @f$W_i/a@f$, @f$G_i(s)/a@f$, and
+ * @f$L_i/a@f$, @f$i=1,…,n@f$, are i.i.d. unbiased estimators of @f$w@f$,
+ * @f$g(s)@f$, and @f$\ell@f$, respectively, and can be used to compute
+ * confidence intervals for these quantities in a standard way if @f$n@f$ is
+ * large.
+ *
+ *  **Simulation of a simplified call center** &emsp;[CallCenter]
+ * @anchor REF_examples_lst_CallCenter
+ * @include tutorial/CallCenter.java
+ *
+ * Listing&nbsp; {@link REF_examples_lst_CallCenter CallCenter}
+ * gives an event-oriented simulation program for this call center model.
+ * When the `CallCenter` class is instantiated by the `main` method, the
+ * random streams, list, and statistical probes are created, and the model
+ * parameters are read from a file by the method `readData`. The line
+ * `Locale.setDefault(Locale.US)` is added because real numbers in the data
+ * file are read in the anglo-saxon form 8.3 instead of the form 8,3 used by
+ * most countries in the world. The `main` program then simulates @f$n =
+ * 1000@f$ operating days and prints the value of @f$a@f$, as well as 90%
+ * confidence intervals on @f$a@f$, @f$w@f$, @f$g(s)@f$, and @f$\ell@f$,
+ * based on their estimators @f$\bar{A}_n@f$, @f$\bar{W}_n/a@f$,
+ * @f$\bar{G}_n(s)/a@f$, and @f$\bar{L}_n/a@f$, assuming that these
+ * estimators have approximately the Student distribution. This is justified
+ * by the fact that @f$W_i@f$, and @f$G_i(s)@f$, and @f$L_i@f$ are themselves
+ * “averages” over several observations, so we may expect their distribution
+ * to be not far from a normal.
+ *
+ * To generate the service times, we use a gamma random variate generator
+ * called `genServ`, created in the constructor after the parameters
+ * @f$(\alpha,\beta)@f$ of the service time distribution have been read
+ * from the data file. For the other random variables in the model, we simply
+ * create random streams of i.i.d. uniforms (in the preamble) and apply
+ * inversion explicitly to generate the random variates. The latter approach
+ * is more convenient, e.g., for patience times because their distribution is
+ * not standard and for the inter-arrival times because their mean changes
+ * every period. For the gamma service time distribution, on the other hand,
+ * the parameters always remain the same and inversion is rather slow, so we
+ * decided to create a generator that uses a faster special method.
+ *
+ * The method `simulateOneDay` simulates one day of operation. It initializes
+ * the simulation clock, event list, and counters, schedules the center’s
+ * opening and the first arrival, and starts the simulation. When the day is
+ * over, it updates the statistical collectors. Note that there are two
+ * versions of this method; one that generates the random variate @f$B@f$ and
+ * the other that takes its value as an input parameter. This is convenient
+ * in case one wishes to simulate the center with a fixed value of @f$B@f$.
+ *
+ * An event `NextPeriod(j)` marks the beginning of each period @f$j@f$. The
+ * first of these events (for @f$j=0@f$) is scheduled by `simulateOneDay`;
+ * then the following ones schedule each other successively, until the end of
+ * the day. This type of event updates the number of agents in the center and
+ * the arrival rate for the next period. If the number of agents has just
+ * increased and the queue is not empty, some calls in the queue can now be
+ * answered. The method `checkQueue` verifies this and starts service for the
+ * appropriate number of calls. The time until the next planned arrival is
+ * readjusted to take into account the change of arrival rate, as follows.
+ * The inter-arrival times are i.i.d. exponential with mean @f$1/R_{j-1}@f$
+ * when the arrival rate is fixed at @f$R_{j-1}@f$. But when the arrival rate
+ * changes from @f$R_{j-1}@f$ to @f$R_j@f$, the residual time until the next
+ * arrival should be modified from an exponential with mean @f$1/R_{j-1}@f$
+ * (already generated) to an exponential with mean @f$1/R_j@f$. Multiplying
+ * the residual time by @f$\lambda_{j-1}/\lambda_j@f$ is an easy way to
+ * achieve this. We give the specific name `nextArrival` to the next arrival
+ * event in order to be able to reschedule it to a different time. Note that
+ * there is a *single* arrival event which is scheduled over and over again
+ * during the entire simulation. This is more efficient than creating a new
+ * arrival event for each call, and can be done here because there is never
+ * more than one arrival event at a time in the event list. At the end of the
+ * day, simply canceling the next arrival makes sure that no more calls will
+ * arrive.
+ *
+ * Each arrival event first schedules the next one. Then it increments the
+ * arrivals counter and creates the new call that just arrived. The call’s
+ * constructor generates its service time and decides where the incoming call
+ * should go. If an agent is available, the call is answered immediately (its
+ * waiting time is zero), and an event is scheduled for the completion of the
+ * call. Otherwise, the call must join the queue; its patience time is
+ * generated by `generPatience` and memorized, together with its arrival
+ * time, for future reference.
+ *
+ * Upon completion of a call, the number of busy agents is decremented and
+ * one must verify if a waiting call can now be answered. The method
+ * `checkQueue` verifies that and if the answer is yes, it removes the first
+ * call from the queue and activates its `endWait` method. This method first
+ * compares the call’s waiting time with its patience time, to see if this
+ * call is still waiting or has been lost (by abandonment). If the call was
+ * lost, we consider its waiting time as being equal to its patience time
+ * (i.e., the time that the caller has really waited), for the statistics. If
+ * the call is still there, the number of busy agents is incremented and an
+ * event is scheduled for the call completion.
+ *
+ * The results of this program, with the data in file `CallCenter.dat`, are
+ * shown in Listing&nbsp; {@link REF_examples_res_CallCenter
+ * CallCenter}.
+ *
+ *  **Simulation of a simplified call center** &emsp;[CallCenter]
+ * @anchor REF_examples_res_CallCenter
+ * @include tutorial/CallCenter.txt
+ *
+ * This model is certainly an oversimplification of actual call centers. It
+ * can be embellished and made more realistic by considering different types
+ * of agents, different types of calls, agents taking breaks for lunch,
+ * coffee, or going to the restroom, agents making outbound calls to reach
+ * customers when the inbound traffic is low (e.g., for marketing purpose or
+ * for returning calls), and so on. One could also model the revenue
+ * generated by calls and the operating costs for running the center, and use
+ * the simulation model to compare alternative operating strategies in terms
+ * of the expected net revenue, for example.
+ * 
+ */
