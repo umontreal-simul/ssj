@@ -40,7 +40,7 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
       return varEstimator.getApproximateMean();
    }
 
-   public void setModel (MonteCarloModelDouble model, double approxMean) {
+   public void setModel (MonteCarloModelDoubleRQMC model, double approxMean) {
       varEstimator.setModel(model, approxMean);
    }
 
@@ -142,7 +142,7 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
     * Returns the number of dimensions for the input.
     *
     */
-   @Override public int getDimension() {
+   public int getDimension() {
       return varEstimator.getDimension();
    }
    

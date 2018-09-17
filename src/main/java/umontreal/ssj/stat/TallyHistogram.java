@@ -24,10 +24,7 @@ package umontreal.ssj.stat;
  * limitations under the License.
  *
  */
-// package umontreal.ssj.stat;
-import umontreal.ssj.stat.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import umontreal.ssj.util.PrintfFormat;
 
 /**
@@ -50,7 +47,6 @@ public class TallyHistogram extends Tally {
 	protected double m_h; // width of 1 bin
 	protected double m_a; // left boundary of first bin
 	protected double m_b; // right boundary of last bin
-	private Logger log = Logger.getLogger("umontreal.ssj.stat");
 
 	/**
 	 * Constructs a `TallyHistogram` statistical probe. Divide the interval
@@ -117,7 +113,7 @@ public class TallyHistogram extends Tally {
 	}
 
 	/**
-	 * Initializes all the counters and accumulators.
+	 * Initializes all the counters and accumulators, including those of the `Tally` object.
 	 *
 	 */
 	public void init() {
@@ -152,7 +148,8 @@ public class TallyHistogram extends Tally {
 	}
 
 	/**
-	 * Gives a new observation @f$x@f$ to the statistical collectors. Increases by 1 the bin counter
+	 * Gives a new observation @f$x@f$ to the statistical probe. Updates are made as for the
+	 * parent `Tally` object.  Also increases by 1 the bin counter
 	 * in which value @f$x@f$ falls. Values that fall outside the interval @f$[a,b]@f$ are added 
 	 * to the extra bin counters.
 	 * 

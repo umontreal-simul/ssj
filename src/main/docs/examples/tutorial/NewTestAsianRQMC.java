@@ -8,7 +8,7 @@ import umontreal.ssj.mcqmctools.*;
 import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stat.PgfDataTable;
 
-public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
+public class NewTestAsianRQMC extends AsianGBM implements MonteCarloModelDouble {
 
 	public NewTestAsianRQMC(double r, double sigma, double strike, double s0, int s,
 	        double[] zeta) {
@@ -25,9 +25,8 @@ public class NewTestAsianRQMC extends Asian implements MonteCarloModelDouble {
 		return getPayoff();
 	}
 
-	@Override
 	public int getDimension() {
-		return s;
+		return d;
 	}
 
 	public String toString() {

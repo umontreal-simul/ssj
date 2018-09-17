@@ -2,8 +2,9 @@ package umontreal.ssj.stat.density;
 
 /**
  * This class implements a density derivative estimator (DDE) based on a kernel
- * density estimator (KDE) with kernel function \f$K\f$, see \ref
- * umontreal.ssj.stat.density.DEKernelDensity. Such an estimator is used to find
+ * density estimator (KDE) with kernel function \f$K\f$, 
+ * (@remark:  Not any kernel!  Also, I try to save uppercase letters for random variables.)
+ * see \ref umontreal.ssj.stat.density.DEKernelDensity. Such an estimator is used to find
  * the \f$r\f$-th derivative of an unknown density based on \f$n\f$ observations
  * \f$X_0,X_1,\dots,X_{n-1} \f$ of an underlying model. It is of the form
  * 

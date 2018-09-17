@@ -4,35 +4,50 @@ import umontreal.ssj.stat.ScaledHistogram;
 import umontreal.ssj.stat.TallyHistogram;
 
 /**
+ * Histogram density estimator for a univariate density. 
+ * 
  * This class provides methods to construct, manipulate, and evaluate a
- * histogram density estimator for univariate densities.
+ * histogram from a set of \f$n\f$ real-valued observations \f$x_0,\dots, x_{n-1}\f$.
+ * The constructor of a `DEHistogram` object takes the data, a finite interval \f$[a,b]\f$
+ * over which we want the histogram, and the number of bins (intervals), 
+ * and it constructs the histogram as a density estimator over this interval.
+ * For that, it computes the number of observations in each bin and rescale the 
+ * heights of the bins so that the total area of the histogram is equal to the proportion 
+ * of the observations that fall into the interval \f$[a,b]\f$.
+ * When all the observations are in \f$[a,b]\f$, then this area should be 1.
+ * The density estimator is represented internally as a 
+ *  \ref umontreal.ssj.stat.ScaledHistogram, which can be recovered by the
+ *  `getScaledHistogram()` method. 
+ * @remark: What if some observations are outside the interval?   
+ * Then the surface of the histogram over the interval [a,b] should be less than 1.
+ * Is this what we do?
  * 
- * The construction of a histogram is based on a set of \f$n\f$ individual
- * observations \f$X_0, …, X_{n-1}\f$ which, in turn, can be realizations of a
- * \ref umontreal.ssj.mcqmctools.MonteCarloModelDouble, collected data, etc. In
- * any case, this type of density estimator can by built from pure data stored
- * in an array, form a \ref umontreal.ssj.stat.TallyHistogram, or even from a
- * \ref umontreal.ssj.stat.ScaledHistogram.
+ * More specifically, if we ask for \f$s\f$ bins over the interval \f$[a,b]\f$,
+ * then the interval is partitioned over \f$s\f$ intervals of equal lengths
+ * \f$h=(b-a)/s\f$, and the density estimator is defined by 
  * 
+ * \f[
+ *   \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{n_j}{nh},   \quad\text{ for }
+ *   x\in[a+(j-1)h, a+jh),     \qquad j=1,\dots,s.
+ * \f]
  * 
- * It is essential to confine oneself to a finite interval \f$[a,b]\f$. For a
- * fixed number of bins \f$s>0\f$ we partition the interval \f$[a,b]\f$ into
- * \f$s\f$ subintervals of equal lengths \f$h\f$. Observe that \f$h=(b-a)/s\f$
- * and, hence, histogram estimators can also be parameterized by a bin width
- * \f$h>0\f$, as long as the resulting number of bins is an integer. The
- * estimator itself is then defined by
- * 
- * \f[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{n_j}{nh},\quad\text{for }
- * x\in[a+(j-1)h, a+jh), \quad j=1,\dots,s, \f]
- * 
- * where \f$n_j\f$ denotes the number of observations that fall in this
- * interval. Observe that changing \f$[a,b]\f$, \f$h\f$, or \f$s\f$ changes the
- * structure of the histogram completely. Thus, after any alteration of these
+ * where \f$n_j\f$ denotes the number of observations that fall in
+ * interval \f$j\f$. Observe that changing \f$[a,b]\f$, \f$h\f$, or \f$s\f$ changes the
+ * structure of the histogram completely. Thus, after altering any of these
  * parameters the histogram needs to be constructed afresh.
  * 
- * As histograms are constant within one bin, certain quantities such as the
+ * 
+ * The constructor can take as input an array that contains the raw data,
+ * together with the parameters \f$a, b, s\f$.
+ * It can also take a \ref umontreal.ssj.stat.TallyHistogram or a
+ * \ref umontreal.ssj.stat.ScaledHistogram  instead.
+ * 
+ * --------------------
+ * 
+ * ???   As histograms are constant within one bin, certain quantities such as the
  * variance are not affected by shifting an evaluation point within its bin.
  * Hence, selecting one evaluation point per bin is sufficient for such methods.
+ * @remark: This is not clear!!!
  * To this end, this class provides methods to evaluate the density estimator
  * once in each bin, without having to explicitly specify an array of evaluation
  * points.
@@ -65,6 +80,15 @@ public class DEHistogram extends DensityEstimator {
 		this.numBins = numBins;
 	}
 
+	/**
+	 * Returns the underlying `ScaledHistogram`.
+	 * 
+	 * @return underlying `ScaledHistogram` object.
+	 */
+	public ScaledHistogram getScaledHistogram() {
+		return histDensity;
+	}
+	
 	/**
 	 * Gives the number of bins \f$s\f$.
 	 * 
@@ -126,6 +150,7 @@ public class DEHistogram extends DensityEstimator {
 	}
 
 	/**
+	 * @remark: this must be the constructor!!!
 	 * Constructs a histogram over the interval \f$[a,b]\f$ from the observations
 	 * passed in \a data. The number of bins is taken as the value of #getNumBins().
 	 * Note that the individual observations are not being stored.
@@ -139,8 +164,7 @@ public class DEHistogram extends DensityEstimator {
 	 */
 	public void constructDensity(double[] data, double a, double b) {
 		// hist = new TallyHistogram(geta(), getb(), m);
-		TallyHistogram hist = new TallyHistogram(a, b, numBins);
-		constructDensity(hist);
+		constructDensity (new TallyHistogram(a, b, numBins));
 	}
 
 	/**

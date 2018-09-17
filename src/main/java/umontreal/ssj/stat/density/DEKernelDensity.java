@@ -14,7 +14,8 @@ import umontreal.ssj.probdist.ContinuousDistribution;
  * should be non-negative and integrate to one. For \f$x\in[a,b]\f$, the KDE
  * itself is defined as
  * 
- * @anchor REF_stat_density_DEKernelDensity_KDE \f[ \hat{f}_{n}(x) =
+ * @anchor REF_stat_density_DEKernelDensity_KDE 
+ *    \f[ \hat{f}_{n}(x) =
  *         \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} K\left( \frac{x -
  *         X_i}{h} \right). \tag{KDE} \f]
  * 
@@ -25,8 +26,15 @@ import umontreal.ssj.probdist.ContinuousDistribution;
 
 public class DEKernelDensity extends DensityEstimator {
 
-	/** the kernel function \f$K\f$. */
+	/** 
+	 * The kernel function \f$K\f$.
+    */
 	private ContinuousDistribution kernel;
+	
+	/**
+	 * The bandwidth \f$h\f$.
+	 */
+	private double h;
 
 	/**
 	 * threshold value for density-evaluation. Summands w.r.t. \f$i\f$ in (
@@ -34,10 +42,6 @@ public class DEKernelDensity extends DensityEstimator {
 	 * are considered negligible. It is set to \f$ 10^{-10} by default\f$.
 	 */
 	private double eps = 1.0E-10;
-	/**
-	 * The bandwidth \f$h\f$.
-	 */
-	private double h;
 
 	/**
 	 * Constructs a KDE with the kernel function \a kernel.
@@ -47,7 +51,6 @@ public class DEKernelDensity extends DensityEstimator {
 	 */
 	public DEKernelDensity(ContinuousDistribution kernel) {
 		setKernel(kernel);
-
 	}
 
 	/**
@@ -58,24 +61,34 @@ public class DEKernelDensity extends DensityEstimator {
 	 */
 	public DEKernelDensity(double h) {
 		setH(h);
-
 	}
 
 	/**
 	 * Constructs a KDE with the kernel function \a kernel and bandwidth \a h.
-	 * 
-	 * @param h
-	 *            the bandwidth
 	 * @param kernel
 	 *            the kernel density function
+	 * @param h
+	 *            the bandwidth
 	 */
-	public DEKernelDensity(double h, ContinuousDistribution kernel) {
-
+	public DEKernelDensity(ContinuousDistribution kernel, double h) {
 		this(kernel);
 		setH(h);
 	}
 
 	/**
+	 * Constructs a KDE with the kernel function \a kernel and bandwidth \a h.
+	 * @param kernel
+	 *            the kernel density function
+	 * @param h
+	 *            the bandwidth
+	 */
+	public DEKernelDensity(ContinuousDistribution kernel, double h, double[] data) {
+		this(kernel);
+		setH(h);
+		this.data = data;
+	}
+
+    /**
 	 * Sets the bandwidth to \a h.
 	 * 
 	 * @param h
@@ -83,7 +96,6 @@ public class DEKernelDensity extends DensityEstimator {
 	 */
 	public void setH(double h) {
 		this.h = h;
-
 	}
 
 	/**
