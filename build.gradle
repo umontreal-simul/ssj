@@ -366,10 +366,7 @@ sourceSets {
         java {
             srcDir 'src/main/docs/examples'
             exclude 'markovchainrqmc/**' // FIXME: broken examples
-            exclude 'ift6561examples/**'
-            exclude 'latnetbuilder/**'  // Not yet ready.
-            exclude 'latnetbuilder/LatNetBuilderTest.java'  
-            exclude 'tutorial/Collision.java'
+            // exclude 'ift6561examples/PlotPoints.java'
         }
     }
 }
