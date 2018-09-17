@@ -10,9 +10,9 @@ import umontreal.ssj.stat.PgfDataTable;
  * In a non-abstract subclass, it suffices (in principle) to implement the abstract method
  * @ref evalDensity(double, double[], double, double), which evaluates the density
  * at a single point \f$x\f$ given the data points.
- * However, other methods will typically be overridden as well, to make them more efficient.
+ * However, other methods will typically be overridden to make them more efficient.
  * For example, evaluating the DE over a set of evaluation points 
- * \f$\{x_1, x_2, \dots, x_k\} \f$ can often be performed more efficiently than 
+ * \f$\{x_0, x_1, \dots, x_{k-1}\} \f$ can often be performed more efficiently than 
  * by calling `evalDensity(x)` repeatedly in a loop. 
  * 
  * More precisely, the single
@@ -31,26 +31,27 @@ import umontreal.ssj.stat.PgfDataTable;
  * Nevertheless, they
  * can be useful in many other cases beyond convergence behavior too. As these
  * usually require more than one realization of a DE, or even a list of DE's,
- * they are implemented as static methods. For instance, #evalDensity(double[],
+ * they are implemented as static methods. For instance, @ref evalDensity(double[],
  * double[][], double, double) allows to evaluate several independent
  * replications of a DE at an array of evaluation points, and
- * #evalDensity(ArrayList, double[], double[][], double, double, ArrayList)  does
+ * @ref evalDensity(ArrayList, double[], double[][], double, double, ArrayList)  does
  * the same but for more than one DE.
  * 
  * This class also provides methods to estimate the empirical IV, see
- * #computeIV(double[][], double, double, double[]) for one individual DE and
- * #computeIV(ArrayList, double, double, ArrayList) for several DEs. Note that
- * these mehtods merely compute an estimate, since computing an exact integral
+ * @ref computeIV(double[][], double, double, double[]) for one individual DE and
+ * @ref computeIV(ArrayList, double, double, ArrayList) for several DEs. Note that
+ * these methods merely compute an estimate, since computing an exact integral
  * is out of reach for this class.
  * 
  * Note that the MISE can only be computed in situations where either the ISB is
  * zero or the true density is known. In the first case, the IV is the same as
  * the MISE, of course. For the second case this class provides the possibility
  * to estimate the empirical MISE for a single DE via
- * #computeMISE(ContinuousDistribution, double[], double[][], double, double,
+ * @ref computeMISE(ContinuousDistribution, double[], double[][], double, double,
  * double[], double[], double[])} as well as for several DEs via
- * #computeMISE(ContinuousDistribution, double[], ArrayList, double, double,
- * ArrayList). Again, as explained before for the IV, this merely gives an estimate of the empirical MISE.
+ * @ref computeMISE(ContinuousDistribution, double[], ArrayList, double, double,
+ * ArrayList). 
+ * Again, as explained before for the IV, this merely gives an estimate of the empirical MISE.
  */
 
 public abstract class DensityEstimator {
@@ -59,7 +60,7 @@ public abstract class DensityEstimator {
 	/**
 	 * The data associated with this DensityEstimator object, if any.
 	 */
-	private double[] data;
+    protected double[] data;
 	
 	/**
 	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
