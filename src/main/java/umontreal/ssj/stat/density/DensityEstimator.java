@@ -2,24 +2,33 @@
 package umontreal.ssj.stat.density;
 
 import java.util.ArrayList;
-
 import umontreal.ssj.probdist.ContinuousDistribution;
 import umontreal.ssj.stat.PgfDataTable;
 
 /**
- * This abstract class implements a univariate density estimator (DE). To this
- * end, it provides basic tools to evaluate the DE at one point \f$x\f$ or at a
- * selection of points \f$\{x_1, x_2, \dots, x_k\} \f$. More precisely, the single
- * point evaluation #evalDensity(double, double[], double, double) is abstract,
- * since it will definitely differ between realizations. For the evaluation on a
- * set of points one can use #evalDensity(double[], double[], double, double).
- * Note that, even though a default implementation is provided, very often
+ * This abstract class represents a univariate density estimator (DE). 
+ * In a non-abstract subclass, it suffices (in principle) to implement the abstract method
+ * @ref evalDensity(double, double[], double, double), which evaluates the density
+ * at a single point \f$x\f$ given the data points.
+ * However, other methods will typically be overridden as well, to make them more efficient.
+ * For example, evaluating the DE over a set of evaluation points 
+ * \f$\{x_1, x_2, \dots, x_k\} \f$ can often be performed more efficiently than 
+ * by calling `evalDensity(x)` repeatedly in a loop. 
+ * 
+ * More precisely, the single
+ * point evaluation `evalDensity(double, double[], double, double)` is abstract,
+ * since it will definitely differ between realizations.???   
+ * You mean across subclasses???   For the evaluation on a
+ * set of points one can use `evalDensity(double[], double[], double, double).`
+ * Even though a default implementation is provided, very often
  * specific estimators will have more efficient evaluation algorithms. So,
  * overriding this method can be beneficial in many cases. Furthermore, this
  * class includes a method to plot the estimated density.
  * 
- * There are also several more involved methods covered by this class, most of
- * which are concerned with the convergence behavior of DEs. Nevertheless, they
+ * This class also provides more elaborate methods that deal with the convergence 
+ * behavior of the DEs in terms of their IV, ISB, and MISE. 
+ * 
+ * Nevertheless, they
  * can be useful in many other cases beyond convergence behavior too. As these
  * usually require more than one realization of a DE, or even a list of DE's,
  * they are implemented as static methods. For instance, #evalDensity(double[],
@@ -27,18 +36,6 @@ import umontreal.ssj.stat.PgfDataTable;
  * replications of a DE at an array of evaluation points, and
  * #evalDensity(ArrayList, double[], double[][], double, double, ArrayList)  does
  * the same but for more than one DE.
- * 
- * For measuring the performance of a DE, we need to confine ourselves to
- * estimation over a finite interval \f$[a,b]\f$. One standard way to assess the
- * quality of a DE is via the mean integrated square error (MISE). It can be
- * further decomposed into the integrated variance (IV), and the integrated
- * square bias (ISB)
- * 
- * \f[ \textrm{MISE} = \int_a^b\mathbb{E} [\hat{f}(x) - f(x)]^2\mathrm{d}x =
- * \int_a^b\textrm{Var}[\hat{f}(x)]\mathrm{d}x + \int_a^b \left(
- * \mathbb{E}[\hat{f}(x)] - f(x) \right)^2\mathrm{d}x = \textrm{IV} + \textrm{ISB}, \f]
- * 
- * where \f$f\f$ denotes the true density and \f$\hat{f}\f$ the DE.
  * 
  * This class also provides methods to estimate the empirical IV, see
  * #computeIV(double[][], double, double, double[]) for one individual DE and
@@ -58,6 +55,12 @@ import umontreal.ssj.stat.PgfDataTable;
 
 public abstract class DensityEstimator {
 
+	
+	/**
+	 * The data associated with this DensityEstimator object, if any.
+	 */
+	private double[] data;
+	
 	/**
 	 * Constructs a density estimator over the interval \f$[a,b]\f$ based on the
 	 * observations \a data if necessary, and evaluates it at \a x.
@@ -564,7 +567,7 @@ public abstract class DensityEstimator {
 	 * @return the Coefficient of determination \f$R^2\f$
 	 */
 
-	protected static double coefficientOfDetermination(double[] data, double[] dataEstimated) {
+	protected static double coefficientOfDetermination (double[] data, double[] dataEstimated) {
 		int i;
 		int max = data.length;
 		double maxInv = 1.0 / (double) max;
