@@ -7,6 +7,26 @@ import umontreal.ssj.stat.PgfDataTable;
 
 /**
  * This abstract class represents a univariate density estimator (DE). 
+ * 
+ * Both static and non-static methods are offered.  
+ * In a majority of cases, on simply wishes to estimate the density at a finite set of evaluation
+ * points, from a given set of data, and perhaps plot the estimated density. 
+ * To do that, there is no need to create an object. 
+ * One can simply use a static `evalDensity` method followed by `plotDensity`.
+ * Note that calling the `evalDensity` method only once for a vector of evaluation points 
+ * is typically much faster than calling it separately for each evaluation point.
+ * 
+ * In case one plans to evaluate the same density several times with the same data,
+ * then it may be worthwhile to construct a `DensityEstimator` object and build the 
+ * density estimate from the given data.  After that, one can evaluate the density 
+ * at any given point, often much faster than by calling the static method. 
+ * In the case of a histogram or average shifted histogram, for example,
+ * constructing the density estimator takes time, but once it is constructed, 
+ * evaluating it is relatively fast.
+ * For a KDE with fixed bandwidth, the difference (or gain) may be small.
+ * 
+ * 
+ * 
  * In a non-abstract subclass, it suffices (in principle) to implement the abstract method
  * @ref evalDensity(double, double[], double, double), which evaluates the density
  * at a single point \f$x\f$ given the data points.
