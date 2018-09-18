@@ -11,26 +11,32 @@
  * sequence of observations @f$X_1,X_2,\dots @f$, and computes sample averages,
  * sample standard deviations, and confidence intervals based on
  * normal or Student approximations.  It does not store observations.
- *
  *  The class  @ref umontreal.ssj.stat.TallyStore is similar, but it
- * stores the individual observations in a list implemented as a
- * `DoubleArrayList`, a class imported from the COLT library
- * . This permits one to compute more quantities and to use the methods
+ * stores the individual observations in a
+ * `DoubleArrayList`, a type of extensible array imported from the COLT library.
+ * This permits one to compute more quantities and to use the methods
  * provided by COLT for computing descriptive statistics.
+ * Data can also be collected directly in aggregated form in *histograms*
+ * via `TallyHistogram` or `HistogramOnly`.
+ * The class `ScaledHistogram` permits one rescale histograms to view them as density estimators,
+ * to construct averaged-shifted histograms, and polygonal interpolations of histograms.
  *
  * The class  @ref umontreal.ssj.simevents.Accumulate,
  * in package `simevents`,
  *  computes integrals and averages with respect to time. This class is in
  * package `simevents` because its operation depends on the simulation clock.
  * 
- * Data can also be collected directly in aggregated form in *histograms*
- * via `TallyHistogram` or `HistogramOnly`.  
- * 
  * `PgfDataTable` provides tools to construct tables of observations (rows)
  * in which each observation has many fields (columns).
  * These tables are in a appropriate format for the  pgfplot LaTeX package.
  * They can also be forwarded to other software for visualization, etc.
- *
+ * 
+ * Subpackages of the package `stat` offer additional tools.
+ * For example, the packages `stat.list` and `stat.matrix` provide lists and matrices of 
+ * <tt>Tally</tt> objects and tools to manage them.
+ * The package `stat.density` provides tools for density estimation, e.g., 
+ * via histograms and kernel density estimators.
+ * 
  * All classes that represent statistical probes support the *observer*
  * design pattern, well-known in software engineering
  *  @cite iGAM98a&thinsp;.
@@ -43,26 +49,23 @@
  * broadcasts information to all its registered observers whenever
  * appropriate. Any object that implements the interface
  * @ref umontreal.ssj.stat.ObservationListener can register as an observer.
- * For an example, see the program `QueueObs` in the directory `examples`.
- *
- * Subpackages of package `stat` provide matrices of <tt>Tally</tt>’s and
- * lists of <tt>Tally</tt>’s, and tools to manage them.
- *
+ * For an example, see the program `QueueObs` in the SSJ tutorial.
+ * 
  * When writing complex simulation programs, in data generation portions, one
  * uses the statistical probes as usual but with observation notification
- * turned on. To turn on observation notification, one simply calls
- * @ref umontreal.ssj.stat.StatProbe.notifyObs on the probes. In this mode, a
+ * turned on. To turn it on, one can invoke
+ * the method `notifyObs` in  @ref umontreal.ssj.stat.StatProbe on the probes. 
+ * In this mode, a
  * probe becomes a *distribution agency* which broadcasts received
  * observations to all *observers* that registered to it. It will also
  * fulfill its collector functionality unless it is disabled explicitly by
- * calling the  @ref umontreal.ssj.stat.StatProbe.stopCollectStat method. When the
- * statistical collection is disabled, the probes are only distribution
- * agencies.
- * Data processing parts of a program are implemented through observers. An
+ * calling the method `stopCollectStat` in @ref umontreal.ssj.stat.StatProbe.  When
+ * statistical collection is disabled, the probes are only distribution agencies.
+ * Data processing parts of a program can be implemented through observers. An
  * observer is a class implementing the  `Observer` interface. It can be
  * registered to any class extending  `Observable`, including
  * @ref umontreal.ssj.stat.StatProbe. The observed value is passed to the
- * observers through the second argument of the  @ref java.util.Observer.update
- * method which is an `Object`. The argument must then be type-casted to a
+ * observers through the second argument of the `update` method of @ref java.util.Observer,
+ * which is an `Object`. The argument must then be type-casted to a
  * `Double` wrapper object before the observation value can be extracted.
  */

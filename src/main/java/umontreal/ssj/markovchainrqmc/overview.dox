@@ -6,7 +6,7 @@
  *  @anchor REF_markovchainrqmc_overview_sec_overview
  *
  * This package provides facilities designed specifically to simulate discrete-time Markov
- * chains (DTMC) with the Array-RQMC method.
+ * chains (DTMC) with the Array-RQMC method  @cite vLEC08a, @cite vLEC09d, @cite vLEC16b&thinsp;.
  * With this method, several realizations of the Markov chain are simulated in parallel.
  * At each step, the chains are sorted (in some way) based on the value of their current state,
  * then all the chains are simulated for one more step using an RQMC point set.
@@ -25,7 +25,7 @@
  * larger).
  * A performance mesure @f$Y_\tau@f$ is defined over this sequence as
  * @f[
- *   Y_\tau = \sum_{j=1}^\tau c_j(X_j),
+ *   Y = Y_{\tau} = \sum_{j=1}^\tau c_j(X_j),
  * @f]
  * where @f$c_j@f$ is a cost (or revenue) function for step @f$j@f$ and
  * @f$\tau@f$ is either a constant of a random stopping time.
@@ -36,7 +36,7 @@
  * The base class @ref umontreal.ssj.markovchainrqmc.MarkovChain
  * offers methods to simulate one or more copies of the Markov chain one step at a time,
  * or over several steps, 
- * collect the realizations of $Y_\tau$ in statistical probes,
+ * collect the realizations of $Y$ in statistical probes,
  * make several independent replications of that, etc. 
  * The chains can be simulated by Monte Carlo, RQMC, or Array-RQMC.
  *
@@ -50,35 +50,40 @@
  * using a random stream (it represents function @f$\varphi(\cdot)@f$); and 
  * {@link umontreal.ssj.markovchainrqmc.MarkovChain.getPerformance()
  * getPerformance()} which returns the performance realization for the chain, 
- * i.e., the value taken by @f$Y_\tau@f$.
+ * i.e., the value taken by @f$Y_{\tau}@f$, assuming that the chain has reached 
+ * its stopping time $\tau$. 
  *
- * However, it is recommended to inherit from
- * @ref umontreal.ssj.markovchainrqmc.MarkovChainComparable (if the chains
- * can be sorted) or  @ref umontreal.ssj.markovchainrqmc.MarkovChainDouble
- * (special case for one dimensional state) which are subclasses of
- * @ref umontreal.ssj.markovchainrqmc.MarkovChain, rather than directly from
- * this class. Some other methods are then needed. See examples below for
- * more details.
+ * If the chains have to be sorted as in the Array-RQMC method, 
+ * one must implement the 
+ * @ref umontreal.ssj.markovchainrqmc.MarkovChainComparable interface,
+ * unless the chain is a subclass of
+ * @ref umontreal.ssj.markovchainrqmc.MarkovChainDouble,  
+ * in which case the state is just a real number and the chains are sorted 
+ * by increasing order of their state in a trivial way.
+ * For a direct subclass of @ref umontreal.ssj.markovchainrqmc.MarkovChain, 
+ * other methods are then needed. See the examples below for more details.
  *
  * The classes  @ref umontreal.ssj.markovchainrqmc.ArrayOfComparableChains
- * and  @ref umontreal.ssj.markovchainrqmc.ArrayOfDoubleChains can be used to
- * work with multiple Markov chains in parallel. The chains can then be
- * sorted using method
- * umontreal.ssj.markovchainrqmc.ArrayOfComparableChains.sortChains. These
- * classes also provide methods to simulate using the array-RQMC method of
- * @cite vLEC08a&thinsp;.
+ * and  @ref umontreal.ssj.markovchainrqmc.ArrayOfDoubleChains 
+ * work with multiple Markov chains in parallel.
+ * They implement Array-RQMC.
+ * The chains can be sorted using the method
+ * umontreal.ssj.markovchainrqmc.ArrayOfComparableChains.sortChains.
  *
- * # Examples
+ *
+ * ## Examples
  *
  *  @anchor REF_markovchainrqmc_overview_sec_examples
  *
- * The following examples demonstrate how to implement and use a Markov chain
- * using this package.
+ * The following examples demonstrate how to use this package.
  *
- * First, the class
- *  displayed in Listing&nbsp;
+ * @remark  In the following example, the state is just a real number, so it could 
+ *    be implemented more simply as a `MarkovChainDouble`.  
+ *    We should put more elaborate examples, in which the state is multivariate. 
+ *    
+ * The class displayed in Listing&nbsp;
  * {@link REF_markovchainrqmc_overview_lst_Brownian Brownian}
- *   shows a very simple implementation of a
+ *   shows a simple implementation of a
  * @ref umontreal.ssj.markovchainrqmc.MarkovChainComparable. It represents a
  * Brownian motion over the real line. The starting position `x0` as well as
  * the time step `dt` are given in the constructor. Each step represents a
@@ -116,7 +121,7 @@
  * the point set. See package `umontreal.ssj.hups` more information on these
  * classes.
  *
- * 4- Same as 2 but with the array-RQMC method (see @cite vLEC05a&thinsp;).
+ * 4- Same as 2 but with the array-RQMC method of @cite vLEC08a&thinsp;.
  * The  @ref umontreal.ssj.markovchainrqmc.ArrayOfComparableChains is used to
  * simulate chains in parallel. It uses a
  * @ref umontreal.ssj.hups.PointSetRandomization to randomize the point sets
