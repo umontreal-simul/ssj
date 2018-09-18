@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class offers facilities to perform experiments on the convergence of the variance when estimating a mean (expectation) with a series of RQMC point sets usually of the same type, but different size \(n\).  
+<p>This class offers facilities to perform experiments on the convergence of the variance when estimating a mean (expectation) with a series of RQMC point sets usually of the same type, but different sizes \(n\).  
  <a href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for RQMCExperimentSeries:</div>
@@ -213,7 +213,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>cpuTime</b></td></t
 <tr class="separator:a15133b4c8a8d718bf21d2a139aafdb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class offers facilities to perform experiments on the convergence of the variance when estimating a mean (expectation) with a series of RQMC point sets usually of the same type, but different size \(n\). </p>
+<div class="textblock"><p>This class offers facilities to perform experiments on the convergence of the variance when estimating a mean (expectation) with a series of RQMC point sets usually of the same type, but different sizes \(n\). </p>
 <p>The series of RQMC point sets of different sizes can be passed in an array to the constructor. The method <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#ab2d4ace86a9b9c2d9f1d50b1ef58fc95">testVarianceRate</a> performs an experiment with a given <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> and the series of point sets. In this experiment, for each size \(n\) of point set, \(m\) independent replicates of the RQMC estimator (which is an average over RQMC \(n\) points) are computed. One can then recover the average and the empirical variance of these \(m\) replicates of the \(n\)-point average, their logs in any base, etc., in arrays, as well as the estimated linear regression of log(variance) as a function of log(n).</p>
 <p>One can also perform experiments with many such series of point sets for the same model, and display the results for the different series on the same plot. Likewise, one can also perform an experiment with many different estimators for the same model and same point sets. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>

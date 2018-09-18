@@ -15,7 +15,7 @@
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" target="_top" xlink:title="This class provides methods to construct, manipulate, and evaluate a histogram density estimator for ...">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" target="_top" xlink:title="Histogram density estimator for a univariate density. ">
 <polygon fill="none" stroke="black" points="0,-56.5 0,-75.5 76,-75.5 76,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="38" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">DEHistogram</text>
 </a>

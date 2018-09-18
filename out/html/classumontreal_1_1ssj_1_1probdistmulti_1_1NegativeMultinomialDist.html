@@ -190,7 +190,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td></tr
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the class <a class="el" href="classumontreal_1_1ssj_1_1probdistmulti_1_1DiscreteDistributionIntMulti.html">DiscreteDistributionIntMulti</a> for the <em>negative multinomial</em> distribution with parameters \(n &gt; 0\) and ( \(p_1, …, p_d\)) such that all \(0&lt;p_i&lt;1\) and \(\sum_{i=1}^d p_i &lt; 1\). </p>
-<p>The probability mass function is <a class="el" href="citelist.html#CITEREF_tJOH69a">[90]</a>&thinsp; <a class="anchor" id="REF_probdistmulti_NegativeMultinomialDist_eq_fNegativeMultinomial"></a> </p><p class="formulaDsp">
+<p>The probability mass function is <a class="el" href="citelist.html#CITEREF_tJOH69a">[95]</a>&thinsp; <a class="anchor" id="REF_probdistmulti_NegativeMultinomialDist_eq_fNegativeMultinomial"></a> </p><p class="formulaDsp">
 \[ P[X = (x_1, …,x_d)] = \frac{\Gamma\left(n + \sum_{i=1}^d x_i\right) p_0^n}{\Gamma(n)} \prod_{i=1}^d \frac{p_i^{x_i}}{x_i!} \tag{fNegativeMultinomial} \]
 </p>
 <p> where \(p_0 = 1 - \sum_{i=1}^d p_i\).</p>
@@ -268,7 +268,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td></tr
 </div><div class="memdoc">
 
 <p>Estimates and returns the parameters [ \(\hat{n}\), \(\hat{p}_1\), …, \(\hat{p}_d\)] of the negative multinomial distribution using the maximum likelihood method. </p>
-<p>It uses the \(m\) observations of \(d\) components in table <code>x[</code> \(i\)<code>][</code> \(j\)<code>]</code>, \(i = 0, 1, …, m-1\) and \(j = 0, 1, …, d-1\). The equations of the maximum likelihood are defined in <a class="el" href="citelist.html#CITEREF_tJOH69a">[90]</a>&thinsp;: </p><p class="formulaDsp">
+<p>It uses the \(m\) observations of \(d\) components in table <code>x[</code> \(i\)<code>][</code> \(j\)<code>]</code>, \(i = 0, 1, …, m-1\) and \(j = 0, 1, …, d-1\). The equations of the maximum likelihood are defined in <a class="el" href="citelist.html#CITEREF_tJOH69a">[95]</a>&thinsp;: </p><p class="formulaDsp">
 \begin{align*} \sum_{s=1}^M \frac{F_s}{(\hat{n} + s - 1)} &amp; = \ln\left(1 + \frac{1}{\hat{n} m} \sum_{j=1}^m \Upsilon_j \right) \\ p_i &amp; = \frac{\lambda_i}{1 + \sum_{j=1}^d \lambda_j} \qquad\mbox{for } i=1, …,d \end{align*}
 </p>
 <p> where </p><p class="formulaDsp">

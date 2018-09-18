@@ -270,14 +270,14 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>QTIERS
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html">Discrepancy</a> and implements the methods required to compute the \(P_{\alpha}\) figure of merit for a lattice point set \(\Psi_s\) which is the intersection of a lattice \(L\) and the unit hypercube \([0, 1)^s\) in \(s\) dimensions. </p>
-<p>\(\Psi_s\) contains \(n\) points. For an arbitrary integer \(\alpha&gt; 1\), it is defined as <a class="el" href="citelist.html#CITEREF_mSLO94a">[195]</a>, <a class="el" href="citelist.html#CITEREF_vHIC98c">[77]</a>, <a class="el" href="citelist.html#CITEREF_vHIC01a">[75]</a>&thinsp; </p><p class="formulaDsp">
+<p>\(\Psi_s\) contains \(n\) points. For an arbitrary integer \(\alpha&gt; 1\), it is defined as <a class="el" href="citelist.html#CITEREF_mSLO94a">[209]</a>, <a class="el" href="citelist.html#CITEREF_vHIC98c">[80]</a>, <a class="el" href="citelist.html#CITEREF_vHIC01a">[78]</a>&thinsp; </p><p class="formulaDsp">
 \[ P_{\alpha}(s) = \sum_{\mathbf{0\neq h}\in L_s^*} \|\mathbf{h}\|^{-\alpha}, \]
 </p>
 <p> where \(L_s^*\) is the lattice dual to \(L_s\), and the norm is defined as \(\|\mathbf{h}\| = \prod^s_{j=1} \max\{1, |h_j|\}\). When \(\alpha\) is even, \(P_{\alpha}\) can be evaluated explicitly as <a class="anchor" id="REF_discrepancy_Palpha_palpha_1"></a> </p><p class="formulaDsp">
 \[ \qquad P_{\alpha}(s) = -1 + \frac{1}{n}\sum_{i=1}^n \prod_{j=1}^s \left[1 - \frac{(-1)^{\alpha/2}(2\pi)^{\alpha}}{\alpha!} B_{\alpha}(u_{ij})\right], \tag{palpha.1} \]
 </p>
 <p> where \(u_{ij}\) is the \(j\)-th coordinate of point \(i\), and \(B_{\alpha}(x)\) is the Bernoulli polynomial of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>).</p>
-<p>One may generalize the \(P_{\alpha}\) by introducing a weight for each dimension to give the <em>weighted</em> \(P_{\alpha}\) defined by <a class="el" href="citelist.html#CITEREF_vHIC98c">[77]</a>&thinsp; </p><p class="formulaDsp">
+<p>One may generalize the \(P_{\alpha}\) by introducing a weight for each dimension to give the <em>weighted</em> \(P_{\alpha}\) defined by <a class="el" href="citelist.html#CITEREF_vHIC98c">[80]</a>&thinsp; </p><p class="formulaDsp">
 \[ P_{\alpha}(s) = \sum_{\mathbf{0\neq h}\in L_s^*}\beta_I^2 \|\mathbf{h}\|^{-\alpha}, \]
 </p>
 <p> where the weights are such that \(\beta_I =\beta_0\prod_{j=1}^s\beta_j^{\alpha}\), and for even \(\alpha\) <a class="anchor" id="REF_discrepancy_Palpha_palpha_2"></a> </p><p class="formulaDsp">
