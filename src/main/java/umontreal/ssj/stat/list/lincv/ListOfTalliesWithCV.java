@@ -5,7 +5,7 @@
  * Software:     SSJ 
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       Éric Buist
+ * @author       Eric Buist
  * @since        August 2007
 
  * SSJ is free software: you can redistribute it and/or modify it under

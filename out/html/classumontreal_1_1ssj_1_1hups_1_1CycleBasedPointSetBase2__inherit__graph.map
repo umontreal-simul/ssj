@@ -1,0 +1,7 @@
+<map id="CycleBasedPointSetBase2" name="CycleBasedPointSetBase2">
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedLFSR.html" title="LFSR generators produce numbers by generating a sequence of bits from a linear recurrence modulo 2..." alt="" coords="5,229,132,256"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1F2wCycleBasedLFSR.html" title="This class creates a point set based upon a linear feedback shift register sequence. " alt="" coords="157,229,309,256"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1F2wCycleBasedPolyLCG.html" title="This class creates a point set based upon a linear congruential sequence in the finite field ..." alt="" coords="333,229,503,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="161,80,304,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="197,5,269,32"/>
+</map>

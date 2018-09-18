@@ -102,7 +102,7 @@ public abstract class MarkovChainDouble extends MarkovChainComparable {
     }
 
 
-   public int dimension(){
+   public int getStateDimension(){
       return 1;
    }
 
@@ -117,7 +117,7 @@ public abstract class MarkovChainDouble extends MarkovChainComparable {
  * <tt>stream</tt>, and returns the final state. The  #simulSteps method in
  * `MarkovChain` does the same, but returns nothing.
  */
-public double simulStepsDouble (int numSteps, RandomStream stream) {
+   public double simulStepsDouble (int numSteps, RandomStream stream) {
       initialState();
       for(step = 0; step<numSteps && !hasStopped(); ++step){
          state = nextStepDouble(step,state,stream);

@@ -1,11 +1,13 @@
+package umontreal.ssj.stat;
+
 /*
  * Class:        TallyHistogram
- * Description:  Histogram of a tally
+ * Description:  A Tally that also builds a Histogram
  * Environment:  Java
  * Software:     SSJ
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       Richard Simard
+ * @author       Richard Simard and Pierre L'Ecuyer
  * @since        January 2011
  *
  *
@@ -22,191 +24,335 @@
  * limitations under the License.
  *
  */
-package umontreal.ssj.stat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This class is an extension of  @ref Tally which gives a more detailed view
- * of the observations statistics. The individual observations are assumed to
- * fall into different bins (boxes) of equal width on an interval. The total
- * number of observations falling into the bins are kept in an array of
- * counters. This is useful, for example, if one wish to build a histogram
- * from the observations. One must access the array of bin counters to
- * compute quantities not supported by the methods in  @ref Tally.
- *
- * *Never add or remove observations directly* on the array of bin counters
- * because this would put the  @ref Tally counters in an inconsistent state.
+ * This class extends @ref Tally. It does not store individual observations, but in addition to 
+ * maintaining the counters as in @ref Tally, it also constructs a histogram for the observations. 
+ * The histogram is over a bounded interval @f$[a,b]@f$ and has a fixed number of bins of equal width,
+ * both specified by the user. The number of observations falling into each of the bins 
+ * is kept in an array of counters. This array can be accessed directly by the user.
+ * Note that one should never add or remove observations *directly* on this array of 
+ * bin counters because this would put the @ref Tally counters in an inconsistent state.
+ * Additional variables count the number of observations falling outside the interval @f$[a,b]@f$.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public class TallyHistogram extends Tally {
-   private int[] co;         // counter: num of values in bin[i]
-   private int numBins;      // number of bins
-   private double m_h;       // width of 1 bin
-   private double m_a;       // left boundary of first bin
-   private double m_b;       // right boundary of last bin
-   private Logger log = Logger.getLogger ("umontreal.ssj.stat");
+	protected int numBins; // number of bins
+	protected int[] count; // counter for number of values in bin[i].
+	protected int leftCount;  // Count values that are less than a.
+	protected int rightCount; // Count values that are larger than b.
+	protected double m_h; // width of 1 bin
+	protected double m_a; // left boundary of first bin
+	protected double m_b; // right boundary of last bin
 
-   /**
-    * Constructs a `TallyHistogram` statistical probe. Divide the interval
-    * @f$[a,b]@f$ into @f$s@f$ bins of equal width and initializes a
-    * counter to 0 for each bin. Whenever an observation falls into a bin,
-    * the bin counter is increased by 1. There are two extra bins (and
-    * counters) that count the number of observations @f$x@f$ that fall
-    * outside the interval @f$[a,b]@f$: one for those @f$x< a@f$, and the
-    * other for those @f$x > b@f$.
-    *  @param a            left boundary of interval
-    *  @param b            right boundary of interval
-    *  @param s            number of bins
-    */
-   public TallyHistogram(double a, double b, int s) {
-      super();
-      init (a, b, s);
-   }
 
-   /**
-    * Constructs a new `TallyHistogram` statistical probe with name
-    * `name`.
-    *  @param name         the name of the tally.
-    *  @param a            left boundary of interval
-    *  @param b            right boundary of interval
-    *  @param s            number of bins
-    */
-   public TallyHistogram (String name, double a, double b, int s) {
-      super (name);
-      init (a, b, s);
-   }
+	/**
+	 * Constructs a `TallyHistogram` statistical probe. Divide the interval
+	 * 
+	 * @f$[a,b]@f$ into @f$s@f$ bins of equal width and initializes a counter to 0 for each bin.
+	 *             Whenever an observation falls into a bin, the bin counter is increased by 1.
+	 * @param a
+	 *            left boundary of interval
+	 * @param b
+	 *            right boundary of interval
+	 * @param numBins
+	 *            number of bins (of equal width)
+	 */
+	public TallyHistogram(double a, double b, int numBins) {
+		super();
+		init(a, b, numBins);
+	}
 
-   /**
-    * Initializes this object. Divide the interval @f$[a,b]@f$ into
-    * @f$s@f$ bins of equal width and initializes all counters to 0.
-    *  @param s            number of bins
-    *  @param a            left boundary of interval
-    *  @param b            right boundary of interval
-    */
-   public void init (double a, double b, int s) {
-      /* The counters co[1] to co[s] contains the number of observations
-         falling in the interval [a, b].
-         co[0] is the number of observations < a,
-         and co[s+1] is the number of observations > b.
-      */
+	/**
+	 * Constructs a new `TallyHistogram` statistical probe with name `name`.
+	 * 
+	 * @param name
+	 *            the name of the tally.
+	 * @param a
+	 *            left boundary of interval
+	 * @param b
+	 *            right boundary of interval
+	 * @param numBins
+	 *            number of bins
+	 */
+	public TallyHistogram(String name, double a, double b, int numBins) {
+		super(name);
+		init(a, b, numBins);
+	}
 
-      super.init();
-      if (b <= a)
-         throw new IllegalArgumentException ("   b <= a");
-      co = new int[s + 2];
-      numBins = s;
-      m_h = (b - a) / s;
-      m_a = a;
-      m_b = b;
-      for (int i = 0; i <= s + 1; i++)
-         co[i] = 0;
-   }
+	/**
+	 * Initializes this object. Divide the interval @f$[a,b]@f$ into
+	 * 
+	 * @f$s@f$ bins of equal width and initializes all counters to 0.
+	 * @param numBins
+	 *            number of bins
+	 * @param a
+	 *            left boundary of interval
+	 * @param b
+	 *            right boundary of interval
+	 */
+	public void init(double a, double b, int numBins) {
+		/*
+		 * The counters count[0] to count[s-1] contains the number of observations falling in the
+		 * interval [a, b]. leftCount is the number of observations < a, and rightCount is the
+		 * number of observations > b.
+		 */
+		super.init();
+		if (b <= a)
+			throw new IllegalArgumentException("   b <= a");
+		count = new int[numBins];
+		this.numBins = numBins;
+		m_h = (b - a) / (double)numBins;
+		m_a = a;
+		m_b = b;
+		leftCount = rightCount = 0;
+		for (int i = 0; i < numBins; i++)
+			count[i] = 0;
+	}
 
-   /**
-    * Gives a new observation @f$x@f$ to the statistical collectors.
-    * Increases by 1 the bin counter in which value @f$x@f$ falls. Values
-    * that fall outside the interval @f$[a,b]@f$ are added in extra bin
-    * counter bin[0] if @f$x < a@f$, and in bin[@f$s+1@f$] if @f$x > b@f$.
-    *  @param x            observation value
-    */
-   public void add (double x) {
-      super.add(x);
-      if (x < m_a)
-        ++co[0];
-      else if (x > m_b)
-        ++co[1 + numBins];
-      else {
-         int i = 1 + (int) ((x - m_a) / m_h);
-         ++co[i];
-      }
-   }
+	/**
+	 * Initializes all the counters and accumulators, including those of the `Tally` object.
+	 *
+	 */
+	public void init() {
+		super.init();
+		leftCount = rightCount = 0;
+		for (int i = 0; i < numBins; i++)
+			count[i] = 0;
+	}
 
-   /**
-    * Returns the bin counters. Each counter contains the number of
-    * observations that fell in its corresponding bin. The counters
-    * bin[@f$i@f$], @f$i=1, 2, …, s@f$ contain the number of observations
-    * that fell in each subinterval of @f$[a,b]@f$. Values that fell
-    * outside the interval @f$[a,b]@f$ were added in extra bin counter
-    * bin[0] if @f$x < a@f$, and in bin[@f$s+1@f$] if @f$x > b@f$. There
-    * are thus @f$s+2@f$ counters.
-    *  @return the array of counters
-    */
-   public int[] getCounters() {
-      return co;
-   }
+	
+	/**
+	 * Fills this object from the first numObs observations in array obs.
+	 */
+	public void fillFromArray(double[] obs, int numObs) {
+		init();
+		for (int i = 0; i < numObs; i++)
+			add(obs[i]);
+	}
 
-   /**
-    * Returns the number of bins @f$s@f$ dividing the interval
-    * @f$[a,b]@f$. Does not count the two extra bins for the values of
-    * @f$x<a@f$ or @f$x>b@f$.
-    *  @return the number of bins
-    */
-   public int getNumBins() {
-      return numBins;
-   }
+	/**
+	 * Fills this object from the entire array obs.
+	 */
+	public void fillFromArray(double[] obs) {
+		fillFromArray(obs, obs.length);
+	}
 
-   /**
-    * Returns the left boundary @f$a@f$ of interval @f$[a,b]@f$.
-    *  @return left boundary of interval
-    */
-   public double getA() {
-      return m_a;
-   }
+	/**
+	 * Fills this object from the observations in a TallyStore object.
+	 */
+	public void fillFromTallyStore(TallyStore ts) {
+		fillFromArray(ts.getArray(), ts.numberObs());
+	}
 
-   /**
-    * Returns the right boundary @f$b@f$ of interval @f$[a,b]@f$.
-    *  @return right boundary of interval
-    */
-   public double getB() {
-      return m_b;
-   }
+	/**
+	 * Gives a new observation @f$x@f$ to the statistical probe. Updates are made as for the
+	 * parent `Tally` object.  Also increases by 1 the bin counter
+	 * in which value @f$x@f$ falls. Values that fall outside the interval @f$[a,b]@f$ are added 
+	 * to the extra bin counters.
+	 * 
+	 * @param x
+	 *            observation value
+	 */
+	public void add(double x) {
+		super.add(x);
+		if (x < m_a)
+			++leftCount;
+		else if (x > m_b)
+			++rightCount;
+		else {
+			int i = (int) ((x - m_a) / m_h);
+			++count[i];
+		}
+	}
 
-   /**
-    * Clones this object and the array which stores the counters.
-    */
-   public TallyHistogram clone() {
-      TallyHistogram image = (TallyHistogram)super.clone();
-      int[] coco = new int[2 + numBins];
-      System.arraycopy (co, 0, coco, 0, 2 + numBins);
-      image.co = coco;
-      image.m_h = m_h;
-      image.m_a = m_a;
-      image.m_b = m_b;
-      image.numBins = numBins;
-      return image;
-   }
+	/**
+	 * Remove empty bins in the tails (left and right), without changing the bin size.
+	 * This gives a new @ref TallyHistogram which may have fewer bins.
+	 */
+	public TallyHistogram trimHistogram() {
+		TallyHistogram image = (TallyHistogram) super.clone();
+		int i = 0;
+		int j = numBins-1; // last bin in the initial histogram
+		int cpL = 0; // number of empty bins from left initialized to zero
+		int cpR = 0; // number of empty bins from right initialized to zero
+		while (count[i] == 0) {
+			i++;
+			cpL++;
+		}
+		while (count[j] == 0) {
+			j--;
+			cpR++;
+		}
+		int[] coco = new int[numBins - cpL - cpR];
+		System.arraycopy(count, i, coco, 0, j - i + 1);
+		image.count = coco;
+		image.m_h = m_h;
+		image.m_a = m_a + (cpL * m_h);
+		image.m_b = m_b - (cpR * m_h);
+		image.numBins = numBins - cpL - cpR;
+		image.leftCount = leftCount;
+		image.rightCount = rightCount;
+		return image;
+	}
 
-   /**
-    * Returns the bin counters as a `String`.
-    */
-   public String toString() {
-      StringBuffer sb = new StringBuffer ();
-      sb.append ("---------------------------------------" +
-                PrintfFormat.NEWLINE);
-      sb.append (name + PrintfFormat.NEWLINE);
-      sb.append ("Interval = [ " + m_a + ", " + m_b + " ]" +
-                 PrintfFormat.NEWLINE);
-      sb.append ("Number of bins = " + numBins + " + 2" + PrintfFormat.NEWLINE);
-      sb.append (PrintfFormat.NEWLINE + "Counters = {" +
-                 PrintfFormat.NEWLINE);
-      sb.append ("   (-inf, " + PrintfFormat.f(6, 3, m_a)
-                 + ")    " + co[0] + PrintfFormat.NEWLINE);
-      for (int i = 1; i <= numBins; i++) {
-         double a = m_a + (i-1)*m_h;
-         double b = m_a + i*m_h;
-         sb.append ("   (" +
-            PrintfFormat.f(6, 3, a) + ", " +
-            PrintfFormat.f(6, 3, b) + ")    " + co[i] +
-                 PrintfFormat.NEWLINE);
-      }
-      sb.append ("   (" + PrintfFormat.f(6, 3, m_b)
-                 + ", inf)    " + co[numBins + 1] +
-                 PrintfFormat.NEWLINE);
-      sb.append ("}" + PrintfFormat.NEWLINE);
-      return sb.toString();
-   }
+	/**
+	 * Merges this histogram with the other histogram, by adding the bin counts of the two
+	 * histograms.
+	 * 
+	 * @param other
+	 *            the histogram to add
+	 * 
+	 *            Returns the merged histogram.
+	 */
+	public TallyHistogram addHistograms(TallyHistogram other) {
+		if (this.numBins != other.numBins)
+			throw new IllegalArgumentException("different number of bin in two histogram to merge");
+		TallyHistogram image = (TallyHistogram) super.clone();
+		int[] countNew = new int[numBins];
+		System.arraycopy(count, 0, countNew, 0, numBins);
+		int coOther[] = other.getCounters();
+		for (int i = 0; i < countNew.length; i++)
+			countNew[i] = countNew[i] + coOther[i];
+		image.count = countNew;
+		image.leftCount = leftCount + other.leftCount;
+		image.rightCount = rightCount + other.rightCount;
+		image.m_h = m_h;
+		image.m_a = m_a;
+		image.m_b = m_b;
+		image.numBins = numBins;
+		return image;
+
+	}
+
+	/**
+	 * Merges bins by groups of size @f$g@f$. If there are @f$m@f$ bins initially, the new number of bins
+	 * will be @f$\lceil m/g\rceil@f$. The last bin may regroup less than @f$g@f$ original bins 
+	 * if @f$m@f$ is not a multiple of @f$g@f$. In this case the upper bound @f$b@f$ is increased accordingly.
+	 **/
+	public TallyHistogram aggregateBins(int g) {
+		TallyHistogram image = (TallyHistogram) super.clone();
+		int numBinsNew = (int)Math.ceil((double) numBins / (double) g);
+		int[] countNew = new int[numBinsNew];
+		int b = 0;
+		for (int j = 0; j < numBinsNew-1; j++) {
+			for (int i = b; i < b + g; i++)
+				countNew[j] += count[i];
+			b = b + g;
+		}
+		while (b < numBins - 1) {
+			countNew[numBinsNew-1] += count[b];
+			b++;
+		}
+		image.count = countNew;
+		image.m_h = m_h * g;
+		image.m_a = m_a;
+		image.m_b = m_h * numBinsNew;
+		image.numBins = numBinsNew;
+		image.leftCount = leftCount;
+		image.rightCount = rightCount;
+		return image;
+	}
+
+	/**
+	 * Returns the array of bin counters. Each counter contains the number of observations that fell in its
+	 * corresponding bin. 
+	 * 
+	 * @return the array of bin counters
+	 */
+	public int[] getCounters() {
+		return count;
+	}
+
+	/**
+	 * Returns the number of bins @f$s@f$.  
+	 * 
+	 * @return the number of bins
+	 */
+	public int getNumBins() {
+		return numBins;
+	}
+
+	/**
+	 * Returns the left boundary @f$a@f$ of the interval @f$[a,b]@f$.
+	 * 
+	 * @return left boundary of interval
+	 */
+	public double getA() {
+		return m_a;
+	}
+
+	/**
+	 * Returns the right boundary @f$b@f$ of the interval @f$[a,b]@f$.
+	 * 
+	 * @return right boundary of interval
+	 */
+	public double getB() {
+		return m_b;
+	}
+
+	/**
+	 * Returns the width @f$h@f$ of the bins.
+	 * 
+	 * @return the width of the bins
+	 */
+	public double getH() {
+		return m_h;
+	}
+	
+	/**
+	 * Returns the relative number of observations that lie within the boundaries of the histogram.
+	 * @return the relative number of observations within the histogram.
+	 */
+	public double getRelNumPoints() {
+		int total = 0;
+		for(int num : count) {
+			total += num;
+		}
+		return  (double) total / (double)(total + leftCount + rightCount); 
+	}
+	/**
+	 * Clones this object and the array that stores the counters.
+	 */
+	public TallyHistogram clone() {
+		TallyHistogram image = (TallyHistogram) super.clone();
+		int[] coco = new int[numBins];
+		System.arraycopy(count, 0, coco, 0, numBins);
+		image.count = coco;
+        image.leftCount = leftCount;
+        image.rightCount = rightCount;
+		image.m_h = m_h;
+		image.m_a = m_a;
+		image.m_b = m_b;
+		image.numBins = numBins;
+		return image;
+	}
+
+	/**
+	 * Returns the bin counters as a `String`.
+	 */
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("---------------------------------------" + PrintfFormat.NEWLINE);
+		sb.append(name + PrintfFormat.NEWLINE);
+		sb.append("Interval = [ " + m_a + ", " + m_b + " ]" + PrintfFormat.NEWLINE);
+		sb.append("Number of bins = " + numBins + PrintfFormat.NEWLINE);
+		sb.append(PrintfFormat.NEWLINE + "Counters = {" + PrintfFormat.NEWLINE);
+		sb.append("   (-inf, " + PrintfFormat.f(6, 3, m_a) + ")    " + leftCount
+		        + PrintfFormat.NEWLINE);
+		for (int i = 0; i < numBins; i++) {
+			double a = m_a + (i - 1) * m_h;
+			double b = m_a + i * m_h;
+			sb.append("   (" + PrintfFormat.f(6, 3, a) + ", " + PrintfFormat.f(6, 3, b) + ")    "
+			        + count[i] + PrintfFormat.NEWLINE);
+		}
+		sb.append("   (" + PrintfFormat.f(6, 3, m_b) + ", inf)    " + rightCount
+		        + PrintfFormat.NEWLINE);
+		sb.append("}" + PrintfFormat.NEWLINE);
+		return sb.toString();
+	}
 
 }

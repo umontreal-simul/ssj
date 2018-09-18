@@ -1,0 +1,5 @@
+<map id="ChiSquareNoncentralGen" name="ChiSquareNoncentralGen">
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralGamGen.html" title="This class implements noncentral chi square random variate generators using the additive property of ..." alt="" coords="5,155,204,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralPoisGen.html" title="This class implements noncentral chi square random variate generators using Poisson and central chi s..." alt="" coords="228,155,424,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="147,5,283,32"/>
+</map>

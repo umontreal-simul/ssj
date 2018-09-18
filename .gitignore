@@ -3,7 +3,8 @@ build
 /.nb-gradle
 .nb-gradle-properties
 hs_err*
-/bin
-.settings
-.project
+/bin/
 .classpath
+.project
+.settings
+/.metadata/
