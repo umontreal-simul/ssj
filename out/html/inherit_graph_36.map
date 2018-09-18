@@ -1,17 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes. " alt="" coords="5,208,100,235"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscrepancy.html" title="This abstract class is the base class of all discrepancy classes programmed with floating&#45;point numbe..." alt="" coords="157,5,272,32"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Hickernell.html" title="This class computes the Hickernell &#45;star discrepancy in   (eq. " alt="" coords="154,56,275,83"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Star.html" title="This class computes the traditional &#45;star discrepancy &#160;for a set of &#160;points &#160;, ,  . " alt="" coords="171,107,258,133"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Symmetric.html" title="COMPLÉTER LA DOC ICI. " alt="" coords="151,157,278,184"/>
-<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Unanchored.html" title="A discrepancy is said to be reflection&#45;invariant if it has the same value when the points are reflect..." alt="" coords="148,208,281,235"/>
-<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1.html" title="This class computes the discrepancy for randomly shifted points of a set &#160;  (eq. ..." alt="" coords="173,259,256,285"/>
-<area shape="rect" id="node11" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2.html" title="This class computes the discrepancy in   (eq. " alt="" coords="173,309,256,336"/>
-<area shape="rect" id="node13" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1.html" title="This class computes the discrepancy for randomly shifted, then baker folded points of a set ..." alt="" coords="156,360,273,387"/>
-<area shape="rect" id="node15" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Palpha.html" title="Extends the class Discrepancy and implements the methods required to compute the &#160;figure of merit for..." alt="" coords="183,411,246,437"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1.html" title="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1 [see eq..." alt="" coords="339,5,475,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1Lattice.html" title="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1Lattice [see ..." alt="" coords="533,5,708,32"/>
-<area shape="rect" id="node10" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1Lattice.html" title="This class computes the same discrepancy for randomly shifted points of a set &#160;as given in eq..." alt="" coords="346,259,469,285"/>
-<area shape="rect" id="node12" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2Lattice.html" title="This class computes the same discrepancy for randomly shifted points of a set &#160;as given in eq..." alt="" coords="346,309,469,336"/>
-<area shape="rect" id="node14" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1Lattice.html" title="This class computes the same discrepancy in   (eq. " alt="" coords="329,360,485,387"/>
+<area shape="rect" id="node1" href="$classift6561examples_1_1DigitalShift.html" title="Reads a set of points, applied a digital random shift to them, then prints the shifted points in a fi..." alt="" coords="5,5,92,32"/>
 </map>

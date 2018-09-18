@@ -1,6 +1,6 @@
 <map id="AnovaVarianceCollector" name="AnovaVarianceCollector">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="Represents a list of tally statistical collectors. " alt="" coords="341,17,547,44"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="Represents a list of tally statistical collectors. " alt="" coords="341,19,547,45"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html" title="ListOfStatProbes\&lt; E \&gt;" alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="419,81,469,108"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="419,95,469,121"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="43,56,123,83"/>
 </map>
