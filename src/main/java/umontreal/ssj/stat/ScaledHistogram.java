@@ -30,14 +30,18 @@ package umontreal.ssj.stat;
 
 /**
 * This class provides histograms for which the bin counts (heights of rectangles)
-*  are replaced by real-valued frequencies (in `double`).  
+*  are replaced by real-valued frequencies (in `double`) and can be rescaled.  
 * The histogram is over a bounded interval @f$[a,b]@f$ and has a fixed number 
 * of bins of equal width @f$h@f$.
 *  The frequencies can be chosen (rescaled) so that the integral of the 
 *  histogram is equal to a specific value.  If this value is taken as 1, 
 *  i.e., if @f$h@f$ times the sum of frequencies is equal to 1, 
-*  then the histogram can be seen as a density estimator.  
-* 
+*  then the histogram can be seen as a density estimator for a density whose
+*  support is contained in @f$[a,b]@f$.  If part of the density is outside @f$[a,b]@f$,
+*  then the integral of the estimated density over @f$[a,b]@f$ can be less than 1.
+*  
+*  This class also implements averaged-shifted histograms (ASH) and polygonal 
+*  interpolations of histograms.  See @cite tSCO15a.
 * 
 * <div class="SSJ-bigskip"></div>
 */
@@ -54,7 +58,7 @@ public class ScaledHistogram {
 
 	/**
 	 * Constructs a `ScaledHistogram` over the interval @f$[a,b]@f$, which is divided into 
-	 * @f$numBins@f$ bins of equal width. 
+	 * `numBins` bins of equal width. 
 	 * This constructor initializes the frequency of each bin to 0.
 	 * @param a
 	 *            left boundary of interval
@@ -78,7 +82,7 @@ public class ScaledHistogram {
 
 	/**
 	 * Initializes the `ScaledHistogram` so it covers the interval @f$[a,b]@f$, 
-	 * which is divided into @ref numBins bins of equal width. 
+	 * which is divided into `numBins` bins of equal width. 
 	 * Is initializes the frequency of each bin to 0.
 	 * @param a
 	 *            left boundary of interval
@@ -118,7 +122,7 @@ public class ScaledHistogram {
 			height[i] = count[i] * scaleFactor;  
 	}
 	
-	/*
+	/**
 	 * Initializes all the heights (frequencies) to 0.
 	 */
 	public void init () {
@@ -126,8 +130,9 @@ public class ScaledHistogram {
 			height[i] = 0.0;
 	}
 		
-	/*
-	 * Rescales the histogram by renormalizing the frequencies so its integral has the specified value.
+	/**
+	 * Rescales the histogram by renormalizing the frequencies so its integral has the value
+	 * specified by `integral`.
 	 */
 	public void rescale (double integral) {
 		double scaleFactor = integral / this.integral;
@@ -136,7 +141,7 @@ public class ScaledHistogram {
 		this.integral = integral;
 	}
 
-	/*
+	/**
 	 * Returns an ASH-transformed version of this scaled histogram. The
 	 * ASH-transformed histogram has the same bin size as the original. The new
 	 * frequency (height) in any given bin is the weighted average of the frequencies in
@@ -163,8 +168,8 @@ public class ScaledHistogram {
 		return image;
 	}
 
-	/*
-	 * Similar to @ref AverageShiftedHistogram, except that it assumes that the density 
+	/**
+	 * Similar to `averageShiftedHistogram`, except that it assumes that the density 
 	 * is over a close interval @f$[a,b]@f$ and is rescaled differently for the intervals 
 	 * that are near the boundary, to account for the fact that the intervals 
 	 * outside the boundaries are not counted.
@@ -195,8 +200,8 @@ public class ScaledHistogram {
 		return image;
 	}
 
-	/*
-	 * Similar to @ref AverageShiftedHistogram, except that uses a weighted average.
+	/**
+	 * Similar to `averageShiftedHistogram`, except that uses a weighted average.
 	 * For the new average in a given bin, any neighbor bin at distance @f$\ell < r@f$ is given 
 	 * a weight proportional to `w[i]`. The given weights do not have to sum to 1;
 	 * they are rescaled so the sum of weights that go to any given bin is 1.
@@ -228,8 +233,8 @@ public class ScaledHistogram {
 	}
 		
 		
-	/*
-	 * Similar to @ref AverageShiftedHistogramTrunc, except that uses a weighted average.
+	/**
+	 * Similar to `averageShiftedHistogramTrunc`, except that uses a weighted average.
 	 * For the new average in a given bin, any neighbor bin at distance @f$\ell < r@f$ is given 
 	 * a weight proportional to `w[i]`. The given weights do not have to sum to 1;
 	 * they are rescaled so the sum of weights that go to any given bin is 1 (not counting 
@@ -294,7 +299,7 @@ public class ScaledHistogram {
 	}*/
 	
 
-	/*
+	/**
 	 * This is supposed to be a faster implementation of `averageShiftedHistogram(r)`.
 	 */
 	public ScaledHistogram averageShiftedHistogram1 (int r) {
@@ -328,9 +333,8 @@ public class ScaledHistogram {
 	}
 	
   
-  /**
-	 * Returns the number of bins @f$s@f$ dividing the interval
-	 * 
+     /**
+	 * Returns the number of bins @f$s@f$ dividing the interval 
 	 * @f$[a,b]@f$. Does not count the two extra bins for the values of
 	 * @f$x<a@f$ or @f$x>b@f$.
 	 * @return the number of bins
@@ -357,13 +361,16 @@ public class ScaledHistogram {
 		return m_b;
 	}
 
-	/*
-	 * return the array count of the average shifted histogram
+	/**
+	 * return the array counts of the histogram.
 	 */
 	public double[] getHeights() {
 		return height;
 	}
 
+	/**
+	 * return the integral the histogram.
+	 */
 	public double getIntegral() {
 		return integral;
 	}
