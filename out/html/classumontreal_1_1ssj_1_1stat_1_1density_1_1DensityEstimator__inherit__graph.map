@@ -1,5 +1,5 @@
 <map id="DensityEstimator" name="DensityEstimator">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="This class provides methods to construct, manipulate, and evaluate a histogram density estimator for ..." alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="Histogram density estimator for a univariate density. " alt="" coords="5,80,107,107"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html" title="This class provides methods to construct a kernel density estimator (KDE) for univariate densities fr..." alt="" coords="131,80,253,107"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" title="This class implements a density derivative estimator (DDE) based on a kernel density estimator (KDE) ..." alt="" coords="278,80,461,107"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DEDerivativeGaussian.html" title="This class implements a density derivative estimator (DDE) with a Gaussian ( i.e., standard normal) kernel function. " alt="" coords="292,155,447,181"/>

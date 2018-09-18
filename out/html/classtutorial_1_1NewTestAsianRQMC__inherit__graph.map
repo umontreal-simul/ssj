@@ -1,4 +1,4 @@
 <map id="NewTestAsianRQMC" name="NewTestAsianRQMC">
-<area shape="rect" id="node2" href="$classtutorial_1_1Asian.html" title="Asian" alt="" coords="5,5,60,32"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="85,5,250,32"/>
+<area shape="rect" id="node2" href="$classtutorial_1_1AsianGBM.html" title="AsianGBM" alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="115,5,280,32"/>
 </map>

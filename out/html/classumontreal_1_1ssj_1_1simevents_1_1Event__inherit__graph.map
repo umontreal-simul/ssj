@@ -1,15 +1,12 @@
 <map id="Event" name="Event">
-<area shape="rect" id="node3" href="$classtutorial_1_1BankEv_1_1Arrival.html" title="BankEv.Arrival" alt="" coords="342,5,450,32"/>
-<area shape="rect" id="node4" href="$classtutorial_1_1BankEv_1_1Departure.html" title="BankEv.Departure" alt="" coords="332,56,460,83"/>
-<area shape="rect" id="node5" href="$classtutorial_1_1CallCenter_1_1Arrival.html" title="CallCenter.Arrival" alt="" coords="334,107,458,133"/>
-<area shape="rect" id="node6" href="$classtutorial_1_1CallCenter_1_1CallCompletion.html" title="CallCenter.CallCompletion" alt="" coords="308,157,484,184"/>
-<area shape="rect" id="node7" href="$classtutorial_1_1CallCenter_1_1NextPeriod.html" title="CallCenter.NextPeriod" alt="" coords="320,208,472,235"/>
-<area shape="rect" id="node8" href="$classtutorial_1_1CallEv_1_1Arrival.html" title="CallEv.Arrival" alt="" coords="345,259,447,285"/>
-<area shape="rect" id="node9" href="$classtutorial_1_1CallEv_1_1CallCompletion.html" title="CallEv.CallCompletion" alt="" coords="319,309,473,336"/>
-<area shape="rect" id="node10" href="$classtutorial_1_1CallEv_1_1NextPeriod.html" title="CallEv.NextPeriod" alt="" coords="331,360,461,387"/>
-<area shape="rect" id="node11" href="$classtutorial_1_1PreyPred_1_1EndOfSim.html" title="PreyPred.EndOfSim" alt="" coords="326,411,466,437"/>
-<area shape="rect" id="node12" href="$classtutorial_1_1PreyPred_1_1PrintPoint.html" title="PreyPred.PrintPoint" alt="" coords="327,461,465,488"/>
-<area shape="rect" id="node13" href="$classtutorial_1_1QueueEv_1_1Arrival.html" title="QueueEv.Arrival" alt="" coords="338,512,454,539"/>
-<area shape="rect" id="node14" href="$classtutorial_1_1QueueEv_1_1Departure.html" title="QueueEv.Departure" alt="" coords="328,563,464,589"/>
-<area shape="rect" id="node15" href="$classtutorial_1_1QueueEv_1_1EndOfSim.html" title="QueueEv.EndOfSim" alt="" coords="327,613,465,640"/>
+<area shape="rect" id="node3" href="$classift6561examples_1_1CallCenter_1_1Arrival.html" title="CallCenter.Arrival" alt="" coords="334,5,459,32"/>
+<area shape="rect" id="node4" href="$classift6561examples_1_1CallCenter_1_1CallCompletion.html" title="CallCenter.CallCompletion" alt="" coords="308,56,485,83"/>
+<area shape="rect" id="node5" href="$classift6561examples_1_1CallCenter_1_1NextPeriod.html" title="CallCenter.NextPeriod" alt="" coords="320,107,473,133"/>
+<area shape="rect" id="node6" href="$classtutorial_1_1BankEv_1_1Arrival.html" title="BankEv.Arrival" alt="" coords="342,157,451,184"/>
+<area shape="rect" id="node7" href="$classtutorial_1_1BankEv_1_1Departure.html" title="BankEv.Departure" alt="" coords="332,208,461,235"/>
+<area shape="rect" id="node8" href="$classtutorial_1_1PreyPred_1_1EndOfSim.html" title="PreyPred.EndOfSim" alt="" coords="327,259,467,285"/>
+<area shape="rect" id="node9" href="$classtutorial_1_1PreyPred_1_1PrintPoint.html" title="PreyPred.PrintPoint" alt="" coords="328,309,465,336"/>
+<area shape="rect" id="node10" href="$classtutorial_1_1QueueEv_1_1Arrival.html" title="QueueEv.Arrival" alt="" coords="338,360,455,387"/>
+<area shape="rect" id="node11" href="$classtutorial_1_1QueueEv_1_1Departure.html" title="QueueEv.Departure" alt="" coords="328,411,465,437"/>
+<area shape="rect" id="node12" href="$classtutorial_1_1QueueEv_1_1EndOfSim.html" title="QueueEv.EndOfSim" alt="" coords="327,461,467,488"/>
 </map>

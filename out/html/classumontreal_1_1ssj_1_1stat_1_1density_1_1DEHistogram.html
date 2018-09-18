@@ -70,13 +70,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DEHistogram Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This class provides methods to construct, manipulate, and evaluate a histogram density estimator for univariate densities.  
+<p>Histogram density estimator for a univariate density.  
  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DEHistogram:</div>
@@ -91,95 +92,122 @@ Collaboration diagram for DEHistogram:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8cbc2663290747440a00dbe9851c4897"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a8cbc2663290747440a00dbe9851c4897">DEHistogram</a> (int numBins)</td></tr>
-<tr class="memdesc:a8cbc2663290747440a00dbe9851c4897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a histogram estimator with <em>numBins</em> bins.  <a href="#a8cbc2663290747440a00dbe9851c4897">More...</a><br /></td></tr>
-<tr class="separator:a8cbc2663290747440a00dbe9851c4897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c5f4eab6d5f53b7279d76360422167"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ac0c5f4eab6d5f53b7279d76360422167">DEHistogram</a> (double a, double b, int numBins)</td></tr>
+<tr class="memdesc:ac0c5f4eab6d5f53b7279d76360422167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram estimator over the interval \([a,b]\) with <em>numBins</em> number of bins.  <a href="#ac0c5f4eab6d5f53b7279d76360422167">More...</a><br /></td></tr>
+<tr class="separator:ac0c5f4eab6d5f53b7279d76360422167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c3bfdb65686c56acd8dd885d55efc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a88c3bfdb65686c56acd8dd885d55efc2">DEHistogram</a> (double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, double a, double b, int numBins)</td></tr>
+<tr class="memdesc:a88c3bfdb65686c56acd8dd885d55efc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram over the interval \([a,b]\) with <em>numBins</em> number of bins from the observations passed in <em>data</em>.  <a href="#a88c3bfdb65686c56acd8dd885d55efc2">More...</a><br /></td></tr>
+<tr class="separator:a88c3bfdb65686c56acd8dd885d55efc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c524600611d68a4ac25ae9c26ae3790"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a2c524600611d68a4ac25ae9c26ae3790">DEHistogram</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
+<tr class="memdesc:a2c524600611d68a4ac25ae9c26ae3790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> <em>tallyHist</em>.  <a href="#a2c524600611d68a4ac25ae9c26ae3790">More...</a><br /></td></tr>
+<tr class="separator:a2c524600611d68a4ac25ae9c26ae3790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb5c9c8dd9da0eceac5cea6796acd32f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#abb5c9c8dd9da0eceac5cea6796acd32f">DEHistogram</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
+<tr class="memdesc:abb5c9c8dd9da0eceac5cea6796acd32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> <em>scaledHist</em>.  <a href="#abb5c9c8dd9da0eceac5cea6796acd32f">More...</a><br /></td></tr>
+<tr class="separator:abb5c9c8dd9da0eceac5cea6796acd32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c02e3088a0a9cbeaeea1e64ef58e7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a51c02e3088a0a9cbeaeea1e64ef58e7e">setData</a> (double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>)</td></tr>
+<tr class="memdesc:a51c02e3088a0a9cbeaeea1e64ef58e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the observations in <em>data</em> and constructs and redefines the histogram with these observations.  <a href="#a51c02e3088a0a9cbeaeea1e64ef58e7e">More...</a><br /></td></tr>
+<tr class="separator:a51c02e3088a0a9cbeaeea1e64ef58e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac74b2a1f934d805be2ab2b4d6bd164e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ac74b2a1f934d805be2ab2b4d6bd164e1">getScaledHistogram</a> ()</td></tr>
+<tr class="memdesc:ac74b2a1f934d805be2ab2b4d6bd164e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code>.  <a href="#ac74b2a1f934d805be2ab2b4d6bd164e1">More...</a><br /></td></tr>
+<tr class="separator:ac74b2a1f934d805be2ab2b4d6bd164e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57972954853e6674ba6efaf4527ac215"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a57972954853e6674ba6efaf4527ac215">getNumBins</a> ()</td></tr>
 <tr class="memdesc:a57972954853e6674ba6efaf4527ac215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the number of bins \(s\).  <a href="#a57972954853e6674ba6efaf4527ac215">More...</a><br /></td></tr>
 <tr class="separator:a57972954853e6674ba6efaf4527ac215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc5de8cd4237263619499d9bc55f4b5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#abc5de8cd4237263619499d9bc55f4b5d">setNumBins</a> (int numBins)</td></tr>
-<tr class="memdesc:abc5de8cd4237263619499d9bc55f4b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of bins to <em>numBins</em>.  <a href="#abc5de8cd4237263619499d9bc55f4b5d">More...</a><br /></td></tr>
-<tr class="separator:abc5de8cd4237263619499d9bc55f4b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6e9f7d0542f15bff4fe309cab52f286"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ad6e9f7d0542f15bff4fe309cab52f286">getH</a> ()</td></tr>
 <tr class="memdesc:ad6e9f7d0542f15bff4fe309cab52f286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the bin width \(h\).  <a href="#ad6e9f7d0542f15bff4fe309cab52f286">More...</a><br /></td></tr>
 <tr class="separator:ad6e9f7d0542f15bff4fe309cab52f286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3cb872607dbb4b3750373b4eb882bc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aa3cb872607dbb4b3750373b4eb882bc5">setH</a> (double h)</td></tr>
-<tr class="memdesc:aa3cb872607dbb4b3750373b4eb882bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the bin width to <em>h</em>.  <a href="#aa3cb872607dbb4b3750373b4eb882bc5">More...</a><br /></td></tr>
-<tr class="separator:aa3cb872607dbb4b3750373b4eb882bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4150465a719e9ec271896e592aa2040b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a4150465a719e9ec271896e592aa2040b">getA</a> ()</td></tr>
 <tr class="memdesc:a4150465a719e9ec271896e592aa2040b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the left boundary \(a\) of the histogram.  <a href="#a4150465a719e9ec271896e592aa2040b">More...</a><br /></td></tr>
 <tr class="separator:a4150465a719e9ec271896e592aa2040b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0869957b5bd1065718a5dc15aa07f2f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#af0869957b5bd1065718a5dc15aa07f2f">getB</a> ()</td></tr>
 <tr class="memdesc:af0869957b5bd1065718a5dc15aa07f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the right boundary \(b\) of the histogram.  <a href="#af0869957b5bd1065718a5dc15aa07f2f">More...</a><br /></td></tr>
 <tr class="separator:af0869957b5bd1065718a5dc15aa07f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a792f44c0896731c5c93d498346416176"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a792f44c0896731c5c93d498346416176">constructDensity</a> (double[] data, double a, double b)</td></tr>
-<tr class="memdesc:a792f44c0896731c5c93d498346416176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram over the interval \([a,b]\) from the observations passed in <em>data</em>.  <a href="#a792f44c0896731c5c93d498346416176">More...</a><br /></td></tr>
-<tr class="separator:a792f44c0896731c5c93d498346416176"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e9f191fbd258f80447c1ee26781fcba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a1e9f191fbd258f80447c1ee26781fcba">constructDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
-<tr class="memdesc:a1e9f191fbd258f80447c1ee26781fcba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> <em>tallyHist</em>.  <a href="#a1e9f191fbd258f80447c1ee26781fcba">More...</a><br /></td></tr>
-<tr class="separator:a1e9f191fbd258f80447c1ee26781fcba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa99505cf9498ae37e09a08f4cf7da9c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aa99505cf9498ae37e09a08f4cf7da9c7">constructDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
-<tr class="memdesc:aa99505cf9498ae37e09a08f4cf7da9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> <em>scaledHist</em>.  <a href="#aa99505cf9498ae37e09a08f4cf7da9c7">More...</a><br /></td></tr>
-<tr class="separator:aa99505cf9498ae37e09a08f4cf7da9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad146fa8579a5f8a876c4688cc5a68520"><td class="memItemLeft" align="right" valign="top"><a id="ad146fa8579a5f8a876c4688cc5a68520"></a>
 String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a> ()</td></tr>
 <tr class="separator:ad146fa8579a5f8a876c4688cc5a68520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7efa66a5e1e49eff7469b49e61e82d04"><td class="memItemLeft" align="right" valign="top"><a id="a7efa66a5e1e49eff7469b49e61e82d04"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a7efa66a5e1e49eff7469b49e61e82d04">evalDensity</a> (double x, double[] data, double a, double b)</td></tr>
-<tr class="separator:a7efa66a5e1e49eff7469b49e61e82d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbbdd6f5065f79e10a18bd40de194047"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#acbbdd6f5065f79e10a18bd40de194047">evalDensity</a> (double[] evalPoints, double[] data, double a, double b)</td></tr>
-<tr class="memdesc:acbbdd6f5065f79e10a18bd40de194047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram density estimator over the interval \([a,b]\) based on the observations <em>data</em> and evaluates it at the points in <em>evalPoints</em>.  <a href="#acbbdd6f5065f79e10a18bd40de194047">More...</a><br /></td></tr>
-<tr class="separator:acbbdd6f5065f79e10a18bd40de194047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14b0b89d679fb7eedbc18b2cb782fade"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a14b0b89d679fb7eedbc18b2cb782fade">evalDensity</a> (double[] data, double a, double b)</td></tr>
-<tr class="memdesc:a14b0b89d679fb7eedbc18b2cb782fade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram density estimator over the interval \([a,b]\) based on the observations <em>data</em> and evaluates it at one point in each bin.  <a href="#a14b0b89d679fb7eedbc18b2cb782fade">More...</a><br /></td></tr>
-<tr class="separator:a14b0b89d679fb7eedbc18b2cb782fade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30a92fe59bfa93a6e7af87edc16e6686"><td class="memItemLeft" align="right" valign="top">double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a30a92fe59bfa93a6e7af87edc16e6686">evalDensity</a> (double[][] data, double a, double b)</td></tr>
-<tr class="memdesc:a30a92fe59bfa93a6e7af87edc16e6686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a4ae7a74e0d3483a0988280dd0eb64507" title="Constructs a density estimator over the interval  based on the observations data if necessary...">umontreal.ssj.stat.density.DensityEstimator::evalDensity</a>(double[], double[][], double, double) but with one evaluation point per bin.  <a href="#a30a92fe59bfa93a6e7af87edc16e6686">More...</a><br /></td></tr>
-<tr class="separator:a30a92fe59bfa93a6e7af87edc16e6686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ffa2754676096097d253e3037f474e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a28ffa2754676096097d253e3037f474e">evalDensity</a> (double x, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
-<tr class="memdesc:a28ffa2754676096097d253e3037f474e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram estimator from <em>tallyHist</em> and evaluates it at <em>x</em>.  <a href="#a28ffa2754676096097d253e3037f474e">More...</a><br /></td></tr>
-<tr class="separator:a28ffa2754676096097d253e3037f474e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae61414c3902add0eda869311d522d68c"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ae61414c3902add0eda869311d522d68c">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
-<tr class="memdesc:ae61414c3902add0eda869311d522d68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram density estimator from <em>tallyHist</em> and evaluates it at one point in each bin.  <a href="#ae61414c3902add0eda869311d522d68c">More...</a><br /></td></tr>
-<tr class="separator:ae61414c3902add0eda869311d522d68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6ed840f990903abc25b89f341c8e3c7"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ae6ed840f990903abc25b89f341c8e3c7">evalDensity</a> (double[] evalPoints, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
-<tr class="memdesc:ae6ed840f990903abc25b89f341c8e3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram estimator from <em>tallyHist</em> and evaluates it at each evaluation point in <em>evalPoints</em>.  <a href="#ae6ed840f990903abc25b89f341c8e3c7">More...</a><br /></td></tr>
-<tr class="separator:ae6ed840f990903abc25b89f341c8e3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af79f6f3091f5b5e781d4795f32cf76ac"><td class="memItemLeft" align="right" valign="top">double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#af79f6f3091f5b5e781d4795f32cf76ac">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>[] tallyHistArray)</td></tr>
-<tr class="memdesc:af79f6f3091f5b5e781d4795f32cf76ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a30a92fe59bfa93a6e7af87edc16e6686" title="Same as umontreal.ssj.stat.density.DensityEstimator::evalDensity(double[], double[][], double, double) but with one evaluation point per bin. ">evalDensity(double[][], double, double)</a> but here, each realization of the histogram is constructed from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a>.  <a href="#af79f6f3091f5b5e781d4795f32cf76ac">More...</a><br /></td></tr>
-<tr class="separator:af79f6f3091f5b5e781d4795f32cf76ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244393d286c0b51c2f1a9d9ad5e5bc61"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a244393d286c0b51c2f1a9d9ad5e5bc61">evalDensity</a> (double x, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
-<tr class="memdesc:a244393d286c0b51c2f1a9d9ad5e5bc61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram estimator from <em>scaledHist</em> and evaluates it at <em>x</em>.  <a href="#a244393d286c0b51c2f1a9d9ad5e5bc61">More...</a><br /></td></tr>
-<tr class="separator:a244393d286c0b51c2f1a9d9ad5e5bc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077aadeb17b0f47c0f1a2e959c8e7340"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a077aadeb17b0f47c0f1a2e959c8e7340">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
-<tr class="memdesc:a077aadeb17b0f47c0f1a2e959c8e7340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram density estimator from <em>scaledHist</em> and evaluates it at one point in each bin.  <a href="#a077aadeb17b0f47c0f1a2e959c8e7340">More...</a><br /></td></tr>
-<tr class="separator:a077aadeb17b0f47c0f1a2e959c8e7340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf45b6835dc53e77d6dac0b25badc2b1"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#adf45b6835dc53e77d6dac0b25badc2b1">evalDensity</a> (double[] evalPoints, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
-<tr class="memdesc:adf45b6835dc53e77d6dac0b25badc2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a histogram estimator from <em>scaledHist</em> and evaluates it at each evaluation point in <em>evalPoints</em>.  <a href="#adf45b6835dc53e77d6dac0b25badc2b1">More...</a><br /></td></tr>
-<tr class="separator:adf45b6835dc53e77d6dac0b25badc2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd17c6b8e4aea76d55b8083df3b44853"><td class="memItemLeft" align="right" valign="top">double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#abd17c6b8e4aea76d55b8083df3b44853">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>[] scaledHistArray)</td></tr>
-<tr class="memdesc:abd17c6b8e4aea76d55b8083df3b44853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a30a92fe59bfa93a6e7af87edc16e6686" title="Same as umontreal.ssj.stat.density.DensityEstimator::evalDensity(double[], double[][], double, double) but with one evaluation point per bin. ">evalDensity(double[][], double, double)</a> but here, each realization of the histogram is constructed from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a>.  <a href="#abd17c6b8e4aea76d55b8083df3b44853">More...</a><br /></td></tr>
-<tr class="separator:abd17c6b8e4aea76d55b8083df3b44853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f10f65162f9178cea44162784906638"><td class="memItemLeft" align="right" valign="top"><a id="a9f10f65162f9178cea44162784906638"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a9f10f65162f9178cea44162784906638">evalDensity</a> (double x)</td></tr>
+<tr class="separator:a9f10f65162f9178cea44162784906638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39eae5b3d962a6b4f9f533e955005b9b"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a39eae5b3d962a6b4f9f533e955005b9b">evalDensity</a> (double[] evalPoints)</td></tr>
+<tr class="memdesc:a39eae5b3d962a6b4f9f533e955005b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram estimator at the points in <em>evalPoints</em>.  <a href="#a39eae5b3d962a6b4f9f533e955005b9b">More...</a><br /></td></tr>
+<tr class="separator:a39eae5b3d962a6b4f9f533e955005b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a04fd15193c0e1c4de4590d2eb53f95"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a4a04fd15193c0e1c4de4590d2eb53f95">evalDensity</a> ()</td></tr>
+<tr class="memdesc:a4a04fd15193c0e1c4de4590d2eb53f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram density estimator at one point in each bin.  <a href="#a4a04fd15193c0e1c4de4590d2eb53f95">More...</a><br /></td></tr>
+<tr class="separator:a4a04fd15193c0e1c4de4590d2eb53f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td></tr>
-<tr class="memitem:a4ae7a74e0d3483a0988280dd0eb64507 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">abstract double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a4ae7a74e0d3483a0988280dd0eb64507">evalDensity</a> (double x, double data[], double a, double b)</td></tr>
-<tr class="memdesc:a4ae7a74e0d3483a0988280dd0eb64507 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a density estimator over the interval \([a,b]\) based on the observations <em>data</em> if necessary, and evaluates it at <em>x</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a4ae7a74e0d3483a0988280dd0eb64507">More...</a><br /></td></tr>
-<tr class="separator:a4ae7a74e0d3483a0988280dd0eb64507 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbbdd6f5065f79e10a18bd40de194047 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#acbbdd6f5065f79e10a18bd40de194047">evalDensity</a> (double[] evalPoints, double[] data, double a, double b)</td></tr>
-<tr class="memdesc:acbbdd6f5065f79e10a18bd40de194047 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a density estimator over the interval \([a,b]\) based on the observations <em>data</em> if necessary, and evaluates it at the points in <em>evalPoints</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#acbbdd6f5065f79e10a18bd40de194047">More...</a><br /></td></tr>
-<tr class="separator:acbbdd6f5065f79e10a18bd40de194047 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8851d69d34aac9a40105635616957ade inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a8851d69d34aac9a40105635616957ade">evalDensity</a> (double[] evalPoints, double[][] data, double a, double b)</td></tr>
-<tr class="memdesc:a8851d69d34aac9a40105635616957ade inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is particularly designed to evaluate the density estimator in such a way that the result can be easily used to estimate the empirical IV and other convergence-related quantities.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a8851d69d34aac9a40105635616957ade">More...</a><br /></td></tr>
-<tr class="separator:a8851d69d34aac9a40105635616957ade inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682fd278d58d084d180aa0145d14a032 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a682fd278d58d084d180aa0145d14a032">setData</a> (double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>)</td></tr>
+<tr class="memdesc:a682fd278d58d084d180aa0145d14a032 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the observations for the density estimator do <em>data</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a682fd278d58d084d180aa0145d14a032">More...</a><br /></td></tr>
+<tr class="separator:a682fd278d58d084d180aa0145d14a032 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27f1ed28de9d1d45b61c0e5562bd4bc inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aa27f1ed28de9d1d45b61c0e5562bd4bc">getData</a> ()</td></tr>
+<tr class="memdesc:aa27f1ed28de9d1d45b61c0e5562bd4bc inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the observations for this density estimator, if any.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aa27f1ed28de9d1d45b61c0e5562bd4bc">More...</a><br /></td></tr>
+<tr class="separator:aa27f1ed28de9d1d45b61c0e5562bd4bc inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fe8be449d76c9e8ec7eef54735cd5c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">abstract double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c">evalDensity</a> (double x)</td></tr>
+<tr class="memdesc:a86fe8be449d76c9e8ec7eef54735cd5c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the density estimator at <em>x</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c">More...</a><br /></td></tr>
+<tr class="separator:a86fe8be449d76c9e8ec7eef54735cd5c inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39eae5b3d962a6b4f9f533e955005b9b inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a39eae5b3d962a6b4f9f533e955005b9b">evalDensity</a> (double[] evalPoints)</td></tr>
+<tr class="memdesc:a39eae5b3d962a6b4f9f533e955005b9b inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the density estimator at the points in <em>evalPoints</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a39eae5b3d962a6b4f9f533e955005b9b">More...</a><br /></td></tr>
+<tr class="separator:a39eae5b3d962a6b4f9f533e955005b9b inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35059e827b69531eee64a20bf584a098 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a35059e827b69531eee64a20bf584a098">evalDensity</a> (double[] evalPoints, double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>)</td></tr>
+<tr class="memdesc:a35059e827b69531eee64a20bf584a098 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the observations for the density estimator to <em>data</em> and evaluates the density at each point in <em>evalPoints</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a35059e827b69531eee64a20bf584a098">More...</a><br /></td></tr>
+<tr class="separator:a35059e827b69531eee64a20bf584a098 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a4b355b87b8f89dbdc1268755f382f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ac5a4b355b87b8f89dbdc1268755f382f">evalDensity</a> (double[] evalPoints, double[][] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>)</td></tr>
+<tr class="memdesc:ac5a4b355b87b8f89dbdc1268755f382f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is particularly designed to evaluate the density estimator in such a way that the result can be easily used to estimate the empirical IV and other convergence-related quantities.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ac5a4b355b87b8f89dbdc1268755f382f">More...</a><br /></td></tr>
+<tr class="separator:ac5a4b355b87b8f89dbdc1268755f382f inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77e2151cf49df9f80a4999e0e9e54d55 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a77e2151cf49df9f80a4999e0e9e54d55">toString</a> ()</td></tr>
 <tr class="memdesc:a77e2151cf49df9f80a4999e0e9e54d55 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives a short description of the estimator.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a77e2151cf49df9f80a4999e0e9e54d55">More...</a><br /></td></tr>
 <tr class="separator:a77e2151cf49df9f80a4999e0e9e54d55 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a3507c46f979e2dfc6e71f6a3f1418664"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a3507c46f979e2dfc6e71f6a3f1418664">evalDensity</a> (double x, double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, double a, double b, int numBins)</td></tr>
+<tr class="memdesc:a3507c46f979e2dfc6e71f6a3f1418664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram with <em>numBins</em> bins over \([a,b]\) which is defined by the observations <em>data</em> at the evaluation point <em>x</em>.  <a href="#a3507c46f979e2dfc6e71f6a3f1418664">More...</a><br /></td></tr>
+<tr class="separator:a3507c46f979e2dfc6e71f6a3f1418664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec39313097ca61f584ae12d3aac33615"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aec39313097ca61f584ae12d3aac33615">evalDensity</a> (double[] evalPoints, double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, double a, double b, int numBins)</td></tr>
+<tr class="memdesc:aec39313097ca61f584ae12d3aac33615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram with <em>numBins</em> bins over \([a,b]\) which is defined by the observations <em>data</em> at each of the evaluation points <em>evalPoints</em> and returns the results in an array.  <a href="#aec39313097ca61f584ae12d3aac33615">More...</a><br /></td></tr>
+<tr class="separator:aec39313097ca61f584ae12d3aac33615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af097850be4c162721009a178fc2114c2"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#af097850be4c162721009a178fc2114c2">evalDensity</a> (double[] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, double a, double b, int numBins)</td></tr>
+<tr class="memdesc:af097850be4c162721009a178fc2114c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram with <em>numBins</em> bins over \([a,b]\) which is defined by the observations <em>data</em> once in each bin and returns the results in an array.  <a href="#af097850be4c162721009a178fc2114c2">More...</a><br /></td></tr>
+<tr class="separator:af097850be4c162721009a178fc2114c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1f57d5d8d912d2f2010a67b0852310"><td class="memItemLeft" align="right" valign="top">static double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#acc1f57d5d8d912d2f2010a67b0852310">evalDensity</a> (double[][] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, double a, double b, int numBins)</td></tr>
+<tr class="memdesc:acc1f57d5d8d912d2f2010a67b0852310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aaf6eb04cdfd53ef26cc5b06985a80805" title="Assume that we have  independent realizations of the underlying model. ">evalDensity(double[], double[][], double, double, int)</a></code> but here, the density is evaluated once in each bin instead of at a given array of evaluation points.  <a href="#acc1f57d5d8d912d2f2010a67b0852310">More...</a><br /></td></tr>
+<tr class="separator:acc1f57d5d8d912d2f2010a67b0852310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6eb04cdfd53ef26cc5b06985a80805"><td class="memItemLeft" align="right" valign="top">static double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aaf6eb04cdfd53ef26cc5b06985a80805">evalDensity</a> (double evalPoints[], double[][] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, double a, double b, int numBins)</td></tr>
+<tr class="memdesc:aaf6eb04cdfd53ef26cc5b06985a80805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assume that we have \(m\) independent realizations of the underlying model.  <a href="#aaf6eb04cdfd53ef26cc5b06985a80805">More...</a><br /></td></tr>
+<tr class="separator:aaf6eb04cdfd53ef26cc5b06985a80805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074c582909598d1e49e8d26859677f2c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a074c582909598d1e49e8d26859677f2c">evalDensity</a> (double x, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
+<tr class="memdesc:a074c582909598d1e49e8d26859677f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a histogram estimator defined by <em>tallylist</em> at <em>x</em>.  <a href="#a074c582909598d1e49e8d26859677f2c">More...</a><br /></td></tr>
+<tr class="separator:a074c582909598d1e49e8d26859677f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c2563b1602c68b4558e7a4d9c2279df"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a8c2563b1602c68b4558e7a4d9c2279df">evalDensity</a> (double[] evalPoints, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
+<tr class="memdesc:a8c2563b1602c68b4558e7a4d9c2279df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a histogram estimator defined by <em>tallyHist</em> at the evaluation points <em>evalPoints</em>.  <a href="#a8c2563b1602c68b4558e7a4d9c2279df">More...</a><br /></td></tr>
+<tr class="separator:a8c2563b1602c68b4558e7a4d9c2279df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d94e2be725c5231b3084442451e451"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ad3d94e2be725c5231b3084442451e451">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> tallyHist)</td></tr>
+<tr class="memdesc:ad3d94e2be725c5231b3084442451e451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a histogram estimator defined by <em>tallyHist</em> once in each bin.  <a href="#ad3d94e2be725c5231b3084442451e451">More...</a><br /></td></tr>
+<tr class="separator:ad3d94e2be725c5231b3084442451e451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad893efb254325f871bc0941e900613f1"><td class="memItemLeft" align="right" valign="top">static double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ad893efb254325f871bc0941e900613f1">evalDensity</a> (double[] evalPoints, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>[] tallyHistArray)</td></tr>
+<tr class="memdesc:ad893efb254325f871bc0941e900613f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method considers a histogram for each of the \(m\) <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from <em>tallyHistArray</em> and evaluates it at \(k\) evaluation points <em>evalPoints</em>.  <a href="#ad893efb254325f871bc0941e900613f1">More...</a><br /></td></tr>
+<tr class="separator:ad893efb254325f871bc0941e900613f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfca6be5bf45367c6e397fd22ffe2658"><td class="memItemLeft" align="right" valign="top">static double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#adfca6be5bf45367c6e397fd22ffe2658">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>[] tallyHistArray)</td></tr>
+<tr class="memdesc:adfca6be5bf45367c6e397fd22ffe2658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>evalDensity(double[], TallyHistogram[])</code> but this method evaluates each histogram only once in each bin.  <a href="#adfca6be5bf45367c6e397fd22ffe2658">More...</a><br /></td></tr>
+<tr class="separator:adfca6be5bf45367c6e397fd22ffe2658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a466e9cc0ebee3eefac0920a20033fe0c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a466e9cc0ebee3eefac0920a20033fe0c">evalDensity</a> (double x, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
+<tr class="memdesc:a466e9cc0ebee3eefac0920a20033fe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram defined by the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> at <em>x</em>.  <a href="#a466e9cc0ebee3eefac0920a20033fe0c">More...</a><br /></td></tr>
+<tr class="separator:a466e9cc0ebee3eefac0920a20033fe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adde426c8a8e803f6bf7dd3339bc881c7"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#adde426c8a8e803f6bf7dd3339bc881c7">evalDensity</a> (double[] evalPoints, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
+<tr class="memdesc:adde426c8a8e803f6bf7dd3339bc881c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the histogram defined by the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> at each evaluation point in <em>evalPoints</em>.  <a href="#adde426c8a8e803f6bf7dd3339bc881c7">More...</a><br /></td></tr>
+<tr class="separator:adde426c8a8e803f6bf7dd3339bc881c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ea301acc3091d54e8e2a23213dc5dc"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a38ea301acc3091d54e8e2a23213dc5dc">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> scaledHist)</td></tr>
+<tr class="memdesc:a38ea301acc3091d54e8e2a23213dc5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>evalDensity(double[], ScaledHistogram)</code> but evaluation is done once in each bin.  <a href="#a38ea301acc3091d54e8e2a23213dc5dc">More...</a><br /></td></tr>
+<tr class="separator:a38ea301acc3091d54e8e2a23213dc5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a3a4f4f5e62da46947cde9754d55e1"><td class="memItemLeft" align="right" valign="top">static double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aa9a3a4f4f5e62da46947cde9754d55e1">evalDensity</a> (double[] evalPoints, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>[] scaledHistArray)</td></tr>
+<tr class="memdesc:aa9a3a4f4f5e62da46947cde9754d55e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method considers a histogram for each of the \(m\) <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from <em>scaledHistArray</em> and evaluates it at \(k\) evaluation points <em>evalPoints</em>.  <a href="#aa9a3a4f4f5e62da46947cde9754d55e1">More...</a><br /></td></tr>
+<tr class="separator:aa9a3a4f4f5e62da46947cde9754d55e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280c6130183c65ffb6f57221aca85c67"><td class="memItemLeft" align="right" valign="top">static double [][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a280c6130183c65ffb6f57221aca85c67">evalDensity</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>[] scaledHistArray)</td></tr>
+<tr class="memdesc:a280c6130183c65ffb6f57221aca85c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>evalDensity(double[], ScaledHistogram[])</code> but the histograms are evaluated once in each bin.  <a href="#a280c6130183c65ffb6f57221aca85c67">More...</a><br /></td></tr>
+<tr class="separator:a280c6130183c65ffb6f57221aca85c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td></tr>
-<tr class="memitem:ac865ef1dc103098636c45ccc2248a42a inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ac865ef1dc103098636c45ccc2248a42a">evalDensity</a> (ArrayList&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a> &gt; listDE, double[] evalPoints, double[][] data, double a, double b, ArrayList&lt; double[][]&gt; listDensity)</td></tr>
-<tr class="memdesc:ac865ef1dc103098636c45ccc2248a42a inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is particularly designed for experiments with many different types of density estimators, as it evaluates all of these estimators at the points in <em>evalPoints</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ac865ef1dc103098636c45ccc2248a42a">More...</a><br /></td></tr>
-<tr class="separator:ac865ef1dc103098636c45ccc2248a42a inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ebd01bd7ca67bf8832af3dd8f2bc39d inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3ebd01bd7ca67bf8832af3dd8f2bc39d">evalDensity</a> (ArrayList&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a> &gt; listDE, double[] evalPoints, double[][] <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a>, ArrayList&lt; double[][]&gt; listDensity)</td></tr>
+<tr class="memdesc:a3ebd01bd7ca67bf8832af3dd8f2bc39d inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is particularly designed for experiments with many different types of density estimators, as it evaluates all of these estimators at the points in <em>evalPoints</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3ebd01bd7ca67bf8832af3dd8f2bc39d">More...</a><br /></td></tr>
+<tr class="separator:a3ebd01bd7ca67bf8832af3dd8f2bc39d inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f04c4763dc6c1d50ab0c277a2ddfc9 inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a16f04c4763dc6c1d50ab0c277a2ddfc9">computeVariance</a> (double[][] density)</td></tr>
 <tr class="memdesc:a16f04c4763dc6c1d50ab0c277a2ddfc9 inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method computes the empirical variance based on the values given in <em>data</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a16f04c4763dc6c1d50ab0c277a2ddfc9">More...</a><br /></td></tr>
 <tr class="separator:a16f04c4763dc6c1d50ab0c277a2ddfc9 inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,25 +229,30 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3a88d2d3720ac775f5953b35ac0a504a inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3a88d2d3720ac775f5953b35ac0a504a">roughnessFunctional</a> (double[] density, double a, double b)</td></tr>
 <tr class="memdesc:a3a88d2d3720ac775f5953b35ac0a504a inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the roughness functional.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3a88d2d3720ac775f5953b35ac0a504a">More...</a><br /></td></tr>
 <tr class="separator:a3a88d2d3720ac775f5953b35ac0a504a inherit pub_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td></tr>
-<tr class="memitem:a6b36eb5320db688d7745431380f95299 inherit pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a6b36eb5320db688d7745431380f95299">coefficientOfDetermination</a> (double[] data, double[] dataEstimated)</td></tr>
-<tr class="memdesc:a6b36eb5320db688d7745431380f95299 inherit pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Coefficient of determination \(R^2\) of the observed data <em>data</em> and the estimated data <em>dataEstimated</em>.  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a6b36eb5320db688d7745431380f95299">More...</a><br /></td></tr>
-<tr class="separator:a6b36eb5320db688d7745431380f95299 inherit pro_static_methods_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td></tr>
+<tr class="memitem:a2769cd30087309e2a0605ebbd95606b4 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memItemLeft" align="right" valign="top"><a id="a2769cd30087309e2a0605ebbd95606b4"></a>
+double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4">data</a></td></tr>
+<tr class="memdesc:a2769cd30087309e2a0605ebbd95606b4 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data associated with this <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class represents a univariate density estimator (DE). ">DensityEstimator</a> object, if any. <br /></td></tr>
+<tr class="separator:a2769cd30087309e2a0605ebbd95606b4 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class provides methods to construct, manipulate, and evaluate a histogram density estimator for univariate densities. </p>
-<p>The construction of a histogram is based on a set of \(n\) individual observations \(X_0, …, X_{n-1}\) which, in turn, can be realizations of a <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">umontreal.ssj.mcqmctools.MonteCarloModelDouble</a>, collected data, etc. In any case, this type of density estimator can by built from pure data stored in an array, form a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a>, or even from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a>.</p>
-<p>It is essential to confine oneself to a finite interval \([a,b]\). For a fixed number of bins \(s&gt;0\) we partition the interval \([a,b]\) into \(s\) subintervals of equal lengths \(h\). Observe that \(h=(b-a)/s\) and, hence, histogram estimators can also be parameterized by a bin width \(h&gt;0\), as long as the resulting number of bins is an integer. The estimator itself is then defined by</p>
+<div class="textblock"><p>Histogram density estimator for a univariate density. </p>
+<p>This class provides methods to construct, manipulate, and evaluate a histogram from a set of \(n\) real-valued observations \(x_0,\dots, x_{n-1}\). The constructor of a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html" title="Histogram density estimator for a univariate density. ">DEHistogram</a></code> object takes the data, a finite interval \([a,b]\) over which we want the histogram, and the number of bins (intervals), and it constructs the histogram as a density estimator over this interval. For that, it computes the number of observations in each bin and rescale the heights of the bins so that the total area of the histogram is equal to the proportion of the observations that fall into the interval \([a,b]\). When all the observations are in \([a,b]\), then this area should be 1. The density estimator is represented internally as a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a>, which can be recovered by the <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#ac74b2a1f934d805be2ab2b4d6bd164e1" title="Returns the underlying ScaledHistogram. ">getScaledHistogram()</a></code> method.</p>
+<p>More specifically, if we ask for \(s\) bins over the interval \([a,b]\), then the interval is partitioned over \(s\) intervals of equal lengths \(h=(b-a)/s\), and the density estimator is defined by</p>
 <p class="formulaDsp">
-\[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{n_j}{nh},\quad\text{for } x\in[a+(j-1)h, a+jh), \quad j=1,\dots,s, \]
+\[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{n_j}{nh}, \quad\text{ for } x\in[a+(j-1)h, a+jh), \qquad j=1,\dots,s. \]
 </p>
-<p>where \(n_j\) denotes the number of observations that fall in this interval. Observe that changing \([a,b]\), \(h\), or \(s\) changes the structure of the histogram completely. Thus, after any alteration of these parameters the histogram needs to be constructed afresh.</p>
-<p>As histograms are constant within one bin, certain quantities such as the variance are not affected by shifting an evaluation point within its bin. Hence, selecting one evaluation point per bin is sufficient for such methods. To this end, this class provides methods to evaluate the density estimator once in each bin, without having to explicitly specify an array of evaluation points.</p>
+<p>where \(n_j\) denotes the number of observations that fall in interval \(j\). Observe that changing \([a,b]\), \(h\), or \(s\) changes the structure of the histogram completely. Thus, after altering any of these parameters the histogram needs to be constructed afresh.</p>
+<p>The constructor can take as input an array that contains the raw data, together with the parameters \(a, b, s\). It can also take a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> or a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> instead. </p><hr/>
+<p>Since histograms are constant within one bin, it is sometimes sufficient to evaluate it only once per bin. To this end, this class provides methods to evaluate the density estimator once in each bin, without having to explicitly specify an array of evaluation points.</p>
 <p>It needs to be added that, due to the fact that the partition into \(s\) bins relies on half-open intervals, the boundary \(b\) is not included in any of these intervals. Since the probability of an observation being exactly equal to \(b\) is zero, we can effectively ignore this subtlety.</p>
-<dl class="section author"><dt>Author</dt><dd>puchhamf </dd></dl>
+<p>This class also offers static methods so that the user can simply evaluate the density based on a set of observations, a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> or a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> without having to construct a histogram. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8cbc2663290747440a00dbe9851c4897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cbc2663290747440a00dbe9851c4897">&#9670;&nbsp;</a></span>DEHistogram()</h2>
+<a id="ac0c5f4eab6d5f53b7279d76360422167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c5f4eab6d5f53b7279d76360422167">&#9670;&nbsp;</a></span>DEHistogram() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,16 +260,34 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html">DEHistogram</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numBins</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for a histogram estimator with <em>numBins</em> bins. </p>
+<p>Constructs a histogram estimator over the interval \([a,b]\) with <em>numBins</em> number of bins. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
     <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
   </table>
   </dd>
@@ -244,15 +295,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a792f44c0896731c5c93d498346416176"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a792f44c0896731c5c93d498346416176">&#9670;&nbsp;</a></span>constructDensity() <span class="overload">[1/3]</span></h2>
+<a id="a88c3bfdb65686c56acd8dd885d55efc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c3bfdb65686c56acd8dd885d55efc2">&#9670;&nbsp;</a></span>DEHistogram() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void constructDensity </td>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html">DEHistogram</a> </td>
           <td>(</td>
           <td class="paramtype">double []&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -267,7 +317,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -277,27 +333,27 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram over the interval \([a,b]\) from the observations passed in <em>data</em>. </p>
-<p>The number of bins is taken as the value of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a57972954853e6674ba6efaf4527ac215" title="Gives the number of bins . ">getNumBins()</a>. Note that the individual observations are not being stored.</p>
+<p>Constructs a histogram over the interval \([a,b]\) with <em>numBins</em> number of bins from the observations passed in <em>data</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>the observations from the underlying model. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations from the underlying model.</td></tr>
     <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the histogram </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
+    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a1e9f191fbd258f80447c1ee26781fcba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e9f191fbd258f80447c1ee26781fcba">&#9670;&nbsp;</a></span>constructDensity() <span class="overload">[2/3]</span></h2>
+<a id="a2c524600611d68a4ac25ae9c26ae3790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c524600611d68a4ac25ae9c26ae3790">&#9670;&nbsp;</a></span>DEHistogram() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void constructDensity </td>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html">DEHistogram</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>&#160;</td>
           <td class="paramname"><em>tallyHist</em></td><td>)</td>
@@ -307,7 +363,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a histogram from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> <em>tallyHist</em>. </p>
-<p>The method extracts all defining parameters such as the number of bins, the endpoints, etc. from <em>tallyHist</em> directly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tallyHist</td><td>a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from which the estimator is constructed. </td></tr>
@@ -317,14 +372,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa99505cf9498ae37e09a08f4cf7da9c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa99505cf9498ae37e09a08f4cf7da9c7">&#9670;&nbsp;</a></span>constructDensity() <span class="overload">[3/3]</span></h2>
+<a id="abb5c9c8dd9da0eceac5cea6796acd32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb5c9c8dd9da0eceac5cea6796acd32f">&#9670;&nbsp;</a></span>DEHistogram() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void constructDensity </td>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html">DEHistogram</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td>
           <td class="paramname"><em>scaledHist</em></td><td>)</td>
@@ -334,7 +389,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a histogram from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> <em>scaledHist</em>. </p>
-<p>The method extracts all defining parameters such as the number of bins, the endpoints, etc. from <em>scaledHist</em> directly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scaledHist</td><td>a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from which the estimator is constructed. </td></tr>
@@ -344,14 +398,133 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="acbbdd6f5065f79e10a18bd40de194047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbbdd6f5065f79e10a18bd40de194047">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[1/11]</span></h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a39eae5b3d962a6b4f9f533e955005b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39eae5b3d962a6b4f9f533e955005b9b">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[1/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">double [] evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>evalPoints</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the histogram estimator at the points in <em>evalPoints</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evalPoints</td><td>the evaluation points.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at the points <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a4a04fd15193c0e1c4de4590d2eb53f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a04fd15193c0e1c4de4590d2eb53f95">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[2/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double [] evalDensity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the histogram density estimator at one point in each bin. </p>
+<p>Since the histogram is constant within its bins, it is of no concern for this method, which evaluation point is actually selected in each bin.</p>
+<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at one point in each bin. </dd></dl>
+
+</div>
+</div>
+<a id="a3507c46f979e2dfc6e71f6a3f1418664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3507c46f979e2dfc6e71f6a3f1418664">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[3/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the histogram with <em>numBins</em> bins over \([a,b]\) which is defined by the observations <em>data</em> at the evaluation point <em>x</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the evaluation point. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations. </td></tr>
+    <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
+    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram defined be the above parameters evaluated at <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="aec39313097ca61f584ae12d3aac33615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec39313097ca61f584ae12d3aac33615">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[4/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double [] evalDensity </td>
           <td>(</td>
           <td class="paramtype">double []&#160;</td>
           <td class="paramname"><em>evalPoints</em>, </td>
@@ -372,7 +545,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -380,30 +559,39 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram density estimator over the interval \([a,b]\) based on the observations <em>data</em> and evaluates it at the points in <em>evalPoints</em>. </p>
+<p>Evaluates the histogram with <em>numBins</em> bins over \([a,b]\) which is defined by the observations <em>data</em> at each of the evaluation points <em>evalPoints</em> and returns the results in an array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
-    <tr><td class="paramname">data</td><td>the observations for constructing the histogram. </td></tr>
-    <tr><td class="paramname">a</td><td>the left boundary of the interval. </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
+    <tr><td class="paramname">data</td><td>the observations. </td></tr>
+    <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
+    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at the points <em>x</em>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram defined by the above parameters evaluated at the points in <em>evalPoints</em> </dd></dl>
 
 </div>
 </div>
-<a id="a14b0b89d679fb7eedbc18b2cb782fade"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14b0b89d679fb7eedbc18b2cb782fade">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[2/11]</span></h2>
+<a id="af097850be4c162721009a178fc2114c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af097850be4c162721009a178fc2114c2">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[5/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [] evalDensity </td>
+          <td class="memname">static double [] evalDensity </td>
           <td>(</td>
           <td class="paramtype">double []&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -418,7 +606,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -426,30 +620,38 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram density estimator over the interval \([a,b]\) based on the observations <em>data</em> and evaluates it at one point in each bin. </p>
-<p>Since the histogram is constant within its bins, it is of no concern for this method, which evaluation point is actually selected in each bin.</p>
+<p>Evaluates the histogram with <em>numBins</em> bins over \([a,b]\) which is defined by the observations <em>data</em> once in each bin and returns the results in an array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>the observations for constructing the histogram. </td></tr>
-    <tr><td class="paramname">a</td><td>the left boundary of the interval. </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval </td></tr>
+    <tr><td class="paramname">data</td><td>the observations. </td></tr>
+    <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
+    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at the points <em>x</em>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram defined by the above parameters evaluated once in each bin. </dd></dl>
 
 </div>
 </div>
-<a id="a30a92fe59bfa93a6e7af87edc16e6686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30a92fe59bfa93a6e7af87edc16e6686">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[3/11]</span></h2>
+<a id="acc1f57d5d8d912d2f2010a67b0852310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1f57d5d8d912d2f2010a67b0852310">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[6/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [][] evalDensity </td>
+          <td class="memname">static double [][] evalDensity </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>data</em>[][], </td>
@@ -464,7 +666,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -472,30 +680,111 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a4ae7a74e0d3483a0988280dd0eb64507" title="Constructs a density estimator over the interval  based on the observations data if necessary...">umontreal.ssj.stat.density.DensityEstimator::evalDensity</a>(double[], double[][], double, double) but with one evaluation point per bin. </p>
-<p>Since the histogram is constant within its bins, it is of no concern for this method, which evaluation point is actually selected in each bin.</p>
+<p>Same as <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#aaf6eb04cdfd53ef26cc5b06985a80805" title="Assume that we have  independent realizations of the underlying model. ">evalDensity(double[], double[][], double, double, int)</a></code> but here, the density is evaluated once in each bin instead of at a given array of evaluation points. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>the two-dimensional array carrying the observations of \(m\) independent realizations of the underlying model. </td></tr>
-    <tr><td class="paramname">a</td><td>the left boundary of the interval. </td></tr>
-    <tr><td class="paramname">b</td><td>the right boundary of the interval. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations. </td></tr>
+    <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
+    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator for each realization evaluated once in each bin. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram defined by the above parameters evaluated once in each bin. </dd>
+<dd>
+the histogram for each realization evaluated once in each bin. </dd></dl>
 
 </div>
 </div>
-<a id="a28ffa2754676096097d253e3037f474e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ffa2754676096097d253e3037f474e">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[4/11]</span></h2>
+<a id="aaf6eb04cdfd53ef26cc5b06985a80805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf6eb04cdfd53ef26cc5b06985a80805">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[7/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double evalDensity </td>
+          <td class="memname">static double [][] evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>evalPoints</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>data</em>[][], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assume that we have \(m\) independent realizations of the underlying model. </p>
+<p>For each such realization this method evaluates a histogram with <em>numBins</em> bins over \([a,b]\) once in each bin. The independent realizations are passed via the 2-dimensional \(m\times n\) array <em>data</em>, where \(n\) denotes the number of observations per realization. Hence, its first index identifies the independent realization while its second index identifies a specific observation of this realization.</p>
+<p>The result is returned as a \(m\times k\) matrix, where \(k \) is the number of evaluation points, i.e., the length of <em>evalPoints</em>. The first index, again, identifies the independent realization whereas the second index corresponds to the point of <em>evalPoints</em> at which the histogram was evaluated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations. </td></tr>
+    <tr><td class="paramname">a</td><td>the left boundary of the histogram. </td></tr>
+    <tr><td class="paramname">b</td><td>the right boundary of the histogram. </td></tr>
+    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram for each realization evaluated at <em>evalPoints</em>. </dd>
+<dd>
+</dd></dl>
+
+</div>
+</div>
+<a id="a074c582909598d1e49e8d26859677f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074c582909598d1e49e8d26859677f2c">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[8/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double evalDensity </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -512,13 +801,18 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram estimator from <em>tallyHist</em> and evaluates it at <em>x</em>. </p>
+<p>Evaluates a histogram estimator defined by <em>tallylist</em> at <em>x</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the evaluation point. </td></tr>
-    <tr><td class="paramname">tallyHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from which the estimator is constructed. </td></tr>
+    <tr><td class="paramname">tallyHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> which defines the histogram </td></tr>
   </table>
   </dd>
 </dl>
@@ -526,42 +820,98 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae61414c3902add0eda869311d522d68c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae61414c3902add0eda869311d522d68c">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[5/11]</span></h2>
+<a id="a8c2563b1602c68b4558e7a4d9c2279df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2563b1602c68b4558e7a4d9c2279df">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[9/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [] evalDensity </td>
+          <td class="memname">static double [] evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>evalPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>&#160;</td>
+          <td class="paramname"><em>tallyHist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates a histogram estimator defined by <em>tallyHist</em> at the evaluation points <em>evalPoints</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
+    <tr><td class="paramname">tallyHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> which defines the histogram. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram estimator defined by <em>tallyHist</em> evaluated at each point in <em>evalPoints</em>. </dd></dl>
+
+</div>
+</div>
+<a id="ad3d94e2be725c5231b3084442451e451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d94e2be725c5231b3084442451e451">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[10/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double [] evalDensity </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>&#160;</td>
           <td class="paramname"><em>tallyHist</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram density estimator from <em>tallyHist</em> and evaluates it at one point in each bin. </p>
-<p>Since the histogram is constant within its bins, it is of no concern for this method, which evaluation point is actually selected in each bin.</p>
+<p>Evaluates a histogram estimator defined by <em>tallyHist</em> once in each bin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tallyHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from which the estimator is constructed. </td></tr>
+    <tr><td class="paramname">tallyHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> which defines the histogram. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated once in each bin. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator defined by <em>tallyHist</em> evaluated once in each bin. </dd></dl>
 
 </div>
 </div>
-<a id="ae6ed840f990903abc25b89f341c8e3c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6ed840f990903abc25b89f341c8e3c7">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[6/11]</span></h2>
+<a id="ad893efb254325f871bc0941e900613f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad893efb254325f871bc0941e900613f1">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[11/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [] evalDensity </td>
+          <td class="memname">static double [][] evalDensity </td>
           <td>(</td>
           <td class="paramtype">double []&#160;</td>
           <td class="paramname"><em>evalPoints</em>, </td>
@@ -569,8 +919,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>&#160;</td>
-          <td class="paramname"><em>tallyHist</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> []&#160;</td>
+          <td class="paramname"><em>tallyHistArray</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -578,55 +928,72 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram estimator from <em>tallyHist</em> and evaluates it at each evaluation point in <em>evalPoints</em>. </p>
+<p>This method considers a histogram for each of the \(m\) <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from <em>tallyHistArray</em> and evaluates it at \(k\) evaluation points <em>evalPoints</em>. </p>
+<p>The result is returned in a \(m\times k\) array.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
-    <tr><td class="paramname">tallyHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from which the estimator is constructed. </td></tr>
+    <tr><td class="paramname">tallyHistArray</td><td>the array of the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> which define the histograms. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at <em>evalPoints</em>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram for each element of <em>tallyHistArray</em> evaluated at each point of <em>evalPoints</em>. </dd></dl>
 
 </div>
 </div>
-<a id="af79f6f3091f5b5e781d4795f32cf76ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af79f6f3091f5b5e781d4795f32cf76ac">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[7/11]</span></h2>
+<a id="adfca6be5bf45367c6e397fd22ffe2658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfca6be5bf45367c6e397fd22ffe2658">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[12/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [][] evalDensity </td>
+          <td class="memname">static double [][] evalDensity </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> []&#160;</td>
           <td class="paramname"><em>tallyHistArray</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a30a92fe59bfa93a6e7af87edc16e6686" title="Same as umontreal.ssj.stat.density.DensityEstimator::evalDensity(double[], double[][], double, double) but with one evaluation point per bin. ">evalDensity(double[][], double, double)</a> but here, each realization of the histogram is constructed from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a>. </p>
+<p>Same as <code>evalDensity(double[], TallyHistogram[])</code> but this method evaluates each histogram only once in each bin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tallyHistArray</td><td>the array of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> from which the realizations of the estimator is constructed. </td></tr>
+    <tr><td class="paramname">tallyHistArray</td><td>the array of the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">umontreal.ssj.stat.TallyHistogram</a> which define the histograms. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator for each realization evaluated once in each bin. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram for each element of <em>tallyHistArray</em> evaluated once in each bin. </dd></dl>
 
 </div>
 </div>
-<a id="a244393d286c0b51c2f1a9d9ad5e5bc61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a244393d286c0b51c2f1a9d9ad5e5bc61">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[8/11]</span></h2>
+<a id="a466e9cc0ebee3eefac0920a20033fe0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466e9cc0ebee3eefac0920a20033fe0c">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[13/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double evalDensity </td>
+          <td class="memname">static double evalDensity </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -643,13 +1010,18 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram estimator from <em>scaledHist</em> and evaluates it at <em>x</em>. </p>
+<p>Evaluates the histogram defined by the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> at <em>x</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the evaluation point. </td></tr>
-    <tr><td class="paramname">scaledHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from which the estimator is constructed. </td></tr>
+    <tr><td class="paramname">scaledHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> which defines the histogram. </td></tr>
   </table>
   </dd>
 </dl>
@@ -657,42 +1029,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a077aadeb17b0f47c0f1a2e959c8e7340"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a077aadeb17b0f47c0f1a2e959c8e7340">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[9/11]</span></h2>
+<a id="adde426c8a8e803f6bf7dd3339bc881c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adde426c8a8e803f6bf7dd3339bc881c7">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[14/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [] evalDensity </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td>
-          <td class="paramname"><em>scaledHist</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs a histogram density estimator from <em>scaledHist</em> and evaluates it at one point in each bin. </p>
-<p>Since the histogram is constant within its bins, it is of no concern for this method, which evaluation point is actually selected in each bin.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scaledHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from which the estimator is constructed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated once in each bin. </dd></dl>
-
-</div>
-</div>
-<a id="adf45b6835dc53e77d6dac0b25badc2b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf45b6835dc53e77d6dac0b25badc2b1">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[10/11]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double [] evalDensity </td>
+          <td class="memname">static double [] evalDensity </td>
           <td>(</td>
           <td class="paramtype">double []&#160;</td>
           <td class="paramname"><em>evalPoints</em>, </td>
@@ -709,44 +1056,139 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a histogram estimator from <em>scaledHist</em> and evaluates it at each evaluation point in <em>evalPoints</em>. </p>
+<p>Evaluates the histogram defined by the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> at each evaluation point in <em>evalPoints</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
-    <tr><td class="paramname">scaledHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from which the estimator is constructed. </td></tr>
+    <tr><td class="paramname">scaledHist</td><td>the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> which defines the histogram. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at <em>evalPoints</em>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at each point in <em>evalPoints</em>. </dd></dl>
 
 </div>
 </div>
-<a id="abd17c6b8e4aea76d55b8083df3b44853"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd17c6b8e4aea76d55b8083df3b44853">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[11/11]</span></h2>
+<a id="a38ea301acc3091d54e8e2a23213dc5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ea301acc3091d54e8e2a23213dc5dc">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[15/17]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double [][] evalDensity </td>
+          <td class="memname">static double [] evalDensity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td>
+          <td class="paramname"><em>scaledHist</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Same as <code>evalDensity(double[], ScaledHistogram)</code> but evaluation is done once in each bin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scaledHist</td><td><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> which defines the histogram. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator evaluated at each point in <em>evalPoints</em>. </dd></dl>
+
+</div>
+</div>
+<a id="aa9a3a4f4f5e62da46947cde9754d55e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a3a4f4f5e62da46947cde9754d55e1">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[16/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double [][] evalDensity </td>
+          <td>(</td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>evalPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> []&#160;</td>
+          <td class="paramname"><em>scaledHistArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method considers a histogram for each of the \(m\) <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from <em>scaledHistArray</em> and evaluates it at \(k\) evaluation points <em>evalPoints</em>. </p>
+<p>The result is returned in a \(m\times k\) array.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
+    <tr><td class="paramname">scaledHistArray</td><td>the array of the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> which define the histograms. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram for each element of <em>scaledHistArray</em> evaluated at each point of <em>evalPoints</em>. </dd></dl>
+
+</div>
+</div>
+<a id="a280c6130183c65ffb6f57221aca85c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280c6130183c65ffb6f57221aca85c67">&#9670;&nbsp;</a></span>evalDensity() <span class="overload">[17/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double [][] evalDensity </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> []&#160;</td>
           <td class="paramname"><em>scaledHistArray</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a30a92fe59bfa93a6e7af87edc16e6686" title="Same as umontreal.ssj.stat.density.DensityEstimator::evalDensity(double[], double[][], double, double) but with one evaluation point per bin. ">evalDensity(double[][], double, double)</a> but here, each realization of the histogram is constructed from a <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a>. </p>
+<p>Same as <code>evalDensity(double[], ScaledHistogram[])</code> but the histograms are evaluated once in each bin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scaledHistArray</td><td>the array of <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> from which the realizations of the estimator is constructed. </td></tr>
+    <tr><td class="paramname">scaledHistArray</td><td>the array of the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">umontreal.ssj.stat.ScaledHistogram</a> which define the histograms. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the histogram density estimator for each realization evaluated once in each bin. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the histogram for each element of <em>scaledHistArray</em> evaluated one in each bin. </dd></dl>
 
 </div>
 </div>
@@ -806,7 +1248,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gives the bin width \(h\). </p>
-<dl class="section return"><dt>Returns</dt><dd>the desired bin width. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the bin width. </dd></dl>
 
 </div>
 </div>
@@ -830,54 +1272,46 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa3cb872607dbb4b3750373b4eb882bc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3cb872607dbb4b3750373b4eb882bc5">&#9670;&nbsp;</a></span>setH()</h2>
+<a id="ac74b2a1f934d805be2ab2b4d6bd164e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74b2a1f934d805be2ab2b4d6bd164e1">&#9670;&nbsp;</a></span>getScaledHistogram()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setH </td>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> getScaledHistogram </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>h</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the bin width to <em>h</em>. </p>
-<p>The actual value used may differ from the one being passed since <em>numBins</em> \(=(b-a)/h\) has to be an integer. Note that setting the bin width is only meaningful if the entire histogram will be reconstructed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">h</td><td>the desired bin width. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the underlying <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>underlying <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> object. </dd></dl>
 
 </div>
 </div>
-<a id="abc5de8cd4237263619499d9bc55f4b5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc5de8cd4237263619499d9bc55f4b5d">&#9670;&nbsp;</a></span>setNumBins()</h2>
+<a id="a51c02e3088a0a9cbeaeea1e64ef58e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c02e3088a0a9cbeaeea1e64ef58e7e">&#9670;&nbsp;</a></span>setData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setNumBins </td>
+          <td class="memname">void setData </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numBins</em></td><td>)</td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the number of bins to <em>numBins</em>. </p>
-<p>Note that this is only meaningful if the entire histogram will be reconstructed.</p>
+<p>Takes the observations in <em>data</em> and constructs and redefines the histogram with these observations. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numBins</td><td>the number of bins. </td></tr>
+    <tr><td class="paramname">data</td><td>the observations to define the histogram. </td></tr>
   </table>
   </dd>
 </dl>

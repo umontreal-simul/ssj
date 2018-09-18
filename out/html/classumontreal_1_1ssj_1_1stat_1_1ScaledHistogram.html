@@ -77,46 +77,51 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-valued frequencies (in double).  
+<p>This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-valued frequencies (in <code>double</code>) and can be rescaled.  
  <a href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2721886df11d8bd971e637afd25dae79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a2721886df11d8bd971e637afd25dae79">ScaledHistogram</a> (double a, double b, int numBins)</td></tr>
-<tr class="memdesc:a2721886df11d8bd971e637afd25dae79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> over the interval \([a,b]\), which is divided into \(numBins\) bins of equal width.  <a href="#a2721886df11d8bd971e637afd25dae79">More...</a><br /></td></tr>
+<tr class="memdesc:a2721886df11d8bd971e637afd25dae79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> over the interval \([a,b]\), which is divided into <code>numBins</code> bins of equal width.  <a href="#a2721886df11d8bd971e637afd25dae79">More...</a><br /></td></tr>
 <tr class="separator:a2721886df11d8bd971e637afd25dae79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ec5d438084c3d9bcf188e1936c4ea57"><td class="memItemLeft" align="right" valign="top"><a id="a2ec5d438084c3d9bcf188e1936c4ea57"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ScaledHistogram</b> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> hist, double integral)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a2ec5d438084c3d9bcf188e1936c4ea57">ScaledHistogram</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> hist, double integral)</td></tr>
+<tr class="memdesc:a2ec5d438084c3d9bcf188e1936c4ea57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> from <code>hist</code> by normalizing the bin counts so that the integral of the histogram is equal to <code>integral</code>. <br /></td></tr>
 <tr class="separator:a2ec5d438084c3d9bcf188e1936c4ea57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a862b5729aa49268dc2492f216803ff20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a862b5729aa49268dc2492f216803ff20">init</a> (double a, double b, int numBins)</td></tr>
-<tr class="memdesc:a862b5729aa49268dc2492f216803ff20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> so it covers the interval \([a,b]\), which is divided into numBins bins of equal width.  <a href="#a862b5729aa49268dc2492f216803ff20">More...</a><br /></td></tr>
+<tr class="memdesc:a862b5729aa49268dc2492f216803ff20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> so it covers the interval \([a,b]\), which is divided into <code>numBins</code> bins of equal width.  <a href="#a862b5729aa49268dc2492f216803ff20">More...</a><br /></td></tr>
 <tr class="separator:a862b5729aa49268dc2492f216803ff20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9b14c27bada5fd751f3fd662a8fd240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#ad9b14c27bada5fd751f3fd662a8fd240">init</a> (<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> hist, double integral)</td></tr>
-<tr class="memdesc:ad9b14c27bada5fd751f3fd662a8fd240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes this <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> using the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> hist.  <a href="#ad9b14c27bada5fd751f3fd662a8fd240">More...</a><br /></td></tr>
+<tr class="memdesc:ad9b14c27bada5fd751f3fd662a8fd240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes this <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> using the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> <code>hist</code>.  <a href="#ad9b14c27bada5fd751f3fd662a8fd240">More...</a><br /></td></tr>
 <tr class="separator:ad9b14c27bada5fd751f3fd662a8fd240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top"><a id="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
+<tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes all the heights (frequencies) to 0. <br /></td></tr>
 <tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e4b867fef49a229450ac1c0bd7ce33"><td class="memItemLeft" align="right" valign="top"><a id="a22e4b867fef49a229450ac1c0bd7ce33"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rescale</b> (double integral)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a22e4b867fef49a229450ac1c0bd7ce33">rescale</a> (double integral)</td></tr>
+<tr class="memdesc:a22e4b867fef49a229450ac1c0bd7ce33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescales the histogram by renormalizing the frequencies so its integral has the value specified by <code>integral</code>. <br /></td></tr>
 <tr class="separator:a22e4b867fef49a229450ac1c0bd7ce33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96bd9e815d183481249c76b3264b5bb0"><td class="memItemLeft" align="right" valign="top"><a id="a96bd9e815d183481249c76b3264b5bb0"></a>
-<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>averageShiftedHistogram</b> (int r)</td></tr>
+<tr class="memitem:a96bd9e815d183481249c76b3264b5bb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a96bd9e815d183481249c76b3264b5bb0">averageShiftedHistogram</a> (int r)</td></tr>
+<tr class="memdesc:a96bd9e815d183481249c76b3264b5bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an ASH-transformed version of this scaled histogram.  <a href="#a96bd9e815d183481249c76b3264b5bb0">More...</a><br /></td></tr>
 <tr class="separator:a96bd9e815d183481249c76b3264b5bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1272c2cac7812db12f478189ad53162b"><td class="memItemLeft" align="right" valign="top"><a id="a1272c2cac7812db12f478189ad53162b"></a>
-<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>averageShiftedHistogramTrunc</b> (int r)</td></tr>
+<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a1272c2cac7812db12f478189ad53162b">averageShiftedHistogramTrunc</a> (int r)</td></tr>
+<tr class="memdesc:a1272c2cac7812db12f478189ad53162b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>averageShiftedHistogram</code>, except that it assumes that the density is over a close interval \([a,b]\) and is rescaled differently for the intervals that are near the boundary, to account for the fact that the intervals outside the boundaries are not counted. <br /></td></tr>
 <tr class="separator:a1272c2cac7812db12f478189ad53162b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b4f61d2fcb8abf139b9f7aacfa23195"><td class="memItemLeft" align="right" valign="top"><a id="a1b4f61d2fcb8abf139b9f7aacfa23195"></a>
-<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>averageShiftedHistogram</b> (int r, double[] w)</td></tr>
+<tr class="memitem:a1b4f61d2fcb8abf139b9f7aacfa23195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a1b4f61d2fcb8abf139b9f7aacfa23195">averageShiftedHistogram</a> (int r, double[] w)</td></tr>
+<tr class="memdesc:a1b4f61d2fcb8abf139b9f7aacfa23195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>averageShiftedHistogram</code>, except that uses a weighted average.  <a href="#a1b4f61d2fcb8abf139b9f7aacfa23195">More...</a><br /></td></tr>
 <tr class="separator:a1b4f61d2fcb8abf139b9f7aacfa23195"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73b162383e1f0a7c78eaa2ccdff53b2f"><td class="memItemLeft" align="right" valign="top"><a id="a73b162383e1f0a7c78eaa2ccdff53b2f"></a>
-<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>averageShiftedHistogramTrunc</b> (int r, double[] w)</td></tr>
+<tr class="memitem:a73b162383e1f0a7c78eaa2ccdff53b2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a73b162383e1f0a7c78eaa2ccdff53b2f">averageShiftedHistogramTrunc</a> (int r, double[] w)</td></tr>
+<tr class="memdesc:a73b162383e1f0a7c78eaa2ccdff53b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>averageShiftedHistogramTrunc</code>, except that uses a weighted average.  <a href="#a73b162383e1f0a7c78eaa2ccdff53b2f">More...</a><br /></td></tr>
 <tr class="separator:a73b162383e1f0a7c78eaa2ccdff53b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f9a86f499164dc973b67f3b313ed958"><td class="memItemLeft" align="right" valign="top"><a id="a1f9a86f499164dc973b67f3b313ed958"></a>
-<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><b>averageShiftedHistogram1</b> (int r)</td></tr>
+<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a1f9a86f499164dc973b67f3b313ed958">averageShiftedHistogram1</a> (int r)</td></tr>
+<tr class="memdesc:a1f9a86f499164dc973b67f3b313ed958"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is supposed to be a faster implementation of <code>averageShiftedHistogram(r)</code>. <br /></td></tr>
 <tr class="separator:a1f9a86f499164dc973b67f3b313ed958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57972954853e6674ba6efaf4527ac215"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a57972954853e6674ba6efaf4527ac215">getNumBins</a> ()</td></tr>
-<tr class="memdesc:a57972954853e6674ba6efaf4527ac215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bins \(s\) dividing the interval.  <a href="#a57972954853e6674ba6efaf4527ac215">More...</a><br /></td></tr>
+<tr class="memdesc:a57972954853e6674ba6efaf4527ac215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bins \(s\) dividing the interval \([a,b]\).  <a href="#a57972954853e6674ba6efaf4527ac215">More...</a><br /></td></tr>
 <tr class="separator:a57972954853e6674ba6efaf4527ac215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4150465a719e9ec271896e592aa2040b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a4150465a719e9ec271896e592aa2040b">getA</a> ()</td></tr>
 <tr class="memdesc:a4150465a719e9ec271896e592aa2040b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the left boundary \(a\) of interval \([a,b]\).  <a href="#a4150465a719e9ec271896e592aa2040b">More...</a><br /></td></tr>
@@ -125,10 +130,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>rescale</b> (double i
 <tr class="memdesc:af0869957b5bd1065718a5dc15aa07f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the right boundary \(b\) of interval \([a,b]\).  <a href="#af0869957b5bd1065718a5dc15aa07f2f">More...</a><br /></td></tr>
 <tr class="separator:af0869957b5bd1065718a5dc15aa07f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd16e0b7b303d1615b571ffa99c40c7f"><td class="memItemLeft" align="right" valign="top"><a id="acd16e0b7b303d1615b571ffa99c40c7f"></a>
-double []&#160;</td><td class="memItemRight" valign="bottom"><b>getHeights</b> ()</td></tr>
+double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#acd16e0b7b303d1615b571ffa99c40c7f">getHeights</a> ()</td></tr>
+<tr class="memdesc:acd16e0b7b303d1615b571ffa99c40c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the array counts of the histogram. <br /></td></tr>
 <tr class="separator:acd16e0b7b303d1615b571ffa99c40c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1572da0a0c86b3a001f215c13b891341"><td class="memItemLeft" align="right" valign="top"><a id="a1572da0a0c86b3a001f215c13b891341"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getIntegral</b> ()</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#a1572da0a0c86b3a001f215c13b891341">getIntegral</a> ()</td></tr>
+<tr class="memdesc:a1572da0a0c86b3a001f215c13b891341"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the integral the histogram. <br /></td></tr>
 <tr class="separator:a1572da0a0c86b3a001f215c13b891341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af81207984d12779dd8b2277ecabcf4e8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html#af81207984d12779dd8b2277ecabcf4e8">ISEvsU01</a> ()</td></tr>
 <tr class="memdesc:af81207984d12779dd8b2277ecabcf4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns the integrated square error (ISE) of a histogram w.r.t.  <a href="#af81207984d12779dd8b2277ecabcf4e8">More...</a><br /></td></tr>
@@ -163,8 +170,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>integral</b></td></
 <tr class="separator:a9157f0915da305914350c5922cee2c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-valued frequencies (in double). </p>
-<p>The histogram is over a bounded interval \([a,b]\) and has a fixed number of bins of equal width \(h\). The frequencies can be chosen (rescaled) so that the integral of the histogram is equal to a specific value. If this value is taken as 1, i.e., if \(h\) times the sum of frequencies is equal to 1, then the histogram can be seen as a density estimator.</p>
+<div class="textblock"><p>This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-valued frequencies (in <code>double</code>) and can be rescaled. </p>
+<p>The histogram is over a bounded interval \([a,b]\) and has a fixed number of bins of equal width \(h\). The frequencies can be chosen (rescaled) so that the integral of the histogram is equal to a specific value. If this value is taken as 1, i.e., if \(h\) times the sum of frequencies is equal to 1, then the histogram can be seen as a density estimator for a density whose support is contained in \([a,b]\). If part of the density is outside \([a,b]\), then the integral of the estimated density over \([a,b]\) can be less than 1.</p>
+<p>This class also implements averaged-shifted histograms (ASH) and polygonal interpolations of histograms. See <a class="el" href="citelist.html#CITEREF_tSCO15a">[202]</a>.</p>
 <div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2721886df11d8bd971e637afd25dae79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2721886df11d8bd971e637afd25dae79">&#9670;&nbsp;</a></span>ScaledHistogram()</h2>
@@ -198,7 +206,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>integral</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> over the interval \([a,b]\), which is divided into \(numBins\) bins of equal width. </p>
+<p>Constructs a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> over the interval \([a,b]\), which is divided into <code>numBins</code> bins of equal width. </p>
 <p>This constructor initializes the frequency of each bin to 0. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>left boundary of interval </td></tr>
@@ -211,6 +219,89 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>integral</b></td></
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a96bd9e815d183481249c76b3264b5bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96bd9e815d183481249c76b3264b5bb0">&#9670;&nbsp;</a></span>averageShiftedHistogram() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> averageShiftedHistogram </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns an ASH-transformed version of this scaled histogram. </p>
+<p>The ASH-transformed histogram has the same bin size as the original. The new frequency (height) in any given bin is the weighted average of the frequencies in the neighboring bins, with weights \((r-d)/r^2\) given to bins that are at distance \(d\) from the target bin, for all \(d &lt; r\). </p>
+
+</div>
+</div>
+<a id="a1b4f61d2fcb8abf139b9f7aacfa23195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4f61d2fcb8abf139b9f7aacfa23195">&#9670;&nbsp;</a></span>averageShiftedHistogram() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> averageShiftedHistogram </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Similar to <code>averageShiftedHistogram</code>, except that uses a weighted average. </p>
+<p>For the new average in a given bin, any neighbor bin at distance \(\ell &lt; r\) is given a weight proportional to <code>w[i]</code>. The given weights do not have to sum to 1; they are rescaled so the sum of weights that go to any given bin is 1. </p>
+
+</div>
+</div>
+<a id="a73b162383e1f0a7c78eaa2ccdff53b2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b162383e1f0a7c78eaa2ccdff53b2f">&#9670;&nbsp;</a></span>averageShiftedHistogramTrunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html">ScaledHistogram</a> averageShiftedHistogramTrunc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double []&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Similar to <code>averageShiftedHistogramTrunc</code>, except that uses a weighted average. </p>
+<p>For the new average in a given bin, any neighbor bin at distance \(\ell &lt; r\) is given a weight proportional to <code>w[i]</code>. The given weights do not have to sum to 1; they are rescaled so the sum of weights that go to any given bin is 1 (not counting the weights given to bins that fall outside the interval). </p>
+
+</div>
+</div>
 <a id="a4150465a719e9ec271896e592aa2040b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4150465a719e9ec271896e592aa2040b">&#9670;&nbsp;</a></span>getA()</h2>
 
@@ -266,8 +357,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>integral</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>Returns the number of bins \(s\) dividing the interval. </p>
-<p>\([a,b]\). Does not count the two extra bins for the values of \(x&lt;a\) or \(x&gt;b\). </p><dl class="section return"><dt>Returns</dt><dd>the number of bins </dd></dl>
+<p>Returns the number of bins \(s\) dividing the interval \([a,b]\). </p>
+<p>Does not count the two extra bins for the values of \(x&lt;a\) or \(x&gt;b\). </p><dl class="section return"><dt>Returns</dt><dd>the number of bins </dd></dl>
 
 </div>
 </div>
@@ -303,7 +394,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>integral</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> so it covers the interval \([a,b]\), which is divided into numBins bins of equal width. </p>
+<p>Initializes the <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> so it covers the interval \([a,b]\), which is divided into <code>numBins</code> bins of equal width. </p>
 <p>Is initializes the frequency of each bin to 0. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>left boundary of interval </td></tr>
@@ -341,8 +432,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>integral</b></td></
       </table>
 </div><div class="memdoc">
 
-<p>Initializes this <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> using the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> hist. </p>
-<p>It uses the same interval \([a,b]\), same bins, and rescaled the counters so the integral of the histogram equal the specified value. </p>
+<p>Initializes this <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html" title="This class provides histograms for which the bin counts (heights of rectangles) are replaced by real-...">ScaledHistogram</a></code> using the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a> <code>hist</code>. </p>
+<p>It uses the same interval \([a,b]\), same bins, and rescaled the counters so the integral of the histogram equal the value specified by <code>integral</code>. </p>
 
 </div>
 </div>

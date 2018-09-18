@@ -1,0 +1,9 @@
+<map id="TestOptionVGIS" name="TestOptionVGIS">
+<area shape="rect" id="node2" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVG1.html" title="TestOptionVGIS.OptionVG1" alt="" coords="220,41,407,68"/>
+<area shape="rect" id="node7" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS1.html" title="TestOptionVGIS.OptionVGIS1" alt="" coords="456,41,655,68"/>
+<area shape="rect" id="node8" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS2.html" title="TestOptionVGIS.OptionVGIS2" alt="" coords="456,92,655,119"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,41,171,68"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html" title="Extends the class ContinuousDistribution for the gamma distribution   (page 337) with shape paramete..." alt="" coords="509,176,601,203"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="236,176,391,203"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="44,176,132,203"/>
+</map>

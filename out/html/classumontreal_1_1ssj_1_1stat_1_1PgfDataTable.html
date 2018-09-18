@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a data table that could be used to produce LaTeX code to draw two-dimensional plots with the pgfplot package.  
+<p>Represents a data table which has a name, a number of observations (rows), a number of fields (columns), an array that contains the names (identifiers) of the fields, and a two-dimensional array that contains the data.  
  <a href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -87,22 +87,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa01dd25c26e593d7521c3af53fd982bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a table with the given table name, array of field names, and data observations.  <a href="#aa01dd25c26e593d7521c3af53fd982bd">More...</a><br /></td></tr>
 <tr class="separator:aa01dd25c26e593d7521c3af53fd982bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0af8bdfdf8fad0e42d531b02ab99540"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#aa0af8bdfdf8fad0e42d531b02ab99540">formatTable</a> ()</td></tr>
-<tr class="memdesc:aa0af8bdfdf8fad0e42d531b02ab99540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats the full table as a String, with the field names in the first row, and the data points (observations) in the following rows.  <a href="#aa0af8bdfdf8fad0e42d531b02ab99540">More...</a><br /></td></tr>
+<tr class="memdesc:aa0af8bdfdf8fad0e42d531b02ab99540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats the full table as a <code>String</code>, with the field names in the first row, and the data points (observations) in the following rows.  <a href="#aa0af8bdfdf8fad0e42d531b02ab99540">More...</a><br /></td></tr>
 <tr class="separator:aa0af8bdfdf8fad0e42d531b02ab99540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a835df5163bf80af47520fc901d1558c2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#a835df5163bf80af47520fc901d1558c2">formatTableTwoFields</a> (int j1, int j2)</td></tr>
-<tr class="memdesc:a835df5163bf80af47520fc901d1558c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#aa0af8bdfdf8fad0e42d531b02ab99540">formatTable</a>, but retains only two selected columns of the table (i.e., two selected fields), specified by j1 and j2.  <a href="#a835df5163bf80af47520fc901d1558c2">More...</a><br /></td></tr>
+<tr class="memdesc:a835df5163bf80af47520fc901d1558c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>formatTable</code>, but retains only two selected columns of the table (i.e., two selected fields), specified by <code>j1</code> and <code>j2</code>.  <a href="#a835df5163bf80af47520fc901d1558c2">More...</a><br /></td></tr>
 <tr class="separator:a835df5163bf80af47520fc901d1558c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf304ff509dd7d5a67a32317cd6f51c4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#adf304ff509dd7d5a67a32317cd6f51c4">formatPgfCurveAddPlot</a> (int j1, int j2, String plotoptions)</td></tr>
-<tr class="memdesc:adf304ff509dd7d5a67a32317cd6f51c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#a835df5163bf80af47520fc901d1558c2">formatTableTwoFields</a>, but outputs complete LaTeX code in an appropriate format that adds a curve of the field j2 against field j1 with the pgfplot package.  <a href="#adf304ff509dd7d5a67a32317cd6f51c4">More...</a><br /></td></tr>
+<tr class="memdesc:adf304ff509dd7d5a67a32317cd6f51c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>formatTableTwoFields</code>, but outputs complete LaTeX code in an appropriate format that adds a curve of the field <code>j2</code> against field <code>j1</code> with the pgfplot package.  <a href="#adf304ff509dd7d5a67a32317cd6f51c4">More...</a><br /></td></tr>
 <tr class="separator:adf304ff509dd7d5a67a32317cd6f51c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9b79b71117fd0936e925571ef1675a"><td class="memItemLeft" align="right" valign="top"><a id="ade9b79b71117fd0936e925571ef1675a"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>formatPgfCurveAddPlot</b> (String xaxis, String yaxis, String plotoptions)</td></tr>
+<tr class="memitem:ade9b79b71117fd0936e925571ef1675a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#ade9b79b71117fd0936e925571ef1675a">formatPgfCurveAddPlot</a> (String xaxis, String yaxis, String plotoptions)</td></tr>
+<tr class="memdesc:ade9b79b71117fd0936e925571ef1675a"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this version, the two fields are specified by their names in the table.  <a href="#ade9b79b71117fd0936e925571ef1675a">More...</a><br /></td></tr>
 <tr class="separator:ade9b79b71117fd0936e925571ef1675a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64ebd8fcef0fbdcff9d160ec8039eea6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#a64ebd8fcef0fbdcff9d160ec8039eea6">drawPgfPlotSingleCurve</a> (String title, String axistype, String xaxis, String yaxis, int logbasis, String axisoptions, String plotoptions)</td></tr>
-<tr class="memdesc:a64ebd8fcef0fbdcff9d160ec8039eea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string that contains a complete tikzpicture for the pgfplot package, showing the field j2 against field j1.  <a href="#a64ebd8fcef0fbdcff9d160ec8039eea6">More...</a><br /></td></tr>
+<tr class="memdesc:a64ebd8fcef0fbdcff9d160ec8039eea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code>String</code> that contains a complete <code>tikzpicture</code> for the <code>pgfplot</code> package, showing the field <code>j2</code> against field <code>j1</code>.  <a href="#a64ebd8fcef0fbdcff9d160ec8039eea6">More...</a><br /></td></tr>
 <tr class="separator:a64ebd8fcef0fbdcff9d160ec8039eea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcd2e7e18475ef5fb93a59715f6a25c9"><td class="memItemLeft" align="right" valign="top"><a id="afcd2e7e18475ef5fb93a59715f6a25c9"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>drawPgfPlotSingleCurve</b> (String title, String axistype, int j1, int j2, int logbasis, String axisoptions, String plotoptions)</td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#afcd2e7e18475ef5fb93a59715f6a25c9">drawPgfPlotSingleCurve</a> (String title, String axistype, int j1, int j2, int logbasis, String axisoptions, String plotoptions)</td></tr>
+<tr class="memdesc:afcd2e7e18475ef5fb93a59715f6a25c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to the previous one. <br /></td></tr>
 <tr class="separator:afcd2e7e18475ef5fb93a59715f6a25c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10ba68304a821c46e56bf2eb8c71233d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#a10ba68304a821c46e56bf2eb8c71233d">formatTableThreeFields</a> (int j1, int j2, int j3)</td></tr>
 <tr class="memdesc:a10ba68304a821c46e56bf2eb8c71233d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#a835df5163bf80af47520fc901d1558c2" title="Similar to formatTable, but retains only two selected columns of the table (i.e., two selected fields...">formatTableTwoFields(int, int)</a>, but for three fields.  <a href="#a10ba68304a821c46e56bf2eb8c71233d">More...</a><br /></td></tr>
@@ -111,7 +112,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>drawPgfPlotSingleCu
 <tr class="memdesc:ac54f32cd7658db47ee39e6337cb869d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to formatPgf, but outputs complete LaTeX code in an appropriate format that adds a curve of the three fields j3, j2, and j1 with the pgfplot package.  <a href="#ac54f32cd7658db47ee39e6337cb869d8">More...</a><br /></td></tr>
 <tr class="separator:ac54f32cd7658db47ee39e6337cb869d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee472b809fe85b18643157e212560d2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#abee472b809fe85b18643157e212560d2">drawPgfPlotSingleCurve</a> (String title, String axistype, int j1, int j2, int j3, int logbasis, String axisoptions, String plotoptions)</td></tr>
-<tr class="memdesc:abee472b809fe85b18643157e212560d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as #drawPgfPlotSingleCurve(String, String, int, int, int, String, String) but for three-dimensional plots.  <a href="#abee472b809fe85b18643157e212560d2">More...</a><br /></td></tr>
+<tr class="memdesc:abee472b809fe85b18643157e212560d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#afcd2e7e18475ef5fb93a59715f6a25c9" title="Similar to the previous one. ">drawPgfPlotSingleCurve(String, String, int, int, int, String, String)</a> but for three-dimensional plots.  <a href="#abee472b809fe85b18643157e212560d2">More...</a><br /></td></tr>
 <tr class="separator:abee472b809fe85b18643157e212560d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -148,8 +149,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
 <tr class="separator:ad9eac995a045927b26652fba9e1515e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a data table that could be used to produce LaTeX code to draw two-dimensional plots with the pgfplot package. </p>
-<p>Each table has a name, a number of observations (rows), a number of fields (columns), an array that contains the names (identifiers) of the fields, and a two-dimensional array that contains the data. Methods are available to format the table, or selected columns of the table, or to produce LaTeX code to draw a plot of one field against another field in pgfplot. </p>
+<div class="textblock"><p>Represents a data table which has a name, a number of observations (rows), a number of fields (columns), an array that contains the names (identifiers) of the fields, and a two-dimensional array that contains the data. </p>
+<p>Methods are available to format the table, or selected columns of the table, or to produce LaTeX code to draw a plot of one field against another field using the pgfplot LaTeX package. These types of tables can also be passed to other software to perform further operations. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa01dd25c26e593d7521c3af53fd982bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa01dd25c26e593d7521c3af53fd982bd">&#9670;&nbsp;</a></span>PgfDataTable()</h2>
@@ -195,11 +196,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
     <tr><td class="paramname">tableName</td><td>Name (descriptor) of the table. </td></tr>
     <tr><td class="paramname">tableLabel</td><td>A label (very short name) for the table, to be used in plots to identify curves. </td></tr>
     <tr><td class="paramname">fields</td><td>The names of the fields (the variables). </td></tr>
-    <tr><td class="paramname">data</td><td>The data points; the array data[s] contains observation s. </td></tr>
+    <tr><td class="paramname">data</td><td>The data points; the entry <code>data[s]</code> contains observation s. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the table as a string. </dd></dl>
 
 </div>
 </div>
@@ -346,7 +346,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Returns a string that contains a complete tikzpicture for the pgfplot package, showing the field j2 against field j1. </p>
+<p>Returns a <code>String</code> that contains a complete <code>tikzpicture</code> for the <code>pgfplot</code> package, showing the field <code>j2</code> against field <code>j1</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">title</td><td>is the title of the plot. </td></tr>
@@ -423,7 +423,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Same as #drawPgfPlotSingleCurve(String, String, int, int, int, String, String) but for three-dimensional plots. </p>
+<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#afcd2e7e18475ef5fb93a59715f6a25c9" title="Similar to the previous one. ">drawPgfPlotSingleCurve(String, String, int, int, int, String, String)</a> but for three-dimensional plots. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">titleis</td><td>the title of the plot. </td></tr>
@@ -442,7 +442,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
 </div>
 </div>
 <a id="adf304ff509dd7d5a67a32317cd6f51c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf304ff509dd7d5a67a32317cd6f51c4">&#9670;&nbsp;</a></span>formatPgfCurveAddPlot() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adf304ff509dd7d5a67a32317cd6f51c4">&#9670;&nbsp;</a></span>formatPgfCurveAddPlot() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -473,21 +473,66 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Similar to <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#a835df5163bf80af47520fc901d1558c2">formatTableTwoFields</a>, but outputs complete LaTeX code in an appropriate format that adds a curve of the field j2 against field j1 with the pgfplot package. </p>
+<p>Similar to <code>formatTableTwoFields</code>, but outputs complete LaTeX code in an appropriate format that adds a curve of the field <code>j2</code> against field <code>j1</code> with the pgfplot package. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">j1</td><td>first selected field. </td></tr>
-    <tr><td class="paramname">j2</td><td>second selected field. </td></tr>
-    <tr><td class="paramname">plotoptions</td><td>is used to specify the options of addplot: <code>addplot[plotoptions]</code> </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;j1&lt;/tt&gt;</td><td>number of first selected field. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;j2&lt;/tt&gt;</td><td>number of second selected field. </td></tr>
+    <tr><td class="paramname">plotoptions</td><td>is used to specify the options of addplot in the pgfplot package: <code>addplot[plotoptions]</code> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>LaTeX code as a string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LaTeX code as a <code>String</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ade9b79b71117fd0936e925571ef1675a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade9b79b71117fd0936e925571ef1675a">&#9670;&nbsp;</a></span>formatPgfCurveAddPlot() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String formatPgfCurveAddPlot </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>xaxis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>yaxis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>plotoptions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>In this version, the two fields are specified by their names in the table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&lt;tt&gt;xaxis&lt;/tt&gt;</td><td>first selected field. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;yaxis&lt;/tt&gt;</td><td>second selected field. </td></tr>
+    <tr><td class="paramname">plotoptions</td><td>is used to specify the options of addplot in the pgfplot package: <code>addplot[plotoptions]</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>LaTeX code as a <code>String</code>. </dd></dl>
 
 </div>
 </div>
 <a id="ac54f32cd7658db47ee39e6337cb869d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac54f32cd7658db47ee39e6337cb869d8">&#9670;&nbsp;</a></span>formatPgfCurveAddPlot() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54f32cd7658db47ee39e6337cb869d8">&#9670;&nbsp;</a></span>formatPgfCurveAddPlot() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -553,9 +598,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Formats the full table as a String, with the field names in the first row, and the data points (observations) in the following rows. </p>
-<p>This format can be used directly by the pgfplot package.</p>
-<dl class="section return"><dt>Returns</dt><dd>the table as a string. </dd></dl>
+<p>Formats the full table as a <code>String</code>, with the field names in the first row, and the data points (observations) in the following rows. </p>
+<p>This format can be used directly by the pgfplot package in Latex.</p>
+<dl class="section return"><dt>Returns</dt><dd>the table as a <code>String</code>. </dd></dl>
 
 </div>
 </div>
@@ -630,16 +675,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservations</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Similar to <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1PgfDataTable.html#aa0af8bdfdf8fad0e42d531b02ab99540">formatTable</a>, but retains only two selected columns of the table (i.e., two selected fields), specified by j1 and j2. </p>
+<p>Similar to <code>formatTable</code>, but retains only two selected columns of the table (i.e., two selected fields), specified by <code>j1</code> and <code>j2</code>. </p>
 <p>Note that the fields are numbered from 0.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">j1</td><td>first selected field. </td></tr>
-    <tr><td class="paramname">j2</td><td>second selected field. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;j1&lt;/tt&gt;</td><td>first selected field. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;j2&lt;/tt&gt;</td><td>second selected field. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the table as a string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the table as a <code>String</code>. </dd></dl>
 
 </div>
 </div>

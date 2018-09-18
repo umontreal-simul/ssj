@@ -14,6 +14,7 @@ var searchData=
   ['fatiguelifegen',['FatigueLifeGen',['../classumontreal_1_1ssj_1_1randvar_1_1FatigueLifeGen.html',1,'umontreal::ssj::randvar']]],
   ['fauresequence',['FaureSequence',['../classumontreal_1_1ssj_1_1hups_1_1FaureSequence.html',1,'umontreal::ssj::hups']]],
   ['fbar',['FBar',['../classumontreal_1_1ssj_1_1gof_1_1FBar.html',1,'umontreal::ssj::gof']]],
+  ['fdensity',['FDensity',['../classift6561examples_1_1FDensity.html',1,'ift6561examples']]],
   ['fdist',['FDist',['../classumontreal_1_1ssj_1_1gof_1_1FDist.html',1,'umontreal::ssj::gof']]],
   ['fisherfdist',['FisherFDist',['../classumontreal_1_1ssj_1_1probdist_1_1FisherFDist.html',1,'umontreal::ssj::probdist']]],
   ['fisherfgen',['FisherFGen',['../classumontreal_1_1ssj_1_1randvar_1_1FisherFGen.html',1,'umontreal::ssj::randvar']]],

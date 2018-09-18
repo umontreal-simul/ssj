@@ -1,0 +1,151 @@
+\def\Defcs#1{\long\expandafter\def\csname#1\endcsname}
+\Defcs{Empty}{}
+\def\IfEmpty#1{\expandafter\ifx\csname#1\endcsname\Empty}
+
+\def\StringNode#1{\Defcs{#1}##1{##1}}
+\def\DocNode#1{\Defcs{#1}##1{##1}}
+\def\ListNode#1{\Defcs{#1}##1{##1}\Defcs{#1Sep}{}}
+\def\HashNode#1{\Defcs{#1}{}}
+
+\input{/u/puchhamf/misc/workspace_clean/ssj/out/perlmod/doxystructure.tex}
+
+\newbox\BoxA
+\dimendef\DimenA=151\relax
+\dimendef\DimenB=152\relax
+\countdef\ZoneDepth=151\relax
+
+\def\Cs#1{\csname#1\endcsname}
+\def\Letcs#1{\expandafter\let\csname#1\endcsname}
+\def\Heading#1{\vskip 4mm\relax\textbf{#1}}
+\def\See#1{\begin{flushleft}\Heading{See also: }#1\end{flushleft}}
+
+\def\Frame#1{\vskip 3mm\relax\fbox{ \vbox{\hsize0.95\hsize\vskip 1mm\relax
+\raggedright#1\vskip 0.5mm\relax} }}
+
+\def\Zone#1#2#3{%
+\Defcs{Test#1}{#2}%
+\Defcs{Emit#1}{#3}%
+\Defcs{#1}{%
+\advance\ZoneDepth1\relax
+\Letcs{Mode\number\ZoneDepth}0\relax
+\Letcs{Present\number\ZoneDepth}0\relax
+\Cs{Test#1}
+\expandafter\if\Cs{Present\number\ZoneDepth}1%
+\advance\ZoneDepth-1\relax
+\Letcs{Present\number\ZoneDepth}1\relax
+\expandafter\if\Cs{Mode\number\ZoneDepth}1%
+\advance\ZoneDepth1\relax
+\Letcs{Mode\number\ZoneDepth}1\relax
+\Cs{Emit#1}
+\advance\ZoneDepth-1\relax\fi
+\advance\ZoneDepth1\relax\fi
+\advance\ZoneDepth-1\relax}}
+
+\def\Member#1#2{%
+\Defcs{Test#1}{\Cs{field#1Detailed}
+\IfEmpty{field#1DetailedDoc}\else\Letcs{Present#1}1\fi}
+\Defcs{#1}{\Letcs{Present#1}0\relax
+\Cs{Test#1}\if1\Cs{Present#1}\Letcs{Present\number\ZoneDepth}1\relax
+\if1\Cs{Mode\number\ZoneDepth}#2\fi\fi}}
+
+\def\TypedefMemberList#1#2{%
+\Defcs{#1DetailedDoc}##1{\vskip 5.5mm\relax##1}%
+\Defcs{#1Name}##1{\textbf{##1}}%
+\Defcs{#1See}##1{\See{##1}}%
+%
+\Zone{#1s}{\Cs{field#1List}}{\subsubsection{#2}\Cs{field#1List}}%
+\Member{#1}{\Frame{typedef \Cs{field#1Type} \Cs{field#1Name}}%
+\Cs{field#1DetailedDoc}\Cs{field#1See}\vskip 5mm\relax}}%
+
+\def\VariableMemberList#1#2{%
+\Defcs{#1DetailedDoc}##1{\vskip 5.5mm\relax##1}%
+\Defcs{#1Name}##1{\textbf{##1}}%
+\Defcs{#1See}##1{\See{##1}}%
+%
+\Zone{#1s}{\Cs{field#1List}}{\subsubsection{#2}\Cs{field#1List}}%
+\Member{#1}{\Frame{\Cs{field#1Type}{} \Cs{field#1Name}}%
+\Cs{field#1DetailedDoc}\Cs{field#1See}\vskip 5mm\relax}}%
+
+\def\FunctionMemberList#1#2{%
+\Defcs{#1PDParamName}##1{\textit{##1}}%
+\Defcs{#1PDParam}{\Cs{field#1PDParamName}}%
+\Defcs{#1PDParamsSep}{, }%
+\Defcs{#1PDBlocksSep}{\vskip 2mm\relax}%
+%
+\Defcs{#1PDBlocks}##1{%
+\Heading{Parameters:}\vskip 1.5mm\relax
+\DimenA0pt\relax
+\Defcs{#1PDBlock}{\setbox\BoxA\hbox{\Cs{field#1PDParams}}%
+\ifdim\DimenA<\wd\BoxA\DimenA\wd\BoxA\fi}%
+##1%
+\advance\DimenA3mm\relax
+\DimenB\hsize\advance\DimenB-\DimenA\relax
+\Defcs{#1PDBlock}{\hbox to\hsize{\vtop{\hsize\DimenA\relax
+\Cs{field#1PDParams}}\hfill
+\vtop{\hsize\DimenB\relax\Cs{field#1PDDoc}}}}%
+##1}
+
+\Defcs{#1ParamName}##1{\textit{##1}}
+\Defcs{#1Param}{\Cs{field#1ParamType}{} \Cs{field#1ParamName}}
+\Defcs{#1ParamsSep}{, }
+
+\Defcs{#1Name}##1{\textbf{##1}}
+\Defcs{#1See}##1{\See{##1}}
+\Defcs{#1Return}##1{\Heading{Returns: }##1}
+\Defcs{field#1Title}{\Frame{\Cs{field#1Type}{} \Cs{field#1Name}(\Cs{field#1Params})}}%
+%
+\Zone{#1s}{\Cs{field#1List}}{\subsubsection{#2}\Cs{field#1List}}%
+\Member{#1}{%
+\Cs{field#1Title}\vskip 6mm\relax\Cs{field#1DetailedDoc}
+\Cs{field#1Return}\Cs{field#1PDBlocks}\Cs{field#1See}\vskip 5mm\relax}}
+
+\def\FileDetailed{\fieldFileDetailedDoc\par}
+\def\ClassDetailed{\fieldClassDetailedDoc\par}
+
+\def\FileSubzones{\fieldFileTypedefs\fieldFileVariables\fieldFileFunctions}
+
+\def\ClassSubzones{%
+\fieldClassPublicTypedefs\fieldClassPublicMembers\fieldClassPublicMethods
+\fieldClassProtectedTypedefs\fieldClassProtectedMembers\fieldClassProtectedMethods
+\fieldClassPrivateTypedefs\fieldClassPrivateMembers\fieldClassPrivateMethods}
+
+\Member{Page}{\subsection{\fieldPageName}\fieldPageDetailedDoc}
+
+\TypedefMemberList{FileTypedef}{Typedefs}
+\VariableMemberList{FileVariable}{Variables}
+\FunctionMemberList{FileFunction}{Functions}
+\Zone{File}{\FileSubzones}{\subsection{\fieldFileName}\fieldFileDetailed\FileSubzones}
+
+\TypedefMemberList{ClassPublicTypedef}{Public Typedefs}
+\TypedefMemberList{ClassProtectedTypedef}{Protected Typedefs}
+\TypedefMemberList{ClassPrivateTypedef}{Private Typedefs}
+\VariableMemberList{ClassPublicMember}{Public Members}
+\VariableMemberList{ClassProtectedMember}{Protected Members}
+\VariableMemberList{ClassPrivateMember}{Private Members}
+\FunctionMemberList{ClassPublicMethod}{Public Methods}
+\FunctionMemberList{ClassProtectedMethod}{Protected Methods}
+\FunctionMemberList{ClassPrivateMethod}{Private Methods}
+\Zone{Class}{\ClassSubzones}{\subsection{\fieldClassName}\fieldClassDetailed\ClassSubzones}
+
+\Zone{AllPages}{\fieldPages}{\section{Pages}\fieldPages}
+\Zone{AllFiles}{\fieldFiles}{\section{Files}\fieldFiles}
+\Zone{AllClasses}{\fieldClasses}{\section{Classes}\fieldClasses}
+
+\newlength{\oldparskip}
+\newlength{\oldparindent}
+\newlength{\oldfboxrule}
+
+\ZoneDepth0\relax
+\Letcs{Mode0}1\relax
+
+\def\EmitDoxyDocs{%
+\setlength{\oldparskip}{\parskip}
+\setlength{\oldparindent}{\parindent}
+\setlength{\oldfboxrule}{\fboxrule}
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
+\setlength{\fboxrule}{1pt}
+\AllPages\AllFiles\AllClasses
+\setlength{\parskip}{\oldparskip}
+\setlength{\parindent}{\oldparindent}
+\setlength{\fboxrule}{\oldfboxrule}}

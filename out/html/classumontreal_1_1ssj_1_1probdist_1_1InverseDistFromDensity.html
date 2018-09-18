@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implements a method for computing the inverse of an <em>arbitrary continuous</em> distribution function when only the probability density is known <a class="el" href="citelist.html#CITEREF_rDER09a">[40]</a>&thinsp;.  
+<p>Implements a method for computing the inverse of an <em>arbitrary continuous</em> distribution function when only the probability density is known <a class="el" href="citelist.html#CITEREF_rDER09a">[43]</a>&thinsp;.  
  <a href="classumontreal_1_1ssj_1_1probdist_1_1InverseDistFromDensity.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for InverseDistFromDensity:</div>
@@ -215,7 +215,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>supportB</b> = Doub
 <tr class="separator:adb6d9946333f0c9e33da9cc8b27498f7 inherit pro_attribs_classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements a method for computing the inverse of an <em>arbitrary continuous</em> distribution function when only the probability density is known <a class="el" href="citelist.html#CITEREF_rDER09a">[40]</a>&thinsp;. </p>
+<div class="textblock"><p>Implements a method for computing the inverse of an <em>arbitrary continuous</em> distribution function when only the probability density is known <a class="el" href="citelist.html#CITEREF_rDER09a">[43]</a>&thinsp;. </p>
 <p>The cumulative probabilities (cdf) are pre-computed by numerical quadrature of the density using Gauss-Lobatto integration over suitably small intervals to satisfy the required precision, and these values are kept in tables. Then the algorithm uses polynomial interpolation over the tabulated values to get the inverse cdf. The user can select the desired precision and the degree of the interpolating polynomials.</p>
 <p>The algorithm may fail for some distributions for which the density becomes infinite at a point (for ex. the Gamma and the Beta distributions with \(\alpha&lt; 1\)) if one chooses too high a precision (a too small <code>eps</code>, for ex. \(\epsilon\sim10^{-15}\)). However, it should work also for continuous densities with finite discontinuities.</p>
 <p>While the setup time for this class is relatively slow, the numerical inversion is extremely fast and practically independent of the required precision and of the specific distribution. For comparisons between the times of standard inversion and inversion from this class as well as comparisons between setup times, see the introduction in class <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen.html">umontreal.ssj.randvar.InverseFromDensityGen</a> from package <code>randvar</code>.</p>

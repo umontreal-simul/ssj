@@ -1,6 +1,16 @@
 var searchData=
 [
   ['sampler',['Sampler',['../interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html',1,'umontreal::ssj::mcqmctools::anova']]],
+  ['san13cmc',['San13CMC',['../classift6561examples_1_1San13CMC.html',1,'ift6561examples']]],
+  ['san13cmccv',['San13CMCCV',['../classift6561examples_1_1San13CMCCV.html',1,'ift6561examples']]],
+  ['san13cmcdist',['San13CMCDist',['../classift6561examples_1_1San13CMCDist.html',1,'ift6561examples']]],
+  ['san13cmcgrad1',['San13CMCgrad1',['../classift6561examples_1_1San13CMCgrad1.html',1,'ift6561examples']]],
+  ['san13cmcgrad2',['San13CMCgrad2',['../classift6561examples_1_1San13CMCgrad2.html',1,'ift6561examples']]],
+  ['san13connect',['San13connect',['../classift6561examples_1_1San13connect.html',1,'ift6561examples']]],
+  ['san13connectcmc1',['San13connectCMC1',['../classift6561examples_1_1San13connectCMC1.html',1,'ift6561examples']]],
+  ['san13dist',['San13Dist',['../classtutorial_1_1San13Dist.html',1,'San13Dist'],['../classift6561examples_1_1San13Dist.html',1,'San13Dist']]],
+  ['san13distcrn',['San13DistCRN',['../classift6561examples_1_1San13DistCRN.html',1,'ift6561examples']]],
+  ['san13prob',['San13Prob',['../classift6561examples_1_1San13Prob.html',1,'ift6561examples']]],
   ['scaledhistogram',['ScaledHistogram',['../classumontreal_1_1ssj_1_1stat_1_1ScaledHistogram.html',1,'umontreal::ssj::stat']]],
   ['scatterchart',['ScatterChart',['../classumontreal_1_1ssj_1_1charts_1_1ScatterChart.html',1,'umontreal::ssj::charts']]],
   ['search',['Search',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html',1,'umontreal::ssj::latnetbuilder']]],
@@ -36,6 +46,7 @@ var searchData=
   ['studentnoncentralgen',['StudentNoncentralGen',['../classumontreal_1_1ssj_1_1randvar_1_1StudentNoncentralGen.html',1,'umontreal::ssj::randvar']]],
   ['studentpolargen',['StudentPolarGen',['../classumontreal_1_1ssj_1_1randvar_1_1StudentPolarGen.html',1,'umontreal::ssj::randvar']]],
   ['subsetofpointset',['SubsetOfPointSet',['../classumontreal_1_1ssj_1_1hups_1_1SubsetOfPointSet.html',1,'umontreal::ssj::hups']]],
+  ['sum2barrieris',['Sum2BarrierIS',['../classift6561examples_1_1Sum2BarrierIS.html',1,'ift6561examples']]],
   ['systeme',['Systeme',['../classumontreal_1_1ssj_1_1util_1_1Systeme.html',1,'umontreal::ssj::util']]],
   ['systemtimechrono',['SystemTimeChrono',['../classumontreal_1_1ssj_1_1util_1_1SystemTimeChrono.html',1,'umontreal::ssj::util']]]
 ];

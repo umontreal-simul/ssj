@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A subclass of Markov chain for which there is a total ordering between the states in each dimension induced by the implementation of the <code>MultiDimComparable</code> interface in package <code><a class="el" href="namespaceumontreal_1_1ssj_1_1util.html" title="General basic utilities. ">umontreal.ssj.util</a></code>.  
+<p>A subclass of <code><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ...">MarkovChain</a></code> for which there is a total ordering between the states, induced by the implementation of the umontreal.ssj.util.MultiDimComparable interface.  
  <a href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for MarkovChainComparable:</div>
@@ -197,10 +197,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numSteps</b></td></tr>
 <tr class="separator:aacaa75f9bf3f960f493f709068678132 inherit pac_attribs_classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A subclass of Markov chain for which there is a total ordering between the states in each dimension induced by the implementation of the <code>MultiDimComparable</code> interface in package <code><a class="el" href="namespaceumontreal_1_1ssj_1_1util.html" title="General basic utilities. ">umontreal.ssj.util</a></code>. </p>
-<p>A list or array of Markov chains can then be sorted according to their states at a given step, using a umontreal.ssj.util.MultiDimComparator and an external sorting method.</p>
-<p>The method <code>compareTo(MarkovChainComparable m, int i)</code> must return a negative integer, zero, or a positive integer as the implicit Markov chain is considered smaller than, equal to, or greater than <code>m</code> in dimension <code>i</code>. The meaning of smaller, equal or larger is very flexible as well as the meaning of dimension.</p>
-<p>Concrete subclasses must implement <code>compareTo</code> and must initialize variable <code>stateDim</code> in the constructor to the value of the state dimension. It can be understood as the largest integer <code>j</code> for which the method <code>compareTo(m,j)</code> can be called. They must also implement abstract methods of <code><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ...">MarkovChain</a></code>.</p>
+<div class="textblock"><p>A subclass of <code><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ...">MarkovChain</a></code> for which there is a total ordering between the states, induced by the implementation of the umontreal.ssj.util.MultiDimComparable interface. </p>
+<p>A list or array of <code><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl...">MarkovChainComparable</a></code> objects can be sorted according to their states at a given step, using a umontreal.ssj.util.MultiDimComparator and an external sorting method.</p>
+<p>The method <code>compareTo(MarkovChainComparable m, int i)</code> must return a negative integer, zero, or a positive integer, and <code>this</code> Markov chain is considered smaller than, equal to, or greater than the other chain <code>m</code> in dimension <code>i</code>. The meaning of smaller, equal or larger is very flexible as well as the meaning of dimension.</p>
+<p>Concrete subclasses must implement <code>compareTo</code> and must initialize the variable <code>stateDim</code> in the constructor to the value of the state dimension. It can be understood as the largest integer <code>j</code> for which the method <code>compareTo(m,j)</code> can be called. They must also implement abstract methods of <code><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ...">MarkovChain</a></code>.</p>
 <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div> </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>MarkovChainComparable.java</li>
 </ul>

@@ -116,10 +116,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af9c1a135991a9072a349dac2607597b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the upper limit \(x_b\) of the support of the probability mass function.  <a href="#af9c1a135991a9072a349dac2607597b8">More...</a><br /></td></tr>
 <tr class="separator:af9c1a135991a9072a349dac2607597b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47dfe73ca7d2e4a8bf34bc96af34530a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#a47dfe73ca7d2e4a8bf34bc96af34530a">inverseF</a> (double u)</td></tr>
-<tr class="memdesc:a47dfe73ca7d2e4a8bf34bc96af34530a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse distribution function \(F^{-1}(u)\), where \(0\le u\le1\).  <a href="#a47dfe73ca7d2e4a8bf34bc96af34530a">More...</a><br /></td></tr>
+<tr class="memdesc:a47dfe73ca7d2e4a8bf34bc96af34530a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse distribution function \(F^{-1}(u)\), where.  <a href="#a47dfe73ca7d2e4a8bf34bc96af34530a">More...</a><br /></td></tr>
 <tr class="separator:a47dfe73ca7d2e4a8bf34bc96af34530a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fed129849ce389d3d931e5c5d6715b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#a4fed129849ce389d3d931e5c5d6715b4">inverseFInt</a> (double u)</td></tr>
-<tr class="memdesc:a4fed129849ce389d3d931e5c5d6715b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse distribution function \(F^{-1}(u)\), where \(0\le u\le1\).  <a href="#a4fed129849ce389d3d931e5c5d6715b4">More...</a><br /></td></tr>
+<tr class="memdesc:a4fed129849ce389d3d931e5c5d6715b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse distribution function \(F^{-1}(u)\), where.  <a href="#a4fed129849ce389d3d931e5c5d6715b4">More...</a><br /></td></tr>
 <tr class="separator:a4fed129849ce389d3d931e5c5d6715b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html">Distribution</a></td></tr>
 <tr class="memitem:a30a2fb604a6ae53f41a0f048017a999d inherit pub_methods_interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution"><td class="memItemLeft" align="right" valign="top"><a id="a30a2fb604a6ae53f41a0f048017a999d"></a>
@@ -198,7 +198,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
 </div><div class="memdoc">
 
 <p>Returns \(\bar{F}(x)\), the complementary distribution function. </p>
-<p>Calls the <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#a5bf25e2ac05719032329b5647940685e">barF(int)</a> method. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Calls the <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#a5bf25e2ac05719032329b5647940685e">barF(int)</a> method.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>value at which the complementary distribution function must be evaluated </td></tr>
   </table>
@@ -227,7 +228,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
 </div><div class="memdoc">
 
 <p>Returns \(\bar{F}(x)\), the complementary distribution function. </p>
-<p><em>See the WARNING above</em>. The default implementation returns <code>1.0 - cdf(x - 1)</code>, which is not accurate when \(F(x)\) is near 1. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><em>See the WARNING above</em>. The default implementation returns <code>1.0 - cdf(x - 1)</code>, which is not accurate when \(F(x)\) is near 1.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>value at which the complementary distribution function must be evaluated </td></tr>
   </table>
@@ -254,7 +256,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
 </div><div class="memdoc">
 
 <p>Returns the distribution function \(F\) evaluated at \(x\) (see ( <a class="el" href="namespaceumontreal_1_1ssj_1_1probdist.html#REF_probdist_overview_eq_FDistDisc">FDistDisc</a> )). </p>
-<p>Calls the <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#aaa7155aeb929333251151ac57ed1e8e9">cdf(int)</a> method. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Calls the <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#aaa7155aeb929333251151ac57ed1e8e9">cdf(int)</a> method.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>value at which the distribution function must be evaluated </td></tr>
   </table>
@@ -317,7 +320,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
 </div><div class="memdoc">
 
 <p>Returns the lower limit \(x_a\) of the support of the probability mass function. </p>
-<p>The probability is 0 for all \(x &lt; x_a\). </p><dl class="section return"><dt>Returns</dt><dd>\(x\) lower limit of support </dd></dl>
+<p>The probability is 0 for all \(x &lt; x_a\).</p>
+<dl class="section return"><dt>Returns</dt><dd>\(x\) lower limit of support </dd></dl>
 
 </div>
 </div>
@@ -337,7 +341,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
 </div><div class="memdoc">
 
 <p>Returns the upper limit \(x_b\) of the support of the probability mass function. </p>
-<p>The probability is 0 for all \(x &gt; x_b\). </p><dl class="section return"><dt>Returns</dt><dd>\(x\) upper limit of support </dd></dl>
+<p>The probability is 0 for all \(x &gt; x_b\).</p>
+<dl class="section return"><dt>Returns</dt><dd>\(x\) upper limit of support </dd></dl>
 
 </div>
 </div>
@@ -357,8 +362,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
       </table>
 </div><div class="memdoc">
 
-<p>Returns the inverse distribution function \(F^{-1}(u)\), where \(0\le u\le1\). </p>
-<p>Calls the <code>inverseFInt</code> method. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the inverse distribution function \(F^{-1}(u)\), where. </p>
+<p>\(0\le u\le1\). Calls the <code>inverseFInt</code> method. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">u</td><td>value in the interval \((0,1)\) for which the inverse distribution function is evaluated </td></tr>
   </table>
@@ -393,8 +398,8 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>EPS_EX
       </table>
 </div><div class="memdoc">
 
-<p>Returns the inverse distribution function \(F^{-1}(u)\), where \(0\le u\le1\). </p>
-<p>The default implementation uses binary search. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the inverse distribution function \(F^{-1}(u)\), where. </p>
+<p>\(0\le u\le1\). The default implementation uses binary search. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">u</td><td>value in the interval \((0,1)\) for which the inverse distribution function is evaluated </td></tr>
   </table>
