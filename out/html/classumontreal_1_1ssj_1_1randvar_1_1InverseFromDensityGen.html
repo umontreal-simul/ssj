@@ -79,19 +79,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implements a method for generating random variates by numerical inversion of an <em>arbitrary continuous</em> distribution when only the probability density is known <b>[rDER10a]</b>&thinsp;.  
+<p>Implements a method for generating random variates by numerical inversion of an <em>arbitrary continuous</em> distribution when only the probability density is known <a class="el" href="citelist.html#CITEREF_rDER10a">[44]</a>&thinsp;.  
  <a href="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for InverseFromDensityGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen__inherit__graph.svg" width="175" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen__inherit__graph.svg" width="175" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for InverseFromDensityGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen__coll__graph.svg" width="238" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen__coll__graph.svg" width="238" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -157,7 +155,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a00522d4f2a080a3f95790bfd8b9822e7 inherit pro_attribs_classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements a method for generating random variates by numerical inversion of an <em>arbitrary continuous</em> distribution when only the probability density is known <b>[rDER10a]</b>&thinsp;. </p>
+<div class="textblock"><p>Implements a method for generating random variates by numerical inversion of an <em>arbitrary continuous</em> distribution when only the probability density is known <a class="el" href="citelist.html#CITEREF_rDER10a">[44]</a>&thinsp;. </p>
 <p>The cumulative probabilities (cdf) are pre-computed by numerical quadrature of the density using Gauss-Lobatto integration over suitably small intervals to satisfy the required precision, and these values are kept in tables. Then the algorithm uses polynomial interpolation over the tabulated values to get the inverse cdf. The user can select the desired precision and the degree of the interpolating polynomials.</p>
 <p>The algorithm may fail for some distributions for which the density becomes infinite at a point (for ex. the Gamma and the Beta distributions with \(\alpha&lt; 1\)) if one requires too high a precision (a too small <code>eps</code>, for ex. \(\epsilon\sim10^{-15}\)). However, it should work also for continuous densities with finite discontinuities.</p>
 <p>While the setup time is relatively slow, the generation of random variables is extremely fast and practically independent of the required precision and of the specific distribution. The following table shows the time needed (in seconds) to generate \(10^8\) random numbers using inversion from a given class, then the numerical inversion with Gauss-Lobatto integration implemented here, and finally the speed ratios between the two methods. The speed ratio is the speed of the latter over the former. Thus for the beta distribution with parameters (5, 500), generating random variables with the Gauss-Lobatto integration implemented in this class is more than 1700 times faster than using inversion from the <code>BetaDist</code> class. These tests were made on a machine with processor AMD Athlon 4000, running Red Hat Linux, with clock speed at 2403 MHz.</p>

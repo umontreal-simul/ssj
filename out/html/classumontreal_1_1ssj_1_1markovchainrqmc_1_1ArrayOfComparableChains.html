@@ -80,19 +80,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class provides tools to simulate an array of <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html">MarkovChainComparable</a> objects with the array-RQMC method of <b>[vLEC08a]</b>, <b>[vLEC09d]</b>&thinsp;.  
+<p>This class provides tools to simulate an array of <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html">MarkovChainComparable</a> objects with the array-RQMC method of <a class="el" href="citelist.html#CITEREF_vLEC08a">[135]</a>, <a class="el" href="citelist.html#CITEREF_vLEC09d">[138]</a>&thinsp;.  
  <a href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__inherit__graph.svg" width="266" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__inherit__graph.svg" width="266" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__coll__graph.svg" width="266" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__coll__graph.svg" width="266" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -213,7 +211,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>sortCoordPts</b> = 0</
 <tr class="separator:a5e851e87e18adba44f8322f1976bae71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class provides tools to simulate an array of <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html">MarkovChainComparable</a> objects with the array-RQMC method of <b>[vLEC08a]</b>, <b>[vLEC09d]</b>&thinsp;. </p>
+<div class="textblock"><p>This class provides tools to simulate an array of <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html">MarkovChainComparable</a> objects with the array-RQMC method of <a class="el" href="citelist.html#CITEREF_vLEC08a">[135]</a>, <a class="el" href="citelist.html#CITEREF_vLEC09d">[138]</a>&thinsp;. </p>
 <p>It offers tools to construct the array of chains, simulate with array-RQMC for one step or multiple steps, perform experiments, and report some results.</p>
 <p>At each step, the \(n\) states (which correspond to the \(n\) copies of the chain) are sorted in \(\ell\) dimensions (usually the dimension of the state). If \(\ell=1\), this is an ordinary sort. If \(\ell&gt; 1\), they are sorted using a umontreal.ssj.util.MultiDimSort, which in general can sort umontreal.ssj.util.MultiDimComparable objects. As a special case, they can also be sorted using a umontreal.ssj.util.MultiDimSort01 type of sort. Some of these sorts effectively map the chain states to the one-dimensional interval \((0,1)\). For example, the sorts based on a Hilbert curve, such as umontreal.ssj.util.HilbertCurveSort, do that. In that case, we put \(\ell’=1\), otherwise \(\ell’=\ell\).</p>
 <p>To move the chains ahead, we use an \((\ell’+d)\)-dimensional RQMC <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">umontreal.ssj.hups.PointSet</a>. The first \(\ell’\) coordinates are used to sort the points to map them to the (sorted) chains. In some cases, when \(\ell’=1\), the first coordinate of the points is not stored explicitly; the points are already sorted by a first coordinate which is only implicit (it serves to enumerate the points). This is what happens for a Sobol’ sequence, or a <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1KorobovLattice.html">umontreal.ssj.hups.KorobovLattice</a> for which the first coordinate is dropped, for example. Only \(d\) coordinates are produced with those point sets and have to be randomized. In the other cases, the points must be sorted by their first \(\ell’\) coordinates.</p>

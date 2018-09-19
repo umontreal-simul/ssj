@@ -80,19 +80,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class computes the <b>discrepancy</b> for randomly shifted points of a set \(\mathcal{P}\) <b>[vHIC02a]</b>&thinsp; (eq.  
+<p>This class computes the <b>discrepancy</b> for randomly shifted points of a set \(\mathcal{P}\) <a class="el" href="citelist.html#CITEREF_vHIC02a">[82]</a>&thinsp; (eq.  
  <a href="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DiscShift1:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1__inherit__graph.svg" width="134" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1__inherit__graph.svg" width="134" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DiscShift1:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1__coll__graph.svg" width="106" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1__coll__graph.svg" width="106" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -272,11 +270,11 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>QTIERS
 <tr class="separator:abb9dc4a2fef1772c8c3903f48776d138 inherit pac_static_attribs_classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class computes the <b>discrepancy</b> for randomly shifted points of a set \(\mathcal{P}\) <b>[vHIC02a]</b>&thinsp; (eq. </p>
+<div class="textblock"><p>This class computes the <b>discrepancy</b> for randomly shifted points of a set \(\mathcal{P}\) <a class="el" href="citelist.html#CITEREF_vHIC02a">[82]</a>&thinsp; (eq. </p>
 <p>15). It is given by <a class="anchor" id="REF_discrepancy_DiscShift1_shift1"></a> </p><p class="formulaDsp">
 \[ [\mathcal{D}(\mathcal{P})]^2 = -1 + \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \prod_{r=1}^s \left[1 + \gamma_r^2 B_2(\{x_{ir} - x_{jr}\})\right], \tag{shift1} \]
 </p>
-<p> where \(n\) is the number of points of \(\mathcal{P}\), \(s\) is the dimension of the points, \(x_{ir}\) is the \(r\)-th coordinate of point \(i\), and the \(\gamma_r\) are arbitrary positive weights. The \(B_{\alpha}(x)\) are the Bernoulli polynomials <b>[mABR70a]</b>&thinsp; (chap. 23) of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>), and the notation \(\{x\}\) means the fractional part of \(x\), defined here as \(\{x\} = x \bmod1\). In one dimension, the formula simplifies to <a class="anchor" id="REF_discrepancy_DiscShift1_shift1dim1"></a> </p><p class="formulaDsp">
+<p> where \(n\) is the number of points of \(\mathcal{P}\), \(s\) is the dimension of the points, \(x_{ir}\) is the \(r\)-th coordinate of point \(i\), and the \(\gamma_r\) are arbitrary positive weights. The \(B_{\alpha}(x)\) are the Bernoulli polynomials <a class="el" href="citelist.html#CITEREF_mABR70a">[1]</a>&thinsp; (chap. 23) of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>), and the notation \(\{x\}\) means the fractional part of \(x\), defined here as \(\{x\} = x \bmod1\). In one dimension, the formula simplifies to <a class="anchor" id="REF_discrepancy_DiscShift1_shift1dim1"></a> </p><p class="formulaDsp">
 \[ [\mathcal{D}(\mathcal{P})]^2 = \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n B_2(\{x_i - x_j\}), \tag{shift1dim1} \]
 </p>
 <p> where \(z_i\) is the point \(i\).</p>

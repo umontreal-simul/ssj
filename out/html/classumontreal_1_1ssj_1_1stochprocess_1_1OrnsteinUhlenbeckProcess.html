@@ -87,14 +87,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for OrnsteinUhlenbeckProcess:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcess__inherit__graph.svg" width="192" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcess__inherit__graph.svg" width="192" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for OrnsteinUhlenbeckProcess:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcess__coll__graph.svg" width="335" height="292"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcess__coll__graph.svg" width="335" height="292"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -282,7 +280,7 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><b>sigmasqrdt</b></
 <p>This process obeys the stochastic differential equation <a class="anchor" id="REF_stochprocess_OrnsteinUhlenbeckProcess_eq_ornstein"></a> </p><p class="formulaDsp">
 \[ dX(t) = \alpha(b - X(t)) dt + \sigma  dB(t) \tag{ornstein} \]
 </p>
-<p> with initial condition \(X(0)= x_0\), where \(\alpha\), \(b\) and \(\sigma\) are positive constants, and \(\{B(t),  t\ge0\}\) is a standard Brownian motion (with drift 0 and volatility 1). This process is <em>mean-reverting</em> in the sense that it always tends to drift toward its general mean \(b\). The process is generated using the sequential technique <b>[fGLA04a]</b>&thinsp; (p. 110) <a class="anchor" id="REF_stochprocess_OrnsteinUhlenbeckProcess_eq_ornstein_seq"></a> </p><p class="formulaDsp">
+<p> with initial condition \(X(0)= x_0\), where \(\alpha\), \(b\) and \(\sigma\) are positive constants, and \(\{B(t),  t\ge0\}\) is a standard Brownian motion (with drift 0 and volatility 1). This process is <em>mean-reverting</em> in the sense that it always tends to drift toward its general mean \(b\). The process is generated using the sequential technique <a class="el" href="citelist.html#CITEREF_fGLA04a">[67]</a>&thinsp; (p. 110) <a class="anchor" id="REF_stochprocess_OrnsteinUhlenbeckProcess_eq_ornstein_seq"></a> </p><p class="formulaDsp">
 \[ X(t_j) = e^{-\alpha(t_j - t_{j-1})} X(t_{j-1}) + b\left(1 - e^{-\alpha(t_j - t_{j-1})}\right) + \sigma\sqrt{\frac{1 - e^{-2\alpha(t_j - t_{j-1})}}{2\alpha}}  Z_j \tag{ornstein-seq} \]
 </p>
 <p> where \(Z_j \sim N(0,1)\). The time intervals \(t_j - t_{j-1}\) can be arbitrarily large.</p>

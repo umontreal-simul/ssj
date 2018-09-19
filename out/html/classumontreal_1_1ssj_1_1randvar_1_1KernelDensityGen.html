@@ -80,19 +80,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class implements random variate generators for distributions obtained via <em>kernel density estimation</em> methods from a set of \(n\) individual observations \(x_1,…,x_n\) <b>[tDEV85a]</b>, <b>[rDEV86a]</b>, <b>[rHOR00a]</b>, <b>[rHOR04a]</b>, <b>[tSIL86a]</b>&thinsp;.  
+<p>This class implements random variate generators for distributions obtained via <em>kernel density estimation</em> methods from a set of \(n\) individual observations \(x_1,…,x_n\) <a class="el" href="citelist.html#CITEREF_tDEV85a">[45]</a>, <a class="el" href="citelist.html#CITEREF_rDEV86a">[46]</a>, <a class="el" href="citelist.html#CITEREF_rHOR00a">[87]</a>, <a class="el" href="citelist.html#CITEREF_rHOR04a">[88]</a>, <a class="el" href="citelist.html#CITEREF_tSIL86a">[206]</a>&thinsp;.  
  <a href="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for KernelDensityGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen__inherit__graph.svg" width="202" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen__inherit__graph.svg" width="202" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for KernelDensityGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen__coll__graph.svg" width="238" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen__coll__graph.svg" width="238" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -169,13 +167,13 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr class="separator:a3f7d3ea911a2cc84bac6b1b888ad2c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class implements random variate generators for distributions obtained via <em>kernel density estimation</em> methods from a set of \(n\) individual observations \(x_1,…,x_n\) <b>[tDEV85a]</b>, <b>[rDEV86a]</b>, <b>[rHOR00a]</b>, <b>[rHOR04a]</b>, <b>[tSIL86a]</b>&thinsp;. </p>
+<div class="textblock"><p>This class implements random variate generators for distributions obtained via <em>kernel density estimation</em> methods from a set of \(n\) individual observations \(x_1,…,x_n\) <a class="el" href="citelist.html#CITEREF_tDEV85a">[45]</a>, <a class="el" href="citelist.html#CITEREF_rDEV86a">[46]</a>, <a class="el" href="citelist.html#CITEREF_rHOR00a">[87]</a>, <a class="el" href="citelist.html#CITEREF_rHOR04a">[88]</a>, <a class="el" href="citelist.html#CITEREF_tSIL86a">[206]</a>&thinsp;. </p>
 <p>The basic idea is to center a copy of the same symmetric density at each observation and take an equally weighted mixture of the \(n\) copies as an estimator of the density from which the observations come. The resulting kernel density has the general form </p><p class="formulaDsp">
 \[ f_n(x) = \frac{1}{nh} \sum_{i=1}^n k((x-x_i)/h), \]
 </p>
-<p> where \(k\) is a fixed pre-selected density called the <em>kernel</em> and \(h\) is a positive constant called the <em>bandwidth</em> or <em>smoothing factor</em>. A difficult practical issue is the selection of \(k\) and \(h\). Several approaches have been proposed for that; see, e.g., <b>[tBER94a]</b>, <b>[tCAO94a]</b>, <b>[rHOR04a]</b>, <b>[tSIL86a]</b>&thinsp;.</p>
+<p> where \(k\) is a fixed pre-selected density called the <em>kernel</em> and \(h\) is a positive constant called the <em>bandwidth</em> or <em>smoothing factor</em>. A difficult practical issue is the selection of \(k\) and \(h\). Several approaches have been proposed for that; see, e.g., <a class="el" href="citelist.html#CITEREF_tBER94a">[16]</a>, <a class="el" href="citelist.html#CITEREF_tCAO94a">[32]</a>, <a class="el" href="citelist.html#CITEREF_rHOR04a">[88]</a>, <a class="el" href="citelist.html#CITEREF_tSIL86a">[206]</a>&thinsp;.</p>
 <p>The constructor of a generator from a kernel density requires a random stream \(s\), the \(n\) observations in the form of an empirical distribution, a random variate generator for the kernel density \(k\), and the value of the bandwidth \(h\). The random variates are then generated as follows: select an observation \(x_I\) at random, by inversion, using stream \(s\), then generate random variate \(Y\) with the generator provided for the density \(k\), and return \(x_I + hY\).</p>
-<p>A simple formula for the bandwidth, suggested in <b>[tSIL86a]</b>, <b>[rHOR04a]</b>&thinsp;, is \(h = \alpha_k h_0\), where <a class="anchor" id="REF_randvar_KernelDensityGen_eq_bandwidth0"></a> </p><p class="formulaDsp">
+<p>A simple formula for the bandwidth, suggested in <a class="el" href="citelist.html#CITEREF_tSIL86a">[206]</a>, <a class="el" href="citelist.html#CITEREF_rHOR04a">[88]</a>&thinsp;, is \(h = \alpha_k h_0\), where <a class="anchor" id="REF_randvar_KernelDensityGen_eq_bandwidth0"></a> </p><p class="formulaDsp">
 \[ h_0 = 1.36374 \min(s_n, q / 1.34) n^{-1/5}, \tag{bandwidth0} \]
 </p>
 <p> \(s_n\) and \(q\) are the empirical standard deviation and the interquartile range of the \(n\) observations, and \(\alpha_k\) is a constant that depends on the type of kernel \(k\). It is defined by </p><p class="formulaDsp">
@@ -198,7 +196,7 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr>
 <td class="l">Student-t(3) </td><td class="l"><code>StudentDist(3)</code> </td><td class="c">0.4802 </td><td class="c">3 </td><td class="c">0.674  </td></tr>
 </table>
-</center><center></center><p>Table&#160; <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen.html#REF_randvar_KernelDensityGen_tab_kernels">kernels</a> gives the precomputed values of \(\sigma_k\) and \(\alpha_k\) for selected (popular) kernels. The values are taken from <b>[rHOR04a]</b>&thinsp;. The second column gives the name of a function (in this package) that constructs the corresponding distribution. The <em>efficiency</em> of a kernel is defined as the ratio of its mean integrated square error over that of the Epanechnikov kernel, which has optimal efficiency and corresponds to the beta distribution with parameters \((2,2)\) over the interval \((-1,1)\).</p>
+</center><center></center><p>Table&#160; <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen.html#REF_randvar_KernelDensityGen_tab_kernels">kernels</a> gives the precomputed values of \(\sigma_k\) and \(\alpha_k\) for selected (popular) kernels. The values are taken from <a class="el" href="citelist.html#CITEREF_rHOR04a">[88]</a>&thinsp;. The second column gives the name of a function (in this package) that constructs the corresponding distribution. The <em>efficiency</em> of a kernel is defined as the ratio of its mean integrated square error over that of the Epanechnikov kernel, which has optimal efficiency and corresponds to the beta distribution with parameters \((2,2)\) over the interval \((-1,1)\).</p>
 <div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa798ef01a79e43917669d37de148343c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa798ef01a79e43917669d37de148343c">&#9670;&nbsp;</a></span>KernelDensityGen()</h2>

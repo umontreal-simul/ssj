@@ -84,14 +84,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for EventList:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList__inherit__graph.svg" width="559" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList__inherit__graph.svg" width="559" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for EventList:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList__coll__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList__coll__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,7 +134,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An interface for implementations of event lists. </p>
-<p>Different implementations are provided in SSJ: doubly-linked list, splay tree, Henricksen’s method, etc. The <em>events</em> in the event list are objects of the class <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Event.html">umontreal.ssj.simevents.Event</a>. The method <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Sim.html#a673c71e67c748c2cbd2c1e6dc159843a" title="Same as init, but also chooses evlist as the event list to be used. ">umontreal.ssj.simevents.Sim.init(EventList)</a> permits one to select the actual implementation used in a simulation <b>[sKIN85a]</b>&thinsp;.</p>
+<p>Different implementations are provided in SSJ: doubly-linked list, splay tree, Henricksen’s method, etc. The <em>events</em> in the event list are objects of the class <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Event.html">umontreal.ssj.simevents.Event</a>. The method <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Sim.html#a673c71e67c748c2cbd2c1e6dc159843a" title="Same as init, but also chooses evlist as the event list to be used. ">umontreal.ssj.simevents.Sim.init(EventList)</a> permits one to select the actual implementation used in a simulation <a class="el" href="citelist.html#CITEREF_sKIN85a">[105]</a>&thinsp;.</p>
 <p>To allow the user to print the event list, the java.lang.Object.toString method from the Object class should be reimplemented in all <code><a class="el" href="interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. ">EventList</a></code> implementations. It will return a string in the following format: "&lt;tt&gt;Contents of the event list &lt;/tt&gt;&lt;em&gt;event list
 class&lt;/em&gt;&lt;tt&gt;:&lt;/tt&gt;" for the first line and each subsequent line has format "&lt;em&gt;scheduled event time&lt;/em&gt;&lt;tt&gt;, &lt;/tt&gt;&lt;em&gt;event
 priority&lt;/em&gt;&amp;nbsp;&lt;tt&gt;:&lt;/tt&gt;&amp;nbsp;&lt;em&gt;event string&lt;/em&gt;". The <em>event string</em> is obtained by calling the <code>toString</code> method of the event objects. The string should not end with the end-of-line character.</p>

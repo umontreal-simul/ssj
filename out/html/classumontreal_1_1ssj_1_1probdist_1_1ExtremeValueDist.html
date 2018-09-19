@@ -86,14 +86,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for ExtremeValueDist:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ExtremeValueDist__inherit__graph.svg" width="166" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ExtremeValueDist__inherit__graph.svg" width="166" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ExtremeValueDist:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ExtremeValueDist__coll__graph.svg" width="166" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ExtremeValueDist__coll__graph.svg" width="166" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -247,7 +245,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b>This class has been replaced by <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GumbelDist.html">GumbelDist</a> </b>. </p>
-<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>extreme value</em> (or <em>Gumbel</em>) distribution <b>[tJOH95b]</b>&thinsp; (page 2), with location parameter \(\alpha\) and scale parameter \(\lambda&gt; 0\). It has density <a class="anchor" id="REF_probdist_ExtremeValueDist_eq_fextremevalue"></a> </p><p class="formulaDsp">
+<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>extreme value</em> (or <em>Gumbel</em>) distribution <a class="el" href="citelist.html#CITEREF_tJOH95b">[98]</a>&thinsp; (page 2), with location parameter \(\alpha\) and scale parameter \(\lambda&gt; 0\). It has density <a class="anchor" id="REF_probdist_ExtremeValueDist_eq_fextremevalue"></a> </p><p class="formulaDsp">
 \[ f (x) = \lambda e^{-\lambda(x-\alpha)} e^{-e^{-\lambda(x-\alpha)}}, \qquad\qquad\mbox{for } -\infty&lt; x &lt; \infty, \tag{fextremevalue} \]
 </p>
 <p> distribution function <a class="anchor" id="REF_probdist_ExtremeValueDist_eq_Fextreme"></a> </p><p class="formulaDsp">
@@ -534,7 +532,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 <p>The estimates are returned in a two-element array, in regular order: [ \(\alpha\), \(\lambda\)]. The maximum likelihood estimators are the values \((\hat{\alpha}, \hat{\lambda})\) that satisfy the equations: </p><p class="formulaDsp">
 \begin{align*} \hat{\lambda} &amp; = \bar{x}_n - \frac{\sum_{i=1}^n x_i  e^{- \hat{\lambda} x_i}}{\sum_{i=1}^n e^{-\hat{\lambda} x_i}} \\ \hat{\alpha} &amp; = - \frac{1}{\hat{\lambda}} \ln\left( \frac{1}{n} \sum_{i=1}^n e^{-\hat{\lambda} x_i} \right), \end{align*}
 </p>
-<p> where \(\bar{x}_n\) is the average of \(x[0],…,x[n-1]\) <b>[tEVA00a]</b>&thinsp; (page 89). </p><dl class="params"><dt>Parameters</dt><dd>
+<p> where \(\bar{x}_n\) is the average of \(x[0],…,x[n-1]\) <a class="el" href="citelist.html#CITEREF_tEVA00a">[54]</a>&thinsp; (page 89). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the list of observations used to evaluate parameters </td></tr>
     <tr><td class="paramname">n</td><td>the number of observations used to evaluate parameters </td></tr>

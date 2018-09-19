@@ -85,14 +85,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for ChiSquareNoncentralPoisGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralPoisGen__inherit__graph.svg" width="207" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralPoisGen__inherit__graph.svg" width="207" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ChiSquareNoncentralPoisGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralPoisGen__coll__graph.svg" width="238" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1ChiSquareNoncentralPoisGen__coll__graph.svg" width="238" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -184,7 +182,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>lambda</b> = -1.0</
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements <em>noncentral chi square</em> random variate generators using Poisson and central chi square generators. </p>
 <p>It uses the following algorithm: generate a random integer \(J \sim\mbox{Poisson}(\lambda/2)\) from a Poisson distribution, generate a random real \(X \sim\Gamma(j + \nu/2, 1/2)\) from a gamma distribution, then return \(X\). Here \(\nu\) is the number of degrees of freedom and \(\lambda\) is the noncentrality parameter.</p>
-<p>To generate the Poisson variates, one uses tabulated inversion for \(\lambda&lt;10\), and the acceptance complement method for \(\lambda\ge10\), as in <b>[rAHR82b]</b>&thinsp; (see class <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1PoissonTIACGen.html">umontreal.ssj.randvar.PoissonTIACGen</a> ). To generate the gamma variates, one uses acceptance-rejection for \(\alpha&lt;1\), and acceptance-complement for \(\alpha\ge1\), as proposed in <b>[rAHR72b]</b>, <b>[rAHR82a]</b>&thinsp; (see class <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1GammaAcceptanceRejectionGen.html">umontreal.ssj.randvar.GammaAcceptanceRejectionGen</a> ).</p>
+<p>To generate the Poisson variates, one uses tabulated inversion for \(\lambda&lt;10\), and the acceptance complement method for \(\lambda\ge10\), as in <a class="el" href="citelist.html#CITEREF_rAHR82b">[3]</a>&thinsp; (see class <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1PoissonTIACGen.html">umontreal.ssj.randvar.PoissonTIACGen</a> ). To generate the gamma variates, one uses acceptance-rejection for \(\alpha&lt;1\), and acceptance-complement for \(\alpha\ge1\), as proposed in <a class="el" href="citelist.html#CITEREF_rAHR72b">[2]</a>, <a class="el" href="citelist.html#CITEREF_rAHR82a">[4]</a>&thinsp; (see class <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1GammaAcceptanceRejectionGen.html">umontreal.ssj.randvar.GammaAcceptanceRejectionGen</a> ).</p>
 <div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2fc0ad97a99ad9158b1c44d4937cacba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fc0ad97a99ad9158b1c44d4937cacba">&#9670;&nbsp;</a></span>ChiSquareNoncentralPoisGen()</h2>

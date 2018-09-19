@@ -80,19 +80,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class computes the <b>discrepancy</b> in <b>[vHIC02a]</b>&thinsp; (eq.  
+<p>This class computes the <b>discrepancy</b> in <a class="el" href="citelist.html#CITEREF_vHIC02a">[82]</a>&thinsp; (eq.  
  <a href="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DiscShift2:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2__inherit__graph.svg" width="134" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2__inherit__graph.svg" width="134" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DiscShift2:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2__coll__graph.svg" width="106" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift2__coll__graph.svg" width="106" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -279,11 +277,11 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>QTIERS
 <tr class="separator:abb9dc4a2fef1772c8c3903f48776d138 inherit pac_static_attribs_classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class computes the <b>discrepancy</b> in <b>[vHIC02a]</b>&thinsp; (eq. </p>
+<div class="textblock"><p>This class computes the <b>discrepancy</b> in <a class="el" href="citelist.html#CITEREF_vHIC02a">[82]</a>&thinsp; (eq. </p>
 <p>15) for the <em>randomly shifted</em> points of a set \(\mathcal{P}\). It is given by <a class="anchor" id="REF_discrepancy_DiscShift2_shift2"></a> </p><p class="formulaDsp">
 \[ [\mathcal{D}(\mathcal{P})]^2 = -1 + \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n \prod_{r=1}^s \left[1 + \frac{\gamma_r^2}{2} B_2(\{x_{ir} - x_{jr}\}) - \frac{\gamma_r^4}{12}B_4(\{x_{ir} - x_{jr}\}) \right], \tag{shift2} \]
 </p>
-<p> where \(n\) is the number of points of \(\mathcal{P}\), \(s\) is the dimension of the points, \(x_{ir}\) is the \(r\)-th coordinate of point \(i\), and the \(\gamma_r\) are arbitrary positive weights. The \(B_{\alpha}(x)\) are the Bernoulli polynomials <b>[mABR70a]</b>&thinsp; (chap. 23) of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>). The notation \(\{x\}\) means the fractional part of \(x\), defined as \(\{x\} = x \bmod1\). In one dimension, the formula simplifies to <a class="anchor" id="REF_discrepancy_DiscShift2_shift2dim1"></a> </p><p class="formulaDsp">
+<p> where \(n\) is the number of points of \(\mathcal{P}\), \(s\) is the dimension of the points, \(x_{ir}\) is the \(r\)-th coordinate of point \(i\), and the \(\gamma_r\) are arbitrary positive weights. The \(B_{\alpha}(x)\) are the Bernoulli polynomials <a class="el" href="citelist.html#CITEREF_mABR70a">[1]</a>&thinsp; (chap. 23) of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>). The notation \(\{x\}\) means the fractional part of \(x\), defined as \(\{x\} = x \bmod1\). In one dimension, the formula simplifies to <a class="anchor" id="REF_discrepancy_DiscShift2_shift2dim1"></a> </p><p class="formulaDsp">
 \[ [\mathcal{D}(\mathcal{P})]^2 = \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n \left[\frac{\gamma^2}{2} B_2(\{x_i - x_j\}) - \frac{\gamma^4}{12}B_4(\{x_i - x_j\}) \right]. \tag{shift2dim1} \]
 </p>
 <p> The discrepancy represents a worst-case error criterion for the approximation of integrals, when the integrands have a certain degree of smoothness and lie in a Hilbert space \(\mathcal{H}\) with a reproducing kernel \(K\) given by </p><p class="formulaDsp">

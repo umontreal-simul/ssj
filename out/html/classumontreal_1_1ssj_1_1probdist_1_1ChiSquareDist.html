@@ -82,19 +82,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>chi-square</em> distribution with \(n\) degrees of freedom, where \(n\) is a positive integer <b>[tJOH95a]</b>&thinsp; (page 416).  
+<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>chi-square</em> distribution with \(n\) degrees of freedom, where \(n\) is a positive integer <a class="el" href="citelist.html#CITEREF_tJOH95a">[97]</a>&thinsp; (page 416).  
  <a href="classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ChiSquareDist:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist__inherit__graph.svg" width="166" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist__inherit__graph.svg" width="166" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ChiSquareDist:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist__coll__graph.svg" width="166" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist__coll__graph.svg" width="166" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -248,7 +246,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 <tr class="separator:a12eba7a93a9de6f26820487e25f0d6c5 inherit pro_static_attribs_classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>chi-square</em> distribution with \(n\) degrees of freedom, where \(n\) is a positive integer <b>[tJOH95a]</b>&thinsp; (page 416). </p>
+<div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>chi-square</em> distribution with \(n\) degrees of freedom, where \(n\) is a positive integer <a class="el" href="citelist.html#CITEREF_tJOH95a">[97]</a>&thinsp; (page 416). </p>
 <p>Its density is <a class="anchor" id="REF_probdist_ChiSquareDist_eq_Fchi2"></a> </p><p class="formulaDsp">
 \[ f(x) = \frac{x^{(n/2)-1}e^{-x/2}}{2^{n/2}\Gamma(n/2)},\qquad\mbox{for } x &gt; 0 \tag{Fchi2} \]
 </p>
@@ -691,7 +689,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 </div><div class="memdoc">
 
 <p>Computes an approximation of \(F^{-1}(u)\), where \(F\) is the chi-square distribution with \(n\) degrees of freedom. </p>
-<p>Uses the approximation given in <b>[tBES75a]</b>&thinsp; and in Figure L.23 of <b>[sBRA87a]</b>&thinsp;. It gives at least 6 decimal digits of precision, except far in the tails (that is, for \(u&lt; 10^{-5}\) or \(u &gt; 1 - 10^{-5}\)) where the function calls the method <code><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html#a47dfe73ca7d2e4a8bf34bc96af34530a" title="Returns the inverse distribution function , defined in ( inverseF ). ">GammaDist.inverseF</a> (n/2, 7, u)</code> and multiplies the result by 2.0. To get better precision, one may call <code><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html#a47dfe73ca7d2e4a8bf34bc96af34530a" title="Returns the inverse distribution function , defined in ( inverseF ). ">GammaDist.inverseF</a></code>, but this method is slower than the current method, especially for large \(n\). For instance, for \(n = \) 16, 1024, and 65536, the <code><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html#a47dfe73ca7d2e4a8bf34bc96af34530a" title="Returns the inverse distribution function , defined in ( inverseF ). ">GammaDist.inverseF</a></code> method is 2, 5, and 8 times slower, respectively, than the current method. </p>
+<p>Uses the approximation given in <a class="el" href="citelist.html#CITEREF_tBES75a">[17]</a>&thinsp; and in Figure L.23 of <a class="el" href="citelist.html#CITEREF_sBRA87a">[25]</a>&thinsp;. It gives at least 6 decimal digits of precision, except far in the tails (that is, for \(u&lt; 10^{-5}\) or \(u &gt; 1 - 10^{-5}\)) where the function calls the method <code><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html#a47dfe73ca7d2e4a8bf34bc96af34530a" title="Returns the inverse distribution function , defined in ( inverseF ). ">GammaDist.inverseF</a> (n/2, 7, u)</code> and multiplies the result by 2.0. To get better precision, one may call <code><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html#a47dfe73ca7d2e4a8bf34bc96af34530a" title="Returns the inverse distribution function , defined in ( inverseF ). ">GammaDist.inverseF</a></code>, but this method is slower than the current method, especially for large \(n\). For instance, for \(n = \) 16, 1024, and 65536, the <code><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html#a47dfe73ca7d2e4a8bf34bc96af34530a" title="Returns the inverse distribution function , defined in ( inverseF ). ">GammaDist.inverseF</a></code> method is 2, 5, and 8 times slower, respectively, than the current method. </p>
 
 </div>
 </div>

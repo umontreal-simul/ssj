@@ -82,19 +82,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class represents a <em>CIR</em> (Cox, Ingersoll, Ross) process <b>[fCOX85a]</b>&thinsp; \(\{X(t) : t \geq0 \}\), sampled at times \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\).  
+<p>This class represents a <em>CIR</em> (Cox, Ingersoll, Ross) process <a class="el" href="citelist.html#CITEREF_fCOX85a">[36]</a>&thinsp; \(\{X(t) : t \geq0 \}\), sampled at times \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\).  
  <a href="classumontreal_1_1ssj_1_1stochprocess_1_1CIRProcess.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CIRProcess:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1CIRProcess__inherit__graph.svg" width="143" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1CIRProcess__inherit__graph.svg" width="143" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for CIRProcess:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1CIRProcess__coll__graph.svg" width="372" height="292"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stochprocess_1_1CIRProcess__coll__graph.svg" width="372" height="292"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -278,11 +276,11 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><b>parlam</b></td><
 <tr class="separator:a2022551c451dbb8a94e0b96128f1aa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class represents a <em>CIR</em> (Cox, Ingersoll, Ross) process <b>[fCOX85a]</b>&thinsp; \(\{X(t) : t \geq0 \}\), sampled at times \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\). </p>
+<div class="textblock"><p>This class represents a <em>CIR</em> (Cox, Ingersoll, Ross) process <a class="el" href="citelist.html#CITEREF_fCOX85a">[36]</a>&thinsp; \(\{X(t) : t \geq0 \}\), sampled at times \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\). </p>
 <p>This process obeys the stochastic differential equation <a class="anchor" id="REF_stochprocess_CIRProcess_eq_cir"></a> </p><p class="formulaDsp">
 \[ dX(t) = \alpha(b - X(t)) dt + \sigma\sqrt{X(t)}  dB(t) \tag{cir} \]
 </p>
-<p> with initial condition \(X(0)= x_0\), where \(\alpha\), \(b\) and \(\sigma\) are positive constants, and \(\{B(t),  t\ge0\}\) is a standard Brownian motion (with drift 0 and volatility 1). This process is <em>mean-reverting</em> in the sense that it always tends to drift toward its general mean \(b\). The process is generated using the sequential technique <b>[fGLA04a]</b>&thinsp; (p. 122) <a class="anchor" id="REF_stochprocess_CIRProcess_eq_cir_seq"></a> </p><p class="formulaDsp">
+<p> with initial condition \(X(0)= x_0\), where \(\alpha\), \(b\) and \(\sigma\) are positive constants, and \(\{B(t),  t\ge0\}\) is a standard Brownian motion (with drift 0 and volatility 1). This process is <em>mean-reverting</em> in the sense that it always tends to drift toward its general mean \(b\). The process is generated using the sequential technique <a class="el" href="citelist.html#CITEREF_fGLA04a">[67]</a>&thinsp; (p. 122) <a class="anchor" id="REF_stochprocess_CIRProcess_eq_cir_seq"></a> </p><p class="formulaDsp">
 \[ X(t_j) = \frac{\sigma^2\left(1 - e^{-\alpha(t_j - t_{j-1})}\right)}{4\alpha} \chi^{\prime 2}_{\nu}\left(\frac{4\alpha e^{-\alpha(t_j - t_{j-1}) } X(t_{j-1})}{\sigma^2\left(1 - e^{-\alpha(t_j - t_{j-1})}\right)}\right), \tag{cir-seq} \]
 </p>
 <p> where \(\nu= 4b\alpha/\sigma^2\), and \(\chi^{\prime 2}_{\nu}(\lambda)\) is a noncentral chi-square random variable with \(\nu\) degrees of freedom and noncentrality parameter \(\lambda\).</p>

@@ -85,14 +85,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for BetaSymmetricalBestGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalBestGen__inherit__graph.svg" width="184" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalBestGen__inherit__graph.svg" width="184" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for BetaSymmetricalBestGen:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalBestGen__coll__graph.svg" width="238" height="355"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1randvar_1_1BetaSymmetricalBestGen__coll__graph.svg" width="238" height="355"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -240,10 +238,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>gen</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements <em>symmetrical beta</em> random variate generators using Devroye’s one-liner method. </p>
-<p>It is based on Best’s relation <b>[rBES78a]</b>&thinsp; between a Student- \(t\) variate and a symmetrical beta variate: </p><p class="formulaDsp">
+<p>It is based on Best’s relation <a class="el" href="citelist.html#CITEREF_rBES78a">[18]</a>&thinsp; between a Student- \(t\) variate and a symmetrical beta variate: </p><p class="formulaDsp">
 \[ B_{\alpha, \alpha} \stackrel{\mathcal{L}}{=} \frac{1}{2} \left( 1 + \frac{T_{2\alpha}}{\sqrt{2\alpha+ T_{2\alpha}^2}}\right). \]
 </p>
-<p> If \(S\) is a random sign and \(U_1\), \(U_2\) are two independent uniform \([0,1]\) random variates, then the following gives a symmetrical beta variate <b>[rDEV96a]</b>&thinsp;: <a class="anchor" id="REF_randvar_BetaSymmetricalBestGen_eq_beta_best"></a> </p><p class="formulaDsp">
+<p> If \(S\) is a random sign and \(U_1\), \(U_2\) are two independent uniform \([0,1]\) random variates, then the following gives a symmetrical beta variate <a class="el" href="citelist.html#CITEREF_rDEV96a">[47]</a>&thinsp;: <a class="anchor" id="REF_randvar_BetaSymmetricalBestGen_eq_beta_best"></a> </p><p class="formulaDsp">
 \[ B_{\alpha, \alpha} \stackrel{\mathcal{L}}{=} \frac{1}{2} + \frac{S}{2 \sqrt{1 + \frac{1}{\left(U_1^{-1/\alpha} - 1\right)\cos^2(2\pi U_2)}}} \tag{eq.beta.best} \]
 </p>
 <p> valid for any shape parameter \(\alpha&gt; 0\).</p>

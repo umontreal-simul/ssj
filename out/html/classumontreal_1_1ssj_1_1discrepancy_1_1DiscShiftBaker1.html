@@ -85,14 +85,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for DiscShiftBaker1:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1__inherit__graph.svg" width="167" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1__inherit__graph.svg" width="167" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DiscShiftBaker1:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1__coll__graph.svg" width="128" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1discrepancy_1_1DiscShiftBaker1__coll__graph.svg" width="128" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -280,10 +278,10 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>QTIERS
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class computes the <b>discrepancy</b> for <em>randomly shifted, then baker folded</em> points of a set \(\mathcal{P}\). </p>
-<p>It is given by <b>[vHIC02a]</b>&thinsp; (eq. 15) <a class="anchor" id="REF_discrepancy_DiscShiftBaker1_baker1"></a> </p><p class="formulaDsp">
+<p>It is given by <a class="el" href="citelist.html#CITEREF_vHIC02a">[82]</a>&thinsp; (eq. 15) <a class="anchor" id="REF_discrepancy_DiscShiftBaker1_baker1"></a> </p><p class="formulaDsp">
 \begin{align} [\mathcal{D}(\mathcal{P})]^2 &amp; = -1 + \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n \prod_{r=1}^s \left(1 - \frac{4\gamma_r^2}{3} \left[B_4(\{x_{ir} - x_{jr}\}) - B_4(\{\{x_{ir} - x_{jr}\}-1/2\})\right]\right. \nonumber \\ &amp; \qquad\qquad{} - \frac{\gamma_r^4}{9} \left[7B_4(\{x_{ir} - x_{jr}\}) - 2B_4(\{\{x_{ir} - x_{jr}\}-1/2\})\right] \tag{baker1} \\ &amp; \qquad\qquad{} \left. {} - \frac{16\gamma_r^4}{45} \left[B_6(\{x_{ir} - x_{jr}\}) -B_6(\{\{x_{ir} - x_{jr}\}-1/2\})\right] \right)\nonumber, \end{align}
 </p>
-<p> where \(n\) is the number of points of \(\mathcal{P}\), \(s\) is the dimension of the points, \(x_{ir}\) is the \(r\)-th coordinate of point \(i\), and the \(\gamma_r\) are arbitrary positive weights. The \(B_{\alpha}(x)\) are the Bernoulli polynomials <b>[mABR70a]</b>&thinsp; (chap. 23) of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>), and the notation \(\{x\}\) means the fractional part of \(x\), defined here as \(\{x\} = x \bmod1\). In one dimension, the formula simplifies to <a class="anchor" id="REF_discrepancy_DiscShiftBaker1_baker1dim1"></a> </p><p class="formulaDsp">
+<p> where \(n\) is the number of points of \(\mathcal{P}\), \(s\) is the dimension of the points, \(x_{ir}\) is the \(r\)-th coordinate of point \(i\), and the \(\gamma_r\) are arbitrary positive weights. The \(B_{\alpha}(x)\) are the Bernoulli polynomials <a class="el" href="citelist.html#CITEREF_mABR70a">[1]</a>&thinsp; (chap. 23) of degree \(\alpha\) (see <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a7fae9e4d5df81578cfb1f2947ba5d2f5" title="Evaluates the Bernoulli polynomial  of degree  at . ">umontreal.ssj.util.Num.bernoulliPoly</a> in class <code>util/Num</code>), and the notation \(\{x\}\) means the fractional part of \(x\), defined here as \(\{x\} = x \bmod1\). In one dimension, the formula simplifies to <a class="anchor" id="REF_discrepancy_DiscShiftBaker1_baker1dim1"></a> </p><p class="formulaDsp">
 \begin{align} [\mathcal{D}(\mathcal{P})]^2 &amp; = \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n \left[ - \frac{4\gamma^2}{3} \left[B_4(\{x_i - x_j\}) - B_4(\{\{x_i - x_j\}-1/2\})\right]\right. \nonumber \\ &amp; \qquad\qquad{} - \frac{\gamma^4}{9} \left[7B_4(\{x_i - x_j\}) - 2B_4(\{\{x_i - x_j\}-1/2\})\right] \tag{baker1dim1} \\ &amp; \qquad\qquad{} \left. {} - \frac{16\gamma^4}{45} \left[B_6(\{x_i - x_j\}) -B_6(\{\{x_i - x_j\}-1/2\})\right] \right]\nonumber. \end{align}
 </p>
 <p> The discrepancy represents a worst-case error criterion for the approximation of integrals, when the integrands have a certain degree of smoothness and lie in a Hilbert space \(\mathcal{H}\) with a reproducing kernel \(K\) given by </p><p class="formulaDsp">

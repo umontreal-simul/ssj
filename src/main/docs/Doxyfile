@@ -704,17 +704,17 @@ LAYOUT_FILE            =
 # search path. See also \cite for info how to create references.
 
 #CITE_BIB_FILES         = /home/florian/eclipse-workspace/ssj/src/main/docs/ssj.bib
-CITE_BIB_FILES         = /home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/callc.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/fin.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/ift.bib \ 
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/math.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/optim.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/prob.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/rail.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/random.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/simul.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/stat.bib \
-/home/florian/eclipse-workspace/ssj/src/main/docs/bibtex-database/vrt.bib
+CITE_BIB_FILES         = /home/florian/eclipse-workspace/ssj/src/main/docs/bib/callc.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/fin.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/ift.bib \ 
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/math.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/optim.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/prob.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/rail.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/random.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/simul.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/stat.bib \
+/home/florian/eclipse-workspace/ssj/src/main/docs/bib/vrt.bib
 
 
 #---------------------------------------------------------------------------
