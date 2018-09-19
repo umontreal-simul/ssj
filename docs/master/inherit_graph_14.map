@@ -1,5 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation. " alt="" coords="5,31,93,57"/>
-<area shape="rect" id="node2" href="$classPreyPred_1_1Preds.html" title="PreyPred.Preds" alt="" coords="141,5,256,32"/>
-<area shape="rect" id="node3" href="$classPreyPred_1_1Preys.html" title="PreyPred.Preys" alt="" coords="141,56,256,83"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1charts_1_1CategoryChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1BoxChart.html" title="This class provides tools to create and manage box&#45;and&#45;whisker plots. " alt="" coords="160,5,237,32"/>
 </map>

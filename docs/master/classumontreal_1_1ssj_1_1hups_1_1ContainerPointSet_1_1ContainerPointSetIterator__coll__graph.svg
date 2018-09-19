@@ -8,46 +8,46 @@
  viewBox="0.00 0.00 227.50 163.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 159)">
 <title>ContainerPointSet.ContainerPointSetIterator</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
 <polygon fill="#bfbfbf" stroke="black" points="25.5,-0.5 25.5,-30.5 166.5,-30.5 166.5,-0.5 25.5,-0.5"/>
 <text text-anchor="start" x="33.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContainerPointSet.Container</text>
 <text text-anchor="middle" x="96" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
 <polygon fill="none" stroke="#bfbfbf" points="0,-78.5 0,-97.5 116,-97.5 116,-78.5 0,-78.5"/>
 <text text-anchor="middle" x="58" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultPointSetIterator</text>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M67.5273,-69.3243C73.9863,-57.3413 82.4078,-41.7171 88.4129,-30.5762"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="64.3234,-67.8919 62.6595,-78.3553 70.4853,-71.2133 64.3234,-67.8919"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
 <g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser...">
 <polygon fill="none" stroke="black" points="134.5,-78.5 134.5,-97.5 219.5,-97.5 219.5,-78.5 134.5,-78.5"/>
 <text text-anchor="middle" x="177" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node1</title>
+<!-- Node6&#45;&gt;Node4 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M159.518,-71.7844C145.462,-59.5506 125.869,-42.497 112.173,-30.5762"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="157.227,-74.4301 167.068,-78.3553 161.823,-69.15 157.227,-74.4301"/>
 <text text-anchor="middle" x="170.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> innerIterator</text>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="134.5,-135.5 134.5,-154.5 219.5,-154.5 219.5,-135.5 134.5,-135.5"/>
 <text text-anchor="middle" x="177" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M177,-125.117C177,-115.817 177,-105.056 177,-97.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="173.5,-125.406 177,-135.406 180.5,-125.406 173.5,-125.406"/>
 </g>

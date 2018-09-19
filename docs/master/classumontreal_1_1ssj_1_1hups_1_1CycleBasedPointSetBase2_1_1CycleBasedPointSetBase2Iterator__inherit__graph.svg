@@ -8,14 +8,14 @@
  viewBox="0.00 0.00 174.00 162.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 158)">
 <title>CycleBasedPointSetBase2.CycleBasedPointSetBase2Iterator</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-30.5 166,-30.5 166,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSetBase2.</text>
 <text text-anchor="middle" x="83" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSetBase2Iterator</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet_1_1CycleBasedPointSetIterator.html" target="_top" xlink:title="CycleBasedPointSet.Cycle\lBasedPointSetIterator">
 <polygon fill="none" stroke="black" points="15,-67.5 15,-97.5 151,-97.5 151,-67.5 15,-67.5"/>
 <text text-anchor="start" x="23" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSet.Cycle</text>
@@ -23,18 +23,18 @@
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M83,-57.1081C83,-48.1539 83,-38.3227 83,-30.5765"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="79.5001,-57.3959 83,-67.396 86.5001,-57.396 79.5001,-57.3959"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <polygon fill="none" stroke="#bfbfbf" points="25,-134.5 25,-153.5 141,-153.5 141,-134.5 25,-134.5"/>
 <text text-anchor="middle" x="83" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultPointSetIterator</text>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node2&#45;&gt;Node1 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M83,-124.235C83,-115.586 83,-105.497 83,-97.523"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="79.5001,-124.475 83,-134.475 86.5001,-124.475 79.5001,-124.475"/>
 </g>

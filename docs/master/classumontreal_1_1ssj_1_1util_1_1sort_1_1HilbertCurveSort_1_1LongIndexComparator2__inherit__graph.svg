@@ -8,19 +8,19 @@
  viewBox="0.00 0.00 145.00 95.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 91)">
 <title>HilbertCurveSort.LongIndexComparator2</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-30.5 137,-30.5 137,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">HilbertCurveSort.LongIndex</text>
 <text text-anchor="middle" x="68.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Comparator2</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <polygon fill="none" stroke="#bfbfbf" points="15,-67.5 15,-86.5 122,-86.5 122,-67.5 15,-67.5"/>
 <text text-anchor="middle" x="68.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Comparator&lt; long[]&gt;</text>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M68.5,-57.2349C68.5,-48.5864 68.5,-38.4969 68.5,-30.523"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="65.0001,-57.4751 68.5,-67.4751 72.0001,-57.4751 65.0001,-57.4751"/>
 </g>

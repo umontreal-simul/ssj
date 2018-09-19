@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1TransformingList_3_01OE_00_01IE_01_4.html" title="Represents a list that dynamically transforms the elements of another list. " alt="" coords="145,5,300,47"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1util_1_1MultivariateFunction.html" title="Represents a function of multiple variables. " alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1RatioFunction.html" title="Represents a function computing a ratio of two values. " alt="" coords="192,5,295,32"/>
 </map>

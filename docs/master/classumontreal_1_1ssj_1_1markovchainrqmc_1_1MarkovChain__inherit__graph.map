@@ -1,4 +1,5 @@
 <map id="MarkovChain" name="MarkovChain">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of Markov chain for which there is a total ordering between the states in each dimension i..." alt="" coords="5,155,175,181"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" title="A special kind of Markov chain whose state space is a subset of the real numbers. ..." alt="" coords="20,229,160,256"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl..." alt="" coords="24,155,193,181"/>
+<area shape="rect" id="node4" href="$classmarkovchainrqmc_1_1Brownian.html" title="Brownian" alt="" coords="5,229,81,256"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" title="A special kind of Markov chain whose state space is a subset of the real numbers. ..." alt="" coords="105,229,245,256"/>
 </map>

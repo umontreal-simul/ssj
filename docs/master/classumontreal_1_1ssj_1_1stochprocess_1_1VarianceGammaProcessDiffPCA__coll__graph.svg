@@ -8,171 +8,171 @@
  viewBox="0.00 0.00 349.50 412.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 408)">
 <title>VarianceGammaProcessDiffPCA</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node6 -->
+<g id="node1" class="node"><title>Node6</title>
 <polygon fill="#bfbfbf" stroke="black" points="127,-0.5 127,-19.5 289,-19.5 289,-0.5 127,-0.5"/>
 <text text-anchor="middle" x="208" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">VarianceGammaProcessDiffPCA</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node7 -->
+<g id="node2" class="node"><title>Node7</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiff.html" target="_top" xlink:title="This class represents a variance gamma (VG) process . ">
 <polygon fill="none" stroke="black" points="137.5,-57.5 137.5,-76.5 278.5,-76.5 278.5,-57.5 137.5,-57.5"/>
 <text text-anchor="middle" x="208" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">VarianceGammaProcessDiff</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge1" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M208,-47.1166C208,-37.8173 208,-27.0557 208,-19.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="204.5,-47.4062 208,-57.4062 211.5,-47.4063 204.5,-47.4062"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node8 -->
+<g id="node3" class="node"><title>Node8</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" target="_top" xlink:title="This class represents a variance gamma (VG) process . ">
 <polygon fill="none" stroke="black" points="73.5,-115.5 73.5,-134.5 198.5,-134.5 198.5,-115.5 73.5,-115.5"/>
 <text text-anchor="middle" x="136" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">VarianceGammaProcess</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node8&#45;&gt;Node7 -->
+<g id="edge2" class="edge"><title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M155.03,-109.199C168.401,-98.799 185.822,-85.2496 196.962,-76.5852"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="152.68,-106.593 146.935,-115.495 156.978,-112.118 152.68,-106.593"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node9 -->
+<g id="node4" class="node"><title>Node9</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" target="_top" xlink:title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points...">
 <polygon fill="none" stroke="black" points="84.5,-250.5 84.5,-269.5 183.5,-269.5 183.5,-250.5 84.5,-250.5"/>
 <text text-anchor="middle" x="134" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">StochasticProcess</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node9&#45;&gt;Node8 -->
+<g id="edge3" class="edge"><title>Node9&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M90.2846,-245.586C84.6241,-242.046 79.5657,-237.593 76,-232 73.3719,-227.878 75.6804,-225.878 76,-221 77.1135,-204.002 73.6031,-198.345 81,-183 90.9124,-162.437 111.096,-144.575 124.062,-134.557"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="89.0642,-248.898 99.5475,-250.431 92.3086,-242.695 89.0642,-248.898"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node10 -->
+<g id="node5" class="node"><title>Node10</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotion.html" target="_top" xlink:title="This class represents a Brownian motion process , sampled at times . ">
 <polygon fill="none" stroke="black" points="90,-183.5 90,-202.5 176,-202.5 176,-183.5 90,-183.5"/>
 <text text-anchor="middle" x="133" y="-190.5" font-family="Helvetica,sans-Serif" font-size="10.00">BrownianMotion</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge5" class="edge"><title>Node4&#45;&gt;Node5</title>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge5" class="edge"><title>Node9&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M133.708,-240.037C133.518,-227.67 133.279,-212.12 133.133,-202.627"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="130.212,-240.289 133.865,-250.234 137.211,-240.181 130.212,-240.289"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node"><title>Node10</title>
+<!-- Node15 -->
+<g id="node10" class="node"><title>Node15</title>
 <g id="a_node10"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" target="_top" xlink:title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ...">
 <polygon fill="none" stroke="black" points="194.5,-183.5 194.5,-202.5 281.5,-202.5 281.5,-183.5 194.5,-183.5"/>
 <text text-anchor="middle" x="238" y="-190.5" font-family="Helvetica,sans-Serif" font-size="10.00">GammaProcess</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node10 -->
-<g id="edge11" class="edge"><title>Node4&#45;&gt;Node10</title>
+<!-- Node9&#45;&gt;Node15 -->
+<g id="edge11" class="edge"><title>Node9&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M156.77,-244.769C177.356,-231.903 206.994,-213.379 224.196,-202.627"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="154.651,-241.966 148.026,-250.234 158.361,-247.902 154.651,-241.966"/>
 </g>
-<!-- Node5&#45;&gt;Node3 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node3</title>
+<!-- Node10&#45;&gt;Node8 -->
+<g id="edge4" class="edge"><title>Node10&#45;&gt;Node8</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M129.33,-173.237C128.582,-167.1 128.23,-160.255 129,-154 129.808,-147.435 131.644,-140.196 133.233,-134.723"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="125.895,-173.923 130.946,-183.236 132.806,-172.806 125.895,-173.923"/>
 <text text-anchor="middle" x="138.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00"> BM</text>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node11 -->
+<g id="node6" class="node"><title>Node11</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the normal distribution ...">
 <polygon fill="none" stroke="black" points="0,-250.5 0,-269.5 66,-269.5 66,-250.5 0,-250.5"/>
 <text text-anchor="middle" x="33" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalGen</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node5 -->
-<g id="edge6" class="edge"><title>Node6&#45;&gt;Node5</title>
+<!-- Node11&#45;&gt;Node10 -->
+<g id="edge6" class="edge"><title>Node11&#45;&gt;Node10</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M54.8943,-244.769C74.6883,-231.903 103.186,-213.379 119.727,-202.627"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="52.9634,-241.849 46.4864,-250.234 56.7784,-247.718 52.9634,-241.849"/>
 <text text-anchor="middle" x="98.5" y="-224" font-family="Helvetica,sans-Serif" font-size="10.00"> gen</text>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node12 -->
+<g id="node7" class="node"><title>Node12</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
 <polygon fill="none" stroke="black" points="161,-317.5 161,-336.5 263,-336.5 263,-317.5 161,-317.5"/>
 <text text-anchor="middle" x="212" y="-324.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node6 -->
-<g id="edge7" class="edge"><title>Node7&#45;&gt;Node6</title>
+<!-- Node12&#45;&gt;Node11 -->
+<g id="edge7" class="edge"><title>Node12&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M178.779,-313.936C143.269,-301.042 87.8683,-280.924 56.583,-269.564"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="177.636,-317.245 188.23,-317.369 180.025,-310.665 177.636,-317.245"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node"><title>Node11</title>
+<!-- Node16 -->
+<g id="node11" class="node"><title>Node16</title>
 <g id="a_node11"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" target="_top" xlink:title="This class implements random variate generators for the gamma distribution. ">
 <polygon fill="none" stroke="black" points="201.5,-250.5 201.5,-269.5 270.5,-269.5 270.5,-250.5 201.5,-250.5"/>
 <text text-anchor="middle" x="236" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">GammaGen</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node11 -->
-<g id="edge13" class="edge"><title>Node7&#45;&gt;Node11</title>
+<!-- Node12&#45;&gt;Node16 -->
+<g id="edge13" class="edge"><title>Node12&#45;&gt;Node16</title>
 <path fill="none" stroke="midnightblue" d="M218.724,-307.79C223.333,-295.308 229.238,-279.314 232.815,-269.627"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="215.417,-306.641 215.237,-317.234 221.984,-309.065 215.417,-306.641"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node"><title>Node8</title>
+<!-- Node13 -->
+<g id="node8" class="node"><title>Node13</title>
 <g id="a_node8"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
 <polygon fill="none" stroke="black" points="172,-384.5 172,-403.5 238,-403.5 238,-384.5 172,-384.5"/>
 <text text-anchor="middle" x="205" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node7 -->
-<g id="edge8" class="edge"><title>Node8&#45;&gt;Node7</title>
+<!-- Node13&#45;&gt;Node12 -->
+<g id="edge8" class="edge"><title>Node13&#45;&gt;Node12</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M206.227,-374.227C206.696,-368.09 207.292,-361.247 208,-355 208.684,-348.973 209.684,-342.223 210.513,-336.98"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="202.733,-374.008 205.522,-384.23 209.716,-374.501 202.733,-374.008"/>
 <text text-anchor="middle" x="217.5" y="-358" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node"><title>Node9</title>
+<!-- Node14 -->
+<g id="node9" class="node"><title>Node14</title>
 <g id="a_node9"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="256.5,-384.5 256.5,-403.5 341.5,-403.5 341.5,-384.5 256.5,-384.5"/>
 <text text-anchor="middle" x="299" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node7 -->
-<g id="edge9" class="edge"><title>Node9&#45;&gt;Node7</title>
+<!-- Node14&#45;&gt;Node12 -->
+<g id="edge9" class="edge"><title>Node14&#45;&gt;Node12</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M271.79,-379.312C264.787,-375.359 257.421,-370.805 251,-366 239.041,-357.051 226.988,-344.674 219.512,-336.508"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="270.53,-382.61 280.99,-384.296 273.865,-376.455 270.53,-382.61"/>
 <text text-anchor="middle" x="268" y="-358" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
-<!-- Node9&#45;&gt;Node10 -->
-<g id="edge14" class="edge"><title>Node9&#45;&gt;Node10</title>
+<!-- Node14&#45;&gt;Node15 -->
+<g id="edge14" class="edge"><title>Node14&#45;&gt;Node15</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M300.475,-373.928C302.121,-340.098 301.132,-268.664 269,-221 264.133,-213.78 256.864,-207.31 250.588,-202.514"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="296.962,-374.026 299.829,-384.226 303.948,-374.464 296.962,-374.026"/>
 <text text-anchor="middle" x="314" y="-291" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
-<!-- Node10&#45;&gt;Node2 -->
-<g id="edge15" class="edge"><title>Node10&#45;&gt;Node2</title>
+<!-- Node15&#45;&gt;Node7 -->
+<g id="edge15" class="edge"><title>Node15&#45;&gt;Node7</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M233.585,-173.246C232.134,-167.11 230.506,-160.262 229,-154 222.171,-125.608 213.911,-91.988 210.106,-76.5397"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="230.241,-174.313 235.944,-183.242 237.054,-172.705 230.241,-174.313"/>
 <text text-anchor="middle" x="237.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00"> gneg</text>
 <text text-anchor="middle" x="237.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">gpos</text>
 </g>
-<!-- Node10&#45;&gt;Node3 -->
-<g id="edge10" class="edge"><title>Node10&#45;&gt;Node3</title>
+<!-- Node15&#45;&gt;Node8 -->
+<g id="edge10" class="edge"><title>Node15&#45;&gt;Node8</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M199.066,-179.787C189.443,-175.852 179.473,-170.938 171,-165 159.079,-156.646 148.388,-143.5 142.045,-134.816"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="197.913,-183.093 208.504,-183.396 200.414,-176.555 197.913,-183.093"/>
 <text text-anchor="middle" x="200" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00"> randomTime</text>
 </g>
-<!-- Node11&#45;&gt;Node10 -->
-<g id="edge12" class="edge"><title>Node11&#45;&gt;Node10</title>
+<!-- Node16&#45;&gt;Node15 -->
+<g id="edge12" class="edge"><title>Node16&#45;&gt;Node15</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M236.583,-240.037C236.964,-227.67 237.442,-212.12 237.735,-202.627"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="233.079,-240.131 236.27,-250.234 240.076,-240.346 233.079,-240.131"/>
 <text text-anchor="middle" x="251.5" y="-224" font-family="Helvetica,sans-Serif" font-size="10.00"> Ggen</text>

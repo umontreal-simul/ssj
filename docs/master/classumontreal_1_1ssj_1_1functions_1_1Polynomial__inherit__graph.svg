@@ -8,108 +8,108 @@
  viewBox="0.00 0.00 473.00 207.03" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 203.032)">
 <title>Polynomial</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="308,-95.5 308,-114.5 373,-114.5 373,-95.5 308,-95.5"/>
 <text text-anchor="middle" x="340.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">Polynomial</text>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node"><title>Node8</title>
+<!-- Node7 -->
+<g id="node8" class="node"><title>Node7</title>
 <g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1functionfit_1_1PolInterp.html" target="_top" xlink:title="Represents a polynomial that interpolates through a set of points. ">
 <polygon fill="none" stroke="black" points="409,-95.5 409,-114.5 465,-114.5 465,-95.5 409,-95.5"/>
 <text text-anchor="middle" x="437" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">PolInterp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node8 -->
-<g id="edge10" class="edge"><title>Node1&#45;&gt;Node8</title>
+<!-- Node0&#45;&gt;Node7 -->
+<g id="edge10" class="edge"><title>Node0&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M383.262,-105C391.968,-105 400.926,-105 408.932,-105"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="383.23,-101.5 373.23,-105 383.23,-108.5 383.23,-101.5"/>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" target="_top" xlink:title="This interface should be implemented by classes which represent univariate mathematical functions...">
 <polygon fill="none" stroke="black" points="0,-133.5 0,-152.5 76,-152.5 76,-133.5 0,-133.5"/>
 <text text-anchor="middle" x="38" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunction</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M61.2729,-158.187C75.1833,-166.733 93.8452,-176.558 112,-181 181.073,-197.902 207.136,-210.144 272,-181 302.745,-167.186 325.187,-131.679 334.601,-114.539"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="62.7769,-154.994 52.4664,-152.556 59.0061,-160.892 62.7769,-154.994"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" target="_top" xlink:title="Represents a mathematical function whose derivative can be computed using derivative(double). ">
 <polygon fill="none" stroke="black" points="112,-152.5 112,-171.5 272,-171.5 272,-152.5 112,-152.5"/>
 <text text-anchor="middle" x="192" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithFirstDerivative</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node2&#45;&gt;Node3</title>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge3" class="edge"><title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M86.191,-148.899C95.3311,-150.041 105.124,-151.265 114.918,-152.49"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="86.5403,-145.415 76.1834,-147.648 85.672,-152.361 86.5403,-145.415"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" target="_top" xlink:title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). ">
 <polygon fill="none" stroke="black" points="122,-114.5 122,-133.5 262,-133.5 262,-114.5 122,-114.5"/>
 <text text-anchor="middle" x="192" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithDerivative</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node4 -->
-<g id="edge5" class="edge"><title>Node2&#45;&gt;Node4</title>
+<!-- Node1&#45;&gt;Node3 -->
+<g id="edge5" class="edge"><title>Node1&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M86.235,-137.096C97.5223,-135.685 109.803,-134.15 121.851,-132.644"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="85.672,-133.639 76.1834,-138.352 86.5403,-140.585 85.672,-133.639"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node4 -->
+<g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" target="_top" xlink:title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. ">
 <polygon fill="none" stroke="black" points="128,-76.5 128,-95.5 256,-95.5 256,-76.5 128,-76.5"/>
 <text text-anchor="middle" x="192" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithIntegral</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node5 -->
-<g id="edge7" class="edge"><title>Node2&#45;&gt;Node5</title>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge7" class="edge"><title>Node1&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M63.6008,-128.272C77.4402,-120.483 95.2557,-111.264 112,-105 121.909,-101.293 132.793,-98.1272 143.229,-95.5038"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="61.6403,-125.361 54.7169,-133.381 65.1304,-131.429 61.6403,-125.361"/>
 </g>
-<!-- Node3&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node1</title>
+<!-- Node2&#45;&gt;Node0 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M252.07,-149.703C258.877,-147.726 265.649,-145.496 272,-143 291.401,-135.377 312.053,-123.055 325.33,-114.518"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="250.843,-146.41 242.118,-152.42 252.686,-153.163 250.843,-146.41"/>
 </g>
-<!-- Node4&#45;&gt;Node1 -->
-<g id="edge4" class="edge"><title>Node4&#45;&gt;Node1</title>
+<!-- Node3&#45;&gt;Node0 -->
+<g id="edge4" class="edge"><title>Node3&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M272.502,-113.689C285.081,-112.058 297.413,-110.458 307.999,-109.085"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="271.856,-110.244 262.389,-115.001 272.756,-117.185 271.856,-110.244"/>
 </g>
-<!-- Node5&#45;&gt;Node1 -->
-<g id="edge6" class="edge"><title>Node5&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node0 -->
+<g id="edge6" class="edge"><title>Node4&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M266.464,-95.5278C281.033,-97.4173 295.591,-99.3053 307.831,-100.893"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="266.772,-92.0385 256.405,-94.2232 265.872,-98.9803 266.772,-92.0385"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node5 -->
+<g id="node6" class="node"><title>Node5</title>
 <polygon fill="none" stroke="#bfbfbf" points="158.5,-38.5 158.5,-57.5 225.5,-57.5 225.5,-38.5 158.5,-38.5"/>
 <text text-anchor="middle" x="192" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">Serializable</text>
 </g>
-<!-- Node6&#45;&gt;Node1 -->
-<g id="edge8" class="edge"><title>Node6&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node0 -->
+<g id="edge8" class="edge"><title>Node5&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M235.37,-55.9157C247.418,-58.7732 260.409,-62.4459 272,-67 291.401,-74.6228 312.053,-86.9454 325.33,-95.4821"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="236.048,-52.4807 225.524,-53.7056 234.515,-59.3107 236.048,-52.4807"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node6 -->
+<g id="node7" class="node"><title>Node6</title>
 <polygon fill="none" stroke="#bfbfbf" points="162,-0.5 162,-19.5 222,-19.5 222,-0.5 162,-0.5"/>
 <text text-anchor="middle" x="192" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Cloneable</text>
 </g>
-<!-- Node7&#45;&gt;Node1 -->
-<g id="edge9" class="edge"><title>Node7&#45;&gt;Node1</title>
+<!-- Node6&#45;&gt;Node0 -->
+<g id="edge9" class="edge"><title>Node6&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M231.935,-14.5166C245.317,-17.2925 259.95,-21.7722 272,-29 300.451,-46.0657 323.518,-79.0534 333.765,-95.3741"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="232.475,-11.0574 222.01,-12.7087 231.221,-17.9441 232.475,-11.0574"/>
 </g>

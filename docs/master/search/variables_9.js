@@ -1,13 +1,16 @@
 var searchData=
 [
-  ['mathematica',['MATHEMATICA',['../classumontreal_1_1ssj_1_1util_1_1TableFormat.html#ae8a1ccf120f950ebfba1cb2fb0c13e75',1,'umontreal.ssj.util.TableFormat.MATHEMATICA()'],['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ae8a1ccf120f950ebfba1cb2fb0c13e75',1,'umontreal.ssj::gof.GofFormat.MATHEMATICA()']]],
-  ['matlab',['MATLAB',['../classumontreal_1_1ssj_1_1util_1_1TableFormat.html#a8dc8b323b7d379175d2cc1c648975e84',1,'umontreal::ssj::util::TableFormat']]],
-  ['maxintdouble',['MAXINTDOUBLE',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a9c0550edf2da283859821b51bb54c76c',1,'umontreal::ssj::util::Num']]],
-  ['maxlambda',['MAXLAMBDA',['../classumontreal_1_1ssj_1_1probdist_1_1PoissonDist.html#ab6d06d0f0c8e928a7993ff54ac6d2ab0',1,'umontreal::ssj::probdist::PoissonDist']]],
-  ['maxn',['MAXN',['../classumontreal_1_1ssj_1_1probdist_1_1NegativeBinomialDist.html#a6e3aa883e6f211777a4b4e9895dde9b3',1,'umontreal.ssj.probdist.NegativeBinomialDist.MAXN()'],['../classumontreal_1_1ssj_1_1probdist_1_1BinomialDist.html#a6e3aa883e6f211777a4b4e9895dde9b3',1,'umontreal.ssj.probdist.BinomialDist.MAXN()'],['../classumontreal_1_1ssj_1_1probdist_1_1HypergeometricDist.html#a6e3aa883e6f211777a4b4e9895dde9b3',1,'umontreal.ssj.probdist.HypergeometricDist.MAXN()']]],
-  ['maxtwoexp',['MAXTWOEXP',['../classumontreal_1_1ssj_1_1util_1_1Num.html#ae0075294f8dff071e38bb9bb5e3b1002',1,'umontreal::ssj::util::Num']]],
-  ['mean',['MEAN',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ade0ce44c8b2b8a568c71616a3d13cb6b',1,'umontreal::ssj::gof::GofFormat']]],
-  ['microsecond',['MICROSECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a752955570acb9a507ab8877f6c881cba',1,'umontreal::ssj::util::TimeUnit']]],
-  ['millisecond',['MILLISECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a9788f3cd68e899bc14c2795920c28cd0',1,'umontreal::ssj::util::TimeUnit']]],
-  ['minute',['MINUTE',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a7655e3bf4e033da761e90fc241da1dc6',1,'umontreal::ssj::util::TimeUnit']]]
+  ['line_5fseparator',['LINE_SEPARATOR',['../classumontreal_1_1ssj_1_1util_1_1PrintfFormat.html#ad83ba8180ae9b14a0fa56696681329ed',1,'umontreal::ssj::util::PrintfFormat']]],
+  ['ln2',['LN2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a4440470531b0c2a845db44588c4cfb54',1,'umontreal::ssj::util::Num']]],
+  ['ln_5fdbl_5fmin',['LN_DBL_MIN',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a3c0beb51f2fdad14992b88e05befbd11',1,'umontreal::ssj::util::Num']]],
+  ['loc',['loc',['../classumontreal_1_1ssj_1_1gof_1_1GofStat_1_1OutcomeCategoriesChi2.html#a864d96b6a8e940caf35e0f9c0bd8aa6a',1,'umontreal::ssj::gof::GofStat::OutcomeCategoriesChi2']]],
+  ['logestisb',['logEstISB',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a51dfe1c9c27df1e745992bd93ca213f2',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logestiv',['logEstIV',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a4876b291c06b9945dfc1ff92dc906aeb',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logestmise',['logEstMISE',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a9cc333b111c87d3ac2b2f0b40f48830e',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logh',['logH',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#aef1c21f6658cdbce3d4532e5853a6174',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['loghopt',['logHOpt',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a06a97f7532d3f3826f8c4b9c3dc7ba9c',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logiv',['logIV',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#ae0aa03c9f76673eb81c17bcbe3e164ba',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logiv3d',['logIV3D',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a2db3a3d86975bc6b1c13f9bf5867fd26',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logmise',['logMISE',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a86a84ab19485d9740d2a99f3535f0fea',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]],
+  ['logn',['logN',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a7f82c7313d701edb3ea33177fbd07a1d',1,'umontreal::ssj::stat::density::DEModelBandwidthBased']]]
 ];

@@ -8,124 +8,124 @@
  viewBox="0.00 0.00 531.50 322.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 318)">
 <title>MultivariateBrownianMotionPCABigSigma</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
 <polygon fill="#bfbfbf" stroke="black" points="334,-0.5 334,-30.5 471,-30.5 471,-0.5 334,-0.5"/>
 <text text-anchor="start" x="342" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
 <text text-anchor="middle" x="402.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PCABigSigma</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html" target="_top" xlink:title="This class represents a multivariate Brownian motion process , sampled at times . ...">
 <polygon fill="none" stroke="black" points="232,-80.5 232,-99.5 369,-99.5 369,-80.5 232,-80.5"/>
 <text text-anchor="middle" x="300.5" y="-87.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M321.197,-74.2888C339.17,-61.5138 365.022,-43.1391 382.72,-30.5593"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="318.724,-71.7523 312.601,-80.3986 322.78,-77.4579 318.724,-71.7523"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateStochasticProcess.html" target="_top" xlink:title="This class is a multivariate version of StochasticProcess where the process evolves in the &#45;dimension...">
 <polygon fill="none" stroke="black" points="0,-170.5 0,-189.5 149,-189.5 149,-170.5 0,-170.5"/>
 <text text-anchor="middle" x="74.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateStochasticProcess</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M106.165,-166.67C152.729,-148.539 238.489,-115.146 278.662,-99.5034"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="104.63,-163.512 96.5813,-170.402 107.17,-170.035 104.63,-163.512"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" target="_top" xlink:title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points...">
 <polygon fill="none" stroke="black" points="25,-227.5 25,-246.5 124,-246.5 124,-227.5 25,-227.5"/>
 <text text-anchor="middle" x="74.5" y="-234.5" font-family="Helvetica,sans-Serif" font-size="10.00">StochasticProcess</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M74.5,-217.117C74.5,-207.817 74.5,-197.056 74.5,-189.715"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="71.0001,-217.406 74.5,-227.406 78.0001,-217.406 71.0001,-217.406"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node8 -->
+<g id="node5" class="node"><title>Node8</title>
 <polygon fill="none" stroke="#bfbfbf" points="167,-170.5 167,-189.5 290,-189.5 290,-170.5 167,-170.5"/>
 <text text-anchor="middle" x="228.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">CholeskyDecomposition</text>
 </g>
-<!-- Node5&#45;&gt;Node2 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node2</title>
+<!-- Node8&#45;&gt;Node5 -->
+<g id="edge4" class="edge"><title>Node8&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M235.9,-161.279C240.457,-151.503 246.881,-139.466 254.5,-130 264.216,-117.929 278.072,-106.78 288.034,-99.5215"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="232.691,-159.882 231.856,-170.444 239.095,-162.708 232.691,-159.882"/>
 <text text-anchor="middle" x="273.5" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00"> decomp</text>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node9 -->
+<g id="node6" class="node"><title>Node9</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the normal distribution ...">
 <polygon fill="none" stroke="black" points="308.5,-170.5 308.5,-189.5 374.5,-189.5 374.5,-170.5 308.5,-170.5"/>
 <text text-anchor="middle" x="341.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalGen</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node2 -->
-<g id="edge5" class="edge"><title>Node6&#45;&gt;Node2</title>
+<!-- Node9&#45;&gt;Node5 -->
+<g id="edge5" class="edge"><title>Node9&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M312.76,-164.729C308.25,-161.199 304.195,-156.972 301.5,-152 292.415,-135.239 295.611,-111.891 298.31,-99.5048"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="310.912,-167.703 321.174,-170.338 314.795,-161.879 310.912,-167.703"/>
 <text text-anchor="middle" x="311" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00"> gen</text>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node10 -->
+<g id="node7" class="node"><title>Node10</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
 <polygon fill="none" stroke="black" points="290.5,-227.5 290.5,-246.5 392.5,-246.5 392.5,-227.5 290.5,-227.5"/>
 <text text-anchor="middle" x="341.5" y="-234.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node6 -->
-<g id="edge6" class="edge"><title>Node7&#45;&gt;Node6</title>
+<!-- Node10&#45;&gt;Node9 -->
+<g id="edge6" class="edge"><title>Node10&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M341.5,-217.117C341.5,-207.817 341.5,-197.056 341.5,-189.715"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="338,-217.406 341.5,-227.406 345,-217.406 338,-217.406"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node"><title>Node8</title>
+<!-- Node11 -->
+<g id="node8" class="node"><title>Node11</title>
 <g id="a_node8"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
 <polygon fill="none" stroke="black" points="261.5,-294.5 261.5,-313.5 327.5,-313.5 327.5,-294.5 261.5,-294.5"/>
 <text text-anchor="middle" x="294.5" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node7 -->
-<g id="edge7" class="edge"><title>Node8&#45;&gt;Node7</title>
+<!-- Node11&#45;&gt;Node10 -->
+<g id="edge7" class="edge"><title>Node11&#45;&gt;Node10</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M306.862,-285.904C315.995,-273.273 328.048,-256.604 335.262,-246.627"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="303.862,-284.079 300.839,-294.234 309.534,-288.181 303.862,-284.079"/>
 <text text-anchor="middle" x="331" y="-268" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node"><title>Node9</title>
+<!-- Node12 -->
+<g id="node9" class="node"><title>Node12</title>
 <g id="a_node9"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="346,-294.5 346,-313.5 431,-313.5 431,-294.5 346,-294.5"/>
 <text text-anchor="middle" x="388.5" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node7 -->
-<g id="edge8" class="edge"><title>Node9&#45;&gt;Node7</title>
+<!-- Node12&#45;&gt;Node10 -->
+<g id="edge8" class="edge"><title>Node12&#45;&gt;Node10</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M376.138,-285.904C367.005,-273.273 354.952,-256.604 347.738,-246.627"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="373.466,-288.181 382.161,-294.234 379.138,-284.079 373.466,-288.181"/>
 <text text-anchor="middle" x="385.5" y="-268" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node"><title>Node10</title>
+<!-- Node13 -->
+<g id="node10" class="node"><title>Node13</title>
 <polygon fill="none" stroke="#bfbfbf" points="393,-170.5 393,-189.5 480,-189.5 480,-170.5 393,-170.5"/>
 <text text-anchor="middle" x="436.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoubleMatrix2D</text>
 </g>
-<!-- Node10&#45;&gt;Node1 -->
-<g id="edge10" class="edge"><title>Node10&#45;&gt;Node1</title>
+<!-- Node13&#45;&gt;Node4 -->
+<g id="edge10" class="edge"><title>Node13&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M432.559,-160.163C425.665,-127.214 411.568,-59.8417 405.447,-30.5835"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="429.198,-161.192 434.672,-170.263 436.05,-159.758 429.198,-161.192"/>
 <text text-anchor="middle" x="473" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00"> decompPCABigSigma</text>
@@ -133,8 +133,8 @@
 <text text-anchor="middle" x="473" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">BigSigma</text>
 <text text-anchor="middle" x="473" y="-71" font-family="Helvetica,sans-Serif" font-size="10.00">C</text>
 </g>
-<!-- Node10&#45;&gt;Node2 -->
-<g id="edge9" class="edge"><title>Node10&#45;&gt;Node2</title>
+<!-- Node13&#45;&gt;Node5 -->
+<g id="edge9" class="edge"><title>Node13&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M387.699,-167.937C369.322,-163.131 351.041,-157.38 343.5,-152 324.303,-138.305 310.668,-113.251 304.389,-99.9112"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="387.002,-171.371 397.555,-170.429 388.718,-164.584 387.002,-171.371"/>
 <text text-anchor="middle" x="383" y="-144" font-family="Helvetica,sans-Serif" font-size="10.00"> covZ</text>

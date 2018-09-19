@@ -8,54 +8,54 @@
  viewBox="0.00 0.00 177.50 162.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 158)">
 <title>KernelDensityGen</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node3 -->
+<g id="node1" class="node"><title>Node3</title>
 <polygon fill="#bfbfbf" stroke="black" points="32,-0.5 32,-19.5 128,-19.5 128,-0.5 32,-0.5"/>
 <text text-anchor="middle" x="80" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">KernelDensityGen</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node4 -->
+<g id="node2" class="node"><title>Node4</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
 <polygon fill="none" stroke="black" points="29,-67.5 29,-86.5 131,-86.5 131,-67.5 29,-67.5"/>
 <text text-anchor="middle" x="80" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge1" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M78.4399,-57.3825C78.2572,-54.5753 78.1003,-51.7126 78,-49 77.6288,-38.9652 78.4035,-27.4502 79.0942,-19.7505"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="74.9607,-57.7906 79.2083,-67.4967 81.9406,-57.2602 74.9607,-57.7906"/>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge4" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge4" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M80,-57.037C80,-44.6703 80,-29.1198 80,-19.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="76.5001,-57.2338 80,-67.2338 83.5001,-57.2338 76.5001,-57.2338"/>
 <text text-anchor="middle" x="104" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00"> kernelGen</text>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node5 -->
+<g id="node3" class="node"><title>Node5</title>
 <g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
 <polygon fill="none" stroke="black" points="0,-134.5 0,-153.5 66,-153.5 66,-134.5 0,-134.5"/>
 <text text-anchor="middle" x="33" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge2" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M45.3619,-125.904C54.495,-113.273 66.5478,-96.6041 73.7618,-86.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="42.3619,-124.079 39.3386,-134.234 48.0344,-128.181 42.3619,-124.079"/>
 <text text-anchor="middle" x="69.5" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node6 -->
+<g id="node4" class="node"><title>Node6</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="84.5,-134.5 84.5,-153.5 169.5,-153.5 169.5,-134.5 84.5,-134.5"/>
 <text text-anchor="middle" x="127" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node4 -->
+<g id="edge3" class="edge"><title>Node6&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M114.638,-125.904C105.505,-113.273 93.4522,-96.6041 86.2382,-86.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="111.966,-128.181 120.661,-134.234 117.638,-124.079 111.966,-128.181"/>
 <text text-anchor="middle" x="124" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>

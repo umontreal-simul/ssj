@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 102.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>SqrtMathFunction</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 94,-19.5 94,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="47" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SqrtMathFunction</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" target="_top" xlink:title="This interface should be implemented by classes which represent univariate mathematical functions...">
 <polygon fill="none" stroke="black" points="9,-56.5 9,-75.5 85,-75.5 85,-56.5 9,-56.5"/>
 <text text-anchor="middle" x="47" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunction</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M47,-45.8045C47,-36.9102 47,-26.7798 47,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="43.5001,-46.083 47,-56.083 50.5001,-46.083 43.5001,-46.083"/>
 </g>

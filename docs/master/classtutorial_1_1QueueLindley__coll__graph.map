@@ -1,0 +1,5 @@
+<map id="QueueLindley" name="QueueLindley">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="124,95,175,121"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="209,95,322,121"/>
+</map>

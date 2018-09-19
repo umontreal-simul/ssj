@@ -8,70 +8,70 @@
  viewBox="0.00 0.00 438.00 174.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 170)">
 <title>FunctionOfMultipleMeansTallyWithCV</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
 <polygon fill="#bfbfbf" stroke="black" points="83.5,-0.5 83.5,-30.5 232.5,-30.5 232.5,-0.5 83.5,-0.5"/>
 <text text-anchor="start" x="91.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">FunctionOfMultipleMeansTally</text>
 <text text-anchor="middle" x="158" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">WithCV</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html" target="_top" xlink:title="Represents a statistical collector for estimating a function of multiple means with a confidence inte...">
 <polygon fill="none" stroke="black" points="83.5,-68.5 83.5,-87.5 232.5,-87.5 232.5,-68.5 83.5,-68.5"/>
 <text text-anchor="middle" x="158" y="-75.5" font-family="Helvetica,sans-Serif" font-size="10.00">FunctionOfMultipleMeansTally</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M158,-58.2154C158,-49.3565 158,-38.9577 158,-30.7587"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="154.5,-58.3318 158,-68.3318 161.5,-58.3319 154.5,-58.3318"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" target="_top" xlink:title="The objects of this class are statistical probes or collectors, which are elementary devices for coll...">
 <polygon fill="none" stroke="black" points="0,-141 0,-160 60,-160 60,-141 0,-141"/>
 <text text-anchor="middle" x="30" y="-148" font-family="Helvetica,sans-Serif" font-size="10.00">StatProbe</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M54.2852,-136.124C80.2267,-121.836 120.563,-99.6193 142.505,-87.5341"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="52.5105,-133.106 45.4398,-140.996 55.8876,-139.237 52.5105,-133.106"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
 <polygon fill="none" stroke="#bfbfbf" points="78,-141 78,-160 138,-160 138,-141 78,-141"/>
 <text text-anchor="middle" x="108" y="-148" font-family="Helvetica,sans-Serif" font-size="10.00">Cloneable</text>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
+<!-- Node7&#45;&gt;Node5 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M120.06,-132.495C130.078,-118.371 143.922,-98.8505 151.819,-87.7154"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="117.061,-130.674 114.131,-140.855 122.771,-134.723 117.061,-130.674"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node8 -->
+<g id="node5" class="node"><title>Node8</title>
 <g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1util_1_1MultivariateFunction.html" target="_top" xlink:title="Represents a function of multiple variables. ">
 <polygon fill="none" stroke="black" points="156,-141 156,-160 260,-160 260,-141 156,-141"/>
 <text text-anchor="middle" x="208" y="-148" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateFunction</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node2 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node2</title>
+<!-- Node8&#45;&gt;Node5 -->
+<g id="edge4" class="edge"><title>Node8&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M195.94,-132.495C185.922,-118.371 172.078,-98.8505 164.181,-87.7154"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="193.229,-134.723 201.869,-140.855 198.939,-130.674 193.229,-134.723"/>
 <text text-anchor="middle" x="196" y="-109" font-family="Helvetica,sans-Serif" font-size="10.00"> func</text>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node9 -->
+<g id="node6" class="node"><title>Node9</title>
 <polygon fill="none" stroke="#bfbfbf" points="278,-135.5 278,-165.5 430,-165.5 430,-135.5 278,-135.5"/>
 <text text-anchor="start" x="286" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00">FunctionOfMultipleMeansTally.</text>
 <text text-anchor="middle" x="354" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">CIType</text>
 </g>
-<!-- Node6&#45;&gt;Node2 -->
-<g id="edge5" class="edge"><title>Node6&#45;&gt;Node2</title>
+<!-- Node9&#45;&gt;Node5 -->
+<g id="edge5" class="edge"><title>Node9&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M305.134,-131.923C265.786,-117.77 212.181,-98.4887 181.725,-87.5336"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="304.213,-135.311 314.808,-135.403 306.582,-128.725 304.213,-135.311"/>
 <text text-anchor="middle" x="302.5" y="-109" font-family="Helvetica,sans-Serif" font-size="10.00"> confidenceInterval</text>

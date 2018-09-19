@@ -8,31 +8,31 @@
  viewBox="0.00 0.00 146.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>Accumulate</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="35,-0.5 35,-19.5 103,-19.5 103,-0.5 35,-0.5"/>
 <text text-anchor="middle" x="69" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Accumulate</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" target="_top" xlink:title="The objects of this class are statistical probes or collectors, which are elementary devices for coll...">
 <polygon fill="none" stroke="black" points="0,-56.5 0,-75.5 60,-75.5 60,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="30" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">StatProbe</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M42.3822,-47.8554C49.1354,-38.5048 57.2086,-27.3265 62.6798,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="39.4576,-45.927 36.4401,-56.083 45.1324,-50.0254 39.4576,-45.927"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <polygon fill="none" stroke="#bfbfbf" points="78,-56.5 78,-75.5 138,-75.5 138,-56.5 78,-56.5"/>
 <text text-anchor="middle" x="108" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Cloneable</text>
 </g>
-<!-- Node3&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node1</title>
+<!-- Node2&#45;&gt;Node0 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M95.6178,-47.8554C88.8646,-38.5048 80.7914,-27.3265 75.3202,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="92.8676,-50.0254 101.56,-56.083 98.5424,-45.927 92.8676,-50.0254"/>
 </g>

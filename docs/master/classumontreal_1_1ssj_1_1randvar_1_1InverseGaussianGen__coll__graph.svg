@@ -8,48 +8,48 @@
  viewBox="0.00 0.00 177.50 152.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 148)">
 <title>InverseGaussianGen</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node3 -->
+<g id="node1" class="node"><title>Node3</title>
 <polygon fill="#bfbfbf" stroke="black" points="26,-0.5 26,-19.5 134,-19.5 134,-0.5 26,-0.5"/>
 <text text-anchor="middle" x="80" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">InverseGaussianGen</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node4 -->
+<g id="node2" class="node"><title>Node4</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
 <polygon fill="none" stroke="black" points="29,-57.5 29,-76.5 131,-76.5 131,-57.5 29,-57.5"/>
 <text text-anchor="middle" x="80" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge1" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M80,-47.1166C80,-37.8173 80,-27.0557 80,-19.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="76.5001,-47.4062 80,-57.4062 83.5001,-47.4063 76.5001,-47.4062"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node5 -->
+<g id="node3" class="node"><title>Node5</title>
 <g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
 <polygon fill="none" stroke="black" points="0,-124.5 0,-143.5 66,-143.5 66,-124.5 0,-124.5"/>
 <text text-anchor="middle" x="33" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge2" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M45.3619,-115.904C54.495,-103.273 66.5478,-86.6041 73.7618,-76.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="42.3619,-114.079 39.3386,-124.234 48.0344,-118.181 42.3619,-114.079"/>
 <text text-anchor="middle" x="69.5" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node6 -->
+<g id="node4" class="node"><title>Node6</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="84.5,-124.5 84.5,-143.5 169.5,-143.5 169.5,-124.5 84.5,-124.5"/>
 <text text-anchor="middle" x="127" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node4 -->
+<g id="edge3" class="edge"><title>Node6&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M114.638,-115.904C105.505,-103.273 93.4522,-86.6041 86.2382,-76.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="111.966,-118.181 120.661,-124.234 117.638,-114.079 111.966,-118.181"/>
 <text text-anchor="middle" x="124" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>

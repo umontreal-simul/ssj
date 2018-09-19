@@ -5,9 +5,10 @@ var searchData=
   ['incompatibledimensionexception',['IncompatibleDimensionException',['../classumontreal_1_1ssj_1_1util_1_1BitMatrix_1_1IncompatibleDimensionException.html',1,'umontreal::ssj::util::BitMatrix']]],
   ['independentpointscached',['IndependentPointsCached',['../classumontreal_1_1ssj_1_1hups_1_1IndependentPointsCached.html',1,'umontreal::ssj::hups']]],
   ['integmethod',['IntegMethod',['../enumumontreal_1_1ssj_1_1simevents_1_1ContinuousState_1_1IntegMethod.html',1,'umontreal::ssj::simevents::ContinuousState']]],
+  ['integrator',['Integrator',['../interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html',1,'umontreal::ssj::mcqmctools::anova']]],
   ['introspection',['Introspection',['../classumontreal_1_1ssj_1_1util_1_1Introspection.html',1,'umontreal::ssj::util']]],
-  ['inventory',['Inventory',['../classInventory.html',1,'']]],
-  ['inventorycrn',['InventoryCRN',['../classInventoryCRN.html',1,'']]],
+  ['inventory',['Inventory',['../classtutorial_1_1Inventory.html',1,'tutorial']]],
+  ['inventorycrn',['InventoryCRN',['../classtutorial_1_1InventoryCRN.html',1,'tutorial']]],
   ['inversedistfromdensity',['InverseDistFromDensity',['../classumontreal_1_1ssj_1_1probdist_1_1InverseDistFromDensity.html',1,'umontreal::ssj::probdist']]],
   ['inversefromdensitygen',['InverseFromDensityGen',['../classumontreal_1_1ssj_1_1randvar_1_1InverseFromDensityGen.html',1,'umontreal::ssj::randvar']]],
   ['inversegammadist',['InverseGammaDist',['../classumontreal_1_1ssj_1_1probdist_1_1InverseGammaDist.html',1,'umontreal::ssj::probdist']]],
@@ -18,5 +19,6 @@ var searchData=
   ['inversegaussianprocess',['InverseGaussianProcess',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html',1,'umontreal::ssj::stochprocess']]],
   ['inversegaussianprocessbridge',['InverseGaussianProcessBridge',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html',1,'umontreal::ssj::stochprocess']]],
   ['inversegaussianprocessmsh',['InverseGaussianProcessMSH',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html',1,'umontreal::ssj::stochprocess']]],
-  ['inversegaussianprocesspca',['InverseGaussianProcessPCA',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html',1,'umontreal::ssj::stochprocess']]]
+  ['inversegaussianprocesspca',['InverseGaussianProcessPCA',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html',1,'umontreal::ssj::stochprocess']]],
+  ['ischart1',['ISChart1',['../classift6561examples_1_1ISChart1.html',1,'ift6561examples']]]
 ];

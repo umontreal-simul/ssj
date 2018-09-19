@@ -8,86 +8,86 @@
  viewBox="0.00 0.00 452.00 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>PointSetRandomization</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="194.5,-112.5 194.5,-131.5 313.5,-131.5 313.5,-112.5 194.5,-112.5"/>
 <text text-anchor="middle" x="254" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetRandomization</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1EmptyRandomization.html" target="_top" xlink:title="This class implements an empty umontreal.ssj.hups.PointSetRandomization. ">
 <polygon fill="none" stroke="black" points="0,-56.5 0,-75.5 110,-75.5 110,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="55" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">EmptyRandomization</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node0&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M212.352,-109.699C174.794,-99.507 120.386,-84.7429 86.3846,-75.5164"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="211.9,-113.202 222.468,-112.444 213.733,-106.447 211.9,-113.202"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1NestedUniformScrambling.html" target="_top" xlink:title="This class implements a PointSetRandomization that performs Owen&#39;s nested uniform scrambling ...">
 <polygon fill="none" stroke="black" points="128.5,-56.5 128.5,-75.5 259.5,-75.5 259.5,-56.5 128.5,-56.5"/>
 <text text-anchor="middle" x="194" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">NestedUniformScrambling</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
+<!-- Node0&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M236.819,-105.537C226.121,-95.9087 212.744,-83.8694 203.815,-75.8339"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="234.586,-108.236 244.36,-112.324 239.268,-103.033 234.586,-108.236"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html" target="_top" xlink:title="This class implements a umontreal.ssj.hups.PointSetRandomization. ">
 <polygon fill="none" stroke="black" points="278,-56.5 278,-75.5 352,-75.5 352,-56.5 278,-56.5"/>
 <text text-anchor="middle" x="315" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomShift</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node4 -->
-<g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
+<!-- Node0&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node0&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M271.467,-105.537C282.344,-95.9087 295.944,-83.8694 305.021,-75.8339"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="268.968,-103.075 263.801,-112.324 273.608,-108.316 268.968,-103.075"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node6 -->
+<g id="node7" class="node"><title>Node6</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1RandomStart.html" target="_top" xlink:title="This class implements a umontreal.ssj.hups.PointSetRandomization that randomizes a sequence with a ra...">
 <polygon fill="none" stroke="black" points="370,-56.5 370,-75.5 444,-75.5 444,-56.5 370,-56.5"/>
 <text text-anchor="middle" x="407" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStart</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
+<!-- Node0&#45;&gt;Node6 -->
+<g id="edge6" class="edge"><title>Node0&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M287.889,-109.039C316.677,-98.8786 357.287,-84.5457 382.87,-75.5164"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="286.508,-105.815 278.243,-112.444 288.838,-112.416 286.508,-105.815"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node4 -->
+<g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1LMScrambleShift.html" target="_top" xlink:title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a left matrix scrambli...">
 <polygon fill="none" stroke="black" points="213,-0.5 213,-19.5 305,-19.5 305,-0.5 213,-0.5"/>
 <text text-anchor="middle" x="259" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">LMScrambleShift</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge"><title>Node4&#45;&gt;Node5</title>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M298.67,-49.2533C288.735,-39.6731 276.412,-27.7906 268.161,-19.8339"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="296.375,-51.902 306.003,-56.324 301.234,-46.8631 296.375,-51.902"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node5 -->
+<g id="node6" class="node"><title>Node5</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1SMScrambleShift.html" target="_top" xlink:title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a striped matrix scram...">
 <polygon fill="none" stroke="black" points="323.5,-0.5 323.5,-19.5 416.5,-19.5 416.5,-0.5 323.5,-0.5"/>
 <text text-anchor="middle" x="370" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SMScrambleShift</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge5" class="edge"><title>Node4&#45;&gt;Node6</title>
+<!-- Node3&#45;&gt;Node5 -->
+<g id="edge5" class="edge"><title>Node3&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M331.294,-49.0024C341.041,-39.4329 353.053,-27.6389 361.087,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="328.766,-46.5796 324.082,-56.083 333.67,-51.5746 328.766,-46.5796"/>
 </g>

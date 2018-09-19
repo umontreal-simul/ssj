@@ -8,47 +8,47 @@
  viewBox="0.00 0.00 142.00 196.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 192)">
 <title>HypoExponentialDistEqual</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 134,-19.5 134,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="67" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">HypoExponentialDistEqual</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1probdist_1_1HypoExponentialDist.html" target="_top" xlink:title="This class implements the hypoexponential distribution, also called the generalized Erlang distributi...">
 <polygon fill="none" stroke="black" points="12.5,-56.5 12.5,-75.5 121.5,-75.5 121.5,-56.5 12.5,-56.5"/>
 <text text-anchor="middle" x="67" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">HypoExponentialDist</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M67,-45.8045C67,-36.9102 67,-26.7798 67,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="63.5001,-46.083 67,-56.083 70.5001,-46.083 63.5001,-46.083"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" target="_top" xlink:title="Classes implementing continuous distributions should inherit from this base class. ">
 <polygon fill="none" stroke="black" points="9,-112.5 9,-131.5 125,-131.5 125,-112.5 9,-112.5"/>
 <text text-anchor="middle" x="67" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContinuousDistribution</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M67,-101.805C67,-92.9102 67,-82.7798 67,-75.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="63.5001,-102.083 67,-112.083 70.5001,-102.083 63.5001,-102.083"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
 <polygon fill="none" stroke="black" points="34,-168.5 34,-187.5 100,-187.5 100,-168.5 34,-168.5"/>
 <text text-anchor="middle" x="67" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M67,-157.805C67,-148.91 67,-138.78 67,-131.751"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="63.5001,-158.083 67,-168.083 70.5001,-158.083 63.5001,-158.083"/>
 </g>

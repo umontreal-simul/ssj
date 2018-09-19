@@ -8,53 +8,53 @@
  viewBox="0.00 0.00 122.00 219.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 215)">
 <title>StratifiedUnitCubeAnti</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node3 -->
+<g id="node1" class="node"><title>Node3</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 114,-19.5 114,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="57" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">StratifiedUnitCubeAnti</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node4 -->
+<g id="node2" class="node"><title>Node4</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" target="_top" xlink:title="This container class caches a point set by precomputing and storing its points locally in an array...">
 <polygon fill="none" stroke="black" points="13,-57.5 13,-76.5 101,-76.5 101,-57.5 13,-57.5"/>
 <text text-anchor="middle" x="57" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">CachedPointSet</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge1" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M57,-47.1166C57,-37.8173 57,-27.0557 57,-19.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="53.5001,-47.4062 57,-57.4062 60.5001,-47.4063 53.5001,-47.4062"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node5 -->
+<g id="node3" class="node"><title>Node5</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" target="_top" xlink:title="This abstract class defines the basic methods for accessing and manipulating point sets...">
 <polygon fill="none" stroke="black" points="30,-124.5 30,-143.5 84,-143.5 84,-124.5 30,-124.5"/>
 <text text-anchor="middle" x="57" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge2" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M55.4399,-114.382C55.2572,-111.575 55.1003,-108.713 55,-106 54.6288,-95.9652 55.4035,-84.4502 56.0942,-76.7505"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="51.9607,-114.791 56.2083,-124.497 58.9406,-114.26 51.9607,-114.791"/>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge4" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M57,-114.037C57,-101.67 57,-86.1198 57,-76.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="53.5001,-114.234 57,-124.234 60.5001,-114.234 53.5001,-114.234"/>
 <text text-anchor="middle" x="62" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00"> P</text>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node6 -->
+<g id="node4" class="node"><title>Node6</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="14.5,-191.5 14.5,-210.5 99.5,-210.5 99.5,-191.5 14.5,-191.5"/>
 <text text-anchor="middle" x="57" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge3" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M57,-181.037C57,-168.67 57,-153.12 57,-143.627"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="53.5001,-181.234 57,-191.234 60.5001,-181.234 53.5001,-181.234"/>
 <text text-anchor="middle" x="84" y="-165" font-family="Helvetica,sans-Serif" font-size="10.00"> shiftStream</text>

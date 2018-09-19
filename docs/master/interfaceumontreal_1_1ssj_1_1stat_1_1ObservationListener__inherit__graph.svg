@@ -8,34 +8,34 @@
  viewBox="0.00 0.00 324.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>ObservationListener</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="108.5,-56.5 108.5,-75.5 212.5,-75.5 212.5,-56.5 108.5,-56.5"/>
 <text text-anchor="middle" x="160.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">ObservationListener</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classQueueObs_1_1LargeWaitsCollector.html" target="_top" xlink:title="QueueObs.LargeWaitsCollector">
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
+<g id="a_node2"><a xlink:href="classtutorial_1_1QueueObs_1_1LargeWaitsCollector.html" target="_top" xlink:title="QueueObs.LargeWaitsCollector">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-19.5 155,-19.5 155,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="77.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">QueueObs.LargeWaitsCollector</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
+<!-- Node0&#45;&gt;Node1 -->
+<g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M138.401,-50.6221C123.238,-40.7574 103.617,-27.9919 90.8023,-19.6545"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="136.874,-53.8042 147.165,-56.324 140.691,-47.9367 136.874,-53.8042"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="classQueueObs_1_1ObservationTrace.html" target="_top" xlink:title="QueueObs.ObservationTrace">
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
+<g id="a_node3"><a xlink:href="classtutorial_1_1QueueObs_1_1ObservationTrace.html" target="_top" xlink:title="QueueObs.ObservationTrace">
 <polygon fill="none" stroke="black" points="173,-0.5 173,-19.5 316,-19.5 316,-0.5 173,-0.5"/>
 <text text-anchor="middle" x="244.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">QueueObs.ObservationTrace</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
+<!-- Node0&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M182.432,-50.9005C197.835,-40.9986 217.946,-28.0705 231.037,-19.6545"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="180.515,-47.9722 173.996,-56.324 184.301,-53.8605 180.515,-47.9722"/>
 </g>

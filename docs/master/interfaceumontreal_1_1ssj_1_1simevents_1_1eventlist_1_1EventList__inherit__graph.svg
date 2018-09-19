@@ -8,83 +8,83 @@
  viewBox="0.00 0.00 419.50 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>EventList</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="178,-56.5 178,-75.5 236,-75.5 236,-56.5 178,-56.5"/>
 <text text-anchor="middle" x="207" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">EventList</text>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html" target="_top" xlink:title="An implementation of EventList using a binary search tree. ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-19.5 64,-19.5 64,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="32" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BinaryTree</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
+<!-- Node0&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M169.525,-53.4363C136.53,-43.2551 89.2445,-28.664 59.5995,-19.5164"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="168.683,-56.8393 179.271,-56.4435 170.747,-50.1505 168.683,-56.8393"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1DoublyLinked.html" target="_top" xlink:title="An implementation of EventList using a doubly linked linear list. ">
 <polygon fill="none" stroke="black" points="82,-0.5 82,-19.5 158,-19.5 158,-0.5 82,-0.5"/>
 <text text-anchor="middle" x="120" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoublyLinked</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node4 -->
-<g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
+<!-- Node0&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node0&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M184.284,-50.9005C168.331,-40.9986 147.503,-28.0705 133.943,-19.6545"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="182.68,-54.024 193.022,-56.324 186.371,-48.0765 182.68,-54.024"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node4 -->
+<g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1Henriksen.html" target="_top" xlink:title="An implementation of EventList using the doubly&#45;linked indexed list of Henriksen   (see also   (p...">
 <polygon fill="none" stroke="black" points="176.5,-0.5 176.5,-19.5 237.5,-19.5 237.5,-0.5 176.5,-0.5"/>
 <text text-anchor="middle" x="207" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Henriksen</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
+<!-- Node0&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node0&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M207,-45.8045C207,-36.9102 207,-26.7798 207,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="203.5,-46.083 207,-56.083 210.5,-46.083 203.5,-46.083"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node5 -->
+<g id="node6" class="node"><title>Node5</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1RedblackTree.html" target="_top" xlink:title="An implementation of EventList using a red black tree, which is similar to a binary search tree excep...">
 <polygon fill="none" stroke="black" points="255.5,-0.5 255.5,-19.5 332.5,-19.5 332.5,-0.5 255.5,-0.5"/>
 <text text-anchor="middle" x="294" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">RedblackTree</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
+<!-- Node0&#45;&gt;Node5 -->
+<g id="edge5" class="edge"><title>Node0&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M229.716,-50.9005C245.669,-40.9986 266.497,-28.0705 280.057,-19.6545"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="227.629,-48.0765 220.978,-56.324 231.32,-54.024 227.629,-48.0765"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node6 -->
+<g id="node7" class="node"><title>Node6</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1SplayTree.html" target="_top" xlink:title="An implementation of EventList using a splay tree  . ">
 <polygon fill="none" stroke="black" points="350.5,-0.5 350.5,-19.5 411.5,-19.5 411.5,-0.5 350.5,-0.5"/>
 <text text-anchor="middle" x="381" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SplayTree</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
+<!-- Node0&#45;&gt;Node6 -->
+<g id="edge6" class="edge"><title>Node0&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M244.261,-53.4363C277.067,-43.2551 324.083,-28.664 353.558,-19.5164"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="243.084,-50.1368 234.571,-56.4435 245.159,-56.8222 243.084,-50.1368"/>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <polygon fill="none" stroke="#bfbfbf" points="161,-112.5 161,-131.5 253,-131.5 253,-112.5 161,-112.5"/>
 <text text-anchor="middle" x="207" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Iterable&lt; Event &gt;</text>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M207,-101.805C207,-92.9102 207,-82.7798 207,-75.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="203.5,-102.083 207,-112.083 210.5,-102.083 203.5,-102.083"/>
 </g>

@@ -8,60 +8,60 @@
  viewBox="0.00 0.00 133.00 266.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 262)">
 <title>KorobovLatticeSequence</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
 <polygon fill="#bfbfbf" stroke="black" points="-7.10543e-15,-0.5 -7.10543e-15,-19.5 125,-19.5 125,-0.5 -7.10543e-15,-0.5"/>
 <text text-anchor="middle" x="62.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">KorobovLatticeSequence</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1KorobovLattice.html" target="_top" xlink:title="This class implements Korobov lattices, which represents the same point sets as in class LCGPointSet...">
 <polygon fill="none" stroke="black" points="21.5,-57.5 21.5,-76.5 103.5,-76.5 103.5,-57.5 21.5,-57.5"/>
 <text text-anchor="middle" x="62.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">KorobovLattice</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M62.5,-47.1166C62.5,-37.8173 62.5,-27.0557 62.5,-19.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="59.0001,-47.4062 62.5,-57.4062 66.0001,-47.4063 59.0001,-47.4062"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice.html" target="_top" xlink:title="This class implements point sets specified by integration lattices of rank. ">
 <polygon fill="none" stroke="black" points="25.5,-114.5 25.5,-133.5 99.5,-133.5 99.5,-114.5 25.5,-114.5"/>
 <text text-anchor="middle" x="62.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">Rank1Lattice</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M62.5,-104.117C62.5,-94.8173 62.5,-84.0557 62.5,-76.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="59.0001,-104.406 62.5,-114.406 66.0001,-104.406 59.0001,-104.406"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" target="_top" xlink:title="This abstract class defines the basic methods for accessing and manipulating point sets...">
 <polygon fill="none" stroke="black" points="35.5,-171.5 35.5,-190.5 89.5,-190.5 89.5,-171.5 35.5,-171.5"/>
 <text text-anchor="middle" x="62.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node3</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M62.5,-161.117C62.5,-151.817 62.5,-141.056 62.5,-133.715"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="59.0001,-161.406 62.5,-171.406 66.0001,-161.406 59.0001,-161.406"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node8 -->
+<g id="node5" class="node"><title>Node8</title>
 <g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="20,-238.5 20,-257.5 105,-257.5 105,-238.5 20,-238.5"/>
 <text text-anchor="middle" x="62.5" y="-245.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node4</title>
+<!-- Node8&#45;&gt;Node7 -->
+<g id="edge4" class="edge"><title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M62.5,-228.037C62.5,-215.67 62.5,-200.12 62.5,-190.627"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="59.0001,-228.234 62.5,-238.234 66.0001,-228.234 59.0001,-228.234"/>
 <text text-anchor="middle" x="89.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00"> shiftStream</text>

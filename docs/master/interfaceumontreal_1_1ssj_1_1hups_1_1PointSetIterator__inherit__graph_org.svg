@@ -8,13 +8,13 @@
  viewBox="0.00 0.00 732.00 176.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 172)">
 <title>PointSetIterator</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="121,-77 121,-96 206,-96 206,-77 121,-77"/>
 <text text-anchor="middle" x="163.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="PointSet.DefaultPointSet\lIterator">
 <polygon fill="none" stroke="black" points="242,-71.5 242,-101.5 368,-101.5 368,-71.5 242,-71.5"/>
 <text text-anchor="start" x="250" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet.DefaultPointSet</text>
@@ -22,26 +22,26 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
+<!-- Node0&#45;&gt;Node2 -->
+<g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M216.554,-86.5C224.784,-86.5 233.366,-86.5 241.799,-86.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="216.355,-83.0001 206.355,-86.5 216.355,-90.0001 216.355,-83.0001"/>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="0,-77 0,-96 85,-96 85,-77 0,-77"/>
 <text text-anchor="middle" x="42.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M95.3174,-86.5C103.802,-86.5 112.499,-86.5 120.702,-86.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="95.1205,-83.0001 85.1204,-86.5 95.1204,-90.0001 95.1205,-83.0001"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CachedPointSet_1_1CachedPointSetIterator.html" target="_top" xlink:title="CachedPointSet.CachedPoint\lSetIterator">
 <polygon fill="none" stroke="black" points="404,-137.5 404,-167.5 551,-167.5 551,-137.5 404,-137.5"/>
 <text text-anchor="start" x="412" y="-155.5" font-family="Helvetica,sans-Serif" font-size="10.00">CachedPointSet.CachedPoint</text>
@@ -49,26 +49,26 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge"><title>Node3&#45;&gt;Node4</title>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M350.24,-105.717C366.986,-112.804 386.28,-120.746 404,-127.5 412.833,-130.867 422.343,-134.289 431.476,-137.477"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="351.277,-102.355 340.705,-101.658 348.536,-108.795 351.277,-102.355"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node4 -->
+<g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIterator.html" target="_top" xlink:title="DigitalNet.DigitalNetIterator">
 <polygon fill="none" stroke="black" points="409,-99 409,-118 546,-118 546,-99 409,-99"/>
 <text text-anchor="middle" x="477.5" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalNet.DigitalNetIterator</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node5 -->
-<g id="edge4" class="edge"><title>Node3&#45;&gt;Node5</title>
+<!-- Node2&#45;&gt;Node4 -->
+<g id="edge4" class="edge"><title>Node2&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M378.092,-95.8022C388.255,-97.1136 398.674,-98.4579 408.751,-99.7582"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="378.402,-92.3133 368.037,-94.5047 377.507,-99.2558 378.402,-92.3133"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node"><title>Node7</title>
+<!-- Node6 -->
+<g id="node7" class="node"><title>Node6</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice_1_1Rank1LatticeIterator.html" target="_top" xlink:title="Rank1Lattice.Rank1Lattice\lIterator">
 <polygon fill="none" stroke="black" points="410,-49.5 410,-79.5 545,-79.5 545,-49.5 410,-49.5"/>
 <text text-anchor="start" x="418" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Rank1Lattice.Rank1Lattice</text>
@@ -76,13 +76,13 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node7 -->
-<g id="edge6" class="edge"><title>Node3&#45;&gt;Node7</title>
+<!-- Node2&#45;&gt;Node6 -->
+<g id="edge6" class="edge"><title>Node2&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M378.058,-77.2022C388.622,-75.8391 399.462,-74.4403 409.91,-73.0923"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="377.507,-73.7442 368.037,-78.4953 378.402,-80.6867 377.507,-73.7442"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node"><title>Node8</title>
+<!-- Node7 -->
+<g id="node8" class="node"><title>Node7</title>
 <g id="a_node8"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1SortedAndCutPointSet_1_1SortedAndCutPointSetIterator.html" target="_top" xlink:title="SortedAndCutPointSet.Sorted\lAndCutPointSetIterator">
 <polygon fill="none" stroke="black" points="404,-0.5 404,-30.5 551,-30.5 551,-0.5 404,-0.5"/>
 <text text-anchor="start" x="412" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">SortedAndCutPointSet.Sorted</text>
@@ -90,13 +90,13 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node8 -->
-<g id="edge7" class="edge"><title>Node3&#45;&gt;Node8</title>
+<!-- Node2&#45;&gt;Node7 -->
+<g id="edge7" class="edge"><title>Node2&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M344.143,-66.8112C362.071,-57.92 383.883,-47.6153 404,-39.5 411.746,-36.3751 420.071,-33.3348 428.22,-30.5266"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="342.527,-63.7063 335.151,-71.3129 345.66,-69.9657 342.527,-63.7063"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node5 -->
+<g id="node6" class="node"><title>Node5</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIteratorNoGray.html" target="_top" xlink:title="DigitalNet.DigitalNetIterator\lNoGray">
 <polygon fill="none" stroke="black" points="587,-93.5 587,-123.5 724,-123.5 724,-93.5 587,-93.5"/>
 <text text-anchor="start" x="595" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalNet.DigitalNetIterator</text>
@@ -104,8 +104,8 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge5" class="edge"><title>Node5&#45;&gt;Node6</title>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge5" class="edge"><title>Node4&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M556.18,-108.5C566.402,-108.5 576.811,-108.5 586.847,-108.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="556.043,-105 546.043,-108.5 556.043,-112 556.043,-105"/>
 </g>

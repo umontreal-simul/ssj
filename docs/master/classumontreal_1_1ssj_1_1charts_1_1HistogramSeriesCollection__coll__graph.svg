@@ -8,42 +8,42 @@
  viewBox="0.00 0.00 181.00 152.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 148)">
 <title>HistogramSeriesCollection</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node2 -->
+<g id="node1" class="node"><title>Node2</title>
 <polygon fill="#bfbfbf" stroke="black" points="14,-0.5 14,-19.5 147,-19.5 147,-0.5 14,-0.5"/>
 <text text-anchor="middle" x="80.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">HistogramSeriesCollection</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node3 -->
+<g id="node2" class="node"><title>Node3</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" target="_top" xlink:title="Stores data used in a XYChart. ">
 <polygon fill="none" stroke="black" points="20.5,-57.5 20.5,-76.5 140.5,-76.5 140.5,-57.5 20.5,-57.5"/>
 <text text-anchor="middle" x="80.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">SSJXYSeriesCollection</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node3&#45;&gt;Node2 -->
+<g id="edge1" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M80.5,-47.1166C80.5,-37.8173 80.5,-27.0557 80.5,-19.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="77.0001,-47.4062 80.5,-57.4062 84.0001,-47.4063 77.0001,-47.4062"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node4 -->
+<g id="node3" class="node"><title>Node4</title>
 <polygon fill="none" stroke="#bfbfbf" points="0,-124.5 0,-143.5 65,-143.5 65,-124.5 0,-124.5"/>
 <text text-anchor="middle" x="32.5" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">XYDataset</text>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge2" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M29.4018,-114.415C29.2057,-107.878 30.078,-100.737 33.5,-95 38.4171,-86.7566 46.8773,-80.7959 55.2765,-76.6074"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="25.936,-114.923 30.4791,-124.494 32.8964,-114.179 25.936,-114.923"/>
 <text text-anchor="middle" x="70" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00"> seriesCollection</text>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node5 -->
+<g id="node4" class="node"><title>Node5</title>
 <polygon fill="none" stroke="#bfbfbf" points="84,-124.5 84,-143.5 173,-143.5 173,-124.5 84,-124.5"/>
 <text text-anchor="middle" x="128.5" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">XYItemRenderer</text>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node2</title>
+<!-- Node5&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node5&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M119.574,-115.571C115.867,-108.907 111.308,-101.382 106.5,-95 101.488,-88.3471 94.9878,-81.5971 89.7409,-76.5103"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="116.533,-117.307 124.327,-124.483 122.71,-114.012 116.533,-117.307"/>
 <text text-anchor="middle" x="133" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00"> renderer</text>

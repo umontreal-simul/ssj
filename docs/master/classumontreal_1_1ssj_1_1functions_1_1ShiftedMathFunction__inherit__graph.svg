@@ -8,75 +8,75 @@
  viewBox="0.00 0.00 423.00 124.87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 120.87)">
 <title>ShiftedMathFunction</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node0 -->
+<g id="node1" class="node"><title>Node0</title>
 <polygon fill="#bfbfbf" stroke="black" points="308,-57.5 308,-76.5 415,-76.5 415,-57.5 308,-57.5"/>
 <text text-anchor="middle" x="361.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShiftedMathFunction</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node1 -->
+<g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" target="_top" xlink:title="This interface should be implemented by classes which represent univariate mathematical functions...">
 <polygon fill="none" stroke="black" points="0,-57.5 0,-76.5 76,-76.5 76,-57.5 0,-57.5"/>
 <text text-anchor="middle" x="38" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunction</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node1&#45;&gt;Node0 -->
+<g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M61.2729,-82.187C75.1833,-90.7332 93.8452,-100.558 112,-105 181.073,-121.902 202.346,-119.322 272,-105 298.369,-99.5781 326.575,-85.9461 343.877,-76.5752"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="62.7769,-78.9943 52.4664,-76.5564 59.0061,-84.892 62.7769,-78.9943"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node2 -->
+<g id="node3" class="node"><title>Node2</title>
 <g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" target="_top" xlink:title="Represents a mathematical function whose derivative can be computed using derivative(double). ">
 <polygon fill="none" stroke="black" points="112,-76.5 112,-95.5 272,-95.5 272,-76.5 112,-76.5"/>
 <text text-anchor="middle" x="192" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithFirstDerivative</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge3" class="edge"><title>Node2&#45;&gt;Node3</title>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge3" class="edge"><title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M86.191,-72.8989C95.3311,-74.0414 105.124,-75.2655 114.918,-76.4898"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="86.5403,-69.4154 76.1834,-71.6479 85.672,-76.3613 86.5403,-69.4154"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node3 -->
+<g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" target="_top" xlink:title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). ">
 <polygon fill="none" stroke="black" points="122,-38.5 122,-57.5 262,-57.5 262,-38.5 122,-38.5"/>
 <text text-anchor="middle" x="192" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithDerivative</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node4 -->
-<g id="edge5" class="edge"><title>Node2&#45;&gt;Node4</title>
+<!-- Node1&#45;&gt;Node3 -->
+<g id="edge5" class="edge"><title>Node1&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M86.235,-61.0956C97.5223,-59.6847 109.803,-58.1497 121.851,-56.6436"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="85.672,-57.6387 76.1834,-62.3521 86.5403,-64.5846 85.672,-57.6387"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node4 -->
+<g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" target="_top" xlink:title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. ">
 <polygon fill="none" stroke="black" points="128,-0.5 128,-19.5 256,-19.5 256,-0.5 128,-0.5"/>
 <text text-anchor="middle" x="192" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithIntegral</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node5 -->
-<g id="edge7" class="edge"><title>Node2&#45;&gt;Node5</title>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge7" class="edge"><title>Node1&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M63.6008,-52.2715C77.4402,-44.4829 95.2557,-35.2642 112,-29 121.909,-25.293 132.793,-22.1272 143.229,-19.5038"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="61.6403,-49.3614 54.7169,-57.3813 65.1304,-55.4293 61.6403,-49.3614"/>
 </g>
-<!-- Node3&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node1</title>
+<!-- Node2&#45;&gt;Node0 -->
+<g id="edge2" class="edge"><title>Node2&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M282.473,-75.8508C291.096,-74.8727 299.638,-73.9038 307.73,-72.9858"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="281.877,-72.3959 272.335,-77.0008 282.666,-79.3513 281.877,-72.3959"/>
 </g>
-<!-- Node4&#45;&gt;Node1 -->
-<g id="edge4" class="edge"><title>Node4&#45;&gt;Node1</title>
+<!-- Node3&#45;&gt;Node0 -->
+<g id="edge4" class="edge"><title>Node3&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M272.224,-56.9866C284.343,-58.3613 296.59,-59.7505 307.944,-61.0384"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="272.427,-53.4872 262.096,-55.8377 271.637,-60.4426 272.427,-53.4872"/>
 </g>
-<!-- Node5&#45;&gt;Node1 -->
-<g id="edge6" class="edge"><title>Node5&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node0 -->
+<g id="edge6" class="edge"><title>Node4&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M248.215,-22.0114C256.256,-24.1266 264.386,-26.4702 272,-29 296.278,-37.067 323.148,-49.0648 340.839,-57.4133"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="249.045,-18.6111 238.492,-19.5475 247.326,-25.3967 249.045,-18.6111"/>
 </g>

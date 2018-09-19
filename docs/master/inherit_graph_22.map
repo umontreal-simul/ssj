@@ -1,6 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2_1_1DigitalNetBase2Iterator.html" title="DigitalNetBase2.DigitalNet\lBase2Iterator" alt="" coords="175,5,353,47"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalSequence_1_1DigitalNetIteratorShiftGenerators.html" title="DigitalSequence.DigitalNet\lIteratorShiftGenerators" alt="" coords="175,71,353,112"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalSequence_1_1DigitalNetIteratorShiftNoGray.html" title="DigitalSequence.DigitalNet\lIteratorShiftNoGray" alt="" coords="175,136,353,177"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2_1_1DigitalNetBase2IteratorNoGray.html" title="DigitalNetBase2.DigitalNet\lBase2IteratorNoGray" alt="" coords="401,5,580,47"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation. " alt="" coords="5,31,93,57"/>
+<area shape="rect" id="node2" href="$classtutorial_1_1PreyPred_1_1Preds.html" title="PreyPred.Preds" alt="" coords="141,5,256,32"/>
+<area shape="rect" id="node3" href="$classtutorial_1_1PreyPred_1_1Preys.html" title="PreyPred.Preys" alt="" coords="141,56,256,83"/>
 </map>

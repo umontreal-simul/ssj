@@ -1,4 +1,4 @@
 <map id="Simulator" name="Simulator">
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="28,81,105,108"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="129,81,247,108"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="130,81,249,108"/>
 </map>

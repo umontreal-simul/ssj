@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1gof_1_1GofStat_1_1OutcomeCategoriesChi2.html" title="This class helps managing the partitions of possible outcomes into categories for applying chi&#45;square..." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1DiscreteDistributionIntMulti.html" title="Classes implementing multi&#45;dimensional discrete distributions over the integers should inherit from t..." alt="" coords="5,31,185,57"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1MultinomialDist.html" title="Implements the abstract class DiscreteDistributionIntMulti for the multinomial distribution with para..." alt="" coords="259,5,371,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1NegativeMultinomialDist.html" title="Implements the class DiscreteDistributionIntMulti for the negative multinomial distribution with para..." alt="" coords="233,56,397,83"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="Tally" name="Tally">
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html" title="This class is an extension of Tally which gives a more detailed view of the observations statistics..." alt="" coords="5,155,116,181"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1TallyStore.html" title="This class is a variant of Tally for which the individual observations are stored in a list implement..." alt="" coords="140,155,221,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="29,5,109,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVariance.html" title="Represents the partial variance of a function with respect to a given coordinate set. " alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html" title="This class extends Tally. " alt="" coords="140,155,251,181"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stat_1_1TallyStore.html" title="This class is a variant of Tally for which the individual observations are stored in a list implement..." alt="" coords="275,155,356,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="103,5,183,32"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1HistogramOnly.html" title="This class is similar to TallyHistogram, except that it does not maintain the min, max, average, and variance of the observations. " alt="" coords="141,229,250,256"/>
 </map>

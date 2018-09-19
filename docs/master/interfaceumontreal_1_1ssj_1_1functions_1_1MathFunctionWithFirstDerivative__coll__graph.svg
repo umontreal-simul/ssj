@@ -8,21 +8,21 @@
  viewBox="0.00 0.00 168.00 84.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 80)">
 <title>MathFunctionWithFirstDerivative</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node11 -->
+<g id="node1" class="node"><title>Node11</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 160,-19.5 160,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="80" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunctionWithFirstDerivative</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node12 -->
+<g id="node2" class="node"><title>Node12</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" target="_top" xlink:title="This interface should be implemented by classes which represent univariate mathematical functions...">
 <polygon fill="none" stroke="black" points="42,-56.5 42,-75.5 118,-75.5 118,-56.5 42,-56.5"/>
 <text text-anchor="middle" x="80" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">MathFunction</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node12&#45;&gt;Node11 -->
+<g id="edge1" class="edge"><title>Node12&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M80,-45.8045C80,-36.9102 80,-26.7798 80,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="76.5001,-46.083 80,-56.083 83.5001,-46.083 76.5001,-46.083"/>
 </g>

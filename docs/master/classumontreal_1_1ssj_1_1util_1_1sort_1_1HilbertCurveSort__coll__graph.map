@@ -1,5 +1,4 @@
 <map id="HilbertCurveSort" name="HilbertCurveSort">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01_3_01T_01extends_01MultiDim01_01_4.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort points ..." alt="" coords="5,81,188,123"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort_3_01T_01_4.html" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="31,5,162,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveMap.html" title="This class implements the mapping of a Hilbert curve in the &#45;dimensional unit hypercube ..." alt="" coords="213,89,333,115"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html" title="MultiDimSort01\&lt; MultiDim01 \&gt;" alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveMap.html" title="This class implements the mapping of a Hilbert curve in the &#45;dimensional unit hypercube ..." alt="" coords="232,5,352,32"/>
 </map>

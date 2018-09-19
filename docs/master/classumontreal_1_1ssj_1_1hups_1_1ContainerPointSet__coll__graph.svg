@@ -8,40 +8,40 @@
  viewBox="0.00 0.00 110.00 162.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 158)">
 <title>ContainerPointSet</title>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node5 -->
+<g id="node1" class="node"><title>Node5</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 96,-19.5 96,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="48" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ContainerPointSet</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node6 -->
+<g id="node2" class="node"><title>Node6</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" target="_top" xlink:title="This abstract class defines the basic methods for accessing and manipulating point sets...">
 <polygon fill="none" stroke="black" points="21,-67.5 21,-86.5 75,-86.5 75,-67.5 21,-67.5"/>
 <text text-anchor="middle" x="48" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge1" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M46.4399,-57.3825C46.2572,-54.5753 46.1003,-51.7126 46,-49 45.6288,-38.9652 46.4035,-27.4502 47.0942,-19.7505"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="42.9607,-57.7906 47.2083,-67.4967 49.9406,-57.2602 42.9607,-57.7906"/>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge3" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge3" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M48,-57.037C48,-44.6703 48,-29.1198 48,-19.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="44.5001,-57.2338 48,-67.2338 51.5001,-57.2338 44.5001,-57.2338"/>
 <text text-anchor="middle" x="53" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00"> P</text>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node7 -->
+<g id="node3" class="node"><title>Node7</title>
 <g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
 <polygon fill="none" stroke="black" points="5.5,-134.5 5.5,-153.5 90.5,-153.5 90.5,-134.5 5.5,-134.5"/>
 <text text-anchor="middle" x="48" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge2" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M48,-124.037C48,-111.67 48,-96.1198 48,-86.6273"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="44.5001,-124.234 48,-134.234 51.5001,-124.234 44.5001,-124.234"/>
 <text text-anchor="middle" x="75" y="-108" font-family="Helvetica,sans-Serif" font-size="10.00"> shiftStream</text>
