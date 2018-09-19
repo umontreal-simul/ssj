@@ -1,0 +1,7 @@
+<map id="San13CMCDist" name="San13CMCDist">
+<area shape="rect" id="node2" href="$classift6561examples_1_1San13CMC.html" title="San13CMC" alt="" coords="99,247,189,273"/>
+<area shape="rect" id="node3" href="$classift6561examples_1_1San13Prob.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links, taken from Elmaghraby (1977) and used again in L&#39;Ecuyer and Lemieux (2000), &quot;Variance Reduction via Lattice Rules&quot;. " alt="" coords="101,171,187,197"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,81,171,108"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="195,81,349,108"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="228,5,316,32"/>
+</map>
