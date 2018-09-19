@@ -1,0 +1,4 @@
+<map id="DDEGaussian" name="DDEGaussian">
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html" title="This class implements a density derivative estimator (DDE) based on a kernel density estimator (KDE) ..." alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class implements a univariate density estimator (DE). " alt="" coords="35,5,158,32"/>
+</map>
