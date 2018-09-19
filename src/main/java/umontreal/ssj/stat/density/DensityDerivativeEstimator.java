@@ -2,14 +2,13 @@ package umontreal.ssj.stat.density;
 
 /**
  * This class implements a density derivative estimator (DDE) based on a kernel
- * density estimator (KDE) with kernel function \f$K\f$, 
- * (@remark:  Not any kernel!  Also, I try to save uppercase letters for random variables.)
+ * density estimator (KDE) with a sufficiently smooth kernel function \f$k\f$, 
  * see \ref umontreal.ssj.stat.density.DEKernelDensity. Such an estimator is used to find
  * the \f$r\f$-th derivative of an unknown density based on \f$n\f$ observations
- * \f$X_0,X_1,\dots,X_{n-1} \f$ of an underlying model. It is of the form
+ * \f$x_0,x_1,\dots,x_{n-1} \f$ of an underlying model. It is of the form
  * 
  * \f[ \hat{f}^{(r)}_n(x) = \hat{f}^{(r)}_{n,h}(x)=\frac{1}{n h^{r + 1}} \sum_{i
- * = 0}^{n - 1} k^{(r)}\left( \frac{x - X_i}{h} \right), \f]
+ * = 0}^{n - 1} k^{(r)}\left( \frac{x - x_i}{h} \right), \f]
  * 
  * where \f$h\f$ denotes the bandwidth. So, as a matter of fact, it is the
  * \f$r\f$-th derivative of a KDE. This class provides basic tools to construct
@@ -30,7 +29,7 @@ package umontreal.ssj.stat.density;
  * So, in order to obtain a good estimate for \f$f^{(r)} \f$ one requires a good
  * estimate for \f$f^{(r+2)}\f$. A way to break out of this cyclic argument is
  * to resort to taking a reasonably good estimate for \f$f^{(r+2)}\f$ as initial
- * value. This is implemented as #hAmiseR(int, double, double, double, int). To
+ * value. This is implemented as `hAmiseR(int, double, double, double, int)`. To
  * obtain such a reasonable initial value, one can, for instance, assume that
  * \f$ f \f$ belongs to a known family of distributions (e.g. normal
  * distributions), such that its defining parameters (e.g. mean, standard
@@ -41,8 +40,8 @@ package umontreal.ssj.stat.density;
  * 
  * Certainly, one can also try obtain a good approximation of \f$f^{(r+2t)} \f$
  * and iterate ({@link REF_stat_density_DensityDerivativeEstimator_hopt hopt})
- * \f$t\f$ times. The function #hAmiseR(int, int, double, double[], double,
- * DensityDerivativeEstimator, double[], double[], double, double) implements
+ * \f$t\f$ times. The function `hAmiseR(int, int, double, double[], double,
+ * DensityDerivativeEstimator, double[], double[], double, double)` implements
  * this recursion.
  * 
  * Since the above methods to compute \f$h_{\text{AMISE}}^{(r)}\f$ rely on initial
@@ -56,14 +55,9 @@ package umontreal.ssj.stat.density;
  * 
  * For such an initial value, one could, for instance, assume that the target
  * density is a normal distribution with standard deviation \f$\sigma\f$.
- * To this end, we include  the method #densityFunctionalGaussian(int, double).
+ * To this end, we include  the method `densityFunctionalGaussian(int, double)`.
  * 
- * This class is particularly useful for estimating optimal bandwidths for histogram
- * estimators and KDEs, see \ref
- * umontreal.ssj.stat.density.DEModelBandwidthBased, and may also be beneficial
- * for other density estimation models.
- * 
- * @author puchhamf
+ *
  *
  */
 public abstract class DensityDerivativeEstimator extends DensityEstimator {
@@ -110,6 +104,12 @@ public abstract class DensityDerivativeEstimator extends DensityEstimator {
 		this.h = h;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	public void setData(double[] data) {
+		this.data = data;
+	}
 	/**
 	 * Given a value \a init for the roughness functional of \f$ f^{(r+2)}\f$, \a
 	 * mu2 the second moment of the kernel function \f$K\f$, and \a mu2Derivative
@@ -166,7 +166,6 @@ public abstract class DensityDerivativeEstimator extends DensityEstimator {
 	 * @param init          the estimate of the roughness functional of the
 	 *                      \f$(r+2t)\f$-th derivative of the sought density.
 	 * @param dde           the DDE used for estimating the bandwidth.
-	 * @param data          the observations of the underlying model.
 	 * @param evalPoints    the quadrature points used for estimating the roughness
 	 *                      functionals
 	 * @param a             the left boundary of the interval considered.
@@ -176,17 +175,17 @@ public abstract class DensityDerivativeEstimator extends DensityEstimator {
 	 */
 
 	public static double hAmiseR(int r, int t, double mu2, double[] mu2Derivative, double init,
-			DensityDerivativeEstimator dde, double[] data, double[] evalPoints, double a, double b) {
+			DensityDerivativeEstimator dde, double[] evalPoints, double a, double b) {
 		double h;
 		int k = evalPoints.length;
 		double[] estDensity = new double[k];
-		int n = data.length;
+		int n = dde.data.length;
 
 		for (int tau = t - 1; tau >= 1; tau--) {
 			h = hAmiseR(r + 2 * tau, mu2, mu2Derivative[tau], init, n);
 			dde.setH(h);
 			dde.setOrder(r + 2 * tau);
-			estDensity = dde.evalDensity(evalPoints, data, a, b);
+			estDensity = dde.evalDensity(evalPoints);
 			init = roughnessFunctional(estDensity, a, b);
 		}
 

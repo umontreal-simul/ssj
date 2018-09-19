@@ -25,7 +25,7 @@ public class CompareOutputs {
              //  { "tutorial", Collision.class,    null },
                  { "tutorial", InventoryCRN.class, null },
                  { "tutorial", Inventory.class,    null },
-                 { "tutorial", Nonuniform.class,   null },
+            //   { "tutorial", Nonuniform.class,   null },
                  { "tutorial", PreyPred.class,     null },
                  { "tutorial", QueueEv.class,      null },
                  { "tutorial", QueueLindley.class, null },
