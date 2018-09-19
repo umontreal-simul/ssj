@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Doxyfile 1.8.13
 
 # This file describes the settings to be used by the documentation system
@@ -2457,6 +2458,8 @@ GENERATE_LEGEND        = YES
 
 DOT_CLEANUP            = YES
 =======
+=======
+>>>>>>> 2642f4670c0f301e865c7ac64ce8bd90d0644965
 # Doxyfile 1.8.8
 
 # This file describes the settings to be used by the documentation system
@@ -4800,4 +4803,7 @@ GENERATE_LEGEND        = YES
 # This tag requires that the tag HAVE_DOT is set to YES.
 
 DOT_CLEANUP            = YES
+<<<<<<< HEAD
 >>>>>>> f9440ced3f9f949b2a33de86958b7fd591a0ab97
+=======
+>>>>>>> 2642f4670c0f301e865c7ac64ce8bd90d0644965
