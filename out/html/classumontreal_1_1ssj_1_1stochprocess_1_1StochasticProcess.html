@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class for a stochastic process \(\{X(t) : t \geq 0 \}\) sampled (or observed) at a finite number of time points, \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\).  
+<p>Abstract base class for a stochastic process \(\{X(t) : t \geq0 \}\) sampled (or observed) at a finite number of time points, \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\).  
  <a href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for StochasticProcess:</div>
@@ -89,20 +89,21 @@ Inheritance diagram for StochasticProcess:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa75a64a1f04fa1345cdbb6d646113d83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#aa75a64a1f04fa1345cdbb6d646113d83">setObservationTimes</a> (double[] T, int d)</td></tr>
-<tr class="memdesc:aa75a64a1f04fa1345cdbb6d646113d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the observation times of the process to a copy of <code>T</code>, with.  <a href="#aa75a64a1f04fa1345cdbb6d646113d83">More...</a><br /></td></tr>
+<tr class="memdesc:aa75a64a1f04fa1345cdbb6d646113d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the observation times of the process to a copy of <code>T</code>, with \(t_0 =\) <code>T[0]</code> and \(t_d =\) <code>T[d]</code>.  <a href="#aa75a64a1f04fa1345cdbb6d646113d83">More...</a><br /></td></tr>
 <tr class="separator:aa75a64a1f04fa1345cdbb6d646113d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16addb1d398fed90c06443dd618bab06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a16addb1d398fed90c06443dd618bab06">setObservationTimes</a> (double delta, int d)</td></tr>
-<tr class="memdesc:a16addb1d398fed90c06443dd618bab06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets equidistant observation times at \(t_j = j\delta\), for.  <a href="#a16addb1d398fed90c06443dd618bab06">More...</a><br /></td></tr>
+<tr class="memitem:a16addb1d398fed90c06443dd618bab06"><td class="memItemLeft" align="right" valign="top"><a id="a16addb1d398fed90c06443dd618bab06"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a16addb1d398fed90c06443dd618bab06">setObservationTimes</a> (double delta, int d)</td></tr>
+<tr class="memdesc:a16addb1d398fed90c06443dd618bab06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets equidistant observation times at \(t_j = j\delta\), for \(j=0,…,d\), and <code>delta</code> = \(\delta\). <br /></td></tr>
 <tr class="separator:a16addb1d398fed90c06443dd618bab06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e1bfdc2fa4bfe2a6ff0552b5868cb3a"><td class="memItemLeft" align="right" valign="top">double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a5e1bfdc2fa4bfe2a6ff0552b5868cb3a">getObservationTimes</a> ()</td></tr>
-<tr class="memdesc:a5e1bfdc2fa4bfe2a6ff0552b5868cb3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the array that contains the observation times.  <a href="#a5e1bfdc2fa4bfe2a6ff0552b5868cb3a">More...</a><br /></td></tr>
+<tr class="memdesc:a5e1bfdc2fa4bfe2a6ff0552b5868cb3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the array that contains the observation times \((t_0,…,t_d)\).  <a href="#a5e1bfdc2fa4bfe2a6ff0552b5868cb3a">More...</a><br /></td></tr>
 <tr class="separator:a5e1bfdc2fa4bfe2a6ff0552b5868cb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac869cde2bcb683311a9edcb22d8b7e44"><td class="memItemLeft" align="right" valign="top"><a id="ac869cde2bcb683311a9edcb22d8b7e44"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#ac869cde2bcb683311a9edcb22d8b7e44">getNumObservationTimes</a> ()</td></tr>
-<tr class="memdesc:ac869cde2bcb683311a9edcb22d8b7e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number \(d\) of observation times, <em>excluding</em> the time \(t_0\). <br /></td></tr>
-<tr class="separator:ac869cde2bcb683311a9edcb22d8b7e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad106c99c6c78eb4b2958eaba5e3d726a"><td class="memItemLeft" align="right" valign="top"><a id="ad106c99c6c78eb4b2958eaba5e3d726a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#ad106c99c6c78eb4b2958eaba5e3d726a">getNbObservationTimes</a> ()</td></tr>
+<tr class="memdesc:ad106c99c6c78eb4b2958eaba5e3d726a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of observation times excluding the time \(t_0\). <br /></td></tr>
+<tr class="separator:ad106c99c6c78eb4b2958eaba5e3d726a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f751965d20c52022196ab40691cddd4"><td class="memItemLeft" align="right" valign="top">abstract double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a5f751965d20c52022196ab40691cddd4">generatePath</a> ()</td></tr>
-<tr class="memdesc:a5f751965d20c52022196ab40691cddd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates, returns, and saves the sample path \(\{X(t_0), X(t_1), \dots, X(t_d)\}\).  <a href="#a5f751965d20c52022196ab40691cddd4">More...</a><br /></td></tr>
+<tr class="memdesc:a5f751965d20c52022196ab40691cddd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates, returns, and saves the sample path \(\{X(t_0), X(t_1), …, X(t_d)\}\).  <a href="#a5f751965d20c52022196ab40691cddd4">More...</a><br /></td></tr>
 <tr class="separator:a5f751965d20c52022196ab40691cddd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a418e473f821854cac013a40451e85907"><td class="memItemLeft" align="right" valign="top"><a id="a418e473f821854cac013a40451e85907"></a>
 double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a418e473f821854cac013a40451e85907">generatePath</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream)</td></tr>
@@ -112,7 +113,7 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="memdesc:a8d744d7c97265c133b99f1499a5b4ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <em>reference</em> to the last generated sample path \(\{X(t_0), ... , X(t_d)\}\).  <a href="#a8d744d7c97265c133b99f1499a5b4ae7">More...</a><br /></td></tr>
 <tr class="separator:a8d744d7c97265c133b99f1499a5b4ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c381c456f2d7866b6152be35be586d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a84c381c456f2d7866b6152be35be586d">getSubpath</a> (double[] subpath, int[] pathIndices)</td></tr>
-<tr class="memdesc:a84c381c456f2d7866b6152be35be586d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns in <code>subpath</code> the values of the process at a subset of the observation times, specified as the times \(t_j\) whose indices.  <a href="#a84c381c456f2d7866b6152be35be586d">More...</a><br /></td></tr>
+<tr class="memdesc:a84c381c456f2d7866b6152be35be586d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns in <code>subpath</code> the values of the process at a subset of the observation times, specified as the times \(t_j\) whose indices \(j\) are in the array <code>pathIndices</code>.  <a href="#a84c381c456f2d7866b6152be35be586d">More...</a><br /></td></tr>
 <tr class="separator:a84c381c456f2d7866b6152be35be586d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac134467c6ad2a4231357b0be0203d23d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#ac134467c6ad2a4231357b0be0203d23d">getObservation</a> (int j)</td></tr>
 <tr class="memdesc:ac134467c6ad2a4231357b0be0203d23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns \(X(t_j)\) from the current sample path.  <a href="#ac134467c6ad2a4231357b0be0203d23d">More...</a><br /></td></tr>
@@ -126,8 +127,9 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="memitem:a04cd1272eb69df6bdd610c6d2870d90f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a04cd1272eb69df6bdd610c6d2870d90f">nextObservation</a> ()</td></tr>
 <tr class="memdesc:a04cd1272eb69df6bdd610c6d2870d90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and returns the next observation \(X(t_j)\) of the stochastic process.  <a href="#a04cd1272eb69df6bdd610c6d2870d90f">More...</a><br /></td></tr>
 <tr class="separator:a04cd1272eb69df6bdd610c6d2870d90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a289f6d9608f850bae2543204e8b71ed4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a289f6d9608f850bae2543204e8b71ed4">getCurrentObservationIndex</a> ()</td></tr>
-<tr class="memdesc:a289f6d9608f850bae2543204e8b71ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the index \(j\) corresponding to the time.  <a href="#a289f6d9608f850bae2543204e8b71ed4">More...</a><br /></td></tr>
+<tr class="memitem:a289f6d9608f850bae2543204e8b71ed4"><td class="memItemLeft" align="right" valign="top"><a id="a289f6d9608f850bae2543204e8b71ed4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a289f6d9608f850bae2543204e8b71ed4">getCurrentObservationIndex</a> ()</td></tr>
+<tr class="memdesc:a289f6d9608f850bae2543204e8b71ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the index \(j\) corresponding to the time \(t_j\) of the last generated observation. <br /></td></tr>
 <tr class="separator:a289f6d9608f850bae2543204e8b71ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a468e2fa9272185dc05d5b97f6918185d"><td class="memItemLeft" align="right" valign="top"><a id="a468e2fa9272185dc05d5b97f6918185d"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html#a468e2fa9272185dc05d5b97f6918185d">getCurrentObservation</a> ()</td></tr>
@@ -187,10 +189,10 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
 <tr class="separator:af126c872f3e37dca269c50b9d8ffe5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract base class for a stochastic process \(\{X(t) : t \geq 0 \}\) sampled (or observed) at a finite number of time points, \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\). </p>
-<p>The observation times are usually all specified before generating a sample path. This can be done via <code>setObservationTimes</code>. The method <code>generatePath</code> generates \(X(t_1),\dots,X(t_d)\) and memorizes them in a vector, which can be recovered by <code>getPath</code>.</p>
+<div class="textblock"><p>Abstract base class for a stochastic process \(\{X(t) : t \geq0 \}\) sampled (or observed) at a finite number of time points, \(0 = t_0 &lt; t_1 &lt; \cdots&lt; t_d\). </p>
+<p>The observation times are usually all specified before generating a sample path. This can be done via <code>setObservationTimes</code>. The method <code>generatePath</code> generates \(X(t_1),…,X(t_d)\) and memorizes them in a vector, which can be recovered by <code>getPath</code>.</p>
 <p>Alternatively, for some types of processes, the observations \(X(t_j)\) can be generated sequentially, one at a time, by invoking <code>resetStartProcess</code> first, and then <code>nextObservation</code> repeatedly. For some types of processes, the observation times can be specified one by one as well, when generating the path. This may be convenient or even necessary if the observation times are random, for example.</p>
-<p><b>WARNING:</b> After having called the constructor for one of the subclass, it is important to set the observation times of the process, usually by calling <code>setObservationTimes</code>.</p>
+<p><b>WARNING: After having called the constructor for one of the subclass, one must always set the observation times of the process, by calling method <code>setObservationTimes</code> for example or otherwise.</b></p>
 <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5f751965d20c52022196ab40691cddd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f751965d20c52022196ab40691cddd4">&#9670;&nbsp;</a></span>generatePath()</h2>
@@ -215,7 +217,7 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
 </table>
 </div><div class="memdoc">
 
-<p>Generates, returns, and saves the sample path \(\{X(t_0), X(t_1), \dots, X(t_d)\}\). </p>
+<p>Generates, returns, and saves the sample path \(\{X(t_0), X(t_1), …, X(t_d)\}\). </p>
 <p>It can then be accessed via <code>getPath</code>, <code>getSubpath</code>, or <code>getObservation</code>. The generation method depends on the process type. </p>
 
 </div>
@@ -237,26 +239,6 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
 
 <p>Returns a reference to an array that maps an integer \(k\) to \(i_k\), the index of the observation \(S(t_{i_k})\) corresponding to the \(k\)-th observation to be generated for a sample path of this process. </p>
 <p>If this process is sampled sequentially, then this map is trivial (i.e. \(i_k = k\)). But it can be useful in a more general setting where the process is not sampled sequentially (for example, by a Brownian or gamma bridge) and one wants to know which observations of the current sample path were previously generated or will be generated next. </p>
-
-</div>
-</div>
-<a id="a289f6d9608f850bae2543204e8b71ed4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a289f6d9608f850bae2543204e8b71ed4">&#9670;&nbsp;</a></span>getCurrentObservationIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int getCurrentObservationIndex </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the value of the index \(j\) corresponding to the time. </p>
-<p>\(t_j\) of the last generated observation. </p>
 
 </div>
 </div>
@@ -296,8 +278,8 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
       </table>
 </div><div class="memdoc">
 
-<p>Returns a reference to the array that contains the observation times. </p>
-<p>\((t_0,…,t_d)\). <em>Warning</em>: This method should only be used to <em>read</em> the observation times. Changing the values in the array directly may have unexpected consequences. The method <code>setObservationTimes</code> should be used to modify the observation times. </p>
+<p>Returns a reference to the array that contains the observation times \((t_0,…,t_d)\). </p>
+<p><em>Warning</em>: This method should only be used to <em>read</em> the observation times. Changing the values in the array directly may have unexpected consequences. The method <code>setObservationTimes</code> should be used to modify the observation times. </p>
 
 </div>
 </div>
@@ -347,8 +329,8 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
       </table>
 </div><div class="memdoc">
 
-<p>Returns in <code>subpath</code> the values of the process at a subset of the observation times, specified as the times \(t_j\) whose indices. </p>
-<p>\(j\) are in the array <code>pathIndices</code>. The size of <code>pathIndices</code> should be at least as much as that of <code>subpath</code>. </p>
+<p>Returns in <code>subpath</code> the values of the process at a subset of the observation times, specified as the times \(t_j\) whose indices \(j\) are in the array <code>pathIndices</code>. </p>
+<p>The size of <code>pathIndices</code> should be at least as much as that of <code>subpath</code>. </p>
 
 </div>
 </div>
@@ -388,8 +370,7 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
 </div><div class="memdoc">
 
 <p>Generates and returns the next observation \(X(t_j)\) of the stochastic process. </p>
-<p>The processes are usually sampled <em>sequentially</em>, i.e. if the last observation generated was for time</p>
-<p>\(t_{j-1}\), the next observation returned will be for time \(t_j\). In some cases, subclasses extending this abstract class may use non-sequential sampling algorithms (such as bridge sampling). The order of generation of the \(t_j\)’s is then specified by the subclass. All the processes generated using principal components analysis (PCA) do not have this method. </p>
+<p>The processes are usually sampled <em>sequentially</em>, i.e. if the last observation generated was for time \(t_{j-1}\), the next observation returned will be for time \(t_j\). In some cases, subclasses extending this abstract class may use non-sequential sampling algorithms (such as bridge sampling). The order of generation of the \(t_j\)’s is then specified by the subclass. All the processes generated using principal components analysis (PCA) do not have this method. </p>
 
 </div>
 </div>
@@ -414,7 +395,7 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
 </div>
 </div>
 <a id="aa75a64a1f04fa1345cdbb6d646113d83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa75a64a1f04fa1345cdbb6d646113d83">&#9670;&nbsp;</a></span>setObservationTimes() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa75a64a1f04fa1345cdbb6d646113d83">&#9670;&nbsp;</a></span>setObservationTimes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,39 +420,8 @@ int []&#160;</td><td class="memItemRight" valign="bottom"><b>observationIndexFro
       </table>
 </div><div class="memdoc">
 
-<p>Sets the observation times of the process to a copy of <code>T</code>, with. </p>
-<p>\(t_0 =\) <code>T[0]</code> and \(t_d =\) <code>T[d]</code>. The size of <code>T</code> must be \(d+1\). </p>
-
-</div>
-</div>
-<a id="a16addb1d398fed90c06443dd618bab06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16addb1d398fed90c06443dd618bab06">&#9670;&nbsp;</a></span>setObservationTimes() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setObservationTimes </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>delta</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>d</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets equidistant observation times at \(t_j = j\delta\), for. </p>
-<p>\(j=0,\dots,d\), and <code>delta</code> = \(\delta\). </p>
+<p>Sets the observation times of the process to a copy of <code>T</code>, with \(t_0 =\) <code>T[0]</code> and \(t_d =\) <code>T[d]</code>. </p>
+<p>The size of <code>T</code> must be \(d+1\). </p>
 
 </div>
 </div>

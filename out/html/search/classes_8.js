@@ -19,6 +19,5 @@ var searchData=
   ['inversegaussianprocess',['InverseGaussianProcess',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html',1,'umontreal::ssj::stochprocess']]],
   ['inversegaussianprocessbridge',['InverseGaussianProcessBridge',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html',1,'umontreal::ssj::stochprocess']]],
   ['inversegaussianprocessmsh',['InverseGaussianProcessMSH',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html',1,'umontreal::ssj::stochprocess']]],
-  ['inversegaussianprocesspca',['InverseGaussianProcessPCA',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html',1,'umontreal::ssj::stochprocess']]],
-  ['ischart1',['ISChart1',['../classift6561examples_1_1ISChart1.html',1,'ift6561examples']]]
+  ['inversegaussianprocesspca',['InverseGaussianProcessPCA',['../classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html',1,'umontreal::ssj::stochprocess']]]
 ];

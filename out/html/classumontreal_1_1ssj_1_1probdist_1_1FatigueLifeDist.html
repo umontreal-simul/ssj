@@ -79,7 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>fatigue life</em> distribution <a class="el" href="citelist.html#CITEREF_tBIR69a">[20]</a>&thinsp; with location parameter \(\mu\), scale parameter \(\beta\) and shape parameter \(\gamma\).  
+<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>fatigue life</em> distribution <a class="el" href="citelist.html#CITEREF_tBIR69a">[19]</a>&thinsp; with location parameter \(\mu\), scale parameter \(\beta\) and shape parameter \(\gamma\).  
  <a href="classumontreal_1_1ssj_1_1probdist_1_1FatigueLifeDist.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for FatigueLifeDist:</div>
@@ -250,7 +250,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 <tr class="separator:a12eba7a93a9de6f26820487e25f0d6c5 inherit pro_static_attribs_classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>fatigue life</em> distribution <a class="el" href="citelist.html#CITEREF_tBIR69a">[20]</a>&thinsp; with location parameter \(\mu\), scale parameter \(\beta\) and shape parameter \(\gamma\). </p>
+<div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>fatigue life</em> distribution <a class="el" href="citelist.html#CITEREF_tBIR69a">[19]</a>&thinsp; with location parameter \(\mu\), scale parameter \(\beta\) and shape parameter \(\gamma\). </p>
 <p>Its density is <a class="anchor" id="REF_probdist_FatigueLifeDist_eq_fFatigueLife"></a> </p><p class="formulaDsp">
 \[ f(x) = \left[\frac{\sqrt{\frac{x - \mu}{\beta}} + \sqrt{\frac{\beta}{x - \mu}}}{2\gamma(x - \mu)}\right] \phi\left(\frac{\sqrt{\frac{x - \mu}{\beta}} - \sqrt{\frac{\beta}{x - \mu}}}{\gamma}\right), \qquad\mbox{for } x&gt;\mu, \tag{fFatigueLife} \]
 </p>
@@ -404,7 +404,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 </div><div class="memdoc">
 
 <p>Estimates the parameters ( \(\mu\), \(\beta\), \(\gamma\)) of the fatigue life distribution using the maximum likelihood method, from the \(n\) observations \(x[i]\), \(i = 0, 1,…, n-1\). </p>
-<p>The estimates are returned in a three-element array, in regular order: [ \(\mu\), \(\beta\), \(\gamma\)]. The estimate of the parameters is given by maximizing numerically the log-likelihood function, using the Uncmin package <a class="el" href="citelist.html#CITEREF_iSCHa">[200]</a>, <a class="el" href="citelist.html#CITEREF_iVERa">[222]</a>&thinsp;. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The estimates are returned in a three-element array, in regular order: [ \(\mu\), \(\beta\), \(\gamma\)]. The estimate of the parameters is given by maximizing numerically the log-likelihood function, using the Uncmin package <a class="el" href="citelist.html#CITEREF_iSCHa">[187]</a>, <a class="el" href="citelist.html#CITEREF_iVERa">[208]</a>&thinsp;. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the list of observations to use to evaluate parameters </td></tr>
     <tr><td class="paramname">n</td><td>the number of observations to use to evaluate parameters </td></tr>

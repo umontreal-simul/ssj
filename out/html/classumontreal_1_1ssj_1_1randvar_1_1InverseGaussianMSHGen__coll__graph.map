@@ -1,6 +1,6 @@
 <map id="InverseGaussianMSHGen" name="InverseGaussianMSHGen">
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1InverseGaussianGen.html" title="This class implements random variate generators for the inverse Gaussian distribution with location p..." alt="" coords="40,171,184,197"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="44,95,180,121"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="45,95,179,121"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="5,5,93,32"/>
 <area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="118,5,231,32"/>
 </map>

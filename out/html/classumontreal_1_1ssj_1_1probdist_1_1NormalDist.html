@@ -79,7 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>normal</em> distribution (e.g., <a class="el" href="citelist.html#CITEREF_tJOH95a">[97]</a>&thinsp; (page 80)).  
+<p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>normal</em> distribution (e.g., <a class="el" href="citelist.html#CITEREF_tJOH95a">[92]</a>&thinsp; (page 80)).  
  <a href="classumontreal_1_1ssj_1_1probdist_1_1NormalDist.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NormalDist:</div>
@@ -269,7 +269,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>decPrec</b> = 15</td><
 <tr class="separator:ab4b45727e1012124e9fbd10c50553fdb inherit pub_attribs_classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>normal</em> distribution (e.g., <a class="el" href="citelist.html#CITEREF_tJOH95a">[97]</a>&thinsp; (page 80)). </p>
+<div class="textblock"><p>Extends the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">ContinuousDistribution</a> for the <em>normal</em> distribution (e.g., <a class="el" href="citelist.html#CITEREF_tJOH95a">[92]</a>&thinsp; (page 80)). </p>
 <p>It has mean \(\mu\) and variance \(\sigma^2\). Its density function is <a class="anchor" id="REF_probdist_NormalDist_eq_fnormal"></a> </p><p class="formulaDsp">
 \[ f (x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/(2\sigma^2)} \qquad\mbox{for } -\infty&lt; x &lt; \infty, \tag{fnormal} \]
 </p>
@@ -348,7 +348,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>decPrec</b> = 15</td><
 </div><div class="memdoc">
 
 <p>Computes the complementary normal distribution function \(\bar{F}(x) = 1 - \Phi((x-\mu)/\sigma)\), with mean \(\mu\) and variance \(\sigma^2\). </p>
-<p>Uses a Chebyshev series giving 16 decimal digits of precision <a class="el" href="citelist.html#CITEREF_tSCH78a">[201]</a>&thinsp;. </p>
+<p>Uses a Chebyshev series giving 16 decimal digits of precision <a class="el" href="citelist.html#CITEREF_tSCH78a">[188]</a>&thinsp;. </p>
 
 </div>
 </div>
@@ -422,7 +422,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>decPrec</b> = 15</td><
 </div><div class="memdoc">
 
 <p>Computes the normal distribution function with mean \(\mu\) and variance \(\sigma^2\). </p>
-<p>Uses the Chebyshev approximation proposed in <a class="el" href="citelist.html#CITEREF_tSCH78a">[201]</a>&thinsp;, which gives 16 decimals of precision. </p>
+<p>Uses the Chebyshev approximation proposed in <a class="el" href="citelist.html#CITEREF_tSCH78a">[188]</a>&thinsp;, which gives 16 decimals of precision. </p>
 
 </div>
 </div>
@@ -548,7 +548,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>decPrec</b> = 15</td><
 <p>The estimates are returned in a two-element array, in regular order: [ \(\hat{\mu}\), \(\hat{\sigma}\)]. The maximum likelihood estimators are the values \((\hat{\mu}, \hat{\sigma})\) that satisfy the equations: </p><p class="formulaDsp">
 \begin{align*} \hat{\mu} &amp; = \bar{x}_n = \frac{1}{n} \sum_{i=1}^n x_i \\ \hat{\sigma} &amp; = \sqrt{\frac{1}{n} \sum_{i=1}^n (x_i - \bar{x}_n)^2}. \end{align*}
 </p>
-<p> See <a class="el" href="citelist.html#CITEREF_tJOH95a">[97]</a>&thinsp; (page 123). </p><dl class="params"><dt>Parameters</dt><dd>
+<p> See <a class="el" href="citelist.html#CITEREF_tJOH95a">[92]</a>&thinsp; (page 123). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the list of observations used to evaluate parameters </td></tr>
     <tr><td class="paramname">n</td><td>the number of observations used to evaluate parameters </td></tr>
@@ -729,7 +729,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>decPrec</b> = 15</td><
 </div><div class="memdoc">
 
 <p>Computes the inverse normal distribution function with mean \(\mu\) and variance \(\sigma^2\). </p>
-<p>Uses different rational Chebyshev approximations <a class="el" href="citelist.html#CITEREF_tBLA76a">[21]</a>&thinsp;. Returns 16 decimal digits of precision for \(2.2\times10^{-308} &lt; u &lt; 1\). </p>
+<p>Uses different rational Chebyshev approximations <a class="el" href="citelist.html#CITEREF_tBLA76a">[20]</a>&thinsp;. Returns 16 decimal digits of precision for \(2.2\times10^{-308} &lt; u &lt; 1\). </p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 <map id="SearcherKorobov" name="SearcherKorobov">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Searcher.html" title="This class implements searches to find the best lattices of rank 1, defined as follows  ..." alt="" coords="78,184,153,211"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="79,95,151,121"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Searcher.html" title="This class implements searches to find the best lattices of rank 1, defined as follows  ..." alt="" coords="89,184,163,211"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="90,95,162,121"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes. " alt="" coords="176,95,271,121"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes. " alt="" coords="187,95,281,121"/>
 </map>
