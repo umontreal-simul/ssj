@@ -1,0 +1,483 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.ysb33r.gradle:doxygen:0.3.2'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'c'
+    id 'org.ysb33r.doxygen' version '0.3.2'
+    id 'distribution'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.4'
+    id 'eclipse'
+}
+
+defaultTasks 'build'
+
+group = 'ca.umontreal.iro.simul'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = '3.3.0'
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile     group: 'jfree',             name: 'jfreechart',     version: '1.0.12'
+//  compile     group: 'org.jfree',         name: 'jfreechart',     version: '1.0.19'
+    compile     group: 'colt',              name: 'colt',           version: '1.2.0'
+    compile     group: 'com.github.rwl',    name: 'optimization',   version: '1.3'
+    compile     group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+    testCompile group: 'junit',             name: 'junit',          version: '4.+'
+}
+
+compileJava {
+    options.encoding="UTF-8"
+}
+
+bintray {
+    user = project.hasProperty('bintray.user') ? project.property('bintray.user') : System.getenv('BINTRAY_USER')
+    key  = project.hasProperty('bintray.key')  ? project.property('bintray.key')  : System.getenv('BINTRAY_KEY')
+    publications = ['maven']
+    pkg {
+        repo = 'maven'
+        name = 'ssj'
+        userOrg = 'umontreal-simul'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/umontreal-simul/ssj.git'
+        labels = [
+            'stochastic simulation',
+            'Monte Carlo',
+            'quasi-Monte Carlo',
+            'random number generators',
+            'probability distributions'
+        ]
+        publicDownloadNumbers = true
+        version {
+            name = project.version
+            desc = 'SSJ ' + project.version
+            vcsTag = 'v' + project.version
+            gpg {
+                sign = true
+            }
+            mavenCentralSync
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            repositories.jcenter()
+            from components.java
+
+            // NOTE: JNI libraries are added below with whenTaskAdded
+
+            // Add sources JAR
+            artifact sourceJar {
+                classifier "sources"
+            }
+
+            // Add docs JAR
+            artifact docsJar {
+                classifier "javadoc"
+            }
+
+            // Populate the pom file
+            pom.withXml {
+                asNode().appendNode('name', 'SSJ')
+                asNode().appendNode('description', 'Stochastic Simulation in Java')
+                asNode().appendNode('url', 'http://umontreal-simul.github.io/ssj/')
+                // organization
+                def n = asNode().appendNode('organization')
+                n.appendNode('name', 'DIRO of Université de Montréal')
+                n.appendNode('url', 'http://simul.iro.umontreal.ca')
+                // developers
+                n = asNode().appendNode('developers')
+                n = n.appendNode('developer')
+                n.appendNode('id', 'lecuyer')
+                n.appendNode('name', "Pierre L'Ecuyer")
+                n.appendNode('email', "lecuyer@iro.umontreal.ca")
+                n.appendNode('url', 'http://www.iro.umontreal.ca/~lecuyer')
+                n.appendNode('organization', 'DIRO of Université de Montréal')
+                n.appendNode('organizationUrl', 'http://diro.umontreal.ca')
+                // licences
+                n = asNode().appendNode('licenses')
+                n = n.appendNode('license')
+                n.appendNode('name', 'Apache-2.0')
+                n.appendNode('url', 'http://www.apache.org/licenses/LICENSE-2.0')
+                n.appendNode('distribution', 'repo')
+                // SCM
+                n = asNode().appendNode('scm')
+                n.appendNode('connection', 'https://github.com/umontreal-simul/ssj.git')
+                n.appendNode('developerConnection', 'scm:git:ssh://git@github.com/umontreal-simul/ssj.git')
+                n.appendNode('url', 'https://github.com/umontreal-simul/ssj')
+                n.appendNode('tag', 'HEAD')
+            }
+        }
+    }
+}
+
+
+// ****************************** DOCS ******************************
+
+doxygen {
+    generate_html true
+    outputDir new File("$buildDir/docs")
+
+    project_name "SSJ"
+    project_number project.version
+
+    source new File(projectDir, 'src/main/java')
+    source new File(projectDir, 'src/main/docs/examples/tutorial')
+    image_paths new File(projectDir, 'src/main/docs/images')
+ 
+    template 'src/main/docs/Doxyfile'
+}
+
+
+// ****************************** JNI ******************************
+
+task jniCopy(type: Copy) {
+    ext.destDir = new File(sourceSets.main.output.classesDir, 'jni')
+    into ext.destDir
+    duplicatesStrategy 'exclude'
+    doFirst {
+        ext.destDir.mkdirs()
+    }
+}
+
+def java_library_path = files()
+
+tasks.whenTaskAdded { task ->
+    // Catch the JNI tasks when they are created.
+    ['ssjutil', 'randvar'].each { lib ->
+
+        def Lib = lib.substring(0, 1).toUpperCase() + lib.substring(1);
+
+        // Compile tasks
+        if (task.name ==~ /compile${Lib}.*SharedLibrary${Lib}C/) {
+
+            // Add javah dependency to compilation.
+            task.inputs.files tasks["${lib}Javah"].outputs
+
+            // Add source files to source jar
+            tasks.sourceJar.from task.inputs.files
+        }
+
+        // Link tasks
+        if (task.name ==~ /link${Lib}.*SharedLibrary/) {
+
+            // Add JNI library to jar
+            tasks.jniCopy.from(task)
+
+            // Update library path for test task
+            java_library_path += files(task.outputs.files*.parent.unique())
+            project.test.systemProperty 'java.library.path', java_library_path.asPath
+            project.test.inputs.files task.outputs
+        }
+    }
+}
+
+[
+    ['ssjutil', 'util.GlobalCPUTimeChrono'],
+    ['randvar', 'randvar.RandUnuran'],
+].each { name, pack ->
+    task "${name}Javah"(dependsOn: classes) {
+
+        ext.outputDir = file("$buildDir/javah")
+        def className = "umontreal.ssj.$pack"
+        def classFile = className.replaceAll('\\.', '/') + '.class'
+        def outputFile = "${ext.outputDir}/" + className.replaceAll('\\.', '_') + '.h'
+
+        inputs.file sourceSets.main.output.asFileTree.matching {
+            include classFile
+        }
+        outputs.file outputFile
+
+        doFirst {
+            ext.outputDir.mkdirs()
+        }
+
+        doLast {
+            ant.javah(
+                class:      className,
+                outputFile: outputFile,
+                classpath:  sourceSets.main.runtimeClasspath.asPath)
+        }
+    }
+}
+
+model {
+
+    buildTypes {
+        release
+    }
+
+    platforms {
+        win32 {
+            architecture 'x86'
+            operatingSystem 'windows'
+        }
+        linux64 {
+            architecture 'x86_64'
+            operatingSystem 'linux'
+        }
+    }
+
+    toolChains {
+        visualCpp(VisualCpp)
+        gcc(Gcc)
+        clang(Clang)
+        mingw(Gcc) { // useful for cross-compiling
+            target 'win32'
+            eachPlatform {
+                cCompiler.executable = 'x86_64-w64-mingw32-gcc'
+                linker.executable = 'x86_64-w64-mingw32-gcc'
+            }
+        }
+    }
+
+    components {
+        if (project.hasProperty("ssjutil.jni.build")) {
+
+            // util JNI
+            ssjutil(NativeLibrarySpec) {
+
+                if (project.hasProperty('crossCompile')) { // from gradle.properties
+                    targetPlatform 'win32'
+                    targetPlatform 'linux64'
+                }
+
+                binaries {
+                    withType(StaticLibraryBinarySpec) {
+                        buildable = false
+                    }
+                }
+
+                binaries {
+                    withType(SharedLibraryBinarySpec) {
+                        def javaHome = ant.properties['java.home']
+                        def javah = project.ssjutilJavah
+                        if (toolChain in Gcc || toolChain in Clang) {
+                            cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                        }
+                    }
+                }
+            }
+        }
+        if (project.hasProperty("randvar.jni.build")) {
+
+            // randvar JNI
+            randvar(NativeLibrarySpec) {
+
+                if (project.hasProperty('crossCompile')) { // from gradle.properties
+                    targetPlatform 'win32'
+                    targetPlatform 'linux64'
+                }
+
+                binaries {
+                    withType(StaticLibraryBinarySpec) {
+                        buildable = false
+                    }
+                }
+
+                binaries {
+                    withType(SharedLibraryBinarySpec) {
+                        def javaHome = ant.properties['java.home']
+                        def javah = project.randvarJavah
+
+                        // resolve UNU.RAN installation path
+                        def unuran_prefix = null;
+                        def propName = "unuran.prefix.${targetPlatform.name}"
+                        if (project.hasProperty(propName))
+                            unuran_prefix = project.properties[propName];
+                        else {
+                            logger.info "Property `${propName}` undefined."
+                            if (project.hasProperty('unuran.prefix')) {
+                                logger.info "Property `$propName` undefined; defaulting to the value of `unuran.prefix`"
+                                unuran_prefix = project.properties['unuran.prefix'];
+                            }
+                        }
+
+                        if (toolChain in Gcc || toolChain in Clang) {
+                            if (unuran_prefix) {
+                                cCompiler.args "-I${unuran_prefix}/include"
+                                linker.args "-L${unuran_prefix}/lib"
+                            }
+                            cCompiler.args "-Wall", "-O2", "-I${javah.outputDir}", "-I${javaHome}/../include", "-I${javaHome}/../include/linux"
+                            linker.args "-lunuran"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ****************************** DATA ******************************
+
+// generated data files in rng
+task dataRng(type: JavaExec) {
+
+    main 'umontreal.ssj.rng.GenF2w32'
+    classpath sourceSets.main.runtimeClasspath
+
+    def outputFile = file(sourceSets.main.output.classesDir.path + '/' + main.replaceAll('\\.', '/') + '.dat')
+    ext.outputDir = file(outputFile.parent)
+
+    inputs.file sourceSets.main.output.asFileTree.matching {
+        include main.replaceAll('\\.', '/') + '.class'
+    }
+    outputs.file outputFile
+
+    args outputFile
+}
+
+// generated data files in hups
+task dataHups(type: Copy) {
+    from sourceSets.main.allSource.asFileTree.matching {
+        include '**/hups/dataSer/**/*.ser'
+        include '**/hups/dataLFSR/**/*.dat'
+    }
+    into sourceSets.main.output.classesDir
+}
+
+// data meta-task
+task data(dependsOn: [dataRng, dataHups]) {
+    description 'Generates the data files.'
+}
+
+
+// ****************************** TEST ******************************
+
+sourceSets {
+    test {
+        java {
+            srcDir 'src/main/docs/examples'
+            exclude 'markovchainrqmc/**' // FIXME: broken examples
+            exclude 'ift6561examples/**'
+            exclude 'latnetbuilder/**'  // Not yet ready.
+            exclude 'umontreal.ssj.latnetbuilder/LatNetBuilderTest.java'  
+            exclude 'tutorial/Collision.java'
+        }
+    }
+}
+
+test {
+    dependsOn data, jniCopy
+    ignoreFailures = true
+    useJUnit()
+    workingDir = file(sourceSets.test.java.srcDirs[-1].path)
+    exclude 'ExamplesTest.class'
+    if (!project.hasProperty('ssjutil.jni.build'))
+        exclude 'ChronoTest.class'
+    if (!project.hasProperty('randvar.jni.build'))
+        exclude 'UnuranTest.class'
+}
+
+task examples(type: Test) {
+    ignoreFailures = true
+    description 'Runs the example programs.'
+    outputs.upToDateWhen { false }
+    dependsOn data, compileTestJava
+    useJUnit()
+    workingDir = temporaryDir
+    include 'ExamplesTest.class'
+    doFirst {
+        workingDir.mkdir()
+    }
+}
+
+
+// ****************************** JAR ******************************
+
+jar {
+    dependsOn data, jniCopy
+    manifest {
+        attributes(
+            "Extension-Name":           "SSJ",
+            "Specification-Title":      "Stochastic Simulation in Java",
+            "Specification-Version":    version,
+            "Specification-Vendor":     "DIRO of the Université de Montréal",
+            "Implementation-Title":     "SSJ",
+            "Implementation-Version":   version,
+            "Implementation-Vendor":    "DIRO of the Université de Montréal",
+            "Class-Path":               configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
+    metaInf {
+        from('.') {
+            include 'LICENSE.md'
+            include 'NOTICE'
+        }
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    metaInf {
+        from('.') {
+            include 'LICENSE.md'
+            include 'NOTICE'
+        }
+    }
+}
+
+task docsJar(type: Jar) {
+    from doxygen
+}
+
+
+// ****************************** DISTRIBUTION ******************************
+
+distributions {
+    main {
+        contents {
+            into('lib') {
+                from(jar)
+                from(configurations.runtime)
+            }
+            into('doc') {
+                if (project.hasProperty('buildDocs')) {
+                    from(doxygen) {
+                        include 'html/**'
+                    }
+                }
+                from('src/main/docs') {
+                    include 'examples/**'
+                }
+                from('.') {
+                    include 'README.md'
+                    include 'LICENSE.md'
+                    include 'NOTICE'
+                }
+            }
+            // Contents is also included in the JNI section above,
+            // with `tasks.whenTaskAdded`
+        }
+    }
+}
+distTar.compression = 'bzip2'
+distTar.extension = 'tar.bz2'
+
+
+// ****************************** WRAPPER ******************************
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.9'
+}
+
+task showClasspath(dependsOn: configurations.runtime) << {
+    println sourceSets.main.runtimeClasspath.asPath
+}
