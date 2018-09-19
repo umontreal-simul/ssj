@@ -28,8 +28,7 @@ public class PgfDataTable {
 	 * @param tableName    Name (descriptor) of the table.
 	 * @param tableLabel   A label (very short name) for the table, to be used in plots to identify curves.
 	 * @param fields       The names of the fields (the variables).
-	 * @param data         The data points; the array @ref data[s] contains observation s.
-	 * @return the table as a string.
+	 * @param data         The data points; the entry `data[s]` contains observation s.
 	 */
 	public PgfDataTable (String tableName, String tableLabel, String[] fields, double[][] data) {
 		super();
@@ -42,11 +41,11 @@ public class PgfDataTable {
 	}
 
 	/**
-	 * Formats the full table as a String, with the field names in the first row, 
+	 * Formats the full table as a `String`, with the field names in the first row, 
 	 * and the data points (observations) in the following rows.
-     * This format can be used directly by the pgfplot package.
+     * This format can be used directly by the pgfplot package in Latex.
 	 * 
-	 * @return the table as a string.
+	 * @return the table as a `String`.
 	 */
 	public String formatTable() {
 		StringBuffer sb = new StringBuffer("");
@@ -63,12 +62,13 @@ public class PgfDataTable {
 	}
 
 	/**
-	 * Similar to @ref formatTable, but retains only two selected columns of the table 
-	 * (i.e., two selected fields), specified by j1 and j2.  Note that the fields are numbered from 0.
+	 * Similar to `formatTable`, but retains only two selected columns of the table 
+	 * (i.e., two selected fields), specified by `j1` and `j2`.  
+	 * Note that the fields are numbered from 0.
 	 * 
-	 * @param j1 first selected field.
-	 * @param j2 second selected field.
-	 * @return the table as a string.
+	 * @param `j1` first selected field.
+	 * @param `j2` second selected field.
+	 * @return the table as a `String`.
 	 */
 	public String formatTableTwoFields (int j1, int j2) {
 		StringBuffer sb = new StringBuffer("");
@@ -80,13 +80,14 @@ public class PgfDataTable {
 	}
 
 	/**
-	 * Similar to @ref formatTableTwoFields, but outputs complete LaTeX code in an appropriate format
-	 * that adds a curve of the field j2 against field j1 with the pgfplot package.
+	 * Similar to `formatTableTwoFields`, but outputs complete LaTeX code in an appropriate format
+	 * that adds a curve of the field `j2` against field `j1` with the pgfplot package.
 	 * 
-	 * @param j1 first selected field.
-	 * @param j2 second selected field.
-	 * @param  plotoptions  is used to specify the options of addplot: <tt>addplot[plotoptions]</tt>
-	 * @return LaTeX code as a string.
+	 * @param `j1` number of first selected field.
+	 * @param `j2` number of second selected field.
+	 * @param  plotoptions  is used to specify the options of addplot in the pgfplot package:
+	 *  <tt>addplot[plotoptions]</tt>
+	 * @return LaTeX code as a `String`.
 	 */
 	public String formatPgfCurveAddPlot (int j1, int j2, String plotoptions) {
 		StringBuffer sb = new StringBuffer("");
@@ -100,6 +101,15 @@ public class PgfDataTable {
 	}
 
 
+	/**
+	 * In this version, the two fields are specified by their names in the table.
+	 * 
+	 * @param `xaxis` first selected field.
+	 * @param `yaxis` second selected field.
+	 * @param  plotoptions  is used to specify the options of addplot in the pgfplot package:
+	 *  <tt>addplot[plotoptions]</tt>
+	 * @return LaTeX code as a `String`.
+	 */
 	public String formatPgfCurveAddPlot (String xaxis, String yaxis, String plotoptions) {
 		int j1 = Arrays.asList(fields).indexOf(xaxis);
 		int j2 = Arrays.asList(fields).indexOf(yaxis);
@@ -108,8 +118,8 @@ public class PgfDataTable {
 
 
 	/**
-	 * Returns a string that contains a complete tikzpicture for the pgfplot package,
-	 * showing the field j2 against field j1.  
+	 * Returns a `String` that contains a complete `tikzpicture` for the `pgfplot` package,
+	 * showing the field `j2` against field `j1`.  
 	 * 
 	 * @param  title  is the title of the plot.
 	 * @param j1 first selected field.
@@ -127,6 +137,9 @@ public class PgfDataTable {
 	}
 	
 	
+	/**
+	 * Similar to the previous one.  
+	 */
 	public String drawPgfPlotSingleCurve (String title, String axistype, int j1, int j2, 
 			   int logbasis, String axisoptions, String plotoptions) {
 		StringBuffer sb = new StringBuffer("");
