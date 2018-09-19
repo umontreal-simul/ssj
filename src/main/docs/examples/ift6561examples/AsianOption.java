@@ -47,13 +47,11 @@ public class AsianOption implements MonteCarloModelDouble {
 
 	StochasticProcess priceProcess; // Underlying process for the price.
 	int d; // Number of observation times.
-	double[] obsTimes; // Observation times.
+	double[] obsTimes; // obsTimes[0..d] must contain obsTimes[0]=0.0,
+	                   // plus the d positive observation times.	
 	double[] path; // Sample path of the process.
 	double strike; // Strike price.
 	double discount; // Discount factor exp(-r * obsTimes[t]).
-
-	// Array obsTimes[0..d] must contain obsTimes[0]=0.0,
-	// plus the d observation times.
 
 	/**
 	 * Array <TT>obsTimes[0..d+1]</TT> must contain <TT>obsTimes[0] = 0</TT>,
@@ -69,7 +67,7 @@ public class AsianOption implements MonteCarloModelDouble {
 		discount = Math.exp(-r * obsTimes[d]);
 	}
 
-
+    // This constructor also specifies the underlying process.
 	public AsianOption(StochasticProcess sp, double r, int d,
 			double[] obsTimes, double strike) {
 		this(r, d, obsTimes, strike);
@@ -103,8 +101,6 @@ public class AsianOption implements MonteCarloModelDouble {
 	 * Computes and returns discounted payoff. Assumes path has been generated.
 	 */
 	public double getPerformance() {
-		// Computes and returns discounted payoff. Assumes path has been
-		// generated.
 		double average = 0.0; // Average over sample path.
 		for (int j = 1; j <= d; j++)
 			average += path[j];
@@ -130,21 +126,8 @@ public class AsianOption implements MonteCarloModelDouble {
 	 */
 	public void simulate(RandomStream stream) {
 		path = priceProcess.generatePath(stream);
-		// Note: We cannot generate RQMC points here and call 
+		// Note: We cannot pre-generate RQMC points here and call 
 		// generatePath(points), because not defined for all process types.
-	}
-
-	/**
-	 * Performs <SPAN CLASS="MATH"><I>n</I></SPAN> independent runs using
-	 * <TT>stream</TT> and collects statistics in <TT>statValue</TT>.
-	 */
-	public void simulateRuns(int n, RandomStream stream, Tally statValue) {
-		statValue.init();
-		for (int i = 0; i < n; i++) {
-			simulate(stream);
-			statValue.add(getPerformance());
-			stream.resetNextSubstream();
-		}
 	}
 
 	/**
@@ -171,30 +154,4 @@ public class AsianOption implements MonteCarloModelDouble {
 		return "Asian option model with " + d + " observation times";
 	}
 
-//	
-//	// This is just for testing .... with a GBM process.
-//	public static void main(String[] args) {
-//		int d = 12;
-//		double[] obsTimes = new double[d + 1];
-//		obsTimes[0] = 0.0;
-//		for (int j = 1; j <= d; j++)
-//			obsTimes[j] = (double) j / (double) d;
-//		AsianOption asian = new AsianOption(0.05, d, obsTimes, 100.0);
-//		// AsianOption asian = new AsianOption(0.05, d, 1.0/12.0, 1.0, 100.0);
-//		NormalGen gen = new NormalGen(new MRG32k3a());
-//		GeometricBrownianMotion sp = new GeometricBrownianMotion(100.0, 0.05,
-//				0.5, new BrownianMotion(0, 0, 1, gen));
-//		asian.setProcess(sp);
-//
-//		Tally statValue = new Tally("Stats on value of Asian option");
-//
-//		int n = 1000000;
-//		Chrono timer = new Chrono();
-//		asian.simulateRuns(n, new MRG32k3a(), statValue);
-//		statValue.setConfidenceIntervalStudent();
-//		System.out.println(asian.toString());
-//		System.out.println(statValue.report(0.95, 4));
-//		System.out.printf("Var. per run: %9.4g%n", statValue.variance() * n);
-//		System.out.println("Total CPU time:      " + timer.format() + "\n");
-//	}
 }
