@@ -37,15 +37,15 @@ import umontreal.ssj.randvar.*;
  * on. If the process has already been sampled at times @f$t_i < t_k@f$ but
  * not in between, the next sampling point in that interval will be @f$t_j@f$
  * where @f$j = \lfloor(i + k)/2 \rfloor@f$. For example, if the sampling
- * times used are @f$\{t_0, t_1, t_2, t_3, t_4, t_5\}@f$, then the
+ * times used are \{@f$t_0, t_1, t_2, t_3, t_4, t_5@f$\}, then the
  * observations are generated in the following order: @f$X(t_5)@f$,
  * @f$X(t_2)@f$, @f$X(t_1)@f$, @f$X(t_3)@f$, @f$X(t_4)@f$.
  *
  * *Warning*: Both the `generatePath` and the `nextObservation` methods from
  * @ref umontreal.ssj.stochprocess.BrownianMotion are modified to use the
  * bridge method.
- * @remark **From Pierre:** Not sure if we should keep the `nextObservation`
- * methods here.  Normally, one should use `generatePath`.
+ * @remark **Pierre:** We should probably remove the `nextObservation`
+ * methods from here.
  *
  *  In the case of `nextObservation`, the user should understand that the
  * observations returned are *not* ordered chronologically. However they will

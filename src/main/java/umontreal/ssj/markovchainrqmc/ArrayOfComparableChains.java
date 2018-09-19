@@ -507,4 +507,5 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
 			return LeastSquares.calcCoefficients (x2, y2, 1)[1];
 		}
 	}
+	
 }

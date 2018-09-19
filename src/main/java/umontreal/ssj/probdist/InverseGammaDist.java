@@ -28,8 +28,7 @@ import umontreal.ssj.util.Num;
 /**
  * Extends the class  @ref ContinuousDistribution for the *inverse gamma*
  * distribution with shape parameter @f$\alpha> 0@f$ and scale parameter
- * @f$\beta> 0@f$, also known as the *Pearson type V* distribution. 
- * The density function is given by
+ * @f$\beta> 0@f$. The density function is given by
  * @anchor REF_probdist_InverseGammaDist_eq_dinvgam
  * @f[
  *   f(x) = \left\{\begin{array}{ll}

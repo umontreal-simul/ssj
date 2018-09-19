@@ -1,4 +1,0 @@
-<map id="EmpiricalDist" name="EmpiricalDist">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistribution.html" title="This class implements discrete distributions over a finite set of real numbers (also over integers as..." alt="" coords="5,80,143,107"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="30,5,118,32"/>
-</map>
