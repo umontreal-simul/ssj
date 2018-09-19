@@ -100,7 +100,7 @@ public class PoissonDist extends DiscreteDistributionInt {
 
    public double cdf (int x) {
       double Sum = 0.0;
-      // int j;
+      int j;
 
       if (x < 0)
          return 0.0;

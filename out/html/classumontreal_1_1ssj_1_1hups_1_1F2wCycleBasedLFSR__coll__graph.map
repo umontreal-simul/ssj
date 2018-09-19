@@ -1,6 +1,0 @@
-<map id="F2wCycleBasedLFSR" name="F2wCycleBasedLFSR">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2.html" title="Similar to CycleBasedPointSet, except that the successive values in the cycles are stored as integers..." alt="" coords="5,247,185,273"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="24,171,167,197"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="59,95,131,121"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="39,5,152,32"/>
-</map>

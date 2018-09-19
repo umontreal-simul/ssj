@@ -1,0 +1,7 @@
+REPORT on Tally stat. collector ==> Stats on value of Asian option
+    num. obs.      min          max        average     standard dev.
+    100000        0.000      386.378       13.119       22.696
+  95.0% confidence interval for mean (student): (    12.978,    13.260 )
+
+Total CPU time:      0:0:0.19
+

@@ -8,25 +8,27 @@ import umontreal.ssj.hups.*;
 
 /**
  * This class defines a generic Markov chain and provides basic tools to
- * simulate it for a given number of steps or until it stops, and to recover the
+ * simulate it for a given number of steps or until it stops and recover the
  * performance measure. Chains can be cloned, so one can simulate many
  * replicates in parallel.
+ *
  * In a concrete subclass, it suffices to implement the three abstract
  * methods  {@link umontreal.ssj.markovchain.MarkovChain.initialState()
  * initialState()},
  * {@link umontreal.ssj.markovchain.MarkovChain.nextStep(RandomStream)
  * nextStep(stream)} and
  * {@link umontreal.ssj.markovchain.MarkovChain.getPerformance()
- * getPerformance()} to get things going.  One would usually 
+ * getPerformance()} to get things going. Though it is recommended to
  * implement subclasses of  @ref MarkovChainComparable or
- * @ref MarkovChainDouble rather than direct subclasses of `MarkovChain`.
- * Some other methods are then needed.
- * It is also *essential* to override the method  `clone`, if the class
+ * @ref MarkovChainDouble rather than directly from this class. Some other
+ * methods are then needed.
+ *
+ * Also, it is VERY IMPORTANT to override the method  #clone, if the class
  * contains non primitive objects, in order to clone these objects.
  *
- * The methods in this class permit one to simulate the chain over a certain number of steps
- * via Monte Carlo or randomized quasi-Monte Carlo.  Statistics on
- * the performance measure of the chain are computed during these simulations.
+ * Methods of this class simulates the chain over a certain number of steps
+ * using Monte Carlo methods or randomized quasi-Monte Carlo. Statistics for
+ * the performance mesure of the chain are computed during these simulations.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */

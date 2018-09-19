@@ -56,7 +56,7 @@ public class MultiDimComparator<T extends MultiDimComparable<? super T>>
     *  @param o2           second object to compare
     */
    public int compare (T o1, T o2) {
-      if (compareDim >= o1.getStateDimension() || compareDim >= o2.getStateDimension())
+      if (compareDim >= o1.dimension() || compareDim >= o2.dimension())
          throw new IllegalArgumentException("Comparing in a "+
                     "dimension larger than object dimension");
       return o1.compareTo (o2, compareDim);

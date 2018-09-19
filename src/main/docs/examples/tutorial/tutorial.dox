@@ -1,257 +1,393 @@
 /**
- * @page examples  SSJ introduction and tutorial by examples
+ * @page examples Tutorial
+ * 
+ * SSJ introduction and tutorial by example.
+ * 
+ * 
  * 
  * 
  * @section REF_examples_sec_01 Introduction
  * 
  * 
- * This document provides an introduction to SSJ via a series of examples.
- * We first give a brief overview of some basic facilities to generate random
- * numbers, handle probability distributions, collect statistics, and manage event lists,
- * for example. 
- * An overview of how SSJ is organized in various inter-related packages can be found
- * on the main page, in the  @ref REF_0_sec_01 Section.
- * Our series of examples start with elementary Monte Carlo experiments
- * in which we show how to generate random variates to simulate a model,
- * collect statistics, and make some plots from the results.
- * We show how to generate vectors from multivariate distributions and stochastic processes, 
- * and how the random numbers can be replaced by randomized quasi-Monte Carlo points.
- * Later, we provide more elaborate examples of discrete-event simulations.
- * The Java code of all the examples is available with the SSJ source code in the
- * @ref  src/main/java/tutorial/  directory.
+ * The aim of this document is to provide an introduction to SSJ via a brief
+ * overview and a series of examples. The examples are collected in three
+ * groups:
  *
- * While studying the examples, one can refer to the functional
- * definitions (the APIs) of the SSJ classes.
- * Before that, we recommand looking at the short overview of the different packages
- * in the @ref REF_0_sec_01 on the main page, then the overview given below, 
- * and perhaps the overview of each package given at the beginning 
- * of its documentation, to have a general idea of what is available and where.
+ * <ul><li>
+ * those that need no event or process scheduling;
+ * </li>
+ * <li>
+ * those based on the discrete-event simulation paradigm and implemented with
+ * an *event view* using the package `simevents`.
+ * </li>
+ * </ul>
+ *
+ *  Sections&nbsp; @ref REF_examples_sec_simple to
+ * @ref REF_examples_sec_event of this guide correspond to these three
+ * groups. Some examples (e.g., the single-server queue) are carried across
+ * two or three sections to illustrate different ways of implementing the
+ * same model. The Java code of all these examples is available on-line from
+ * the SSJ web page (just type “SSJ iro” in Google).
+ *
+ * While studying the examples, the reader can refer to the functional
+ * definitions (the APIs) of the SSJ classes and methods in the guides of the
+ * corresponding packages. Each package in SSJ has its own user’s guide in
+ * the form of a `.pdf` document that contains the detailed API and complete
+ * documentation, and starts with an overview of one or two pages. We
+ * strongly recommend reading each of these overviews. We also recommend to
+ * refer to the `.pdf` versions of the guides, because they contain a more
+ * detailed and complete documentation than the `.html` versions, which are
+ * better suited for quick on-line referencing for those who are already
+ * familiar with SSJ.
+ *
+ * In Section&nbsp; @ref REF_examples_sec_queue, we start with a very simple
+ * classical example: a single queue. We give different variants of this
+ * example, illustrating the mixture of processes and events. In
+ * Section&nbsp; @ref REF_examples_sec_preypred, we give a small example of a
+ * deterministic continuous simulation. In Sections&nbsp;
+ * @ref REF_examples_sec_jobshop and  @ref REF_examples_sec_timeshared, we
+ * give examples of a job shop model and a time-shared computer model,
+ * adapted from @cite sLAW00a&thinsp;. A queuing model of a bank, taken from
+ * @cite sBRA87a&thinsp;, is programmed in Section&nbsp;
+ * @ref REF_examples_sec_bank, with both the process and event views. In
+ * Section&nbsp; @ref REF_examples_sec_visits, we simulate a model of guided
+ * tours for groups of people, where the process synchronization is slightly
+ * more complicated than for the earlier models. In Section&nbsp;
+ * @ref REF_examples_sec_ingots, we give an example of a mixed
+ * discrete-continuous simulation. In Section&nbsp;
+ * @ref REF_examples_sec_robot, we give a more elaborate example, for a model
+ * discussed in @cite sLEC91a&thinsp;, where a robot maintains a series of
+ * machines subject to random failures. It illustrates the idea of modular
+ * design.
  * 
  * 
- * **************************************************************************************************
- * 
- * @section REF_examples_sec_overview  Quick Overview of Some Key Packages
- * 
- * @subsection REF_examples_sec_random   Random number and variate generation
+ * @section REF_examples_sec_02 Overview of SSJ
  * 
  * 
- * Random numbers feed simulation models and Monte Carlo experiments.
- * To simulate random variables from a given probability distribution, 
- * one typically starts from independent uniform random numbers, uniformly distributed over the
- * interval @f$[0,1)@f$, and transform these numbers appropriately to obtain the 
- * desired distribution. 
- * The so-called *uniform random numbers* produced by SSJ and other simulation software
- * are of course *not* truly random and independent. They are only imitations produced by 
- * deterministic mathematical algorithms, and are sometimes called *pseudorandom*.
- * Nevertheless, they are very good imitations from a statistical viewpoint,
- * and we follow the common usage in the simulation community of just 
- * calling them random numbers @cite sLAW14a, @cite rLEC90a, @cite rLEC17h.
- * An important consequence of the deterministic nature of these algorithmic 
- * random number generators (RNGs) is that if you run the same simulation program several times, 
- * unless you reset the seed of the RNG, you will get exactly the same results each time.
- * This is really not like throwing a dice or flipping a coin, but 
- * this behavior is actually desirable.
- * The ability to reproduce Monte Carlo experiments with exactly the same 
- * random numbers is a key advantage (and requirement) in modern simulation software
- * @cite sLAW14a, @cite rLEC12a, @cite rLEC15a, @cite rLEC17h, @cite rLEC17p.  
+ * SSJ is an organized set of packages whose purpose is to facilitate
+ * stochastic simulation programming in the Java language. The facilities
+ * offered are grouped into different packages, each one having its own
+ * user’s guide as a `.pdf` file. This is the official documentation. There
+ * is also a simplified on-line documentation in HTML format, produced via
+ * `javadoc`. Early descriptions of SSJ are given in @cite sLEC02a,
+ * @cite sLEC05a&thinsp;. Some of the tools can also be used for modeling
+ * (e.g., selecting and fitting distributions). SSJ is still growing
+ * actively. New packages, classes, and methods will be added in forthcoming
+ * years and others will be refined.
+ *
+ * The packages currently offered are the following:
+ *
+ *   @ref umontreal.ssj.util contains utility classes used in the
+ * implementation of SSJ, and which are often useful elsewhere. For example,
+ * there are timers (for CPU usage), utilities to read or format numbers and
+ * arrays from/to text, operations on binary vectors and matrices, some
+ * mathematical functions and constants, root-finding tools, facilities for
+ * SQL database interface, and so on.
+ *
+ *  @ref umontreal.ssj.probdist contains a set of Java classes providing
+ * methods to compute mass, density, distribution, complementary
+ * distribution, and inverse distribution functions for many discrete and
+ * continuous probability distributions, as well as estimating the parameters
+ * of these distributions.
+ *
+ *  @ref umontreal.ssj.probdistmulti contains a set of Java classes providing
+ * methods to compute mass, density, distribution, complementary
+ * distribution, for some multi-dimensionnal discrete and continuous
+ * probability distributions.
+ *
+ *  @ref umontreal.ssj.rng provides facilities for generating uniform random
+ * numbers over the interval @f$(0,1)@f$, or over a given range of integer
+ * values, and other types of simple random objects such as random
+ * permutations.
+ *
+ *  @ref umontreal.ssj.hups provides classes implementing highly uniform
+ * point sets and sequences (HUPS), also called low-discrepancy sets and
+ * sequences, and tools for their randomization.
+ *
+ *  @ref umontreal.ssj.randvar provides a collection of classes for
+ * non-uniform random variate generation, primarily from standard
+ * distributions.
+ *
+ *  @ref umontreal.ssj.randvarmulti provides a collection of classes for
+ * random number generators for some multi-dimensional distributions.
+ *
+ *  @ref umontreal.ssj.gof contains tools for performing univariate
+ * goodness-of-fit (GOF) statistical tests.
+ *
+ *  @ref umontreal.ssj.stat provides elementary tools for collecting
+ * statistics and computing confidence intervals.
+ *
+ *  @ref umontreal.ssj.stat.list this subpackage of `stat` provides support
+ * to manage lists of statistical collectors.
+ *
+ *  @ref umontreal.ssj.simevents provides and manages the event-driven
+ * simulation facilities as well as the simulation clock. Can manage several
+ * simulations in parallel, in the same program.
+ *
+ *  @ref umontreal.ssj.simevents.eventlist this subpackage of `simevents`
+ * offers several kinds of event list implementations.
+ *
+ *  @ref umontreal.ssj.functions contains classes that allow one to pass an
+ * arbitrary function of one variable as argument to a method and to apply
+ * elementary mathematical operations on generic functions.
+ *
+ *  @ref umontreal.ssj.functionfit provides basic facilities for curve
+ * fitting and interpolation with polynomials.
+ *
+ *  @ref umontreal.ssj.charts provides tools for easy construction,
+ * visualization, and customization of @f$xy@f$ plots, histograms, and
+ * empirical styled charts from a Java program.
+ *
+ *  @ref umontreal.ssj.stochprocess implements different kinds of stochastic
+ * processes.
  * 
  * 
- * The selection of an RNG is based on several
+ * @subsection REF_examples_sec_03 Dependence on other libraries
+ * 
+ * 
+ * SSJ uses some classes from other free Java libraries.
+ *
+ * The [Colt library](http://acs.lbl.gov/software/colt/)
+ * , developed at the Centre Européen de Recherche Nucléaire (CERN) in Geneva
+ * @cite iHOS04a&thinsp;, is a large library that provides a wide range of
+ * facilities for high performance scientific and technical computing in
+ * Java. SSJ uses the class  DoubleArrayList from Colt in a few of its
+ * classes, namely in packages  @ref umontreal.ssj.stat and
+ * @ref umontreal.ssj.hups. The reason is that this class provides a very
+ * efficient and convenient implementation of an (automatically) extensible
+ * array of <tt>double</tt>, together with several methods for computing
+ * statistics for the observations stored in the array (see, e.g.,
+ * <tt>Descriptive</tt>). The Colt library is distributed with the SSJ
+ * package as **colt.jar**. It must be added in the CLASSPATH environment
+ * variable.
+ *
+ * The <strong>linear_algebra</strong> library is based on public domain
+ * LINPACK routines. They were translated from Fortran to Java by Steve
+ * Verrill at the USDA Forest Products Laboratory Madison, Wisconsin, USA.
+ * The optimization package of Steve Verrill includes Java translations of
+ * the [MINPACK](http://simul.iro.umontreal.ca/Uncmin_f77/Minpack_f77.html)
+ *  routines @cite iMOR80a&thinsp; for nonlinear least squares problems as
+ * well as [UNCMIN](http://simul.iro.umontreal.ca/Uncmin_f77/Uncmin_f77.html)
+ *  routines @cite iSCHa&thinsp; for unconstrained optimization. They were
+ * translated from Fortran to Java by Steve Verrill and are in the public
+ * domain. They are included in the SSJ distribution as the
+ * **optimization.jar** archive. It is used only in the `probdist` package to
+ * compute maximum likelihood estimators.
+ *
+ * [JFreeChart](http://www.jfree.org/jfreechart/index.html)
+ *  is a free Java library that can generate a wide variety of charts and
+ * plots for use in applications, applets and servlets. **JFreeChart**
+ * currently supports, amongst others, bar charts, pie charts, line charts,
+ * XY-plots, histograms, scatter plots and time series plots. It is
+ * distributed with SSJ as **jfreechart-*.jar**.
+ * [JCommon](http://www.jfree.org/jcommon/index.php)
+ *  is a free general purpose Java library containing many useful classes
+ * used by JFreeChart and other Java packages. It is distributed with SSJ as
+ * **jcommon-*.jar**. JFreeChart (and JCommon) are used in the SSJ package
+ * **charts** to create different kinds of charts.
+ *
+ * SSJ also provides an interface to the
+ * [UNURAN](http://statistik.wu-wien.ac.at/unuran/)
+ *  library for nonuniform random number generation @cite iLEY02a&thinsp;, in
+ * the  @ref umontreal.ssj.randvar package. UNURAN does not have to be
+ * installed to be used with SSJ, because it is linked statically with the
+ * appropriate SSJ native library. However, the UNURAN documentation will be
+ * required to take full advantage of the library.
+ * 
+ * 
+ * @subsection REF_examples_sec_04 random number generation
+ * 
+ * 
+ * Random numbers feed simulation models and allow one to compute statistics.
+ * To generate random numbers from any probability distribution, uniform
+ * random numbers are required. Such numbers are uniformly distributed in the
+ * @f$[0,1)@f$ interval, i.e., the probability of getting a given number
+ * @f$x@f$ in that interval is the same for all values of @f$x\in[0,1)@f$.
+ * Any generated number @f$x@f$ is also independent from any previous or
+ * future generated numbers. Although the generated uniforms are not truly
+ * independent since one uniform is obtained from the previous uniforms by a
+ * mathematical formula, one can consider them independent for simulation
+ * purposes. Selection of a random number generator is based on several
  * criteria such as uniformity, performance, and portability
- * @cite rLEC94a, @cite rLEC12a&thinsp;. 
- * The package  @ref umontreal.ssj.rng provides basic tools to generate uniform 
- * random numbers. It defines an interface called
- * @ref umontreal.ssj.rng.RandomStream implemented by any RNG supported by SSJ. 
- * This interface requires that each RNG provides multiple streams and substreams 
- * of random numbers.  Such facilities are very useful when performing multiple
- * simulation runs and comparing similar systems by simulation, for example
- * @cite rLEC15a, @cite rLEC15c, @cite rLEC17p.
- * The interface permits one to easily interchange RNGs without changing the code of the 
- * simulator, because they are accessed through the
- * same set of methods specified by the interface. 
- * The selected type of RNG is specified when creating the `RandomStream` object. 
+ * @cite rLEC01d&thinsp;. The package  @ref umontreal.ssj.rng contains the
+ * needed tools to generate such numbers. It defines an interface called
+ * @ref umontreal.ssj.rng.RandomStream implemented by any random number
+ * generator supported by SSJ. This interface allows one to easily
+ * interchange random number generators since they are accessed through the
+ * same set of methods specified by the interface. Only the random number
+ * generator setup depends on the type of generator that was chosen.
  *
- * One can also easily replace the 'independent' random numbers with (possibly randomized)
- * highly-uniform (quasi-Monte Carlo) point sets implemented in the package
- * @ref umontreal.ssj.hups&thinsp;, again without changing the simulation code.
- * The point set objects all inherit
- * from @ref umontreal.ssj.hups.PointSet which provides a
- * @ref umontreal.ssj.hups.PointSetIterator that implements the same 
- * @ref umontreal.ssj.rng.RandomStream interface as the RNGs.
- * The replacement of random numbers by quasi-random ones can be easily done
- * without modifying the model implementation, 
- * except for the setup code that creates the point sets.
- * 
- * The package
- *  @ref umontreal.ssj.latnetbuilder provides an interface to the *LatNet Builder* software,
- * implemented in C++, which provides tools to construct hups of various types
- * such as lattices, polynomial lattices, digital nets, etc., in arbitrary dimension,
- * for an arbitrary number of points, a rich variety of uniformity criteria, etc.
- * Note that LatNet Builder uses the NTL library and for this reason it does not run 
- * under Windows, but only under Linux-type systems.
- *  
- *  
- * To generate non-uniform random numbers, one can select a probability distribution
- * from the @ref umontreal.ssj.probdist package and a `RandomStream`
- * object as a source of randomness.
- * The probability distribution may have been estimated in a modeling phase
- * based on data from the system of interest, or selected in any other way.
- * The package
- * @ref umontreal.ssj.probdist contains several commonly-used discrete and continuous distributions,
- * implemented as subclasses of the abstract classes
+ * If one wants to replace uniform random numbers with low-discrepancy point
+ * sets for variance reduction, the package  @ref umontreal.ssj.hups contains
+ * all the necessary facilities. Such highly uniform point sets all inherit
+ * from the  @ref umontreal.ssj.hups.PointSet which provides a
+ * @ref umontreal.ssj.hups.PointSetIterator extending
+ * @ref umontreal.ssj.rng.RandomStream. The replacement can be easily done
+ * without modifying the model implementation, except the setup-time code.
+ *
+ * To generate non-uniform random numbers, one must select a probability
+ * distribution based on the empirical data @cite sLAW00a&thinsp;. SSJ does
+ * not provide probability distribution estimation tools, but goodness of fit
+ * tests are included to help in model validation. The package
+ * @ref umontreal.ssj.probdist contains several standard, commonly-used,
+ * probability distributions. It supports discrete and continuous
+ * distributions through two different abstract base classes:
  * @ref umontreal.ssj.probdist.ContinuousDistribution and
- * @ref umontreal.ssj.probdist.DiscreteDistribution.
- * The methods to access the density or mass, cdf, complementary cdf, inverse cdf, 
- * mean, variance, etc., are common to all distributions, so much of the code may be written
- * independently of the selected distribution.
- * Static methods are also available for the case where one does not want to create 
- * a distribution object with fixed parameters, which often involves significant overhead
- * because it precomputes constants and tables.
- * This precomputation setup is often worthwhile if the same distribution (with same parameters)
- * is used many times, but not if the parameters change all the time, 
- * in which case the setup has to be redone each time.
- * 
- * The default (most general) way of defining a non-uniform generator is to match
- * a distribution with a `RandomStream`.  The package  @ref umontreal.ssj.randvar
- * provides facilities to do that.
- * By default, the random variates are obtained by applying the inverse cdf
- * (computed via the `inverseF` method) to the uniform random numbers obtained from the stream.
- * However, inversion is sometimes too slow or inapplicable (the inverse cdf or even a good
- * approximation of it may be too hard to compute).  The package  @ref umontreal.ssj.randvar
- * permits one to generate non-uniform randm variates in many other ways than by inversion.
- * In particular, it offers classes to generate random variates from specific discrete and 
- * continuous distributions by specialized methods, without relying on the `probdist` package.
- * These specific generators inherit from the common classes
- * @ref umontreal.ssj.randvar.RandomVariateGen and
- * @ref umontreal.ssj.randvar.RandomVariateGenInt&thinsp;.
- * Each specialized class provides a static method which can be preferable to use 
- * when it is not worthwhile to create a generator object and make the associated precomputations.
- * One drawback of these static methods, however, is that their signatures that are specific to the distribution,
- * because they must transmit the distribution parameters, and therefore one may have to change the simulation code 
- * when changing a distribution.
- * They may also have to perform setup operations on each variate generation.
- * 
- * The packages @ref umontreal.ssj.probdistmulti  and @ref umontreal.ssj.randvarmulti
- * are the counterparts of `probdist` and `randvar` for multivariate distributions.
- * The package @ref umontreal.ssj.stochprocess  offers tools to generate discretely observed
- * sample paths (skeletons) of various types of stochastic processes.
- * 
- * 
- * 
- * @subsection REF_examples_sec_stat   Collecting statistics
- * 
- * Output from simulations is collected in *statistical probes* that implement the abstract class
- * @ref umontreal.ssj.stat.StatProbe from the  @ref umontreal.ssj.stat  package.
- * There are two main types of probes:
- * @ref umontreal.ssj.stat.Tally probes collect series of observations of the form
- * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate probes collect
- * statistics for a process that evolves in continuous (simulated) time, 
- * with a piecewise-constant trajectory. During
- * the simulation, one can add observations to such probes. After the
- * simulation (or at any time), measures such as the sample average, the sample
- * variance or standard deviation, confidence intervals, etc., can be observed.
- * Statistical reports can also be obtained for the different probes, in the form of
- * a character `String` that can be displayed or printed.
- * The `stat` package also provides a way to detach
- * statistical collection from the model implementation by using bound properties.
- * 
- * The observations given to a statistical probe can be arrays of real numbers,
- * whose dimension is the number of fields on which data is collected.
- * After n observations are collected, the probe
- * will contain (virtually) a table whose rows are the observations and whose columns are the fields.
- * In addition to the empirical means, variances, etc., for the individual fields,
- * one can also obtain empirical covariances and correlations between the fields,
- * and other measures of dependence.
- * 
- * Subpackages of `stat` provide facilities to manage lists or arrays of statistical probes.
- * The package  @ref umontreal.ssj.gof implements goodness-of-fit tests such as
- * Kolmogorov-Smirnov and Anderson-Darling tests.
- * 
- * @ref umontreal.ssj.simexp and   @ref umontreal.ssj.mcqmctools
- * provide additional facilities for performing simulation experiments using independent replications,
- * batch means, and (randomized) quasi-Monte Carlo methods.
+ * @ref umontreal.ssj.probdist.DiscreteDistribution, respectively. Again,
+ * since the distributions inherit from a common class, their access can be
+ * independent from the selected distribution, except for the setup case. One
+ * can compute the density/mass, distribution, complementary, and inverse
+ * distribution functions. These facilities are also accessible through
+ * static methods implemented in each distribution class if one does not want
+ * to create objects or needs distributions whose parameters vary in time.
+ * However, setup-time operations must be performed for each operation, which
+ * can be inefficient for certain distributions.
  *
+ * To generate non-uniform random numbers, the packages
+ * @ref umontreal.ssj.rng (or  @ref umontreal.ssj.hups ) and
+ * @ref umontreal.ssj.probdist must be used together. The simplest generation
+ * method is to generate a uniform random number using a generator
+ * implementing  @ref umontreal.ssj.rng.RandomStream (or get a coordinate
+ * using a point set iterator) and to apply inversion by using the selected
+ * @ref umontreal.ssj.probdist distribution’s
+ * umontreal.ssj.probdist.ContinuousDistribution.inverseF method. However,
+ * inversion is not the only generation method and sometimes not the most
+ * efficient. For some distributions, closed-form inverse functions or fast
+ * inversion algorithms exist. For others, inversion is performed using
+ * binary or even linear search. In such cases, the performance and precision
+ * depends on the complexity of the distribution function which is calculated
+ * several times for one inverse. The package  @ref umontreal.ssj.randvar
+ * acts as glue between uniform random number generators and probability
+ * distributions. Continuous or discrete random number generators also
+ * inherits from common base classes, namely
+ * @ref umontreal.ssj.randvar.RandomVariateGen and
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. All generators use a
+ * random stream and a probability distribution for their construction. As
+ * opposed to  @ref umontreal.ssj.probdist, one can directly instantiate
+ * @ref umontreal.ssj.randvar.RandomVariateGen or
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt. However, in such cases,
+ * only inversion generation method will be available. To use an alternate
+ * generation method, one must instantiate a specialized generator class and
+ * switch to the given generation algorithm using an object method. Each
+ * specialized class also provides static method which perform the same
+ * action. Although they allow one to avoid object creation, their signatures
+ * are specific to the used distribution and they have to perform setup-time
+ * operations on each variate generation, which can become inefficient. The
+ * @ref umontreal.ssj.randvar package also provides the class
+ * @ref umontreal.ssj.randvar.RandomVariateTrans to apply transformations to
+ * a generator. This allows, for example, to generate variates from a
+ * truncated distribution.
  * 
- * @subsection REF_examples_sec_discrete-event   Running discrete-event simulations
+ * 
+ * @subsection REF_examples_sec_05 Performing simulation
  * 
  * 
- * SSJ supports discrete-event, continuous, and mixed simulation,
- * via the package  @ref umontreal.ssj.simevents. This package manages the
- * simulation clock and the event list, two essential components of
+ * SSJ supports discrete-event, process-driven, continuous or mixed
+ * simulation. The discrete-event and continuous simulation are managed by
+ * the package  @ref umontreal.ssj.simevents. This package manages the
+ * simulation clock and the event list, two essential components for all
  * discrete-event simulations. The simulation clock tracks the simulation
  * time whereas the event list stores the scheduled events to execute them in
  * the right order. Events are user-defined subclasses of
  * @ref umontreal.ssj.simevents.Event. When an event occurs, any type of
  * actions can then be taken. The package provides a class called
- * @ref umontreal.ssj.simevents.ListWithStat which implements a linked list
- * with integrated statistical probes to collect data on sojourn times in the list
- * and the time-dependent size of the list. 
- * Continuous simulation can be performed
+ * @ref umontreal.ssj.simevents.List which implements a linked list
+ * supporting statistical collection. Continuous simulation can be performed
  * using the class  @ref umontreal.ssj.simevents.Continuous. It uses the
- * event framework to (approximately) simulate differential equations numerically
- * with time discretization.
+ * event framework to resolve differential equations numerically at fixed
+ * steps in the simulation time.
  *
  * 
+ * @subsection REF_examples_sec_06 Other tools
  * 
  * 
- ** ************************************************************************
+ * The package  @ref umontreal.ssj.stat provides basic tools for statistical
+ * collection. Statistics are collected using statistical probes, i.e,
+ * objects implementing the abstract class
+ * @ref umontreal.ssj.stat.StatProbe. Two types of probes are supported. The
+ * @ref umontreal.ssj.stat.Tally allows to collect observations of the form
+ * @f$X_1,…,X_n@f$ whereas  @ref umontreal.ssj.simevents.Accumulate collects
+ * statistics for a continuous variable evolving in simulation time. During
+ * the simulation, one can add observations to such probes. After the
+ * simulation, measures can be obtained, such as sample average, sample
+ * standard deviation or confidence interval. A statistical report can be
+ * obtained for all probes. The package also provides a way to detach
+ * statistical collection from the model implementation by using bound
+ * properties.
+ *
+ * To test a proposed model against empirical data, goodness of fit tests are
+ * provided in the package  @ref umontreal.ssj.gof. Such tests, e.g.
+ * Kolmogorov-Smirnov or Anderson-Darling, compute a statistic using the
+ * empirical observations and the proposed distribution. The empirical
+ * observations are given as an array whereas the distribution is given as a
+ * @ref umontreal.ssj.probdist object. From the computed statistic, it is
+ * possible to compute the @f$p@f$-value which is useful to evaluate the
+ * significance of the test.
  * 
- * @section REF_examples_sec_simple   Some Elementary Examples
+ * 
+ * @subsection REF_examples_sec_07 Related documentation
+ * 
+ * 
+ * The `example.pdf` file, in the `doc/pdf` subdirectory of the SSJ
+ * distribution, explains simulation examples implemented using SSJ. This may
+ * be the best starting point to learn SSJ.
+ *  Every package introduced here contains its own reference documentation as
+ * a PDF file, in the `doc/pdf` subdirectory. This documentation describes in
+ * more details how to use the package and provides a description of each
+ * class and method.
+ * 
+ * 
+ * @section REF_examples_sec_simple Some Elementary Examples
  * 
  * 
  * We start with elementary examples that illustrate how to generate uniform
  * and nonuniform random numbers, construct probability distributions,
- * collect elementary statistics, compute confidence intervals, compare
- * similar systems, and use randomized quasi-Monte Carlo point sets, with SSJ.
+ * collect elementary statistics, and compute confidence intervals, compare
+ * similar systems, and use randomized quasi-Monte Carlo point sets, with
+ * SSJ.
+ *
  * The models considered here are quite simple and some of the performance
- * measures may be computed by numerical methods rather than
- * by simulation. The purpose of these simple models is just to give a first idea
- * of how to use SSJ.
+ * measures can be computed by (more accurate) numerical methods rather than
+ * by simulation. The fact that we use these models to give a first tasting
+ * of SSJ should not be interpreted to mean that simulation is necessarily
+ * the best tool for them.
  * 
  * 
  * @subsection REF_examples_sec_collision Collisions in a hashing system
  * 
  * 
- * We want to estimate the distribution of the number of collisions in a hashing system.
+ * We want to estimate the expected number of collisions in a hashing system.
  * There are @f$k@f$ locations (or addresses) and @f$m@f$ distinct items.
  * Each item is assigned a random location, independently of the other items.
  * A *collision* occurs each time an item is assigned a location already
  * occupied. Let @f$C@f$ be the number of collisions. We want to estimate
- * the probability distribution of the random variable @f$C@f$, as well as
- * its expectation  @f$\mathbb E[C]@f$ and variance  Var@f$[C]@f$, by simulation.
- * A theorem states that when @f$k\to\infty@f$ while @f$\lambda=
- * m^2/(2k)@f$ remains fixed, @f$C@f$ converges in distribution to a Poisson
- * random variable with mean @f$\lambda@f$  @cite rLEC02c&nbsp;. Thus, this Poisson approximation 
- * should be good when @f$k@f$ is very large and @f$\lambda@f$ is not too large. 
- * We may want to use Monte Carlo
- * simulation to assess the error made by the Poisson approximation
- * for finite values of @f$k@f$ and @f$m@f$.  To do this, we can
+ * @f$\mathbb E[C]@f$, the expected number of collisions, by simulation. A
+ * theoretical result states that when @f$k\to\infty@f$ while @f$\lambda=
+ * m^2/(2k)@f$ is fixed, @f$C@f$ converges in distribution to a Poisson
+ * random variable with mean @f$\lambda@f$. For finite values of @f$k@f$ and
+ * @f$m@f$, we may want to approximate the distribution of @f$C@f$ by the
+ * Poisson distribution with mean @f$\lambda@f$, and use Monte Carlo
+ * simulation to assess the quality of this approximation. To do that, we can
  * generate @f$n@f$ independent realizations of @f$C@f$, say @f$C_1,…,C_n@f$,
  * compute their empirical distribution and empirical mean, and compare with
- * the Poisson distribution with mean @f$\lambda@f$.
+ * the Poisson distribution.
  *
  * The Java program in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} simulates
- * @f$C_1,…,C_n@f$, and computes the empirical distribution of $C$,
- * its mean and variance, and 
- * a 95% confidence interval on @f$\mathbb
+ * @f$C_1,…,C_n@f$ and computes a 95% confidence interval on @f$\mathbb
  * E[C]@f$. The results for @f$k = 10000@f$, @f$m = 500@f$, and @f$n =
  * 100000@f$, are in Listing&nbsp;
- * {@link REF_examples_res_Collision Collision results}.  
- * Here we have @f$\lambda=12.5@f$, whereas the reported
- * confidence interval is @f$(12.268, 12.272)@f$.
- *  This indicates that the asymptotic result underestimates
- * @f$\mathbb E[C]@f$ by about 2.6%.
+ * {@link REF_examples_res_Collision Collision}. The reported
+ * confidence interval is @f$(12.25,  12.29)@f$, whereas @f$\lambda=
+ * 12.5@f$. This indicates that the asymptotic result underestimates
+ * @f$\mathbb E[C]@f$ by nearly 2%.
  *
- * The Java program imports the SSJ packages `rng`, `probdist`, and `stat`. It uses only
- * three types of objects from SSJ: 
- * (1) a `RandomStream` object from the package @ref umontreal.ssj.rng, 
- * that generates a stream of independent random numbers from the uniform distribution;
- * (2) a `PoissonDist` object from the package @ref umontreal.ssj.probdist,
- * which implements a Poisson distribution with mean @f$\lambda@f$;
- * and (3) a `Tally` object, from the package @ref umontreal.ssj.stat,
- * used to collect the  @f$n@f$  realizations of @f$C@f$ and produce a statistiscal report. 
- * In SSJ, `RandomStream` is actually just an interface that specifies all the
+ * The Java program imports the SSJ packages `rng` and `stat`. It uses only
+ * two types of objects from SSJ: a `RandomStream` object, defined in the
+ * `rng` package, that generates a stream of independent random numbers from
+ * the uniform distribution, and a `Tally` object, from the `stat` package,
+ * to collect statistical observations and produce the report. In SSJ,
+ * `RandomStream` is actually just an interface that specifies all the
  * methods that must be provided by its different implementations, which
  * correspond to different brands of random streams (i.e., different types of
  * uniform random number generators). The class `MRG32k3a`, whose constructor
@@ -263,7 +399,7 @@
  * return these statistics or compute a confidence interval for the
  * theoretical mean of these observations, assuming that they are independent
  * and identically distributed with the normal distribution. Other types of
- * collectors that memorize the observations are also available in `stat`.
+ * collectors that memorize the observations are also available in SSJ.
  *
  *  **Simulating the number of collisions in a hashing system**
  * &emsp;[Collision]
@@ -273,7 +409,7 @@
  * The class `Collision` offers the facilities to simulate copies of @f$C@f$.
  * Its constructor specifies @f$k@f$ and @f$m@f$, computes @f$\lambda@f$,
  * and constructs a boolean array of size @f$k@f$ to memorize the locations
- * used so far, in order to detect the collisions. The method `simulate`
+ * used so far, in order to detect the collisions. The method `generateC`
  * initializes the boolean array to `false`, generates the @f$m@f$ locations,
  * and computes @f$C@f$. The method `simulateRuns` first resets the
  * statistical collector `statC`, then generates @f$n@f$ independent copies
@@ -281,27 +417,18 @@
  * method `add`. The method `statC.report` computes a confidence interval
  * from these @f$n@f$ observations and returns a statistical report in the
  * form of a character string. This report is printed, together with the
- * value of @f$\lambda@f$. See Listing&nbsp;
- * {@link REF_examples_res_Collision Collision results}.
- * 
- * In addition to the `statC` collector, the program maintains an array of counters 
- * to count how many times each value of @f$C@f$ has been observed.
- * The values larger or equal to `maxCounts` are aggregated in the same counter.
- * These counts for @f$C=@f$ 0 to `maxCounts` are printed in the output,
- * together with their expected values according to the Poisson (approximation) model,
- * for comparison.  The `poisson` object is used to calculate these values.
+ * value of @f$\lambda@f$.
  *
- *
- *  <strong>Results of the program  <tt> Collision</tt></strong>
- * &emsp;[Collision results]
+ *  <strong>Results of the program <tt>Collision</tt></strong>
+ * &emsp;[Collision]
  * @anchor REF_examples_res_Collision
- * @include tutorial/Collision.res
+ * @include tutorial/Collision.txt
  * 
  * 
  * @subsection REF_examples_sec_nonuniform Nonuniform variate generation and simple quantile estimates
  * 
  * 
- * The program in Listing&nbsp;
+ * The program of Listing&nbsp;
  * {@link REF_examples_lst_Nonuniform Nonuniform} simulates the
  * following artificial model. Define the random variable
  * @f[
@@ -311,9 +438,9 @@
  * with parameter @f$p@f$, the @f$Y_j@f$’s are gamma with parameters
  * @f$(\alpha, \beta)@f$, the @f$W_j@f$’s are lognormal with parameters
  * @f$(\mu,\sigma)@f$, and all these random variables are independent. We
- * want to generate @f$n@f$ copies of @f$X@f$, say @f$X_1,…,X_n@f$, 
- * estimate the distribution of @f$X@f$ by a histogram, 
- * and get the 0.10, 0.50, 0.90, and 0.99 quantiles of its empirical distribution.
+ * want to generate @f$n@f$ copies of @f$X@f$, say @f$X_1,…,X_n@f$, and
+ * estimate the 0.10, 0.50, 0.90, and 0.99 quantiles of the distribution of
+ * @f$X@f$, simply from the quantiles of the empirical distribution.
  *
  * The method `simulateRuns` generates @f$n@f$ copies of @f$X@f$ and pass
  * them to a statistical collector of class `TallyStore`, that stores the
@@ -326,21 +453,21 @@
  * @anchor REF_examples_lst_Nonuniform
  * @include tutorial/Nonuniform.java
  *
- *  <strong>Results of the program  <tt> Nonuniform </tt></strong>
- * &emsp;[Nonuniform results]
+ *  <strong>Results of the program <tt>Nonuniform</tt></strong>
+ * &emsp;[Nonuniform]
  * @anchor REF_examples_res_Nonuniform
- * @include tutorial/Nonuniform.res
+ * @include tutorial/Nonuniform.txt
  *
  * To simplify the program, all the parameters are fixed as constants at the
- * beginning of the class. This is much simpler, but not recommended in general
+ * beginning of the class. This is simpler, but not recommended in general
  * because it does not permit one to perform experiments with different
- * parameter sets with the same program. Passing the parameters to the
+ * parameter sets in a single program. Passing the parameters to the
  * constructor as in Listing&nbsp;
  * {@link REF_examples_lst_Collision Collision} would require
  * more lines of code, but would provide more flexibility.
  *
- * The class initialization constructs a `RandomStream` of type
- * `LFSR113` (this is a faster uniform generator that <tt>MRG32k3a</tt>)
+ * The class initialization also constructs a `RandomStream` of type
+ * `LFSR113` (this is a faster uniform generator that <tt>MRG32k3a</tt>),
  * used to generate all the random numbers. For the generation of @f$N@f$, we
  * construct a Poisson distribution with mean @f$\lambda@f$ (without giving
  * it a name), and pass it together with the random stream to the constructor
@@ -366,28 +493,20 @@
  * given @f$\lambda@f$, so it is slower if we want to generate several
  * Poisson variates with the same @f$\lambda@f$. As an illustration, we use
  * the static method to generate the geometric random variates (in
- * `simulate`), instead of constructing a geometric distribution and
- * variate generator. For this particular distribution, the static method is 
- * almost as fast.  To generate @f$M@f$, we invoke the static method
+ * <tt>generateX</tt>), instead of constructing a geometric distribution and
+ * variate generator. To generate @f$M@f$, we invoke the static method
  * `inverseF` of the class `GeometricDist`, which evaluates the inverse
  * geometric distribution function for a given parameter @f$p@f$ and a given
- * uniform random variate.   One important drawback of using the static method
- * inside the `simulate` method is that changing the geometric distribution for
- * another one would require changing the code inside `simulate`.
- * Also here the three other distributions are hardcoded at the beginning of the class.
- * To make the program general, one could pass them as parameters in the constructor,
- * or read them in a file inside the constructor.
+ * uniform random variate.
  *
- * The results of this program, with @f$n = 100000@f$, are in Listing&nbsp;
+ * The results of this program, with @f$n = 10000@f$, are in Listing&nbsp;
  * {@link REF_examples_res_Nonuniform Nonuniform}. We see that
  * @f$X@f$ has a coefficient of variation larger than 1, and the quantiles
- * indicate that the distribution is skewed, with a long tail to the
- * right. We have @f$X < 439@f$ about half the time, whereas the average is 685.6
- * and values over several
+ * indicate that the distribution is skewed, with a long thick tail to the
+ * right. We have @f$X < 553@f$ about half the time, but values over several
  * thousands are not uncommon. This probably happens when @f$N@f$ or @f$M@f$
- * takes a large value. There are also many cases where @f$N=M=0@f$, in which case
- * @f$X=0@f$.  Looking at the histogram confirms this evaluation and provides a 
- * clearer idea of the distribution.
+ * takes a large value. There are also cases where @f$N=M=0@f$, in which case
+ * @f$X=0@f$.
  * 
  * 
  * @subsection REF_examples_sec_inventory A discrete-time inventory system
@@ -414,7 +533,7 @@
  * simulation @f$n@f$ times independently to estimate the expected profit per
  * day over a time horizon of @f$m@f$ days. Eventually, we might want to
  * *optimize* the values of the decision parameters @f$(s,S)@f$ via
- * simulation. (In practice, this is usually done
+ * simulation, but we do not do that here. (In practice, this is usually done
  * for more complicated models.)
  *
  *  **A simulation program for the simple inventory system**
@@ -423,8 +542,8 @@
  * @include tutorial/Inventory.java
  *
  * Listing&nbsp; {@link REF_examples_lst_Inventory Inventory}
- * gives a Java program that performs a  
- * simulation experiment for @f$n=500@f$, @f$m=2000@f$, @f$s=80@f$, @f$S=200@f$,
+ * gives a Java program, based on the SSJ library, that performs the required
+ * simulation for @f$n=500@f$, @f$m=2000@f$, @f$s=80@f$, @f$S=200@f$,
  * @f$\lambda=100@f$, @f$c=2@f$, @f$h=0.1@f$, @f$K=10@f$, @f$k=1@f$, and
  * @f$p=0.95@f$.
  *
@@ -450,7 +569,7 @@
  * in the interval @f$[0,1)@f$ according to the uniform probability
  * distribution.
  *
- * The method `simulate` simulates the system for @f$m@f$ days, with a
+ * The method `simulateOneRun` simulates the system for @f$m@f$ days, with a
  * given policy, and returns the average profit per day. For each day, we
  * generate the demand @f$D_j@f$, compute the stock @f$Y_j@f$ at the end of
  * the day, and add the sales revenues minus the leftover inventory costs to
@@ -467,22 +586,24 @@
  * the report. It also creates a timer that computes the total CPU time to
  * execute the program, and prints it. The results are in Listing&nbsp;
  * {@link REF_examples_res_Inventory Inventory}. The average
- * profit per day is approximately 85. It took 0.17 seconds (on a 2.4 GHz  (???) 
- * computer running Windows 10 and Eclipse) to simulate the system 500 times for 2000 days each, 
- * compute the statistics, and print the results.
+ * profit per day is approximately 85. It took 0.39 seconds (on a 2.4 GHz
+ * computer running Linux) to simulate the system for 2000 days, compute the
+ * statistics, and print the results.
  *
- *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory results]
+ *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory]
  * @anchor REF_examples_res_Inventory
- * @include tutorial/Inventory.res
+ * @include tutorial/Inventory.txt
+ *
+ * In Listing&nbsp; {@link REF_examples_lst_InventoryCRN
+ * InventoryCRN}, we extend the `Inventory` class to a class `InventoryCRN`
+ * that compares two sets of values of the inventory control policy
+ * parameters @f$(s,S)@f$.
  *
  *  **Comparing two inventory policies with common random numbers**
  * &emsp;[InventoryCRN]
  * @anchor REF_examples_lst_InventoryCRN
  * @include tutorial/InventoryCRN.java
  *
- * In Listing&nbsp; {@link REF_examples_lst_InventoryCRN
- * InventoryCRN}, we extend the `Inventory` class to a class `InventoryCRN`
- * that compares two sets of parameters  @f$(s,S)@f$ for the inventory control policy.
  * The method `simulateDiff` simulates the system with policies @f$(s_1,
  * S_1)@f$ and @f$(s_2, S_2)@f$ independently, computes the difference in
  * profits, and repeats this @f$n@f$ times. These @f$n@f$ differences are
@@ -511,22 +632,20 @@
  * Listing&nbsp; {@link REF_examples_lst_InventoryCRN
  * InventoryCRN} ensures at least that the random numbers are used for the
  * same purpose for the two policies. For more explanations and examples
- * about common random numbers, see @cite sLAW00a, @cite vLEC94b, @cite sLEC09a&thinsp;.
+ * about common random numbers, see @cite sLAW00a, @cite sLEC09a&thinsp;.
  *
  * The main program estimates the expected difference in average daily
  * profits for policies @f$(s_1, S_1) = (80, 198)@f$ and @f$(s_2, S_2) = (80,
  * 200)@f$, first with independent random numbers, then with common random
  * numbers. The other parameters are the same as before. The results are in
  * Listing&nbsp; {@link REF_examples_res_InventoryCRN
- * InventoryCRN results}. We see that use of common random numbers reduces the
- * variance by a factor of about 20 in this case.
- * This means that with CRNs, one needs about 20 times less simulation than 
- * with independent random numbers to estimate the difference with the same accuracy.
+ * InventoryCRN}. We see that use of common random numbers reduces the
+ * variance by a factor of approximately 19 in this case.
  *
  *  <strong>Results of the program `InventoryCRN`</strong>
- * &emsp;[InventoryCRN results]
+ * &emsp;[InventoryCRN]
  * @anchor REF_examples_res_InventoryCRN
- * @include tutorial/InventoryCRN.res
+ * @include tutorial/InventoryCRN.txt
  * 
  * 
  * @subsection REF_examples_sec_queue_lindley A single-server queue with Lindley’s recurrence
@@ -542,10 +661,9 @@
  * initially starts empty. We want to simulate the first @f$m@f$ customers in
  * the system and compute the mean waiting time per customer.
  *
- * This simple model is well-known in queuing theory and is called an
+ * This simple model is well-known in queuing theory: It is called an
  * @f$M/M/1@f$ queue. Simple formulas are available for this model to compute
- * the average waiting time per customer, average queue length, 
- * probability that a customers waits more than @f$x@f$ seconds, etc., over an
+ * the average waiting time per customer, average queue length, etc., over an
  * *infinite* time horizon @cite pKLE75a&thinsp;. For a finite number of
  * customers or a finite time horizon, these expectations can also be
  * computed by numerical methods, but here we just want to show how it can be
@@ -583,11 +701,6 @@
  * @endcode
  *
  *  which directly implements inversion of the exponential distribution.
- *  Hardcoding the exponential distributions in the `simulate` method as we do here
- *  makes the program simpler, but it has the drawback that one cannot reuse the same
- *  class for other distributions than the exponential.  
- *  To make it more general, the distributions could be created outside the class and
- *  passed to the constructor.
  * 
  * 
  * @subsection REF_examples_sec_observer Using the observer design pattern
@@ -600,8 +713,7 @@
  * processing. It can be very helpful in large simulation programs or
  * libraries, where different objects may need to process the same data in
  * different ways. These objects may have the task of storing observations or
- * displaying statistics in different formats, or putting them in files for 
- * treatment by other software such as R, for example, and they are not
+ * displaying statistics in different formats, for example, and they are not
  * necessarily fixed in advance.
  *
  * The *observer* pattern, supported by the
@@ -613,15 +725,14 @@
  * object that implements the interface
  * @ref umontreal.ssj.stat.ObservationListener can register as an observer.
  *
- * A `StatProbe` object from package `stat`, or an instance of its subclasses `Tally` and
+ * `StatProbe` in package `stat`, as well as its subclasses `Tally` and
  * `Accumulate`, contains a list of <tt>ObservationListener</tt>’s. Whenever
- * it receives a new statistical observation, e.g., via `Tally.add` or
+ * they receive a new statistical observation, e.g., via `Tally.add` or
  * `Accumulate.update`, they send the new value to all registered observers.
  * To register as an observer, an object must implement the interface
  * @ref umontreal.ssj.stat.ObservationListener This implies that it must
  * provide an implementation of the method `newObservation`, whose purpose is
- * to recover the information that the object has registered for, 
- * usually to do somethinmg with it.
+ * to recover the information that the object has registered for.
  *
  * In the example, the statistical collector `waitingTimes` transmits to all
  * its registered listeners each new statistical observation that it receives
@@ -629,14 +740,14 @@
  * `waitingTimes.add(x)` generates in the background a call to
  * `o.newObservation(waitingTimes, x)` for all registered observers `o`.
  *
- *  The method `notifyObs` is used to turn the tally into such a notifying agency. 
- * In fact, the collector is both a tally and a distribution agency, but its
+ *  The method `notifyObs` is used to turn the tally into such an agency. In
+ * fact, the collector is both a tally and a distribution agency, but its
  * tally functionality can be disabled using the `stopCollectStat` method.
  * This can be useful when the registered observers already perform
  * statistical collection.
  *
- * In our example, two observers register to receive observations from `waitingTimes`.
- * They are anonymous objects of classes `ObservationTrace` and
+ * Two observers register to receive observations from `waitingTimes` in the
+ * example. They are anonymous objects of classes `ObservationTrace` and
  * `LargeWaitsCollector`, respectively. Each one is informed of any new
  * observation @f$W_i@f$ via its `newObservation` method. The task of the
  * `ObservationTrace` observer is to print the waiting times @f$W_5@f$,
@@ -685,25 +796,26 @@
  *   \tag{arithmetic-average} \bar{S} = \frac{1}{t} \sum_{j=1}^t S(\zeta_j),
  * @f]
  * for some fixed observation times @f$0 < \zeta_1 < \cdots< \zeta_t =
- * T@f$. The value (or fair price) of the Asian option is @f$v = E[X]@f$
+ * T@f$. The value (or fair price) of the Asian option is @f$c = E[X]@f$
  * where the expectation is taken under the so-called risk-neutral measure
  * (which means that the parameters @f$r@f$ and @f$\sigma@f$ have to be
  * selected in a particular way; see @cite fGLA04a&thinsp;).
  *
- * This value @f$v@f$ can be estimated by simulation as follows. Generate
+ * This value @f$c@f$ can be estimated by simulation as follows. Generate
  * @f$t@f$ independent and identically distributed (i.i.d.) @f$N(0,1)@f$
  * random variables @f$Z_1,…,Z_t@f$ and put @f$B(\zeta_j) = B(\zeta_{j-1})
  * + \sqrt{\zeta_j - \zeta_{j-1}} Z_j@f$, for @f$j=1,…,t@f$, where
  * @f$B(\zeta_0) = \zeta_0 = 0@f$. Then,
  * @anchor REF_examples_examples_eq_Szetaj
  * @f[
- *   S(\zeta_j) = S(0) e^{(r-\sigma^2/2)\zeta_j + \sigma B(\zeta_j)}
+ *   S(\zeta_j) = S(0) e^{(r-\sigma^2/2)\zeta_j + \sigma B(\zeta_j)} = S(\zeta_{j-1}) e^{(r-\sigma^2/2)(\zeta_j-\zeta_{j-1}) + \sigma\sqrt{\zeta_j - \zeta_{j-1}} Z_j} \tag{Szetaj}
  * @f]
- * for @f$j = 1,…,t@f$ and the payoff can be computed via 
- * ({@link REF_examples_eq_payasian payasian}). This can be
+ * for @f$j = 1,…,t@f$ and the payoff can be computed via (
+ * {@link REF_examples_eq_payasian payasian} ). This can be
  * replicated @f$n@f$ times, independently, and the option value is estimated
  * by the average discounted payoff. The Java program of Listing&nbsp;
- * {@link REF_examples_lst_AsianGBM AsianGBM} implement this procedure.
+ * {@link REF_examples_lst_Asian Asian} implement this
+ * procedure.
  *
  * Note that generating the sample path and computing the payoff is done in
  * two different methods. This way, other methods could eventually be added
@@ -711,43 +823,47 @@
  * geometric average, or with barriers, etc.) over the same generated sample
  * path.
  *
- *  **Pricing an Asian option on a GMB process** &emsp;[AsianGBM]
- * @anchor REF_examples_lst_AsianGBM
- * @include tutorial/AsianGBM.java
+ *  **Pricing an Asian option on a GMB process** &emsp;[Asian]
+ * @anchor REF_examples_lst_Asian
+ * @include tutorial/Asian.java
  *
  * The method `simulateRuns` performs @f$n@f$ independent simulation runs
  * using the given random number stream and put the @f$n@f$ observations of
  * the net payoff in the statistical collector `statValue`. In the `main`
- * program, we first specify the @f$d=12@f$ observation times @f$\zeta_j = j/12@f$
+ * program, we first specify the 12 observation times @f$\zeta_j = j/12@f$
  * for @f$j=1,…,12@f$, and put them in the array `zeta` (of size 13) together
- * with @f$\zeta_0=0@f$. We then construct an `AsianGBM` object with parameters
+ * with @f$\zeta_0=0@f$. We then construct an `Asian` object with parameters
  * @f$r=0.05@f$, @f$\sigma=0.5@f$, @f$K = 100@f$, @f$S(0)=100@f$,
- * @f$d=12@f$, and the observation times contained in array `zeta`. We then
- * create the statistical collector `statValue`, perform @f$10^6@f$
+ * @f$t=12@f$, and the observation times contained in array `zeta`. We then
+ * create the statistical collector `statValue`, perform @f$10^5@f$
  * simulation runs, and print the results. The discount factor @f$e^{-rT}@f$
  * and the constants @f$\sigma\sqrt{\zeta_j - \zeta_{j-1}}@f$ and
  * @f$(r-\sigma^2/2)(\zeta_j - \zeta_{j-1})@f$ are precomputed in the
- * constructor `AsianGBM`, to speed up the simulation.
- *
+ * constructor `Asian`, to speed up the simulation.
  *
  * The program in Listing&nbsp;
- * {@link REF_examples_lst_AsianGBMQMC AsianGBMQMC} extends the class
- * `AsianGBM` to `AsianGBMQMC`, whose method `simulateRunsRQMC` estimates the
- * option value via randomized quasi-Monte Carlo (RQMC). This method takes as input 
- * an RQMC point set, and makes @f$m@f$ independent randomizations of it.
- * For each randomization, it computes the average payoff over the @f$n@f$ points 
- * of the point set.  The @f$m@f$ independent averages are given to the collector 
- * `statRQMC`, which is returned by the method.
+ * {@link REF_examples_lst_AsianQMC AsianQMC} extends the class
+ * `Asian` to `AsianQMC`, whose method <tt>simulateQMC</tt> estimates the
+ * option value via randomized quasi-Monte Carlo. It uses @f$m@f$
+ * independently randomized copies of digital net `p` and puts the results in
+ * statistical collector `statAverage`. The randomization is a left matrix
+ * scramble followed by a digital random shift, applied before each batch of
+ * @f$n@f$ simulation runs.
  *
- * The method `simulateRunsRQMC` creates an iterator `stream` which will be used 
- * to enumerate the points. 
- * These point set iterators, available for each type of point
+ *  **Pricing an Asian option on a GMB process with quasi-Monte Carlo**
+ * &emsp;[AsianQMC]
+ * @anchor REF_examples_lst_AsianQMC
+ * @include tutorial/AsianQMC.java
+ *
+ * The random number stream passed to the method `simulateRuns` is an
+ * iterator that enumerates the points and coordinates of the randomized
+ * point set `p`. These point set iterators, available for each type of point
  * set in package `hups`, implement the `RandomStream` interface and permit
- * one to easily replace the uniform random numbers by QMC or RQMC points or sequences, 
- * without changing the code of the
+ * one to easily replace the uniform random numbers by (randomized)
+ * highly-uniform point sets or sequences, without changing the code of the
  * model itself. The method `resetStartStream`, invoked immediately after
- * each randomization of `prqmc`, resets the iterator to the first coordinate of the
- * first point. The number @f$n@f$ of simulation runs is
+ * each randomization, resets the iterator to the first coordinate of the
+ * first point of the point set `p`. The number @f$n@f$ of simulation runs is
  * equal to the number of points. The points correspond to substreams in the
  * `RandomStream` interface. The method `resetNextSubstream`, invoked after
  * each simulation run in `simulateRuns`, resets the iterator to the first
@@ -755,45 +871,31 @@
  * (directly or indirectly) with this stream during the simulation moves the
  * iterator to the next coordinate of the current point.
  *
- *  **Pricing an Asian option on a GMB process with randomized quasi-Monte Carlo**
- * &emsp;[AsianGBMQMC]
- * @anchor REF_examples_lst_AsianGBMQMC
- * @include tutorial/AsianGBMQMC.java
- *
- * The `main` program constructs an `AsianGBMQMC` object and first makes a Monte Carlo (MC)
- * experiment.  Then it constructs the point set and its randomization for the RQMC experiment.
- * The point set `p` used in this example is a *Sobol’ net* with @f$n = 2^{16}@f$
- * points in @f$t@f$ dimensions. 
- * The randomization `rand` is a left matrix scramble followed by a random digital shift.  
- * See @ref umontreal.ssj.hups for more details on what these classes are doing.
- * By putting together `p`  and `rand`, we obtain the `RQMCPointSet` `prqmc`.
- * 
- * The program invokes `simulateRunsRQMC` to make the RQMC experiment.
- * It then computes the empirical variance and CPU time *per simulation run* for both
- * MC and RQMC. It prints the ratio of variances, which can be
+ * The point set used in this example is a *Sobol’ net* with @f$n = 2^{16}@f$
+ * points in @f$t@f$ dimensions. The `main` program passes this point set to
+ * `simulateQMC` and asks for @f$m=20@f$ independent randomizations. It then
+ * computes the empirical variance and CPU time *per simulation run* for both
+ * MC and randomized QMC. It prints the ratio of variances, which can be
  * interpreted as the estimated *variance reduction factor* obtained when
- * using RQMC instead of MC in this example, and the ratio of efficiencies,
+ * using QMC instead of MC in this example, and the ratio of efficiencies,
  * which can be interpreted as the estimated *efficiency improvement factor*.
  * (The efficiency of an estimator is defined as 1/(variance @f$\times@f$
  * CPU time per run.) The results are in Listing&nbsp;
- * {@link REF_examples_res_AsianGBMRQMC AsianGBMRQMC results}: RQMC reduces the
+ * {@link REF_examples_res_AsianQMC AsianQMC}: QMC reduces the
  * variance by a factor of around 250 and improves the efficiency by a factor
- * of about 646. RQMC not only reduces the variance, it also runs
+ * of over 500. Randomized QMC not only reduces the variance, it also runs
  * faster than MC. The main reason for this is the call to
- * `resetNextSubstream` in `simulateRuns`, which is a bit costly for a
+ * `resetNextSubstream` in `simulateRuns`, which is rather costly for a
  * random number stream of class `MRG32k3a` (with the current implementation)
  * and takes negligible time for an iterator over a digital net in base 2. In
  * fact, in the the case of MC, the call to `resetNextSubstream` is not
- * really needed. Removing it for that case would reduce the CPU time.
+ * really needed. Removing it for that case reduces the CPU time by more than
+ * 40%.
  *
- *  <strong>Results of the program `AsianGBMQMC` </strong> &emsp;[AsianGBMQMC results]
- * @anchor REF_examples_res_AsianGBMQMC
- * @include tutorial/AsianGBMQMC.res
+ *  <strong>Results of the program `AsianQMC`</strong> &emsp;[AsianQMC]
+ * @anchor REF_examples_res_AsianQMC
+ * @include tutorial/AsianQMC.txt
  * 
- * 
- * **************************************************************************************************
- * 
- * @f$\ \ @f$
  * 
  * @section REF_examples_sec_event Discrete-Event Simulation
  * 
@@ -817,7 +919,7 @@
  *
  * Listing&nbsp; {@link REF_examples_lst_QueueEv QueueEv} gives
  * an event-oriented simulation program, where a subclass of the class
- * @ref umontreal.ssj.simevents.Event is defined for each type of event that can occur in the
+ * `Event` is defined for each type of event that can occur in the
  * simulation: arrival of a customer (<tt>Arrival</tt>), departure of a
  * customer (<tt>Departure</tt>), and end of the simulation
  * (<tt>EndOfSim</tt>). Each event *instance* is inserted into the *event
@@ -845,7 +947,13 @@
  * `java.util.LinkedList`. However, with our current implementation, the
  * automatic statistical collection in that `LinkedListStat` class would not
  * count the customers whose waiting time is zero, because they are never
- * placed in the list.
+ * placed in the list.  Here we use the class `List` from package
+ * `simevents`. This class is equivalent to the standard class
+ * `java.util.LinkedList`, except that its implementation is more efficient
+ * than the current one in JDK and it can also collect statistics
+ * automatically. However, the automatic statistical collection on `waitList`
+ * would not count the customers whose waiting time is zero, because they are
+ * never placed in this list, so we do not use this facility.
  *
  * The statistical probe `custWaits` collects statistics on the customer’s
  * waiting times. It is of the class `Tally`, which is appropriate when the
@@ -918,9 +1026,9 @@
  * such an automatic update, the accumulator would integrate only up to the
  * last update time before the time horizon.
  *
- *  <strong>Results of the program `QueueEv` </strong> &emsp;[QueueEv results]
+ *  <strong>Results of the program `QueueEv`</strong> &emsp;[QueueEv]
  * @anchor REF_examples_res_QueueEv
- * @include tutorial/QueueEv.res
+ * @include tutorial/QueueEv.txt
  * 
  * 
  * @subsection REF_examples_sec_preypred Continuous simulation: A prey-predator system
@@ -943,22 +1051,21 @@
  *   = 
  *    -s z(t) + d x(t) z(t)
  * @f}
- * with initial values @f$x(0)=x_0>0@f$ and @f$z(0)=z_0>0@f$. This is a
+ * with initial values @f$x(0)=x_0>0@f$ et @f$z(0)=z_0>0@f$. This is a
  * *Lotka-Volterra* system of differential equations, which has a known
  * analytical solution. Here, in the program of Listing&nbsp;
- * {@link REF_examples_lst_PreyPred PreyPred}, we just show how to
+ * {@link REF_examples_lst_PreyPred PreyPred}, we simply
  * simulate its evolution, to illustrate the continuous simulation facilities
- * of SSJ.  Instead of using the default simulator as in the other examples of
- * this section, this program explicitly
- * creates a discrete-event  @ref umontreal.ssj.simevents.Simulator object `sim` to
- * manage the execution of the simulation.  This is only to illustrate how this 
- * can be done.  One could actually create several such `Simulator` objects that could run
- * in parallel, each one having its own event list.
+ * of SSJ.
  *
  *  **Simulation of the prey-predator system** &emsp;[PreyPred]
  * @anchor REF_examples_lst_PreyPred
  * @include tutorial/PreyPred.java
  *
+ * Note that, instead of using the default simulator, this program explicitly
+ * creates a discrete-event  @ref umontreal.ssj.simevents.Simulator object to
+ * manage the execution of the simulation, unlike the other examples in this
+ * section.
  *
  * The program prints the triples @f$(t, x(t), z(t))@f$ at values of @f$t@f$
  * that are multiples of `h`, one triple per line. This is done by an event
@@ -973,15 +1080,14 @@
  * @subsection REF_examples_sec_bank A simplified bank
  * 
  * 
- * This is the old Example&nbsp;1.4.1 of @cite sBRA87a&thinsp;, page&nbsp;14. A bank
+ * This is Example&nbsp;1.4.1 of @cite sBRA87a&thinsp;, page&nbsp;14. A bank
  * has a random number of tellers every morning. On any given day, the bank
  * has @f$t@f$ tellers with probability @f$q_t@f$, where @f$q_3 = 0.80@f$,
  * @f$q_2 = 0.15@f$, and @f$q_1 = 0.05@f$. All the tellers are assumed to be
  * identical from the modeling viewpoint.
  *
- * <!--
  *  @image html examples_examples_01.svg
- * 
+ * <!--
  * LaTeX code used to generate the picture:
  *
  * \itemsep=0.0pt
@@ -993,11 +1099,11 @@
  * \shaderectangleson \putrectangle corners at 0.75 0.0 and 2.0 0.5
  * \putrectangle corners at 2.0 0.0 and 5.0 1.0 \putrectangle corners at 5.0
  * 0.0 and 6.0 0.5 \endpicture
+ * -->
  *
  * <center>Arrival rate of customers to the bank.</center>
- *  
+ *
  *  @anchor REF_examples_fig_blambda
- * -->
  *
  *  **Event-oriented simulation of the bank model** &emsp;[BankEv]
  * @anchor REF_examples_lst_BankEv
@@ -1006,9 +1112,7 @@
  * The bank opens at 10:00 and closes at 15:00 (i.e., 3 p.m.). The customers
  * arrive randomly according to a Poisson process with piecewise constant
  * rate @f$\lambda(t)@f$, @f$t\ge0@f$. The arrival rate @f$\lambda(t)@f$
- * <!--
  * (see Fig.&nbsp; {@link REF_examples_fig_blambda blambda} )
- * -->
  * is 0.5 customer per minute from 9:45 until 11:00 and from 14:00 until
  * 15:00, and one customer per minute from 11:00 until 14:00. The customers
  * who arrive between 9:45 and 10:00 join a FIFO queue and wait for the bank
@@ -1043,8 +1147,7 @@
  *
  * Listing&nbsp; {@link REF_examples_lst_BankEv BankEv} gives
  * and event-oriented simulation program for this bank model. There are
- * events at the fixed times 9:45, 10:00, 11:00, 14:00, and 15:00. 
- *  At 9:45, the counters are
+ * events at the fixed times 9:45, 10:00, etc. At 9:45, the counters are
  * initialized and the arrival process is started. The time until the first
  * arrival, or the time between one arrival and the next one, is
  * (tentatively) an exponential with a mean of 2 minutes. However, as soon as
@@ -1089,11 +1192,11 @@
  * number of customers served during the day and their total waiting time.
  *
  * The results are given in Listing&nbsp;
- * {@link REF_examples_res_Bank Bank results}.
+ * {@link REF_examples_res_Bank Bank}.
  *
- *  <strong>Results of the `BankEv` program </strong> &emsp;[Bank results]
+ *  <strong>Results of the `BankEv` program</strong> &emsp;[Bank]
  * @anchor REF_examples_res_Bank
- * @include tutorial/BankEv.res
+ * @include tutorial/BankEv.txt
  * 
  * 
  * @subsection REF_examples_sec_call_center A call center
@@ -1126,8 +1229,7 @@
  * with mean @f$(t_2 - t_1) B \lambda_j@f$ and that the arrival counts in
  * any disjoint time intervals are independent random variables. This arrival
  * process model is motivated and studied in @cite ccWHI99c&thinsp; and
- * @cite ccAVR04a&thinsp;.  More refined and realistic arrival process models
- * can be found in @cite ccIBR12b, @cite ccIBR16b, @cite ccORE16a, 
+ * @cite ccAVR04a&thinsp;.
  *
  * Incoming calls form a FIFO queue for the agents. A call is *lost*
  * (abandons the queue) when its waiting time exceed its *patience time*. The
@@ -1166,8 +1268,8 @@
  * parameters are read from a file by the method `readData`. The line
  * `Locale.setDefault(Locale.US)` is added because real numbers in the data
  * file are read in the anglo-saxon form 8.3 instead of the form 8,3 used by
- * many other countries. The `main` program then simulates @f$n =
- * 100000@f$ operating days and prints the value of @f$a@f$, as well as 90%
+ * most countries in the world. The `main` program then simulates @f$n =
+ * 1000@f$ operating days and prints the value of @f$a@f$, as well as 90%
  * confidence intervals on @f$a@f$, @f$w@f$, @f$g(s)@f$, and @f$\ell@f$,
  * based on their estimators @f$\bar{A}_n@f$, @f$\bar{W}_n/a@f$,
  * @f$\bar{G}_n(s)/a@f$, and @f$\bar{L}_n/a@f$, assuming that these
@@ -1242,11 +1344,11 @@
  *
  * The results of this program, with the data in file `CallCenter.dat`, are
  * shown in Listing&nbsp; {@link REF_examples_res_CallCenter
- * CallCenter results}.
+ * CallCenter}.
  *
- *  **Simulation of a simplified call center** &emsp;[CallCenter results]
+ *  **Simulation of a simplified call center** &emsp;[CallCenter]
  * @anchor REF_examples_res_CallCenter
- * @include tutorial/CallCenter.res
+ * @include tutorial/CallCenter.txt
  *
  * This model is certainly an oversimplification of actual call centers. It
  * can be embellished and made more realistic by considering different types
@@ -1257,8 +1359,5 @@
  * generated by calls and the operating costs for running the center, and use
  * the simulation model to compare alternative operating strategies in terms
  * of the expected net revenue, for example.
- * 
- * A more elaborate simulation library for call centers, built over SSJ, 
- * can be found in @cite ccBUI05a, @cite iBUI12a. 
  * 
  */

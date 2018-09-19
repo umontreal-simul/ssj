@@ -1,9 +1,0 @@
-<map id="San13CMCCV" name="San13CMCCV">
-<area shape="rect" id="node2" href="$classift6561examples_1_1San13Prob.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links, taken from Elmaghraby (1977) and used again in L&#39;Ecuyer and Lemieux (2000), &quot;Variance Reduction via Lattice Rules&quot;. " alt="" coords="229,184,315,211"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,95,171,121"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="195,95,349,121"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="215,5,303,32"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1TallyStore.html" title="This class is a variant of Tally for which the individual observations are stored in a list implement..." alt="" coords="391,184,473,211"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="439,95,489,121"/>
-<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="327,5,407,32"/>
-</map>

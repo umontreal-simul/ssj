@@ -13,7 +13,7 @@
  * provides facilities to get a vector of averages, a vector of sums, and to
  * create reports.
  *
- * In Java, a list is usually constructed empty, and
+ * In the Java programming language, a list is usually constructed empty, and
  * filled with items. Lists of statistical probes can be constructed this
  * generic way, or created using factory methods that automatically construct
  * the probes.

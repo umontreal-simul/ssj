@@ -111,7 +111,6 @@ public class MatrixOfStatProbes<E extends StatProbe>
       probes = (E[])new StatProbe[length];
    }
 
-
    /**
     * Returns the global name of this matrix of statistical probes.
     *  @return the global name of the matrix.
@@ -502,4 +501,3 @@ public class MatrixOfStatProbes<E extends StatProbe>
    }
 
 }
-

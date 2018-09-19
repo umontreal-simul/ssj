@@ -1,8 +1,0 @@
-<map id="DigitalSequenceBase2" name="DigitalSequenceBase2">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1NiedSequenceBase2.html" title="This class implements digital sequences constructed from the Niederreiter sequence in base 2..." alt="" coords="5,304,149,331"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1NiedXingSequenceBase2.html" title="This class implements digital sequences based on the Niederreiter&#45;Xing sequence in base 2..." alt="" coords="173,304,344,331"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1SobolSequence.html" title="This class implements digital nets or digital sequences in base 2 formed by the first &#160;points of a So..." alt="" coords="369,304,482,331"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html" title="A special case of DigitalNet for the base . " alt="" coords="200,155,317,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ..." alt="" coords="219,80,299,107"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="223,5,295,32"/>
-</map>

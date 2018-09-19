@@ -79,8 +79,7 @@ public class GeometricVarianceGammaProcess extends StochasticProcess {
         this.vargamma = vargamma;
         setParams (s0, vargamma.getTheta (), vargamma.getSigma (),
                    vargamma.getNu (), mu);
-   }
-   
+    }
    public double nextObservation() {
         double nextX  = vargamma.nextObservation();
         observationIndex = vargamma.getCurrentObservationIndex();

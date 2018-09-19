@@ -1,4 +1,3 @@
-package charts;
 import umontreal.ssj.charts.XYLineChart;
 
 public class ChartTest1

@@ -1,6 +1,0 @@
-<map id="PreyPred.PrintPoint" name="PreyPred.PrintPoint">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simevents_1_1Event.html" title="This abstract class provides event scheduling tools. " alt="" coords="98,260,154,287"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete&#45;event simulator. " alt="" coords="181,171,258,197"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="110,81,187,108"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="212,81,331,108"/>
-</map>

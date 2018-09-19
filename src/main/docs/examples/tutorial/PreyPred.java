@@ -1,4 +1,3 @@
-package tutorial;
 import umontreal.ssj.simevents.*;
 
 public class PreyPred {
