@@ -41,8 +41,8 @@ public class TestAsianOptionGBM0HistRQMC {
 
 		System.out.println(asian.toString());
 		Chrono timer = new Chrono();
-		asian.simulateRuns(n, noise, statValue, statValuePos);
-		System.out.println("Total CPU time:      " + timer.format() + "\n");
+		// asian.simulateRuns(n, noise, statValue, statValuePos);
+		// System.out.println("Total CPU time:      " + timer.format() + "\n");
 		
 
 		statValue.setConfidenceIntervalStudent();

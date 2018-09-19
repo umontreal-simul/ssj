@@ -168,7 +168,7 @@ public class HistogramChartToLatex {
 	 * @param name The name of the generate tex file. You can find it in your current working
 	 * Directory you must change this path
 	 * 
-	 * @param chaine is the the string to write
+	 * @param chaine is the String to write
 	 */
 	public void writeStringTofile(String name, String chaine) throws IOException {
 		String currentDir = System.getProperty("user.dir");

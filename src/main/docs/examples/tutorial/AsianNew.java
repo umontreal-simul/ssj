@@ -70,7 +70,7 @@ public class AsianNew implements MonteCarloModelDouble {
       Tally statValue = new Tally ("Stats on value of Asian option");
 
       Chrono timer = new Chrono();
-      int n = 1000000;
+      int n = 100000;
       MonteCarloExperiment.simulateRuns (model, n, new MRG32k3a(), statValue);
       statValue.setConfidenceIntervalStudent();
       System.out.println (statValue.report (0.95, 3));

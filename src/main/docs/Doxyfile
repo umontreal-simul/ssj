@@ -850,7 +850,7 @@ EXAMPLE_RECURSIVE      = YES
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = src/main/docs/images
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -2035,7 +2035,7 @@ EXTERNAL_PAGES         = YES
 # interpreter (i.e. the result of 'which perl').
 # The default file (with absolute path) is: /usr/bin/perl.
 
-PERL_PATH  = C:\Strawberry\perl\bin     #  for Windows
+PERL_PATH  = C:\Strawberry\perl\bin\perl     #  for Windows
 #            = /usr/bin/perl    #  for Linux
 
 #---------------------------------------------------------------------------
