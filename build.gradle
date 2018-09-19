@@ -368,7 +368,7 @@ sourceSets {
             exclude 'markovchainrqmc/**' // FIXME: broken examples
             exclude 'ift6561examples/**'
             exclude 'latnetbuilder/**'  // Not yet ready.
-            exclude 'latnetbuilder/LatNetBuilderTest.java'  
+            exclude 'umontreal.ssj.latnetbuilder/LatNetBuilderTest.java'  
             exclude 'tutorial/Collision.java'
         }
     }
