@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Class Members - Functions</title>
+<title>SSJ: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -84,7 +92,7 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1MultipleDatasetChart.html#ad8915e27ce8dca9f37e0d1384fdfafd2">MultipleDatasetChart</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1ScatterChart.html#abbb66d0495cc560b04440f665e060cf6">ScatterChart</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html#abbb66d0495cc560b04440f665e060cf6">XYLineChart</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html#a3ee7567e4f364114fd746358ae04a873">XYListSeriesCollection</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html#a96409f25063ebe771f1e04d987227530">XYListSeriesCollection</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1discrepancy_1_1DiscrepancyContainer.html#a587b414aa04f27a30cde4519a4533f1d">DiscrepancyContainer</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1AnovaVarianceCollector.html#a9bbd33a9f69ab06b1a91fc655662d380">AnovaVarianceCollector</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1RandomStreamManager.html#a8bfaac32abddd02b01f9c6d1fd6f38d7">RandomStreamManager</a>
@@ -96,14 +104,14 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1SplayTree.html#a0769d7725f16bae909b17f62043f1511">SplayTree</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#ac6956ce97678155c4dc0c238cf6b23e7">FunctionOfMultipleMeansTally</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1HistogramOnly.html#a447f3c202a2a37e5e502ea83c18caba3">HistogramOnly</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a447f3c202a2a37e5e502ea83c18caba3">Tally</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#a447f3c202a2a37e5e502ea83c18caba3">TallyHistogram</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies.html#a2adc37ee4e430b2076a8b384af348f58">ListOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html#ac39ee13671c976f371de7c985c001c14">ListOfTallies&lt; E extends Tally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTalliesWithCovariance.html#ac39ee13671c976f371de7c985c001c14">ListOfTalliesWithCovariance&lt; E extends Tally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html#aa29d446fa2fdb785d75d6f13177bfe97">ListOfTalliesWithCV&lt; E extends Tally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfFunctionOfMultipleMeansTallies.html#a39c1bd88c5e98903a4e2f3fd3a8c4d05">MatrixOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfTallies.html#affdd647aacaa5edcf1e595dcd1322d95">MatrixOfTallies&lt; E extends Tally &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a447f3c202a2a37e5e502ea83c18caba3">Tally</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#a447f3c202a2a37e5e502ea83c18caba3">TallyHistogram</a>
 </li>
 <li>addAfter()
 : <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1BinaryTree.html#a1bca9ee0944153ef724457e486e3cc44">BinaryTree</a>
@@ -168,8 +176,8 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html#a534014b74710213f39dcecb4d9802b4d">DigitalNet</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1IndependentPointsCached.html#ae4e291e02804179a39b15b27e5c459c3">IndependentPointsCached</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1LatinHypercube.html#ae4e291e02804179a39b15b27e5c459c3">LatinHypercube</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d">PointSet</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandShiftedPointSet.html#aca44f8efb4c6756653ea2bb316d5039b">RandShiftedPointSet</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a75f8834fd4a9f4d838820bf693a74355">PointSet</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandShiftedPointSet.html#a534014b74710213f39dcecb4d9802b4d">RandShiftedPointSet</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice.html#a534014b74710213f39dcecb4d9802b4d">Rank1Lattice</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1SortedAndCutPointSet.html#a534014b74710213f39dcecb4d9802b4d">SortedAndCutPointSet</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1StratifiedUnitCube.html#ae4e291e02804179a39b15b27e5c459c3">StratifiedUnitCube</a>
@@ -223,7 +231,7 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1util_1_1BitVector.html#a77fc10b7eeaf7833f521215fe06e31da">BitVector</a>
 </li>
 <li>andersonDarling()
-: <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofStat.html#a6ea804fc9514e5fba022aff7cd9a3ea2">GofStat</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofStat.html#a2a9561abe5e75184d82f2137808fa577">GofStat</a>
 </li>
 <li>AndersonDarlingDist()
 : <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1AndersonDarlingDist.html#a53aeb874c396a6d6ac8da90fd726b897">AndersonDarlingDist</a>
@@ -241,10 +249,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html#a27cd38e3063c74c82bf3e811861d530f">AntitheticStream</a>
 </li>
 <li>append()
-: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1PrintfFormat.html#a92b23ccd7dc60f62c0a976346f0e310a">PrintfFormat</a>
-</li>
-<li>applyCV()
-: <a class="el" href="classift6561examples_1_1San13CMCCV.html#a2e56c128ad5e5740aa26476b3edf1a1a">San13CMCCV</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1PrintfFormat.html#a6388c01ee98b064d58d96daa5f4540b9">PrintfFormat</a>
 </li>
 <li>areAllNumberObsEqual()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies.html#ab68828d1a300453c4ce7a95295144aab">ListOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
@@ -276,12 +281,6 @@ $(function() {
 <li>asFloatArray2D()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a5c002c354cc2b763d0dae33e6ec5610c">DataField</a>
 </li>
-<li>AsianOption()
-: <a class="el" href="classift6561examples_1_1AsianOption.html#a9c127156ff8e7363775520bb633cbdce">AsianOption</a>
-</li>
-<li>AsianOptionGBMCV()
-: <a class="el" href="classift6561examples_1_1AsianOptionGBMCV.html#ab48d9d853acfae564c2d9087489e79dd">AsianOptionGBMCV</a>
-</li>
 <li>asInt()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a13d943a825f032fef38bd7277b545399">DataField</a>
 </li>
@@ -306,14 +305,14 @@ $(function() {
 <li>average()
 : <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Accumulate.html#a46063a80476fc4e5c5a8c270c176816c">Accumulate</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#a46063a80476fc4e5c5a8c270c176816c">FunctionOfMultipleMeansTally</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#a6c2296b8c7792f5381f9a1c75375f85a">StatProbe</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a46063a80476fc4e5c5a8c270c176816c">Tally</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies.html#a90b19fc7344ee980df219c7eb1630bcb">ListOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#a90b19fc7344ee980df219c7eb1630bcb">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html#aa343a3f2392020aa994dc6ab006d22b9">ListOfTallies&lt; E extends Tally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfFunctionOfMultipleMeansTallies.html#aa97006634782c2a09b9293f798bc6828">MatrixOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#aa97006634782c2a09b9293f798bc6828">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfTallies.html#aa97006634782c2a09b9293f798bc6828">MatrixOfTallies&lt; E extends Tally &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#a6c2296b8c7792f5381f9a1c75375f85a">StatProbe</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a46063a80476fc4e5c5a8c270c176816c">Tally</a>
 </li>
 <li>averageC()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html#a6020285eca928cc66c0c3f156272cb01">ListOfTalliesWithCV&lt; E extends Tally &gt;</a>

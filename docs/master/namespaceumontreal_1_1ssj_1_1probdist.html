@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>umontreal::ssj::probdist Namespace Reference</title>
+<title>SSJ: Package umontreal.ssj.probdist</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -71,7 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">umontreal::ssj::probdist Namespace Reference</div>  </div>
+<div class="title">Package umontreal.ssj.probdist</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -311,7 +319,7 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Probability distributions. </p>
-<p>This package contains Java classes that implement discrete and continuous univariate probability distributions. These classes provide methods to evaluate the probability density (or mass) function (pdf), the cumulative distribution function (cdf), the complementary cdf, the inverse cdf, some moments, etc. It also offers methods to estimate the parameters of some distributions from empirical data. It does not generate random variates; for that, see the package <a class="el" href="namespaceumontreal_1_1ssj_1_1randvar.html">umontreal::ssj::randvar</a>. One can plot the density or the cdf of a distribution either on screen, or in a LaTeX file, by using the package <a class="el" href="namespaceumontreal_1_1ssj_1_1charts.html">umontreal::ssj::charts</a>.</p>
+<p>This package contains Java classes that implement discrete and continuous univariate probability distributions. These classes provide methods to evaluate the probability density (or mass) function (pdf), the cumulative distribution function (cdf), the complementary cdf, the inverse cdf, some moments, etc. It also offers methods to estimate the parameters of some distributions from empirical data. It does not generate random variates; for that, see the package <a class="el" href="namespaceumontreal_1_1ssj_1_1randvar.html">umontreal.ssj.randvar</a>. One can plot the density or the cdf of a distribution either on screen, or in a LaTeX file, by using the package <a class="el" href="namespaceumontreal_1_1ssj_1_1charts.html">umontreal.ssj.charts</a>.</p>
 <h4>Definitions</h4>
 <p>The <em>cumulative distribution function</em> (cdf) of a <em>continuous</em> random variable \(X\) with <em>probability density function</em> (pdf) \(f\) over the real line is <a class="anchor" id="REF_probdist_overview_eq_FDist"></a> </p><p class="formulaDsp">
 \[ F(x) = P[X\le x] = \int_{-\infty}^x f(s)ds \tag{FDist} \]
@@ -333,7 +341,7 @@ Classes</h2></td></tr>
 <p>The distribution classes extend one of the (abstract) classes <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistribution.html">umontreal.ssj.probdist.DiscreteDistribution</a> and <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">umontreal.ssj.probdist.ContinuousDistribution</a> (which both implement the interface <a class="el" href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html">umontreal.ssj.probdist.Distribution</a> ) for discrete and continuous distributions over the real numbers, or <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html">umontreal.ssj.probdist.DiscreteDistributionInt</a>, for discrete distributions over the non-negative integers.</p>
 <p>For example, the class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1PoissonDist.html">umontreal.ssj.probdist.PoissonDist</a> extends <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html">umontreal.ssj.probdist.DiscreteDistributionInt</a>. Calling a static method from this class will compute the corresponding probability from scratch. Constructing a <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1PoissonDist.html">umontreal.ssj.probdist.PoissonDist</a> object, on the other hand, will precompute tables that contain the probability terms and the distribution function for a given parameter \(\lambda\) (the mean of the Poisson distribution). These tables will then be used whenever a method is called for the corresponding object. This second approach is recommended if some of \(F\), \(\bar{F}\), etc., has to be computed several times for the same parameter \(\lambda\). As a rule of thumb, creating objects and using their methods is faster than just using static methods as soon as two or three calls are made, unless the parameters are large.</p>
 <p>Only the non-negligible probability terms (those that exceed the threshold <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#a3644fc584736c1c2e36037a085c416b9" title="Environment variable that determines what probability terms can be considered as negligible when buil...">umontreal.ssj.probdist.DiscreteDistributionInt.EPSILON</a> ) are stored in the tables. For \(F\) and \(\bar{F}\), a single table actually contains \(F (x)\) for \(F (x) \le1/2\) and \(1-F (x)\) for \(F (x) &gt; 1/2\). When the distribution parameters are so large that the tables would take too much space, these are not created and the methods automatically call their static equivalents instead of using tables.</p>
-<p>Objects that implement the interface <a class="el" href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html">umontreal.ssj.probdist.Distribution</a> (and sometimes the abstract class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">umontreal.ssj.probdist.ContinuousDistribution</a> ) are required by some methods in package <a class="el" href="namespaceumontreal_1_1ssj_1_1randvar.html">umontreal::ssj::randvar</a> and also in classes <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofStat.html">umontreal.ssj.gof.GofStat</a> and <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofFormat.html">umontreal.ssj.gof.GofFormat</a> of package <a class="el" href="namespaceumontreal_1_1ssj_1_1gof.html">umontreal::ssj::gof</a>.</p>
+<p>Objects that implement the interface <a class="el" href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html">umontreal.ssj.probdist.Distribution</a> (and sometimes the abstract class <a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html">umontreal.ssj.probdist.ContinuousDistribution</a> ) are required by some methods in package <a class="el" href="namespaceumontreal_1_1ssj_1_1randvar.html">umontreal.ssj.randvar</a> and also in classes <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofStat.html">umontreal.ssj.gof.GofStat</a> and <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofFormat.html">umontreal.ssj.gof.GofFormat</a> of package <a class="el" href="namespaceumontreal_1_1ssj_1_1gof.html">umontreal.ssj.gof</a>.</p>
 <p>Some of the classes in <code>probdist</code> also provide methods that compute parameter estimations of the corresponding distribution from a set of empirical observations, in most cases based on the maximum likelihood method. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->

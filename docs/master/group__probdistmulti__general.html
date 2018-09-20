@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[probdistmulti] General Classes</title>
+<title>SSJ: [probdistmulti] General Classes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -73,11 +81,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistribution2Dim.html">ContinuousDistribution2Dim</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classes implementing 2-dimensional continuous distributions should inherit from this class.  <a href="classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistribution2Dim.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistributionMulti.html">ContinuousDistributionMulti</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classes implementing continuous multi-dimensional distributions should inherit from this class.  <a href="classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistributionMulti.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistribution2Dim.html">ContinuousDistribution2Dim</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classes implementing 2-dimensional continuous distributions should inherit from this class.  <a href="classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistribution2Dim.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdistmulti_1_1DiscreteDistributionIntMulti.html">DiscreteDistributionIntMulti</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classes implementing multi-dimensional discrete distributions over the integers should inherit from this class.  <a href="classumontreal_1_1ssj_1_1probdistmulti_1_1DiscreteDistributionIntMulti.html#details">More...</a><br /></td></tr>

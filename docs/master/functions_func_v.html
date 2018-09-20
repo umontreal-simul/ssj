@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Class Members - Functions</title>
+<title>SSJ: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -78,11 +86,11 @@ $(function() {
 </li>
 <li>variance()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#af60d2a30adec3b0efc1d86668825734d">FunctionOfMultipleMeansTally</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#af60d2a30adec3b0efc1d86668825734d">Tally</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies.html#a6b9c2a7942dd848e52859bd7a616e49d">ListOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html#a6b9c2a7942dd848e52859bd7a616e49d">ListOfTallies&lt; E extends Tally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfFunctionOfMultipleMeansTallies.html#a4d13d2b2ae05fe26bc1cbee4cf5f2e38">MatrixOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfTallies.html#a4d13d2b2ae05fe26bc1cbee4cf5f2e38">MatrixOfTallies&lt; E extends Tally &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#af60d2a30adec3b0efc1d86668825734d">Tally</a>
 </li>
 <li>VarianceGammaProcess()
 : <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html#aff393e33cb0e3a335e98ac158b957c74">VarianceGammaProcess</a>
@@ -120,7 +128,7 @@ $(function() {
 </li>
 <li>viewCdf()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1ContinuousDistChart.html#a2943af0dcd376c59375c1c999a5131a6">ContinuousDistChart</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1DiscreteDistIntChart.html#a70497990c734c03397b00c77fcca96f6">DiscreteDistIntChart</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1DiscreteDistIntChart.html#a2943af0dcd376c59375c1c999a5131a6">DiscreteDistIntChart</a>
 </li>
 <li>viewColumn()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a6863f0fb3d4a25f43b6129c9064755b6">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>

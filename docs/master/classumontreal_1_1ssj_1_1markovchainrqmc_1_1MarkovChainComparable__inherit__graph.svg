@@ -15,29 +15,16 @@
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
-<g id="a_node5"><a xlink:href="classmarkovchainrqmc_1_1Brownian.html" target="_top" xlink:title="Brownian">
-<polygon fill="none" stroke="black" points="23.5,-0.5 23.5,-19.5 80.5,-19.5 80.5,-0.5 23.5,-0.5"/>
-<text text-anchor="middle" x="52" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Brownian</text>
+<g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" target="_top" xlink:title="A special kind of Markov chain whose state space is a subset of the real numbers. ...">
+<polygon fill="none" stroke="black" points="48.5,-0.5 48.5,-19.5 153.5,-19.5 153.5,-0.5 48.5,-0.5"/>
+<text text-anchor="middle" x="101" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MarkovChainDouble</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node4 -->
 <g id="edge4" class="edge"><title>Node0&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M85.9655,-48.4314C77.3778,-38.9673 66.9565,-27.4827 59.9408,-19.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="83.5967,-51.0293 92.9086,-56.083 88.7807,-46.3254 83.5967,-51.0293"/>
-</g>
-<!-- Node5 -->
-<g id="node6" class="node"><title>Node5</title>
-<g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" target="_top" xlink:title="A special kind of Markov chain whose state space is a subset of the real numbers. ...">
-<polygon fill="none" stroke="black" points="98.5,-0.5 98.5,-19.5 203.5,-19.5 203.5,-0.5 98.5,-0.5"/>
-<text text-anchor="middle" x="151" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MarkovChainDouble</text>
-</a>
-</g>
-</g>
-<!-- Node0&#45;&gt;Node5 -->
-<g id="edge5" class="edge"><title>Node0&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M116.076,-48.7175C124.889,-39.1997 135.666,-27.5608 142.897,-19.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="113.482,-46.3674 109.256,-56.083 118.619,-51.1233 113.482,-46.3674"/>
+<path fill="none" stroke="midnightblue" d="M101,-45.8045C101,-36.9102 101,-26.7798 101,-19.7511"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="97.5001,-46.083 101,-56.083 104.5,-46.083 97.5001,-46.083"/>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>

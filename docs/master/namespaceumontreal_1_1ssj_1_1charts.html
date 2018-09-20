@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>umontreal::ssj::charts Namespace Reference</title>
+<title>SSJ: Package umontreal.ssj.charts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -71,7 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">umontreal::ssj::charts Namespace Reference</div>  </div>
+<div class="title">Package umontreal.ssj.charts</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -164,7 +172,7 @@ Classes</h2></td></tr>
 <p>Several chart styles are available and each one is represented by a subclass of <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html">umontreal.ssj.charts.XYChart</a> or of <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1CategoryChart.html">umontreal.ssj.charts.CategoryChart</a>. The <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYLineChart.html">umontreal.ssj.charts.XYLineChart</a> uses <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html">umontreal.ssj.charts.XYListSeriesCollection</a> to plot curves and lines, the <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1HistogramSeriesCollection.html">umontreal.ssj.charts.HistogramSeriesCollection</a> class is used by <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1HistogramChart.html">umontreal.ssj.charts.HistogramChart</a> to plot histograms, and the <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1EmpiricalSeriesCollection.html">umontreal.ssj.charts.EmpiricalSeriesCollection</a> is used by <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1EmpiricalChart.html">umontreal.ssj.charts.EmpiricalChart</a> to plot empirical style charts. It is possible to draw a scatter plot or a box plot using <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1ScatterChart.html">umontreal.ssj.charts.ScatterChart</a> or <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1BoxChart.html">umontreal.ssj.charts.BoxChart</a> respectively. These concrete subclasses have similar APIs, but they are specialized for different kinds of charts.</p>
 <p>These charts can be customized using <code>*SeriesCollection</code> subclasses and <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1Axis.html">umontreal.ssj.charts.Axis</a>. First, one can use methods in the <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html">umontreal.ssj.charts.XYChart</a> class for setting the range values and a background grid. One can also use the method <code>getSeriesCollection()</code> for subclasses of charts to obtain the dataset of the chart, which is represented by a <code>*SeriesCollection</code> object. This dataset can be customized in the following ways by calling methods on the series collection: selecting color, changing plot style (straight lines, curves, marks only, …), putting marks on points, setting a label and selecting the dash pattern (solid, dotted, dashed, …). The available properties depend on the type of chart. Moreover, objects representing the axes can be retrieved with <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a6cdd4cfde5f0b6c0fba4de070bf9e2fc" title="Returns the chart’s domain axis ( -axis) object. ">umontreal.ssj.charts.XYChart.getXAxis</a> for the \(x\)-axis, and <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html#aa4c8838ab2f4b86b29df5c99912d493b" title="Returns the chart’s range axis ( -axis) object. ">umontreal.ssj.charts.XYChart.getYAxis</a> for the \(y\)-axis. By using methods in <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1Axis.html">umontreal.ssj.charts.Axis</a>, many customizations are possible: setting a label to the axis, setting ticks labels and values (auto ticks, periodical ticks or manually defined ticks) and changing the twin axis position on the current axis to select where axes must appear. These settings are independent for each axis.</p>
 <p>Each chart object from SSJ encapsulates a JFreeChart object: a <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html">umontreal.ssj.charts.XYChart</a> instance contains a <code>JFreeChart</code> instance from JFreeChart API, a <code>*SeriesCollection</code> contains a <code>XYDataset</code> and a <code>XYItemRenderer</code>, and finally an <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1Axis.html">umontreal.ssj.charts.Axis</a> contains a <code>NumberAxis</code>. So any parameter proposed by JFreeChart is reachable through getter methods. However, changing the JFreeChart parameters directly may have no impact on the produced TikZ source code.</p>
-<p>The two special classes <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1ContinuousDistChart.html">umontreal.ssj.charts.ContinuousDistChart</a> and <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1DiscreteDistIntChart.html">umontreal.ssj.charts.DiscreteDistIntChart</a> can be used to plot probability densities, mass functions, and cumulative probabilities for continuous or discrete distributions, which are implemented in package <a class="el" href="namespaceumontreal_1_1ssj_1_1probdist.html">umontreal::ssj::probdist</a> of SSJ.</p>
+<p>The two special classes <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1ContinuousDistChart.html">umontreal.ssj.charts.ContinuousDistChart</a> and <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1DiscreteDistIntChart.html">umontreal.ssj.charts.DiscreteDistIntChart</a> can be used to plot probability densities, mass functions, and cumulative probabilities for continuous or discrete distributions, which are implemented in package <a class="el" href="namespaceumontreal_1_1ssj_1_1probdist.html">umontreal.ssj.probdist</a> of SSJ.</p>
 <p>The package <code>charts</code> provides additional tools for formatting data plot, and creating charts with multiple datasets. The <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1PlotFormat.html">umontreal.ssj.charts.PlotFormat</a> class offers basic tools to import and export data from files. Supported file formats are GNUPlot and standard CSV, which is widely used and accepted by most mathematical softwares such as MATLAB and Mathematica. Customizing file input and output format is also possible. Finally <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1MultipleDatasetChart.html">umontreal.ssj.charts.MultipleDatasetChart</a> provides tools to plot with different styles on the same chart.</p>
 <h1>Examples</h1>
 <p><a class="anchor" id="REF_charts_overview_sec_examples"></a> For a series of examples, see the <b>pdf</b> documentation.</p>

@@ -10,9 +10,9 @@
 <title>Graphical Class Hierarchy</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<g id="a_node1"><a xlink:href="classumontreal_1_1ssj_1_1charts_1_1PlotFormat.html" target="_top" xlink:title="Provide tools to import and export data set tables to and from Gnuplot, MATLAB and Mathematica compat...">
+<g id="a_node1"><a xlink:href="classumontreal_1_1ssj_1_1util_1_1RootFinder.html" target="_top" xlink:title="This class provides methods to solve non&#45;linear equations. ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-19.5 65,-19.5 65,-0.5 0,-0.5"/>
-<text text-anchor="middle" x="32.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PlotFormat</text>
+<text text-anchor="middle" x="32.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">RootFinder</text>
 </a>
 </g>
 </g>

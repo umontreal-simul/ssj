@@ -20,7 +20,6 @@ var searchData=
   ['randrijndael',['RandRijndael',['../classumontreal_1_1ssj_1_1rng_1_1RandRijndael.html',1,'umontreal::ssj::rng']]],
   ['randshiftedpointset',['RandShiftedPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RandShiftedPointSet.html',1,'umontreal::ssj::hups']]],
   ['randunuran',['RandUnuran',['../classumontreal_1_1ssj_1_1randvar_1_1RandUnuran.html',1,'umontreal::ssj::randvar']]],
-  ['randvarexample1',['RandvarExample1',['../classrandvar_1_1RandvarExample1.html',1,'randvar']]],
   ['rank1lattice',['Rank1Lattice',['../classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice.html',1,'umontreal::ssj::hups']]],
   ['rank1latticeiterator',['Rank1LatticeIterator',['../classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice_1_1Rank1LatticeIterator.html',1,'umontreal::ssj::hups::Rank1Lattice']]],
   ['ratiofunction',['RatioFunction',['../classumontreal_1_1ssj_1_1util_1_1RatioFunction.html',1,'umontreal::ssj::util']]],
@@ -37,7 +36,6 @@ var searchData=
   ['rqmcexperimentseries',['RQMCExperimentSeries',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html',1,'umontreal::ssj::mcqmctools']]],
   ['rqmcpointset',['RQMCPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html',1,'umontreal::ssj::hups']]],
   ['rqmcsampler',['RQMCSampler',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html',1,'umontreal::ssj::mcqmctools::anova']]],
-  ['ruinis',['RuinIS',['../classift6561examples_1_1RuinIS.html',1,'ift6561examples']]],
   ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'tutorial']]],
   ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'tutorial::RunClass']]]
 ];

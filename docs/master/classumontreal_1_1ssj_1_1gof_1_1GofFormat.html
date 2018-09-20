@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GofFormat Class Reference</title>
+<title>SSJ: GofFormat Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -217,7 +225,7 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <div class="textblock"><p>This class contains methods used to format results of GOF test statistics, or to apply a series of tests simultaneously and format the results. </p>
 <p>It is in fact a translation from C to Java of a set of functions that were specially written for the implementation of TestU01, a software package for testing uniform random number generators <a class="el" href="citelist.html#CITEREF_iLEC01t">[128]</a>&thinsp;.</p>
 <p>Strictly speaking, applying several tests simultaneously makes the \(p\)-values "invalid" in the sense that the probability of having <em>at least one</em> \(p\)-value less than 0.01, say, is larger than 0.01. One must therefore be careful with the interpretation of these \(p\)-values (one could use, e.g., the Bonferroni inequality <a class="el" href="citelist.html#CITEREF_sLAW00a">[116]</a>&thinsp;). Applying simultaneous tests is convenient in some situations, such as in screening experiments for detecting statistical deficiencies in random number generators. In that context, rejection of the null hypothesis typically occurs with extremely small \(p\)-values (e.g., less than \(10^{-15}\)), and the interpretation is quite obvious in this case.</p>
-<p>The class also provides tools to plot an empirical or theoretical distribution function, by creating a data file that contains a graphic plot in a format compatible with the software specified by the environment variable <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a0ef39b3e2173f3a4ad837b34a2998a66" title="Environment variable that selects the type of software to be used for plotting the graphs of function...">graphSoft</a>. NOTE: see also the more recent package <a class="el" href="namespaceumontreal_1_1ssj_1_1charts.html">umontreal::ssj::charts</a>.</p>
+<p>The class also provides tools to plot an empirical or theoretical distribution function, by creating a data file that contains a graphic plot in a format compatible with the software specified by the environment variable <a class="el" href="classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a0ef39b3e2173f3a4ad837b34a2998a66" title="Environment variable that selects the type of software to be used for plotting the graphs of function...">graphSoft</a>. NOTE: see also the more recent package <a class="el" href="namespaceumontreal_1_1ssj_1_1charts.html">umontreal.ssj.charts</a>.</p>
 <p>Note: This class uses the Colt library.</p>
 <div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab3a05e2aba6dc0154c951048c57292d9"></a>

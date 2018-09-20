@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>umontreal::ssj::stat::matrix Namespace Reference</title>
+<title>SSJ: Package umontreal.ssj.stat.matrix</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -71,7 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">umontreal::ssj::stat::matrix Namespace Reference</div>  </div>
+<div class="title">Package umontreal.ssj.stat.matrix</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -91,7 +99,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="anchor" id="REF_stat_matrix_overview_over_mat_tal"></a>Provides facilities to construct and manage rectangular 2D arrays of statistical probes. Sometimes, lists of statistical probes provided by the package <a class="el" href="namespaceumontreal_1_1ssj_1_1stat_1_1list.html">umontreal::ssj::stat::list</a> are not sufficient. For example, statistics can be obtained for different types of customers in different periods, for different parts of various machines, etc. In some cases, this can be managed by encoding the observations in lists, but matrices offer reporting facilities for rows and columns.</p>
+<div class="textblock"><p><a class="anchor" id="REF_stat_matrix_overview_over_mat_tal"></a>Provides facilities to construct and manage rectangular 2D arrays of statistical probes. Sometimes, lists of statistical probes provided by the package <a class="el" href="namespaceumontreal_1_1ssj_1_1stat_1_1list.html">umontreal.ssj.stat.list</a> are not sufficient. For example, statistics can be obtained for different types of customers in different periods, for different parts of various machines, etc. In some cases, this can be managed by encoding the observations in lists, but matrices offer reporting facilities for rows and columns.</p>
 <p>In contrast with a list of statistical probes which is constructed empty and in which probes are added, a matrix of statistical probes is created with predefined dimensions, and a probe is affected to each cell. A cell of a matrix is located by a row and a column. Alternatively, some classes of this package provide factory methods that constructs a matrix, and fills it with newly-constructed statistical probes.</p>
 <p>The <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html">umontreal.ssj.stat.matrix.MatrixOfStatProbes</a> class represents a matrix of statistical probes providing facilities to get matrices of sums, matrices of averages, and to format a report for a specified row or column. It provides various ways to access the internal statistical probes. First, a <code>get</code> method can return a probe corresponding to a cell \((r, c)\). A matrix of probes also provides an <code>iterator</code> method that returns an iterator for traversing every probe row by row. One can also use the <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#ab0ae2dbe7a430bbda38e5f539d682a93" title="Returns a list representing a view on row r of this matrix of statistical probe. ">umontreal.ssj.stat.matrix.MatrixOfStatProbes.viewRow</a> and <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a6863f0fb3d4a25f43b6129c9064755b6" title="Returns a list representing a view on column c of this matrix of statistical probe. ">umontreal.ssj.stat.matrix.MatrixOfStatProbes.viewColumn</a> methods to obtain lists corresponding to rows or columns of the matrix.</p>
 <p>The package defines one subclass for each type of probe. The <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfTallies.html">umontreal.ssj.stat.matrix.MatrixOfTallies</a> can be used to manage a group of tallies, and to add values to each one using a single method call. The <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfFunctionOfMultipleMeansTallies.html">umontreal.ssj.stat.matrix.MatrixOfFunctionOfMultipleMeansTallies</a> is available to regroup <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html">umontreal.ssj.stat.FunctionOfMultipleMeansTally</a> objects.</p>

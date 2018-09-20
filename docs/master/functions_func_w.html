@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Class Members - Functions</title>
+<title>SSJ: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -99,9 +107,9 @@ $(function() {
 </li>
 <li>write()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataWriter.html#ab77b4b49461eaf664cbe7136c4f20088">AbstractDataWriter</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataWriter.html#a3bd9aae9d599da0c4e81f35e13c289f0">BinaryDataWriter</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1CachedDataWriter.html#a8903431485888a6ac6998cb006e51624">CachedDataWriter</a>
-, <a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataWriter.html#af0373ad283b19c10fe20e5b5ce1b2624">DataWriter</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataWriter.html#a07862468546bda709c8163c829645c86">BinaryDataWriter</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1CachedDataWriter.html#a02cb50f53014d150206e384223df1fd7">CachedDataWriter</a>
+, <a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataWriter.html#a02cb50f53014d150206e384223df1fd7">DataWriter</a>
 </li>
 <li>writeFormat()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html#a9233884b1facff0b4ecb533b1e9d2cb4">TextDataWriter</a>

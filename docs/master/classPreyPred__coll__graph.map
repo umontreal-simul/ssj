@@ -1,7 +1,0 @@
-<map id="PreyPred" name="PreyPred">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete&#45;event simulator. " alt="" coords="181,171,258,197"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1simevents_1_1Event.html" title="This abstract class provides event scheduling tools. " alt="" coords="110,260,166,287"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="111,81,189,108"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="212,81,331,108"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation. " alt="" coords="94,349,182,376"/>
-</map>

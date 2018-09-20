@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Member List</title>
+<title>SSJ: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -87,14 +95,14 @@ $(function() {
   <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a35059e827b69531eee64a20bf584a098">evalDensity</a>(double[] evalPoints, double[] data)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#ac5a4b355b87b8f89dbdc1268755f382f">evalDensity</a>(double[] evalPoints, double[][] data)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3ebd01bd7ca67bf8832af3dd8f2bc39d">evalDensity</a>(ArrayList&lt; DensityEstimator &gt; listDE, double[] evalPoints, double[][] data, ArrayList&lt; double[][]&gt; listDensity)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getData</b>() (defined in <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a>)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#aa27f1ed28de9d1d45b61c0e5562bd4bc">getData</a>()</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#ad6e9f7d0542f15bff4fe309cab52f286">getH</a>()</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#a52ed9a2cbf870f4c41c184192da74c3b">getOrder</a>()</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#a2653cdf4889a377a21198d57fa57783a">hAmiseR</a>(int r, double mu2, double mu2Derivative, double init, int n)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#a4e2e017f876d6ba0b337faa3df69f112">hAmiseR</a>(int r, int t, double mu2, double[] mu2Derivative, double init, DensityDerivativeEstimator dde, double[] evalPoints, double a, double b)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a7b223706dc90bab33746a61504e7be95">plotDensity</a>(double[] evalPoints, double[] density, String plotTitle, String[] axisTitles)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a3a88d2d3720ac775f5953b35ac0a504a">roughnessFunctional</a>(double[] density, double a, double b)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html">DensityEstimator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>setData</b>(double[] data) (defined in <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a>)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#a51c02e3088a0a9cbeaeea1e64ef58e7e">setData</a>(double[] data)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#aa3cb872607dbb4b3750373b4eb882bc5">setH</a>(double h)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#a411d4d9d97f1b9696dc5e4eb2fba9dad">setOrder</a>(int order)</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</td><td class="entry"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html">DensityDerivativeEstimator</a></td><td class="entry"></td></tr>

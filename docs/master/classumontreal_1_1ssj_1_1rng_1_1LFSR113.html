@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LFSR113 Class Reference</title>
+<title>SSJ: LFSR113 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -83,12 +91,14 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for LFSR113:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1rng_1_1LFSR113__inherit__graph.svg" width="327" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1rng_1_1LFSR113__inherit__graph.svg" width="327" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for LFSR113:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1rng_1_1LFSR113__coll__graph.svg" width="327" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1rng_1_1LFSR113__coll__graph.svg" width="327" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -205,7 +215,7 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>invtwo24</b>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extends <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html">RandomStreamBase</a> using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG as defined in <a class="el" href="citelist.html#CITEREF_rLEC96a">[142]</a>, <a class="el" href="citelist.html#CITEREF_rTEZ91b">[218]</a>&thinsp;. </p>
-<p>This generator is the <code><a class="el" href="classumontreal_1_1ssj_1_1rng_1_1LFSR113.html" title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ...">LFSR113</a></code> proposed by <a class="el" href="citelist.html#CITEREF_rLEC99a">[144]</a>&thinsp;. It has four 32-bit components combined by a bitwise xor. Its period length is \(\rho\approx2^{113}\). The values of \(V\), \(W\) and \(Z\) are \(2^{35}\), \(2^{55}\) and \(2^{90}\) respectively (see <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> for their definition). The seed of the RNG, and the state of a stream at any given step, are four-dimensional vectors of 32-bit integers. The default initial seed of the RNG is <sup title="In previous versions, it was \form#2287@_fakenl.">[1]</sup> (987654321, 987654321, 987654321, 987654321). The <code>nextValue</code> method returns numbers with 32 bits of precision.</p>
+<p>This generator is the <code><a class="el" href="classumontreal_1_1ssj_1_1rng_1_1LFSR113.html" title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ...">LFSR113</a></code> proposed by <a class="el" href="citelist.html#CITEREF_rLEC99a">[144]</a>&thinsp;. It has four 32-bit components combined by a bitwise xor. Its period length is \(\rho\approx2^{113}\). The values of \(V\), \(W\) and \(Z\) are \(2^{35}\), \(2^{55}\) and \(2^{90}\) respectively (see <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> for their definition). The seed of the RNG, and the state of a stream at any given step, are four-dimensional vectors of 32-bit integers. The default initial seed of the RNG is <sup title="In previous versions, it was \form#2048@_fakenl.">[1]</sup> (987654321, 987654321, 987654321, 987654321). The <code>nextValue</code> method returns numbers with 32 bits of precision.</p>
 <div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7dccc17157325b5e5120053d32104d9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7dccc17157325b5e5120053d32104d9f">&#9670;&nbsp;</a></span>LFSR113()</h2>
@@ -341,7 +351,7 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>invtwo24</b>
 </div><div class="memdoc">
 
 <p>Sets the initial seed for the class <code><a class="el" href="classumontreal_1_1ssj_1_1rng_1_1LFSR113.html" title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ...">LFSR113</a></code> to the four integers of the vector <code>seed[0..3]</code>. </p>
-<p>This will be the initial state of the next created stream. The default seed for the first stream is <sup title="In previous versions, it was \form#2287@_fakenl.">[2]</sup> (987654321, 987654321, 987654321, 987654321). The first, second, third and fourth integers of <code>seed</code> must be either negative, or greater than or equal to 2, 8, 16 and 128 respectively. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This will be the initial state of the next created stream. The default seed for the first stream is <sup title="In previous versions, it was \form#2048@_fakenl.">[2]</sup> (987654321, 987654321, 987654321, 987654321). The first, second, third and fourth integers of <code>seed</code> must be either negative, or greater than or equal to 2, 8, 16 and 128 respectively. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">seed</td><td>array of 4 elements representing the seed </td></tr>
   </table>

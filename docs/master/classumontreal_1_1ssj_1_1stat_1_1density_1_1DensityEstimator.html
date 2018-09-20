@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DensityEstimator Class Reference</title>
+<title>SSJ: DensityEstimator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -83,7 +91,8 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for DensityEstimator:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator__inherit__graph.svg" width="467" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator__inherit__graph.svg" width="342" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -146,15 +155,13 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This abstract class represents a univariate density estimator (DE). </p>
-<p>In this abstract class, only non-static methods for evaluating the density estimator are provided. However, typically, its subclasses offer static methods as well. In a majority of cases, one simply wishes to estimate the density at a finite set of evaluation points, from a given set of data, and perhaps plot the estimated density. To do that, there is no need to create an object. One can simply use a static <code>evalDensity</code> method followed by <code>plotDensity</code>. Note that calling the <code>evalDensity</code> method only once for a vector of evaluation points is typically much faster than calling it separately for each evaluation point.</p>
-<p>In case one plans to evaluate the same density several times with the same data, it may be worthwhile to construct a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class represents a univariate density estimator (DE). ">DensityEstimator</a></code> object and build the density estimate from the given data. After that, one can evaluate the density at any given point, often much faster than by calling the static method. In the case of a histogram or average shifted histogram, for example, constructing the density estimator takes time, but once it is constructed, evaluating it is relatively fast. For a KDE with fixed bandwidth, the difference (or gain) may be small.</p>
+<p>Both static and non-static methods are offered. In a majority of cases, on simply wishes to estimate the density at a finite set of evaluation points, from a given set of data, and perhaps plot the estimated density. To do that, there is no need to create an object. One can simply use a static <code>evalDensity</code> method followed by <code>plotDensity</code>. Note that calling the <code>evalDensity</code> method only once for a vector of evaluation points is typically much faster than calling it separately for each evaluation point.</p>
+<p>In case one plans to evaluate the same density several times with the same data, then it may be worthwhile to construct a <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html" title="This abstract class represents a univariate density estimator (DE). ">DensityEstimator</a></code> object and build the density estimate from the given data. After that, one can evaluate the density at any given point, often much faster than by calling the static method. In the case of a histogram or average shifted histogram, for example, constructing the density estimator takes time, but once it is constructed, evaluating it is relatively fast. For a KDE with fixed bandwidth, the difference (or gain) may be small.</p>
 <p>In a non-abstract subclass, it suffices (in principle) to implement the abstract method <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c">evalDensity(double)</a>, which evaluates the density at a single point \(x\) given the data points. However, other methods will typically be overridden to make them more efficient. For example, evaluating the DE over a set of evaluation points \(\{x_0, x_1, \dots, x_{k-1}\} \) can often be performed more efficiently than by calling <code>evalDensity(x)</code> repeatedly in a loop.</p>
 <p>More precisely, the single point evaluation <code><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a86fe8be449d76c9e8ec7eef54735cd5c" title="Evaluates the density estimator at x. ">evalDensity(double)</a></code> is abstract, since it will definitely differ between subclasses. For the evaluation on a set of points one can use <code>evalDensity(double[]).</code> Even though a default implementation is provided, very often specific estimators will have more efficient evaluation algorithms. So, overriding this method can be beneficial in many cases. Furthermore, this class includes a method to plot the estimated density.</p>
-<p>Another important abstract method is <code>setData</code>, which allows to change the observations that define the density estimator. This can be especially useful when one intends to evaluate the same type of density estimator for different observations.</p>
-<p>This class also provides more elaborate methods that deal with the convergence behavior of the DEs in terms of their IV, ISB, and MISE.</p>
-<p>As these only require evaluations of the density estimator, they are implemented as static methods.</p>
-<p>One such method estimates the empirical IV, see <code>computeIV(double[][], double, double, double[])</code> for one individual DE and <code>computeIV(ArrayList, double, double, ArrayList)</code> for several DEs. These methods merely compute an estimate, since computing an exact integral is out of reach for this class.</p>
-<p>Note that the MISE can only be computed in situations where either the ISB is zero or the true density is known. In the first case, the IV is the same as the MISE, of course. For the second case this class provides the possibility to estimate the empirical MISE for a single DE via <code>computeMISE(ContinuousDistribution, double[], double[][], double, double, double[], double[], double[])</code> as well as for several DEs via <code>computeMISE(ContinuousDistribution, double[], ArrayList, double, double, ArrayList)</code>. Again, as explained before for the IV, this merely gives an estimate of the empirical MISE. </p>
+<p>Another important abstract method is <code>setData</code>, which allows to change the observations that define the density estimator. This can be especially useful when one intends to evaluate the same type of density estimator for different sets of observations.</p>
+<p>This class also provides more elaborate methods that deal with the convergence behavior of the DEs in terms of their IV, ISB, and MISE. As these only require evaluations of the density estimator, they are implemented as static methods.</p>
+<p>One such method estimates the empirical IV by evaluating the empirical variance at set (or grid) of evaluation points and averaging. See the methods <code>computeIV</code>, which can do that for one DE or for a list of several DEs. The MISE can also be estimated in situations where either the ISB is known to be zero or the true density is known. The methods <code>computeMISE</code> do that for the second case. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aca9c290eebf7cdc7d4ebcf883fe90b88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca9c290eebf7cdc7d4ebcf883fe90b88">&#9670;&nbsp;</a></span>computeIV() <span class="overload">[1/2]</span></h2>

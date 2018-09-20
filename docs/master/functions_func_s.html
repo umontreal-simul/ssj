@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Class Members - Functions</title>
+<title>SSJ: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -108,10 +116,12 @@ $(function() {
 <li>search()
 : <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch.html#a9710e9b3fb614ff90c489eca1238bcc3">DigitalNetSearch</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1OrdinaryLatticeSearch.html#a0015063f9ef329683b51627a03f63a4f">OrdinaryLatticeSearch</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#a34ba2b91f6261ae26b596b2a5f7d4010">Search</a>
 </li>
 <li>Search()
 : <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#a29edebb1318206492b51599d3cb82162">Search</a>
+</li>
+<li>search()
+: <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#a34ba2b91f6261ae26b596b2a5f7d4010">Search</a>
 </li>
 <li>Searcher()
 : <a class="el" href="classumontreal_1_1ssj_1_1discrepancy_1_1Searcher.html#a4690e89c830e6ed7a1973bf96882666d">Searcher</a>
@@ -172,9 +182,6 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a96e6cd12d9916245151846d012f397e9">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1util_1_1DMatrix.html#acd5e9bfaf51afce13a10f111b8645a68">DMatrix</a>
 </li>
-<li>setAlpha()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a6a9e67898a38f47fcee42d5bb360b883">DEModelBandwidthBased</a>
-</li>
 <li>setAutoRange()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1CategoryChart.html#aa117163c4f43052e7e774bd5fa0abdd6">CategoryChart</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1MultipleDatasetChart.html#aa117163c4f43052e7e774bd5fa0abdd6">MultipleDatasetChart</a>
@@ -183,17 +190,11 @@ $(function() {
 <li>setAutoRange00()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html#adbdbbf2419a169adba8744344162b774">XYChart</a>
 </li>
-<li>setB()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#aa28e9469470e284668ea725ad56118fa">DEModelBandwidthBased</a>
-</li>
 <li>setBandwidth()
 : <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1KernelDensityGen.html#a21f23c7c887c0bf0068dde483c1bc760">KernelDensityGen</a>
 </li>
 <li>setBase()
 : <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#ab85b3b75c7348fc2d66ad9de53abee7a">RQMCExperimentSeries</a>
-</li>
-<li>setBaseOfLog()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#abdb8ab967b88c382f361455c290993cc">DEModelBandwidthBased</a>
 </li>
 <li>setBatchAggregation()
 : <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html#ae21ab10c53d00d832f156afcf4b738f0">BatchMeansSim</a>
@@ -213,7 +214,6 @@ $(function() {
 </li>
 <li>setBeta()
 : <a class="el" href="classumontreal_1_1ssj_1_1discrepancy_1_1Palpha.html#afd55082c4a54f5c964b124c39ff60563">Palpha</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a360ea77ead0b54c93889af0663af234e">DEModelBandwidthBased</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1FunctionOfMultipleMeansTallyWithCV.html#aac4247bd09b7503fc2d10e78131327e9">FunctionOfMultipleMeansTallyWithCV</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html#a068ddcad94211077d59cf3db422e42fa">ListOfTalliesWithCV&lt; E extends Tally &gt;</a>
 </li>
@@ -226,15 +226,12 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1util_1_1BitVector.html#a8bf03525a8a3e65762ebf95c1a2690b4">BitVector</a>
 </li>
 <li>setBroadcasting()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#afaeae30dd29c6d7f384f527ddcd08e4b">StatProbe</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#afaeae30dd29c6d7f384f527ddcd08e4b">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#afaeae30dd29c6d7f384f527ddcd08e4b">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#afaeae30dd29c6d7f384f527ddcd08e4b">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#afaeae30dd29c6d7f384f527ddcd08e4b">StatProbe</a>
 </li>
 <li>setBrownianMotionPCA()
 : <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessPCA.html#a88b685eec69df2597c1b21718c72f6df">InverseGaussianProcessPCA</a>
-</li>
-<li>setC()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#ad7fd29070f99852d4a7801dde110d1d1">DEModelBandwidthBased</a>
 </li>
 <li>setCachedGen()
 : <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenWithCache.html#aadf13652247d56416e5ca782e96b1971">RandomVariateGenWithCache</a>
@@ -268,9 +265,9 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1functions_1_1Polynomial.html#a0e0aa308c74f204b65dcba0d7b0592a3">Polynomial</a>
 </li>
 <li>setCollecting()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#ad05910522dbe8f432ca2ed6d1987df31">StatProbe</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#a4f4e15cf2de08f090d7401ecd8e0e2c2">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#a4f4e15cf2de08f090d7401ecd8e0e2c2">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a4f4e15cf2de08f090d7401ecd8e0e2c2">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#ad05910522dbe8f432ca2ed6d1987df31">StatProbe</a>
 </li>
 <li>setColor()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html#a27dd943e73c852569d7629d781400e96">SSJCategorySeriesCollection</a>
@@ -327,19 +324,13 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html#aa7e23ec10b4e3e316fd504c55e590789">XYListSeriesCollection</a>
 </li>
 <li>setData()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEHistogram.html#a51c02e3088a0a9cbeaeea1e64ef58e7e">DEHistogram</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a51c02e3088a0a9cbeaeea1e64ef58e7e">DEKernelDensity</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#a51c02e3088a0a9cbeaeea1e64ef58e7e">DEKernelDensity</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#a51c02e3088a0a9cbeaeea1e64ef58e7e">DensityDerivativeEstimator</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a682fd278d58d084d180aa0145d14a032">DensityEstimator</a>
-</li>
-<li>setDelta()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a9a63721099e4516b3da4d603ec1d2b48">DEModelBandwidthBased</a>
 </li>
 <li>setDimension()
 : <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#ae7438a4edef423f3bf7e29cf48eaff1f">Search</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1randvarmulti_1_1IIDMultivariateGen.html#aba31dd0c2f21cc0d9a08ece55b409d8e">IIDMultivariateGen</a>
-</li>
-<li>setDisplayExec()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a2669d73323e721d077f9becfb0fc798f">DEModelBandwidthBased</a>
 </li>
 <li>setEps()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#aba07d6138f0764195b8856f6ff0e0731">DEKernelDensity</a>
@@ -384,14 +375,10 @@ $(function() {
 </li>
 <li>setH()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#aa3cb872607dbb4b3750373b4eb882bc5">DEKernelDensity</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a91c1332af539ee778a2ceeec8da6289b">DEModelBandwidthBased</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html#aa3cb872607dbb4b3750373b4eb882bc5">DensityDerivativeEstimator</a>
 </li>
 <li>setHeaderPrefix()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html#af55180627983c7a08296a8bac16333f9">TextDataWriter</a>
-</li>
-<li>setInitRoughnessFunctional()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a9da187110984eea1f869c71e0d859ba3">DEModelBandwidthBased</a>
 </li>
 <li>setInnerIntegrator()
 : <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Anova.html#a75139c884925037aa3967927f7961f90">Anova</a>
@@ -431,12 +418,6 @@ $(function() {
 </li>
 <li>setLinearSeed()
 : <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1F2NL607.html#ae9ba8f52762a9ab393c9e656801c97d0">F2NL607</a>
-</li>
-<li>setLogH()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a90de7ee03c70483344aa396f74305dde">DEModelBandwidthBased</a>
-</li>
-<li>setLogN()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a9ed1f5608c9f6c70a29e0e629fbeb050">DEModelBandwidthBased</a>
 </li>
 <li>setManualRange()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1MultipleDatasetChart.html#a32db3f89db47d65bc86bdb830d988ac8">MultipleDatasetChart</a>
@@ -497,10 +478,10 @@ $(function() {
 </li>
 <li>setName()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYListSeriesCollection.html#a82431be11a2c6330c7cad6fc5a722a29">XYListSeriesCollection</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#ad737b36b74be994e0d8420797ed72f78">StatProbe</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#ad737b36b74be994e0d8420797ed72f78">Tally</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#ad737b36b74be994e0d8420797ed72f78">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#ad737b36b74be994e0d8420797ed72f78">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#ad737b36b74be994e0d8420797ed72f78">StatProbe</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#ad737b36b74be994e0d8420797ed72f78">Tally</a>
 </li>
 <li>setNonLinearData()
 : <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1F2NL607.html#ae8d948c50e5dcbf60583a9d4f66c2de0">F2NL607</a>
@@ -662,7 +643,7 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1GeometricBrownianMotion.html#aa602dba2a5bf33dcda2b983a59cc6f5b">GeometricBrownianMotion</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1GeometricVarianceGammaProcess.html#a7ff08461dfd4341fd3e9491c1c0600f3">GeometricVarianceGammaProcess</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html#a4b3cbf9c74984ffc1e3aef08760d23ad">InverseGaussianProcess</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html#aa67de4fffe72d8d10ad6b4370ff9fdae">MultivariateBrownianMotion</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html#a1382e1e69202d9e2cac574d8d914deac">MultivariateBrownianMotion</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateGeometricBrownianMotion.html#a029aafd258de19ca899358dacb90c6db">MultivariateGeometricBrownianMotion</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1NormalInverseGaussianProcess.html#a364d2939edb1c5b8992cabfebb81da26">NormalInverseGaussianProcess</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcess.html#a41ede8a3950a299a2ecf3cbda609388c">OrnsteinUhlenbeckProcess</a>
@@ -692,13 +673,6 @@ $(function() {
 <li>setprobFlag()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a95dd259fd808560c3ed8f16229849218">XYChart</a>
 </li>
-<li>setProcess()
-: <a class="el" href="classift6561examples_1_1AsianOption.html#a7717357e0ba5f0c606eb3e17c9bc57c1">AsianOption</a>
-, <a class="el" href="classift6561examples_1_1AsianOptionGBMCV.html#a96d68a92e673a65fa67aae22ecffd255">AsianOptionGBMCV</a>
-</li>
-<li>setProducePlots()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a0264eb3b4b44370bc7eadb9c287aac4f">DEModelBandwidthBased</a>
-</li>
 <li>setRandomization()
 : <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#ad942d399f2ca51b66a77644b8596d315">ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;</a>
 </li>
@@ -707,9 +681,6 @@ $(function() {
 </li>
 <li>setRandomStreamClass()
 : <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1BasicRandomStreamFactory.html#a63f39685fbbe822fa1e07e2c96af2ec6">BasicRandomStreamFactory</a>
-</li>
-<li>setRange()
-: <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEModelBandwidthBased.html#a02833779487be666bb0ecb217d4e7ff7">DEModelBandwidthBased</a>
 </li>
 <li>setRenderer()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html#a2c0d42dc9c519ace277f9ed8713e3313">SSJCategorySeriesCollection</a>
@@ -793,8 +764,8 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessPCA.html#ad096736436bd336c9b21860d1b7912ad">GammaProcessPCA</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1GeometricBrownianMotion.html#ad096736436bd336c9b21860d1b7912ad">GeometricBrownianMotion</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1GeometricLevyProcess.html#ad096736436bd336c9b21860d1b7912ad">GeometricLevyProcess</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html#ad096736436bd336c9b21860d1b7912ad">InverseGaussianProcessBridge</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html#a08410e2819b8a7576bb4cbbd2a1f58ec">InverseGaussianProcessMSH</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessBridge.html#a08410e2819b8a7576bb4cbbd2a1f58ec">InverseGaussianProcessBridge</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH.html#ad096736436bd336c9b21860d1b7912ad">InverseGaussianProcessMSH</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html#ad096736436bd336c9b21860d1b7912ad">MultivariateBrownianMotion</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateGeometricBrownianMotion.html#ad096736436bd336c9b21860d1b7912ad">MultivariateGeometricBrownianMotion</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1NormalInverseGaussianProcess.html#ad096736436bd336c9b21860d1b7912ad">NormalInverseGaussianProcess</a>
@@ -838,7 +809,7 @@ $(function() {
 </li>
 <li>setValues()
 : <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1CustomHistogramDataset.html#a5bfea5533a62b0e7f9485039ac3fef14">CustomHistogramDataset</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1HistogramSeriesCollection.html#a5bfea5533a62b0e7f9485039ac3fef14">HistogramSeriesCollection</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1charts_1_1HistogramSeriesCollection.html#a1f0c101d8e1d0558b92468acf436f32d">HistogramSeriesCollection</a>
 </li>
 <li>setValueWidth()
 : <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Report.html#a768d3db0d3b4e4e9cf57976ca65fe756">Report</a>
@@ -876,7 +847,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#aa4eeb05e91ada54c3270710d7b4a0aaf">StatProbe</a>
 </li>
 <li>shuffle()
-: <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1RandomPermutation.html#a948ce5c8909bc7f9ec8b8ddd909ae139">RandomPermutation</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1RandomPermutation.html#ab48296708691a6eb54a94e38a41d020d">RandomPermutation</a>
 </li>
 <li>SimExp()
 : <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1SimExp.html#a51e22b6bbd5827f14bae58fc06faf81c">SimExp</a>
@@ -885,35 +856,18 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1functions_1_1MathFunctionUtil.html#a93f9cdb5020e98763d9a3c60c4b1220c">MathFunctionUtil</a>
 </li>
 <li>simulArrayRQMC()
-: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#af65f7258b6070bbd3515eadcbe96d984">ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#a0e8a9c37de2285d58554ad7edc74620c">ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfDoubleChains.html#af65f7258b6070bbd3515eadcbe96d984">ArrayOfDoubleChains</a>
 </li>
 <li>simulate()
-: <a class="el" href="classift6561examples_1_1AsianOption.html#ae8453e0673abc59c984a3f47b3be46b5">AsianOption</a>
-, <a class="el" href="classift6561examples_1_1CallableBond.html#ae8453e0673abc59c984a3f47b3be46b5">CallableBond</a>
-, <a class="el" href="classift6561examples_1_1OldAsianGBM.html#ae8453e0673abc59c984a3f47b3be46b5">OldAsianGBM</a>
-, <a class="el" href="classift6561examples_1_1San13CMC.html#ae8453e0673abc59c984a3f47b3be46b5">San13CMC</a>
-, <a class="el" href="classift6561examples_1_1San13CMCCV.html#ae8453e0673abc59c984a3f47b3be46b5">San13CMCCV</a>
-, <a class="el" href="classift6561examples_1_1San13CMCgrad1.html#ae8453e0673abc59c984a3f47b3be46b5">San13CMCgrad1</a>
-, <a class="el" href="classift6561examples_1_1San13CMCgrad2.html#ae8453e0673abc59c984a3f47b3be46b5">San13CMCgrad2</a>
-, <a class="el" href="classift6561examples_1_1San13connect.html#ae8453e0673abc59c984a3f47b3be46b5">San13connect</a>
-, <a class="el" href="classift6561examples_1_1San13connectCMC1.html#ae8453e0673abc59c984a3f47b3be46b5">San13connectCMC1</a>
-, <a class="el" href="classift6561examples_1_1San13Dist.html#ae8453e0673abc59c984a3f47b3be46b5">San13Dist</a>
-, <a class="el" href="classift6561examples_1_1San13Prob.html#ae8453e0673abc59c984a3f47b3be46b5">San13Prob</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS_1_1OptionVG1.html#ae8453e0673abc59c984a3f47b3be46b5">TestOptionVGIS.OptionVG1</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS1.html#ae8453e0673abc59c984a3f47b3be46b5">TestOptionVGIS.OptionVGIS1</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS2.html#ae8453e0673abc59c984a3f47b3be46b5">TestOptionVGIS.OptionVGIS2</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS2017_1_1OptionVG1.html#ae8453e0673abc59c984a3f47b3be46b5">TestOptionVGIS2017.OptionVG1</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS1.html#ae8453e0673abc59c984a3f47b3be46b5">TestOptionVGIS2017.OptionVGIS1</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS2.html#ae8453e0673abc59c984a3f47b3be46b5">TestOptionVGIS2017.OptionVGIS2</a>
-, <a class="el" href="classtutorial_1_1AsianNew.html#ae8453e0673abc59c984a3f47b3be46b5">AsianNew</a>
+: <a class="el" href="classtutorial_1_1AsianNew.html#ae8453e0673abc59c984a3f47b3be46b5">AsianNew</a>
 , <a class="el" href="classtutorial_1_1NewTestAsianRQMC.html#ae8453e0673abc59c984a3f47b3be46b5">NewTestAsianRQMC</a>
 , <a class="el" href="classtutorial_1_1San13Dist.html#ae8453e0673abc59c984a3f47b3be46b5">San13Dist</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1AnovaVarianceEstimator.html#ae8453e0673abc59c984a3f47b3be46b5">AnovaVarianceEstimator</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVarianceEstimator.html#ae8453e0673abc59c984a3f47b3be46b5">PartialVarianceEstimator</a>
 , <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModel.html#ae8453e0673abc59c984a3f47b3be46b5">MonteCarloModel&lt; E &gt;</a>
 , <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html#ae8453e0673abc59c984a3f47b3be46b5">MonteCarloModelDouble</a>
 , <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDoubleArray.html#ae8453e0673abc59c984a3f47b3be46b5">MonteCarloModelDoubleArray</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1AnovaVarianceEstimator.html#ae8453e0673abc59c984a3f47b3be46b5">AnovaVarianceEstimator</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVarianceEstimator.html#ae8453e0673abc59c984a3f47b3be46b5">PartialVarianceEstimator</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html#a1f451daf160cbacfab1e7b495789750e">BatchMeansSim</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1RepSim.html#a1f451daf160cbacfab1e7b495789750e">RepSim</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1SimExp.html#a31c96b2dcd16fa80db7ddb583ff67b8a">SimExp</a>
@@ -924,19 +878,15 @@ $(function() {
 <li>simulateBatches()
 : <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html#a7311be0dc09066e277a34d3f353d4d63">BatchMeansSim</a>
 </li>
-<li>simulateCMC()
-: <a class="el" href="classift6561examples_1_1CallableBondCMC.html#abbdf4d5b87515eddac025480b068e341">CallableBondCMC</a>
-</li>
 <li>simulateRuns()
-: <a class="el" href="classift6561examples_1_1AsianOption.html#ab6fbbe355b1b0715ff46f368d606d313">AsianOption</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#af0ca25cbd3f484dcb3aec472e1b72a09">MonteCarloExperiment</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html#a5f00014c8e4581f76cdbf11f686b0a0c">MonteCarloSampler</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html#a8641e19cc8437df6b48020b0f04be249">MonteCarloSampler</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1QMCSampler.html#a5f00014c8e4581f76cdbf11f686b0a0c">QMCSampler</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html#a5f00014c8e4581f76cdbf11f686b0a0c">RQMCSampler</a>
-, <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html#a8641e19cc8437df6b48020b0f04be249">Sampler</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html#a8641e19cc8437df6b48020b0f04be249">RQMCSampler</a>
+, <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html#a5f00014c8e4581f76cdbf11f686b0a0c">Sampler</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#af0ca25cbd3f484dcb3aec472e1b72a09">MonteCarloExperiment</a>
 </li>
 <li>simulateRunsCV()
-: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a6e40ab3c2938c0dd46bae55fd644e4eb">MonteCarloExperiment</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#abdcaa883fb49e32b1d98e7245e8fc353">MonteCarloExperiment</a>
 </li>
 <li>simulateRunsDefaultReport()
 : <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7d396e174f528dbe72a33d12a3ee6694">MonteCarloExperiment</a>
@@ -945,10 +895,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d">MonteCarloExperiment</a>
 </li>
 <li>simulateRunsDefaultReportStudent()
-: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a129aa0a4ae580d5abdf23c9e92e6afcf">MonteCarloExperiment</a>
-</li>
-<li>simulateWithCV()
-: <a class="el" href="classift6561examples_1_1CallableBondCV.html#ab8951a1c2063b880171c0ff8e469c6ac">CallableBondCV</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a12e336ff0d742088b224ffcbf34f2d7a">MonteCarloExperiment</a>
 </li>
 <li>simulator()
 : <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Accumulate.html#af8d59d89ff21a42f6ae7d840d60a4904">Accumulate</a>
@@ -975,7 +922,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#a00535f612b52d8baddf6fe56954e43c6">MarkovChain</a>
 </li>
 <li>simulOneStepArrayRQMC()
-: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#abaa700c060f44b84099af773f22b2b29">ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#ae0cbe733dc1b4fcf49f5930685305fc2">ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfDoubleChains.html#ae195e7afe5dce9b531cf59e7bb0983bf">ArrayOfDoubleChains</a>
 </li>
 <li>simulReplicatesArrayRQMC()
@@ -985,17 +932,13 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#ae3109c86f3799cab2317abb51c511675">ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;</a>
 </li>
 <li>simulReplicatesRQMC()
-: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a6a494ca1ec3fe859b7032436dcc1a09c">RQMCExperiment</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a55d193083e930caf51f2891cdf2a696f">RQMCExperiment</a>
 </li>
 <li>simulReplicatesRQMCCV()
-: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a1e1dc920b42895a37e220bd9d2b1f616">RQMCExperiment</a>
-</li>
-<li>simulReplicatesRQMCReport()
-: <a class="el" href="classift6561examples_1_1TestOptionVGIS.html#a085d2972ce0f1a22f6c1c200b62c050a">TestOptionVGIS</a>
-, <a class="el" href="classift6561examples_1_1TestOptionVGIS2017.html#a085d2972ce0f1a22f6c1c200b62c050a">TestOptionVGIS2017</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#ae9e20833ac57539ef985020265e05634">RQMCExperiment</a>
 </li>
 <li>simulRepMC()
-: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#afb9aaf7b7cfe5fceefd28849298ff80b">MarkovChain</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#a7b63efdd053626bcd6770265f59511b4">MarkovChain</a>
 </li>
 <li>simulRQMC()
 : <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#ae184e842c14229f91af4d2aba8f1a18c">MarkovChain</a>
@@ -1017,7 +960,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#abd39961ee332d4d6520e53a28b0aa434">MarkovChain</a>
 </li>
 <li>simulSteps()
-: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#af177589eb11b1195592fd9fe056bfc78">MarkovChain</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChain.html#a25084d2c0385dcc103e661715ad91582">MarkovChain</a>
 </li>
 <li>simulStepsDouble()
 : <a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html#afb92ca17a4dfac85d95f0de5f9454133">MarkovChainDouble</a>
@@ -1029,13 +972,13 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html#a336d07b83783e6438a93476ae6dd350f">ListOfTalliesWithCV&lt; E extends Tally &gt;</a>
 </li>
 <li>SmoothingCubicSpline()
-: <a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1SmoothingCubicSpline.html#a96d9eed240d8088e5529f031c737c091">SmoothingCubicSpline</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1functionfit_1_1SmoothingCubicSpline.html#aa96c4508f1e44d54c6ce909b4b014c06">SmoothingCubicSpline</a>
 </li>
 <li>SMScrambleShift()
 : <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1SMScrambleShift.html#a8e0482178016fcb3f35c5c2c1a011770">SMScrambleShift</a>
 </li>
 <li>SobolSequence()
-: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1SobolSequence.html#a52fb4e2e7fcd5a79a1ce6f48136856b4">SobolSequence</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1SobolSequence.html#a5f84fb922ade677fd4634ee025574a8d">SobolSequence</a>
 </li>
 <li>solveLU()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1DMatrix.html#a5c6c514c2cb27cf88dd8b85a48cc3a40">DMatrix</a>
@@ -1047,8 +990,8 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html#af003365b6d0c59cd1154b263f5f35864">Discrepancy</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html#aac59d0342f6ede68e32b208a6e569968">CachedPointSet</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1AnovaVarianceCollector.html#a47fdc9eea42b6975cdc835bb2e08810e">AnovaVarianceCollector</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort.html#ab14391d174bbc4db157ab185927f6186">BatchSort&lt; T extends MultiDimComparable&lt;? super T &gt;</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveBatchSort.html#af4c29f270248da82978c187a84941a22">HilbertCurveBatchSort&lt; T extends MultiDimComparable&lt;? super T &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort.html#af4c29f270248da82978c187a84941a22">BatchSort&lt; T extends MultiDimComparable&lt;? super T &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveBatchSort.html#a9792cdc17163a04e3c7cc621b703cf49">HilbertCurveBatchSort&lt; T extends MultiDimComparable&lt;? super T &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort.html#accb37a88ed81b0f80db7ae504639b796">HilbertCurveSort</a>
 , <a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html#a9792cdc17163a04e3c7cc621b703cf49">MultiDimSort&lt; T &gt;</a>
 </li>
@@ -1085,11 +1028,11 @@ $(function() {
 </li>
 <li>standardDeviation()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#a9700684b591fb372f144f8323a02317d">FunctionOfMultipleMeansTally</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a9700684b591fb372f144f8323a02317d">Tally</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies.html#af607ca22e48c7348ff6282ee1d138c07">ListOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html#a1f02dfd66bd7992efd19e60495abdda8">ListOfTallies&lt; E extends Tally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfFunctionOfMultipleMeansTallies.html#a5cbcbd7db3522df6da3dec6b3e830e49">MatrixOfFunctionOfMultipleMeansTallies&lt; E extends FunctionOfMultipleMeansTally &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfTallies.html#a5cbcbd7db3522df6da3dec6b3e830e49">MatrixOfTallies&lt; E extends Tally &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a9700684b591fb372f144f8323a02317d">Tally</a>
 </li>
 <li>standardDeviationWithCV()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html#a2c6ccf8c209e38e590531e3e3007a2c0">ListOfTalliesWithCV&lt; E extends Tally &gt;</a>
@@ -1117,7 +1060,7 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html#a485519a8dee9614452a15ab2d47bc431">ContinuousState</a>
 </li>
 <li>StratifiedUnitCube()
-: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1StratifiedUnitCube.html#a4fa9ce85ed727aba3f749fe3fde2d5e1">StratifiedUnitCube</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1StratifiedUnitCube.html#aa2845ba7a25f3d38eb3af5553c39e34b">StratifiedUnitCube</a>
 </li>
 <li>StratifiedUnitCubeAnti()
 : <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1StratifiedUnitCubeAnti.html#a563793e878328dc9d0f18cc50b3ac6b3">StratifiedUnitCubeAnti</a>
@@ -1144,7 +1087,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1StudentNoncentralGen.html#ad38bf2500a131dd43814af8f73572bee">StudentNoncentralGen</a>
 </li>
 <li>StudentPolarGen()
-: <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1StudentPolarGen.html#affea7a05e26b21e2a1dc9c15b54b7879">StudentPolarGen</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1randvar_1_1StudentPolarGen.html#a10d6eecf7b0fde454c7bb252fcd6290d">StudentPolarGen</a>
 </li>
 <li>SubsetOfPointSet()
 : <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1SubsetOfPointSet.html#aa82cfc02337ad6ce9a1cb5434a442159">SubsetOfPointSet</a>
@@ -1154,16 +1097,16 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSetLong.html#ae469aa345e46f765197aaaa414d8bec5">CoordinateSetLong</a>
 </li>
 <li>subsetsNotEmpty()
-: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html#aee439f07a4708a2317612516601dc910">CoordinateSet</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html#a7ad62c78b7aa6406b8256abe4bd032ae">CoordinateSet</a>
 </li>
 <li>successful()
 : <a class="el" href="classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#a1f2e9a4cb21d4f63df9446e4b65766b1">Search</a>
 </li>
 <li>sum()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#aa4be52ed0438a1a19354fdeda9bb2914">FunctionOfMultipleMeansTally</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#aa4be52ed0438a1a19354fdeda9bb2914">StatProbe</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#a546d5140f189dafbc5b7d0f48267db5a">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1matrix_1_1MatrixOfStatProbes.html#a96ffb2f65bfa234169fe0d981bbda82a">MatrixOfStatProbes&lt; E extends StatProbe &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#aa4be52ed0438a1a19354fdeda9bb2914">StatProbe</a>
 </li>
 <li>sumKahan()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a5f2d737a0cc5a0003634085c6e223493">Num</a>

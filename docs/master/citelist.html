@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bibliography</title>
+<title>SSJ: Bibliography</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -86,7 +94,7 @@ $(function() {
 <p class="enddd"></p>
 </dd>
 <dt><a class="anchor" id="CITEREF_fALB04a"></a>[5]</dt>
-<dd><p class="startdd">H.&#160;Albrecher and M.&#160;Predota. On Asian option pricing for NIG L&eacute;vy processes. <em>Journal of computational and applied mathematics</em>, 172:153&ndash;168, 2004.</p>
+<dd><p class="startdd">H.&#160;Albrecher and M.&#160;Predota. On <a class="el" href="classAsian.html">Asian</a> option pricing for NIG L&eacute;vy processes. <em>Journal of computational and applied mathematics</em>, 172:153&ndash;168, 2004.</p>
 <p class="enddd"></p>
 </dd>
 <dt><a class="anchor" id="CITEREF_tAND52a"></a>[6]</dt>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Class Members - Functions</title>
+<title>SSJ: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -180,9 +188,9 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#a58be44d081e0db076fa73577ca403790">BinaryDataReader</a>
 </li>
 <li>readDoubleData()
-: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#a9ddbfb6195d4207c96c84f89051e6546">JDBCManager</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#ac4984ebcc677a85e0b5d2b7902ea06cd">BinaryDataReader</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#a9ddbfb6195d4207c96c84f89051e6546">JDBCManager</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1util_1_1TextDataReader.html#a1a6b17cb4a96d977bd3a1c9a834d1c9e">TextDataReader</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#ac4984ebcc677a85e0b5d2b7902ea06cd">BinaryDataReader</a>
 </li>
 <li>readDoubleData2D()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#acb55614c914efecad071c7e8b1b6cc8b">JDBCManager</a>
@@ -238,13 +246,13 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#a04a89c3a91526c549101f036b82fc7cd">BinaryDataReader</a>
 </li>
 <li>readIntData()
-: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#aed918095d4d90388b6726f5078042205">JDBCManager</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#aa22902052c621f9c9d54af674d81d86d">BinaryDataReader</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#aed918095d4d90388b6726f5078042205">JDBCManager</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1util_1_1TextDataReader.html#a2d4598ace7a2a3b3d224f5593d0e162a">TextDataReader</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#aa22902052c621f9c9d54af674d81d86d">BinaryDataReader</a>
 </li>
 <li>readIntData2D()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#a82b84f1c9b4eac8adeeba39ac6f43dd3">JDBCManager</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1TextDataReader.html#ae73c42c8868ed022f3cf7023762c6c87">TextDataReader</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1TextDataReader.html#a2cd4400636c4305445729c7e472dc5fd">TextDataReader</a>
 </li>
 <li>readIntData2DTable()
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1JDBCManager.html#a56554d57e7b04df26e914a58644a203f">JDBCManager</a>
@@ -284,8 +292,8 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#a3d3f7f9c543e8436c20330a5df2ada63">BinaryDataReader</a>
 </li>
 <li>readStringData()
-: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1TextDataReader.html#ab0a334ea7b4f0980ea2a17c94481be55">TextDataReader</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#aac545d1046513c187ec64ba03c615be9">BinaryDataReader</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataReader.html#aac545d1046513c187ec64ba03c615be9">BinaryDataReader</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1TextDataReader.html#ab0a334ea7b4f0980ea2a17c94481be55">TextDataReader</a>
 </li>
 <li>regressionLogVariance()
 : <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a80ce655ca07dff83194ae4b2c51a8fdb">RQMCExperimentSeries</a>
@@ -347,9 +355,9 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1Accumulate.html#a22c7a11c574d2df5fc1cfbc844d13fc3">Accumulate</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1simevents_1_1ListWithStat.html#a22c7a11c574d2df5fc1cfbc844d13fc3">ListWithStat&lt; E &gt;</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#a22c7a11c574d2df5fc1cfbc844d13fc3">FunctionOfMultipleMeansTally</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#aeb396a7b9302691477a08960fe44684b">StatProbe</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#a22c7a11c574d2df5fc1cfbc844d13fc3">Tally</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html#a22c7a11c574d2df5fc1cfbc844d13fc3">ListOfStatProbes&lt; E extends StatProbe &gt;</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1StatProbe.html#aeb396a7b9302691477a08960fe44684b">StatProbe</a>
+, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html#ab39f14b8bae3fed9c1a5526766dba030">Tally</a>
 </li>
 <li>reportAndCIDelta()
 : <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html#a8c7b18e55983d6c2d4806c55e417e570">FunctionOfMultipleMeansTally</a>
@@ -387,8 +395,7 @@ $(function() {
 : <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html#a65d0fc32cb8f335edf6224afa35dc27e">DigitalNet</a>
 </li>
 <li>resetNextSubstream()
-: <a class="el" href="classift6561examples_1_1MathematicaSWB.html#a53ae2494ea2c7312f8ef75b2066d9e1b">MathematicaSWB</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#a53ae2494ea2c7312f8ef75b2066d9e1b">PointSet.DefaultPointSetIterator</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#a53ae2494ea2c7312f8ef75b2066d9e1b">PointSet.DefaultPointSetIterator</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1SplitStream.html#a53ae2494ea2c7312f8ef75b2066d9e1b">SplitStream</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html#a53ae2494ea2c7312f8ef75b2066d9e1b">AntitheticStream</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html#a53ae2494ea2c7312f8ef75b2066d9e1b">BakerTransformedStream</a>
@@ -425,8 +432,7 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiff.html#ac783fced5995e544a4ca1a7e26d96817">VarianceGammaProcessDiff</a>
 </li>
 <li>resetStartStream()
-: <a class="el" href="classift6561examples_1_1MathematicaSWB.html#ad29d1abe9e2c209c56bfed896efbca41">MathematicaSWB</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#ad29d1abe9e2c209c56bfed896efbca41">PointSet.DefaultPointSetIterator</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#ad29d1abe9e2c209c56bfed896efbca41">PointSet.DefaultPointSetIterator</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1SplitStream.html#ad29d1abe9e2c209c56bfed896efbca41">SplitStream</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html#ad29d1abe9e2c209c56bfed896efbca41">AntitheticStream</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html#ad29d1abe9e2c209c56bfed896efbca41">BakerTransformedStream</a>
@@ -451,8 +457,7 @@ $(function() {
 , <a class="el" href="classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH_1_1NonRandomStream.html#ad29d1abe9e2c209c56bfed896efbca41">InverseGaussianProcessMSH.NonRandomStream</a>
 </li>
 <li>resetStartSubstream()
-: <a class="el" href="classift6561examples_1_1MathematicaSWB.html#ab2d4f61b0aabdef1eb95a272fff6f655">MathematicaSWB</a>
-, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#ab2d4f61b0aabdef1eb95a272fff6f655">PointSet.DefaultPointSetIterator</a>
+: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#ab2d4f61b0aabdef1eb95a272fff6f655">PointSet.DefaultPointSetIterator</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1SplitStream.html#ab2d4f61b0aabdef1eb95a272fff6f655">SplitStream</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html#ab2d4f61b0aabdef1eb95a272fff6f655">AntitheticStream</a>
 , <a class="el" href="classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html#ab2d4f61b0aabdef1eb95a272fff6f655">BakerTransformedStream</a>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DEKernelDensity Class Reference</title>
+<title>SSJ: DEKernelDensity Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -77,17 +85,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class provides methods to construct a kernel density estimator (KDE) for univariate densities from a set of \(n\) individual observations \(x_0, …, x_{n-1}\), and to evaluate it at a single point or at a set of selected evaluation points.  
+<p>This class provides methods to construct a kernel density estimator (KDE) for univariate densities from a set of \(n\) individual observations \(x_0,\dots, x_{n-1}\), and to evaluate it at a single point or at a set of selected evaluation points.  
  <a href="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DEKernelDensity:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__inherit__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__inherit__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DEKernelDensity:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__coll__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity__coll__graph.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -212,11 +222,11 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="separator:a2769cd30087309e2a0605ebbd95606b4 inherit pro_attribs_classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class provides methods to construct a kernel density estimator (KDE) for univariate densities from a set of \(n\) individual observations \(x_0, …, x_{n-1}\), and to evaluate it at a single point or at a set of selected evaluation points. </p>
+<div class="textblock"><p>This class provides methods to construct a kernel density estimator (KDE) for univariate densities from a set of \(n\) individual observations \(x_0,\dots, x_{n-1}\), and to evaluate it at a single point or at a set of selected evaluation points. </p>
 <p>The observations can be collected data or realizations of a <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">umontreal.ssj.mcqmctools.MonteCarloModelDouble</a>, for instance.</p>
-<p>The KDE takes a fixed bandwidth \( h&gt;0\) as well as a kernel function \(K\), which is also referred to as kernel density. The kernel density should be non-negative and integrate to one. For \(x\in[a,b]\), the KDE itself is defined as</p>
-<p><a class="anchor" id="REF_stat_density_DEKernelDensity_KDE"></a></p><p class="formulaDsp">
-\[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} K\left( \frac{x - x_i}{h} \right). \tag{KDE} \]
+<p>The KDE takes a fixed bandwidth \( h&gt;0\) as well as a kernel function \(k\), which is also referred to as kernel density. The kernel density should be non-negative and integrate to one. For \(x\in[a,b]\), the KDE itself is defined as</p>
+<p><a class="anchor" id="REF_stat_density_DEKernelDensity_KDE"></a> </p><p class="formulaDsp">
+\[ \hat{f}_{n}(x) = \hat{f}_{n,h}(x) = \frac{1}{nh} \sum_{i = 0}^{n-1} k\left( \frac{x - x_i}{h} \right). \tag{KDE} \]
 </p>
 <p>This class also offers static methods so that the user can simply evaluate the density based on a set of observations without having to construct a KDE. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -709,7 +719,7 @@ double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
     <tr><td class="paramname">evalPoints</td><td>the evaluation points. </td></tr>
     <tr><td class="paramname">kernel</td><td>the kernel density function. </td></tr>
     <tr><td class="paramname">h</td><td>the bandwidth. </td></tr>
-    <tr><td class="paramname">data</td><td>the observations. </td></tr>
+    <tr><td class="paramname">data</td><td>the two-dimensional array of observations. </td></tr>
     <tr><td class="paramname">eps</td><td>the threshold level. </td></tr>
   </table>
   </dd>

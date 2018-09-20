@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DigitalNetBase2FromFile Class Reference</title>
+<title>SSJ: DigitalNetBase2FromFile Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -82,12 +90,14 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for DigitalNetBase2FromFile:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2FromFile__inherit__graph.svg" width="179" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2FromFile__inherit__graph.svg" width="179" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for DigitalNetBase2FromFile:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2FromFile__coll__graph.svg" width="179" height="355"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2FromFile__coll__graph.svg" width="179" height="355"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -423,7 +433,7 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class allows us to read the parameters defining a digital net <em>in base 2</em> either from a file, or from a URL address on the World Wide Web. </p>
-<p>See the documentation in <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile.html">umontreal.ssj.hups.DigitalNetFromFile</a>. The parameters used in building the net are those defined in class <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html">umontreal.ssj.hups.DigitalNetBase2</a>. The format of the data files must be the following (where \(B\) is any \(C_j\)): (see the format in <a class="el" href="namespaceumontreal_1_1ssj_1_1hups.html">umontreal::ssj::hups</a>)</p>
+<p>See the documentation in <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile.html">umontreal.ssj.hups.DigitalNetFromFile</a>. The parameters used in building the net are those defined in class <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html">umontreal.ssj.hups.DigitalNetBase2</a>. The format of the data files must be the following (where \(B\) is any \(C_j\)): (see the format in <a class="el" href="namespaceumontreal_1_1ssj_1_1hups.html">umontreal.ssj.hups</a>)</p>
 <center> <code><div class="SSJ-fbox"> <table class="SSJ-table">
 <tr>
 <td colspan="2" class="l">// Any number of comment lines starting with // </td></tr>

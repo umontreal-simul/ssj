@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HistogramOnly Class Reference</title>
+<title>SSJ: HistogramOnly Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,7 +17,12 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ["script","noscript","style","textarea","pre"]
+  }
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="ssj.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -27,9 +32,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">Stochastic Simulation in Java</div>
-    </td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SSJ
+   &#160;<span id="projectnumber">3.3.0</span>
+   </div>
+   <div id="projectbrief">Stochastic Simulation in Java</div>
+  </td>
  </tr>
  </tbody>
 </table>
@@ -81,12 +89,14 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for HistogramOnly:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1HistogramOnly__inherit__graph.svg" width="200" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1HistogramOnly__inherit__graph.svg" width="200" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for HistogramOnly:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1HistogramOnly__coll__graph.svg" width="351" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1stat_1_1HistogramOnly__coll__graph.svg" width="351" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -182,9 +192,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:ad6e9f7d0542f15bff4fe309cab52f286 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#ad6e9f7d0542f15bff4fe309cab52f286">getH</a> ()</td></tr>
 <tr class="memdesc:ad6e9f7d0542f15bff4fe309cab52f286 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width \(h\) of the bins.  <a href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#ad6e9f7d0542f15bff4fe309cab52f286">More...</a><br /></td></tr>
 <tr class="separator:ad6e9f7d0542f15bff4fe309cab52f286 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a215f0320778880ca13fc248988ec9a40 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#a215f0320778880ca13fc248988ec9a40">getRelNumPoints</a> ()</td></tr>
-<tr class="memdesc:a215f0320778880ca13fc248988ec9a40 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the relative number of observations that lie within the boundaries of the histogram.  <a href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#a215f0320778880ca13fc248988ec9a40">More...</a><br /></td></tr>
-<tr class="separator:a215f0320778880ca13fc248988ec9a40 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8f1219ee8d6ba0c2c3aa346982dee41 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="memItemLeft" align="right" valign="top"><a id="ac8f1219ee8d6ba0c2c3aa346982dee41"></a>
 <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html">TallyHistogram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html#ac8f1219ee8d6ba0c2c3aa346982dee41">clone</a> ()</td></tr>
 <tr class="memdesc:ac8f1219ee8d6ba0c2c3aa346982dee41 inherit pub_methods_classumontreal_1_1ssj_1_1stat_1_1TallyHistogram"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones this object and the array that stores the counters. <br /></td></tr>

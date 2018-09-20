@@ -36,12 +36,9 @@ var searchData=
   ['bitvector',['BitVector',['../classumontreal_1_1ssj_1_1util_1_1BitVector.html',1,'umontreal::ssj::util']]],
   ['boxchart',['BoxChart',['../classumontreal_1_1ssj_1_1charts_1_1BoxChart.html',1,'umontreal::ssj::charts']]],
   ['boxseriescollection',['BoxSeriesCollection',['../classumontreal_1_1ssj_1_1charts_1_1BoxSeriesCollection.html',1,'umontreal::ssj::charts']]],
-  ['boxtest',['BoxTest',['../classcharts_1_1BoxTest.html',1,'charts']]],
-  ['brownian',['Brownian',['../classmarkovchainrqmc_1_1Brownian.html',1,'markovchainrqmc']]],
   ['brownianmotion',['BrownianMotion',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotion.html',1,'umontreal::ssj::stochprocess']]],
   ['brownianmotionbridge',['BrownianMotionBridge',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionBridge.html',1,'umontreal::ssj::stochprocess']]],
   ['brownianmotionpca',['BrownianMotionPCA',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCA.html',1,'umontreal::ssj::stochprocess']]],
   ['brownianmotionpcaequalsteps',['BrownianMotionPCAEqualSteps',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCAEqualSteps.html',1,'umontreal::ssj::stochprocess']]],
-  ['browniantest',['BrownianTest',['../classmarkovchainrqmc_1_1BrownianTest.html',1,'markovchainrqmc']]],
   ['bspline',['BSpline',['../classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html',1,'umontreal::ssj::functionfit']]]
 ];

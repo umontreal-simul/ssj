@@ -1,7 +1,6 @@
 var searchData=
 [
   ['empiricalchart',['EmpiricalChart',['../classumontreal_1_1ssj_1_1charts_1_1EmpiricalChart.html',1,'umontreal::ssj::charts']]],
-  ['empiricalcharttest',['EmpiricalChartTest',['../classcharts_1_1EmpiricalChartTest.html',1,'charts']]],
   ['empiricaldist',['EmpiricalDist',['../classumontreal_1_1ssj_1_1probdist_1_1EmpiricalDist.html',1,'umontreal::ssj::probdist']]],
   ['empiricalrenderer',['EmpiricalRenderer',['../classumontreal_1_1ssj_1_1charts_1_1EmpiricalRenderer.html',1,'umontreal::ssj::charts']]],
   ['empiricalseriescollection',['EmpiricalSeriesCollection',['../classumontreal_1_1ssj_1_1charts_1_1EmpiricalSeriesCollection.html',1,'umontreal::ssj::charts']]],
@@ -12,7 +11,6 @@ var searchData=
   ['erlanggen',['ErlangGen',['../classumontreal_1_1ssj_1_1randvar_1_1ErlangGen.html',1,'umontreal::ssj::randvar']]],
   ['event',['Event',['../classumontreal_1_1ssj_1_1simevents_1_1Event.html',1,'umontreal::ssj::simevents']]],
   ['eventlist',['EventList',['../interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html',1,'umontreal::ssj::simevents::eventlist']]],
-  ['examplenortainitdisc',['ExampleNortaInitDisc',['../classprobdistmulti_1_1norta_1_1ExampleNortaInitDisc.html',1,'probdistmulti::norta']]],
   ['exponentialdist',['ExponentialDist',['../classumontreal_1_1ssj_1_1probdist_1_1ExponentialDist.html',1,'umontreal::ssj::probdist']]],
   ['exponentialdistfrommean',['ExponentialDistFromMean',['../classumontreal_1_1ssj_1_1probdist_1_1ExponentialDistFromMean.html',1,'umontreal::ssj::probdist']]],
   ['exponentialgen',['ExponentialGen',['../classumontreal_1_1ssj_1_1randvar_1_1ExponentialGen.html',1,'umontreal::ssj::randvar']]],
