@@ -4,6 +4,7 @@ var searchData=
   ['halfnormalgen',['HalfNormalGen',['../classumontreal_1_1ssj_1_1randvar_1_1HalfNormalGen.html',1,'umontreal::ssj::randvar']]],
   ['haltonsequence',['HaltonSequence',['../classumontreal_1_1ssj_1_1hups_1_1HaltonSequence.html',1,'umontreal::ssj::hups']]],
   ['hammersleypointset',['HammersleyPointSet',['../classumontreal_1_1ssj_1_1hups_1_1HammersleyPointSet.html',1,'umontreal::ssj::hups']]],
+  ['hedge',['Hedge',['../classift6561examples_1_1Hedge.html',1,'ift6561examples']]],
   ['henriksen',['Henriksen',['../classumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1Henriksen.html',1,'umontreal::ssj::simevents::eventlist']]],
   ['hilbertcurvebatchsort',['HilbertCurveBatchSort',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveBatchSort.html',1,'umontreal::ssj::util::sort']]],
   ['hilbertcurvemap',['HilbertCurveMap',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveMap.html',1,'umontreal::ssj::util::sort']]],

@@ -17,7 +17,7 @@
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
-<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" target="_top" xlink:title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform...">
+<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" target="_top" xlink:title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t...">
 <polygon fill="none" stroke="#000000" points="16.5,-56.5 16.5,-75.5 140.5,-75.5 140.5,-56.5 16.5,-56.5"/>
 <text text-anchor="middle" x="78.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MonteCarloModelDouble</text>
 </a>

@@ -3,6 +3,7 @@ var searchData=
   ['nakagamidist',['NakagamiDist',['../classumontreal_1_1ssj_1_1probdist_1_1NakagamiDist.html',1,'umontreal::ssj::probdist']]],
   ['nakagamigen',['NakagamiGen',['../classumontreal_1_1ssj_1_1randvar_1_1NakagamiGen.html',1,'umontreal::ssj::randvar']]],
   ['nameconflictexception',['NameConflictException',['../classumontreal_1_1ssj_1_1util_1_1NameConflictException.html',1,'umontreal::ssj::util']]],
+  ['nativeparams',['NativeParams',['../structNativeParams.html',1,'']]],
   ['nativeutils',['NativeUtils',['../classumontreal_1_1ssj_1_1util_1_1NativeUtils.html',1,'umontreal::ssj::util']]],
   ['negativebinomialdist',['NegativeBinomialDist',['../classumontreal_1_1ssj_1_1probdist_1_1NegativeBinomialDist.html',1,'umontreal::ssj::probdist']]],
   ['negativebinomialgen',['NegativeBinomialGen',['../classumontreal_1_1ssj_1_1randvar_1_1NegativeBinomialGen.html',1,'umontreal::ssj::randvar']]],
@@ -10,7 +11,7 @@ var searchData=
   ['nesteduniformscrambling',['NestedUniformScrambling',['../classumontreal_1_1ssj_1_1hups_1_1NestedUniformScrambling.html',1,'umontreal::ssj::hups']]],
   ['netcomparator',['NetComparator',['../classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile_1_1NetComparator.html',1,'umontreal::ssj::hups::DigitalNetFromFile']]],
   ['newtestasianrqmc',['NewTestAsianRQMC',['../classtutorial_1_1NewTestAsianRQMC.html',1,'tutorial']]],
-  ['nextperiod',['NextPeriod',['../classtutorial_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod'],['../classtutorial_1_1CallEv_1_1NextPeriod.html',1,'CallEv.NextPeriod']]],
+  ['nextperiod',['NextPeriod',['../classift6561examples_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod'],['../classtutorial_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod']]],
   ['ni1',['NI1',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI1.html',1,'umontreal::ssj::probdistmulti::norta']]],
   ['ni2a',['NI2a',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2a.html',1,'umontreal::ssj::probdistmulti::norta']]],
   ['ni2b',['NI2b',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2b.html',1,'umontreal::ssj::probdistmulti::norta']]],
@@ -33,7 +34,6 @@ var searchData=
   ['normalinversegaussianprocess',['NormalInverseGaussianProcess',['../classumontreal_1_1ssj_1_1stochprocess_1_1NormalInverseGaussianProcess.html',1,'umontreal::ssj::stochprocess']]],
   ['normalkindermannramagegen',['NormalKindermannRamageGen',['../classumontreal_1_1ssj_1_1randvar_1_1NormalKindermannRamageGen.html',1,'umontreal::ssj::randvar']]],
   ['normalpolargen',['NormalPolarGen',['../classumontreal_1_1ssj_1_1randvar_1_1NormalPolarGen.html',1,'umontreal::ssj::randvar']]],
-  ['normaltest',['normaltest',['../classrandvar_1_1normaltest.html',1,'randvar']]],
   ['nortainitdisc',['NortaInitDisc',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NortaInitDisc.html',1,'umontreal::ssj::probdistmulti::norta']]],
   ['num',['Num',['../classumontreal_1_1ssj_1_1util_1_1Num.html',1,'umontreal::ssj::util']]]
 ];

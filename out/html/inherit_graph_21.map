@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation. " alt="" coords="5,31,93,57"/>
-<area shape="rect" id="node2" href="$classtutorial_1_1PreyPred_1_1Preds.html" title="PreyPred.Preds" alt="" coords="141,5,256,32"/>
-<area shape="rect" id="node3" href="$classtutorial_1_1PreyPred_1_1Preys.html" title="PreyPred.Preys" alt="" coords="141,56,256,83"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1ContainerPointSet_1_1ContainerPointSetIterator.html" title="ContainerPointSet.Container\lPointSetIterator" alt="" coords="208,71,396,112"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet_1_1CycleBasedPointSetIterator.html" title="CycleBasedPointSet.Cycle\lBasedPointSetIterator" alt="" coords="211,136,393,177"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet_1_1AntitheticPointSetIterator.html" title="AntitheticPointSet.Antithetic\lPointSetIterator" alt="" coords="461,5,648,47"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet_1_1BakerTransformedPointSetIterator.html" title="BakerTransformedPointSet.\lBakerTransformedPointSetIterator" alt="" coords="445,71,664,112"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2_1_1CycleBasedPointSetBase2Iterator.html" title="CycleBasedPointSetBase2.\lCycleBasedPointSetBase2Iterator" alt="" coords="444,136,665,177"/>
 </map>

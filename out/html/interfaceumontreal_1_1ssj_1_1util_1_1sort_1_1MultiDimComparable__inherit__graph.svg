@@ -17,7 +17,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" target="_top" xlink:title="A subclass of Markov chain for which there is a total ordering between the states in each dimension i...">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" target="_top" xlink:title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl...">
 <polygon fill="none" stroke="#000000" points="5,-56.5 5,-86.5 150,-86.5 150,-56.5 5,-56.5"/>
 <text text-anchor="start" x="13" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">MarkovChainComparable</text>
 <text text-anchor="middle" x="77.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&lt; MarkovChainComparable &gt;</text>

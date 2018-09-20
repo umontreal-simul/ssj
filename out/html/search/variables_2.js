@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['data',['data',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html#a2769cd30087309e2a0605ebbd95606b4',1,'umontreal::ssj::stat::density::DensityEstimator']]],
   ['day',['DAY',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#ad573789025c2d584ad00ef17c7a0b888',1,'umontreal::ssj::util::TimeUnit']]],
   ['dbl_5fdig',['DBL_DIG',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a1dc78ae989cac93641afb44ce6d9005c',1,'umontreal::ssj::util::Num']]],
   ['dbl_5fepsilon',['DBL_EPSILON',['../classumontreal_1_1ssj_1_1util_1_1Num.html#aa824f15c13b56059bebe689ac21d401e',1,'umontreal::ssj::util::Num']]],

@@ -26,6 +26,7 @@ var searchData=
   ['digitalnetsearch',['DigitalNetSearch',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch.html',1,'umontreal::ssj::latnetbuilder']]],
   ['digitalsequence',['DigitalSequence',['../classumontreal_1_1ssj_1_1hups_1_1DigitalSequence.html',1,'umontreal::ssj::hups']]],
   ['digitalsequencebase2',['DigitalSequenceBase2',['../classumontreal_1_1ssj_1_1hups_1_1DigitalSequenceBase2.html',1,'umontreal::ssj::hups']]],
+  ['digitalshift',['DigitalShift',['../classift6561examples_1_1DigitalShift.html',1,'ift6561examples']]],
   ['dirichletdist',['DirichletDist',['../classumontreal_1_1ssj_1_1probdistmulti_1_1DirichletDist.html',1,'umontreal::ssj::probdistmulti']]],
   ['dirichletgen',['DirichletGen',['../classumontreal_1_1ssj_1_1randvarmulti_1_1DirichletGen.html',1,'umontreal::ssj::randvarmulti']]],
   ['discl2hickernell',['DiscL2Hickernell',['../classumontreal_1_1ssj_1_1discrepancy_1_1DiscL2Hickernell.html',1,'umontreal::ssj::discrepancy']]],
