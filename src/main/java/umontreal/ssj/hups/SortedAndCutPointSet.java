@@ -129,12 +129,12 @@ public class SortedAndCutPointSet extends CachedPointSet {
       }
    }
 
-/**
- * Returns the number of coordinates of each point, which is the dimension of
- * the original point set minus the dimension of the sort.
- */
-public int getDimension() {
-       return dim;
+   /**
+    * Returns the number of coordinates of each point, which is the dimension of
+    * the original point set minus the dimension of the sort.
+    */
+   public int getDimension() {
+      return dim;
    }
 
    /**

@@ -51,8 +51,9 @@ package umontreal.ssj.hups;
  * class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class RQMCPointSet {
-   private PointSet set;
-   private PointSetRandomization rand;
+   protected PointSet set;
+   protected PointSetRandomization rand;
+   protected String label;
 
    /**
     * Constructor with the point set `set` and the randomization `rand`.
@@ -97,4 +98,36 @@ public class RQMCPointSet {
       return rand;
    }
 
+   /**
+    * Returns the number of points in the associated point set.
+    *  @return the number of points in point set
+    */
+   public int getNumPoints() {
+      return set.getNumPoints();
+   }
+
+   /**
+    * Gives a label (a short string) to identify this object, e.g., when making plots.
+    *  @param label   The label.
+    */
+   public void setLabel(String label) {
+      this.label = label;
+   }
+
+   /**
+    * Returns the label for the associated RQMC point set.
+    * @return  the label.
+    */
+   public String getLabel() {
+      return label;
+   }
+
+   /**
+    * For now, just returns the label for the associated RQMC point set.
+    * @return  the label.
+    */
+   public String toString() {
+	  // StringBuffer sb = new StringBuffer("");
+      return ("RQMC with point set" + set.toString() + "  " + rand.toString());
+   }
 }

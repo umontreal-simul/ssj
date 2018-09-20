@@ -1,0 +1,41 @@
+1- Print trajectory and performance
+step =  0,   position =  0.0
+step =  1,   position = -0.36070
+step =  2,   position = -0.50990
+step =  3,   position = -0.66743
+step =  4,   position = -0.37085
+step =  5,   position = -0.61330
+step =  6,   position = -0.58680
+step =  7,   position = -0.60205
+step =  8,   position = -0.71916
+step =  9,   position = -1.06654
+step = 10,   position = -0.84739
+step = 11,   position = -0.78714
+step = 12,   position = -0.85904
+step = 13,   position = -1.00137
+step = 14,   position = -1.22434
+step = 15,   position = -1.13596
+step = 16,   position = -0.72304
+step = 17,   position = -0.88980
+step = 18,   position = -1.46628
+step = 19,   position = -0.88737
+step = 20,   position = -1.22407
+Performance =  1.22407
+
+ 2- MC, 100 reps, 2^12 trajetories, 20 steps 
+REPORT on Tally stat. collector ==> Replicates of Brownian Motion
+    num. obs.     min         max       average    standard dev.
+       100       1.098       1.166       1.130       0.013
+
+
+ 3- RQMC, 100 reps, 2^12 trajectories, 20 steps
+REPORT on Tally stat. collector ==> Replicates of Brownian Motion
+    num. obs.     min         max       average    standard dev.
+       100       1.115       1.140       1.127      5.2E-3
+
+
+ 4- Array-RQMC, 100 replications, 2^12 trajectories, 20 steps
+REPORT on Tally stat. collector ==> Replicates of Brownian Motion
+    num. obs.     min         max       average    standard dev.
+       100       1.126       1.130       1.128      6.6E-4
+

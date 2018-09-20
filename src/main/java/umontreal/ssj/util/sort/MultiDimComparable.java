@@ -60,7 +60,7 @@ public interface MultiDimComparable<T> {
     * `compareTo (other, j)` can be called only for
     * @f$\mathtt{j}=0,…,\mathtt{dimension()-1}@f$.
     */
-   public int dimension();
+   public int getStateDimension();
 
    /**
     * Similar to  #compareTo in the class  Comparable, except that one

@@ -1,0 +1,5 @@
+/**
+ * @package umontreal.ssj.discrepancy
+ *
+ * This package implements discrepancies for quasi-Monte Carlo point sets.
+ */

@@ -9,7 +9,7 @@
  * interface. The interface specifies that each stream of random numbers is
  * partitioned into multiple substreams and that methods are available to
  * jump between the substreams, as discussed in @cite rLEC91a, @cite rLEC97d,
- * @cite rLEC02a&thinsp;. For an example of how to use these streams
+ * @cite rLEC02a, @cite rLEC15a, @cite rLEC17p. For an example of how to use these streams
  * properly, see `InventoryCRN` in the set of example programs.
  *
  * Each implementation uses a specific backbone uniform random number
@@ -28,11 +28,16 @@
  * statistical tests that measure the linear complexity of these bits
  * sequences. But this can affect only very special types of applications.
  *
- * For each generator, the following tables give the approximate period
+ * We recommend primarily @ref umontreal.ssj.rng.MRG31k3p,
+ * @ref umontreal.ssj.rng.MRG32k3a, and @ref umontreal.ssj.rng.LFSR113.
+ * Note that all the generators provided currently in SSJ were originally 
+ * designed for 32-bit computers.
+ *
+ * For each base generator, the following tables give the approximate period
  * length (period), the CPU time (in seconds) to generate @f$10^9@f$
  * @f$U(0,1)@f$ random numbers (gen. time), and the CPU time to jump ahead
  * @f$10^6@f$ times to the next substream (jump time). The following timings
- * are on a 2100 MHz 32-bit AMD Athlon XP 2800+ computer running Linux, with
+ * were on a 2100 MHz 32-bit AMD Athlon XP 2800+ computer running Linux, with
  * the JDK 1.4.2.
  *
  * <center>
@@ -179,5 +184,5 @@
  * @ref umontreal.ssj.rng.BakerTransformedStream ).
  *
  * For further details about uniform RNGs, we refer the reader to
- * @cite rKNU98a, @cite rLEC01d, @cite rLEC04b&thinsp;.
+ * @cite rKNU98a, @cite rLEC01d, @cite rLEC04b, @cite rLEC12a, @cite rLEC15a, @cite rLEC17h&thinsp;.
  */

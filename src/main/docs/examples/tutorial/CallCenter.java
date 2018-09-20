@@ -1,3 +1,4 @@
+package tutorial;
 import umontreal.ssj.simevents.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;
@@ -54,10 +55,10 @@ public class CallCenter {
    }
 
    // Reads data and construct arrays.
-   public void readData (String fileName) throws IOException {
+   public void readData (String dataFile) throws IOException {
       Locale loc = Locale.getDefault();
       Locale.setDefault(Locale.US); // to read reals as 8.3 instead of 8,3
-      BufferedReader input = new BufferedReader (new FileReader (fileName));
+      BufferedReader input = new BufferedReader (new FileReader (dataFile));
       Scanner scan = new Scanner(input);
       openingTime = scan.nextDouble();      scan.nextLine();
       numPeriods = scan.nextInt();          scan.nextLine();
@@ -79,7 +80,7 @@ public class CallCenter {
       Locale.setDefault(loc);
    }
 
-   // A phone call.
+   // A phone call object.
    class Call {
       double arrivalTime, serviceTime, patienceTime;
 
@@ -185,9 +186,9 @@ public class CallCenter {
    }
 
    static public void main (String[] args) throws IOException {
-      CallCenter cc = new CallCenter (args.length == 1 ? args[0] : "CallCenter.dat");
-      for (int i = 0; i < 1000; i++)  cc.simulateOneDay();
-      System.out.println ("\nNum. calls expected = " + cc.nCallsExpected +"\n");
+      CallCenter cc = new CallCenter (args.length == 1 ? args[0] : "src/main/docs/examples/tutorial/CallCenter.dat");
+      for (int i = 0; i < 10000; i++)  cc.simulateOneDay();
+      System.out.println ("\nNumber of calls expected per day = " + cc.nCallsExpected +"\n");
       for (int i = 0; i < cc.allTal.length; i++) {
          cc.allTal[i].setConfidenceIntervalStudent();
          cc.allTal[i].setConfidenceLevel (0.90);

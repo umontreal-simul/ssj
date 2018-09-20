@@ -83,6 +83,22 @@ public class ListOfTallies<E extends Tally> extends ListOfStatProbes<E> {
          list.add (new TallyStore());
       return list;
    }
+   
+   /**
+    * This factory method constructs and returns a list of tallies with
+    * `size` instances of  @ref umontreal.ssj.stat.TallyStore, each of size \f$t\f$.
+    * @param size the size of the list.
+    * @param t size of each TallyStore in this list.
+    * @return the created list.
+    */
+   
+   public static ListOfTallies<TallyStore> createWithTallyStore (int size,int t) {
+	      ListOfTallies<TallyStore> list = new ListOfTallies<TallyStore>();
+	      for (int i = 0; i < t; i++)
+	         list.add (new TallyStore(size));
+	      return list;
+	   }
+
 
    /**
     * Adds the observation `x[i]` in tally `i` of this list, for <tt>i =

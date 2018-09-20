@@ -163,13 +163,13 @@ public class CachedPointSet extends PointSet {
         fillCache (fromDim, dim);
    }
 
-   /**
-    * Randomizes the underlying point set using `rand` and re-caches the points.
-    * In case there is no underlying point set, this method must be redefined to
-    * randomize the cached points.
-    * If setRandomizeParent() was called with `false` as its argument, invokes
-    * randomize() on `rand` instead of on the parent.
-    */
+  /**
+   * Randomizes the underlying point set using `rand` and re-caches the points.
+   * In case there is no underlying point set, this method must be redefined to
+   * randomize the cached points.
+   * If setRandomizeParent() was called with `false` as its argument, invokes
+   * randomize() on `rand` instead of on the parent.
+   */
    public void randomize (PointSetRandomization rand) {
       if (randomizeParent) {
          P.randomize(rand);
@@ -180,31 +180,31 @@ public class CachedPointSet extends PointSet {
       }
    }
 
-/**
- * Sorts the *cached* points by increasing order of coordinate `j`. This is
- * useful in the ArrayRQMC simulation method, for example. Note that the sort
- * applies only to the cached points, and not to the original points in `P`.
- */
-public void sortByCoordinate (int j) {
-   Arrays.sort (x, new DoubleArrayComparator (j));
-}
+    /**
+     * Sorts the *cached* points by increasing order of coordinate `j`. This is
+     * useful in the ArrayRQMC simulation method, for example. Note that the sort
+     * applies only to the cached points, and not to the original points in `P`.
+     */
+    public void sortByCoordinate (int j) {
+       Arrays.sort (x, new DoubleArrayComparator (j));
+    }
 
-/**
- * Sorts the cached points (only) with the given
- * @ref umontreal.ssj.util.MultiDimSort sorting algorithm `sort`. This does
- * not affect the underlying point set `P`.
- */
-public <T> void sort (MultiDimSort<T> sort) {
+   /**
+    * Sorts the cached points (only) with the given
+    * @ref umontreal.ssj.util.MultiDimSort sorting algorithm `sort`. This does
+    * not affect the underlying point set `P`.
+    */
+    public <T> void sort (MultiDimSort<T> sort) {
       sort.sort(x);
       // sort.sort (P);   init(); ?   No.
    }
 
-/**
- * Removes the first `d` coordinates of each cached point. This does not
- * affect the underlying point set `P`. This could be useful in particular
- * for the ArrayRQMC simulation method.
- */
-public void stripCoordinates (int d) {
+   /**
+    * Removes the first `d` coordinates of each cached point. This does not
+    * affect the underlying point set `P`. This could be useful in particular
+    * for the ArrayRQMC simulation method.
+    */
+   public void stripCoordinates (int d) {
       for (int i = 0; i < numPoints; i++)
          for (int j = 0; j < d; j++)
             x[i][j] = x[i][j+d];

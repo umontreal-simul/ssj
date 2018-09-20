@@ -66,6 +66,7 @@ public void printGeneratorMatrices (int s) {
             matTrans[r] = 0;
          for (c = 0; c < numCols; c++) {
             mat[c] = genMat[j*numCols+c];
+            mat[c] >>= outDigits - numRows;
             for (r = numRows - 1; r >= 0; r--) {
                matTrans[r] <<= 1;
                matTrans[r] |= mat[c] & 1;

@@ -680,7 +680,18 @@ LAYOUT_FILE            =
 # LATEX_BIB_STYLE. To use this feature you need bibtex and perl available in the
 # search path. See also \cite for info how to create references.
 
-CITE_BIB_FILES         = src/main/docs/ssj.bib
+CITE_BIB_FILES  = \
+   src/main/docs/bib/random.bib \
+   src/main/docs/bib/stat.bib \
+   src/main/docs/bib/math.bib \
+   src/main/docs/bib/simul.bib \
+   src/main/docs/bib/vrt.bib \
+   src/main/docs/bib/fin.bib \
+   src/main/docs/bib/prob.bib \
+	 src/main/docs/bib/ift.bib \
+   src/main/docs/bib/optim.bib \
+   src/main/docs/bib/callc.bib
+
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
@@ -839,7 +850,7 @@ EXAMPLE_RECURSIVE      = YES
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = src/main/docs/images
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1442,6 +1453,7 @@ MATHJAX_FORMAT         = HTML-CSS
 # This tag requires that the tag USE_MATHJAX is set to YES.
 
 MATHJAX_RELPATH        = http://cdn.mathjax.org/mathjax/latest
+# https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/
 
 # The MATHJAX_EXTENSIONS tag can be used to specify one or more MathJax
 # extension names that should be enabled during MathJax rendering. For example
@@ -1867,7 +1879,7 @@ GENERATE_AUTOGEN_DEF   = NO
 # Note that this feature is still experimental and incomplete at the moment.
 # The default value is: NO.
 
-GENERATE_PERLMOD       = NO
+GENERATE_PERLMOD       = YES
 
 # If the PERLMOD_LATEX tag is set to YES, doxygen will generate the necessary
 # Makefile rules, Perl scripts and LaTeX code to be able to generate PDF and DVI
@@ -1875,7 +1887,7 @@ GENERATE_PERLMOD       = NO
 # The default value is: NO.
 # This tag requires that the tag GENERATE_PERLMOD is set to YES.
 
-PERLMOD_LATEX          = NO
+PERLMOD_LATEX          = YES
 
 # If the PERLMOD_PRETTY tag is set to YES, the Perl module output will be nicely
 # formatted so it can be parsed by a human reader. This is useful if you want to
@@ -2023,7 +2035,8 @@ EXTERNAL_PAGES         = YES
 # interpreter (i.e. the result of 'which perl').
 # The default file (with absolute path) is: /usr/bin/perl.
 
-PERL_PATH              = /usr/bin/perl
+# PERL_PATH  = C:\Strawberry\perl\bin\perl     #  for Windows
+PERL_PATH            = /usr/bin/perl    #  for Linux
 
 #---------------------------------------------------------------------------
 # Configuration options related to the dot tool
