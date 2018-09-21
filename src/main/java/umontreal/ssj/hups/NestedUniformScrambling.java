@@ -111,4 +111,11 @@ public class NestedUniformScrambling implements PointSetRandomization {
       throw new IllegalArgumentException("NestedUniformScrambling" +
          " can only randomize a CachedPointSet of a DigitalNetBase2");
    }
+   
+   /**
+    * Returns a descriptor of this object.
+    */
+   public String toString () {
+		return "Nested uniform scrambling";
+	}
 }

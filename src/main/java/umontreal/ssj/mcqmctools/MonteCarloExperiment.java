@@ -162,7 +162,7 @@ public class MonteCarloExperiment {
 	/**
 	 * Performs n independent runs using n substreams of #stream, collects
 	 * statistics in #statValue, and returns a report with a confidence interval of
-	 * level #level, with #d decimal fractional digits of precision for the output,
+	 * level #level, with `d` decimal fractional digits of precision for the output,
 	 * computed via a Student distribution.
 	 */
 	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n, RandomStream stream,
@@ -181,7 +181,7 @@ public class MonteCarloExperiment {
 	}
 
 	/**
-	 * In this version, there is no need to provide a #Chrono; it is created inside.
+	 * In this version, there is no need to provide a `Chrono`; it is created inside.
 	 */
 	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n, RandomStream stream,
 			Tally statValue, double level, int d) {
@@ -189,9 +189,17 @@ public class MonteCarloExperiment {
 	}
 
 	/**
+	 * A short-hand equivalent for `simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, timer)`
+	 */
+	public static String simulateRunsDefaultReportStudent (MonteCarloModelDouble model, int n,
+	        RandomStream stream, Tally statValue, Chrono timer) {
+		return simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, timer);
+	}
+
+	/**
 	 * A short-hand equivalent for `simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4)`
 	 */
-	public static String simulateRunsDefaultReport (MonteCarloModelDouble model, int n,
+	public static String simulateRunsDefaultReportStudent (MonteCarloModelDouble model, int n,
 	        RandomStream stream, Tally statValue) {
 		return simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, new Chrono());
 	}

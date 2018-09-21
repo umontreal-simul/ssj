@@ -67,5 +67,12 @@ public class LMScrambleShift extends RandomShift {
                                             " can only randomize a DigitalNet");
       }
    }
+   
+   /**
+    * Returns a descriptor of this object.
+    */
+   public String toString () {
+		return "Left matrix scramble + random digital shift";
+	}
 
 }

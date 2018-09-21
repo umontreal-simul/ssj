@@ -137,6 +137,34 @@ public class RQMCExperiment extends MonteCarloExperiment {
 		return str.toString();
 	}
 	
+	// Makes a comparison between MC and RQMC, pass and recover the two Tally probes. 
+	/**
+	 * This method first performs a MC experiment to estimate the variance and CPU time per run, 
+	 * then invokes `simulReplicatesRQMCDefaultReportCompare` and returns a printable report
+	 * that compares MC with RQMC.
+	 */
+	public static String makeComparisonExperimentMCvsRQMC (MonteCarloModelDouble model, RandomStream stream, 
+			 PointSet p, PointSetRandomization rand, int n, int m, Tally statMC, Tally statRQMC) {
+		Chrono timer = new Chrono();
+	    PrintfFormat pf = new PrintfFormat();
+		pf.append (MonteCarloExperiment.simulateRunsDefaultReportStudent (model, n, stream, statMC, timer) + "\n");
+		double secPerRunMC = timer.getSeconds() / n;
+		pf.append (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (model, p, rand, m, statRQMC, statMC.variance(), secPerRunMC));
+		return pf.toString();
+	}
+
+	/**
+	 * In this version, the statistical collectors are created internally, so they cannot be accessed
+	 * externally.  
+	 */
+	public static String makeComparisonExperimentMCvsRQMC (MonteCarloModelDouble model, RandomStream stream, 
+			 PointSet p, PointSetRandomization rand, int n, int m) {
+		Tally statMC = new Tally("Statistics with MC");
+		Tally statRQMC = new Tally("Statistics on RQMC averages");
+		return makeComparisonExperimentMCvsRQMC (model, stream, p, rand, n, m, statMC, statRQMC);
+	}
+	
+	
 	/**
 	 * Similar to
 	 * {@link #simulReplicatesRQMC(MonteCarloModelDouble, RQMCPointSet, int, Tally)}

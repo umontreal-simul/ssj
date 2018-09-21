@@ -176,6 +176,7 @@ public abstract class PointSet {
     */
    public void randomize (PointSetRandomization rand) {
        rand.randomize(this);
+       // Note that RandomShift.randomize(p) calls  addRandomShift !
    }
 
    /**
@@ -183,6 +184,10 @@ public abstract class PointSet {
     * it adds a random shift to all the points of the point set, using
     * stream `stream` to generate the random numbers, for coordinates `d1`
     * to `d2-1`.
+    * 
+    * Note: These methods are labeled as deprecated, but in fact we use them internally,
+    * so we cannot remove them.  Perhaps they could be made protected.
+    * Calling `PointSet.randomize(RandomShift)` calls `addRandomShift`.  
     */
    @Deprecated
    public void addRandomShift (int d1, int d2, RandomStream stream) {
