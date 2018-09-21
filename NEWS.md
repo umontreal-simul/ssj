@@ -1,6 +1,15 @@
 # SSJ release highlights
 ---
 
+
+## SSJ 3.3.0
+
+This release contains new packages, several new classes, an improved tutorial and improved documentation in general.
+
+- new packages: `mcqmctools`, `latnetbuilder`, `stat.density`, `discrepancy`.
+- several methods have been added in many places.
+- the main API page (introduction), the tutorial (with examples), and the documentation of several packages have been updated.
+
 ## SSJ 3.2.1
 
 This release contains bug fixes.
