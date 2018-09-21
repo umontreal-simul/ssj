@@ -2,33 +2,34 @@
 
 *Stochastic Simulation in Java*
 
-SSJ is a Java library for stochastic simulation, developed at
-[Pierre L'Ecuyer](http://www-labs.iro.umontreal.ca/~lecuyer/)'s
+SSJ is a Java library for stochastic simulation, developed under the supervision of
+[Pierre L'Ecuyer](http://www-labs.iro.umontreal.ca/~lecuyer/)
+in the 
 [Simulation and Optimization Laboratory](http://simul.iro.umontreal.ca/),
-located at the
 [Department of Computer Science and Operations
-Research](http://en.diro.umontreal.ca) of Université de Montréal.
+Research](http://en.diro.umontreal.ca) at Université de Montréal.
 It provides facilities for:
 
-- generating uniform and nonuniform random variates;
-- computing different measures related to probability distributions;
-- performing goodness-of-fit tests;
-- applying quasi-Monte Carlo methods;
-- collecting (elementary) statistics; and
-- performing event-based discrete-event simulation.
+- random number and random variate generation
+- stochastic process simulation
+- discrete-event simulation
+- computations with several types of probability distributions
+- randomized quasi-Monte Carlo methods
+- collecting and reporting statistics from simulations
+- goodness-of-fit tests
+- and much more.
 
-As of version 3.1.0, SSJ is released under the
-[Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
+Starting from version 3.1.0, SSJ is released under the
+[Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0),
+and the package names have changed from `umontreal.iro.lecuyer.*` to `umontreal.ssj.*`.
 
-**WARNING**: all package names have changed from `umontreal.iro.lecuyer.*` to `umontreal.ssj.*`.
 
-
-## Documentation
+## Documentation and tutorial
 
 The [SSJ User's Guide](http://umontreal-simul.github.io/ssj/docs/master)
 includes:
 - the [API documentation](http://umontreal-simul.github.io/ssj/docs/master/namespaces.html); and
-- [documented examples](http://umontreal-simul.github.io/ssj/docs/master/examples.html).
+- [a tutorial with documented examples](http://umontreal-simul.github.io/ssj/docs/master/examples.html).
 
 
 ## Installation
@@ -38,10 +39,14 @@ for your Maven- or Gradle-based project, by downloading a [binary
 release](#binary-releases) or by [compiling it from
 scratch](#compiling-the-source-code).
 
+SSJ is compatible with Java SE8 (JDK 8) and later versions of Java. The latest
+Java JDK is available at
+[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+with installation instructions.  It should be installed *before* installing SSJ.
 
 ### Using Maven
 
-**(Recommended approach)**
+**(Simplest approach)**
 
 SSJ packages are hosted
 [on Bintray](https://bintray.com/umontreal-simul/maven/ssj/_latestVersion)
@@ -55,33 +60,28 @@ then you can start working on your SSJ-based project right-away.
 
 ##### IDE integration
 
-The following integrated development environments (IDEs) are known to support
-Maven (there may be more):
+Several integrated development environments (IDEs) such as 
 [Eclipse](http://www.eclipse.org/),
 [NetBeans](http://netbeans.org/),
-[IntelliJ IDEA](http://www.jetbrains.com/idea/).
-When using these, simply create your project as a *Maven project* instead
-of a Java project.  Then you can add SSJ to the Maven dependencies of the
-project (refer to your editor's documentation), with the following parameters:
+[IntelliJ IDEA](http://www.jetbrains.com/idea/), for example, support Maven.  
+If you work in one of these IDEs, simply create your project as a *Maven project* instead
+of a Java project, then add SSJ to the Maven dependencies of the
+project (refer to your IDE documentation), with the following parameters:
 
 - **Group Id**: `ca.umontreal.iro.simul`;
 - **Artifact Id**: `ssj`;
-- **Version**: any [valid release number](http://github.com/umontreal-simul/ssj/releases),
-  e.g., `3.2.1`.
+- **Version**: any [valid release number for SSJ](http://github.com/umontreal-simul/ssj/releases),
+  e.g., `3.3.0`,
+
+and you are ready to go!
 
 
 ### Binary releases
 
-SSJ is compatible with Java SE6 (JDK 6) and later versions of Java. The latest
-Java platform is available at
-[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-with installation instructions.
-
-We provide below very general instructions for configuring a project to use
-SSJ.
+For those who want to download the binaries and install them manually, 
+we provide below some general instructions for configuring a project to use SSJ.
 Less experienced users can find
-[detailed instructions on the SSJ page](http://simul.iro.umontreal.ca/ssj/indexe.html)
-at the Stochastic Simulation and Optimization Laboratory.
+[more detailed instructions on the SSJ page](http://simul.iro.umontreal.ca/ssj/indexe.html).
 
 
 #### Download a binary archive
@@ -99,7 +99,7 @@ They include:
 - the user's guide (under `ssj/doc/html`); and
 - example source files (under `ssj/doc/examples`).
 
-Download the latest archive and extract the files in a location of your choice.
+You can download the latest archive and extract the files in a location of your choice.
 
 
 #### Set the Java class path
@@ -148,8 +148,9 @@ project, by right-clicking on *Libraries* under your project tree in the
 
 ## Compiling the source code
 
-**You do not need to compile the source code if you have already installed
-SSJ [using Maven](#using-maven) or a [binary release](#binary-releases).**
+**You do not need to compile the source code to use SSJ if you have already installed it
+[using Maven](#using-maven) or a [binary release](#binary-releases).**
+But in case you want to change the source for some reason, here is how you can recompile.
 
 The SSJ library uses [Gradle](http://gradle.org/) as its build system.
 You do not need to download it, since the Gradle wrapper executable program is
@@ -157,12 +158,10 @@ provided with the source code as the `gradlew` file for Linux and MacOS
 platforms, and as `gradlew.bat` for Windows platforms.
 The `build.gradle` and `gradle.properties` files at the root of the source tree
 contain the configuration for Gradle.
-
-Although SSJ works with Java SE versions 5 and later, the current Gradle
-version requires Java SE version 6 or later.
-
 In the instructions below, **Windows users** should replace instances of
 `./gradlew` with `gradlew.bat`.
+
+SSJ and the current Gradle version work with Java SE (or JDK) version 8 or later.
 
 
 ### Using Gradle
@@ -196,6 +195,7 @@ documentation by adding the following line in `gradle.properties`:
     buildDocs
 
 Then, run Gradle [as explained above](#using-gradle).
+You may want (or need) to change some Doxygen environments variables in the file Doxyfile.
 
 
 ### JNI classes
