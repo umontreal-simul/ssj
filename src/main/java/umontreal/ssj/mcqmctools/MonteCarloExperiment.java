@@ -10,11 +10,10 @@ import umontreal.ssj.util.PrintfFormat;
 /**
  * Provides generic tools to perform simple Monte Carlo experiments with a
  * simulation model that implements one of the interfaces
- * 
  * @ref MonteCarloModelDouble, @ref MonteCarloModelDoubleArray, or @ref
- *      MonteCarloModelCV. The experiment consists of n independent simulation
+ *      MonteCarloModelCV. The experiment consists of `n` independent simulation
  *      runs and the results are returned in @ref Tally satistical collectors.
- *      The #RandomStream is reset to a new substream after each run.
+ *      The `RandomStream` used for the experiment is reset to a new substream after each run.
  */
 
 public class MonteCarloExperiment {
@@ -171,7 +170,7 @@ public class MonteCarloExperiment {
 		PrintfFormat str = new PrintfFormat();
 		timer.init();
 		simulateRuns(model, n, stream, statValue);
-		statValue.setConfidenceIntervalStudent();
+		// statValue.setConfidenceIntervalStudent();
 		str.append(model.toString() + "\n");
 		str.append(statValue.report(level, d));
 		// str.append("Variance per run: " + statValue.variance() + "\n");
@@ -186,8 +185,7 @@ public class MonteCarloExperiment {
 	 */
 	public static String simulateRunsDefaultReportStudent(MonteCarloModelDouble model, int n, RandomStream stream,
 			Tally statValue, double level, int d) {
-		Chrono timer = new Chrono();
-		return simulateRunsDefaultReportStudent(model, n, stream, statValue, level, d, timer);
+		return simulateRunsDefaultReportStudent(model, n, stream, statValue, level, d, new Chrono());
 	}
 
 	/**
@@ -195,8 +193,7 @@ public class MonteCarloExperiment {
 	 */
 	public static String simulateRunsDefaultReport (MonteCarloModelDouble model, int n,
 	        RandomStream stream, Tally statValue) {
-		Chrono timer = new Chrono();
-		return simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, timer);
+		return simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, new Chrono());
 	}
 
 	/**
@@ -226,6 +223,16 @@ public class MonteCarloExperiment {
 	}
 
 	/**
+	 * In this one the timer is created internally (and cannot be accessed externally).
+	 */
+	public static String simulateRunsDefaultReportCV(MonteCarloModelCV model, int n, RandomStream stream,
+			ListOfTalliesWithCV<Tally> statWithCV, double level, int d) {
+		return simulateRunsDefaultReportCV (model, n, stream, statWithCV, level, d, new Chrono());
+	}
+
+		
+		
+     /**
 	 * This one uses a single real-valued CV, as in @ref simulateRunsCV.
 	 */
 	public static String simulateRunsDefaultReportCV (MonteCarloModelCV model, int n,
