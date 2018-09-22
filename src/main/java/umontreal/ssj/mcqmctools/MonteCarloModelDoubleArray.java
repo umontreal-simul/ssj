@@ -3,7 +3,7 @@ import umontreal.ssj.rng.*;
 
 /**
  * Similar to @ref MonteCarloModelDouble except that the returned performance is an array of real numbers.  
- * The dimension of that array must be returned by @ref getPerformanceDim().
+ * The dimension of that array must be returned by `getPerformanceDim()`.
 */
 
 public interface MonteCarloModelDoubleArray {

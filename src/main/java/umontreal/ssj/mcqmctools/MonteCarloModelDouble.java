@@ -4,13 +4,13 @@ import umontreal.ssj.rng.*;
 /**
  * An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC
  * experiments are to be performed. This interface is used by the classes
- * MonteCarloExperiment and RQMCExperiment, among others, to run the model.  
+ * @ref MonteCarloExperiment and @ref RQMCExperiment, among others, to run the model.  
  * This interface assumes that the simulation requires a single `RandomStream` and that
- * the output (sample performance) from the model is a real-valued random variable X. 
- * We could have asked @ref simulate to return the performance to avoid a 
- * separate call to @ref getPerformance, but we preferred not,
+ * the output (sample performance) from the model is a real-valued random variable @f$X@f$. 
+ * We could have asked `simulate` to return the performance to avoid a 
+ * separate call to `getPerformance`, but we decided not,
  * because in some situations one may not always need the performance computed
- * by @ref getPerformance, which might be costly to compute for nothing, 
+ * by `getPerformance`, which might be costly to compute for nothing, 
  * but only some other output information.
  * This also applies to @ref MonteCarloModel.
 */

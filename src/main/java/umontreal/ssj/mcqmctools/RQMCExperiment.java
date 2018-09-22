@@ -10,7 +10,7 @@ import umontreal.ssj.util.PrintfFormat;
 
 /**
  * Provides basic generic tools to perform RQMC experiments
- * with a simulation model that implements the MonteCarloModelDouble interface.
+ * with a simulation model that implements the @ref MonteCarloModelDouble interface.
  */
 
 /**
@@ -20,9 +20,9 @@ import umontreal.ssj.util.PrintfFormat;
 public class RQMCExperiment extends MonteCarloExperiment {
 
 	/**
-	 * Simulate <tt>m</tt> replications with #prqmc and return the #m RQMC average
-	 * observations in statReps. These <tt>m</tt> observations are usually
-	 * independent if the randomizations used in the RQMC point set #prqmc are
+	 * Simulate `m` replications with `prqmc` and return the `m` RQMC average
+	 * observations in `statReps`. These `m` observations are usually
+	 * independent if the randomizations used in the RQMC point set `prqmc` are
 	 * independent.
 	 */
 	public static void simulReplicatesRQMC(MonteCarloModelDouble model, RQMCPointSet prqmc, int m, Tally statReps) {
@@ -30,8 +30,8 @@ public class RQMCExperiment extends MonteCarloExperiment {
 	}
 
 	/**
-	 * Simulate <tt>m</tt> replications and return the #m RQMC average observations
-	 * in statReps. Here the QMC point set #p and its randomization #rand are
+	 * Simulate `m` replications and return the `m` RQMC average observations
+	 * in `statReps`. Here the QMC point set `p` and its randomization `rand` are
 	 * specified directly.
 	 */
 	public static void simulReplicatesRQMC(MonteCarloModelDouble model, PointSet p, PointSetRandomization rand, int m,
@@ -50,11 +50,11 @@ public class RQMCExperiment extends MonteCarloExperiment {
 	}
 
 	/**
-	 * Same as @ref simulReplicatesRQMC, except that all the n observations for each
-	 * the m replications are saved and returned in a new two-dimensional
-	 * array @data, which is an array of <tt>m</tt> arrays of size <tt>n</tt>, i.e.,
-	 * <tt>double[m][n]</tt>, created inside this method. Each array of size
-	 * <tt>n</tt> is sorted by increasing order. This is useful for density and cdf
+	 * Same as `simulReplicatesRQMC`, except that all the `n` observations for each
+	 * the `m` replications are saved and returned in a new two-dimensional
+	 * array `data`, which is an array of `m` arrays of size `n', i.e.,
+	 * `double[m][n]`, created inside this method. Each array of size
+	 * `n` is sorted by increasing order. This is useful for density and cdf
 	 * estimation, or for further processing of the data, for example.
 	 */
 	public static void simulReplicatesRQMC(MonteCarloModelDouble model, RQMCPointSet prqmc, int m, Tally statReps,
@@ -63,7 +63,7 @@ public class RQMCExperiment extends MonteCarloExperiment {
 	}
 
 	/**
-	 * Here the QMC point set #p and its randomization #rand are specified directly.
+	 * Here the QMC point set `p` and its randomization `rand` are specified directly.
 	 */
 	public static void simulReplicatesRQMC(MonteCarloModelDouble model, PointSet p, PointSetRandomization rand, int m,
 			Tally statReps, double[][] data) {
@@ -84,6 +84,9 @@ public class RQMCExperiment extends MonteCarloExperiment {
 	}
 	
 
+	/**
+	 * Similar to `simulReplicatesRQMC`, but also returns a report as a `String`.
+	 */
 	public static String simulReplicatesRQMCDefaultReport (MonteCarloModelDouble model, 
 			PointSet p, PointSetRandomization rand, int m, RandomStream noise,
 			Tally statRQMC) {
@@ -91,37 +94,76 @@ public class RQMCExperiment extends MonteCarloExperiment {
 		Chrono timer = new Chrono();
 		simulReplicatesRQMC(model, p, rand, m, statRQMC);
 		statRQMC.setConfidenceIntervalStudent();
-		str.append (model.toString());
-		str.append (p.toString());
-		str.append (rand.toString());
-		str.append (statRQMC.report(0.95, 4));
+		str.append (model.toString() + "\n");
+		str.append ("QMC point set: " + p.toString() + "\n");
+		str.append ("Randomization: " + rand.toString() + "\n");
+		str.append (statRQMC.report());
 		str.append ("Total CPU time:      " + timer.format() + "\n");
 		return str.toString();
 	}
 
+	/**
+	 * Similar to `simulReplicatesRQMCDefaultReport`, but this one makes a comparison 
+	 * with another estimator whose variance per run is `variancePerRunMC` and which took a time 
+	 * `secondPerRunMC` per run to compute. These values may come from a previous MC experiment.
+	 * Returns a report as a `String`.
+	 */
 	public static String simulReplicatesRQMCDefaultReportCompare (MonteCarloModelDouble model,
 			PointSet p, PointSetRandomization rand, int m,
-			Tally statRQMC, double varianceMC, double secondsMC) {
+			Tally statRQMC, double variancePerRunMC, double secondsPerRunMC) {
 		PrintfFormat str = new PrintfFormat();
 		Chrono timer = new Chrono();
 		simulReplicatesRQMC(model, p, rand, m, statRQMC);
 		double secondsRQMC = timer.getSeconds() / (m * p.getNumPoints());
 		double varianceRQMC = p.getNumPoints() * statRQMC.variance();
 		statRQMC.setConfidenceIntervalStudent();
-		str.append (model.toString());
-		str.append (p.toString());
-		str.append (rand.toString());
-		str.append (statRQMC.report(0.95, 4));
-		str.append ("Total CPU time:      " + timer.format() + "\n");
-		str.append ("Variance per run: ");
+		str.append (model.toString() + "\n");
+		str.append ("QMC point set: " + p.toString() + "\n");
+		str.append ("Randomization: " + rand.toString() + "\n");
+		str.append (statRQMC.report());
+		str.append ("Total CPU time:      " + timer.format() + "\n\n");
+		str.append ("MC Variance per run: ");
+		str.append(12, 5, 4, variancePerRunMC);
+		str.append ("\n");
+		str.append ("RQMC Variance per run: ");
 		str.append(12, 5, 4, varianceRQMC);
+		str.append ("\n");
 		str.append ("Variance ratio:   ");
-		str.append(12, 5, 4, varianceMC / varianceRQMC);
+		str.append(12, 5, 4, variancePerRunMC / varianceRQMC);
+		str.append ("\n");
 		str.append ("Efficiency ratio: ");
-		str.append(12, 5, 4, (varianceMC * secondsMC) / (varianceRQMC * secondsRQMC));
-		str.append ("-------------------------------------------\n");
+		str.append(12, 5, 4, (variancePerRunMC * secondsPerRunMC) / (varianceRQMC * secondsRQMC));
+		str.append ("\n---------------------------------------------------------------\n");
 		return str.toString();
 	}
+	
+	// Makes a comparison between MC and RQMC, pass and recover the two Tally probes. 
+	/**
+	 * This method first performs a MC experiment to estimate the variance and CPU time per run, 
+	 * then invokes `simulReplicatesRQMCDefaultReportCompare` and returns a printable report
+	 * that compares MC with RQMC.
+	 */
+	public static String makeComparisonExperimentMCvsRQMC (MonteCarloModelDouble model, RandomStream stream, 
+			 PointSet p, PointSetRandomization rand, int n, int m, Tally statMC, Tally statRQMC) {
+		Chrono timer = new Chrono();
+	    PrintfFormat pf = new PrintfFormat();
+		pf.append (MonteCarloExperiment.simulateRunsDefaultReportStudent (model, n, stream, statMC, timer) + "\n");
+		double secPerRunMC = timer.getSeconds() / n;
+		pf.append (RQMCExperiment.simulReplicatesRQMCDefaultReportCompare (model, p, rand, m, statRQMC, statMC.variance(), secPerRunMC));
+		return pf.toString();
+	}
+
+	/**
+	 * In this version, the statistical collectors are created internally, so they cannot be accessed
+	 * externally.  
+	 */
+	public static String makeComparisonExperimentMCvsRQMC (MonteCarloModelDouble model, RandomStream stream, 
+			 PointSet p, PointSetRandomization rand, int n, int m) {
+		Tally statMC = new Tally("Statistics with MC");
+		Tally statRQMC = new Tally("Statistics on RQMC averages");
+		return makeComparisonExperimentMCvsRQMC (model, stream, p, rand, n, m, statMC, statRQMC);
+	}
+	
 	
 	/**
 	 * Similar to
@@ -140,7 +182,7 @@ public class RQMCExperiment extends MonteCarloExperiment {
 	 * @param statReps
 	 *            statistical container collecting the obtained estimates.
 	 */
-	public static void simulReplicatesRQMC(MonteCarloModelDoubleArray model, RQMCPointSet prqmc, int m,
+	public static void simulReplicatesRQMC (MonteCarloModelDoubleArray model, RQMCPointSet prqmc, int m,
 			ListOfTallies<Tally> statRepsList) {
 		simulReplicatesRQMC(model, prqmc.getPointSet(), prqmc.getRandomization(), m, statRepsList);
 	}

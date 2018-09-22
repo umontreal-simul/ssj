@@ -32,7 +32,6 @@ import java.io.FileReader;
 
 import java.util.List;
 import java.util.ArrayList;
-
 import umontreal.ssj.hups.PointSet;
 
 /**
@@ -76,7 +75,7 @@ abstract public class Search {
 	
 	@Override
 	/**
-	 * Format the search for printing.
+	 * Formats the search parameters for printing.
 	 */
 	public String toString() {
 		return "Point Set Type: " + pointSetType() + "\n" +
@@ -104,6 +103,7 @@ abstract public class Search {
 	 * Returns the interlacing factor of the search.
 	 */
 	abstract public int interlacing();
+	
 	
 	abstract public String construction();
 	

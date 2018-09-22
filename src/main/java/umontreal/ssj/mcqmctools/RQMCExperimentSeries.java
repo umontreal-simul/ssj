@@ -349,12 +349,12 @@ public class RQMCExperimentSeries {
 		return sb.toString();
 	}
 	
-	/**
+	/*
 	 * Returns the data on the mean and variance for each n, in an appropriate format to produce a
 	 * plot with the pgfplot package.   This is OBSOLETE.
 	 * 
 	 * @return Report as a string.
-	 */
+
 	public String XformatPgfCurve (String curveName) {
 		StringBuffer sb = new StringBuffer("");
 		sb.append("      \\addplot+[no marks] table[x=n,y=variance] {" + "\n");
@@ -363,6 +363,7 @@ public class RQMCExperimentSeries {
 		sb.append("      % \n");
 		return sb.toString();
 	}
+	 */
 	
 
 	/**

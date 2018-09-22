@@ -85,4 +85,12 @@ public class RandomShift implements PointSetRandomization {
       return stream;
    }
 
+   
+   /**
+    * Returns a descriptor of this object.
+    */
+   public String toString () {
+		return "Random shift (digital if applied to a digital net)";
+	}
+   
 }

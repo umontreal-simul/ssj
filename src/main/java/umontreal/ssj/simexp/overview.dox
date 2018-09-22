@@ -3,7 +3,8 @@
  *
  * Tools for Simulation Experiments.
  *
- * Provides some classes to manage simulation experiments. Let
+ * Provides some classes to manage simulation experiments
+ * with many replications, batch means, etc. Let
  * @f$\bar{\mathbf{X}}_n@f$ be an average of random vectors:
  * @f[
  *   \bar{\mathbf{X}}_n=\frac{1}{n}\sum_{r=0}^{n-1}\mathbf{X}_r,
@@ -73,11 +74,13 @@
  * and the cost per time unit or per event is computed in the long run in
  * order to estimate
  * @f[
- *   \boldsymbol{\mu}=\lim_{N\to\infty} \left(\frac{1}{N}\; E\!\left[\sum_{k=0}^{N-1} \mathbf{C}_k\right]\right)=\lim_{N\to\infty} \left(\frac{1}{N}\sum_{k=0}^{N-1} \mathbf{C}_k\right)
+ *   \boldsymbol{\mu}=\lim_{N\to\infty} \left(\frac{1}{N}\; E\!\left[\sum_{k=0}^{N-1} \mathbf{C}_k\right]\right)
+ *   =\lim_{N\to\infty} \left(\frac{1}{N}\sum_{k=0}^{N-1} \mathbf{C}_k\right)
  * @f]
  * or
  * @f[
- *   \boldsymbol{\mu}=\lim_{T\to\infty} \left(\frac{1}{T}\; E\!\left[\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right]\right)=\lim_{T\to\infty} \left(\frac{1}{T}\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right).
+ *   \boldsymbol{\mu}=\lim_{T\to\infty} \left(\frac{1}{T}\; E\!\left[\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right]\right)
+ *   =\lim_{T\to\infty} \left(\frac{1}{T}\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right).
  * @f]
  * Any estimator of these previous quantities is biased, because the horizon
  * must be truncated, and the model does not necessarily start in steady
@@ -102,7 +105,8 @@
  * past. In the latter case, each batch corresponds to a *regenerative
  * cycle*. In all these cases, @f$\boldsymbol{\mu}@f$ is estimated by
  * @f[
- *   \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{\sum\limits_{r=0}^{n-1} (T_{r+1} - T_r)}  =  \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{T-T_0}.
+ *   \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{\sum\limits_{r=0}^{n-1} (T_{r+1} - T_r)}  
+ *   =  \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{T-T_0}.
  * @f]
  * The simplest way for estimating covariances when all batches have the same
  * length is to consider the @f$\mathbf{X}_r@f$’s as i.i.d. random vectors,
@@ -113,10 +117,10 @@
  *
  * This package provides helper classes to facilitate management of a complex
  * simulation experiment. A base class called
- * @ref umontreal.ssj.simexp.SimExp contains methods to initialize lists of
+ * @ref SimExp contains methods to initialize lists of
  * statistical probes and to help in sequential sampling. The subclass
- * @ref umontreal.ssj.simexp.RepSim is used for simulating independent
+ * @ref RepSim is used for simulating independent
  * replications of a given model on a finite horizon. The subclass
- * @ref umontreal.ssj.simexp.BatchMeansSim can be used for simulating a
+ * @ref BatchMeansSim can be used for simulating a
  * stationary model using the batch means technique.
  */

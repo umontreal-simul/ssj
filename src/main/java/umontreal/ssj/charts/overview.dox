@@ -3,101 +3,94 @@
  *
  * Charts generation.
  *
- * This package contains utility classes to produce charts
- * used in the Java software developed in the {\em simulation laboratory\/}
- * of the DIRO, at the Universit\'e de Montr\'eal.
- *
  *  @anchor REF_charts_overview_sec_overview
  *
- *  This package contains classes to produce charts used in the Java software
- * developed in the *simulation laboratory* of the DIRO, at the Universite de
- * Montreal.
- *
- * This package provides tools for easy construction, visualization, and
- * customization of XY plots, histograms, and empirical styled charts from a
- * Java program. It uses and extends the free and “open source” JFreeChart
- * tool to manage the charts. JFreeChart is distributed under the terms of
- * the GNU Lesser General Public License (LGPL), and can be found at
- * [http://www.jfree.org/jfreechart/](http://www.jfree.org/jfreechart/).
- *
- * This package also provides facilities to export charts to PGF/TikZ source
+ * This package contains utility classes to produce charts either for LaTeX
+ * or to be shown on the computer screen, from a Java program.
+ * It is based on the open source `JFreeChart` software, available at
+ * [http://www.jfree.org/jfreechart/](http://www.jfree.org/jfreechart/),
+ * and distributed under the terms of
+ * the GNU Lesser General Public License (LGPL).
+ * It provides tools for the construction, visualization, and
+ * customization of XY plots, histograms, and empirical styled charts.
+ * It offers facilities to export charts to PGF/TikZ source
  * code, which can be included into LaTeX documents. TikZ is a free LaTeX
  * package to produce pictures such as plots, and can be downloaded from
  * [http://sourceforge.net/projects/pgf](http://sourceforge.net/projects/pgf).
  *
- * The user does not need to be familiar with the JFreeChart package or the
+ * The user does not need to be familiar with the `JFreeChart` package or the
  * TikZ syntax to use these tools, except if customization is required. For
- * this, one may see the API specification of JFreeChart, and the reference
+ * this, one may see the API specification of `JFreeChart`, and the reference
  * manual of TikZ.
  *
  * The two basic abstract classes of package `charts` are
- * @ref umontreal.ssj.charts.XYChart and
- * @ref umontreal.ssj.charts.CategoryChart. All other charts inherit from one
+ * @ref XYChart and
+ * @ref CategoryChart. All other charts inherit from one
  * of these two. Charts are managed by the mother class which contains the
- * data tables in a `*SeriesCollection` object, and the information about
- * @f$x@f$-axis and @f$y@f$-axis in  @ref umontreal.ssj.charts.Axis
- * instances. All these objects encapsulate JFreeChart instances along with
+ * data tables in a `SeriesCollection` object, and the information about
+ * @f$x@f$-axis and @f$y@f$-axis in  @ref Axis
+ * instances. All these objects encapsulate `JFreeChart` instances along with
  * some additional TikZ-specific attributes. The method
- * umontreal.ssj.charts.XYChart.view displays charts on screen while the
- * method `toLatex` formats and returns a  String which contains the TikZ
+ * `XYChart.view` displays charts on screen while the
+ * method `toLatex` formats and returns a  `String` which contains the TikZ
  * source code that can be written to a LaTeX file.
  *
  * Several chart styles are available and each one is represented by a
- * subclass of  @ref umontreal.ssj.charts.XYChart or of
- * @ref umontreal.ssj.charts.CategoryChart. The
- * @ref umontreal.ssj.charts.XYLineChart uses
- * @ref umontreal.ssj.charts.XYListSeriesCollection to plot curves and lines,
- * the  @ref umontreal.ssj.charts.HistogramSeriesCollection class is used by
- * @ref umontreal.ssj.charts.HistogramChart to plot histograms, and the
- * @ref umontreal.ssj.charts.EmpiricalSeriesCollection is used by
- * @ref umontreal.ssj.charts.EmpiricalChart to plot empirical style charts.
+ * subclass of  @ref XYChart or of
+ * @ref CategoryChart. The
+ * @ref XYLineChart uses
+ * @ref XYListSeriesCollection to plot curves and lines,
+ * the  @ref HistogramSeriesCollection class is used by
+ * @ref HistogramChart to plot histograms, and the
+ * @ref EmpiricalSeriesCollection is used by
+ * @ref EmpiricalChart to plot empirical style charts.
  * It is possible to draw a scatter plot or a box plot using
- * @ref umontreal.ssj.charts.ScatterChart or
- * @ref umontreal.ssj.charts.BoxChart respectively. These concrete subclasses
+ * @ref ScatterChart or
+ * @ref BoxChart respectively. These concrete subclasses
  * have similar APIs, but they are specialized for different kinds of charts.
  *
  * These charts can be customized using `*SeriesCollection` subclasses and
- * @ref umontreal.ssj.charts.Axis. First, one can use methods in the
- * @ref umontreal.ssj.charts.XYChart class for setting the range values and a
+ * @ref Axis. First, one can use methods in the
+ * @ref XYChart class for setting the range values and a
  * background grid. One can also use the method `getSeriesCollection()` for
  * subclasses of charts to obtain the dataset of the chart, which is
  * represented by a `*SeriesCollection` object. This dataset can be
  * customized in the following ways by calling methods on the series
  * collection: selecting color, changing plot style (straight lines, curves,
- * marks only, …), putting marks on points, setting a label and selecting the
+ * marks only, etc.), putting marks on points, setting a label and selecting the
  * dash pattern (solid, dotted, dashed, …). The available properties depend
  * on the type of chart. Moreover, objects representing the axes can be
- * retrieved with  umontreal.ssj.charts.XYChart.getXAxis for the
- * @f$x@f$-axis, and  umontreal.ssj.charts.XYChart.getYAxis for the
- * @f$y@f$-axis. By using methods in  @ref umontreal.ssj.charts.Axis, many
+ * retrieved with `XYChart.getXAxis` for the
+ * @f$x@f$-axis, and  `XYChart.getYAxis` for the
+ * @f$y@f$-axis. By using methods in  @ref Axis, many
  * customizations are possible: setting a label to the axis, setting ticks
  * labels and values (auto ticks, periodical ticks or manually defined ticks)
  * and changing the twin axis position on the current axis to select where
  * axes must appear. These settings are independent for each axis.
  *
- * Each chart object from SSJ encapsulates a JFreeChart object: a
- * @ref umontreal.ssj.charts.XYChart instance contains a `JFreeChart`
- * instance from JFreeChart API, a `*SeriesCollection` contains a `XYDataset`
- * and a <tt>XYItemRenderer</tt>, and finally an
- * @ref umontreal.ssj.charts.Axis contains a `NumberAxis`. So any parameter
- * proposed by JFreeChart is reachable through getter methods. However,
- * changing the JFreeChart parameters directly may have no impact on the
+ * Each chart object from SSJ encapsulates a `JFreeChart` object: a
+ * @ref XYChart instance contains a `JFreeChart`
+ * instance from `JFreeChart` API, a `*SeriesCollection` contains a @ref XYDataset
+ * and a @ref XYItemRenderer, and finally an
+ * @ref Axis contains a @ref NumberAxis. So any parameter
+ * proposed by `JFreeChart` is reachable through getter methods. However,
+ * changing the `JFreeChart` parameters directly may have no impact on the
  * produced TikZ source code.
  *
- * The two special classes  @ref umontreal.ssj.charts.ContinuousDistChart and
- * @ref umontreal.ssj.charts.DiscreteDistIntChart can be used to plot
+ * The two special classes  @ref ContinuousDistChart and
+ * @ref DiscreteDistIntChart can be used to plot
  * probability densities, mass functions, and cumulative probabilities for
  * continuous or discrete distributions, which are implemented in package
  * @ref umontreal.ssj.probdist of SSJ.
  *
  * The package `charts` provides additional tools for formatting data plot,
  * and creating charts with multiple datasets. The
- * @ref umontreal.ssj.charts.PlotFormat class offers basic tools to import
+ * @ref PlotFormat class offers basic tools to import
  * and export data from files. Supported file formats are GNUPlot and
  * standard CSV, which is widely used and accepted by most mathematical
  * softwares such as MATLAB and Mathematica. Customizing file input and
  * output format is also possible. Finally
- * @ref umontreal.ssj.charts.MultipleDatasetChart provides tools to plot with
+ * @ref MultipleDatasetChart provides tools to plot with
  * different styles on the same chart.
  *
  * # Examples
