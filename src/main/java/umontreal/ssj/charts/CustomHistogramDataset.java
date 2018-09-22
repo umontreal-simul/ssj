@@ -43,8 +43,7 @@ import org.jfree.util.PublicCloneable;
  *
  */
 public class CustomHistogramDataset extends AbstractIntervalXYDataset
-         implements IntervalXYDataset, Cloneable, PublicCloneable
-{
+         implements IntervalXYDataset, Cloneable, PublicCloneable {
 
    /** A list of maps. */
    private List list;
@@ -54,7 +53,7 @@ public class CustomHistogramDataset extends AbstractIntervalXYDataset
 
    /**
     * Creates a new (empty) dataset with a default type of
-    * @ref HistogramType . FREQUENCY.
+    * `HistogramType.FREQUENCY`.
     */
    public CustomHistogramDataset()
    {

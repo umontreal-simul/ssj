@@ -303,6 +303,21 @@ public class TallyHistogram extends Tally {
 	}
 
 	/**
+	 * Returns the proportion of the collected observations that lie within the boundaries 
+	 * @f$[a,b]@f$ of the histogram;  that is, the number that fell within @f$[a,b]@f$
+	 * divided by the total number that were collected.
+	 * 
+	 * @return the proportion of observations that lie in the histogram.
+	 */
+	public double getProportionInBoundaries() {
+		int total = 0;
+		for(int num : count) {
+			total += num;
+		}
+		return  (double) total / (double)(total + leftCount + rightCount); 
+	}
+	
+	/**
 	 * Clones this object and the array that stores the counters.
 	 */
 	public TallyHistogram clone() {

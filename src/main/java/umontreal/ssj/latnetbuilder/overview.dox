@@ -1,16 +1,22 @@
 /**
  * @package umontreal.ssj.latnetbuilder
  *
- * Tools for Simple Monte Carlo and Quasi-Monte Carlo Experiments.
- *
+ * Tools to search for good quasi-Monte Carlo point sets and sequences
+ *  *
  * @anchor REF_latnetbuilder_overview_sec_overview
  *
- * This package provides an interface to the LatNet Builder software to constructs 
- * quasi-Monte Carlo point sets and sequences of various types 
+ * This package provides an interface to the LatNet Builder software to search for good
+ * quasi-Monte Carlo point sets and sequences (or HUPS) of various types 
  * (lattices, polynomial lattices, digital nets, etc.) for arbitrary dimension and cardinality, 
- * various uniformity criteria, etc.
- *
- *
+ * various uniformity criteria, etc. 
+ * For this package to work, the `LatNet Builder` software must be installed and the path to it must be set correctly
+ * inside the class @ref Search.  
+ * @remark This would need to be made more easily portable in the future.
+ * 
+ * See @cite vLEC12a, @cite vLEC16a, and 
+ * [https://github.com/umontreal-simul/latnetbuilder](https://github.com/umontreal-simul/latnetbuilder)
+ * for more details on `LatNet Builder` and its ancestor `Lattice Builder`.
+ * 
  *
  * # Examples
  *

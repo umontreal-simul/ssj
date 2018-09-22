@@ -374,14 +374,11 @@ public class DigitalNet extends PointSet {
    public String toString() {
       StringBuffer sb = new StringBuffer (100);
       if (b > 0) {
-         sb.append ("Base = ");   sb.append (b);
-         sb.append (PrintfFormat.NEWLINE);
+         sb.append (", base = ");   sb.append (b);
       }
-      sb.append ("Num cols = ");   sb.append (numCols);
-      sb.append (PrintfFormat.NEWLINE + "Num rows = ");
-      sb.append (numRows);
-      sb.append (PrintfFormat.NEWLINE + "outDigits = ");
-      sb.append (outDigits);
+      sb.append (", Num cols = ");   sb.append (numCols);
+      sb.append (", Num rows = ");   sb.append (numRows);
+      sb.append (", outDigits = ");  sb.append (outDigits);
       return sb.toString();
    }
 

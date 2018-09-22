@@ -26,9 +26,7 @@
 package umontreal.ssj.latnetbuilder;
 
 import umontreal.ssj.hups.DigitalNetBase2;
-
 import java.util.ArrayList;
-
 import java.lang.Math;
 
 /**
@@ -39,9 +37,9 @@ public class DigitalNetSearch extends Search {
 	/**
 	 * Class for the construction od digital nets.
 	 */
-	protected class DigitalNetBase2FromLatNetBuilder extends DigitalNetBase2{
+	protected class DigitalNetBase2FromLatNetBuilder extends DigitalNetBase2 {
 		
-		public DigitalNetBase2FromLatNetBuilder(int numRows, int numCols, int dim, int[] matrices) {
+		public DigitalNetBase2FromLatNetBuilder (int numRows, int numCols, int dim, int[] matrices) {
 			this.numCols = numCols;
 			this.numRows = Math.min(numRows, MAXBITS);
 			this.numPoints = 1 << this.numCols;
