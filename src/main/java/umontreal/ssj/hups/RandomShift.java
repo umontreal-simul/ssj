@@ -27,13 +27,18 @@ package umontreal.ssj.hups;
 
 /**
  * This class implements a  @ref umontreal.ssj.hups.PointSetRandomization.
- * The  @ref umontreal.ssj.rng.RandomStream is stored internally. The method
- * #randomize(PointSet) simply calls
+ * When the `PointSet` to be randomized is a `DigitalNet`,
+ * the random shift is a *random digital shift*, otherwise it is a
+ * random shift modulo 1.
+ * The  @ref umontreal.ssj.rng.RandomStream is stored internally. 
+ * 
+ * In the current implementation, the method
+ * `randomize(PointSet)` simply calls
  * {@link umontreal.ssj.hups.PointSet.addRandomShift(RandomStream)
- * addRandomShift(stream)}.
+ * addRandomShift(stream)}. This may change in the future.
  *
  * This class can be used as a base class to implement a specific
- * randomization by overriding method  #randomize(PointSet).
+ * randomization by overriding #randomize(PointSet).
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
