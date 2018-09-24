@@ -24,6 +24,7 @@
  */
 package umontreal.ssj.hups;
 
+import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.util.PrintfFormat;
 
  /*Attention: No array index range tests neither for the dimension

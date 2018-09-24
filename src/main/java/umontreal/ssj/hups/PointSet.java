@@ -25,8 +25,8 @@
 package umontreal.ssj.hups;
 
 import java.util.NoSuchElementException;
-import java.util.List;
-import java.util.ArrayList;
+// import java.util.List;
+// import java.util.ArrayList;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.util.Num;
 import umontreal.ssj.util.PrintfFormat;
@@ -172,24 +172,38 @@ public abstract class PointSet {
 
    /**
     * Randomizes the point set using the given `rand`.
+    * Use the equivalent `rand.randomize(this)` instead.
     *  @param rand          @ref PointSetRandomization to use
     */
+   @Deprecated
    public void randomize (PointSetRandomization rand) {
        rand.randomize(this);
        // Note that RandomShift.randomize(p) calls  addRandomShift !
+       // Should this be only for RQMCPointSet ?????
    }
 
    /**
-    * This method does nothing for this generic class. In some subclasses,
-    * it adds a random shift to all the points of the point set, using
-    * stream `stream` to generate the random numbers, for coordinates `d1`
-    * to `d2-1`.
+    * This method should be implemented in subclasses to 
+    * generate a random shift of the appropriate type.
+    * This random shift will be added to all the points when they are enumerated 
+    * by the iterator. 
+    * For certain types of point sets having a digital structure,
+    * such as digital nets and sequences, this method implements a 
+    * random digital shift.  
+    * For others, such as lattice rules, it implements a random shift modulo 1.
+    * The random shift is generated using the `stream` to generate the uniform random numbers, 
+    * one for each of the coordinates `d1` to `d2-1`.
     * 
-    * Note: These methods are labeled as deprecated, but in fact we use them internally,
-    * so we cannot remove them.  Perhaps they could be made protected.
+    * The current implementation in this generic class does nothing 
+    * but printing a warning.   There are also other classes such as `SubsetOfPointSet`,
+    * `PaddedPointSet`, ..., in which it is currently not implemented, because one may 
+    * not want to modify the underlying point sets indirectly!
+    * 
+    * These methods are use them internally by randomizations.
+    * Perhaps they could be made protected.
     * Calling `PointSet.randomize(RandomShift)` calls `addRandomShift`.  
     */
-   @Deprecated
+   // @Deprecated
    public void addRandomShift (int d1, int d2, RandomStream stream) {
 //   throw new UnsupportedOperationException
 //         ("addRandomShift in PointSet called");
@@ -198,29 +212,29 @@ public abstract class PointSet {
    }
 
    /**
-    * This method does nothing for this generic class. Similar to
+    * Equivalent to
     * `addRandomShift (0, d2, stream)`, with `d2` the dimension of the
     * current random shift.
     */
-   @Deprecated
+   // @Deprecated
    public void addRandomShift (RandomStream stream) {
       addRandomShift (0, dimShift, stream);
   }
 
    /**
-    * Similar to `addRandomShift(d1, d2, stream)`, with the current random
+    * Equivalent to `addRandomShift(d1, d2, stream)`, with the current random
     * stream.
     */
-   @Deprecated
+   // @Deprecated
    public void addRandomShift (int d1, int d2) {
       addRandomShift (d1, d2, shiftStream);
   }
 
    /**
-    * Similar to `addRandomShift(0, d2, stream)` with the current random
+    * Equivalent to `addRandomShift(0, d2, stream)` with the current random
     * stream and `d2` the dimension of the current random shift.
     */
-   @Deprecated
+   // @Deprecated
    public void addRandomShift () {
       addRandomShift (0, dimShift, shiftStream);
    }
@@ -228,7 +242,7 @@ public abstract class PointSet {
    /**
     * Erases the current random shift, if any.
     */
-   @Deprecated
+   // @Deprecated
    public void clearRandomShift() {
       capacityShift = 0;
       dimShift = 0;
@@ -239,6 +253,7 @@ public abstract class PointSet {
     * By default, this method simply calls `addRandomShift (fromDim,
     * toDim, stream)`, which does nothing.
     */
+   @Deprecated
    public void randomize (int fromDim, int toDim, RandomStream stream) {
       addRandomShift (fromDim, toDim, stream);
    }
@@ -247,6 +262,7 @@ public abstract class PointSet {
     * By default, this method simply calls
     * {@link #randomize(int,int,RandomStream) randomize(0, dim, stream)}.
     */
+   @Deprecated
    public void randomize (RandomStream stream) {
       addRandomShift (stream);
   }
@@ -270,6 +286,7 @@ public abstract class PointSet {
    /**
     * By default, this method simply calls `clearRandomShift()`.
     */
+   @Deprecated
    public void unrandomize() {
       clearRandomShift();
   }

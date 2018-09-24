@@ -76,7 +76,7 @@ public abstract class CycleBasedPointSet extends PointSet {
  * Adds a random shift to all the points of the point set, using stream
  * `stream` to generate the random numbers, for coordinates `d1` to `d2 - 1`.
  * This applies an addition modulo 1 of a single random point to all the
- * points.
+ * points.  Subclasses may redefine this method to apply a random digital shift.
  *  @param stream       Stream used to generate random numbers
  */
 public void addRandomShift (int d1, int d2, RandomStream stream) {
