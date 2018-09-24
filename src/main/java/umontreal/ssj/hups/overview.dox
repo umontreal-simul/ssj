@@ -11,11 +11,12 @@
  * (LDS) is often used for infinite sequences of points such that the
  * *discrepancy* between the distribution of the first @f$n@f$ points of the
  * sequence and the uniform distribution converges to zero at a certain rate
- * when @f$n\to\infty@f$ @cite rNIE92b&thinsp;. HUPS and LDS are used for
- * quasi-Monte Carlo integration, as we now briefly explain. See, e.g.,
- * @cite vFOX99a, @cite fGLA04a, @cite rHEL98a, @cite vLEC02a, @cite vLEC03b,
- * @cite vOWE98a, @cite rNIE92b, @cite vSLO94a, @cite rTEZ95a&thinsp; for
- * further details.
+ * when @f$n\to\infty@f$ @cite rNIE92b. HUPS and LDS are used for
+ * quasi-Monte Carlo integration, as we now briefly explain. 
+ * For more details, see
+ * @cite rDIC10a, @cite fGLA04a, @cite rHEL98a, @cite vLEC02a, @cite vLEC03b, @cite vLEC09f,
+ * @cite vLEC18a, 
+ * @cite vOWE98a, @cite rNIE92b, @cite rNUY14a, @cite vSLO94a; for example.
  *
  * Suppose we want to estimate the integral of a function @f$f@f$ defined
  * over the @f$s@f$-dimensional unit hypercube,
@@ -30,10 +31,10 @@
  * @f$\mathbf{u}= (u_0,u_1,u_2,…)@f$ whose purpose is to imitate i.i.d.
  * @f$U(0,1)@f$ random variables. These real numbers are transformed in
  * complicated ways to produce the estimator. Thus, the dimension @f$s@f$ of
- * the integral ( {@link REF_hups_overview_eq_mu mu} )
+ * the integral in ({@link REF_hups_overview_eq_mu mu})
  * represents the number of calls to the uniform random number generator if
  * that number is deterministic. If it is random and unbounded, we take @f$s
- * = \infty@f$. In the latter case, however, we can assume that the *actual*
+ * = \infty@f$. In the latter case, we shall assume that the *actual*
  * number of calls is finite with probability one (otherwise the simulation
  * may never end).
  *
@@ -44,7 +45,6 @@
  * @f]
  * which is the average of @f$f@f$ over the *point set* @f$P_n =
  * \{\mathbf{u}_0,…,\mathbf{u}_{n-1}\} \subset[0,1)^s@f$.
- *
  * With the *Monte Carlo* (MC) method, the @f$\mathbf{u}_i@f$’s are i.i.d.
  * random vectors uniformly distributed over @f$[0,1)^s@f$. Then, @f$Q_n@f$
  * is an unbiased estimator of @f$\mu@f$ with variance @f$\sigma^2/n@f$,
@@ -56,12 +56,22 @@
  *
  * *Quasi-Monte Carlo* (QMC) methods use point sets @f$P_n@f$ that are *more
  * evenly distributed* over the unit hypercube than typical random points. We
- * call them *highly uniform point sets* (HUPS). The aim is to reduce the
- * size of the integration error @f$Q_n - \mu@f$. Two important classes of
- * methods for constructing such point sets are *digital nets* and
- * *integration lattices* @cite rNIE92b, @cite vSLO94a, @cite vLEC02a,
- * @cite fGLA04a&thinsp;. Both are implemented in this package, in various
+ * call them *highly uniform point sets* (HUPS) or *QMC point sets*. The aim is to reduce the
+ * size of the integration error @f$Q_n - \mu@f$. 
+ * Among the most important classes of methods for constructing such point sets,
+ * we find are *digital nets*, *integration lattices in the real space*, 
+ * *polynomial integration lattices*, *Hammersley points*, *Halton sequences*, etc.;
+ * see  @cite rDIC10a, @cite vLEC02a, @cite18a, @cite rNIE92b, @cite vSLO94a.
+ * All the methods named above are implemented in this package, in various
  * flavors.
+ *
+ * The deterministic QMC points can also be randomized in a way that each point 
+ * has the uniform distribution in the unit cube while the point set as a whole
+ * keeps its high uniformity.  This gives rise to randomized QMC (RQMC),
+ * which provides an unbiased estimator of @f$\mu@f$ whose variance can be 
+ * estimated via independent replications.
+ * This is further discussed below. 
+ *
  *
  * ## Elementary constructions
  *
@@ -81,7 +91,7 @@
  * exponentially fast with @f$s@f$ for fixed @f$d@f$. Another important
  * drawback is that when @f$P_n@f$ is projected over lower-dimensional
  * subspaces, several points are projected onto each other and become
- * redundant @cite vLEC02a&thinsp;.
+ * redundant @cite vLEC02a.
  *
  * A better idea is to construct a point set @f$P_n@f$ in @f$s@f$ dimensions
  * such that each one-dimensional projection of @f$P_n@f$ is the set of
@@ -93,7 +103,7 @@
  * @f$\{0,…,n-1\}@f$ and visit the values @f$\{0,  1/n,  …, (n-1)/n\}@f$ in
  * the order determined by that permutation. The trick is to select those
  * permutations in a way that @f$P_n@f$ itself is highly uniform over
- * @f$[0,1)^s@f$ in a well-defined sense (to be determined). This is what
+ * @f$[0,1)^s@f$ in a well-defined sense (there are many ways to define it). This is what
  * most construction methods attempt to achieve. Before looking at concrete
  * ways of defining such permutations, we introduce a related issue: what to
  * do if @f$n@f$ is not fixed.
@@ -156,9 +166,10 @@
  *
  * *Digital nets and sequences* are an important class of HUPS and LDS
  * constructions. Most concrete implementations, e.g., those proposed by
- * Sobol’, Faure, Niederreiter, and Niederreiter and Xing, are *linear*
- * digital nets and sequences, defined as follows (see also @cite rNIE92b,
- * @cite rTEZ95a, @cite vLEC02a&thinsp;).
+ * Sobol’, Faure, Niederreiter, Niederreiter and Xing, Dick, etc., are *linear*
+ * digital nets and sequences, defined as follows 
+ * (see also @cite rDIC10a, @cite vLEC02a, @cite rNIE92b,
+ * @cite rTEZ95a).
  *
  * Let @f$b\ge2@f$ be an arbitrary integer (usually a prime number), called
  * the *base*. A net that contains @f$n = b^k@f$ points in @f$s@f$ dimensions
