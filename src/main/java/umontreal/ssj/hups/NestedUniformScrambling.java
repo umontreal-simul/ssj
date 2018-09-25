@@ -33,7 +33,6 @@ import java.lang.IllegalArgumentException;
  * To use this randomization, one should should call the randomize() function of
  * an instance of NestedUniformScrambling with, as its argument, an instance of
  * CachedPointSet with a reference to a DigitalNetBase2 instance.
- *
  * The actual implementation is done in DigitalNetBase2.nestedUniformScramble().
  *
  * @warning Calling CachedPointSet.randomize() with an instance of
