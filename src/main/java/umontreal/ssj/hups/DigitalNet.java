@@ -384,7 +384,7 @@ public class DigitalNet extends PointSet {
 
 
    // Print matrices M for dimensions 0 to N-1.
-   private void printMat (int N, int[][][] A, String name) {
+   protected void printMat (int N, int[][][] A, String name) {
       for (int i = 0; i < N; i++) {
          System.out.println ("-------------------------------------" +
             PrintfFormat.NEWLINE + name + "   dim = " + i);
@@ -401,7 +401,7 @@ public class DigitalNet extends PointSet {
 
 
    // Print matrix M
-   private void printMat0 (int[][] A, String name) {
+   protected void printMat0 (int[][] A, String name) {
          System.out.println ("-------------------------------------" +
                              PrintfFormat.NEWLINE + name);
          int l, c;   // row l, column c for A[l][c].
@@ -803,7 +803,7 @@ public void iBinomialMatrixScrambleFaurePermut (RandomStream stream,
    public void stripedMatrixScramble (RandomStream stream) {
       int j, l, c;  // dimension j, row l, column c.
       int diag;     // random entry on the diagonal;
-      int col1;     // random entries below the diagonal;
+      // int col1;     // random entries below the diagonal;
 
       // If genMat contains original gener. matrices, copy it to originalMat.
       if (originalMat == null) {
@@ -846,7 +846,7 @@ public void iBinomialMatrixScrambleFaurePermut (RandomStream stream,
       // Constructs the lower-triangular scrambling matrices M_j, r by r.
       int j, l, c;  // dimension j, row l, column c.
       int diag;     // random entry on the diagonal;
-      int col1;     // random entries below the diagonal;
+      // int col1;     // random entries below the diagonal;
       int jb;
       int[][][] scrambleMat = new int[dim][numRows][numRows];
       for (j = 0 ; j < dim; j++) {
@@ -878,7 +878,7 @@ public void iBinomialMatrixScrambleFaurePermut (RandomStream stream,
     *                      randomness
     */
    public void rightMatrixScramble (RandomStream stream) {
-      int j, c, l, i, sum;  // dimension j, row l, column c, of genMat.
+      int j, c, l;  // dimension j, row l, column c, of genMat.
 
       // SaveOriginalMat();
       if (originalMat == null) {
