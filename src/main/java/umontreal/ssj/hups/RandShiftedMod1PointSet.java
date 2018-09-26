@@ -28,22 +28,20 @@ import umontreal.ssj.util.PrintfFormat;
 import umontreal.ssj.rng.*;
 
 /**
- * @remark **Adam:** Cette classe reprogramme un `addRandomShift`
- * explicitement sur l’ensemble @f$P@f$, alors que le `ContainerPointSet`
- * applique le `addRandomShift` sur le contenu @f$P@f$, ce qui est beaucoup
- * plus propre et plus général. Faut-il éliminer cette classe? Est-elle
- * vraiment nécessaire?
  *
- *  This container class embodies a point set to which a random shift modulo
+ * This container class embodies a point set to which a random shift modulo
  * 1 is applied (i.e., a single uniform random point is added to all points,
- * modulo 1, to randomize the inner point set). When calling
- * #addRandomShift, a new random shift will be generated. This shift is
- * represented by a vector of @f$d@f$ uniforms over @f$(0,1)@f$, where
- * @f$d@f$ is the current dimension of the shift.
+ * modulo 1, to randomize the inner point set). 
+ * This can be used for example to apply a random shift modulo 1 to a @ref DigitalNet,
+ * for which a @ref RandomShift would normally do a random digital shift. 
+ * Here, calling #addRandomShift generates a new random shift, represented by a vector 
+ * of @f$d@f$ uniforms over @f$(0,1)@f$, where @f$d@f$ is the current dimension of the shift.
+ * Then, an iterator for this point set will enumerate the points of the contained 
+ * point set and apply this random shift modulo 1 to each of them.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
-public class RandShiftedPointSet extends ContainerPointSet {
+public class RandShiftedMod1PointSet extends ContainerPointSet {
 
    protected double[] shift;           // The random shift.
    protected int dimShift = 0;         // Current dimension of the shift.
@@ -59,7 +57,7 @@ public class RandShiftedPointSet extends ContainerPointSet {
     *  @param dimShift     dimension of the initial shift
     *  @param stream       stream used for generating random shifts
     */
-   public RandShiftedPointSet (PointSet P, int dimShift, RandomStream stream) {
+   public RandShiftedMod1PointSet (PointSet P, int dimShift, RandomStream stream) {
       init (P);
       if (dimShift <= 0) {
          throw new IllegalArgumentException (
@@ -108,7 +106,6 @@ public class RandShiftedPointSet extends ContainerPointSet {
     * Refreshes the random shift (generates new uniform values for the
     * random shift coordinates) for coordinates `d1` to `d2-1`.
     */
-   @Deprecated
    public void addRandomShift (int d1, int d2) {
       if (d1 < 0 || d1 > d2)
          throw new IllegalArgumentException ("illegal parameter d1 or d2");
@@ -137,7 +134,6 @@ public class RandShiftedPointSet extends ContainerPointSet {
     * Refreshes all coordinates of the random shift, up to its current
     * dimension.
     */
-   @Deprecated
    public void addRandomShift() {
       addRandomShift (0, dimShift);
    }
@@ -149,12 +145,12 @@ public class RandShiftedPointSet extends ContainerPointSet {
    }
 
    public PointSetIterator iterator() {
-      return new RandShiftedPointSetIterator();
+      return new RandShiftedMod1PointSetIterator();
    }
 
    // ***************************************************************
 
-   private class RandShiftedPointSetIterator
+   private class RandShiftedMod1PointSetIterator
                  extends ContainerPointSetIterator {
 
       public double getCoordinate (int i, int j) {
