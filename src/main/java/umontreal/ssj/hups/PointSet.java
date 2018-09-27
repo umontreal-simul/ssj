@@ -492,11 +492,24 @@ public abstract class PointSet {
     */ 
    protected class DefaultPointSetIterator implements PointSetIterator {
 
-      protected int curPointIndex = 0;      // Index of the current point.
-      protected int curCoordIndex = 0;      // Index of the current coordinate.
-      protected double EpsilonHalf = 1.0 / Num.TWOEXP[55];
-   // protected double EpsilonHalf = PointSet.this.EpsilonHalf;
+	   /**
+	    * Index of the current point.
+	    */ 
+	  protected int curPointIndex = 0;
 
+	   /**
+	    * Index of the current coordinate.
+	    */ 
+      protected int curCoordIndex = 0;
+
+	   /**
+	    * Default constant epsilon/2 added to the points after a random shift.
+	    */ 
+      protected double EpsilonHalf = 1.0 / Num.TWOEXP[55];
+
+	   /**
+	    * Error message for index out of bounds.
+	    */ 
       protected void outOfBounds () {
          if (getCurPointIndex() >= numPoints)
             throw new NoSuchElementException ("Not enough points available");
@@ -504,92 +517,154 @@ public abstract class PointSet {
             throw new NoSuchElementException ("Not enough coordinates available");
       }
 
+	   /**
+	    * Set current coordinate to j.
+	    */ 
       public void setCurCoordIndex (int j) {
          curCoordIndex = j;
       }
 
+	   /**
+	    * Set current coordinate to 0.
+	    */ 
       public void resetCurCoordIndex() {
          setCurCoordIndex (0);
       }
 
+	   /**
+	    * @return index of current coordinate.
+	    */ 
       public int getCurCoordIndex() {
         return curCoordIndex;
       }
 
+	   /**
+	    * @return true of the current point has another coordinate available.
+	    */ 
       public boolean hasNextCoordinate() {
         return getCurCoordIndex() < getDimension();
       }
 
+	   /**
+	    * @return the next coordinate, if any
+	    */ 
       public double nextCoordinate() {
          if (getCurPointIndex() >= numPoints || getCurCoordIndex() >= dim)
             outOfBounds();
          return getCoordinate (curPointIndex, curCoordIndex++);
       }
 
+	   /**
+	    * @return in `p` the `d` next coordinates
+	    */ 
       public void nextCoordinates (double p[], int d)  {
          if (getCurCoordIndex() + d > getDimension()) outOfBounds();
          for (int j = 0; j < d; j++)
             p[j] = nextCoordinate();
       }
 
+	   /**
+	    * Resets the current point index to `i` and current coordinate to 0.
+	    */ 
       // This is called with i = numPoints when nextPoint generates the
       // last point, so i = numPoints must be allowed.
       // The "no more point" error will be raised if we ask for
-      // a new coordinate or point.
+      // a new coordinate or point when  i = numPoints.
       public void setCurPointIndex (int i) {
          curPointIndex = i;
          resetCurCoordIndex();
       }
 
+	   /**
+	    * Resets both the current point index and the current coordinate to 0.
+	    */ 
       public void resetCurPointIndex() {
          setCurPointIndex (0);
       }
 
+	   /**
+	    * Resets the current point index to the next one and current coordinate to 0,
+	    * and returns the new current point index.
+	    */ 
       public int resetToNextPoint() {
          setCurPointIndex (curPointIndex + 1);
          return curPointIndex;
       }
 
+	   /**
+	    * @return the current point index.
+	    */ 
       public int getCurPointIndex() {
         return curPointIndex;
       }
 
+	   /**
+	    * @return `true` iff the current point is not the last one.
+	    */ 
       public boolean hasNextPoint() {
         return getCurPointIndex() < getNumPoints();
       }
 
+	   /**
+	    * Returns in `p` a block of `d` successive coordinates of the current point, 
+	    * starting at coordinate `fromDim`, and advances to the next point.
+	    * @return the new current point index.
+	    */ 
       public int nextPoint (double p[], int fromDim, int d) {
          setCurCoordIndex(fromDim);
          nextCoordinates (p, d);
          return resetToNextPoint();
       }
 
+	   /**
+	    * Same as #nextPoint(p[],0,d).
+	    */ 
       public int nextPoint (double p[], int d) {
          resetCurCoordIndex();
          nextCoordinates (p, d);
          return resetToNextPoint();
       }
 
-      public void resetStartStream() {     // Same as resetCurPointIndex();
+	   /**
+	    * Same as #resetCurPointIndex().
+	    */ 
+      public void resetStartStream() {
          resetCurPointIndex();
       }
 
-      public void resetStartSubstream() {  // Same as resetCurCoordIndex();
+	   /**
+	    * Same as #resetCurCoordIndex().
+	    */ 
+      public void resetStartSubstream() {
          resetCurCoordIndex();
       }
 
+	   /**
+	    * Same as #resetToNextPoint().
+	    */ 
       public void resetNextSubstream() {   // Same as resetToNextPoint();
          resetToNextPoint();
       }
 
+	   /**
+	    * Not implemented here, raises an exception.  Must be here for compatibility with the 
+	    * @ref RandomStream  interface.
+	    */ 
       public void setAntithetic (boolean b) {
          throw new UnsupportedOperationException();
       }
 
-      public double nextDouble() {          // Same as nextCoordinate();
+	   /**
+	    * Same as #nextCoordinate()
+	    */ 
+      public double nextDouble() {
          return nextCoordinate();
       }
 
+	   /**
+	    * Returns in `p[start..start+n-1]` a block of `n` successive coordinates of the current point, 
+	    * obtained by calling #nextDouble() `n` times. 
+	    */ 
       public void nextArrayOfDouble (double[] u, int start, int n) {
          if (n < 0)
             throw new IllegalArgumentException ("n must be positive.");
@@ -597,10 +672,17 @@ public abstract class PointSet {
             u[i] = nextDouble();
       }
 
+	   /**
+	    * Similar to #nextDouble(), but returns an integer uniformly distributed in `[i..j]`.
+	    */ 
       public int nextInt (int i, int j) {
          return (i + (int)(nextDouble() * (j - i + 1.0)));
       }
 
+	   /**
+	    * Similar to #nextArrayOfDouble but returns in `u[start..start+n-1]` a block of `n` 
+	    * integers uniformly distributed in `[i..j]`.
+	    */ 
       public void nextArrayOfInt (int i, int j, int[] u, int start, int n) {
          if (n < 0)
             throw new IllegalArgumentException ("n must be positive.");
@@ -608,6 +690,9 @@ public abstract class PointSet {
             u[k] = nextInt (i, j);
       }
 
+	   /**
+	    * @return a printable `String` that gives the current point index and current coordinate index.
+	    */ 
       public String formatState() {
          return "Current point index: " + getCurPointIndex() +
               PrintfFormat.NEWLINE + "Current coordinate index: " +
