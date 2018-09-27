@@ -1,4 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1charts_1_1CategoryChart.html" title="This class provides tools to create charts from data in a simple way. " alt="" coords="5,5,112,32"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1BoxChart.html" title="This class provides tools to create and manage box&#45;and&#45;whisker plots. " alt="" coords="160,5,237,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1ContainerPointSet_1_1ContainerPointSetIterator.html" title="ContainerPointSet.Container\lPointSetIterator" alt="" coords="208,71,396,112"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet_1_1CycleBasedPointSetIterator.html" title="CycleBasedPointSet.Cycle\lBasedPointSetIterator" alt="" coords="211,136,393,177"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet_1_1AntitheticPointSetIterator.html" title="AntitheticPointSet.Antithetic\lPointSetIterator" alt="" coords="461,5,648,47"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet_1_1BakerTransformedPointSetIterator.html" title="BakerTransformedPointSet.\lBakerTransformedPointSetIterator" alt="" coords="445,71,665,112"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSetBase2_1_1CycleBasedPointSetBase2Iterator.html" title="CycleBasedPointSetBase2.\lCycleBasedPointSetBase2Iterator" alt="" coords="444,136,665,177"/>
 </map>

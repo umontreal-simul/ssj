@@ -117,6 +117,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab19f393ef03e94ecc2f93bd36e3eaf6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#ab19f393ef03e94ecc2f93bd36e3eaf6d">getStream</a> ()</td></tr>
 <tr class="memdesc:ab19f393ef03e94ecc2f93bd36e3eaf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a>.  <a href="#ab19f393ef03e94ecc2f93bd36e3eaf6d">More...</a><br /></td></tr>
 <tr class="separator:ab19f393ef03e94ecc2f93bd36e3eaf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad146fa8579a5f8a876c4688cc5a68520"><td class="memItemLeft" align="right" valign="top"><a id="ad146fa8579a5f8a876c4688cc5a68520"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a> ()</td></tr>
+<tr class="memdesc:ad146fa8579a5f8a876c4688cc5a68520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a descriptor of this object. <br /></td></tr>
+<tr class="separator:ad146fa8579a5f8a876c4688cc5a68520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -126,8 +130,9 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements a <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">umontreal.ssj.hups.PointSetRandomization</a>. </p>
-<p>The <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a> is stored internally. The method <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#adf476448dedc0a01437d47a01c5a08b9" title="This method calls addRandomShift(stream). ">randomize(PointSet)</a> simply calls <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#acc568d2939cff1b011e8a61bfb4a48c4">addRandomShift(stream)</a>.</p>
-<p>This class can be used as a base class to implement a specific randomization by overriding method <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#adf476448dedc0a01437d47a01c5a08b9" title="This method calls addRandomShift(stream). ">randomize(PointSet)</a>.</p>
+<p>When the <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. ">PointSet</a></code> to be randomized is a <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html" title="This class provides the basic structures for storing and manipulating linear digital nets in base ...">DigitalNet</a></code>, the random shift is a <em>random digital shift</em>, otherwise it is a random shift modulo 1. The <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a> is stored internally.</p>
+<p>In the current implementation, the method <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#adf476448dedc0a01437d47a01c5a08b9" title="This method calls addRandomShift(stream). ">randomize(PointSet)</a></code> simply calls <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#acc568d2939cff1b011e8a61bfb4a48c4">addRandomShift(stream)</a>. This may change in the future.</p>
+<p>This class can be used as a base class to implement a specific randomization by overriding <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#adf476448dedc0a01437d47a01c5a08b9" title="This method calls addRandomShift(stream). ">randomize(PointSet)</a>.</p>
 <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a19a7a38a8bd1e01dd78a6b80ab49633f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19a7a38a8bd1e01dd78a6b80ab49633f">&#9670;&nbsp;</a></span>RandomShift() <span class="overload">[1/2]</span></h2>
@@ -215,7 +220,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This method calls <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#acc568d2939cff1b011e8a61bfb4a48c4">addRandomShift(stream)</a>. </p>
-<dl class="section remark"><dt>Remarks</dt><dd><b>Pierre:</b> This should be changed if we remove <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d" title="This method does nothing for this generic class. ">PointSet.addRandomShift</a></code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><b>Pierre:</b> This should be changed if we remove <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d" title="This method should be implemented in subclasses to generate a random shift of the appropriate type...">PointSet.addRandomShift</a></code>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>Point set to randomize </td></tr>

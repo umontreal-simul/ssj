@@ -1,4 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates. " alt="" coords="5,5,111,32"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSetLong.html" title="Implementation of CoordinateSet using a long bit&#45;mask internal representation. " alt="" coords="159,5,292,32"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataWriter.html" title="Data writer interface. " alt="" coords="5,31,91,57"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataWriter.html" title="This abstract class implements shared functionality for data writers. " alt="" coords="139,31,273,57"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1BinaryDataWriter.html" title="Binary data writer. " alt="" coords="325,5,448,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1CachedDataWriter.html" title="This abstract class implements shared functionality for data writers that store all fields in memory ..." alt="" coords="321,56,452,83"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html" title="Text data writer. " alt="" coords="500,56,611,83"/>
 </map>

@@ -1,12 +1,12 @@
 <map id="RandomStream" name="RandomStream">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser..." alt="" coords="211,217,325,243"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" title="This is the interface for iterators that permit one to go through the points of a #PointSet and the s..." alt="" coords="211,217,325,243"/>
 <area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1rng_1_1AntitheticStream.html" title="This container class allows the user to force any RandomStream to return antithetic variates..." alt="" coords="209,311,327,338"/>
 <area shape="rect" id="node10" href="$classumontreal_1_1ssj_1_1rng_1_1BakerTransformedStream.html" title="This container class permits one to apply the baker’s transformation to the output of any RandomStre..." alt="" coords="183,362,353,389"/>
 <area shape="rect" id="node11" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="183,413,353,439"/>
 <area shape="rect" id="node28" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamWithCache.html" title="This class represents a random stream whose uniforms are cached for more efficiency when using common..." alt="" coords="179,463,357,490"/>
 <area shape="rect" id="node29" href="$classumontreal_1_1ssj_1_1rng_1_1TruncatedRandomStream.html" title="Represents a container random stream generating numbers in an interval &#160;instead of in ..." alt="" coords="183,514,353,541"/>
 <area shape="rect" id="node30" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcessMSH_1_1NonRandomStream.html" title="NonRandomStream: Given a double array, this class will return those values as if it where a random st..." alt="" coords="167,565,369,607"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" title="PointSet.DefaultPointSet\lIterator" alt="" coords="417,123,585,164"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" title="This class implements a default point set iterator. " alt="" coords="417,123,585,164"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet_1_1CachedPointSetIterator.html" title="CachedPointSet.CachedPoint\lSetIterator" alt="" coords="633,5,829,47"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIterator.html" title="DigitalNet.DigitalNetIterator" alt="" coords="640,71,823,98"/>
 <area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice_1_1Rank1LatticeIterator.html" title="Rank1Lattice.Rank1Lattice\lIterator" alt="" coords="641,123,821,164"/>

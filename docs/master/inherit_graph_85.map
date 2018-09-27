@@ -1,5 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1stat_1_1ObservationListener.html" title="Represents an object that can listen to observations broadcast by statistical probes. " alt="" coords="5,31,144,57"/>
-<area shape="rect" id="node2" href="$classtutorial_1_1QueueObs_1_1LargeWaitsCollector.html" title="QueueObs.LargeWaitsCollector" alt="" coords="192,5,399,32"/>
-<area shape="rect" id="node3" href="$classtutorial_1_1QueueObs_1_1ObservationTrace.html" title="QueueObs.ObservationTrace" alt="" coords="200,56,391,83"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" title="This interface is used to randomize a umontreal.ssj.hups.PointSet. " alt="" coords="5,81,164,108"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1EmptyRandomization.html" title="This class implements an empty umontreal.ssj.hups.PointSetRandomization. " alt="" coords="226,5,373,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1NestedUniformScrambling.html" title="This class implements a PointSetRandomization that performs Owen&#39;s nested uniform scrambling ..." alt="" coords="212,56,387,83"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1RandomShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization. " alt="" coords="250,107,349,133"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1hups_1_1RandomStart.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that randomizes a sequence with a ra..." alt="" coords="250,157,349,184"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1LMScrambleShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a left matrix scrambli..." alt="" coords="435,81,558,108"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1hups_1_1SMScrambleShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a striped matrix scram..." alt="" coords="435,132,559,159"/>
 </map>

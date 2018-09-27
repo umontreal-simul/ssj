@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1gof_1_1KernelDensity.html" title="This static class provides methods to compute a kernel density estimator from a set of &#160;individual ob..." alt="" coords="5,5,109,32"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="ListOfTallies\&lt; E \&gt;" alt="" coords="5,13,133,39"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTalliesWithCovariance.html" title="Extends ListOfTallies to add support for the computation of the sample covariance between each pair o..." alt="" coords="181,5,369,47"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html" title="Represents a list of tallies with control variables that inherits the functionalities of a list of ta..." alt="" coords="417,5,559,47"/>
 </map>

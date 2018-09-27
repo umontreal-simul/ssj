@@ -15,7 +15,7 @@
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1discrepancy_1_1Searcher.html" target="_top" xlink:title="This class implements searches to find the best lattices of rank 1, defined as follows  ...">
+<g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1discrepancy_1_1Searcher.html" target="_top" xlink:title="This class implements methods to search for the best lattices of rank 1, defined as follows  ...">
 <polygon fill="none" stroke="black" points="10.5,-56.5 10.5,-75.5 66.5,-75.5 66.5,-56.5 10.5,-56.5"/>
 <text text-anchor="middle" x="38.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Searcher</text>
 </a>

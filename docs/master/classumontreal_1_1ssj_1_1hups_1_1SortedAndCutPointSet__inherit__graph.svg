@@ -28,7 +28,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" target="_top" xlink:title="This abstract class defines the basic methods for accessing and manipulating point sets...">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" target="_top" xlink:title="This abstract class represents a general point set. ">
 <polygon fill="none" stroke="black" points="31,-112.5 31,-131.5 85,-131.5 85,-112.5 31,-112.5"/>
 <text text-anchor="middle" x="58" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet</text>
 </a>

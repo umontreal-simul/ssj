@@ -1,5 +1,5 @@
 <map id="PointSetIterator" name="PointSetIterator">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" title="PointSet.DefaultPointSet\lIterator" alt="" coords="328,93,496,135"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" title="This class implements a default point set iterator. " alt="" coords="328,93,496,135"/>
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,101,119,127"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet_1_1CachedPointSetIterator.html" title="CachedPointSet.CachedPoint\lSetIterator" alt="" coords="544,5,740,47"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNet_1_1DigitalNetIterator.html" title="DigitalNet.DigitalNetIterator" alt="" coords="551,71,733,98"/>

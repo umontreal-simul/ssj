@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtutorial_1_1QueueObs.html" title="QueueObs" alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStreamFactory.html" title="Represents a random stream factory capable of constructing instances of a given type of random stream..." alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1BasicRandomStreamFactory.html" title="Represents a basic random stream factory that can constructs new instances of a given RandomStream im..." alt="" coords="211,5,401,32"/>
 </map>

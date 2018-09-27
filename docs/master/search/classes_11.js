@@ -18,7 +18,7 @@ var searchData=
   ['randomvariategenint',['RandomVariateGenInt',['../classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenInt.html',1,'umontreal::ssj::randvar']]],
   ['randomvariategenwithcache',['RandomVariateGenWithCache',['../classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGenWithCache.html',1,'umontreal::ssj::randvar']]],
   ['randrijndael',['RandRijndael',['../classumontreal_1_1ssj_1_1rng_1_1RandRijndael.html',1,'umontreal::ssj::rng']]],
-  ['randshiftedpointset',['RandShiftedPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RandShiftedPointSet.html',1,'umontreal::ssj::hups']]],
+  ['randshiftedmod1pointset',['RandShiftedMod1PointSet',['../classumontreal_1_1ssj_1_1hups_1_1RandShiftedMod1PointSet.html',1,'umontreal::ssj::hups']]],
   ['randunuran',['RandUnuran',['../classumontreal_1_1ssj_1_1randvar_1_1RandUnuran.html',1,'umontreal::ssj::randvar']]],
   ['rank1lattice',['Rank1Lattice',['../classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice.html',1,'umontreal::ssj::hups']]],
   ['rank1latticeiterator',['Rank1LatticeIterator',['../classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice_1_1Rank1LatticeIterator.html',1,'umontreal::ssj::hups::Rank1Lattice']]],

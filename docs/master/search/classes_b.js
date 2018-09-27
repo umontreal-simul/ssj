@@ -9,7 +9,6 @@ var searchData=
   ['lfsr113',['LFSR113',['../classumontreal_1_1ssj_1_1rng_1_1LFSR113.html',1,'umontreal::ssj::rng']]],
   ['lfsr258',['LFSR258',['../classumontreal_1_1ssj_1_1rng_1_1LFSR258.html',1,'umontreal::ssj::rng']]],
   ['linkedliststat',['LinkedListStat',['../classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html',1,'umontreal::ssj::simevents']]],
-  ['linkedliststat_3c_20callev_3a_3acall_20_3e',['LinkedListStat&lt; CallEv::Call &gt;',['../classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html',1,'umontreal::ssj::simevents']]],
   ['listoffunctionofmultiplemeanstallies',['ListOfFunctionOfMultipleMeansTallies',['../classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfFunctionOfMultipleMeansTallies.html',1,'umontreal::ssj::stat::list']]],
   ['listofstatprobes',['ListOfStatProbes',['../classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html',1,'umontreal::ssj::stat::list']]],
   ['listofstatprobes_3c_20e_20_3e',['ListOfStatProbes&lt; E &gt;',['../classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html',1,'umontreal::ssj::stat::list']]],

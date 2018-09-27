@@ -1,4 +1,4 @@
 <map id="IndependentPointsCached" name="IndependentPointsCached">
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array..." alt="" coords="34,80,151,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="57,5,129,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. " alt="" coords="57,5,129,32"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="KorobovLattice" name="KorobovLattice">
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1Rank1Lattice.html" title="This class implements point sets specified by integration lattices of rank. " alt="" coords="13,171,111,197"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="26,95,98,121"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. " alt="" coords="26,95,98,121"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
 </map>

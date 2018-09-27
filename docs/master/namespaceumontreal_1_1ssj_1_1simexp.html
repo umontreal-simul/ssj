@@ -100,7 +100,7 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tools for Simulation Experiments. </p>
-<p>Provides some classes to manage simulation experiments. Let \(\bar{\mathbf{X}}_n\) be an average of random vectors: </p><p class="formulaDsp">
+<p>Provides some classes to manage simulation experiments with many replications, batch means, etc. Let \(\bar{\mathbf{X}}_n\) be an average of random vectors: </p><p class="formulaDsp">
 \[ \bar{\mathbf{X}}_n=\frac{1}{n}\sum_{r=0}^{n-1}\mathbf{X}_r, \]
 </p>
 <p> where \(\mathbf{X}_r\) is the \(r\)th observation obtained during an experiment. Assuming that the \(\mathbf{X}_r\)’s are i.i.d., \(\{\bar{\mathbf{X}}_n, n\ge0\}\) is a sequence of vectors in \(\mathbb{R}^d\) converging to a vector \(\boldsymbol{\mu}=E[\mathbf{X}_r]\) when \(n\to\infty\). We use simulation to estimate this \(\boldsymbol{\mu}\).</p>
@@ -115,10 +115,10 @@ Classes</h2></td></tr>
 </p>
 <p> where \(\mathbf{C}_{k, r}\) is the cost of the \(k\)th event during replication&#160; \(r\), and \(N_r(T)\) is the total number of events occurring during the time interval \([0, T]\). This estimates the total expected cost over the horizon.</p>
 <p>When the horizon is infinite, a single replication is usually simulated, and the cost per time unit or per event is computed in the long run in order to estimate </p><p class="formulaDsp">
-\[ \boldsymbol{\mu}=\lim_{N\to\infty} \left(\frac{1}{N}\; E\!\left[\sum_{k=0}^{N-1} \mathbf{C}_k\right]\right)=\lim_{N\to\infty} \left(\frac{1}{N}\sum_{k=0}^{N-1} \mathbf{C}_k\right) \]
+\[ \boldsymbol{\mu}=\lim_{N\to\infty} \left(\frac{1}{N}\; E\!\left[\sum_{k=0}^{N-1} \mathbf{C}_k\right]\right) =\lim_{N\to\infty} \left(\frac{1}{N}\sum_{k=0}^{N-1} \mathbf{C}_k\right) \]
 </p>
 <p> or </p><p class="formulaDsp">
-\[ \boldsymbol{\mu}=\lim_{T\to\infty} \left(\frac{1}{T}\; E\!\left[\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right]\right)=\lim_{T\to\infty} \left(\frac{1}{T}\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right). \]
+\[ \boldsymbol{\mu}=\lim_{T\to\infty} \left(\frac{1}{T}\; E\!\left[\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right]\right) =\lim_{T\to\infty} \left(\frac{1}{T}\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right). \]
 </p>
 <p> Any estimator of these previous quantities is biased, because the horizon must be truncated, and the model does not necessarily start in steady state. A single long replication is simulated to reduce the bias, and the first events are dropped (warmup).</p>
 <p>However, with a single long replication, computing sample covariances and confidence intervals is more difficult. A simple technique to overcome this problem is <em>batch means</em> <a class="el" href="citelist.html#CITEREF_sLAW00a">[116]</a>&thinsp;, which divides the truncated horizon into successive intervals called <em>batches</em>. More specifically, let \(T_0\) be the time at which the warmup ends. We divide the horizon \([T_0, T]\) in \(n\) batches starting at times \(T_0 &lt; \cdots&lt; T_{n-1}\), and the last batch ends at \(T_n=T&gt;T_{n-1}\). Then, for batch&#160; \(r\), </p><p class="formulaDsp">
@@ -128,7 +128,7 @@ Classes</h2></td></tr>
 \[ \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{\sum\limits_{r=0}^{n-1} (T_{r+1} - T_r)} = \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{T-T_0}. \]
 </p>
 <p> The simplest way for estimating covariances when all batches have the same length is to consider the \(\mathbf{X}_r\)’s as i.i.d. random vectors, and use the same techniques as with independent replications. For regenerative cycles, confidence intervals must be computed on ratios of means. The class <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html">umontreal.ssj.stat.FunctionOfMultipleMeansTally</a> can be used for this.</p>
-<p>This package provides helper classes to facilitate management of a complex simulation experiment. A base class called <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1SimExp.html">umontreal.ssj.simexp.SimExp</a> contains methods to initialize lists of statistical probes and to help in sequential sampling. The subclass <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1RepSim.html">umontreal.ssj.simexp.RepSim</a> is used for simulating independent replications of a given model on a finite horizon. The subclass <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html">umontreal.ssj.simexp.BatchMeansSim</a> can be used for simulating a stationary model using the batch means technique. </p>
+<p>This package provides helper classes to facilitate management of a complex simulation experiment. A base class called <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1SimExp.html">SimExp</a> contains methods to initialize lists of statistical probes and to help in sequential sampling. The subclass <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1RepSim.html">RepSim</a> is used for simulating independent replications of a given model on a finite horizon. The subclass <a class="el" href="classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html">BatchMeansSim</a> can be used for simulating a stationary model using the batch means technique. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

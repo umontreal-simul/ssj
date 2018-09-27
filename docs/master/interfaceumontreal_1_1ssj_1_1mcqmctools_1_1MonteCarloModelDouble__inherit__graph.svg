@@ -67,7 +67,7 @@
 </g>
 <!-- Node5 -->
 <g id="node6" class="node"><title>Node5</title>
-<g id="a_node6"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" target="_top" xlink:title="An MonteCarloModelDouble that also implements a vector of control variates. ">
+<g id="a_node6"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" target="_top" xlink:title="An extension of MonteCarloModelDouble that also implements a vector of control variates. ">
 <polygon fill="none" stroke="black" points="185,-38.5 185,-57.5 292,-57.5 292,-38.5 185,-38.5"/>
 <text text-anchor="middle" x="238.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">MonteCarloModelCV</text>
 </a>

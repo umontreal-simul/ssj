@@ -87,7 +87,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node11 -->
 <g id="node12" class="node"><title>Node11</title>
-<g id="a_node12"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" target="_top" xlink:title="This abstract class provides the basic structures for storing and manipulating a highly uniform point...">
+<g id="a_node12"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" target="_top" xlink:title="This abstract class provides the basic structures for storing and manipulating a point set defined by...">
 <polygon fill="none" stroke="black" points="91.5,-247.5 91.5,-266.5 198.5,-266.5 198.5,-247.5 91.5,-247.5"/>
 <text text-anchor="middle" x="145" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">CycleBasedPointSet</text>
 </a>
@@ -269,15 +269,15 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node10 -->
 <g id="node11" class="node"><title>Node10</title>
-<g id="a_node11"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1RandShiftedPointSet.html" target="_top" xlink:title="RandShiftedPointSet">
-<polygon fill="none" stroke="black" points="249.5,-332.5 249.5,-351.5 357.5,-351.5 357.5,-332.5 249.5,-332.5"/>
-<text text-anchor="middle" x="303.5" y="-339.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandShiftedPointSet</text>
+<g id="a_node11"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1RandShiftedMod1PointSet.html" target="_top" xlink:title="This container class embodies a point set to which a random shift modulo 1 is applied (i...">
+<polygon fill="none" stroke="black" points="237.5,-332.5 237.5,-351.5 369.5,-351.5 369.5,-332.5 237.5,-332.5"/>
+<text text-anchor="middle" x="303.5" y="-339.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandShiftedMod1PointSet</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node10 -->
 <g id="edge10" class="edge"><title>Node7&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M203.532,-354.015C218.489,-352.199 234.535,-350.251 249.26,-348.464"/>
+<path fill="none" stroke="midnightblue" d="M203.347,-354.038C214.414,-352.694 226.084,-351.277 237.378,-349.906"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="202.885,-350.568 193.38,-355.248 203.729,-357.517 202.885,-350.568"/>
 </g>
 <!-- Node12 -->

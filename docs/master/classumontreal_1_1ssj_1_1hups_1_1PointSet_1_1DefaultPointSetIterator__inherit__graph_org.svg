@@ -71,7 +71,7 @@
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser...">
+<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="This is the interface for iterators that permit one to go through the points of a #PointSet and the s...">
 <polygon fill="none" stroke="black" points="121,-77 121,-96 206,-96 206,-77 121,-77"/>
 <text text-anchor="middle" x="163.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </a>

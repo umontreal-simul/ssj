@@ -61,7 +61,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser...">
+<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="This is the interface for iterators that permit one to go through the points of a #PointSet and the s...">
 <polygon fill="none" stroke="black" points="154.5,-465.5 154.5,-484.5 239.5,-484.5 239.5,-465.5 154.5,-465.5"/>
 <text text-anchor="middle" x="197" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </a>
@@ -153,7 +153,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="PointSet.DefaultPointSet\lIterator">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="This class implements a default point set iterator. ">
 <polygon fill="none" stroke="black" points="309,-525 309,-555 435,-555 435,-525 309,-525"/>
 <text text-anchor="start" x="317" y="-543" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet.DefaultPointSet</text>
 <text text-anchor="middle" x="372" y="-532" font-family="Helvetica,sans-Serif" font-size="10.00">Iterator</text>

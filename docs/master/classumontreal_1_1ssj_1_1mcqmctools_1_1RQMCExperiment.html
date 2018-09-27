@@ -84,7 +84,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Provides basic generic tools to perform RQMC experiments with a simulation model that implements the <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t...">MonteCarloModelDouble</a> interface.  
+<p>Provides basic generic tools to perform RQMC experiments with a simulation model that implements the <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> interface.  
  <a href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for RQMCExperiment:</div>
@@ -102,24 +102,33 @@ Collaboration diagram for RQMCExperiment:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ce1a58789c32fb79e670c00aecf6c6d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a1ce1a58789c32fb79e670c00aecf6c6d">simulReplicatesRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html">RQMCPointSet</a> prqmc, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statReps)</td></tr>
-<tr class="memdesc:a1ce1a58789c32fb79e670c00aecf6c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate <code>m</code> replications with #prqmc and return the #m RQMC average observations in statReps.  <a href="#a1ce1a58789c32fb79e670c00aecf6c6d">More...</a><br /></td></tr>
+<tr class="memdesc:a1ce1a58789c32fb79e670c00aecf6c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate <code>m</code> replications with <code>prqmc</code> and return the <code>m</code> RQMC average observations in <code>statReps</code>.  <a href="#a1ce1a58789c32fb79e670c00aecf6c6d">More...</a><br /></td></tr>
 <tr class="separator:a1ce1a58789c32fb79e670c00aecf6c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a494ca1ec3fe859b7032436dcc1a09c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a6a494ca1ec3fe859b7032436dcc1a09c">simulReplicatesRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statReps)</td></tr>
-<tr class="memdesc:a6a494ca1ec3fe859b7032436dcc1a09c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate <code>m</code> replications and return the #m RQMC average observations in statReps.  <a href="#a6a494ca1ec3fe859b7032436dcc1a09c">More...</a><br /></td></tr>
+<tr class="memdesc:a6a494ca1ec3fe859b7032436dcc1a09c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate <code>m</code> replications and return the <code>m</code> RQMC average observations in <code>statReps</code>.  <a href="#a6a494ca1ec3fe859b7032436dcc1a09c">More...</a><br /></td></tr>
 <tr class="separator:a6a494ca1ec3fe859b7032436dcc1a09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99cbbc0d7c5ef32f35c3f9064b88c07e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a99cbbc0d7c5ef32f35c3f9064b88c07e">simulReplicatesRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html">RQMCPointSet</a> prqmc, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statReps, double[][] data)</td></tr>
-<tr class="memdesc:a99cbbc0d7c5ef32f35c3f9064b88c07e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a1ce1a58789c32fb79e670c00aecf6c6d">simulReplicatesRQMC</a>, except that all the n observations for each the m replications are saved and returned in a new two-dimensional array , which is an array of <code>m</code> arrays of size <code>n</code>, i.e., <code>double[m][n]</code>, created inside this method.  <a href="#a99cbbc0d7c5ef32f35c3f9064b88c07e">More...</a><br /></td></tr>
+<tr class="memdesc:a99cbbc0d7c5ef32f35c3f9064b88c07e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>simulReplicatesRQMC</code>, except that all the <code>n</code> observations for each the <code>m</code> replications are saved and returned in a new two-dimensional array <code>data</code>, which is an array of <code>m</code> arrays of size `n', i.e., <code>double[m][n]</code>, created inside this method.  <a href="#a99cbbc0d7c5ef32f35c3f9064b88c07e">More...</a><br /></td></tr>
 <tr class="separator:a99cbbc0d7c5ef32f35c3f9064b88c07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c59c3550e95cfbdb03b6a989bee5433"><td class="memItemLeft" align="right" valign="top"><a id="a5c59c3550e95cfbdb03b6a989bee5433"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a5c59c3550e95cfbdb03b6a989bee5433">simulReplicatesRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statReps, double[][] data)</td></tr>
-<tr class="memdesc:a5c59c3550e95cfbdb03b6a989bee5433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here the QMC point set #p and its randomization #rand are specified directly. <br /></td></tr>
+<tr class="memdesc:a5c59c3550e95cfbdb03b6a989bee5433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here the QMC point set <code>p</code> and its randomization <code>rand</code> are specified directly. <br /></td></tr>
 <tr class="separator:a5c59c3550e95cfbdb03b6a989bee5433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94db54883b35fcb61de3be143b4cf9f7"><td class="memItemLeft" align="right" valign="top"><a id="a94db54883b35fcb61de3be143b4cf9f7"></a>
-static String&#160;</td><td class="memItemRight" valign="bottom"><b>simulReplicatesRQMCDefaultReport</b> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int m, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> noise, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statRQMC)</td></tr>
+static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a94db54883b35fcb61de3be143b4cf9f7">simulReplicatesRQMCDefaultReport</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int m, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> noise, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statRQMC)</td></tr>
+<tr class="memdesc:a94db54883b35fcb61de3be143b4cf9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>simulReplicatesRQMC</code>, but also returns a report as a <code>String</code>. <br /></td></tr>
 <tr class="separator:a94db54883b35fcb61de3be143b4cf9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade71b6674e71ab76dcd3b2cd38dfb274"><td class="memItemLeft" align="right" valign="top"><a id="ade71b6674e71ab76dcd3b2cd38dfb274"></a>
-static String&#160;</td><td class="memItemRight" valign="bottom"><b>simulReplicatesRQMCDefaultReportCompare</b> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statRQMC, double varianceMC, double secondsMC)</td></tr>
-<tr class="separator:ade71b6674e71ab76dcd3b2cd38dfb274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c79a276ed8d1afff10164a50e94c7f"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#ad0c79a276ed8d1afff10164a50e94c7f">simulReplicatesRQMCDefaultReportCompare</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statRQMC, double variancePerRunMC, double secondsPerRunMC)</td></tr>
+<tr class="memdesc:ad0c79a276ed8d1afff10164a50e94c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>simulReplicatesRQMCDefaultReport</code>, but this one makes a comparison with another estimator whose variance per run is <code>variancePerRunMC</code> and which took a time <code>secondPerRunMC</code> per run to compute.  <a href="#ad0c79a276ed8d1afff10164a50e94c7f">More...</a><br /></td></tr>
+<tr class="separator:ad0c79a276ed8d1afff10164a50e94c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c5cb36ac020aa7d1377d9fde7b5e4c"><td class="memItemLeft" align="right" valign="top"><a id="a06c5cb36ac020aa7d1377d9fde7b5e4c"></a>
+static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a06c5cb36ac020aa7d1377d9fde7b5e4c">makeComparisonExperimentMCvsRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int n, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statMC, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statRQMC)</td></tr>
+<tr class="memdesc:a06c5cb36ac020aa7d1377d9fde7b5e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method first performs a MC experiment to estimate the variance and CPU time per run, then invokes <code>simulReplicatesRQMCDefaultReportCompare</code> and returns a printable report that compares MC with RQMC. <br /></td></tr>
+<tr class="separator:a06c5cb36ac020aa7d1377d9fde7b5e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b5eee701cef0d22b1eccab7253476d2"><td class="memItemLeft" align="right" valign="top"><a id="a5b5eee701cef0d22b1eccab7253476d2"></a>
+static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a5b5eee701cef0d22b1eccab7253476d2">makeComparisonExperimentMCvsRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a> p, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, int n, int m)</td></tr>
+<tr class="memdesc:a5b5eee701cef0d22b1eccab7253476d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this version, the statistical collectors are created internally, so they cannot be accessed externally. <br /></td></tr>
+<tr class="separator:a5b5eee701cef0d22b1eccab7253476d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55d193083e930caf51f2891cdf2a696f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a55d193083e930caf51f2891cdf2a696f">simulReplicatesRQMC</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDoubleArray.html">MonteCarloModelDoubleArray</a> model, <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html">RQMCPointSet</a> prqmc, int m, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html">ListOfTallies</a>&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> &gt; statRepsList)</td></tr>
 <tr class="memdesc:a55d193083e930caf51f2891cdf2a696f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a1ce1a58789c32fb79e670c00aecf6c6d">simulReplicatesRQMC(MonteCarloModelDouble, RQMCPointSet, int, Tally)</a> but for a model of type <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDoubleArray.html">MonteCarloModelDoubleArray</a>.  <a href="#a55d193083e930caf51f2891cdf2a696f">More...</a><br /></td></tr>
 <tr class="separator:a55d193083e930caf51f2891cdf2a696f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,26 +180,34 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="separator:a48a695ecfdc7974ebc3484deac4f03b1 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12e336ff0d742088b224ffcbf34f2d7a inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="a12e336ff0d742088b224ffcbf34f2d7a"></a>
 static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a12e336ff0d742088b224ffcbf34f2d7a">simulateRunsDefaultReportStudent</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statValue, double level, int d, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Chrono.html">Chrono</a> timer)</td></tr>
-<tr class="memdesc:a12e336ff0d742088b224ffcbf34f2d7a inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs n independent runs using n substreams of #stream, collects statistics in #statValue, and returns a report with a confidence interval of level #level, with #d decimal fractional digits of precision for the output, computed via a Student distribution. <br /></td></tr>
+<tr class="memdesc:a12e336ff0d742088b224ffcbf34f2d7a inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs n independent runs using n substreams of #stream, collects statistics in #statValue, and returns a report with a confidence interval of level #level, with <code>d</code> decimal fractional digits of precision for the output, computed via a Student distribution. <br /></td></tr>
 <tr class="separator:a12e336ff0d742088b224ffcbf34f2d7a inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a129aa0a4ae580d5abdf23c9e92e6afcf inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="a129aa0a4ae580d5abdf23c9e92e6afcf"></a>
 static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a129aa0a4ae580d5abdf23c9e92e6afcf">simulateRunsDefaultReportStudent</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statValue, double level, int d)</td></tr>
-<tr class="memdesc:a129aa0a4ae580d5abdf23c9e92e6afcf inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this version, there is no need to provide a #Chrono; it is created inside. <br /></td></tr>
+<tr class="memdesc:a129aa0a4ae580d5abdf23c9e92e6afcf inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this version, there is no need to provide a <code>Chrono</code>; it is created inside. <br /></td></tr>
 <tr class="separator:a129aa0a4ae580d5abdf23c9e92e6afcf inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d396e174f528dbe72a33d12a3ee6694 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="a7d396e174f528dbe72a33d12a3ee6694"></a>
-static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7d396e174f528dbe72a33d12a3ee6694">simulateRunsDefaultReport</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statValue)</td></tr>
-<tr class="memdesc:a7d396e174f528dbe72a33d12a3ee6694 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short-hand equivalent for <code>simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4)</code> <br /></td></tr>
-<tr class="separator:a7d396e174f528dbe72a33d12a3ee6694 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c110ecc642d18b539f7f5195ae1e1 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="ac14c110ecc642d18b539f7f5195ae1e1"></a>
+static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#ac14c110ecc642d18b539f7f5195ae1e1">simulateRunsDefaultReportStudent</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statValue, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Chrono.html">Chrono</a> timer)</td></tr>
+<tr class="memdesc:ac14c110ecc642d18b539f7f5195ae1e1 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short-hand equivalent for <code>simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4, timer)</code> <br /></td></tr>
+<tr class="separator:ac14c110ecc642d18b539f7f5195ae1e1 inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10c923491dae7d36459efdda08f3b3c inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="af10c923491dae7d36459efdda08f3b3c"></a>
+static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#af10c923491dae7d36459efdda08f3b3c">simulateRunsDefaultReportStudent</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> statValue)</td></tr>
+<tr class="memdesc:af10c923491dae7d36459efdda08f3b3c inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short-hand equivalent for <code>simulateRunsDefaultReportStudent (model, n, stream, statValue, 0.95, 4)</code> <br /></td></tr>
+<tr class="separator:af10c923491dae7d36459efdda08f3b3c inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d">simulateRunsDefaultReportCV</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html">MonteCarloModelCV</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html">ListOfTalliesWithCV</a>&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> &gt; statWithCV, double level, int d, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Chrono.html">Chrono</a> timer)</td></tr>
-<tr class="memdesc:a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7d396e174f528dbe72a33d12a3ee6694">simulateRunsDefaultReport</a>, but this one uses a vector of control variates.  <a href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d">More...</a><br /></td></tr>
+<tr class="memdesc:a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to simulateRunsDefaultReport, but this one uses a vector of control variates.  <a href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d">More...</a><br /></td></tr>
 <tr class="separator:a7b4d8d2e9b312e2fd7c5cd2c6d68fe6d inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74c88affc8de1c13b0007b6cbb5f85b inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="aa74c88affc8de1c13b0007b6cbb5f85b"></a>
+static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#aa74c88affc8de1c13b0007b6cbb5f85b">simulateRunsDefaultReportCV</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html">MonteCarloModelCV</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1list_1_1lincv_1_1ListOfTalliesWithCV.html">ListOfTalliesWithCV</a>&lt; <a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> &gt; statWithCV, double level, int d)</td></tr>
+<tr class="memdesc:aa74c88affc8de1c13b0007b6cbb5f85b inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this one the timer is created internally (and cannot be accessed externally). <br /></td></tr>
+<tr class="separator:aa74c88affc8de1c13b0007b6cbb5f85b inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ef774cf671292ca1199fe07b598c5aa inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memItemLeft" align="right" valign="top"><a id="a7ef774cf671292ca1199fe07b598c5aa"></a>
 static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a7ef774cf671292ca1199fe07b598c5aa">simulateRunsDefaultReportCV</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html">MonteCarloModelCV</a> model, int n, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream, double[] mean, double[] variance, double level, int d, <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Chrono.html">Chrono</a> timer)</td></tr>
 <tr class="memdesc:a7ef774cf671292ca1199fe07b598c5aa inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="mdescLeft">&#160;</td><td class="mdescRight">This one uses a single real-valued CV, as in <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment.html#a77afe21bbddae95a922949cc001e0782">simulateRunsCV</a>. <br /></td></tr>
 <tr class="separator:a7ef774cf671292ca1199fe07b598c5aa inherit pub_static_methods_classumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloExperiment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides basic generic tools to perform RQMC experiments with a simulation model that implements the <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t...">MonteCarloModelDouble</a> interface. </p>
+<div class="textblock"><p>Provides basic generic tools to perform RQMC experiments with a simulation model that implements the <a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a> interface. </p>
 <dl class="section author"><dt>Author</dt><dd>Pierre L'Ecuyer </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1ce1a58789c32fb79e670c00aecf6c6d"></a>
@@ -239,8 +256,8 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </table>
 </div><div class="memdoc">
 
-<p>Simulate <code>m</code> replications with #prqmc and return the #m RQMC average observations in statReps. </p>
-<p>These <code>m</code> observations are usually independent if the randomizations used in the RQMC point set #prqmc are independent. </p>
+<p>Simulate <code>m</code> replications with <code>prqmc</code> and return the <code>m</code> RQMC average observations in <code>statReps</code>. </p>
+<p>These <code>m</code> observations are usually independent if the randomizations used in the RQMC point set <code>prqmc</code> are independent. </p>
 
 </div>
 </div>
@@ -296,8 +313,8 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </table>
 </div><div class="memdoc">
 
-<p>Simulate <code>m</code> replications and return the #m RQMC average observations in statReps. </p>
-<p>Here the QMC point set #p and its randomization #rand are specified directly. </p>
+<p>Simulate <code>m</code> replications and return the <code>m</code> RQMC average observations in <code>statReps</code>. </p>
+<p>Here the QMC point set <code>p</code> and its randomization <code>rand</code> are specified directly. </p>
 
 </div>
 </div>
@@ -353,7 +370,7 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </table>
 </div><div class="memdoc">
 
-<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a1ce1a58789c32fb79e670c00aecf6c6d">simulReplicatesRQMC</a>, except that all the n observations for each the m replications are saved and returned in a new two-dimensional array , which is an array of <code>m</code> arrays of size <code>n</code>, i.e., <code>double[m][n]</code>, created inside this method. </p>
+<p>Same as <code>simulReplicatesRQMC</code>, except that all the <code>n</code> observations for each the <code>m</code> replications are saved and returned in a new two-dimensional array <code>data</code>, which is an array of <code>m</code> arrays of size `n', i.e., <code>double[m][n]</code>, created inside this method. </p>
 <p>Each array of size <code>n</code> is sorted by increasing order. This is useful for density and cdf estimation, or for further processing of the data, for example. </p>
 
 </div>
@@ -672,6 +689,75 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 
 <p>Same as <a class="el" href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html#a1ce1a58789c32fb79e670c00aecf6c6d">simulReplicatesRQMC</a>, except that this one uses control variates. </p>
 <p>It returns in <code>statWithCV</code> the statistics for m observations which corresponds to the m RQMC replications. Each observation is a vector that contains the average over the n simulation runs of the performance value and of the control variates. This implements the replication method for RQMC with CVs, as in Section 5 of Hickernell, Lemieux and Owen (2005). The CV estimates, variances, and covariances can be recovered from <code>statWithCV</code>. </p>
+
+</div>
+</div>
+<a id="ad0c79a276ed8d1afff10164a50e94c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c79a276ed8d1afff10164a50e94c7f">&#9670;&nbsp;</a></span>simulReplicatesRQMCDefaultReportCompare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String simulReplicatesRQMCDefaultReportCompare </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html">MonteCarloModelDouble</a>&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a>&#160;</td>
+          <td class="paramname"><em>rand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a>&#160;</td>
+          <td class="paramname"><em>statRQMC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>variancePerRunMC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>secondsPerRunMC</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Similar to <code>simulReplicatesRQMCDefaultReport</code>, but this one makes a comparison with another estimator whose variance per run is <code>variancePerRunMC</code> and which took a time <code>secondPerRunMC</code> per run to compute. </p>
+<p>These values may come from a previous MC experiment. Returns a report as a <code>String</code>. </p>
 
 </div>
 </div>

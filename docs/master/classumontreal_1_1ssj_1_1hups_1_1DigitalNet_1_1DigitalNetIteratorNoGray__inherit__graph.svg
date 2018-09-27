@@ -29,7 +29,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="PointSet.DefaultPointSet\lIterator">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="This class implements a default point set iterator. ">
 <polygon fill="none" stroke="black" points="5.5,-123.5 5.5,-153.5 131.5,-153.5 131.5,-123.5 5.5,-123.5"/>
 <text text-anchor="start" x="13.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet.DefaultPointSet</text>
 <text text-anchor="middle" x="68.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">Iterator</text>
@@ -43,7 +43,7 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="Objects of classes that implement this interface are iterators that permit one to enumerate (or obser...">
+<g id="a_node4"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" target="_top" xlink:title="This is the interface for iterators that permit one to go through the points of a #PointSet and the s...">
 <polygon fill="none" stroke="black" points="26,-190.5 26,-209.5 111,-209.5 111,-190.5 26,-190.5"/>
 <text text-anchor="middle" x="68.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetIterator</text>
 </a>

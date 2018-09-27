@@ -1,6 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile_1_1NetComparator.html" title="DigitalNetFromFile.NetComparator" alt="" coords="144,5,368,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1DoubleArrayComparator.html" title="This provides an implementation of Comparator in which arrays of double in &#160;dimensions are compared b..." alt="" coords="175,56,337,83"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html" title="The comparator class used by sortIndexOfLong2. " alt="" coords="165,107,347,149"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparator.html" title="This class is useful if one wishes to perform an ordinary one&#45;dimensional sort on MultiDimComparable&lt;..." alt="" coords="147,173,365,229"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscrepancyContainer.html" title="This class is used to compute, store and display discrepancies. " alt="" coords="5,5,156,32"/>
 </map>

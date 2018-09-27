@@ -15,7 +15,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="PointSet.DefaultPointSet\lIterator">
+<g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html" target="_top" xlink:title="This class implements a default point set iterator. ">
 <polygon fill="none" stroke="black" points="242,-71.5 242,-101.5 368,-101.5 368,-71.5 242,-71.5"/>
 <text text-anchor="start" x="250" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSet.DefaultPointSet</text>
 <text text-anchor="middle" x="305" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">Iterator</text>

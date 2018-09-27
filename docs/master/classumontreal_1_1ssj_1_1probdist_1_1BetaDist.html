@@ -260,7 +260,7 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 static double&#160;</td><td class="memItemRight" valign="bottom"><b>inverseF</b> (double alpha, double beta, double a, double b, int d, double u)</td></tr>
 <tr class="separator:a9a77e5e2997f507e5917b166f8f522e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d7d324591b2e84c840ec4f2b734762c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1BetaDist.html#a9d7d324591b2e84c840ec4f2b734762c">inverseF</a> (double alpha, double beta, double a, double b, double u)</td></tr>
-<tr class="memdesc:a9d7d324591b2e84c840ec4f2b734762c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse beta distribution function using the algorithm implemented in <a class="el" href="citelist.html#CITEREF_iMOS00a">[174]</a>&thinsp;.  <a href="#a9d7d324591b2e84c840ec4f2b734762c">More...</a><br /></td></tr>
+<tr class="memdesc:a9d7d324591b2e84c840ec4f2b734762c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse beta distribution function using the algorithm implemented in <a class="el" href="citelist.html#CITEREF_iMOS00a">[179]</a>&thinsp;.  <a href="#a9d7d324591b2e84c840ec4f2b734762c">More...</a><br /></td></tr>
 <tr class="separator:a9d7d324591b2e84c840ec4f2b734762c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dce248dda541eae78569746c9e1782c"><td class="memItemLeft" align="right" valign="top">static double []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1probdist_1_1BetaDist.html#a9dce248dda541eae78569746c9e1782c">getMLE</a> (double[] x, int n)</td></tr>
 <tr class="memdesc:a9dce248dda541eae78569746c9e1782c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the parameters \((\alpha,\beta)\) of the beta distribution over the interval \([0,1]\) using the maximum likelihood method, from the \(n\) observations \(x[i]\), \(i = 0, 1,…, n-1\).  <a href="#a9dce248dda541eae78569746c9e1782c">More...</a><br /></td></tr>
@@ -470,7 +470,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 </div><div class="memdoc">
 
 <p>Computes the distribution function. </p>
-<p>If \(\max(\alpha, \beta) \le10^4\), uses a continuous fraction in \(\alpha\) and \(\beta\) given in <a class="el" href="citelist.html#CITEREF_tDID92a">[49]</a>, <a class="el" href="citelist.html#CITEREF_tCUY08a">[39]</a>&thinsp;. Otherwise, if \(\min(\alpha, \beta) \le30\), uses an approximation due to Bol’shev <a class="el" href="citelist.html#CITEREF_tMAR78a">[163]</a>&thinsp;, else uses a normal approximation <a class="el" href="citelist.html#CITEREF_tPEI68a">[190]</a>&thinsp;. </p>
+<p>If \(\max(\alpha, \beta) \le10^4\), uses a continuous fraction in \(\alpha\) and \(\beta\) given in <a class="el" href="citelist.html#CITEREF_tDID92a">[50]</a>, <a class="el" href="citelist.html#CITEREF_tCUY08a">[39]</a>&thinsp;. Otherwise, if \(\min(\alpha, \beta) \le30\), uses an approximation due to Bol’shev <a class="el" href="citelist.html#CITEREF_tMAR78a">[168]</a>&thinsp;, else uses a normal approximation <a class="el" href="citelist.html#CITEREF_tPEI68a">[196]</a>&thinsp;. </p>
 
 </div>
 </div>
@@ -919,7 +919,7 @@ static final double&#160;</td><td class="memItemRight" valign="bottom"><b>XBIGM<
 </table>
 </div><div class="memdoc">
 
-<p>Returns the inverse beta distribution function using the algorithm implemented in <a class="el" href="citelist.html#CITEREF_iMOS00a">[174]</a>&thinsp;. </p>
+<p>Returns the inverse beta distribution function using the algorithm implemented in <a class="el" href="citelist.html#CITEREF_iMOS00a">[179]</a>&thinsp;. </p>
 <p>The method performs interval halving or Newton iterations to compute the inverse. </p>
 
 </div>

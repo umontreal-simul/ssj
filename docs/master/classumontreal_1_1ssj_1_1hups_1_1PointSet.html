@@ -87,7 +87,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This abstract class defines the basic methods for accessing and manipulating point sets.  
+<p>This abstract class represents a general point set.  
  <a href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PointSet:</div>
@@ -105,12 +105,13 @@ Collaboration diagram for PointSet:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html">DefaultPointSetIterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class implements a default point set iterator.  <a href="classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a56e1ed7f77c1dad3205d8c25e62c0432"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a56e1ed7f77c1dad3205d8c25e62c0432">getDimension</a> ()</td></tr>
-<tr class="memdesc:a56e1ed7f77c1dad3205d8c25e62c0432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension (number of available coordinates) of the point set.  <a href="#a56e1ed7f77c1dad3205d8c25e62c0432">More...</a><br /></td></tr>
+<tr class="memdesc:a56e1ed7f77c1dad3205d8c25e62c0432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension (number of available coordinates) of the points.  <a href="#a56e1ed7f77c1dad3205d8c25e62c0432">More...</a><br /></td></tr>
 <tr class="separator:a56e1ed7f77c1dad3205d8c25e62c0432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49baacb31d6776f65a02743951121545"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a49baacb31d6776f65a02743951121545">getNumPoints</a> ()</td></tr>
 <tr class="memdesc:a49baacb31d6776f65a02743951121545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of points.  <a href="#a49baacb31d6776f65a02743951121545">More...</a><br /></td></tr>
@@ -121,53 +122,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1764814438540e97a86b23946fc1789f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html">PointSetIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a1764814438540e97a86b23946fc1789f">iterator</a> ()</td></tr>
 <tr class="memdesc:a1764814438540e97a86b23946fc1789f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and returns a point set iterator.  <a href="#a1764814438540e97a86b23946fc1789f">More...</a><br /></td></tr>
 <tr class="separator:a1764814438540e97a86b23946fc1789f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad096736436bd336c9b21860d1b7912ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ad096736436bd336c9b21860d1b7912ad">setStream</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream)</td></tr>
-<tr class="memdesc:ad096736436bd336c9b21860d1b7912ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the random stream used to generate random shifts to <code>stream</code>.  <a href="#ad096736436bd336c9b21860d1b7912ad">More...</a><br /></td></tr>
-<tr class="separator:ad096736436bd336c9b21860d1b7912ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab19f393ef03e94ecc2f93bd36e3eaf6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ab19f393ef03e94ecc2f93bd36e3eaf6d">getStream</a> ()</td></tr>
-<tr class="memdesc:ab19f393ef03e94ecc2f93bd36e3eaf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the random stream used to generate random shifts.  <a href="#ab19f393ef03e94ecc2f93bd36e3eaf6d">More...</a><br /></td></tr>
-<tr class="separator:ab19f393ef03e94ecc2f93bd36e3eaf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075c2f760581bece484b010a8d96932a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a075c2f760581bece484b010a8d96932a">randomize</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand)</td></tr>
-<tr class="memdesc:a075c2f760581bece484b010a8d96932a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomizes the point set using the given <code>rand</code>.  <a href="#a075c2f760581bece484b010a8d96932a">More...</a><br /></td></tr>
+<tr class="memdesc:a075c2f760581bece484b010a8d96932a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomizes this point set using the given <code>rand</code>.  <a href="#a075c2f760581bece484b010a8d96932a">More...</a><br /></td></tr>
 <tr class="separator:a075c2f760581bece484b010a8d96932a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a534014b74710213f39dcecb4d9802b4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d">addRandomShift</a> (int d1, int d2, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream)</td></tr>
-<tr class="memdesc:a534014b74710213f39dcecb4d9802b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method does nothing for this generic class.  <a href="#a534014b74710213f39dcecb4d9802b4d">More...</a><br /></td></tr>
+<tr class="memdesc:a534014b74710213f39dcecb4d9802b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method should be implemented in subclasses to generate a random shift of the appropriate type.  <a href="#a534014b74710213f39dcecb4d9802b4d">More...</a><br /></td></tr>
 <tr class="separator:a534014b74710213f39dcecb4d9802b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc568d2939cff1b011e8a61bfb4a48c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#acc568d2939cff1b011e8a61bfb4a48c4">addRandomShift</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream)</td></tr>
-<tr class="memdesc:acc568d2939cff1b011e8a61bfb4a48c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method does nothing for this generic class.  <a href="#acc568d2939cff1b011e8a61bfb4a48c4">More...</a><br /></td></tr>
+<tr class="memdesc:acc568d2939cff1b011e8a61bfb4a48c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d">addRandomShift(0, dim, stream)</a>, where <code>dim</code> is the dimension of the point set.  <a href="#acc568d2939cff1b011e8a61bfb4a48c4">More...</a><br /></td></tr>
 <tr class="separator:acc568d2939cff1b011e8a61bfb4a48c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca44f8efb4c6756653ea2bb316d5039b"><td class="memItemLeft" align="right" valign="top"><a id="aca44f8efb4c6756653ea2bb316d5039b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#aca44f8efb4c6756653ea2bb316d5039b">addRandomShift</a> (int d1, int d2)</td></tr>
-<tr class="memdesc:aca44f8efb4c6756653ea2bb316d5039b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>addRandomShift(d1, d2, stream)</code>, with the current random stream. <br /></td></tr>
-<tr class="separator:aca44f8efb4c6756653ea2bb316d5039b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f8834fd4a9f4d838820bf693a74355"><td class="memItemLeft" align="right" valign="top"><a id="a75f8834fd4a9f4d838820bf693a74355"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a75f8834fd4a9f4d838820bf693a74355">addRandomShift</a> ()</td></tr>
-<tr class="memdesc:a75f8834fd4a9f4d838820bf693a74355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <code>addRandomShift(0, d2, stream)</code> with the current random stream and <code>d2</code> the dimension of the current random shift. <br /></td></tr>
-<tr class="separator:a75f8834fd4a9f4d838820bf693a74355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa519360511c1e74ee87826a09af7bbb7"><td class="memItemLeft" align="right" valign="top"><a id="aa519360511c1e74ee87826a09af7bbb7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#aa519360511c1e74ee87826a09af7bbb7">clearRandomShift</a> ()</td></tr>
 <tr class="memdesc:aa519360511c1e74ee87826a09af7bbb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases the current random shift, if any. <br /></td></tr>
 <tr class="separator:aa519360511c1e74ee87826a09af7bbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff0f20143e43cdff1c6e40dd2b3e357"><td class="memItemLeft" align="right" valign="top"><a id="a0ff0f20143e43cdff1c6e40dd2b3e357"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a0ff0f20143e43cdff1c6e40dd2b3e357">randomize</a> (int fromDim, int toDim, <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream)</td></tr>
-<tr class="memdesc:a0ff0f20143e43cdff1c6e40dd2b3e357"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, this method simply calls <code>addRandomShift (fromDim, toDim, stream)</code>, which does nothing. <br /></td></tr>
-<tr class="separator:a0ff0f20143e43cdff1c6e40dd2b3e357"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa558489d74f994518e23b2b8784f3c5"><td class="memItemLeft" align="right" valign="top"><a id="aaa558489d74f994518e23b2b8784f3c5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#aaa558489d74f994518e23b2b8784f3c5">randomize</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> stream)</td></tr>
-<tr class="memdesc:aaa558489d74f994518e23b2b8784f3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, this method simply calls <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a0ff0f20143e43cdff1c6e40dd2b3e357">randomize(0, dim, stream)</a>. <br /></td></tr>
-<tr class="separator:aaa558489d74f994518e23b2b8784f3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdd828d86f1b7b74b9bb5dd18f76de3e"><td class="memItemLeft" align="right" valign="top"><a id="abdd828d86f1b7b74b9bb5dd18f76de3e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#abdd828d86f1b7b74b9bb5dd18f76de3e">randomize</a> (int d1, int d2)</td></tr>
-<tr class="memdesc:abdd828d86f1b7b74b9bb5dd18f76de3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, this method simply calls <code>addRandomShift(d1, d2)</code>. <br /></td></tr>
-<tr class="separator:abdd828d86f1b7b74b9bb5dd18f76de3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c832496374390c11c825cfb9500c87"><td class="memItemLeft" align="right" valign="top"><a id="a83c832496374390c11c825cfb9500c87"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a83c832496374390c11c825cfb9500c87">randomize</a> ()</td></tr>
-<tr class="memdesc:a83c832496374390c11c825cfb9500c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, this method simply calls <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a75f8834fd4a9f4d838820bf693a74355" title="Similar to addRandomShift(0, d2, stream) with the current random stream and d2 the dimension of the c...">addRandomShift()</a></code>. <br /></td></tr>
-<tr class="separator:a83c832496374390c11c825cfb9500c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad094f3a4e5490d701d2117d13c219392"><td class="memItemLeft" align="right" valign="top"><a id="ad094f3a4e5490d701d2117d13c219392"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ad094f3a4e5490d701d2117d13c219392">unrandomize</a> ()</td></tr>
-<tr class="memdesc:ad094f3a4e5490d701d2117d13c219392"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, this method simply calls <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#aa519360511c1e74ee87826a09af7bbb7" title="Erases the current random shift, if any. ">clearRandomShift()</a></code>. <br /></td></tr>
-<tr class="separator:ad094f3a4e5490d701d2117d13c219392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad146fa8579a5f8a876c4688cc5a68520"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a> ()</td></tr>
 <tr class="memdesc:ad146fa8579a5f8a876c4688cc5a68520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats a string that contains information about the point set.  <a href="#ad146fa8579a5f8a876c4688cc5a68520">More...</a><br /></td></tr>
 <tr class="separator:ad146fa8579a5f8a876c4688cc5a68520"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,42 +172,42 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ad6139df4229d8c5bfe34f5e96f45ee9a"><td class="memItemLeft" align="right" valign="top"><a id="ad6139df4229d8c5bfe34f5e96f45ee9a"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>EpsilonHalf</b> = 1.0 / <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a8f755eefb16e54ce09bab33cb1dfc6cc">Num.TWOEXP</a>[55]</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ad6139df4229d8c5bfe34f5e96f45ee9a">EpsilonHalf</a> = 1.0 / <a class="el" href="classumontreal_1_1ssj_1_1util_1_1Num.html#a8f755eefb16e54ce09bab33cb1dfc6cc">Num.TWOEXP</a>[55]</td></tr>
+<tr class="memdesc:ad6139df4229d8c5bfe34f5e96f45ee9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">To avoid 0 for nextCoordinate when random shifting, we add this to each coordinate. <br /></td></tr>
 <tr class="separator:ad6139df4229d8c5bfe34f5e96f45ee9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70b5e28b5bc3d1b63a7435c5fe50b837"><td class="memItemLeft" align="right" valign="top"><a id="a70b5e28b5bc3d1b63a7435c5fe50b837"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dim</b> = 0</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a> = 0</td></tr>
+<tr class="memdesc:a70b5e28b5bc3d1b63a7435c5fe50b837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the points. <br /></td></tr>
 <tr class="separator:a70b5e28b5bc3d1b63a7435c5fe50b837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a876743604f1c17f0d9f7137274b1a7fd"><td class="memItemLeft" align="right" valign="top"><a id="a876743604f1c17f0d9f7137274b1a7fd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>numPoints</b> = 0</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a876743604f1c17f0d9f7137274b1a7fd">numPoints</a> = 0</td></tr>
+<tr class="memdesc:a876743604f1c17f0d9f7137274b1a7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points. <br /></td></tr>
 <tr class="separator:a876743604f1c17f0d9f7137274b1a7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9abc7ab57e7cc9159b68d3763af5642"><td class="memItemLeft" align="right" valign="top"><a id="ab9abc7ab57e7cc9159b68d3763af5642"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dimShift</b> = 0</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ab9abc7ab57e7cc9159b68d3763af5642">dimShift</a> = 0</td></tr>
+<tr class="memdesc:ab9abc7ab57e7cc9159b68d3763af5642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the shift. <br /></td></tr>
 <tr class="separator:ab9abc7ab57e7cc9159b68d3763af5642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3eb5c4baafcf5f5ecaba58fd8965651"><td class="memItemLeft" align="right" valign="top"><a id="af3eb5c4baafcf5f5ecaba58fd8965651"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>capacityShift</b> = 0</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#af3eb5c4baafcf5f5ecaba58fd8965651">capacityShift</a> = 0</td></tr>
+<tr class="memdesc:af3eb5c4baafcf5f5ecaba58fd8965651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of array elements in the shift vector, always &gt;= dimShift. <br /></td></tr>
 <tr class="separator:af3eb5c4baafcf5f5ecaba58fd8965651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fd9aece1ad8a130785de34080d82880"><td class="memItemLeft" align="right" valign="top"><a id="a1fd9aece1ad8a130785de34080d82880"></a>
-<a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a>&#160;</td><td class="memItemRight" valign="bottom"><b>shiftStream</b></td></tr>
+<tr class="memitem:a1fd9aece1ad8a130785de34080d82880"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a1fd9aece1ad8a130785de34080d82880">shiftStream</a></td></tr>
+<tr class="memdesc:a1fd9aece1ad8a130785de34080d82880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream used to generate the random shifts.  <a href="#a1fd9aece1ad8a130785de34080d82880">More...</a><br /></td></tr>
 <tr class="separator:a1fd9aece1ad8a130785de34080d82880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:af6c2a53b146205dc04710d8ffa0f3605"><td class="memItemLeft" align="right" valign="top"><a id="af6c2a53b146205dc04710d8ffa0f3605"></a>
-static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</b> = 31</td></tr>
+<tr class="memitem:af6c2a53b146205dc04710d8ffa0f3605"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#af6c2a53b146205dc04710d8ffa0f3605">MAXBITS</a> = 31</td></tr>
+<tr class="memdesc:af6c2a53b146205dc04710d8ffa0f3605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Since Java has no unsigned type, the 32nd bit cannot be used efficiently, so we have only 31 bits.  <a href="#af6c2a53b146205dc04710d8ffa0f3605">More...</a><br /></td></tr>
 <tr class="separator:af6c2a53b146205dc04710d8ffa0f3605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This abstract class defines the basic methods for accessing and manipulating point sets. </p>
-<p>A point set can be represented as a two-dimensional array, whose element \((i,j)\) contains \(u_{i,j}\), the <em>coordinate</em> \(j\) of point \(i\). Each coordinate \(u_{i,j}\) is assumed to be in the unit interval \([0,1]\). Whether the values 0 and 1 can occur may depend on the actual implementation of the point set.</p>
-<p>All points have the same number of coordinates (their <em>dimension</em>) and this number can be queried by <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a56e1ed7f77c1dad3205d8c25e62c0432" title="Returns the dimension (number of available coordinates) of the point set. ">getDimension</a>. The number of points is queried by <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a49baacb31d6776f65a02743951121545" title="Returns the number of points. ">getNumPoints</a>. The points and coordinates are both numbered starting from 0 and their number can actually be infinite.</p>
-<p>The <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a1764814438540e97a86b23946fc1789f" title="Constructs and returns a point set iterator. ">iterator</a> method provides a <em>point set iterator</em> which permits one to enumerate the points and their coordinates. Several iterators over the same point set can coexist at any given time. These iterators are instances of a hidden inner-class that implements the <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html">PointSetIterator</a> interface. The default implementation of iterator provided here relies on the method <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a> to access the coordinates directly. However, this approach is rarely efficient. Specialized implementations that dramatically improve the performance are provided in subclasses of <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a>. The <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html">PointSetIterator</a> interface actually extends the <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a> interface, so that the iterator can also be seen as a <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a> and used wherever such a stream is required for generating uniform random numbers. This permits one to easily replace pseudorandom numbers by the coordinates of a selected set of highly-uniform points, i.e., to replace Monte Carlo by quasi-Monte Carlo in a simulation program.</p>
-<p>The class also offers tools to manipulate a list of randomizations that can be applied to this point set. </p><dl class="section remark"><dt>Remarks</dt><dd><b>Pierre:</b> So far, the general types of randomizations have been implemented as containers. We may remove this concept of list.</dd>
-<dd>
-<b>Richard:</b> La nouvelle randomisation d’Adam rend l’ancienne liste de randomisations obsolète: nous n’avons jamais utilisé l’ancienne version.</dd>
-<dd>
-<b>Pierre:</b> Now removed.</dd></dl>
-<p>This abstract class has only one abstract method: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a>. Providing an implementation for this method is already sufficient for the subclass to work. However, in many cases, efficiency can be dramatically improved by overwriting <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a1764814438540e97a86b23946fc1789f" title="Constructs and returns a point set iterator. ">iterator</a> to provide a custom iterator that does not necessarily rely on <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a>. In fact, direct use of <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a> to access the coordinates is generally discouraged. One should access the points and coordinates via the iterators.</p>
-<p>The built-in range checks require some extra time and also assumes that nobody ever uses negative indices. If <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a> is not accessed directly by the user, it may be implemented without range checks. </p><dl class="section remark"><dt>Remarks</dt><dd><b>Pierre:</b> I think we should remove the <code>addRandomShift</code> and <code>clearRandomShift</code> methods, because they are too specialized and not appropriate for all kinds of point sets. We can also make the <code>randomize(stream)</code> methods abstract, or make them do nothing by default.</dd></dl>
+<div class="textblock"><p>This abstract class represents a general point set. </p>
+<p>It defines some basic methods for accessing and manipulating the points and other properties of the point set. Conceptually, a point set can be viewed as a two-dimensional array, whose element \((i,j)\) contains \(u_{i,j}\), the <em>coordinate</em> \(j\) of point \(i\), for \(i\geq 0\) and \(j\geq 0\). Each coordinate \(u_{i,j}\) is assumed to be in the unit interval \([0,1]\). Whether the values 0 and 1 can occur or not may depend on the actual implementation of the point set. In general, when the points are randomized, after the randomization we add (internally, when the points or coordinates are requested) \(\epsilon/2\) to each coordinate for a very small \(\epsilon &gt; 0\), so that 0 never occurs in the output. By default, in this <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. ">PointSet</a></code> class, we have \(\epsilon = 2^{-54}\).</p>
+<p>All points have the same number of coordinates (their <em>dimension</em>) and this number can be queried by <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a56e1ed7f77c1dad3205d8c25e62c0432" title="Returns the dimension (number of available coordinates) of the points. ">getDimension</a>. The number of points is queried by <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a49baacb31d6776f65a02743951121545" title="Returns the number of points. ">getNumPoints</a>. The points and coordinates are both numbered starting from 0 and their number can actually be infinite.</p>
+<p>The <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a1764814438540e97a86b23946fc1789f" title="Constructs and returns a point set iterator. ">iterator</a> method provides a <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html">PointSetIterator</a> object which can enumerate the points and their coordinates. Several iterators over the same point set can coexist at any given time. However, in the current implementation they will all enumerate the same randomized points when the points are randomized, because the randomizations are integrated in the point sets and not in the iterators. These iterators are instances of a hidden inner-class that implements the <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html">PointSetIterator</a> interface. The default implementation of iterator provided here relies on the method <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a> to access the coordinates directly. However, this approach is rarely efficient. (One exception is in a <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html">CachedPointSet</a>.) Specialized implementations that dramatically improve the performance are provided in subclasses of <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a>. The <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html">PointSetIterator</a> interface actually extends the <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a> interface, so that the iterator can also be seen as a <a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">umontreal.ssj.rng.RandomStream</a> and used wherever such a stream is required for generating uniform random numbers. This permits one to easily replace pseudorandom numbers by the coordinates of a selected set of highly-uniform points, i.e., to replace Monte Carlo by QMC or RQMC in a simulation program.</p>
+<p>The present abstract class has only one abstract method: <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a>. Providing an implementation for this method is already sufficient for the subclass to work. However, in most cases, efficiency can be dramatically improved by overwriting <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a1764814438540e97a86b23946fc1789f" title="Constructs and returns a point set iterator. ">iterator</a> to provide a custom iterator that does not necessarily rely on <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a>. Direct use of <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a> to access the coordinates is generally discouraged. One should access the points and coordinates via the iterators. Built-in range checks when generating the points require some extra time and also assume that nobody ever uses negative indices. If <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a071374c8aba89ebea323e50ff854663c" title="Returns , the coordinate  of the point . ">getCoordinate</a> is never accessed directly by the user, it may be implemented without range checks.</p>
+<p>In this class, the <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d" title="This method should be implemented in subclasses to generate a random shift of the appropriate type...">addRandomShift()</a> methods do nothing. In subclasses <code>addRandomShift (d1, d2, stream)</code> can be optionally reimplemented and this is sufficient to determine what all the <code>addRandomShift</code> methods will do.</p>
 <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a534014b74710213f39dcecb4d9802b4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a534014b74710213f39dcecb4d9802b4d">&#9670;&nbsp;</a></span>addRandomShift() <span class="overload">[1/2]</span></h2>
@@ -274,8 +241,10 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
       </table>
 </div><div class="memdoc">
 
-<p>This method does nothing for this generic class. </p>
-<p>In some subclasses, it adds a random shift to all the points of the point set, using stream <code>stream</code> to generate the random numbers, for coordinates <code>d1</code> to <code>d2-1</code>. </p>
+<p>This method should be implemented in subclasses to generate a random shift of the appropriate type. </p>
+<p>This random shift will be added to all the points when they are enumerated by the iterator. For certain types of point sets having a digital structure, such as digital nets and sequences, this method implements a random digital shift. For others, such as lattice rules, it implements a random shift modulo 1. The random shift is generated using the <code>stream</code> to generate the uniform random numbers, one for each of the coordinates <code>d1</code> to <code>d2-1</code>. Allowing an arbitrary range <code>d1</code> to <code>d2-1</code> permits one to extends the random shift to additional coordinates when needed, e.g., when the number of coordinates that we need is unknown a priori.</p>
+<p>The current implementation in this generic class does nothing but printing a warning. There are also other classes such as <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1SubsetOfPointSet.html" title="This container class permits one to select a subset of a point set. ">SubsetOfPointSet</a></code>, <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PaddedPointSet.html" title="This container class realizes padded point sets, constructed by taking some coordinates from a point ...">PaddedPointSet</a></code>, ..., in which it is currently not implemented, because one may not want to modify the underlying point sets indirectly! </p><dl class="section remark"><dt>Remarks</dt><dd><b>Pierre:</b> Perhaps we could randomize the contained point sets in this case.</dd></dl>
+<p>These methods are used internally by randomizations. Perhaps they could be made protected. Calling <code><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html#adf476448dedc0a01437d47a01c5a08b9" title="This method calls addRandomShift(stream). ">RandomShift.randomize(PointSet)</a></code> calls <code>addRandomShift</code>. </p>
 
 </div>
 </div>
@@ -295,8 +264,13 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
       </table>
 </div><div class="memdoc">
 
-<p>This method does nothing for this generic class. </p>
-<p>Similar to <code>addRandomShift (0, d2, stream)</code>, with <code>d2</code> the dimension of the current random shift. </p>
+<p>Same as <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d">addRandomShift(0, dim, stream)</a>, where <code>dim</code> is the dimension of the point set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>random number stream used to generate uniforms for the random shift </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -715,7 +689,7 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
 </div><div class="memdoc">
 
 <p>Returns \(u_{i,j}\), the coordinate \(j\) of the point \(i\). </p>
-<dl class="section remark"><dt>Remarks</dt><dd><b>Richard:</b> La méthode <code>getCoordinate</code> de certaines classes ne tient pas compte du random shift, contrairement à l’itérateur de la même classe. Faut-il que toutes les <code>getCoordinate</code> implémentent le random shift quand il existe? </dd></dl>
+<p>When the points are randomized (e.g., a random shift is added), the values returned by this method should incorporate the randomizations. </p><dl class="section remark"><dt>Remarks</dt><dd><b>Richard:</b> La méthode <code>getCoordinate</code> de certaines classes ne tient pas compte du random shift, contrairement à l’itérateur de la même classe. Faut-il que toutes les <code>getCoordinate</code> implémentent le random shift quand il existe? Oui.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>index of the point to look for </td></tr>
@@ -742,8 +716,9 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
       </table>
 </div><div class="memdoc">
 
-<p>Returns the dimension (number of available coordinates) of the point set. </p>
-<p>If the dimension is actually infinite, <code>Integer.MAX_VALUE</code> is returned. </p><dl class="section return"><dt>Returns</dt><dd>the dimension of the point set or <code>Integer.MAX_VALUE</code> if it is infinite </dd></dl>
+<p>Returns the dimension (number of available coordinates) of the points. </p>
+<p>If the dimension is actually infinite, <code>Integer.MAX_VALUE</code> is returned.</p>
+<dl class="section return"><dt>Returns</dt><dd>the dimension of the point set or <code>Integer.MAX_VALUE</code> if it is infinite </dd></dl>
 
 </div>
 </div>
@@ -763,27 +738,7 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
 </div><div class="memdoc">
 
 <p>Returns the number of points. </p>
-<p>If this number is actually infinite, <code>Integer.MAX_VALUE</code> is returned. </p><dl class="section return"><dt>Returns</dt><dd>the number of points in the point set or <code>Integer.MAX_VALUE</code> if the point set has an infinity of points. </dd></dl>
-
-</div>
-</div>
-<a id="ab19f393ef03e94ecc2f93bd36e3eaf6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab19f393ef03e94ecc2f93bd36e3eaf6d">&#9670;&nbsp;</a></span>getStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> getStream </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the random stream used to generate random shifts. </p>
-<dl class="section return"><dt>Returns</dt><dd>the random stream used </dd></dl>
+<p>If this number is actually infinite, <code>Integer.MAX_VALUE</code> is returned. </p><dl class="section return"><dt>Returns</dt><dd>the number of points in the point set or <code>Integer.MAX_VALUE</code> if the point set has infinity cardinality. </dd></dl>
 
 </div>
 </div>
@@ -823,36 +778,10 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
       </table>
 </div><div class="memdoc">
 
-<p>Randomizes the point set using the given <code>rand</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Randomizes this point set using the given <code>rand</code>. </p>
+<p>Use the equivalent <code>rand.randomize(this)</code> instead. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rand</td><td><a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> to use </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad096736436bd336c9b21860d1b7912ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad096736436bd336c9b21860d1b7912ad">&#9670;&nbsp;</a></span>setStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setStream </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a>&#160;</td>
-          <td class="paramname"><em>stream</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the random stream used to generate random shifts to <code>stream</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stream</td><td>the new random stream </td></tr>
   </table>
   </dd>
 </dl>
@@ -876,6 +805,57 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><b>MAXBITS</
 
 <p>Formats a string that contains information about the point set. </p>
 <dl class="section return"><dt>Returns</dt><dd>string representation of the point set information </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af6c2a53b146205dc04710d8ffa0f3605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c2a53b146205dc04710d8ffa0f3605">&#9670;&nbsp;</a></span>MAXBITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int MAXBITS = 31</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Since Java has no unsigned type, the 32nd bit cannot be used efficiently, so we have only 31 bits. </p>
+<p>This mainly affects digit scrambling and bit vectors. This also limits the maximum number of columns for the generating matrices of digital nets in base 2. </p>
+
+</div>
+</div>
+<a id="a1fd9aece1ad8a130785de34080d82880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd9aece1ad8a130785de34080d82880">&#9670;&nbsp;</a></span>shiftStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html">RandomStream</a> shiftStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stream used to generate the random shifts. </p>
+<p>This stream is saved from the last time we have called <a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a534014b74710213f39dcecb4d9802b4d" title="This method should be implemented in subclasses to generate a random shift of the appropriate type...">addRandomShift</a>, in case this method has to be called again internally by an iterator. This may happen for example if the points have unbounded dimension and we need to extend the random shift to additional coordinates. </p>
 
 </div>
 </div>
