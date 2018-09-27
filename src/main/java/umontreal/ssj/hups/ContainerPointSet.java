@@ -96,7 +96,7 @@ public abstract class ContainerPointSet extends PointSet {
  *  @param rand          @ref PointSetRandomization to use
  */
 public void randomize (PointSetRandomization rand) {
-       P.randomize(rand);
+       rand.randomize(P);
    }
 
    /**

@@ -31,7 +31,7 @@ import umontreal.ssj.rng.RandomStream;
  * This container class realizes *padded point sets*, constructed by taking
  * some coordinates from a point set @f$P_1@f$, other coordinates from a
  * point set @f$P_2@f$, and so on. This can be used to implement *latin
- * supercube sampling* @cite vOWE98a&thinsp;, for example. After calling the
+ * supercube sampling* @cite vOWE98a, for example. After calling the
  * constructor to create the structure, component point sets can be padded to
  * it by calling  #padPointSet or  #padPointSetPermute.
  *
@@ -159,7 +159,7 @@ public class PaddedPointSet extends PointSet {
 
    public void randomize (RandomStream stream)  {
       // Executes the randomizations of the list
-      super.randomize (stream);
+      //  super.randomize (stream);  // Removed this because PointSet.randomize(stream) does nothing.
       /* can also use lazy permutations */
       for (int set = 0; set < curPointSets; set++)
          if (permutation[set] != null) {

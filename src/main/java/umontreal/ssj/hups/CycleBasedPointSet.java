@@ -32,7 +32,7 @@ import cern.colt.list.*;
 
 /**
  * This abstract class provides the basic structures for storing and
- * manipulating a *highly uniform point set* defined by a set of cycles. The
+ * manipulating a point set defined by a set of cycles. The
  * @f$s@f$-dimensional points are all the vectors of @f$s@f$ successive
  * values found in any of the cycles, from any starting point. Since this is
  * defined for any positive integer @f$s@f$, the points effectively have an
@@ -76,7 +76,7 @@ public abstract class CycleBasedPointSet extends PointSet {
  * Adds a random shift to all the points of the point set, using stream
  * `stream` to generate the random numbers, for coordinates `d1` to `d2 - 1`.
  * This applies an addition modulo 1 of a single random point to all the
- * points.
+ * points.  Subclasses may redefine this method to apply a random digital shift.
  *  @param stream       Stream used to generate random numbers
  */
 public void addRandomShift (int d1, int d2, RandomStream stream) {

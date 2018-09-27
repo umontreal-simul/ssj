@@ -188,7 +188,7 @@ public void addRandomShift (int d1, int d2, RandomStream stream) {
             outOfBounds();
          if (curCoordIndex + dim >= dimShift)
             addRandomShift (dimShift, curCoordIndex + dim + 1, shiftStream);
-         int j = curCoordInCycle;
+         // int j = curCoordInCycle;
          int maxj = curCycle.size();
          int x;
          for (int i = 0; i < dim; i++) {
