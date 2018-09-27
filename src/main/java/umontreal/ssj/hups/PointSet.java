@@ -32,25 +32,37 @@ import umontreal.ssj.util.Num;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This abstract class defines the basic methods for accessing and
- * manipulating point sets. A point set can be represented as a
+ * This abstract class represents a general point set.
+ * It defines some basic methods for accessing and
+ * manipulating the points and other properties of the point set. 
+ * Conceptually, a point set can be viewed as a
  * two-dimensional array, whose element @f$(i,j)@f$ contains @f$u_{i,j}@f$,
- * the *coordinate* @f$j@f$ of point @f$i@f$. Each coordinate @f$u_{i,j}@f$
+ * the *coordinate* @f$j@f$ of point @f$i@f$, for @f$i\geq 0@f$ and @f$j\geq 0@f$.
+ * Each coordinate @f$u_{i,j}@f$
  * is assumed to be in the unit interval @f$[0,1]@f$. Whether the values 0
- * and 1 can occur may depend on the actual implementation of the point set.
+ * and 1 can occur or not may depend on the actual implementation of the point set.
+ * In general, when the points are randomized, after the randomization
+ * we add  (internally, when the points or coordinates are requested) 
+ * @f$\epsilon/2@f$ to each coordinate for a very small 
+ * @f$\epsilon > 0@f$, so that 0 never occurs in the output.
+ * By default, in this `PointSet` class, we have @f$\epsilon = 2^{-54}@f$.
  *
  * All points have the same number of coordinates (their <em>dimension</em>)
  * and this number can be queried by  #getDimension. The number of points is
  * queried by  #getNumPoints. The points and coordinates are both numbered
  * starting from 0 and their number can actually be infinite.
  *
- * The  #iterator method provides a *point set iterator* which permits one to
+ * The #iterator method provides a *point set iterator* which can
  * enumerate the points and their coordinates. Several iterators over the
- * same point set can coexist at any given time. These iterators are
+ * same point set can coexist at any given time.  However, in the current implementation
+ * they will all enumerate the same randomized points when the points are randomized,
+ * because the randomizations are integrated in the point sets and not in the iterators.
+ * These iterators are
  * instances of a hidden inner-class that implements the
  * @ref PointSetIterator interface. The default implementation of iterator
  * provided here relies on the method  #getCoordinate to access the
  * coordinates directly. However, this approach is rarely efficient.
+ * (One exception is in a @ref CachedPointSet.) 
  * Specialized implementations that dramatically improve the performance are
  * provided in subclasses of  @ref PointSet. The  @ref PointSetIterator
  * interface actually extends the  @ref umontreal.ssj.rng.RandomStream
@@ -58,60 +70,72 @@ import umontreal.ssj.util.PrintfFormat;
  * @ref umontreal.ssj.rng.RandomStream and used wherever such a stream is
  * required for generating uniform random numbers. This permits one to easily
  * replace pseudorandom numbers by the coordinates of a selected set of
- * highly-uniform points, i.e., to replace Monte Carlo by quasi-Monte Carlo
+ * highly-uniform points, i.e., to replace Monte Carlo by QMC or RQMC
  * in a simulation program.
- *
- *  The class also offers tools to manipulate a list of randomizations that
- * can be applied to this point set.
- * @remark **Pierre:** So far, the general types of randomizations have been
- * implemented as containers. We may remove this concept of list.
- *
- * @remark **Richard:** La nouvelle randomisation d’Adam rend l’ancienne
- * liste de randomisations obsolète: nous n’avons jamais utilisé l’ancienne
- * version.
- *
- * @remark **Pierre:** Now removed.
  *
  * This abstract class has only one abstract method:  #getCoordinate.
  * Providing an implementation for this method is already sufficient for the
- * subclass to work. However, in many cases, efficiency can be dramatically
+ * subclass to work. However, in most cases, efficiency can be dramatically
  * improved by overwriting  #iterator to provide a custom iterator that does
- * not necessarily rely on  #getCoordinate. In fact, direct use of
+ * not necessarily rely on  #getCoordinate.  Direct use of
  * #getCoordinate to access the coordinates is generally discouraged. One
  * should access the points and coordinates via the iterators.
  *
- *  The built-in range checks require some extra time and also assumes that
- * nobody ever uses negative indices. If  #getCoordinate is not accessed
+ * Built-in range checks when generating the points require some extra time and also assume that
+ * nobody ever uses negative indices. If #getCoordinate is never accessed
  * directly by the user, it may be implemented without range checks.
- * @remark **Pierre:** I think we should remove the `addRandomShift` and
- * `clearRandomShift` methods, because they are too specialized and not
- * appropriate for all kinds of point sets. We can also make the
- * `randomize(stream)` methods abstract, or make them do nothing by default.
+ * 
+ * In this class, the #addRandomShift() methods do nothing.   
+ * In subclasses `addRandomShift (d1, d2, stream)` can be optionally reimplemented 
+ * and this is sufficient to determine what all the `addRandomShift` methods will do.
+ *  
+ * // We could  make the
+ * // `randomize(stream)` methods abstract, or make them do nothing by default.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public abstract class PointSet {
 
-   // The maximum number of usable bits (binary digits).
-   // Since Java has no unsigned type, the
-   // 32nd bit cannot be used efficiently. This mainly affects digit
-   // scrambling and bit vectors. This also limits the maximum number
-   // of columns for the generating matrices of digital nets in base 2.
-   protected static final int MAXBITS = 31;
-   // To avoid 0 for nextCoordinate when random shifting 
-   protected double EpsilonHalf = 1.0 / Num.TWOEXP[55];  // 1/2^55
+   /** 
+    * Since Java has no unsigned type, the 32nd bit cannot be used efficiently,
+    * so we have only 31 bits. This mainly affects digit scrambling and bit vectors. 
+    * This also limits the maximum number of columns for the generating matrices 
+    * of digital nets in base 2.
+    */
+   protected static final int MAXBITS = 31; // Max number of usable bits.
 
-   protected int dim = 0;
+   /** 
+    * To avoid 0 for nextCoordinate when random shifting, we add this to each coordinate.
+    */
+   protected double EpsilonHalf = 1.0 / Num.TWOEXP[55];  // 2^{-55}
+
+   /** 
+    * Dimension of the points.
+    */
+   protected int dim = 0;                 
+
+   /** 
+    * Number of points.
+    */
    protected int numPoints = 0;
-   protected int dimShift = 0;            // Current dimension of the shift.
-   protected int capacityShift = 0;       // Number of array elements of shift;
-                                          // it is always >= dimShift
-   protected RandomStream shiftStream;    // Used to generate random shifts.
+
+   /** 
+    * Dimension of the shift.
+    */
+   protected int dimShift = 0;
+   
+   /** 
+    * Number of array elements in the shift vector, always >= dimShift.
+    */
+   protected int capacityShift = 0;
+   
+   //  protected RandomStream shiftStream;    // Stream used to generate the random shifts.
 
    /**
-    * Returns the dimension (number of available coordinates) of the point
-    * set. If the dimension is actually infinite,
+    * Returns the dimension (number of available coordinates) of the points.
+    * If the dimension is actually infinite,
     * <tt>Integer.MAX_VALUE</tt> is returned.
+    * 
     *  @return the dimension of the point set or
     * <tt>Integer.MAX_VALUE</tt> if it is infinite
     */
@@ -123,8 +147,7 @@ public abstract class PointSet {
     * Returns the number of points. If this number is actually infinite,
     * <tt>Integer.MAX_VALUE</tt> is returned.
     *  @return the number of points in the point set or
-    * <tt>Integer.MAX_VALUE</tt> if the point set has an infinity of
-    * points.
+    * <tt>Integer.MAX_VALUE</tt> if the point set has infinity cardinality.
     */
    public int getNumPoints() {
       return numPoints;
@@ -132,10 +155,13 @@ public abstract class PointSet {
 
    /**
     * Returns @f$u_{i,j}@f$, the coordinate @f$j@f$ of the point @f$i@f$.
+    * When the points are randomized (e.g., a random shift is added), the values
+    * returned by this method should incorporate the randomizations.
     * @remark **Richard:** La méthode `getCoordinate` de certaines classes
     * ne tient pas compte du random shift, contrairement à l’itérateur de
     * la même classe. Faut-il que toutes les `getCoordinate` implémentent
-    * le random shift quand il existe?
+    * le random shift quand il existe?   Oui.
+    * 
     *  @param i            index of the point to look for
     *  @param j            index of the coordinate to look for
     *  @return the value of @f$u_{i,j}@f$
@@ -155,23 +181,7 @@ public abstract class PointSet {
    }
 
    /**
-    * Sets the random stream used to generate random shifts to `stream`.
-    *  @param stream       the new random stream
-    */
-   public void setStream (RandomStream stream) {
-      shiftStream = stream;
-  }
-
-   /**
-    * Returns the random stream used to generate random shifts.
-    *  @return the random stream used
-    */
-   public RandomStream getStream() {
-      return shiftStream;
-  }
-
-   /**
-    * Randomizes the point set using the given `rand`.
+    * Randomizes this point set using the given `rand`.
     * Use the equivalent `rand.randomize(this)` instead.
     *  @param rand          @ref PointSetRandomization to use
     */
@@ -179,7 +189,6 @@ public abstract class PointSet {
    public void randomize (PointSetRandomization rand) {
        rand.randomize(this);
        // Note that RandomShift.randomize(p) calls  addRandomShift !
-       // Should this be only for RQMCPointSet ?????
    }
 
    /**
@@ -198,97 +207,26 @@ public abstract class PointSet {
     * but printing a warning.   There are also other classes such as `SubsetOfPointSet`,
     * `PaddedPointSet`, ..., in which it is currently not implemented, because one may 
     * not want to modify the underlying point sets indirectly!
+    * @remark **Pierre:**  We should probably randomize the contained point sets in this case.
     * 
-    * These methods are use them internally by randomizations.
+    * These methods are used internally by randomizations.
     * Perhaps they could be made protected.
-    * Calling `PointSet.randomize(RandomShift)` calls `addRandomShift`.  
+    * Calling `RandomShift.randomize(PointSet)` calls `addRandomShift`.  
     */
-   // @Deprecated
    public void addRandomShift (int d1, int d2, RandomStream stream) {
 //   throw new UnsupportedOperationException
 //         ("addRandomShift in PointSet called");
      System.out.println (
-        "******* WARNING:  addRandomShift in PointSet does nothing");
-   }
-
-   /**
-    * Equivalent to
-    * `addRandomShift (0, d2, stream)`, with `d2` the dimension of the
-    * current random shift.
-    */
-   // @Deprecated
-   public void addRandomShift (RandomStream stream) {
-      addRandomShift (0, dimShift, stream);
-  }
-
-   /**
-    * Equivalent to `addRandomShift(d1, d2, stream)`, with the current random
-    * stream.
-    */
-   // @Deprecated
-   public void addRandomShift (int d1, int d2) {
-      addRandomShift (d1, d2, shiftStream);
-  }
-
-   /**
-    * Equivalent to `addRandomShift(0, d2, stream)` with the current random
-    * stream and `d2` the dimension of the current random shift.
-    */
-   // @Deprecated
-   public void addRandomShift () {
-      addRandomShift (0, dimShift, shiftStream);
+        "******* WARNING:  addRandomShift in abstract class PointSet does nothing");
    }
 
    /**
     * Erases the current random shift, if any.
     */
-   // @Deprecated
    public void clearRandomShift() {
       capacityShift = 0;
       dimShift = 0;
 //      shiftStream = null;
-  }
-
-   /**
-    * By default, this method simply calls `addRandomShift (fromDim,
-    * toDim, stream)`, which does nothing.
-    */
-   @Deprecated
-   public void randomize (int fromDim, int toDim, RandomStream stream) {
-      addRandomShift (fromDim, toDim, stream);
-   }
-
-   /**
-    * By default, this method simply calls
-    * {@link #randomize(int,int,RandomStream) randomize(0, dim, stream)}.
-    */
-   @Deprecated
-   public void randomize (RandomStream stream) {
-      addRandomShift (stream);
-  }
-
-   /**
-    * By default, this method simply calls `addRandomShift(d1, d2)`.
-    */
-   @Deprecated
-   public void randomize (int d1, int d2) {
-      addRandomShift (d1, d2);
-  }
-
-   /**
-    * By default, this method simply calls `addRandomShift()`.
-    */
-   @Deprecated
-   public void randomize () {
-      addRandomShift();
-   }
-
-   /**
-    * By default, this method simply calls `clearRandomShift()`.
-    */
-   @Deprecated
-   public void unrandomize() {
-      clearRandomShift();
   }
 
    /**
@@ -471,8 +409,6 @@ public abstract class PointSet {
          acc = 13;
       else
          acc = 10;
-      if (null != shiftStream)
-         acc += 6;
       int width = acc + 3;
       String chaine;
       for (int i=0; i<n; i++) {
@@ -546,14 +482,14 @@ public abstract class PointSet {
 
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// This class implements a default point set iterator.
-// Since it is inherited by subclasses, it can be used as a base class
-// for iterators.
-// It is implemented as an inner class because it can then use directly
-// the variables of the PointSet class.  It would be more difficult and
-// cumbersome to access those variables if it was implemented as a
-// separate class.
-
+   /**
+    * This class implements a default point set iterator.
+    * Since it is inherited by subclasses, it can be used as a base class 
+    * for iterators.  It is implemented as an inner class because it can then use 
+    * directly the variables of the PointSet class. It would be more difficult and
+    * cumbersome to access those variables if it was implemented as a
+    * separate class.
+    */ 
    protected class DefaultPointSetIterator implements PointSetIterator {
 
       protected int curPointIndex = 0;      // Index of the current point.
