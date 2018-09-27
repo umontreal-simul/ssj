@@ -32,7 +32,7 @@ import cern.colt.list.*;
 
 /**
  * This abstract class provides the basic structures for storing and
- * manipulating a *highly uniform point set* defined by a set of cycles. The
+ * manipulating a point set defined by a set of cycles. The
  * @f$s@f$-dimensional points are all the vectors of @f$s@f$ successive
  * values found in any of the cycles, from any starting point. Since this is
  * defined for any positive integer @f$s@f$, the points effectively have an

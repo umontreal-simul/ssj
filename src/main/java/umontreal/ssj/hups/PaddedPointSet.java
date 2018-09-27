@@ -159,7 +159,7 @@ public class PaddedPointSet extends PointSet {
 
    public void randomize (RandomStream stream)  {
       // Executes the randomizations of the list
-      super.randomize (stream);
+      //  super.randomize (stream);  // Removed this because PointSet.randomize(stream) does nothing.
       /* can also use lazy permutations */
       for (int set = 0; set < curPointSets; set++)
          if (permutation[set] != null) {

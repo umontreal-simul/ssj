@@ -365,8 +365,7 @@
  * cycles*. We can store either the successive @f$u_j@f$’s directly, or the
  * successive @f$s_j@f$’s, over each cycle. The class
  * @ref umontreal.ssj.hups.CycleBasedPointSet provides the framework for
- * doing that.   
- *
+ * doing that.
  * For example, a Korobov lattice point set is defined via the recurrence
  * @f$x_j = a x_{j-1} \bmod n@f$ and output function @f$u_j = x_j/n@f$. If
  * @f$n@f$ is prime and @f$a@f$ is a primitive element modulo @f$n@f$, then
@@ -379,7 +378,7 @@
  * There are cases where @f$n@f$ is a power of two, say @f$n = 2^k@f$, and
  * where the state @f$s_j@f$ is represented as a @f$k@f$-bit string. 
  * Concrete instances are usually based on linear recurrences modulo 2 and they include
- * the Korobov-type *polynomial lattice rules* in base 2  
+ * the Korobov-type *polynomial lattice rules* in base 2
  * @cite rDIC10a, @cite rLEC99a, @cite vLEC99a,
  * @cite rLEC02b, @cite vLEM03a, @cite rNUY14a, @cite rPAN04a.  In that
  * context, it is often more convenient to store the successive states @f$s_j@f$’s
@@ -415,7 +414,7 @@
  * given point, we use *point set iterators*, that resemble the iterators
  * defined in Java *collections*, except that they loop over bi-dimensional
  * sets. Their general behavior is defined in the interface
- * @ref umontreal.ssj.hups.PointSetIterator. 
+ * @ref umontreal.ssj.hups.PointSetIterator.
  * It contains methods to traverse a point set. 
  * One can return only one coordinate, @f$t@f$
  * coordinates, change the current coordinate and current point index, reset
@@ -500,7 +499,7 @@
  * However, not every type of randomization is compatible with a given type of point set.
  * For example, a @ref umontreal.ssj.hups.LMSScrambleShift and a
  * @ref umontreal.ssj.hups.NestedUniformScrambling apply only to @ref DigitalNet
- * point sets.  
+ * point sets.
  * The usual (and recommended) way of doing RQMC in SSJ is to construct a 
  * `PointSet` and a compatible `PointSetRandomization`, combine them into an 
  * `RQMCPointSet`, and use the latter to run RQMC experiments.
@@ -512,7 +511,7 @@
  * that transform all the QMC points @f$\mathbf{u}_i@f$ after they have been 
  * computed.  However, almost all randomizations are not implemented that way,
  * but they are incorporated directly in the calculation of the points @f$\mathbf{u}_i@f$
- * by the point set iterators in the `PointSet` subclasses, mainly for reasons of efficiency.  
+ * by the point set iterators in the `PointSet` subclasses, mainly for reasons of efficiency.
  * In fact, the `randomize` method of a `PointSetRandomization` applied to a `PointSet` object 
  * `p` can only impact the point set `p`, which means that the randomization must be 
  * incorporated in `p` in some way.
@@ -524,7 +523,7 @@
  * that takes a `RandomStream` and generates a random shift to be applied to 
  * all the points.  Depending on the type of point set, it can be either
  * a digital shift or a shift modulo 1.  This must be specified and defined 
- * inside each subclass of `PointSet`.  
+ * inside each subclass of `PointSet`.
  * By default, for all @ref DigitalNet point sets, 
  * this random shift is a *random digital shift*, whereas for ordinary lattice 
  * rules it is a *random shift modulo 1*.
@@ -533,6 +532,17 @@
  * A @ref umontreal.ssj.hups.RandomShift  is a type of randomization that invokes
  * directly this internal `addRandomShift` facility.
  * 
+ * One complication arises in the case of point sets having an unbounded number of coordinates;
+ * for example, a #CycleBasedPointSet, whose points have a infinite number of coordinates.
+ * In this case, the random shift must be generated for a finite number of coordinates,
+ * but it can always be extended later if we need more (randomized) coordinates
+ * for any given point.  This is one of the main reasons for having a version of the
+ * `addRandomShift` method that generates the random shift only over an arbitrary
+ * range of coordinates, say from `d1` to `d2-1`.  It can be used to *extend* the current
+ * random shift if needed.  This extension will usually be performed automatically by the 
+ * iterator, using the same `RandomStream`  that was used to produce the previous random shift
+ * (this stream is saved internally for this purpose).
+ *
  * We recommend to always use a `PointSetRandomization` object (such as a `RandomShift`)
  * and use its `randomize (PointSet p)` method
  * rather than calling `addRandomShift` directly, because this permits one to change

@@ -29,9 +29,9 @@ import umontreal.ssj.rng.*;
 
 /**
  * This class provides the basic structures for storing and manipulating <em>linear digital nets in
- * base @f$b@f$</em>, for an arbitrary base
+ * base @f$b@f$</em>, for an arbitrary base @f$b\ge2@f$. 
  * 
- * @f$b\ge2@f$. We recall that a net contains @f$n = b^k@f$ points in
+ * We recall that a net contains @f$n = b^k@f$ points in
  * @f$s@f$ dimensions, where the @f$i@f$th point @f$\mathbf{u}_i@f$, for
  * @f$i=0,…,b^k-1@f$, is defined as follows:
  * @f{align*}{ i & = \sum_{\ell=0}^{k-1} a_{i,\ell} b^{\ell}, \\ \begin{pmatrix} u_{i,j,1} \\
@@ -47,18 +47,22 @@ import umontreal.ssj.rng.*;
  * @f$(l,c)@f$ of @f$\mathbf{C}_j@f$ (counting elements from 0) is stored at
  *             position @f$[jk+c][l]@f$ in this array.
  *
- *             The points @f$\mathbf{u}_i@f$ are enumerated using the Gray code technique as
- *             proposed in @cite rANT79a, @cite rTEZ95a&thinsp; (see also
- * @cite fGLA04a, @cite vHON03a&thinsp;). With this technique, the
+ * To enumerate the points, one should avoid using the method 
+ * {@link #getCoordinate() getCoordinate(i, j)}
+ * for arbitrary values of `i` and `j`, because this is much slower than using a
+ * #PointSetIterator to access successive coordinates.
+ * By default, the iterator enumerates the points @f$\mathbf{u}_i@f$ using a Gray code technique as
+ *             proposed in @cite rANT79a, @cite rTEZ95a, and also described in
+ * @cite fGLA04a, @cite vHON03a). With this technique, the
  * @f$b@f$-ary representation of @f$i@f$, @f$\mathbf{a}_i = (a_{i,0}, …, a_{i,k-1})@f$, is replaced
- *             in Equation ( {@link REF_hups_overview_eq_digital_Cj digital-Cj} ) by a Gray code
+ *             in Equation ({@link REF_hups_overview_eq_digital_Cj digital-Cj}) by a Gray code
  *             representation of @f$i@f$, @f$\mathbf{g}_i = (g_{i,0}, …, g_{i,k-1})@f$. The Gray
  *             code @f$\mathbf{g}_i@f$ used here is defined by @f$g_{i,k-1} = a_{i,k-1}@f$
- *             and @f$g_{i,\ell} = (a_{i,\ell} - a_{i,\ell+1}) \mod b@f$ for @f$\ell= 0,…,k-2@f$. It
+ *             and @f$g_{i,\ell} = (a_{i,\ell} - a_{i,\ell+1}) \bmod b@f$ for @f$\ell= 0,…,k-2@f$. It
  *             has the property that @f$\mathbf{g}_i = (g_{i,0}, …, g_{i,k-1})@f$
  *             and @f$\mathbf{g}_{i+1} = (g_{i+1,0}, …, g_{i+1,k-1})@f$ differ only in the position
  *             of the smallest index @f$\ell@f$ such that @f$a_{i,\ell} < b - 1@f$, and we
- *             have @f$g_{i+1,\ell} = (g_{i,\ell}+1) \mod b@f$ in that position.
+ *             have @f$g_{i+1,\ell} = (g_{i,\ell}+1) \bmod b@f$ in that position.
  *
  *             This Gray code representation permits a more efficient enumeration of the points by
  *             the iterators. It changes the order in which the points
@@ -75,35 +79,30 @@ import umontreal.ssj.rng.*;
  *                     adding column @f$\ell@f$ of the generator matrix
  * @f$\mathbf{C}_j@f$ to the old digits, modulo @f$b@f$.
  *
- *                    One should avoid using the method {@link #getCoordinate() getCoordinate(i, j)}
- *                    for arbitrary values of `i` and `j`, because this is much slower than using an
- *                    iterator to access successive coordinates.
- *
- *                    Digital nets can be randomized in various ways @cite mMAT99a,
- * @cite rFAU02a, @cite vLEC02a, @cite vOWE03a&thinsp;. Several types of randomizations specialized
+ * Digital nets can be randomized in various ways @cite mMAT99a,
+ * @cite rFAU02a, @cite vLEC02a, @cite vOWE03a. Several types of randomizations specialized
  *       for nets are implemented directly in this class.
- *
  *       A simple but important randomization is the *random digital shift* in base
  * @f$b@f$, defined as follows: replace each digit @f$u_{i,j,\ell}@f$ in (
  *          {@link REF_hups_overview_eq_digital_uij digital-uij} ) by
- * @f$(u_{i,j,\ell} + d_{j,\ell}) \mod b@f$, where the @f$d_{j,\ell}@f$’s are i.i.d. uniform
- *                  over @f$\{0,…,b-1\}@f$. This is equivalent to applying a single random shift to
+ * @f$(u_{i,j,\ell} + d_{j,\ell}) \bmod b@f$, where the @f$d_{j,\ell}@f$’s are i.i.d. uniform
+ *                  over @f$\{0,\dots,b-1\}@f$. This is equivalent to applying a single random shift to
  *                  all the points in a formal series representation of their coordinates @cite
- *                  vLEC02a, @cite vLEM03a&thinsp;. In practice, the digital shift is truncated
+ *                  vLEC02a, @cite vLEM03a. In practice, the digital shift is truncated
  *                  to @f$w@f$ digits, for some integer
  * @f$w\ge r@f$. Applying a digital shift does not change the equidistribution and @f$(t,m,s)@f$-net
  *         properties of a point set
- * @cite vHON03a, @cite vLEC99a, @cite vLEM03a&thinsp;. Moreover, with the random shift, each point
+ * @cite vHON03a, @cite vLEC99a, @cite vLEM03a. Moreover, with the random shift, each point
  *       is uniformly distributed over the unit hypercube (but the points are not independent, of
  *       course).
  *
- *       A second class of randomizations specialized for digital nets are the *linear matrix
+ * A second class of randomizations specialized for digital nets are the *linear matrix
  *       scrambles* @cite mMAT99a, @cite rFAU02a, @cite vHON03a,
- * @cite vOWE03a&thinsp;, which multiply the matrices @f$\mathbf{C}_j@f$ by a random invertible
+ * @cite vOWE03a, which multiply the matrices @f$\mathbf{C}_j@f$ by a random invertible
  *       matrix @f$\mathbf{M}_j@f$, modulo @f$b@f$. There are several variants, depending on
  *       how @f$\mathbf{M}_j@f$ is generated, and on whether @f$\mathbf{C}_j@f$ is multiplied on the
  *       left or on the right. In our implementation, the linear matrix scrambles are incorporated
- *       directly into the matrices @f$\mathbf{C}_j@f$ (as in @cite vHON03a&thinsp;), so they do not
+ *       directly into the matrices @f$\mathbf{C}_j@f$ (as in @cite vHON03a), so they do not
  *       slow down the enumeration of points. Methods are available for applying linear matrix
  *       scrambles and for removing these randomizations. These methods generate the appropriate
  *       random numbers and make the corresponding changes to the @f$\mathbf{C}_j@f$’s. A copy of
@@ -117,14 +116,14 @@ import umontreal.ssj.rng.*;
  *                      the current ones, making the changes permanent. This is useful if one wishes
  *                      to apply two or more linear matrix scrambles on top of each other.
  *
- *                      Linear matrix scrambles are usually combined with a random digital shift;
+ * Linear matrix scrambles are usually combined with a random digital shift;
  *                      this combination is called an *affine matrix scramble*
- * @cite vOWE03a&thinsp;. These two randomizations are applied via separate methods. The linear
+ * @cite vOWE03a. These two randomizations are applied via separate methods. The linear
  *       matrix scrambles are incorporated into the matrices
  * @f$\mathbf{C}_j@f$ whereas the digital random shift is stored and applied separately,
  *                    independently of the other scramblings.
  *
- *                    Applying a digital shift or a linear matrix scramble to a digital net
+ * Applying a digital shift or a linear matrix scramble to a digital net
  *                    invalidates all iterators for that randomized point, because each iterator
  *                    uses a *cached* copy of the current point, which is updated only when the
  *                    current point index of that iterator changes, and the update also depends on
@@ -201,7 +200,7 @@ public class DigitalNet extends PointSet {
 		int idigits = intToDigitsGray(b, i, numCols, bdigit, gdigit);
 		double result = 0;
 		if (digitalShift != null && dimShift < j)
-			addRandomShift(dimShift, j, shiftStream);
+	     	addRandomShift(dimShift, j, shiftStream);  // Extends the random shift up to j if needed.  
 		for (l = 0; l < outDigits; l++) {
 			if (digitalShift == null)
 				sum = 0;
@@ -248,7 +247,7 @@ public class DigitalNet extends PointSet {
 			i = i / b;
 		}
 		if (digitalShift != null && dimShift < j)
-			addRandomShift(dimShift, j, shiftStream);
+			addRandomShift(dimShift, j, shiftStream); // Extends the random shift up to j if needed.
 		double result = 0;
 		for (l = 0; l < outDigits; l++) {
 			if (digitalShift == null)
@@ -959,7 +958,7 @@ public class DigitalNet extends PointSet {
 			gdigit = new int[numCols];
 			dimS = dim;
 			cachedCurPoint = new int[(dim + 1) * outDigits];
-			init();  // This call is important so that subclasses don't
+			init();  // This call is important so that subclasses do not
 			         // automatically call 'resetCurPointIndex' at the time
 			         // of construction as this may cause a subtle
 			         // 'NullPointerException'
@@ -993,7 +992,7 @@ public class DigitalNet extends PointSet {
 					cachedCurPoint[i] = 0;
 			else {
 				if (dimShift < dimS)
-					addRandomShift(dimShift, dimS, shiftStream);
+			   	   addRandomShift(dimShift, dimS, shiftStream);  // Extends the random shift to more coordinates!
 				for (int j = 0; j < dimS; j++)
 					for (int k = 0; k < outDigits; k++)
 						cachedCurPoint[j * outDigits + k] = digitalShift[j][k];

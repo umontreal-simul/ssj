@@ -52,7 +52,7 @@ import umontreal.ssj.util.PrintfFormat;
  * queried by  #getNumPoints. The points and coordinates are both numbered
  * starting from 0 and their number can actually be infinite.
  *
- * The #iterator method provides a *point set iterator* which can
+ * The #iterator method provides a @ref PointSetIterator object which can
  * enumerate the points and their coordinates. Several iterators over the
  * same point set can coexist at any given time.  However, in the current implementation
  * they will all enumerate the same randomized points when the points are randomized,
@@ -73,14 +73,13 @@ import umontreal.ssj.util.PrintfFormat;
  * highly-uniform points, i.e., to replace Monte Carlo by QMC or RQMC
  * in a simulation program.
  *
- * This abstract class has only one abstract method:  #getCoordinate.
+ * The present abstract class has only one abstract method:  #getCoordinate.
  * Providing an implementation for this method is already sufficient for the
  * subclass to work. However, in most cases, efficiency can be dramatically
  * improved by overwriting  #iterator to provide a custom iterator that does
  * not necessarily rely on  #getCoordinate.  Direct use of
  * #getCoordinate to access the coordinates is generally discouraged. One
  * should access the points and coordinates via the iterators.
- *
  * Built-in range checks when generating the points require some extra time and also assume that
  * nobody ever uses negative indices. If #getCoordinate is never accessed
  * directly by the user, it may be implemented without range checks.
@@ -88,9 +87,6 @@ import umontreal.ssj.util.PrintfFormat;
  * In this class, the #addRandomShift() methods do nothing.   
  * In subclasses `addRandomShift (d1, d2, stream)` can be optionally reimplemented 
  * and this is sufficient to determine what all the `addRandomShift` methods will do.
- *  
- * // We could  make the
- * // `randomize(stream)` methods abstract, or make them do nothing by default.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -129,7 +125,13 @@ public abstract class PointSet {
     */
    protected int capacityShift = 0;
    
-   //  protected RandomStream shiftStream;    // Stream used to generate the random shifts.
+   /** 
+    * Stream used to generate the random shifts.  This stream is saved from the last
+    * time we have called #addRandomShift, in case this method has to be called again 
+    * internally by an iterator.  This may happen for example if the points have unbounded 
+    * dimension and we need to extend the random shift to additional coordinates.
+    */
+   protected RandomStream shiftStream;
 
    /**
     * Returns the dimension (number of available coordinates) of the points.
@@ -202,12 +204,15 @@ public abstract class PointSet {
     * For others, such as lattice rules, it implements a random shift modulo 1.
     * The random shift is generated using the `stream` to generate the uniform random numbers, 
     * one for each of the coordinates `d1` to `d2-1`.
+    * Allowing an arbitrary range `d1` to `d2-1` permits one to extends the random shift
+    * to additional coordinates when needed, e.g., when the number of coordinates that
+    * we need is unknown a priori.
     * 
     * The current implementation in this generic class does nothing 
     * but printing a warning.   There are also other classes such as `SubsetOfPointSet`,
     * `PaddedPointSet`, ..., in which it is currently not implemented, because one may 
     * not want to modify the underlying point sets indirectly!
-    * @remark **Pierre:**  We should probably randomize the contained point sets in this case.
+    * @remark **Pierre:**  Perhaps we could randomize the contained point sets in this case.
     * 
     * These methods are used internally by randomizations.
     * Perhaps they could be made protected.
@@ -219,6 +224,17 @@ public abstract class PointSet {
      System.out.println (
         "******* WARNING:  addRandomShift in abstract class PointSet does nothing");
    }
+
+	/**
+	 * Same as {@link #addRandomShift() addRandomShift(0, dim, stream)}, where `dim` is the
+	 * dimension of the point set.
+	 * 
+	 * @param stream
+	 *            random number stream used to generate uniforms for the random shift
+	 */
+	public void addRandomShift(RandomStream stream) {
+		addRandomShift(0, dim, stream);
+	}
 
    /**
     * Erases the current random shift, if any.
@@ -546,7 +562,7 @@ public abstract class PointSet {
       }
 
 	   /**
-	    * @return the next coordinate, if any
+	    * @return the next coordinate
 	    */ 
       public double nextCoordinate() {
          if (getCurPointIndex() >= numPoints || getCurCoordIndex() >= dim)
@@ -617,7 +633,7 @@ public abstract class PointSet {
       }
 
 	   /**
-	    * Same as #nextPoint(p[],0,d).
+	    * Same as {@link #nextPoint(double[],int,int) nextPoint(p, 0, d)}.
 	    */ 
       public int nextPoint (double p[], int d) {
          resetCurCoordIndex();
