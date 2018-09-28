@@ -15,8 +15,8 @@
  * quasi-Monte Carlo integration, as we now briefly explain. 
  * For more details, see
  * @cite rDIC10a, @cite fGLA04a, @cite rHEL98a, @cite vLEC02a, @cite vLEC03b, @cite vLEC09f,
- * @cite vLEC18a, 
  * @cite vOWE98a, @cite rNIE92b, @cite rNUY14a, @cite vSLO94a; for example.
+ * A short applied tutorial can be found in @cite vLEC18a. 
  *
  * Suppose we want to estimate the integral of a function @f$f@f$ defined
  * over the @f$s@f$-dimensional unit hypercube,
@@ -277,7 +277,7 @@
  * binary arithmetic is generally much faster than in other bases.
  * Among those, we find Sobol sequences and Sobol nets, for instance;
  * see @ref SobolSequence.
- * Polynomial lattice rules turn out to be special cases of digital nets
+ * Polynomial lattice rules (see below) are special cases of digital nets
  * and in practice, to generate the points, we implement them as digital nets.
  *
  *
@@ -328,6 +328,48 @@
  * good parameters @f$a_1,\dots, a_s@f$ for rank 1 lattice rules for any given 
  * @f$s@f$ and @f$n@f$ and various types of criteria, can be found in 
  * @cite vLEC12a, @cite vLEC12b, @cite vLEC16a, and @cite rNUY14a, for example.
+ *
+ *
+ * ## Polynomial Lattice Rules
+ *
+ * Integration lattices defined in a space of polynomials instead of in the real space
+ * provide another very effective way of constructing QMC points
+ * @cite vDIC09a, @cite rDIC10a, @cite rLEC02b, @cite vLEC04a, @cite vLEC09f,
+ * @cite vLEM00t, @cite vLEM03a, @cite rNIE92c, @cite rNUY14a. 
+ * These lattices are similar to the ordinary integration lattices, but are 
+ * defined in different spaces.  They also turn out to be special cases of digital nets.
+ * The following follows @cite vLEC09f.
+ *
+ * To define a *polynomial integration lattice*, we first select an integer 
+ * @f$b \geq 2@f$ called the *base*, let @f$\mathbb{Z}_b@f$ denote the ring of integers modulo @f$b@f$,
+ * @f$\mathbb{Z}_b[z]@f$ the ring of polynomials with coefficients in @f$\mathbb{Z}_b@f$,
+ * and @f$\mathbb{L}_b@f$ the ring of formal Laurent series with coefficients in @f$\mathbb{Z}_b@f$,
+ * which have the form @f$\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}@f$, where @f$x_\ell\in\mathbb{Z}_b@f$.
+ * The lattice is defined as
+ * @f[                                     \tag{eq:cLs}
+ *     {\mathcal{L}_s} = \left\{\boldmath{v}(z) = \sum_{j=1}^s q_j(z) \boldmath{v}_j(z) 
+ *             \mbox{ such that each } q_j(z) \in \mathbb{Z}_b[z]\right\}, 
+ * @f]
+ * where @f$\bv_j(z) = \boldmath{a}_j(z)/P(z) \in \mathbb{L}_b@f$ for @f$j=1,\dots,s@f$, 
+ * @f$P(z) = z^k + \alpha_1 z^{k-1} + \cdots + \alpha_k \in \mathbb{Z}_b[z]@f$, 
+ * and each @f$\boldmath{a}_j(z)@f$ is a vector of @f$s@f$ polynomials of degree less than @f$k@f$.
+ * We have @f$(\ZZ_b[z])^s \subseteq \mathcal{L}_s@f$.
+ * The output mapping @f$\varphi : \LL_b \to \RR@f$ is defined by
+ * \f[
+ *   {\varphi}\left(\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}\right) =
+ *   \sum_{\ell=\omega}^\infty x_\ell b^{-\ell}.
+ * \f]
+ * The *polynomial lattice rule* uses the node set 
+ * @f$P_n = \varphi(\mathcal{L}_s) \cap [0,1)^s = \varphi(\mathcal{L}_s \cap \mathbb{L}_{b,0})@f$,
+ * where @f$\mathbb{L}_{b,0} = \mathbb{L}_b@f$ mod @f$\mathbb{Z}_b[z]@f$.
+ * Most properties of ordinary lattice rules have counterparts
+ * for the polynomial rules \cite vDIC08b, \cite rDIC10a, \cite vLEC04a, \cite vLEM03a, @cite rNUY14a.
+ *
+ * In SSJ, the polynomial lattice rules are implemented as digital nets, because this provides 
+ * a faster way to generate the points than working directly in polynomial arithmetic,
+ * especially in base @f$b = 2@f$.  
+ * The use can construct a #DigitalNet object from a polynomial lattice rule using ..........
+ *   * ......  explain what we have in hups for that. *
  *
  *
  * ## Cycle-based point sets
@@ -597,6 +639,12 @@
  * Such container point sets implement their own iterators that use the
  * iterators of the contained point sets to access the points almost as
  * efficiently as if the contained point set iterators were used directly.
+ *
+ *
+ * ## Stratified sampling in unit cube, Latin hypercube sampling, etc.
+ *
+ *  * .....  to be explained.  Randomizations, etc.   *
+ *
  *
  *
  *
