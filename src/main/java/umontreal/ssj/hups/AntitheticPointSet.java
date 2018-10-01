@@ -3,7 +3,7 @@
  * Description:  
  * Environment:  Java
  * Software:     SSJ 
- * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Copyright (C) 2001--2018  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
  * @author       
  * @since
@@ -27,8 +27,8 @@ package umontreal.ssj.hups;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This container class provides antithetic points. That is, @f$1 -
- * u_{i,j}@f$ is returned in place of coordinate @f$u_{i,j}@f$. To generate
+ * This container class provides antithetic versions of the contained points.   
+ * That is, @f$1 - u_{i,j}@f$ is returned in place of coordinate @f$u_{i,j}@f$. To generate
  * regular and antithetic variates with a point set `p`, e.g., for variance
  * reduction, one can define an  @ref AntitheticPointSet object `pa` that
  * contains `p`, and then generate the regular variates with `p` and the
@@ -39,11 +39,11 @@ import umontreal.ssj.util.PrintfFormat;
 public class AntitheticPointSet extends ContainerPointSet {
 
    /**
-    * Constructs an antithetic point set from the given point set `P`.
-    *  @param P            point set for which we want antithetic version
+    * Constructs an antithetic point set from the given point set `p`.
+    *  @param p            point set for which we want an antithetic version
     */
-   public AntitheticPointSet (PointSet P) {
-      init (P);
+   public AntitheticPointSet (PointSet p) {
+      init (p);
    }
 
 

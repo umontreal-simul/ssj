@@ -32,8 +32,8 @@ import cern.colt.list.*;
 
 /**
  * This abstract class provides the basic structures for storing and
- * manipulating a point set defined by a set of cycles. The
- * @f$s@f$-dimensional points are all the vectors of @f$s@f$ successive
+ * manipulating a point set defined by a set of cycles. The @f$s@f$-dimensional 
+ * points are all the vectors of @f$s@f$ successive
  * values found in any of the cycles, from any starting point. Since this is
  * defined for any positive integer @f$s@f$, the points effectively have an
  * infinite number of dimensions. The number of points, @f$n@f$, is the sum
@@ -73,10 +73,7 @@ public abstract class CycleBasedPointSet extends PointSet {
    }
 
 /**
- * Adds a random shift to all the points of the point set, using stream
- * `stream` to generate the random numbers, for coordinates `d1` to `d2 - 1`.
- * This applies an addition modulo 1 of a single random point to all the
- * points.  Subclasses may redefine this method to apply a random digital shift.
+ * Same as the same method in `PointSet`.
  *  @param stream       Stream used to generate random numbers
  */
 public void addRandomShift (int d1, int d2, RandomStream stream) {
@@ -118,7 +115,7 @@ public void addRandomShift (int d1, int d2, RandomStream stream) {
     * subclass constructors to fill up the list of cycles.
     */
    protected void addCycle (AbstractList c) {
-      // Adds the cycle \texttt{c} to the list of all cycles.
+      // Adds the cycle `c` to the list of all cycles.
       // Used by subclass constructors to fill up the list of cycles.
       cycles.add (c);
       numCycles++;
@@ -231,7 +228,7 @@ public void addRandomShift (int d1, int d2, RandomStream stream) {
             outOfBounds();
          if (curCoordIndex + dim >= dimShift)
             addRandomShift (dimShift, curCoordIndex + dim + 1, shiftStream);
-         int j = curCoordInCycle;
+         // int j = curCoordInCycle;
          int maxj = curCycle.size();
          double x;
          for (int i = 0; i < dim; i++) {
