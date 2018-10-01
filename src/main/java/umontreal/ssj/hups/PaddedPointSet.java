@@ -30,22 +30,22 @@ import umontreal.ssj.rng.RandomStream;
 /**
  * This container class realizes *padded point sets*, constructed by taking
  * some coordinates from a point set @f$P_1@f$, other coordinates from a
- * point set @f$P_2@f$, and so on. This can be used to implement *latin
- * supercube sampling* @cite vOWE98a, for example. After calling the
+ * point set @f$P_2@f$, and so on. This can be used to implement *Latin
+ * Supercube Sampling* as proposed in @cite vOWE98a, for example. After calling the
  * constructor to create the structure, component point sets can be padded to
- * it by calling  #padPointSet or  #padPointSetPermute.
+ * it by calling  `padPointSet` or  `padPointSetPermute`.
  *
  * Only sets with the same number of points can be padded. Point sets with
  * too many points or coordinates can be trimmed down by using the class
  * @ref SubsetOfPointSet before they are padded. Infinite-dimensional point
- * sets are allowed, but once one is padded, no additional point set can be
- * padded.
+ * sets are allowed, but once one is padded, no additional point set can be padded.
  *
  * The points of each padded set can be permuted randomly, independently
  * across the padded sets. If such a random permutation is desired, the point
- * set should be padded via  #padPointSetPermute. When calling  #randomize,
- * random permutations are generated for all point sets that have been padded
- * by  #padPointSetPermute.
+ * set should be padded via  `padPointSetPermute'. When calling  `randomize`,
+ * random permutations are then generated for all point sets that have been padded
+ * by  `padPointSetPermute`.  This is all what this `randomize` method does.
+ * If other randomizations are desired, the must be applied separately.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -59,9 +59,9 @@ public class PaddedPointSet extends PointSet {
    /**
     * Constructs a structure for padding at most `maxPointSets` point
     * sets. This structure is initially empty and will eventually contain
-    * the different point sets that are padded.
+    * the different point sets that are padded, via the method `padPointSet`.
     *  @param maxPointSets maximum number of point sets authorized by the
-    *                      constructed object
+    *  constructed object.
     */
    public PaddedPointSet (int maxPointSets) {
       this.maxPointSets = maxPointSets;
@@ -71,7 +71,8 @@ public class PaddedPointSet extends PointSet {
    }
 
    /**
-    * Pads the point set `P` to the present structure.
+    * Pads the point set `P` to the present structure.  
+    * This adds new coordinates to the points.
     *  @param P            point set being padded
     */
    public void padPointSet (PointSet P) {
@@ -101,9 +102,9 @@ public class PaddedPointSet extends PointSet {
    }
 
    /**
-    * Pads the point set `P`, which is assumed to be *finite*. A random
-    * permutation will be generated (when calling  #randomize ) and used
-    * to access the coordinates taken from the points of `P` (i.e., these
+    * Pads the point set `P`, which is assumed to be *finite*. A new random
+    * permutation of these points will be generated when calling  `randomize` and 
+    * will be used to access the coordinates taken from the points of `P` (i.e., these
     * points are randomly permuted).
     *  @param P            point set being padded
     */
@@ -120,13 +121,15 @@ public class PaddedPointSet extends PointSet {
    }
 
 
+   /**
+    *  @returns  Coordinate @f$u_{i,j}@f$ for the padded point set.
+    */
    public double getCoordinate (int i, int j) {
-      int set = 0;
+      int set = 0;  // Will be the padded set to which this coordinate belongs,
       if (j >= dim)
          throw new IllegalArgumentException ("Not enough dimensions");
       while (j >= startDim[set])
          set++;
-
       /*
       if (permutation[set] == null)
          pointSet[set].resetPoint(i);
@@ -140,7 +143,6 @@ public class PaddedPointSet extends PointSet {
       
       return pointSet[set].nextCoordinate();
       */
-
       if (permutation[set] != null)
          i = permutation[set][i];
       if (set != 0)
@@ -148,6 +150,10 @@ public class PaddedPointSet extends PointSet {
       return pointSet[set].getCoordinate (i, j);
    }
 
+   /**
+    *  Erases all the random permutations of the padded point sets that are randomly permuted.
+    *  All the permutations are reset to the identity.
+    */
    public void unrandomize() {
       for (int set = 0; set < curPointSets; set++) {
          if (permutation[set] != null) {
@@ -157,6 +163,10 @@ public class PaddedPointSet extends PointSet {
       }
    }
 
+   /**
+    *  Randomly permutes the points for the padded point sets that have been added via
+    *  `padPointSetPermute`.
+    */
    public void randomize (RandomStream stream)  {
       // Executes the randomizations of the list
       //  super.randomize (stream);  // Removed this because PointSet.randomize(stream) does nothing.
@@ -172,6 +182,9 @@ public class PaddedPointSet extends PointSet {
          }
    }
 
+   /**
+    *  Returns a `PaddedIterator` for this padded point set.
+    */
    public PointSetIterator iterator() {
       return new PaddedIterator();
    }

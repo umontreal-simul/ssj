@@ -368,8 +368,8 @@
  * In SSJ, the polynomial lattice rules are implemented as digital nets, because this provides 
  * a faster way to generate the points than working directly in polynomial arithmetic,
  * especially in base @f$b = 2@f$.  
- * The use can construct a #DigitalNet object from a polynomial lattice rule using ..........
- *   * ......  explain what we have in hups for that. *
+ * The user can construct a @ref DigitalNet object from a polynomial lattice rule using .......
+ *   * ......  explain what we have in hups for that.... to be done *
  *
  *
  * ## Cycle-based point sets
@@ -575,7 +575,7 @@
  * directly this internal `addRandomShift` facility.
  * 
  * One complication arises in the case of point sets having an unbounded number of coordinates;
- * for example, a #CycleBasedPointSet, whose points have a infinite number of coordinates.
+ * for example, a @ref CycleBasedPointSet, whose points have a infinite number of coordinates.
  * In this case, the random shift must be generated for a finite number of coordinates,
  * but it can always be extended later if we need more (randomized) coordinates
  * for any given point.  This is one of the main reasons for having a version of the
@@ -626,24 +626,47 @@
  * modulo 1 to the point set that it contains, whatever it is. 
  * It can be used for instance if one wishes to apply a random shift modulo 1 
  * to a `Digitalnet`.  
- *
- * The class  @ref umontreal.ssj.hups.CachedPointSet can be
- * used to store the coordinates of a point set. It is then stored internally
- * as a matrix and can be accessed very efficiently. The
- * @ref umontreal.ssj.hups.SubsetOfPointSet allows one to constrain a point
- * set’s size or dimension, for example to get the dimension of a cycle-based
- * point set finite. The class  @ref umontreal.ssj.hups.PaddedPointSet
- * gathers some coordinates of several point sets to construct a padded point
- * set. The class  @ref umontreal.ssj.hups.AntitheticPointSet allows one to
- * switch on or off the antithetic coordinates generation.
+ * Another one is  @ref umontreal.ssj.hups.AntitheticPointSet, which permits one to
+ * generate the antithetic coordinates for any given point set, 
+ * i.e., return @f$1-u_{i,j}@f$ instead of @f$u_{i,j}@f$.
+ * A third example is a @ref umontreal.ssj.hups.BakerTransformedPointSet,
+ * which applies the baker (or tent) transformation to the contained points.
  * Such container point sets implement their own iterators that use the
  * iterators of the contained point sets to access the points almost as
- * efficiently as if the contained point set iterators were used directly.
+ * efficiently as if the contained point set iterators were used directly,
+ * and they add their transformation.
+ *
+ * The @ref umontreal.ssj.hups.SubsetOfPointSet allows one to constrain a point
+ * set’s size or dimension, for example to limit the dimension of a cycle-based
+ * point set to a finite integer @f$s@f$. The class  @ref umontreal.ssj.hups.PaddedPointSet
+ * gathers two or more point sets of the same cardinality and juxtaposes (pads) them 
+ * to construct a point set whose dimension is the sum of dimensions of the padded components. 
  *
  *
- * ## Stratified sampling in unit cube, Latin hypercube sampling, etc.
+ * ## Cached points for stratified sampling, Latin hypercube sampling, sorted points, etc.
  *
- *  * .....  to be explained.  Randomizations, etc.   *
+ * In the class  @ref umontreal.ssj.hups.CachedPointSet, all coordinates of all 
+ * the points are stored internally in a matrix, and can then be accessed very efficiently. 
+ * Storing the points explicitly like this is necessary for certain types of point
+ * sets or sampling, for which the points cannot be recovered from a smaller amount of information.
+ * One trivial example of this is a set of @f$n@f$ independent random points,
+ * which is implemented in @ref umontreal.ssj.hups.IndependentPointsCached.
+ * This implementation can be useful in case one has a program to simulate a system with
+ * RQMC points and one wishes to try it with independent points for comparizon.
+ * 
+ * Stratified sampling over the unit cube can be implemented as follows.
+ * One partitions the unit cube in @f$n@f$ rectangles of the same size and one generates
+ * one point in each rectangle, uniformly and independently across rectangles.
+ * The class  @ref umontreal.ssj.hups.StratifiedUnitCube implements this.
+ * Here, the randomized points must be stored explicitly, so this is implemented as a subclass
+ * of `CachedPointSet`.
+ * Another subclass is @ref umontreal.ssj.hups.LatinHypercube, which implements 
+ * *Latin hypercube sampling.* 
+ * Yet another one is @ref umontreal.ssj.hups.SortedAndCutPointSet, 
+ * in which the inner points are sorted by the first few (one or more) coordinates,
+ * then these coordinates are removed and the other ones are cached in their new order.
+ * These types of constructions are used in the Array-RQMC method @cite vLEC08a, @cite vLEC16b.
+ *
  *
  *
  *

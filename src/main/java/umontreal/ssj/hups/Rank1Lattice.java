@@ -47,7 +47,6 @@ public class Rank1Lattice extends PointSet {
    protected int[] genAs;          // Lattice generator:  a[i]
    protected double[] v;           // Lattice vector:  v[i] = a[i]/n
    protected double normFactor;    // 1/n.
-   protected double[] shift;       // Random shift, initially null.
 
    private void initN (int n) {
       numPoints = n;
