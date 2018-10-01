@@ -1,11 +1,12 @@
 /**
  * @package umontreal.ssj.latnetbuilder
  *
- * Tools to search for good quasi-Monte Carlo point sets and sequences
- *  *
+ * Tools to search for good quasi-Monte Carlo point sets and sequences 
+ * defined as integration lattices, polynomial lattices, and digital nets (and sequences).
+ * 
  * @anchor REF_latnetbuilder_overview_sec_overview
  *
- * This package provides an interface to the LatNet Builder software to search for good
+ * This package provides an interface to the *LatNet Builder* software to search for good
  * quasi-Monte Carlo point sets and sequences (or HUPS) of various types 
  * (lattices, polynomial lattices, digital nets, etc.) for arbitrary dimension and cardinality, 
  * various uniformity criteria, etc. 
@@ -17,7 +18,13 @@
  * [https://github.com/umontreal-simul/latnetbuilder](https://github.com/umontreal-simul/latnetbuilder)
  * for more details on `LatNet Builder` and its ancestor `Lattice Builder`.
  * 
- *
+ * Important note: `LatNet Builder` 
+ * does not run directly under the *Windows* operating system,
+ * because it is uses the NTL library, which does not run under Windows.
+ * Running it under Windows requires some sort of virtual machine, as explained in the 
+ * `LatNet Builder` documentation.
+ * 
+ * 
  * # Examples
  *
  * @anchor REF_latnetbuilder_overview_sec_examples

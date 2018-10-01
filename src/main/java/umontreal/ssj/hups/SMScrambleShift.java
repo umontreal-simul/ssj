@@ -29,7 +29,7 @@ import java.lang.IllegalArgumentException;
 
 /**
  * This class implements a @ref umontreal.ssj.hups.PointSetRandomization that performs a striped
- * matrix scrambling and adds a random digital shift. Point set must be a @ref
+ * matrix scrambling @cite vOWE03a and adds a random digital shift. Point set must be a @ref
  * umontreal.ssj.hups.DigitalNet or an IllegalArgumentException is thrown.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
@@ -43,7 +43,7 @@ public class SMScrambleShift extends RandomShift {
 	}
 
 	/**
-	 * Sets internal variable `stream` to the given `stream`.
+	 * Constructor that sets the internal variable `stream` to the given `stream`.
 	 * 
 	 * @param stream
 	 *            stream to use in the randomization

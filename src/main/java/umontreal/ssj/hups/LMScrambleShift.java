@@ -3,7 +3,7 @@
  * Description:  performs a left matrix scramble and adds a random digital shift
  * Environment:  Java
  * Software:     SSJ 
- * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Copyright (C) 2001--2018  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
  * @author       
  * @since
