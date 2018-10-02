@@ -49,6 +49,7 @@ import umontreal.ssj.util.PrintfFormat;
  * and this number can be queried by  #getDimension. The number of points is
  * queried by  #getNumPoints. The points and coordinates are both numbered
  * starting from 0 and their number can actually be infinite.
+ * 
  *
  * The #iterator method provides a @ref PointSetIterator object which can
  * enumerate the points and their coordinates. Several iterators over the
@@ -121,9 +122,9 @@ public abstract class PointSet {
    /** 
     * Current dimension of the shift.
     * This is useful mostly for the case where the points have an unlimited number of coordinates.
-    *  **Pierre:** Maybe this could be defined only in `CycleBasedPointSet`.
     */
-   protected int dimShift = 0;
+   // **Pierre:** Maybe this could be defined only in `CycleBasedPointSet`.
+  protected int dimShift = 0;
    
    /** 
     * Number of array elements in the shift vector, always >= dimShift.
@@ -171,7 +172,7 @@ public abstract class PointSet {
     * Returns @f$u_{i,j}@f$, the coordinate @f$j@f$ of the point @f$i@f$.
     * When the points are randomized (e.g., a random shift is added), the values
     * returned by this method should incorporate the randomizations.
-    * @remark **Richard:** La méthode `getCoordinate` de certaines classes
+    * **Richard:** La méthode `getCoordinate` de certaines classes
     * ne tient pas compte du random shift, contrairement à l’itérateur de
     * la même classe. Faut-il que toutes les `getCoordinate` implémentent
     * le random shift quand il existe?   Oui.
