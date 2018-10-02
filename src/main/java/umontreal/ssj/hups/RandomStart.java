@@ -28,10 +28,11 @@ package umontreal.ssj.hups;
 
 /**
  * This class implements a  @ref umontreal.ssj.hups.PointSetRandomization
- * that randomizes a sequence with a random starting point. The point set
+ * that randomizes a sequence simply by taking a random starting point. 
+ * For now, this only applies to the Halton sequence, but it could eventually
+ * be generalized to other types of sequences.  The point set
  * must be an instance of  @ref umontreal.ssj.hups.HaltonSequence or an
- * IllegalArgumentException is thrown. For now, only the Halton sequence is
- * allowed, but there may be others later.
+ * IllegalArgumentException is thrown.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */

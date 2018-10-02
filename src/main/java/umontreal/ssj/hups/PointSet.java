@@ -25,8 +25,6 @@
 package umontreal.ssj.hups;
 
 import java.util.NoSuchElementException;
-// import java.util.List;
-// import java.util.ArrayList;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.util.Num;
 import umontreal.ssj.util.PrintfFormat;
@@ -51,6 +49,7 @@ import umontreal.ssj.util.PrintfFormat;
  * and this number can be queried by  #getDimension. The number of points is
  * queried by  #getNumPoints. The points and coordinates are both numbered
  * starting from 0 and their number can actually be infinite.
+ * 
  *
  * The #iterator method provides a @ref PointSetIterator object which can
  * enumerate the points and their coordinates. Several iterators over the
@@ -84,9 +83,14 @@ import umontreal.ssj.util.PrintfFormat;
  * nobody ever uses negative indices. If #getCoordinate is never accessed
  * directly by the user, it may be implemented without range checks.
  * 
- * In this class, the #addRandomShift() methods do nothing.   
- * In subclasses `addRandomShift (d1, d2, stream)` can be optionally reimplemented 
- * and this is sufficient to determine what all the `addRandomShift` methods will do.
+ * In this abstract class, the #addRandomShift() methods generate a `double[]` array
+ * to be used eventually to add a random shift modulo 1, 
+ * but this random shift is not used here.
+ * It can be used in subclasses when generating coordinates.   
+ * In subclasses, #addRandomShift (d1, d2, stream) can also be optionally re-implemented
+ * to produce something else than a `double[]` array, 
+ * for example when we want the random shift to be digital. 
+ * There are also some types of point sets that do not use at all such a random shift.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -116,15 +120,24 @@ public abstract class PointSet {
    protected int numPoints = 0;
 
    /** 
-    * Dimension of the shift.
+    * Current dimension of the shift.
+    * This is useful mostly for the case where the points have an unlimited number of coordinates.
     */
-   protected int dimShift = 0;
+   // **Pierre:** Maybe this could be defined only in `CycleBasedPointSet`.
+  protected int dimShift = 0;
    
    /** 
     * Number of array elements in the shift vector, always >= dimShift.
     */
    protected int capacityShift = 0;
    
+   /** 
+    * This is the shift vector as a `double[]` array, which contains the current random shift
+    * in case we apply a random shift modulo 1.
+    * It is initially null.  
+    */
+   protected double[] shift;
+
    /** 
     * Stream used to generate the random shifts.  This stream is saved from the last
     * time we have called #addRandomShift, in case this method has to be called again 
@@ -159,7 +172,7 @@ public abstract class PointSet {
     * Returns @f$u_{i,j}@f$, the coordinate @f$j@f$ of the point @f$i@f$.
     * When the points are randomized (e.g., a random shift is added), the values
     * returned by this method should incorporate the randomizations.
-    * @remark **Richard:** La méthode `getCoordinate` de certaines classes
+    * **Richard:** La méthode `getCoordinate` de certaines classes
     * ne tient pas compte du random shift, contrairement à l’itérateur de
     * la même classe. Faut-il que toutes les `getCoordinate` implémentent
     * le random shift quand il existe?   Oui.
@@ -187,42 +200,50 @@ public abstract class PointSet {
     * Use the equivalent `rand.randomize(this)` instead.
     *  @param rand          @ref PointSetRandomization to use
     */
-   @Deprecated
+   // @Deprecated
    public void randomize (PointSetRandomization rand) {
        rand.randomize(this);
        // Note that RandomShift.randomize(p) calls  addRandomShift !
    }
 
    /**
-    * This method should be implemented in subclasses to 
-    * generate a random shift of the appropriate type.
-    * This random shift will be added to all the points when they are enumerated 
-    * by the iterator. 
-    * For certain types of point sets having a digital structure,
-    * such as digital nets and sequences, this method implements a 
-    * random digital shift.  
-    * For others, such as lattice rules, it implements a random shift modulo 1.
+    * By default, this method generates a random shift in the protected `double[]` array `shift`,
+    * to be used eventually for a random shift modulo 1.
+    * This random shift will be added (modulo 1) to all the points when they are enumerated 
+    * by the iterator.  
     * The random shift is generated using the `stream` to generate the uniform random numbers, 
     * one for each of the coordinates `d1` to `d2-1`.
+    * The variable `shiftStream` is also set to this `stream`.
     * Allowing an arbitrary range `d1` to `d2-1` permits one to extends the random shift
     * to additional coordinates when needed, e.g., when the number of coordinates that
-    * we need is unknown a priori.
+    * we need is unknown a priori.   There are also other situations in which we may want
+    * to randomize only specific coordinates, e.g., in the Array-RQMC method.
     * 
-    * The current implementation in this generic class does nothing 
-    * but printing a warning.   There are also other classes such as `SubsetOfPointSet`,
-    * `PaddedPointSet`, ..., in which it is currently not implemented, because one may 
-    * not want to modify the underlying point sets indirectly!
-    * @remark **Pierre:**  Perhaps we could randomize the contained point sets in this case.
+    * This method is re-implemented in subclasses for which a different form of
+    * shift is appropriate, e.g., should produce a random digital shift in base @f$b@f$ for a #DigitalNet,
+    * a binary digital shift for a #DigitalNetBase2, etc.
     * 
     * These methods are used internally by randomizations.
-    * Perhaps they could be made protected.
-    * Calling `RandomShift.randomize(PointSet)` calls `addRandomShift`.  
+    * For example, calling `RandomShift.randomize(PointSet)` calls `addRandomShift`.
+    * Normally, one should not call them directly, but use #PointSetRandomization objects instead.
     */
    public void addRandomShift (int d1, int d2, RandomStream stream) {
-//   throw new UnsupportedOperationException
-//         ("addRandomShift in PointSet called");
-     System.out.println (
-        "******* WARNING:  addRandomShift in abstract class PointSet does nothing");
+		if (d1 < 0 || d1 > d2)
+			throw new IllegalArgumentException("illegal parameter d1 or d2");
+		if (d2 > capacityShift) {
+			int d3 = Math.max(4, capacityShift);
+			while (d2 > d3)
+				d3 *= 2;
+			double[] temp = new double[d3];
+			capacityShift = d3;
+			for (int i = 0; i < d1; i++)
+				temp[i] = shift[i];
+			shift = temp;
+		}
+	    shiftStream = stream;	
+		dimShift = d2;
+		for (int i = d1; i < d2; i++)
+			shift[i] = shiftStream.nextDouble();
    }
 
 	/**
@@ -236,7 +257,24 @@ public abstract class PointSet {
 		addRandomShift(0, dim, stream);
 	}
 
-   /**
+
+	/**
+	 * Refreshes the random shift (generates new uniform values for the random shift coordinates)
+	 * for coordinates `d1` to `d2-1`, using the saved `shiftStream`.
+	 */
+	public void addRandomShift(int d1, int d2) {
+		addRandomShift (d1, d2, shiftStream);
+	}
+
+	/**
+	 * Same as {@link #addRandomShift() addRandomShift(0, dim)}, where `dim` is the
+	 * dimension of the point set.
+	 */
+	public void addRandomShift() {
+		addRandomShift(0, dim);
+	}
+
+	/**
     * Erases the current random shift, if any.
     */
    public void clearRandomShift() {

@@ -15,8 +15,8 @@
  * quasi-Monte Carlo integration, as we now briefly explain. 
  * For more details, see
  * @cite rDIC10a, @cite fGLA04a, @cite rHEL98a, @cite vLEC02a, @cite vLEC03b, @cite vLEC09f,
- * @cite vLEC18a, 
  * @cite vOWE98a, @cite rNIE92b, @cite rNUY14a, @cite vSLO94a; for example.
+ * A short applied tutorial can be found in @cite vLEC18a. 
  *
  * Suppose we want to estimate the integral of a function @f$f@f$ defined
  * over the @f$s@f$-dimensional unit hypercube,
@@ -277,7 +277,7 @@
  * binary arithmetic is generally much faster than in other bases.
  * Among those, we find Sobol sequences and Sobol nets, for instance;
  * see @ref SobolSequence.
- * Polynomial lattice rules turn out to be special cases of digital nets
+ * Polynomial lattice rules (see below) are special cases of digital nets
  * and in practice, to generate the points, we implement them as digital nets.
  *
  *
@@ -328,6 +328,48 @@
  * good parameters @f$a_1,\dots, a_s@f$ for rank 1 lattice rules for any given 
  * @f$s@f$ and @f$n@f$ and various types of criteria, can be found in 
  * @cite vLEC12a, @cite vLEC12b, @cite vLEC16a, and @cite rNUY14a, for example.
+ *
+ *
+ * ## Polynomial Lattice Rules
+ *
+ * Integration lattices defined in a space of polynomials instead of in the real space
+ * provide another very effective way of constructing QMC points
+ * @cite vDIC09a, @cite rDIC10a, @cite rLEC02b, @cite vLEC04a, @cite vLEC09f,
+ * @cite vLEM00t, @cite vLEM03a, @cite rNIE92c, @cite rNUY14a. 
+ * These lattices are similar to the ordinary integration lattices, but are 
+ * defined in different spaces.  They also turn out to be special cases of digital nets.
+ * The following follows @cite vLEC09f.
+ *
+ * To define a *polynomial integration lattice*, we first select an integer 
+ * @f$b \geq 2@f$ called the *base*, let @f$\mathbb{Z}_b@f$ denote the ring of integers modulo @f$b@f$,
+ * @f$\mathbb{Z}_b[z]@f$ the ring of polynomials with coefficients in @f$\mathbb{Z}_b@f$,
+ * and @f$\mathbb{L}_b@f$ the ring of formal Laurent series with coefficients in @f$\mathbb{Z}_b@f$,
+ * which have the form @f$\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}@f$, where @f$x_\ell\in\mathbb{Z}_b@f$.
+ * The lattice is defined as
+ * @f[                                     \tag{eq:cLs}
+ *     {\mathcal{L}_s} = \left\{\boldmath{v}(z) = \sum_{j=1}^s q_j(z) \boldmath{v}_j(z) 
+ *             \mbox{ such that each } q_j(z) \in \mathbb{Z}_b[z]\right\}, 
+ * @f]
+ * where @f$\bv_j(z) = \boldmath{a}_j(z)/P(z) \in \mathbb{L}_b@f$ for @f$j=1,\dots,s@f$, 
+ * @f$P(z) = z^k + \alpha_1 z^{k-1} + \cdots + \alpha_k \in \mathbb{Z}_b[z]@f$, 
+ * and each @f$\boldmath{a}_j(z)@f$ is a vector of @f$s@f$ polynomials of degree less than @f$k@f$.
+ * We have @f$(\ZZ_b[z])^s \subseteq \mathcal{L}_s@f$.
+ * The output mapping @f$\varphi : \LL_b \to \RR@f$ is defined by
+ * \f[
+ *   {\varphi}\left(\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}\right) =
+ *   \sum_{\ell=\omega}^\infty x_\ell b^{-\ell}.
+ * \f]
+ * The *polynomial lattice rule* uses the node set 
+ * @f$P_n = \varphi(\mathcal{L}_s) \cap [0,1)^s = \varphi(\mathcal{L}_s \cap \mathbb{L}_{b,0})@f$,
+ * where @f$\mathbb{L}_{b,0} = \mathbb{L}_b@f$ mod @f$\mathbb{Z}_b[z]@f$.
+ * Most properties of ordinary lattice rules have counterparts
+ * for the polynomial rules \cite vDIC08b, \cite rDIC10a, \cite vLEC04a, \cite vLEM03a, @cite rNUY14a.
+ *
+ * In SSJ, the polynomial lattice rules are implemented as digital nets, because this provides 
+ * a faster way to generate the points than working directly in polynomial arithmetic,
+ * especially in base @f$b = 2@f$.  
+ * The user can construct a @ref DigitalNet object from a polynomial lattice rule using .......
+ *   * ......  explain what we have in hups for that.... to be done *
  *
  *
  * ## Cycle-based point sets
@@ -533,7 +575,7 @@
  * directly this internal `addRandomShift` facility.
  * 
  * One complication arises in the case of point sets having an unbounded number of coordinates;
- * for example, a #CycleBasedPointSet, whose points have a infinite number of coordinates.
+ * for example, a @ref CycleBasedPointSet, whose points have a infinite number of coordinates.
  * In this case, the random shift must be generated for a finite number of coordinates,
  * but it can always be extended later if we need more (randomized) coordinates
  * for any given point.  This is one of the main reasons for having a version of the
@@ -584,19 +626,48 @@
  * modulo 1 to the point set that it contains, whatever it is. 
  * It can be used for instance if one wishes to apply a random shift modulo 1 
  * to a `Digitalnet`.  
- *
- * The class  @ref umontreal.ssj.hups.CachedPointSet can be
- * used to store the coordinates of a point set. It is then stored internally
- * as a matrix and can be accessed very efficiently. The
- * @ref umontreal.ssj.hups.SubsetOfPointSet allows one to constrain a point
- * set’s size or dimension, for example to get the dimension of a cycle-based
- * point set finite. The class  @ref umontreal.ssj.hups.PaddedPointSet
- * gathers some coordinates of several point sets to construct a padded point
- * set. The class  @ref umontreal.ssj.hups.AntitheticPointSet allows one to
- * switch on or off the antithetic coordinates generation.
+ * Another one is  @ref umontreal.ssj.hups.AntitheticPointSet, which permits one to
+ * generate the antithetic coordinates for any given point set, 
+ * i.e., return @f$1-u_{i,j}@f$ instead of @f$u_{i,j}@f$.
+ * A third example is a @ref umontreal.ssj.hups.BakerTransformedPointSet,
+ * which applies the baker (or tent) transformation to the contained points.
  * Such container point sets implement their own iterators that use the
  * iterators of the contained point sets to access the points almost as
- * efficiently as if the contained point set iterators were used directly.
+ * efficiently as if the contained point set iterators were used directly,
+ * and they add their transformation.
+ *
+ * The @ref umontreal.ssj.hups.SubsetOfPointSet allows one to constrain a point
+ * set’s size or dimension, for example to limit the dimension of a cycle-based
+ * point set to a finite integer @f$s@f$. The class  @ref umontreal.ssj.hups.PaddedPointSet
+ * gathers two or more point sets of the same cardinality and juxtaposes (pads) them 
+ * to construct a point set whose dimension is the sum of dimensions of the padded components. 
+ *
+ *
+ * ## Cached points for stratified sampling, Latin hypercube sampling, sorted points, etc.
+ *
+ * In the class  @ref umontreal.ssj.hups.CachedPointSet, all coordinates of all 
+ * the points are stored internally in a matrix, and can then be accessed very efficiently. 
+ * Storing the points explicitly like this is necessary for certain types of point
+ * sets or sampling, for which the points cannot be recovered from a smaller amount of information.
+ * One trivial example of this is a set of @f$n@f$ independent random points,
+ * which is implemented in @ref umontreal.ssj.hups.IndependentPointsCached.
+ * This implementation can be useful in case one has a program to simulate a system with
+ * RQMC points and one wishes to try it with independent points for comparizon.
+ * 
+ * Stratified sampling over the unit cube can be implemented as follows.
+ * One partitions the unit cube in @f$n@f$ rectangles of the same size and one generates
+ * one point in each rectangle, uniformly and independently across rectangles.
+ * The class  @ref umontreal.ssj.hups.StratifiedUnitCube implements this.
+ * Here, the randomized points must be stored explicitly, so this is implemented as a subclass
+ * of `CachedPointSet`.
+ * Another subclass is @ref umontreal.ssj.hups.LatinHypercube, which implements 
+ * *Latin hypercube sampling.* 
+ * Yet another one is @ref umontreal.ssj.hups.SortedAndCutPointSet, 
+ * in which the inner points are sorted by the first few (one or more) coordinates,
+ * then these coordinates are removed and the other ones are cached in their new order.
+ * These types of constructions are used in the Array-RQMC method @cite vLEC08a, @cite vLEC16b.
+ *
+ *
  *
  *
  *

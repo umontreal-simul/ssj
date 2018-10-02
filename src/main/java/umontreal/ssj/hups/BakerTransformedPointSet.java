@@ -3,7 +3,7 @@
  * Description:  
  * Environment:  Java
  * Software:     SSJ 
- * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Copyright (C) 2001-2018  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
  * @author       
  * @since
@@ -27,9 +27,10 @@ package umontreal.ssj.hups;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This container class embodies a point set to which a *Baker
- * transformation* is applied (see, e.g., @cite vHIC02a&thinsp;). It
- * transforms each coordinate @f$u@f$ into @f$2u@f$ if @f$u \le1/2@f$ and
+ * This container class embodies a point set to which a *baker's
+ * transformation* (also called a *tent transform*) is applied 
+ * (see, e.g., @cite rDIC10a, @cite vHIC02a, @cite vLEC09f). 
+ * It transforms each coordinate @f$u@f$ of each point into @f$2u@f$ if @f$u \le1/2@f$ and
  * @f$2(1-u)@f$ if @f$u > 1/2@f$.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
@@ -37,13 +38,12 @@ import umontreal.ssj.util.PrintfFormat;
 public class BakerTransformedPointSet extends ContainerPointSet {
 
    /**
-    * Constructs a Baker-transformed point set from the given point set
-    * `P`.
-    *  @param P            point set for which we want a Baker-transfomed
-    *                      version
+    * Constructs a baker-transformed point set from the given point set
+    * `p`.
+    *  @param p   point set for which we want a baker-transformed version
     */
-   public BakerTransformedPointSet (PointSet P) {
-      init (P);
+   public BakerTransformedPointSet (PointSet p) {
+      init (p);
    }
 
 

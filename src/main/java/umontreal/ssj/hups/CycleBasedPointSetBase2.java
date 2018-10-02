@@ -30,7 +30,7 @@ import cern.colt.list.*;
 
 /**
  * Similar to  @ref CycleBasedPointSet, except that the successive values in
- * the cycles are stored as integers in the range @f$\{0,…,2^k-1\}@f$, where
+ * the cycles are stored as integers in the range @f$\{0,\dots,2^k-1\}@f$, where
  * @f$1\le k \le31@f$. The output values @f$u_{i,j}@f$ are obtained by
  * dividing these integer values by @f$2^k@f$. Point sets where the
  * successive coordinates of each point are obtained via linear recurrences

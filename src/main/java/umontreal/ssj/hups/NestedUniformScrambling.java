@@ -54,7 +54,7 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Create a NestedUniformScrambling instance, using `stream` as the random
+    * Create a `NestedUniformScrambling` instance, using `stream` as the random
     * generator, and randomizing all of the DigitalNet.outDigits output bits of
     * the DigitalNetBase2, up to 31 bits.
     *  @param stream       stream to use in the randomization
@@ -64,9 +64,9 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Create a NestedUniformScrambling instance, using `stream` as the random
+    * Create a `NestedUniformScrambling` instance, using `stream` as the random
     * generator, and randomizing only the first `numBits` output bits of
-    * the DigitalNetBase2.
+    * the `DigitalNetBase2`.
     *
     *  @param stream       stream to use in the randomization
     *  @param numBits      number of output bits to scramble (it can be smaller

@@ -35,7 +35,7 @@ public class CallCenter {
    double nCallsExpected; // Expected number of calls per day.
 
    Event nextArrival = new Arrival();           // The next Arrival event.
-   LinkedList waitList = new LinkedList ();
+   LinkedList<Call> waitList = new LinkedList<Call> ();
 
    RandomStream streamB        = new MRG32k3a(); // For B.
    RandomStream streamArr      = new MRG32k3a(); // For arrivals.
