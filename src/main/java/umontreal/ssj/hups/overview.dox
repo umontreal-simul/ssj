@@ -347,14 +347,14 @@
  * which have the form @f$\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}@f$, where @f$x_\ell\in\mathbb{Z}_b@f$.
  * The lattice is defined as
  * @f[                                     \tag{eq:cLs}
- *     {\mathcal{L}_s} = \left\{\boldmath{v}(z) = \sum_{j=1}^s q_j(z) \boldmath{v}_j(z) 
+ *     {\mathcal{L}_s} = \left\{\mathbf{v}(z) = \sum_{j=1}^s q_j(z) \mathbf{v}_j(z) 
  *             \mbox{ such that each } q_j(z) \in \mathbb{Z}_b[z]\right\}, 
  * @f]
- * where @f$\bv_j(z) = \boldmath{a}_j(z)/P(z) \in \mathbb{L}_b@f$ for @f$j=1,\dots,s@f$, 
+ * where @f$\mathbf{v}_j(z) = \mathbf{a}_j(z)/P(z) \in \mathbb{L}_b@f$ for @f$j=1,\dots,s@f$, 
  * @f$P(z) = z^k + \alpha_1 z^{k-1} + \cdots + \alpha_k \in \mathbb{Z}_b[z]@f$, 
- * and each @f$\boldmath{a}_j(z)@f$ is a vector of @f$s@f$ polynomials of degree less than @f$k@f$.
- * We have @f$(\ZZ_b[z])^s \subseteq \mathcal{L}_s@f$.
- * The output mapping @f$\varphi : \LL_b \to \RR@f$ is defined by
+ * and each @f$\mathbf{a}_j(z)@f$ is a vector of @f$s@f$ polynomials of degree less than @f$k@f$.
+ * We have @f$(\mathbb{Z}_b[z])^s \subseteq \mathcal{L}_s@f$.
+ * The output mapping @f$\varphi : \mathbb{L}_b \to \mathbb{R}@f$ is defined by
  * \f[
  *   {\varphi}\left(\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}\right) =
  *   \sum_{\ell=\omega}^\infty x_\ell b^{-\ell}.

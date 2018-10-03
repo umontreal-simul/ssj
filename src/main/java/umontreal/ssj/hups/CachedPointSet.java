@@ -84,10 +84,10 @@ public class CachedPointSet extends PointSet {
     *                      points
     */
    public CachedPointSet (PointSet p, int fromPoint, int toPoint, int fromDim, int toDim) {
-      if (P.getNumPoints() < toPoint - fromPoint)
+      if (p.getNumPoints() < toPoint - fromPoint)
          throw new IllegalArgumentException(
             "Cannot cache more points than in point set p.");
-      if (P.getDimension() < toDim - fromDim)
+      if (p.getDimension() < toDim - fromDim)
          throw new IllegalArgumentException(
             "Attempt to cache points using more coordinates than the dimension.");
       if (toPoint == Integer.MAX_VALUE)

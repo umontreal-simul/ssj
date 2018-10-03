@@ -50,18 +50,18 @@ public class RandShiftedMod1PointSet extends ContainerPointSet {
     //	protected RandomStream shiftStream; // Used to generate random shifts.  Already in PointSet
 
 	/**
-	 * Constructs a structure to contain a randomly shifted version of `P`. The random shifts will
+	 * Constructs a structure to contain a randomly shifted version of `p`. The random shifts will
 	 * be generated in up to `dimShift` dimensions, using stream `stream`.
 	 * 
-	 * @param P
+	 * @param p
 	 *            point set being randomized
 	 * @param dimShift
 	 *            dimension of the initial shift
 	 * @param stream
 	 *            stream used for generating random shifts
 	 */
-	public RandShiftedMod1PointSet(PointSet P, int dimShift, RandomStream stream) {
-		init(P);
+	public RandShiftedMod1PointSet(PointSet p, int dimShift, RandomStream stream) {
+		init(p);
 		if (dimShift <= 0) {
 			throw new IllegalArgumentException(
 			        "Cannot construct RandShiftedPointSet with dimShift <= 0");
