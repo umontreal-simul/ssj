@@ -26,7 +26,7 @@ public interface MonteCarloModelDouble {
 	public void simulate (RandomStream stream);
 
 	/** 
-	 * Recovers and returns the realization of the performance measure, of type E.
+	 * Recovers and returns the realization of the performance measure, of type `double`.
 	 */
 	public double getPerformance();
 
