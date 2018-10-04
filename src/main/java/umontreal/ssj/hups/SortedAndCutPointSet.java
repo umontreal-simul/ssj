@@ -25,20 +25,17 @@ package umontreal.ssj.hups;
  import umontreal.ssj.util.sort.MultiDimSort;
  import umontreal.ssj.rng.RandomStream;
  import umontreal.ssj.util.PrintfFormat;
- import java.util.Comparator;
- import java.util.Arrays;
+ // import java.util.Comparator;
+ // import java.util.Arrays;
 
 /**
- * @remark **Pierre:** The `CachedPointSet` class also offers methods for
- * multi-dimensional sort and for skipping coordinates.
- *
- *  This class is useful for the Array-RQMC method, in the situation where
+ * This class is useful for the Array-RQMC method, in the situation where
  * the Markov chain has a multidimensional state, the RQMC points are sorted
  * once for all, based on their first @f$\ell@f$ coordinates, then these
  * coordinates are removed and only the remaining coordinates are kept and
  * randomized at each step.
  *
- * It builds a sorted point set based on a given original point set. The
+ * It builds a sorted point set based on a given original point set `p`. The
  * original points are first sorted based on their first @f$\ell@f$
  * coordinates, via a  @ref umontreal.ssj.util.MultiDimSort in @f$\ell@f$
  * dimensions, and this is used to build an index that stores the
@@ -55,13 +52,17 @@ package umontreal.ssj.hups;
  * and they are re-cached after reach randomization.
  * @remark **Pierre:** This could be inefficient (and unnecessary) for very
  * large point sets. One could implement an iterator that uses directly the
- * randomized points in `P` without caching them.
+ * randomized points in `p` without caching them.
  *
  *  To perform the sort, we first cache only the sorting coordinates of the
  * points, with an extra coordinate that holds the original number of each
  * point, and we apply the sort to those cached points. This extra coordinate
  * is used to recover the permutation made by the sort and to produce the
  * index.
+ * 
+ * The `CachedPointSet` class also offers methods for
+ * multi-dimensional sort and for skipping coordinates.
+ *
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -71,7 +72,7 @@ public class SortedAndCutPointSet extends CachedPointSet {
    protected int numSortCoord;   // Number of coordinates used for the sort.
 
    /**
-    * Takes the first `dim` coordinates of the first `n` points of `P` and
+    * Takes the first `dim` coordinates of the first `n` points of `p` and
     * creates a `SortedAndCutPointSet` from these points by sorting them
     * according to `sort`. If `sort` is a
     * @ref umontreal.ssj.util.MultiDimSort of dimension @f$d_s@f$, then
@@ -80,21 +81,21 @@ public class SortedAndCutPointSet extends CachedPointSet {
     * dimension of the resulting `SortedAndCutPointSet` is `toDim -
     * fromDim`. Typically, in Array-RQMC applications, `fromDim` will be
     * the dimension used by the sort.
-    *  @param P            point set to be cached
-    *  @param n            number of points from `P` to use
-    *  @param dim          dimension to use for the points of `P`, before
+    *  @param p            point set to be cached
+    *  @param n            number of points from `p` to use
+    *  @param dim          dimension to use for the points of `p`, before
     *                      sorting.
     *  @param sort          @ref umontreal.ssj.util.MultiDimSort to use
     *                       for sorting
     */
-   public SortedAndCutPointSet (PointSet P, MultiDimSort sort) {
-      super (P, 0, P.getNumPoints(), 0, sort.dimension() + 1);
-      numPoints = P.getNumPoints();
+   public SortedAndCutPointSet (PointSet p, MultiDimSort sort) {
+      super (p, 0, p.getNumPoints(), 0, sort.dimension() + 1);
+      numPoints = p.getNumPoints();
       numSortCoord = sort.dimension();
       this.sort = sort;
-      this.P = P;
+      this.P = p;
       makeIndex();
-      dim = P.getDimension() - numSortCoord;
+      dim = p.getDimension() - numSortCoord;
       x = new double[numPoints][dim]; 
       fillCacheByIndex (numSortCoord, dim);
    }

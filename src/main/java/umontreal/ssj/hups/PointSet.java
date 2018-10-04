@@ -50,7 +50,6 @@ import umontreal.ssj.util.PrintfFormat;
  * queried by  #getNumPoints. The points and coordinates are both numbered
  * starting from 0 and their number can actually be infinite.
  * 
- *
  * The #iterator method provides a @ref PointSetIterator object which can
  * enumerate the points and their coordinates. Several iterators over the
  * same point set can coexist at any given time.  However, in the current implementation

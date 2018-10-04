@@ -108,7 +108,6 @@ public class TallyStore extends Tally {
       array.clear();
    }
 
-
    public void init() {
        super.init();
        // We must call super before any actions inside constructors.
@@ -117,13 +116,16 @@ public class TallyStore extends Tally {
        if (array != null)
           array.clear();
    }
-
+   
+   /**
+    * Adds one observation `x` to this probe.
+    */
    public void add (double x) {
       if (collect) array.add (x);
       super.add(x);
    }
 
-   /**
+  /**
     * Returns the observations stored in this probe.
     * @return the array of observations associated with this object
     */
@@ -134,7 +136,7 @@ public class TallyStore extends Tally {
 
    /**
     * Returns the  DoubleArrayList object that contains the observations
-    * for this probe. **WARNING:** In previous releases, this function was
+    * for this probe. **WARNING:** In early releases, this function was
     * named `getArray`.
     *  @return the array of observations associated with this object
     */

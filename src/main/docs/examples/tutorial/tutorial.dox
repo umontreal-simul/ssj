@@ -58,7 +58,7 @@
  * 
  * The selection of an RNG is based on several
  * criteria such as uniformity, performance, and portability
- * @cite rLEC94a, @cite rLEC12a&thinsp;. 
+ * @cite rLEC94a, @cite rLEC12a. 
  * The package  @ref umontreal.ssj.rng provides basic tools to generate uniform 
  * random numbers. It defines an interface called
  * @ref umontreal.ssj.rng.RandomStream implemented by any RNG supported by SSJ. 
@@ -73,7 +73,7 @@
  *
  * One can also easily replace the 'independent' random numbers with (possibly randomized)
  * highly-uniform (quasi-Monte Carlo) point sets implemented in the package
- * @ref umontreal.ssj.hups&thinsp;, again without changing the simulation code.
+ * @ref umontreal.ssj.hups, again without changing the simulation code.
  * The point set objects all inherit
  * from @ref umontreal.ssj.hups.PointSet which provides a
  * @ref umontreal.ssj.hups.PointSetIterator that implements the same 
@@ -123,7 +123,7 @@
  * continuous distributions by specialized methods, without relying on the `probdist` package.
  * These specific generators inherit from the common classes
  * @ref umontreal.ssj.randvar.RandomVariateGen and
- * @ref umontreal.ssj.randvar.RandomVariateGenInt&thinsp;.
+ * @ref umontreal.ssj.randvar.RandomVariateGenInt.
  * Each specialized class provides a static method which can be preferable to use 
  * when it is not worthwhile to create a generator object and make the associated precomputations.
  * One drawback of these static methods, however, is that their signatures that are specific to the distribution,
@@ -221,7 +221,7 @@
  * its expectation  @f$\mathbb E[C]@f$ and variance  Var@f$[C]@f$, by simulation.
  * A theorem states that when @f$k\to\infty@f$ while @f$\lambda=
  * m^2/(2k)@f$ remains fixed, @f$C@f$ converges in distribution to a Poisson
- * random variable with mean @f$\lambda@f$  @cite rLEC02c&nbsp;. Thus, this Poisson approximation 
+ * random variable with mean @f$\lambda@f$  @cite rLEC02c. Thus, this Poisson approximation 
  * should be good when @f$k@f$ is very large and @f$\lambda@f$ is not too large. 
  * We may want to use Monte Carlo
  * simulation to assess the error made by the Poisson approximation
@@ -230,13 +230,13 @@
  * compute their empirical distribution and empirical mean, and compare with
  * the Poisson distribution with mean @f$\lambda@f$.
  *
- * The Java program in Listing&nbsp;
+ * The Java program in Listing
  * {@link REF_examples_lst_Collision Collision} simulates
  * @f$C_1,…,C_n@f$, and computes the empirical distribution of $C$,
  * its mean and variance, and 
  * a 95% confidence interval on @f$\mathbb
  * E[C]@f$. The results for @f$k = 10000@f$, @f$m = 500@f$, and @f$n =
- * 100000@f$, are in Listing&nbsp;
+ * 100000@f$, are in Listing
  * {@link REF_examples_res_Collision Collision results}.  
  * Here we have @f$\lambda=12.5@f$, whereas the reported
  * confidence interval is @f$(12.268, 12.272)@f$.
@@ -266,7 +266,7 @@
  * collectors that memorize the observations are also available in `stat`.
  *
  *  **Simulating the number of collisions in a hashing system**
- * &emsp;[Collision]
+ * [Collision]
  * @anchor REF_examples_lst_Collision
  * @include tutorial/Collision.java
  *
@@ -281,7 +281,7 @@
  * method `add`. The method `statC.report` computes a confidence interval
  * from these @f$n@f$ observations and returns a statistical report in the
  * form of a character string. This report is printed, together with the
- * value of @f$\lambda@f$. See Listing&nbsp;
+ * value of @f$\lambda@f$. See Listing
  * {@link REF_examples_res_Collision Collision results}.
  * 
  * In addition to the `statC` collector, the program maintains an array of counters 
@@ -293,7 +293,7 @@
  *
  *
  *  <strong>Results of the program  <tt> Collision</tt></strong>
- * &emsp;[Collision results]
+ * [Collision results]
  * @anchor REF_examples_res_Collision
  * @include tutorial/Collision.res
  * 
@@ -301,7 +301,7 @@
  * @subsection REF_examples_sec_nonuniform Nonuniform variate generation and simple quantile estimates
  * 
  * 
- * The program in Listing&nbsp;
+ * The program in Listing
  * {@link REF_examples_lst_Nonuniform Nonuniform} simulates the
  * following artificial model. Define the random variable
  * @f[
@@ -322,12 +322,12 @@
  * printed, together with a short report.
  *
  *  **Simulating nonuniform variates and observing quantiles**
- * &emsp;[Nonuniform]
+ * [Nonuniform]
  * @anchor REF_examples_lst_Nonuniform
  * @include tutorial/Nonuniform.java
  *
  *  <strong>Results of the program  <tt> Nonuniform </tt></strong>
- * &emsp;[Nonuniform results]
+ * [Nonuniform results]
  * @anchor REF_examples_res_Nonuniform
  * @include tutorial/Nonuniform.res
  *
@@ -335,7 +335,7 @@
  * beginning of the class. This is much simpler, but not recommended in general
  * because it does not permit one to perform experiments with different
  * parameter sets with the same program. Passing the parameters to the
- * constructor as in Listing&nbsp;
+ * constructor as in Listing
  * {@link REF_examples_lst_Collision Collision} would require
  * more lines of code, but would provide more flexibility.
  *
@@ -378,7 +378,7 @@
  * To make the program general, one could pass them as parameters in the constructor,
  * or read them in a file inside the constructor.
  *
- * The results of this program, with @f$n = 100000@f$, are in Listing&nbsp;
+ * The results of this program, with @f$n = 100000@f$, are in Listing
  * {@link REF_examples_res_Nonuniform Nonuniform}. We see that
  * @f$X@f$ has a coefficient of variation larger than 1, and the quantiles
  * indicate that the distribution is skewed, with a long tail to the
@@ -418,11 +418,11 @@
  * for more complicated models.)
  *
  *  **A simulation program for the simple inventory system**
- * &emsp;[Inventory]
+ * [Inventory]
  * @anchor REF_examples_lst_Inventory
  * @include tutorial/Inventory.java
  *
- * Listing&nbsp; {@link REF_examples_lst_Inventory Inventory}
+ * Listing{@link REF_examples_lst_Inventory Inventory}
  * gives a Java program that performs a  
  * simulation experiment for @f$n=500@f$, @f$m=2000@f$, @f$s=80@f$, @f$S=200@f$,
  * @f$\lambda=100@f$, @f$c=2@f$, @f$h=0.1@f$, @f$K=10@f$, @f$k=1@f$, and
@@ -465,22 +465,22 @@
  * for the expected profit. The main program constructs an `Inventory` object
  * with the desired parameters, asks for @f$n@f$ simulation runs, and prints
  * the report. It also creates a timer that computes the total CPU time to
- * execute the program, and prints it. The results are in Listing&nbsp;
+ * execute the program, and prints it. The results are in Listing
  * {@link REF_examples_res_Inventory Inventory}. The average
  * profit per day is approximately 85. It took 0.17 seconds (on a 2.4 GHz  (???) 
  * computer running Windows 10 and Eclipse) to simulate the system 500 times for 2000 days each, 
  * compute the statistics, and print the results.
  *
- *  <strong>Results of the program `Inventory`</strong> &emsp;[Inventory results]
+ *  <strong>Results of the program `Inventory`</strong> [Inventory results]
  * @anchor REF_examples_res_Inventory
  * @include tutorial/Inventory.res
  *
  *  **Comparing two inventory policies with common random numbers**
- * &emsp;[InventoryCRN]
+ * [InventoryCRN]
  * @anchor REF_examples_lst_InventoryCRN
  * @include tutorial/InventoryCRN.java
  *
- * In Listing&nbsp; {@link REF_examples_lst_InventoryCRN
+ * In Listing {@link REF_examples_lst_InventoryCRN
  * InventoryCRN}, we extend the `Inventory` class to a class `InventoryCRN`
  * that compares two sets of parameters  @f$(s,S)@f$ for the inventory control policy.
  * The method `simulateDiff` simulates the system with policies @f$(s_1,
@@ -508,23 +508,23 @@
  * to decide if the order arrives in one case may end up being used to
  * generate a demand in the other case. This can greatly diminish the power
  * of the common random numbers technology. Using two different streams as in
- * Listing&nbsp; {@link REF_examples_lst_InventoryCRN
+ * Listing {@link REF_examples_lst_InventoryCRN
  * InventoryCRN} ensures at least that the random numbers are used for the
  * same purpose for the two policies. For more explanations and examples
- * about common random numbers, see @cite sLAW00a, @cite vLEC94b, @cite sLEC09a&thinsp;.
+ * about common random numbers, see @cite sLAW00a, @cite vLEC94b, @cite sLEC09a.
  *
  * The main program estimates the expected difference in average daily
  * profits for policies @f$(s_1, S_1) = (80, 198)@f$ and @f$(s_2, S_2) = (80,
  * 200)@f$, first with independent random numbers, then with common random
  * numbers. The other parameters are the same as before. The results are in
- * Listing&nbsp; {@link REF_examples_res_InventoryCRN
+ * Listing {@link REF_examples_res_InventoryCRN
  * InventoryCRN results}. We see that use of common random numbers reduces the
  * variance by a factor of about 20 in this case.
  * This means that with CRNs, one needs about 20 times less simulation than 
  * with independent random numbers to estimate the difference with the same accuracy.
  *
  *  <strong>Results of the program `InventoryCRN`</strong>
- * &emsp;[InventoryCRN results]
+ * [InventoryCRN results]
  * @anchor REF_examples_res_InventoryCRN
  * @include tutorial/InventoryCRN.res
  * 
@@ -546,7 +546,7 @@
  * @f$M/M/1@f$ queue. Simple formulas are available for this model to compute
  * the average waiting time per customer, average queue length, 
  * probability that a customers waits more than @f$x@f$ seconds, etc., over an
- * *infinite* time horizon @cite pKLE75a&thinsp;. For a finite number of
+ * *infinite* time horizon @cite pKLE75a. For a finite number of
  * customers or a finite time horizon, these expectations can also be
  * computed by numerical methods, but here we just want to show how it can be
  * simulated.
@@ -559,13 +559,13 @@
  * @f[
  *   W_{i+1} = \max(0,\; W_i + S_i - A_i), \tag{lindley}
  * @f]
- * known as *Lindley’s equation* @cite pKLE75a&thinsp;.
+ * known as *Lindley’s equation* @cite pKLE75a.
  *
- *  **A simulation based on Lindley’s recurrence** &emsp;[QueueLindley]
+ *  **A simulation based on Lindley’s recurrence** [QueueLindley]
  * @anchor REF_examples_lst_QueueLindley
  * @include tutorial/QueueLindley.java
  *
- * The program of Listing&nbsp;
+ * The program of Listing
  * {@link REF_examples_lst_QueueLindley QueueLindley} exploits
  * ( {@link REF_examples_eq_lindley lindley} ) to compute the
  * average waiting time of the first @f$m@f$ customers in the queue, repeats
@@ -593,7 +593,7 @@
  * @subsection REF_examples_sec_observer Using the observer design pattern
  * 
  * 
- * Listing&nbsp; {@link REF_examples_lst_QueueObs QueueObs}
+ * Listing {@link REF_examples_lst_QueueObs QueueObs}
  * adds a few ingredients to the program `QueueLindley`, in order to
  * illustrate the *observer* design pattern implemented in package `stat`.
  * This mechanism permits one to separate data generation from data
@@ -653,7 +653,7 @@
  * sending the information, so it can adopt the correct behavior for this
  * sender.
  *
- *  **A simulation of Lindley’s recurrence using observers** &emsp;[QueueObs]
+ *  **A simulation of Lindley’s recurrence using observers** [QueueObs]
  * @anchor REF_examples_lst_QueueObs
  * @include tutorial/QueueObs.java
  * 
@@ -671,7 +671,7 @@
  * stochastic process whose increments over disjoint intervals are
  * independent normal random variables, with mean 0 and variance
  * @f$\delta@f$ over an interval of length @f$\delta@f$ (see, e.g.,
- * @cite fGLA04a&thinsp;). The GBM process is a popular model for the
+ * @cite fGLA04a). The GBM process is a popular model for the
  * evolution in time of the market price of financial assets. A
  * discretely-monitored *Asian option* on the arithmetic average of a given
  * asset has discounted payoff
@@ -688,7 +688,7 @@
  * T@f$. The value (or fair price) of the Asian option is @f$v = E[X]@f$
  * where the expectation is taken under the so-called risk-neutral measure
  * (which means that the parameters @f$r@f$ and @f$\sigma@f$ have to be
- * selected in a particular way; see @cite fGLA04a&thinsp;).
+ * selected in a particular way; see @cite fGLA04a).
  *
  * This value @f$v@f$ can be estimated by simulation as follows. Generate
  * @f$t@f$ independent and identically distributed (i.i.d.) @f$N(0,1)@f$
@@ -702,7 +702,7 @@
  * for @f$j = 1,…,t@f$ and the payoff can be computed via 
  * ({@link REF_examples_eq_payasian payasian}). This can be
  * replicated @f$n@f$ times, independently, and the option value is estimated
- * by the average discounted payoff. The Java program of Listing&nbsp;
+ * by the average discounted payoff. The Java program of Listing
  * {@link REF_examples_lst_AsianGBM AsianGBM} implement this procedure.
  *
  * Note that generating the sample path and computing the payoff is done in
@@ -711,7 +711,7 @@
  * geometric average, or with barriers, etc.) over the same generated sample
  * path.
  *
- *  **Pricing an Asian option on a GMB process** &emsp;[AsianGBM]
+ *  **Pricing an Asian option on a GMB process** [AsianGBM]
  * @anchor REF_examples_lst_AsianGBM
  * @include tutorial/AsianGBM.java
  *
@@ -730,7 +730,7 @@
  * constructor `AsianGBM`, to speed up the simulation.
  *
  *
- * The program in Listing&nbsp;
+ * The program in Listing
  * {@link REF_examples_lst_AsianGBMQMC AsianGBMQMC} extends the class
  * `AsianGBM` to `AsianGBMQMC`, whose method `simulateRunsRQMC` estimates the
  * option value via randomized quasi-Monte Carlo (RQMC). This method takes as input 
@@ -756,7 +756,7 @@
  * iterator to the next coordinate of the current point.
  *
  *  **Pricing an Asian option on a GMB process with randomized quasi-Monte Carlo**
- * &emsp;[AsianGBMQMC]
+ * [AsianGBMQMC]
  * @anchor REF_examples_lst_AsianGBMQMC
  * @include tutorial/AsianGBMQMC.java
  *
@@ -775,7 +775,7 @@
  * using RQMC instead of MC in this example, and the ratio of efficiencies,
  * which can be interpreted as the estimated *efficiency improvement factor*.
  * (The efficiency of an estimator is defined as 1/(variance @f$\times@f$
- * CPU time per run.) The results are in Listing&nbsp;
+ * CPU time per run.) The results are in Listing
  * {@link REF_examples_res_AsianGBMRQMC AsianGBMRQMC results}: RQMC reduces the
  * variance by a factor of around 250 and improves the efficiency by a factor
  * of about 646. RQMC not only reduces the variance, it also runs
@@ -786,7 +786,7 @@
  * fact, in the the case of MC, the call to `resetNextSubstream` is not
  * really needed. Removing it for that case would reduce the CPU time.
  *
- *  <strong>Results of the program `AsianGBMQMC` </strong> &emsp;[AsianGBMQMC results]
+ *  <strong>Results of the program `AsianGBMQMC` </strong> [AsianGBMQMC results]
  * @anchor REF_examples_res_AsianGBMQMC
  * @include tutorial/AsianGBMQMC.res
  * 
@@ -805,17 +805,17 @@
  * @subsection REF_examples_sec_queue_event The single-server queue with an event view
  * 
  * 
- * We return to the single-server queue considered in Section&nbsp;
+ * We return to the single-server queue considered in Section
  * @ref REF_examples_sec_queue_lindley. This time, instead of simulating a
  * fixed number of customers, we simulate the system for a fixed time horizon
  * of 1000.
  *
  *  <strong>Event-oriented simulation of an @f$M/M/1@f$ queue</strong>
- * &emsp;[QueueEv]
+ * [QueueEv]
  * @anchor REF_examples_lst_QueueEv
  * @include tutorial/QueueEv.java
  *
- * Listing&nbsp; {@link REF_examples_lst_QueueEv QueueEv} gives
+ * Listing {@link REF_examples_lst_QueueEv QueueEv} gives
  * an event-oriented simulation program, where a subclass of the class
  * @ref umontreal.ssj.simevents.Event is defined for each type of event that can occur in the
  * simulation: arrival of a customer (<tt>Arrival</tt>), departure of a
@@ -909,7 +909,7 @@
  *
  * The event `EndOfSim` stops the simulation. Then the `main` routine regains
  * control and prints statistical reports for the two probes. The results are
- * shown in Listing&nbsp; {@link REF_examples_res_QueueEv
+ * shown in Listing {@link REF_examples_res_QueueEv
  * QueueEv}. When calling `report` on an `Accumulate` object, an implicit
  * update is done using the current simulation time and the last value given
  * to `update`. In this example, this ensures that the `totWait` accumulator
@@ -918,7 +918,7 @@
  * such an automatic update, the accumulator would integrate only up to the
  * last update time before the time horizon.
  *
- *  <strong>Results of the program `QueueEv` </strong> &emsp;[QueueEv results]
+ *  <strong>Results of the program `QueueEv` </strong> [QueueEv results]
  * @anchor REF_examples_res_QueueEv
  * @include tutorial/QueueEv.res
  * 
@@ -927,7 +927,7 @@
  * 
  * 
  * We consider a classical prey-predator system, where the preys are food for
- * the predators (see, e.g., @cite sLAW00a&thinsp;, page 87). Let @f$x(t)@f$
+ * the predators (see, e.g., @cite sLAW00a, page 87). Let @f$x(t)@f$
  * and @f$z(t)@f$ be the numbers of preys and predators at time @f$t@f$,
  * respectively. These numbers are integers, but as an approximation, we
  * shall assume that they are real-valued variables evolving according to the
@@ -945,7 +945,7 @@
  * @f}
  * with initial values @f$x(0)=x_0>0@f$ and @f$z(0)=z_0>0@f$. This is a
  * *Lotka-Volterra* system of differential equations, which has a known
- * analytical solution. Here, in the program of Listing&nbsp;
+ * analytical solution. Here, in the program of Listing
  * {@link REF_examples_lst_PreyPred PreyPred}, we just show how to
  * simulate its evolution, to illustrate the continuous simulation facilities
  * of SSJ.  Instead of using the default simulator as in the other examples of
@@ -955,7 +955,7 @@
  * can be done.  One could actually create several such `Simulator` objects that could run
  * in parallel, each one having its own event list.
  *
- *  **Simulation of the prey-predator system** &emsp;[PreyPred]
+ *  **Simulation of the prey-predator system** [PreyPred]
  * @anchor REF_examples_lst_PreyPred
  * @include tutorial/PreyPred.java
  *
@@ -973,7 +973,7 @@
  * @subsection REF_examples_sec_bank A simplified bank
  * 
  * 
- * This is the old Example&nbsp;1.4.1 of @cite sBRA87a&thinsp;, page&nbsp;14. A bank
+ * This is the old Example 1.4.1 of @cite sBRA87a, page 14. A bank
  * has a random number of tellers every morning. On any given day, the bank
  * has @f$t@f$ tellers with probability @f$q_t@f$, where @f$q_3 = 0.80@f$,
  * @f$q_2 = 0.15@f$, and @f$q_1 = 0.05@f$. All the tellers are assumed to be
@@ -999,7 +999,7 @@
  *  @anchor REF_examples_fig_blambda
  * -->
  *
- *  **Event-oriented simulation of the bank model** &emsp;[BankEv]
+ *  **Event-oriented simulation of the bank model** [BankEv]
  * @anchor REF_examples_lst_BankEv
  * @include tutorial/BankEv.java
  *
@@ -1007,7 +1007,7 @@
  * arrive randomly according to a Poisson process with piecewise constant
  * rate @f$\lambda(t)@f$, @f$t\ge0@f$. The arrival rate @f$\lambda(t)@f$
  * <!--
- * (see Fig.&nbsp; {@link REF_examples_fig_blambda blambda} )
+ * (see Fig. {@link REF_examples_fig_blambda blambda} )
  * -->
  * is 0.5 customer per minute from 9:45 until 11:00 and from 14:00 until
  * 15:00, and one customer per minute from 11:00 until 14:00. The customers
@@ -1041,7 +1041,7 @@
  * We want to estimate the expected number of customers served in a day, and
  * the expected average wait for the customers served on a day.
  *
- * Listing&nbsp; {@link REF_examples_lst_BankEv BankEv} gives
+ * Listing {@link REF_examples_lst_BankEv BankEv} gives
  * and event-oriented simulation program for this bank model. There are
  * events at the fixed times 9:45, 10:00, 11:00, 14:00, and 15:00. 
  *  At 9:45, the counters are
@@ -1088,10 +1088,10 @@
  * `Sim.start()` statement and updates the statistical counters for the
  * number of customers served during the day and their total waiting time.
  *
- * The results are given in Listing&nbsp;
+ * The results are given in Listing
  * {@link REF_examples_res_Bank Bank results}.
  *
- *  <strong>Results of the `BankEv` program </strong> &emsp;[Bank results]
+ *  <strong>Results of the `BankEv` program </strong> [Bank results]
  * @anchor REF_examples_res_Bank
  * @include tutorial/BankEv.res
  * 
@@ -1125,8 +1125,8 @@
  * subinterval @f$(t_1, t_2]@f$ of hour @f$j@f$ is a Poisson random variable
  * with mean @f$(t_2 - t_1) B \lambda_j@f$ and that the arrival counts in
  * any disjoint time intervals are independent random variables. This arrival
- * process model is motivated and studied in @cite ccWHI99c&thinsp; and
- * @cite ccAVR04a&thinsp;.  More refined and realistic arrival process models
+ * process model is motivated and studied in @cite ccWHI99c and
+ * @cite ccAVR04a.  More refined and realistic arrival process models
  * can be found in @cite ccIBR12b, @cite ccIBR16b, @cite ccORE16a, 
  *
  * Incoming calls form a FIFO queue for the agents. A call is *lost*
@@ -1155,11 +1155,11 @@
  * confidence intervals for these quantities in a standard way if @f$n@f$ is
  * large.
  *
- *  **Simulation of a simplified call center** &emsp;[CallCenter]
+ *  **Simulation of a simplified call center** [CallCenter]
  * @anchor REF_examples_lst_CallCenter
  * @include tutorial/CallCenter.java
  *
- * Listing&nbsp; {@link REF_examples_lst_CallCenter CallCenter}
+ * Listing {@link REF_examples_lst_CallCenter CallCenter}
  * gives an event-oriented simulation program for this call center model.
  * When the `CallCenter` class is instantiated by the `main` method, the
  * random streams, list, and statistical probes are created, and the model
@@ -1241,10 +1241,10 @@
  * event is scheduled for the call completion.
  *
  * The results of this program, with the data in file `CallCenter.dat`, are
- * shown in Listing&nbsp; {@link REF_examples_res_CallCenter
+ * shown in Listing {@link REF_examples_res_CallCenter
  * CallCenter results}.
  *
- *  **Simulation of a simplified call center** &emsp;[CallCenter results]
+ *  **Simulation of a simplified call center** [CallCenter results]
  * @anchor REF_examples_res_CallCenter
  * @include tutorial/CallCenter.res
  *

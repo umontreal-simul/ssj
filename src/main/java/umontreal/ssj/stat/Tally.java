@@ -3,7 +3,7 @@
  * Description:  statistical collector
  * Environment:  Java
  * Software:     SSJ
- * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Copyright (C) 2001--2018  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
  * @author
  * @since
@@ -94,14 +94,15 @@ public class Tally extends StatProbe implements Cloneable {
        numObs = 0;
    }
 
-/**
- * Gives a new observation `x` to the statistical collector. If broadcasting
- * to observers is activated for this object, this method also transmits the
- * new information to the registered observers by invoking the method
- * #notifyListeners.
- *  @param x            observation being added to this Tally object
- */
-public void add (double x) {
+	/**
+	 * Gives a new observation `x` to the statistical collector. If broadcasting to observers is
+	 * activated for this object, this method also transmits the new information to the registered
+	 * observers by invoking the method #notifyListeners.
+	 * 
+	 * @param x
+	 *            observation being added to this Tally object
+	 */
+	public void add(double x) {
       if (collect) {
          if (x < minValue) minValue = x;
          if (x > maxValue) maxValue = x;
@@ -118,14 +119,24 @@ public void add (double x) {
       notifyListeners (x);
    }
 
-   /**
-    * Returns the number of observations given to this probe since its
-    * last initialization.
-    *  @return the number of collected observations
-    */
+	/**
+	 * Adds the first `number` observations from the array `x` to this probe.
+	 */
+	public void add(double[] x, int number) {
+		if (collect)
+			for (int i = 0; i < number; i++)
+				add(x[i]);
+	}
+
+	/**
+	 * Returns the number of observations given to this probe since its last initialization.
+	 * 
+	 * @return the number of collected observations
+	 */
    public int numberObs() {
       return numObs;
    }
+   
    @Override
    public double sum() {
       return numObs * curAverage;

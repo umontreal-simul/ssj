@@ -1,5 +1,0 @@
-<map id="MonteCarloSampler" name="MonteCarloSampler">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomSampler.html" title="RandomSampler" alt="" coords="5,81,124,108"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html" title="Sampler" alt="" coords="29,5,100,32"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="148,81,261,108"/>
-</map>
