@@ -81,6 +81,24 @@ public RandomVariateGenInt (RandomStream s, DiscreteDistributionInt dist) {
    }
 
    /**
+    * Generates `n` random numbers from the discrete distribution
+    * contained in this object, and returns them in a new array of size `n`.
+    * By default, this method calls
+    * #nextInt() `n` times, but one can override it in subclasses for
+    * better efficiency.
+    *  @param n            number of variates to generate
+    *  @return  a new array with the generated numbers
+    */
+   public int[] nextArrayOfInt (int n) {
+      if (n <= 0)
+         throw new IllegalArgumentException ("n must be positive.");
+      int[] v = new int[n];
+      for (int i = 0; i < n; i++)
+         v[i] = nextInt();
+      return v;
+   }
+   
+   /**
     * Returns the  @ref umontreal.ssj.probdist.DiscreteDistributionInt
     * used by this generator.
     *  @return the distribution associated to that object

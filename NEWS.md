@@ -1,12 +1,22 @@
 # SSJ release highlights
 ---
 
+
+## SSJ 3.3.0
+
+This release contains new packages, several new classes, an improved tutorial and improved documentation in general.
+
+- new packages: `mcqmctools`, `latnetbuilder`, `stat.density`, `discrepancy`.
+- several methods have been added in many places.
+- the main API page (introduction), the tutorial (with examples), and the documentation of several packages have been updated.
+
 ## SSJ 3.2.1
 
 This release contains bug fixes.
 
 - package `functionfit`: Fix bug when creating an approximate BSpline.
 - package `util`: bisection and brentDekker methods will now check the bounds of the interval first.
+- package `eventlist`: Removed free node stack and removed synchronization on the free node stack. This increases the performance when executing many simulations in multi-thread program.
 
 ## SSJ 3.2.0
 

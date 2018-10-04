@@ -164,5 +164,4 @@ public class ArrayOfDoubleChains extends ArrayOfComparableChains {
 
       return sb.toString();
    }
-
 } 

@@ -28,9 +28,10 @@ import java.io.*;
 import java.net.MalformedURLException;
 
 /**
- * This class implements digital nets or digital sequences in base 2 formed
- * by the first @f$n = 2^k@f$ points of a Sobol’ sequence @cite rSOB67a,
- * @cite rSOB76b&thinsp;. Values of @f$n@f$ up to @f$2^{30}@f$ are allowed.
+ * This class implements digital nets and digital sequences in base 2 formed
+ * by the first @f$n = 2^k@f$ points of a Sobol’ 
+ * sequence @cite rSOB67a, @cite rSOB76b. 
+ * Values of @f$n@f$ up to @f$2^{30}@f$ are allowed.
  *
  * In Sobol’s proposal, the generator matrices @f$\mathbf{C}_j@f$ are upper
  * triangular matrices defined by a set of *direction numbers*
@@ -61,11 +62,13 @@ import java.net.MalformedURLException;
  * following integers @f$m_{j,c_j}, m_{j, c_j+1}, …@f$ are determined by the
  * recurrence
  * @f[
- *   m_{j,c} = 2 a_{j,1} m_{j,c-1} \oplus\cdots\oplus2^{c_j-1} a_{j,c_j-1}m_{j,c-c_j+1} \oplus2^{c_j} m_{j,c-c_j}\oplus m_{j,c-c_j}
+ *   m_{j,c} = 2 a_{j,1} m_{j,c-1} \oplus\cdots\oplus2^{c_j-1} a_{j,c_j-1}m_{j,c-c_j+1} 
+ *     \oplus2^{c_j} m_{j,c-c_j}\oplus m_{j,c-c_j}
  * @f]
  * for @f$c\ge c_j@f$, or equivalently,
  * @f[
- *   v_{j,c,l} = a_{j,1} v_{j,c-1,l} \oplus\cdots\oplus a_{j,c_j-1} v_{j,c-c_j+1,l} \oplus v_{j,c-c_j,l}\oplus v_{j,c-c_j,l+c_j}
+ *   v_{j,c,l} = a_{j,1} v_{j,c-1,l} \oplus\cdots\oplus a_{j,c_j-1} v_{j,c-c_j+1,l} 
+ *     \oplus v_{j,c-c_j,l}\oplus v_{j,c-c_j,l+c_j}
  * @f]
  * for @f$l\ge0@f$, where @f$\oplus@f$ means bitwise exclusive or (i.e.,
  * bitwise addition modulo 2). Sobol’ has shown @cite rSOB67a&thinsp; that
@@ -79,7 +82,7 @@ import java.net.MalformedURLException;
  *
  * This list of primitive polynomials, as well as default choices for the
  * direction numbers, are stored in precomputed tables. The ordered list of
- * primitive polynomials is the same as in @cite iLEM04a&thinsp; and was
+ * primitive polynomials is the same as in @cite iLEM04a; and was
  * taken from Florent Chabaud’s web site, at
  * [http://fchabaud.free.fr/](http://fchabaud.free.fr/). Each polynomial
  * @f$f_j(z)@f$ is stored in the form of the integer @f$2^{c_j} +
@@ -88,25 +91,34 @@ import java.net.MalformedURLException;
  *
  * For the set of direction numbers, there are several possibilities based on
  * different selection criteria. The original values proposed by Sobol’ and
- * implemented in the code of Bratley and Fox @cite rBRA88c&thinsp; for
+ * implemented in the code of Bratley and Fox @cite rBRA88c for
  * @f$j\le40@f$ were selected in terms of his properties @f$A@f$ and
  * @f$A’@f$, which are equivalent to @f$s@f$-distribution with one and two
  * bits of accuracy, respectively.
- * The default direction numbers used in this class have been taken from @cite
- * iLEM04a&thinsp;.
- * For @f$j\le40@f$, they are the same as in @cite rBRA88c&thinsp;.
+ * The default direction numbers used in the present class have been taken from @cite
+ * iLEM04a.
+ * For @f$j\le40@f$, they are the same as in @cite rBRA88c.
  * Other direction numbers can be used by invoking
  * #SobolSequence(String,int,int,int) with the name of a file that contains the
  * parameters.  Several files of parameters for Sobol sequences are given on
-* [F. Kuo’s Web site](http://web.maths.unsw.edu.au/~fkuo/sobol/).
+ * the [web site of Frances Kuo](http://web.maths.unsw.edu.au/~fkuo/sobol/).
+ * Good parameters can also be found by the LatNet Builder software available
+ * [here](https://github.com/umontreal-simul/latnetbuilder/)
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class SobolSequence extends DigitalSequenceBase2 { 
 
-    // Maximal dimension for primitive polynomials included in this file
+	/**
+	 * Maximal dimension for the primitive polynomials stored in this file.
+	 */
     protected static final int MAXDIM    = 360;
+
+	/**
+	 * Maximal degree of the primitive polynomials that are stored.
+	 */
     protected static final int MAXDEGREE = 18;  // Of primitive polynomial
+
     private String filename = null;
 
    /**
@@ -120,7 +132,8 @@ public class SobolSequence extends DigitalSequenceBase2 {
     * instead of this constructor.
     *
     *  @param k            there will be 2^k points
-    *  @param w            number of output digits
+    *  @param r            number of rows of the generator matrices
+    *  @param w            number of output digits after a random digital shift
     *  @param dim          dimension of the point set
     */
    public SobolSequence (int k, int w, int dim) {
@@ -141,7 +154,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
          throw new IllegalArgumentException
             ("One must have k < 31 and k <= r <= w <= 31 for SobolSequence");
       numCols   = k;
-      numRows   = r;   // Not used!
+      numRows   = r;   // Not used?
       outDigits = w;
       numPoints = (1 << k);
       this.dim  = dim;
@@ -464,10 +477,12 @@ public class SobolSequence extends DigitalSequenceBase2 {
 */
 
     // *******************************************************
-    // The ordered list of first MAXDIM primitive polynomials.
 
     protected int[] poly_from_file;
 
+    /**
+     * Ordered list of the first `MAXDIM` primitive polynomials. 
+     */
     protected static final int[] poly = {
      1, 3, 7, 11, 13, 19, 25, 37, 59,
      47, 61, 55, 41, 67, 97, 91, 109, 103, 
@@ -512,12 +527,15 @@ public class SobolSequence extends DigitalSequenceBase2 {
      };
 
 
-    // The direction numbers.  For j > 0 and c < c_j,
-    // minit[j-1][c] contains the integer m_{j,c}.
-    // The values for j=0 are not stored, since C_0 is the identity matrix.
+
 
    protected int minit_from_file[][];
 
+   /**
+    *  The default direction numbers.  For @f$j > 0@f$ and @f$c < c_j@f$,
+    *  `minit[j-1][c]` contains the integer @f$m_{j,c}@f$.
+    * The values for @f$j=0@f$ are not stored, since @f$\boldmath{C}_0@f$ is the identity matrix.
+    */
    protected static final int minit[][] = {
      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
      {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -879,4 +897,5 @@ public class SobolSequence extends DigitalSequenceBase2 {
      {1, 1, 7, 3, 1, 7, 61, 71, 119, 257, 1227, 2893},
      {1, 3, 3, 3, 25, 41, 25, 225, 31, 57, 925, 2139}
      };
+
 }

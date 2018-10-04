@@ -27,30 +27,35 @@ package umontreal.ssj.hups;
 
 /**
  * This class implements a  @ref umontreal.ssj.hups.PointSetRandomization.
- * The  @ref umontreal.ssj.rng.RandomStream is stored internally. The method
- * #randomize(PointSet) simply calls
+ * When the `PointSet` to be randomized is a `DigitalNet`,
+ * the random shift is a *random digital shift*, otherwise it is a
+ * random shift modulo 1.
+ * The  @ref umontreal.ssj.rng.RandomStream is stored internally. 
+ * 
+ * In the current implementation, the method
+ * `randomize(PointSet)` simply calls
  * {@link umontreal.ssj.hups.PointSet.addRandomShift(RandomStream)
- * addRandomShift(stream)}.
- *
+ * addRandomShift(stream)}. This may change in the future.
  * This class can be used as a base class to implement a specific
- * randomization by overriding method  #randomize(PointSet).
+ * randomization by overriding #randomize(PointSet).
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class RandomShift implements PointSetRandomization {
+
    protected RandomStream stream;
 
    /**
     * Empty constructor: No stream is passed here for the randomization;
     * one must be passed later by  #setStream.
-    * @remark **Pierre:** Not sure if we should keep this; we need a
+    * **Pierre:** Not sure if we should keep this; we always need a
     * stream!
     */
    public RandomShift() {
    }
 
    /**
-    * Sets the internal  @ref umontreal.ssj.rng.RandomStream to `stream`.
+    * Constructor that sets the internal  @ref umontreal.ssj.rng.RandomStream to `stream`.
     *  @param stream       stream to use in the randomization
     */
    public RandomShift (RandomStream stream) {
@@ -61,8 +66,6 @@ public class RandomShift implements PointSetRandomization {
     * This method calls
     * {@link umontreal.ssj.hups.PointSet.addRandomShift(RandomStream)
     * addRandomShift(stream)}.
-    * @remark **Pierre:** This should be changed if we remove
-    * `PointSet.addRandomShift`.
     *  @param p            Point set to randomize
     */
    public void randomize (PointSet p) {
@@ -85,4 +88,12 @@ public class RandomShift implements PointSetRandomization {
       return stream;
    }
 
+   
+   /**
+    * Returns a descriptor of this object.
+    */
+   public String toString () {
+		return "Random shift (digital if applied to a digital net)";
+	}
+   
 }

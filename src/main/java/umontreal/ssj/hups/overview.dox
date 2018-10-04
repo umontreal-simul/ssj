@@ -11,11 +11,12 @@
  * (LDS) is often used for infinite sequences of points such that the
  * *discrepancy* between the distribution of the first @f$n@f$ points of the
  * sequence and the uniform distribution converges to zero at a certain rate
- * when @f$n\to\infty@f$ @cite rNIE92b&thinsp;. HUPS and LDS are used for
- * quasi-Monte Carlo integration, as we now briefly explain. See, e.g.,
- * @cite vFOX99a, @cite fGLA04a, @cite rHEL98a, @cite vLEC02a, @cite vLEC03b,
- * @cite vOWE98a, @cite rNIE92b, @cite vSLO94a, @cite rTEZ95a&thinsp; for
- * further details.
+ * when @f$n\to\infty@f$ @cite rNIE92b. HUPS and LDS are used for
+ * quasi-Monte Carlo integration, as we now briefly explain. 
+ * For more details, see
+ * @cite rDIC10a, @cite fGLA04a, @cite rHEL98a, @cite vLEC02a, @cite vLEC03b, @cite vLEC09f,
+ * @cite vOWE98a, @cite rNIE92b, @cite rNUY14a, @cite vSLO94a; for example.
+ * A short applied tutorial can be found in @cite vLEC18a. 
  *
  * Suppose we want to estimate the integral of a function @f$f@f$ defined
  * over the @f$s@f$-dimensional unit hypercube,
@@ -30,10 +31,10 @@
  * @f$\mathbf{u}= (u_0,u_1,u_2,…)@f$ whose purpose is to imitate i.i.d.
  * @f$U(0,1)@f$ random variables. These real numbers are transformed in
  * complicated ways to produce the estimator. Thus, the dimension @f$s@f$ of
- * the integral ( {@link REF_hups_overview_eq_mu mu} )
+ * the integral in ({@link REF_hups_overview_eq_mu mu})
  * represents the number of calls to the uniform random number generator if
  * that number is deterministic. If it is random and unbounded, we take @f$s
- * = \infty@f$. In the latter case, however, we can assume that the *actual*
+ * = \infty@f$. In the latter case, we shall assume that the *actual*
  * number of calls is finite with probability one (otherwise the simulation
  * may never end).
  *
@@ -44,7 +45,6 @@
  * @f]
  * which is the average of @f$f@f$ over the *point set* @f$P_n =
  * \{\mathbf{u}_0,…,\mathbf{u}_{n-1}\} \subset[0,1)^s@f$.
- *
  * With the *Monte Carlo* (MC) method, the @f$\mathbf{u}_i@f$’s are i.i.d.
  * random vectors uniformly distributed over @f$[0,1)^s@f$. Then, @f$Q_n@f$
  * is an unbiased estimator of @f$\mu@f$ with variance @f$\sigma^2/n@f$,
@@ -56,12 +56,22 @@
  *
  * *Quasi-Monte Carlo* (QMC) methods use point sets @f$P_n@f$ that are *more
  * evenly distributed* over the unit hypercube than typical random points. We
- * call them *highly uniform point sets* (HUPS). The aim is to reduce the
- * size of the integration error @f$Q_n - \mu@f$. Two important classes of
- * methods for constructing such point sets are *digital nets* and
- * *integration lattices* @cite rNIE92b, @cite vSLO94a, @cite vLEC02a,
- * @cite fGLA04a&thinsp;. Both are implemented in this package, in various
+ * call them *highly uniform point sets* (HUPS) or *QMC point sets*. The aim is to reduce the
+ * size of the integration error @f$Q_n - \mu@f$. 
+ * Among the most important classes of methods for constructing such point sets,
+ * we find are *digital nets*, *integration lattices in the real space*, 
+ * *polynomial integration lattices*, *Hammersley points*, *Halton sequences*, etc.;
+ * see  @cite rDIC10a, @cite vLEC02a, @cite18a, @cite rNIE92b, @cite vSLO94a.
+ * All the methods named above are implemented in this package, in various
  * flavors.
+ *
+ * The deterministic QMC points can also be randomized in a way that each point 
+ * has the uniform distribution in the unit cube while the point set as a whole
+ * keeps its high uniformity.  This gives rise to randomized QMC (RQMC),
+ * which provides an unbiased estimator of @f$\mu@f$ whose variance can be 
+ * estimated via independent replications.
+ * This is further discussed below. 
+ *
  *
  * ## Elementary constructions
  *
@@ -81,7 +91,7 @@
  * exponentially fast with @f$s@f$ for fixed @f$d@f$. Another important
  * drawback is that when @f$P_n@f$ is projected over lower-dimensional
  * subspaces, several points are projected onto each other and become
- * redundant @cite vLEC02a&thinsp;.
+ * redundant @cite vLEC02a.
  *
  * A better idea is to construct a point set @f$P_n@f$ in @f$s@f$ dimensions
  * such that each one-dimensional projection of @f$P_n@f$ is the set of
@@ -93,7 +103,7 @@
  * @f$\{0,…,n-1\}@f$ and visit the values @f$\{0,  1/n,  …, (n-1)/n\}@f$ in
  * the order determined by that permutation. The trick is to select those
  * permutations in a way that @f$P_n@f$ itself is highly uniform over
- * @f$[0,1)^s@f$ in a well-defined sense (to be determined). This is what
+ * @f$[0,1)^s@f$ in a well-defined sense (there are many ways to define it). This is what
  * most construction methods attempt to achieve. Before looking at concrete
  * ways of defining such permutations, we introduce a related issue: what to
  * do if @f$n@f$ is not fixed.
@@ -151,21 +161,25 @@
  * @f]
  * for @f$i=0,…,n-1@f$ @cite rHAM60a&thinsp;. Historically, Halton sequences
  * were defined as extensions of Hammersley point sets.
+ * Hammersley points and Halton sequences are implemented in the classes
+ * @ref HammersleyPointSet and @ref HaltonSequence. 
+ *  
  *
  * ## Digital nets
  *
  * *Digital nets and sequences* are an important class of HUPS and LDS
  * constructions. Most concrete implementations, e.g., those proposed by
- * Sobol’, Faure, Niederreiter, and Niederreiter and Xing, are *linear*
- * digital nets and sequences, defined as follows (see also @cite rNIE92b,
- * @cite rTEZ95a, @cite vLEC02a&thinsp;).
+ * Sobol’, Faure, Niederreiter, Niederreiter and Xing, Dick, etc., are *linear*
+ * digital nets and sequences, defined as follows 
+ * (see also @cite rDIC10a, @cite vLEC02a, @cite rNIE92b,
+ * @cite rTEZ95a).
  *
  * Let @f$b\ge2@f$ be an arbitrary integer (usually a prime number), called
  * the *base*. A net that contains @f$n = b^k@f$ points in @f$s@f$ dimensions
  * is defined via @f$s@f$ *generator matrices*
  * @f$\mathbf{C}_0,…,\mathbf{C}_{s-1}@f$, which are (in theory)
  * @f$\infty\times k@f$ matrices whose elements are in @f$\mathbb{Z}_b =
- * \{0,…,b-1\}@f$. The matrix @f$\mathbf{C}_j@f$ is used for coordinate
+ * \{0,\dots,b-1\}@f$. The matrix @f$\mathbf{C}_j@f$ is used for coordinate
  * @f$j@f$ of all the points, for @f$j\ge0@f$. To define the @f$i@f$th point
  * @f$\mathbf{u}_i@f$, for @f$i=0,…,b^k-1@f$, write the digital expansion of
  * @f$i@f$ in base @f$b@f$ and multiply the vector of its digits by
@@ -214,16 +228,19 @@
  * @f}
  * In practice, the expansion in (
  * {@link REF_hups_overview_eq_digital_uij digital-uij} ) is
- * truncated to the first @f$r@f$ digits for some positive integer @f$r@f$,
+ * truncated to the first @f$w@f$ digits for some positive integer @f$w@f$,
  * so each matrix @f$\mathbf{C}_j@f$ is actually truncated to a
- * @f$r\times k@f$ matrix. Typically @f$r@f$ is equal to @f$k@f$, or is
- * slightly larger, or is selected so that @f$b^r@f$ is near @f$2^{31}@f$.
+ * @f$w\times k@f$ matrix. Typically @f$w@f$ is equal to @f$k@f$, or is
+ * slightly larger, or is selected so that @f$b^r@f$ is near or equal to the
+ * largest representable integer, e.g., @f$2^{31}@f$ on an 32-bit processor,
+ * and perhaps @f$2^{53}@f$ or larger on a 64-bit processor, to take advantage 
+ * of the precision of floating-point numbers in `double` for the @f$u_{i,j}@f$'s.
  *
  * Usually, the first @f$k@f$ lines of each @f$\mathbf{C}_j@f$ form a
  * nonsingular @f$k\times k@f$ matrix. Then, the @f$n@f$ output values for
- * coordinate @f$j@f$, @f$u_{0,j},…, u_{n-1,j}@f$, when truncated to their
+ * coordinate @f$j@f$, @f$u_{0,j},\dots, u_{n-1,j}@f$, when truncated to their
  * first @f$k@f$ fractional digits in base @f$b@f$, are a permutation of the
- * numbers @f$0, 1/n, …, (n-1)/n@f$. Different coordinates simply use
+ * numbers @f$0, 1/n,\dots, (n-1)/n@f$. Different coordinates would use
  * different permutations, implemented via the matrices @f$\mathbf{C}_j@f$.
  *
  * When the first @f$k@f$ lines of @f$\mathbf{C}_j@f$ form the identity and
@@ -241,28 +258,36 @@
  * @f$\mathbf{C}_0@f$ as the reflected identity instead, then
  * @f$\mathbf{C}_1@f$ as the identity, and so on. That is, the matrix
  * @f$\mathbf{C}_j@f$ for the digital net is taken as the matrix
- * @f$\mathbf{C}_{j-1}@f$ of the digital sequence. Our package often gives
+ * @f$\mathbf{C}_{j-1}@f$ of the digital sequence. The `hups` package often gives
  * the choice.
  *
  * For digital sequences, the matrices @f$\mathbf{C}_j@f$ actually have an
  * infinite number of columns, although only the first @f$k@f$ columns are
  * needed to generate the first @f$b^k@f$ points. So in practice, we never
- * need to store more than a finite number of columns at a time. Whenever we
- * find that we need more than @f$b^k@f$ points for the current value of
+ * need to store more than a finite number of columns at a time. When
+ * we need more than @f$b^k@f$ points for the current value of
  * @f$k@f$, we can simply increase @f$k@f$ and add the corresponding columns
- * to the matrices @f$\mathbf{C}_j@f$.
+ * to the matrices @f$\mathbf{C}_j@f$, assuming that we can compute them.
  *
  * The classes  @ref umontreal.ssj.hups.DigitalNet and
  * @ref umontreal.ssj.hups.DigitalSequence implement generic digital nets and
  * sequences. Specific instances are constructed in subclasses of these two
- * classes.
+ * classes.  In particular, @ref umontreal.ssj.hups.DigitalNetBase2 implements
+ * digital nets in base 2,  which are the most popular because computations in 
+ * binary arithmetic is generally much faster than in other bases.
+ * Among those, we find Sobol sequences and Sobol nets, for instance;
+ * see @ref SobolSequence.
+ * Polynomial lattice rules (see below) are special cases of digital nets
+ * and in practice, to generate the points, we implement them as digital nets.
+ *
  *
  * ## Lattice Rules
  *
  * An *integration lattice* is a discrete (but infinite) subset of
  * @f$\mathbb{R}^s@f$ of the form
  * @f[
- *   L_s = \left\{\mathbf{v}= \sum_{j=1}^s h_j {\mathbf{v}_j} \mbox{ such that each } h_j\in\mathbb{Z}\right\},
+ *   L_s = \left\{\mathbf{v}= \sum_{j=1}^s h_j {\mathbf{v}_j} 
+ *                \mbox{ such that each } h_j\in\mathbb{Z}\right\},
  * @f]
  * where @f$\mathbf{v}_1,…,\mathbf{v}_s \in\mathbb{R}^s@f$ are linearly
  * independent over @f$\mathbb{R}@f$ and @f$\mathbb{Z}^s \subseteq L_s@f$.
@@ -270,7 +295,7 @@
  * and this implies that @f$L_s@f$ is periodic with period 1 along each of
  * the @f$s@f$ coordinates. The approximation of @f$\mu@f$ by @f$Q_n@f$ with
  * the point set @f$P_n = L_s \cap[0,1)^s@f$ is called a *lattice rule*
- * @cite mKOR59a, @cite vSLO94a&thinsp;. The value of @f$n@f$ is the number
+ * @cite vHIC98c, @cite mKOR59a, @cite vLEC00b, @cite vSLO94a. The value of @f$n@f$ is the number
  * of points of the lattice that are in the unit hypercube @f$[0,1)^s@f$.
  *
  * Let @f$\mathbf{V}@f$ be the matrix whose rows are the basis vectors
@@ -279,32 +304,84 @@
  * entries of @f$\mathbf{V}^{-1}@f$ are integer. When this holds, @f$n =
  * \det(\mathbf{V}^{-1})@f$ and all entries of @f$\mathbf{V}@f$ are
  * multiples of @f$1/n@f$.
- *
  * The *rank* of the lattice is the smallest @f$r@f$ such that one can find a
- * basis of the form @f$\mathbf{v}_1,…,
+ * basis of the form @f$\mathbf{v}_1,\dots,
  * \mathbf{v}_r,\mathbf{e}_{r+1},\cdots,\mathbf{e}_s@f$, where
  * @f$\mathbf{e}_j@f$ is the @f$j@f$th unit vector in @f$s@f$ dimensions. In
  * particular, a lattice rule of *rank 1* has a basis of the form
- * @f$\mathbf{v}_1 = (a_1, …, a_s)/n@f$ and @f$\mathbf{v}_j = \mathbf{e}_j@f$
- * for @f$j>1@f$, where @f$a_j \in\mathbb{Z}_n@f$ for each @f$j@f$. It is a
- * *Korobov* rule if @f$\mathbf{v}_1@f$ has the special form @f$\mathbf{v}_1
- * = (1,\; a,\; a^2 \mod n,\; …,\; a^{s-1} \mod n)/n@f$ for some
+ * @f$\mathbf{v}_1 = (a_1, \dots, a_s)/n@f$ and @f$\mathbf{v}_j = \mathbf{e}_j@f$
+ * for @f$j>1@f$, where @f$a_j \in\mathbb{Z}_n@f$ for each @f$j@f$. 
+ * Lattice rules of rank 1 are implemented in @ref Rank1Lattice.  
+ * The class @ref KorobovLattice implements *Korobov* lattice rules,
+ * which occur when @f$\mathbf{v}_1@f$ has the special form @f$\mathbf{v}_1
+ * = (1,\; a,\; a^2 \mod n,\; \dots \; a^{s-1} \mod n)/n@f$ for some
  * @f$a\in\mathbb{Z}_n@f$. The point set @f$P_n@f$ of a Korobov lattice rule
  * can also be written as @f$P_n = \{(x_1,…,x_s)/n \mbox{ such that }
  * x_1\in\mathbb{Z}_n \mbox{ and } x_j = a x_{j-1} \mod n \mbox{ for all } j
  * > 1\}@f$. This is the set of all vectors of successive values produced by
  * a linear congruential generator (LCG) with modulus @f$n@f$ and multiplier
  * @f$a@f$, from all possible initial states, including 0. In this case, the
- * points are easy to enumerate by using the recurrence.
+ * points are easy to enumerate by using the recurrence, and this is what we do
+ * in @ref LCGPointSet.
+ *
+ * Uniformity criteria for lattice rules, and methods and software to search for
+ * good parameters @f$a_1,\dots, a_s@f$ for rank 1 lattice rules for any given 
+ * @f$s@f$ and @f$n@f$ and various types of criteria, can be found in 
+ * @cite vLEC12a, @cite vLEC12b, @cite vLEC16a, and @cite rNUY14a, for example.
+ *
+ *
+ * ## Polynomial Lattice Rules
+ *
+ * Integration lattices defined in a space of polynomials instead of in the real space
+ * provide another very effective way of constructing QMC points
+ * @cite vDIC09a, @cite rDIC10a, @cite rLEC02b, @cite vLEC04a, @cite vLEC09f,
+ * @cite vLEM00t, @cite vLEM03a, @cite rNIE92c, @cite rNUY14a. 
+ * These lattices are similar to the ordinary integration lattices, but are 
+ * defined in different spaces.  They also turn out to be special cases of digital nets.
+ * The following follows @cite vLEC09f.
+ *
+ * To define a *polynomial integration lattice*, we first select an integer 
+ * @f$b \geq 2@f$ called the *base*, let @f$\mathbb{Z}_b@f$ denote the ring of integers modulo @f$b@f$,
+ * @f$\mathbb{Z}_b[z]@f$ the ring of polynomials with coefficients in @f$\mathbb{Z}_b@f$,
+ * and @f$\mathbb{L}_b@f$ the ring of formal Laurent series with coefficients in @f$\mathbb{Z}_b@f$,
+ * which have the form @f$\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}@f$, where @f$x_\ell\in\mathbb{Z}_b@f$.
+ * The lattice is defined as
+ * @f[                                     \tag{eq:cLs}
+ *     {\mathcal{L}_s} = \left\{\mathbf{v}(z) = \sum_{j=1}^s q_j(z) \mathbf{v}_j(z) 
+ *             \mbox{ such that each } q_j(z) \in \mathbb{Z}_b[z]\right\}, 
+ * @f]
+ * where @f$\mathbf{v}_j(z) = \mathbf{a}_j(z)/P(z) \in \mathbb{L}_b@f$ for @f$j=1,\dots,s@f$, 
+ * @f$P(z) = z^k + \alpha_1 z^{k-1} + \cdots + \alpha_k \in \mathbb{Z}_b[z]@f$, 
+ * and each @f$\mathbf{a}_j(z)@f$ is a vector of @f$s@f$ polynomials of degree less than @f$k@f$.
+ * We have @f$(\mathbb{Z}_b[z])^s \subseteq \mathcal{L}_s@f$.
+ * The output mapping @f$\varphi : \mathbb{L}_b \to \mathbb{R}@f$ is defined by
+ * \f[
+ *   {\varphi}\left(\sum_{\ell=\omega}^\infty x_\ell z^{-\ell}\right) =
+ *   \sum_{\ell=\omega}^\infty x_\ell b^{-\ell}.
+ * \f]
+ * The *polynomial lattice rule* uses the node set 
+ * @f$P_n = \varphi(\mathcal{L}_s) \cap [0,1)^s = \varphi(\mathcal{L}_s \cap \mathbb{L}_{b,0})@f$,
+ * where @f$\mathbb{L}_{b,0} = \mathbb{L}_b@f$ mod @f$\mathbb{Z}_b[z]@f$.
+ * Most properties of ordinary lattice rules have counterparts
+ * for the polynomial rules \cite vDIC08b, \cite rDIC10a, \cite vLEC04a, \cite vLEM03a, @cite rNUY14a.
+ *
+ * In SSJ, the polynomial lattice rules are implemented as digital nets, because this provides 
+ * a faster way to generate the points than working directly in polynomial arithmetic,
+ * especially in base @f$b = 2@f$.  
+ * The user can construct a @ref DigitalNet object from a polynomial lattice rule using .......
+ *   * ......  explain what we have in hups for that.... to be done *
+ *
  *
  * ## Cycle-based point sets
  *
- * Certain types of point sets are defined pretty much like random number
- * generators: choose a finite state space @f$\mathcal{S}@f$, a transition
- * function @f$f : \mathcal{S}\to\mathcal{S}@f$, an output function @f$g :
- * \mathcal{S}\to[0,1)@f$, and define
+ * Certain types of QMC point sets are defined pretty much like random number
+ * generators, in the sense that the successive coordinates of each point follow 
+ * a simple linear recurrence over a finite state space @f$\mathcal{S}@f$, with a transition
+ * function @f$f : \mathcal{S}\to\mathcal{S}@f$, and an output function @f$g :
+ * \mathcal{S}\to[0,1)@f$. The point set is defined as
  * @f[
- *   P_n = \{\mathbf{u}= (u_0,u_1,…) : s_0\in\mathcal{S}, s_j = f(s_{j-1}), \mbox{ and } u_j = g(s_j) \mbox{ for all } j\}.
+ *   P_n = \{\mathbf{u}= (u_0,u_1,…) : s_0\in\mathcal{S}, s_j = f(s_{j-1}), 
+ *              \mbox{ and } u_j = g(s_j) \mbox{ for all } j\}.
  * @f]
  * This is the set of all vectors of successive output values produced by the
  * recurrence defined by @f$f@f$ and the output function @f$g@f$, from all
@@ -331,9 +408,8 @@
  * successive @f$s_j@f$’s, over each cycle. The class
  * @ref umontreal.ssj.hups.CycleBasedPointSet provides the framework for
  * doing that.
- *
  * For example, a Korobov lattice point set is defined via the recurrence
- * @f$x_j = a x_{j-1} \mod n@f$ and output function @f$u_j = x_j/n@f$. If
+ * @f$x_j = a x_{j-1} \bmod n@f$ and output function @f$u_j = x_j/n@f$. If
  * @f$n@f$ is prime and @f$a@f$ is a primitive element modulo @f$n@f$, then
  * there are two cycles: one of period 1 that contains only 0, and the other
  * of period @f$n-1@f$. For more general @f$n@f$ and @f$a@f$, there will be
@@ -342,22 +418,72 @@
  * @f$u_j@f$ over the different cycles.
  *
  * There are cases where @f$n@f$ is a power of two, say @f$n = 2^k@f$, and
- * where the state @f$s_j@f$ is represented as a @f$k@f$-bit string. In that
- * context, it is often more convenient to store the successive @f$s_j@f$’s
+ * where the state @f$s_j@f$ is represented as a @f$k@f$-bit string. 
+ * Concrete instances are usually based on linear recurrences modulo 2 and they include
+ * the Korobov-type *polynomial lattice rules* in base 2
+ * @cite rDIC10a, @cite rLEC99a, @cite vLEC99a,
+ * @cite rLEC02b, @cite vLEM03a, @cite rNUY14a, @cite rPAN04a.  In that
+ * context, it is often more convenient to store the successive states @f$s_j@f$’s
  * instead of the successive @f$u_j@f$’s, over the set of cycles (e.g., if a
  * random digital shift in base 2 is to be applied to randomize the points,
  * it can be performed by applying a bitwise xor directly to @f$s_j@f$). When
  * generating the coordinates, the @f$s_j@f$’s can be interpreted as
  * @f$2^k@f$-bit integers and multiplied by @f$2^{-k}@f$ to produce the
  * output. This is supported by the class
- * @ref umontreal.ssj.hups.CycleBasedPointSetBase2. Special instances of this
- * class are usually based on linear recurrences modulo 2 and they include
- * the Korobov-type *polynomial lattice rules* @cite rLEC99a, @cite vLEC99a,
- * @cite rLEC02b, @cite vLEM03a, @cite rPAN04a&thinsp;.
+ * @ref umontreal.ssj.hups.CycleBasedPointSetBase2. 
+ *
+ *
+ * ## Point set implementations and enumeration tools
+ * 
+ * The base class for point sets is the abstract class
+ * @ref umontreal.ssj.hups.PointSet.  It has several predefined subclasses.
+ * Let @f$\mathbf{u}_i = (u_{i,0}, u_{i,1}, \dots, u_{i,s-1})@f$ be the elements
+ * of the point set @f$P_n@f$, for @f$i=0,\dots,n-1@f$ (the point and coordinate 
+ * indexes both start at 0). The number of points
+ * @f$n@f$ and the dimension @f$s@f$ can be finite or infinite. 
+ * Conceptually, the point set
+ * can be viewed as a two-dimensional array whose element @f$(i,j)@f$
+ * contains @f$u_{i,j}@f$, the coordinate @f$j@f$ of point @f$i@f$. In the
+ * implementations of typical point sets, the values @f$u_{i,j}@f$ are not
+ * stored explicitly in a two-dimensional array, but relevant information is
+ * organized so that the points and their coordinates can be generated
+ * efficiently. One notable exception is @ref umontreal.ssj.hups.CachedPointSet,
+ * in which all (randomized) points are stored explicitly. 
+ * This is required for certain types of randomizations such as stratified sampling
+ * and Latin hypercube sampling, for example.
+ *
+ * To enumerate the successive points or the successive coordinates of a
+ * given point, we use *point set iterators*, that resemble the iterators
+ * defined in Java *collections*, except that they loop over bi-dimensional
+ * sets. Their general behavior is defined in the interface
+ * @ref umontreal.ssj.hups.PointSetIterator.
+ * It contains methods to traverse a point set. 
+ * One can return only one coordinate, @f$t@f$
+ * coordinates, change the current coordinate and current point index, reset
+ * the iterator, and so on.
+ * Several independent iterators
+ * can coexist at any given time for the same point set. Each one maintains a
+ * current point index and a current coordinate index, which are incremented
+ * by 1 when the iterator advances to the next point or to the next
+ * coordinate. Both are initialized to 0. Each subclass of
+ * @ref umontreal.ssj.hups.PointSet has its own implementation of
+ * @ref umontreal.ssj.hups.PointSetIterator and has a method `iterator()` that
+ * creates and returns a new specialized point set iterator of the correct type,
+ * allowing efficient access to the coordinates.
+ * 
+ * An important feature of the  @ref umontreal.ssj.hups.PointSetIterator
+ * interface is that it extends the  @ref umontreal.ssj.rng.RandomStream
+ * interface. This means that any point set iterator can be used in place of
+ * a random stream that is supposed to generate i.i.d. @f$U(0,1)@f$ random
+ * variables, anywhere in a simulation program.  This makes it very easy to
+ * replace the (pseudo)random numbers by the coordinates @f$u_{i,j}@f$ of a
+ * deterministic (or randomized) HUPS without changing the internal code of the simulation
+ * program.
+ *
  *
  * ## Randomized quasi-Monte Carlo
  *
- * In their original versions, these HUPS are deterministic, and the
+ * In their original versions, these HUPS described so far are deterministic, and the
  * corresponding QMC methods give a *deterministic* integration error that is
  * difficult to estimate. In *randomized* QMC methods, @f$P_n@f$ is
  * randomized, preferably in a way that it retains its high uniformity over
@@ -370,34 +496,28 @@
  * @f${\bar{X}_m}@f$ and @f${S_{m,x}^2}@f$, the sample mean and sample
  * variance of the @f$m@f$ corresponding (independent) copies of @f$Q_n@f$.
  * Then, @f$E[\bar{X}_m] = \mu@f$ and @f$E[S_{m,x}^2] = \mathrm{Var}[Q_n] =
- * m\mathrm{Var}[\bar{X}_m]@f$ @cite vLEC00b&thinsp;.
+ * m\mathrm{Var}[\bar{X}_m]@f$ @cite vLEC00b, @cite vOWE97a, @cite vOWE03a.
  *
  * Two examples of such randomizations are the *random shift modulo 1*,
- * proposed in @cite vCRA76a&thinsp; and implemented in class
+ * proposed in @cite vCRA76a and implemented in class
  * @ref umontreal.ssj.hups.RandShiftedPointSet, and the <em>random digital
  * shift in base @f$b@f$</em>, described and implemented in class
- * @ref umontreal.ssj.hups.DigitalNet. These randomizations are also
- * incorporated directly in certain types of point sets such as
- * @ref umontreal.ssj.hups.CycleBasedPointSet,
- * @ref umontreal.ssj.hups.CycleBasedPointSetBase2, etc.
- *
+ * @ref umontreal.ssj.hups.DigitalNet. 
  * In the random shift modulo 1, we generate a *single* point
  * @f$\mathbf{u}@f$ uniformly over @f$[0,1)^s@f$ and add it to each point of
  * @f$P_n@f$, coordinate-wise, modulo 1. Since all points of @f$P_n@f$ are
  * shifted by the same amount, the set retains most of its structure and
  * uniformity.
- *
  * For the random digital shift in base @f$b@f$, we generate again a single
- * @f$\mathbf{u}= (u_1,…,u_s)@f$ uniformly over @f$[0,1)^s@f$, write the
+ * @f$\mathbf{u}= (u_0,\dots,u_{s-1})@f$ uniformly over @f$[0,1)^s@f$, write the
  * digital expansion in base @f$b@f$ of each of its coordinates, say @f$u_j =
  * \sum_{\ell=1}^{\infty}d_{j,\ell} b^{-\ell}@f$, then add
  * @f$d_{j,\ell}@f$ modulo @f$b@f$ to the @f$\ell@f$th digit of the digital
  * expansion in base @f$b@f$ of the @f$j@f$th coordinate of each point
  * @f$\mathbf{u}_i\in P_n@f$. For @f$b=2@f$, the digit-wise addition modulo
- * @f$b@f$ becomes a bitwise exclusive-or, which is fast to perform on a
- * computer.
+ * @f$b@f$ becomes a bitwise exclusive-or, which is fast to perform on a computer.
  *
- * An interesting property of the digital shift in base @f$b@f$ is that if
+ * An important property of the digital shift in base @f$b@f$ is that if
  * the hypercube @f$[0,1)^s@f$ is partitioned into @f$b^{q_1 + \cdots+
  * q_s}@f$ rectangular boxes of the same size by partitioning the @f$j@f$th
  * axis into @f$b^{q_j}@f$ equal parts for each @f$j@f$, for some integers
@@ -410,203 +530,148 @@
  * randomization. In this case, we say that @f$P_n@f$ is
  * <em>@f$\mathbf{q}@f$-equidistributed in base @f$b@f$</em>. Several other
  * randomization methods exist and most are adapted to special types of point
- * sets; see, e.g.,  @ref umontreal.ssj.hups.DigitalNet and
- * @cite vOWE03a&thinsp;.
+ * sets; for example they randomize the generator matrices of a digital net
+ * @cite vOWE03a.
  *
- * ## Point set implementations and enumeration tools
+ * In the `hups` package, viewed from the outside, randomization methods for QMC point sets are defined 
+ * in classes that implement the @ref umontreal.ssj.hups.PointSetRandomization interface.
+ * Each subclass of @ref PointSetRandomization defines a type of randomization.
+ * By combining a @ref PointSet object with a @ref PointSetRandomization object,
+ * one can obtain an @ref umontreal.ssj.hups.RQMCPointSet object.
+ * However, not every type of randomization is compatible with a given type of point set.
+ * For example, a @ref umontreal.ssj.hups.LMSScrambleShift and a
+ * @ref umontreal.ssj.hups.NestedUniformScrambling apply only to @ref DigitalNet
+ * point sets.
+ * The usual (and recommended) way of doing RQMC in SSJ is to construct a 
+ * `PointSet` and a compatible `PointSetRandomization`, combine them into an 
+ * `RQMCPointSet`, and use the latter to run RQMC experiments.
+ * The class @ref umontreal.ssj.hups.RQMCExperiments offers some methods that 
+ * can perform such experiments for simple Monte Carlo models.
+ * Examples are given in the tutorial. 
  *
- * Let @f$\mathbf{u}_i = (u_{i,0}, u_{i,1}, …, u_{i,s-1})@f$ be the elements
- * of the point set @f$P_n@f$, for @f$i=0,…,n-1@f$. Both the number of points
- * @f$n@f$ and the dimension @f$s@f$ can be finite or infinite. The point set
- * can be viewed as a two-dimensional array whose element @f$(i,j)@f$
- * contains @f$u_{i,j}@f$, the coordinate @f$j@f$ of point @f$i@f$. In the
- * implementations of typical point sets, the values @f$u_{i,j}@f$ are not
- * stored explicitly in a two-dimensional array, but pertinent information is
- * organized so that the points and their coordinates can be generated
- * efficiently. The base class for point sets is the abstract class
- * @ref umontreal.ssj.hups.PointSet.
+ * Conceptually, one could think of the `PointSetRandomization` objects as filters
+ * that transform all the QMC points @f$\mathbf{u}_i@f$ after they have been 
+ * computed.  However, almost all randomizations are not implemented that way,
+ * but they are incorporated directly in the calculation of the points @f$\mathbf{u}_i@f$
+ * by the point set iterators in the `PointSet` subclasses, mainly for reasons of efficiency.
+ * In fact, the `randomize` method of a `PointSetRandomization` applied to a `PointSet` object 
+ * `p` can only impact the point set `p`, which means that the randomization must be 
+ * incorporated in `p` in some way.
+ * For example, a randomization that changes the generator matrices of a 
+ * `DigitalNet` is implemented by changing directly those generator matrices in the `DigitalNet` object
+ * before generating the point.  The old matrices are saved so we can revert the change.
+ * The random shifts and digital random shifts are also applied directly inside the `PointSet` object when
+ * the points are generated.  Each `PointSet` has a method `addRandomShift`
+ * that takes a `RandomStream` and generates a random shift to be applied to 
+ * all the points.  Depending on the type of point set, it can be either
+ * a digital shift or a shift modulo 1.  This must be specified and defined 
+ * inside each subclass of `PointSet`.
+ * By default, for all @ref DigitalNet point sets, 
+ * this random shift is a *random digital shift*, whereas for ordinary lattice 
+ * rules it is a *random shift modulo 1*.
+ * For any given type of point set, one should check the documention to make sure
+ * what the `addRandomShift` method really does.
+ * A @ref umontreal.ssj.hups.RandomShift  is a type of randomization that invokes
+ * directly this internal `addRandomShift` facility.
+ * 
+ * One complication arises in the case of point sets having an unbounded number of coordinates;
+ * for example, a @ref CycleBasedPointSet, whose points have a infinite number of coordinates.
+ * In this case, the random shift must be generated for a finite number of coordinates,
+ * but it can always be extended later if we need more (randomized) coordinates
+ * for any given point.  This is one of the main reasons for having a version of the
+ * `addRandomShift` method that generates the random shift only over an arbitrary
+ * range of coordinates, say from `d1` to `d2-1`.  It can be used to *extend* the current
+ * random shift if needed.  This extension will usually be performed automatically by the 
+ * iterator, using the same `RandomStream`  that was used to produce the previous random shift
+ * (this stream is saved internally for this purpose).
  *
- * To enumerate the successive points or the successive coordinates of a
- * given point, we use *point set iterators*, which resemble the iterators
- * defined in Java *collections*, except that they loop over bi-dimensional
- * sets. Their general behavior is defined in the interface
- * @ref umontreal.ssj.hups.PointSetIterator. Several independent iterators
- * can coexist at any given time for the same point set. Each one maintains a
- * current point index and a current coordinate index, which are incremented
- * by one when the iterator advances to the next point or the next
- * coordinate. Both are initialized to 0. Each subclass of
- * @ref umontreal.ssj.hups.PointSet has its own implementation of
- * @ref umontreal.ssj.hups.PointSetIterator and has a method `iterator` that
- * creates and returns a new point set iterator of the correct type.
+ * We recommend to always use a `PointSetRandomization` object (such as a `RandomShift`)
+ * and use its `randomize (PointSet p)` method
+ * rather than calling `addRandomShift` directly, because this permits one to change
+ * the randomization externally without changing the `randomize` call internally in a 
+ * simulation program.   The tutorial and the code of some
+ * methods in @ref umontreal.ssj.hups.RQMCExperiments provide examples of that.
+ * 
+ * With the current implementation, in which the randomizations are integrated in the 
+ * `PointSet` object itself and not in the iterator, different iterators operating in parallel on the 
+ * same point set will all eumerate the same randomized points when the points are randomized.
+ * To have independent randomizations for the different iterators, the randomizations would have to be 
+ * implemented in the iterators. Currently, to use different randomizations of the same point set 
+ * in parallel, one can simply construct many instances of the 
+ * same point set and randomize them independently.
  *
- * An important feature of the  @ref umontreal.ssj.hups.PointSetIterator
- * interface is that it extends the  @ref umontreal.ssj.rng.RandomStream
- * interface. This means that any point set iterator can be used in place of
- * a random stream that is supposed to generate i.i.d. @f$U(0,1)@f$ random
- * variables, anywhere in a simulation program. It then becomes very easy to
- * replace the (pseudo)random numbers by the coordinates @f$u_{i,j}@f$ of a
- * randomized HUPS without changing the internal code of the simulation
- * program.
  *
  * ## Transformed point sets and containers
  *
- * HUPS are often transformed either deterministically or randomly.
- * Deterministic transformations can be applied to improve the uniformity, or
+ * Aside from the @ref PointSetRandomization subclasses, the `hups` package also
+ * offers tools to transform arbitrary point sets in various ways,
+ * either deterministically or randomly, by external filters.
+ * Some deterministic transformations can be applied
  * to eliminate some points or coordinates (i.e., selecting subsets), or to
  * concatenate point sets (padding), or to take an antithetic version of a
- * point set, etc. Random transformations are used for randomized QMC. They
- * are also useful when the *average* of a uniformity measure of interest
- * over the outcomes of a certain type of randomization is much better than
- * the worst case and may be better than the uniformity measure of the
- * original point set. When a point set is transformed, we often want to keep
+ * point set, for example.  Some types of random transformations can be used for RQMC. 
+ * When a point set is transformed, we usually want to keep
  * the original as well, and we may want to apply different types of
- * transformations or different independent randomizations to the same point
- * set.
- *
- * This can be achieved via *container* point sets, which are defined in
+ * transformations in succession to the same point set.
+ * 
+ * This is achieved via *container* point sets, which are defined in
  * terms of another point set to which they keep a reference and apply
  * certain transformations.  @ref umontreal.ssj.hups.ContainerPointSet is the
- * base class for such containers. One example is
- * @ref umontreal.ssj.hups.RandShiftedPointSet, which applies a random shift
- * modulo 1 to the point set that it contains. Of course, the contained point
- * set can be a container itself and this can be done recursively, but too
- * many levels of recursiveness may impair the performance (speed).
+ * base class for such containers. 
+ * The contained point set can be a container itself and this can be done recursively, but
+ * many levels of recursivity can obviously slow down the generation of the points.
+ * 
+ * One example of a `ContainerPointSet` that performs a randomization is a
+ * @ref umontreal.ssj.hups.RandShiftedMod1PointSet, which applies a random shift
+ * modulo 1 to the point set that it contains, whatever it is. 
+ * It can be used for instance if one wishes to apply a random shift modulo 1 
+ * to a `Digitalnet`.  
+ * Another one is  @ref umontreal.ssj.hups.AntitheticPointSet, which permits one to
+ * generate the antithetic coordinates for any given point set, 
+ * i.e., return @f$1-u_{i,j}@f$ instead of @f$u_{i,j}@f$.
+ * A third example is a @ref umontreal.ssj.hups.BakerTransformedPointSet,
+ * which applies the baker (or tent) transformation to the contained points.
+ * Such container point sets implement their own iterators that use the
+ * iterators of the contained point sets to access the points almost as
+ * efficiently as if the contained point set iterators were used directly,
+ * and they add their transformation.
+ *
+ * The @ref umontreal.ssj.hups.SubsetOfPointSet allows one to constrain a point
+ * set’s size or dimension, for example to limit the dimension of a cycle-based
+ * point set to a finite integer @f$s@f$. The class  @ref umontreal.ssj.hups.PaddedPointSet
+ * gathers two or more point sets of the same cardinality and juxtaposes (pads) them 
+ * to construct a point set whose dimension is the sum of dimensions of the padded components. 
+ *
+ *
+ * ## Cached points for stratified sampling, Latin hypercube sampling, sorted points, etc.
+ *
+ * In the class  @ref umontreal.ssj.hups.CachedPointSet, all coordinates of all 
+ * the points are stored internally in a matrix, and can then be accessed very efficiently. 
+ * Storing the points explicitly like this is necessary for certain types of point
+ * sets or sampling, for which the points cannot be recovered from a smaller amount of information.
+ * One trivial example of this is a set of @f$n@f$ independent random points,
+ * which is implemented in @ref umontreal.ssj.hups.IndependentPointsCached.
+ * This implementation can be useful in case one has a program to simulate a system with
+ * RQMC points and one wishes to try it with independent points for comparizon.
+ * 
+ * Stratified sampling over the unit cube can be implemented as follows.
+ * One partitions the unit cube in @f$n@f$ rectangles of the same size and one generates
+ * one point in each rectangle, uniformly and independently across rectangles.
+ * The class  @ref umontreal.ssj.hups.StratifiedUnitCube implements this.
+ * Here, the randomized points must be stored explicitly, so this is implemented as a subclass
+ * of `CachedPointSet`.
+ * Another subclass is @ref umontreal.ssj.hups.LatinHypercube, which implements 
+ * *Latin hypercube sampling.* 
+ * Yet another one is @ref umontreal.ssj.hups.SortedAndCutPointSet, 
+ * in which the inner points are sorted by the first few (one or more) coordinates,
+ * then these coordinates are removed and the other ones are cached in their new order.
+ * These types of constructions are used in the Array-RQMC method @cite vLEC08a, @cite vLEC16b.
+ *
+ *
+ *
+ *
  *
  * ## Examples
  *
- * To be done...
- *
- * ## Steps for performing Quasi-Monte Carlo simulation
- *
- * <ol><li>
- * Decide which type of point set will be used and create it by constructing
- * a subclass of  @ref umontreal.ssj.hups.PointSet.
- * </li>
- * <li>
- * Get an iterator for the point set and use it as an ordinary random number
- * stream. It can be used to create non-uniform random number generators as
- * well, although only inversion should be used.
- * </li>
- * <li>
- * For each of the @f$R@f$ replications of the simulation, do the following
- * to compute the statistic @f$x_r@f$, for @f$r=0,…,R-1@f$.
- *
- * <ol><li>
- * Randomize the point set using a uniform x1random number stream.
- * </li>
- * <li>
- * Perform @f$n@f$ replications of the simulation, each with a different
- * point in the point set. For each replication, one should obtain the result
- * @f$x_{r,i}@f$, where @f$i=0,…,n-1@f$.
- *
- * Note: All the points from a finite point set should be used to fully take
- * advantage of its low discrepancy.
- * </li>
- * <li>
- * Compute the statistic
- * @f[
- *   x_r=\frac{1}{n}\sum_{i=0}^{n-1} x_{r,i}.
- * @f]
- * </li>
- * <li>
- * Reset the point set iterator for the next replication.
- * </li>
- * </ol>
- * </li>
- * <li>
- * The values @f$x_0,…,x_{r-1}@f$ can be used as statistical observations to
- * compute the @f$\bar{x}@f$ estimator, confidence interval, ...
- * </li>
- * </ol>
- *
- * ## Representation of a point set
- *
- * The (abstract) base class  @ref umontreal.ssj.hups.PointSet views a *point
- * set* as a set of @f$n@f$ points in the @f$t@f$-dimensional unit hypercube
- * @f$[0,1)^t@f$. A point set can also be viewed (and stored) as an
- * @f$n\times t@f$ matrix whose element @f$(i,j)@f$ is the @f$j@f$th
- * coordinate of the @f$i@f$th point, for @f$0\le i < n@f$ and @f$0\le j <
- * t@f$ (both the point and coordinate indexes start from zero). One can
- * directly use methods of this class, but this is sometimes not the most
- * efficient technique for accessing coordinates of a point set and it
- * results in two versions of the same simulation application, one for Monte
- * Carlo and another one for Quasi-Monte Carlo. The class contains a method
- * allowing one to construct a *point set iterator* which can traverse the
- * point set more efficiently.
- *
- * The  @ref umontreal.ssj.hups.PointSetIterator contains all needed methods
- * to traverse a point set. One can return only one coordinate, @f$t@f$
- * coordinates, change the current coordinate and current point index, reset
- * the iterator, ... Since the class implements
- * @ref umontreal.ssj.rng.RandomStream, it can be used exactly as a uniform
- * random number generator. This allows one to use the same application logic
- * for MC and QMC simulation; only the initialization part will depend on the
- * type of simulation. Every point set implements its own specialized
- * iterator, allowing an efficient access to the coordinates.
- *
- * ## Supported types of point sets
- *
- * The `hups` package supports several types of point sets implemented in
- * different classes extending  @ref umontreal.ssj.hups.PointSet. The
- * @ref umontreal.ssj.hups.CycleBasedPointSet class provides the needed basis
- * for implementing cycle-based point sets. Each point is obtained by an
- * initial value which lies in a given cycle. The coordinates are obtained by
- * visiting all the points of the given cycle periodically, so the point set
- * has an infinite dimension. The  @ref umontreal.ssj.hups.LCGPointSet is an
- * implementation of a cycle-based point set whose cycles are generated using
- * a small LCG. Such a point set corresponds to a Korobov lattice rule.
- *
- * Generic rank 1 lattices rules are implemented in the class
- * @ref umontreal.ssj.hups.Rank1Lattice. Korobov lattice sequences are
- * implemented in the class  @ref umontreal.ssj.hups.KorobovLatticeSequence.
- *
- * Two types of digital nets are supported, namely base-2 and base-@f$b@f$.
- * They are implemented in separate base class because some optimizations can
- * be done for the special case of base&nbsp;2. The
- * @ref umontreal.ssj.hups.DigitalNetBase2 class, which implements digital
- * nets in base 2, provides all required facilities for computing points from
- * such a digital net. It also supports scrambling as randomization. A
- * digital net implementation needs to provide the adequate generating
- * matrices to the base class. Sobol, Niederreiter and Niederreiter-Xing
- * sequences are supported in base&nbsp;2.
- *
- * The class  @ref umontreal.ssj.hups.DigitalNet provides the required
- * facilities for implementing digital nets in an arbitrary base @f$b@f$. For
- * now, the only supported digital net in base @f$b > 2@f$ is the Faure
- * sequence.
- *
- * Some supported point sets are nor lattice rules, nor digital nets. The
- * Halton sequence and Hammersley net are ancestors of linear digital nets
- * and sequences and they are implemented in ordinary and scrambled forms.
- *
- * ## Randomization and container point sets
- *
- * Randomization can be performed in two ways. The interface
- * @ref umontreal.ssj.hups.Randomization is used to specify randomizations
- * transforming the structure of the point set, for example scrambling in the
- * case of digital nets. The class  @ref umontreal.ssj.hups.PointSet contains
- * an internal list of randomizations that will be applied sequentially when
- * calling the method  umontreal.ssj.hups.PointSet.randomize. The method
- * umontreal.ssj.hups.PointSet.unrandomize restores the point set to its
- * original, deterministic, structure. Other randomizations act somewhat like
- * a filter and are implemented as container point sets. For example, the
- * class  @ref umontreal.ssj.hups.RandShiftedPointSet represents a point set
- * whose coordinates are shifted modulo 1 with a random factor. This shift is
- * applied after the contained point set generates its coordinates and it can
- * be applied to any point set.
- *
- * The package uses container point set for other purposes than
- * randomization. The class  @ref umontreal.ssj.hups.CachedPointSet can be
- * used to store the coordinates of a point set. It is then stored internally
- * as a matrix and can be accessed very efficiently. The
- * @ref umontreal.ssj.hups.SubsetOfPointSet allows one to constrain a point
- * set’s size or dimension, for example to get the dimension of a cycle-based
- * point set finite. The class  @ref umontreal.ssj.hups.PaddedPointSet
- * gathers some coordinates of several point sets to construct a padded point
- * set. The class  @ref umontreal.ssj.hups.AntitheticPointSet allows one to
- * switch on or off the antithetic coordinates generation.
- *
- * Such container point sets implement their own iterators that use the
- * iterators of the contained point sets to access the points almost as
- * efficiently as if the contained point set iterators were used directly.
+ * See the tutorial.
  */

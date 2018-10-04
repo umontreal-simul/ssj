@@ -1,0 +1,6 @@
+[submodule "src/main/docs/bib"]
+	path = src/main/docs/bib
+	url = https://github.com/umontreal-simul/bibtex-database.git
+[submodule "src/main/docs/bibtex-database"]
+	path = src/main/docs/bibtex-database
+	url = https://github.com/umontreal-simul/bibtex-database.git

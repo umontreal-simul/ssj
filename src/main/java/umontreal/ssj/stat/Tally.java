@@ -3,7 +3,7 @@
  * Description:  statistical collector
  * Environment:  Java
  * Software:     SSJ
- * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Copyright (C) 2001--2018  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
  * @author
  * @since
@@ -44,8 +44,8 @@ import java.util.logging.Logger;
  * <div class="SSJ-bigskip"></div>
  */
 public class Tally extends StatProbe implements Cloneable {
-   private int numObs;
-   private double sumSquares;
+   protected int numObs;
+   //private double sumSquares;
    private double curAverage;  // The average of the first numObs observations
    private double curSum2;     // The sum (xi - average)^2 of the first numObs
                                // observations.
@@ -76,24 +76,33 @@ public class Tally extends StatProbe implements Cloneable {
    }
 
 
+   /**
+    * Set the name of this `Tally` to `name`.
+    *  @param name         name of the tally
+    */
+   public void setName (String name) {
+      this.name = name;
+   }
+
    public void init() {
        maxValue = Double.NEGATIVE_INFINITY;
        minValue = Double.POSITIVE_INFINITY;
        sumValue = 0.0;
-       sumSquares = 0.0;
+       // sumSquares = 0.0;
        curAverage = 0.0;
        curSum2 = 0.0;
        numObs = 0;
    }
 
-/**
- * Gives a new observation `x` to the statistical collector. If broadcasting
- * to observers is activated for this object, this method also transmits the
- * new information to the registered observers by invoking the method
- * #notifyListeners.
- *  @param x            observation being added to this tally
- */
-public void add (double x) {
+	/**
+	 * Gives a new observation `x` to the statistical collector. If broadcasting to observers is
+	 * activated for this object, this method also transmits the new information to the registered
+	 * observers by invoking the method #notifyListeners.
+	 * 
+	 * @param x
+	 *            observation being added to this Tally object
+	 */
+	public void add(double x) {
       if (collect) {
          if (x < minValue) minValue = x;
          if (x > maxValue) maxValue = x;
@@ -110,14 +119,24 @@ public void add (double x) {
       notifyListeners (x);
    }
 
-   /**
-    * Returns the number of observations given to this probe since its
-    * last initialization.
-    *  @return the number of collected observations
-    */
+	/**
+	 * Adds the first `number` observations from the array `x` to this probe.
+	 */
+	public void add(double[] x, int number) {
+		if (collect)
+			for (int i = 0; i < number; i++)
+				add(x[i]);
+	}
+
+	/**
+	 * Returns the number of observations given to this probe since its last initialization.
+	 * 
+	 * @return the number of collected observations
+	 */
    public int numberObs() {
       return numObs;
    }
+   
    @Override
    public double sum() {
       return numObs * curAverage;
@@ -158,7 +177,6 @@ public void add (double x) {
              " observation");
          return Double.NaN;
       }
-
       return curSum2 / (numObs-1);
    }
 
@@ -267,7 +285,7 @@ public void add (double x) {
       double ci[] = new double[2];
       confidenceIntervalNormal (level, ci);
       str.append ("  " + (100*level) + "%");
-      str.append (" confidence interval for mean (normal): (");
+      str.append (" conf. interval for the mean (normal approx.): (");
       str.append (7 + d, d-1, d, ci[0] - ci[1]).append (',');
       str.append (7 + d, d-1, d, ci[0] + ci[1]).append (" )" + PrintfFormat.NEWLINE);
       return str.toString();
@@ -300,7 +318,7 @@ public void add (double x) {
       double ci[] = new double[2];
       confidenceIntervalStudent (level, ci);
       str.append ("  " + (100*level) + "%");
-      str.append (" confidence interval for mean (student): (");
+      str.append (" conf. interval for the mean (Student approx.): (");
       str.append (7 + d, d, d-1, ci[0] - ci[1]).append (',');
       str.append (7 + d, d, d-1, ci[0] + ci[1]).append (" )" + PrintfFormat.NEWLINE);
       return str.toString();
@@ -370,7 +388,7 @@ public void add (double x) {
       double ci[] = new double[2];
       confidenceIntervalVarianceChi2 (level, ci);
       str.append ("  " + (100*level) + "%");
-      str.append (" confidence interval for variance (chi2): (");
+      str.append (" conf. interval for the variance (chi2 approx.): (");
       str.append (7 + d, d, d-1, ci[0]).append (',');
       str.append (7 + d, d, d-1, ci[1]).append (" )" + PrintfFormat.NEWLINE);
       return str.toString();
@@ -396,11 +414,12 @@ public void add (double x) {
    public String report (double level, int d) {
       PrintfFormat str = new PrintfFormat();
       str.append ("REPORT on Tally stat. collector ==> " + name);
-      str.append (PrintfFormat.NEWLINE + "    num. obs.      min          max        average     standard dev." + PrintfFormat.NEWLINE);
+      str.append (PrintfFormat.NEWLINE + "    num. obs.      min          max        average     variance    standard dev." + PrintfFormat.NEWLINE);
       str.append (7 + d, (int)numObs);   str.append (" ");
       str.append (9 + d, d, d-1, (double)minValue);   str.append (" ");
       str.append (9 + d, d, d-1, (double)maxValue);   str.append (" ");
       str.append (9 + d, d, d-1, (double)average());  str.append (" ");
+      str.append (9 + d, d, d-1, (double)variance());  str.append (" ");
       str.append (9 + d, d, d-1, standardDeviation());
       str.append (PrintfFormat.NEWLINE);
 
@@ -424,6 +443,7 @@ public void add (double x) {
       pf.append (-8, "   min").append ("   ");
       pf.append (-8, "   max").append ("   ");
       pf.append (-8, "   average").append ("   ");
+      pf.append (-8, "   variance").append ("   ");
       pf.append (-8, "   std. dev.");
       if (confidenceInterval != CIType.CI_NONE)
          pf.append ("   ").append (-12, "conf. int.");
@@ -434,7 +454,7 @@ public void add (double x) {
 /**
  * Formats and returns a short statistical report for this tally. The
  * returned single-line report contains the minimum value, the maximum value,
- * the average, and the standard deviation, in that order, separated by three
+ * the average, the variance, and the standard deviation, in that order, separated by three
  * spaces. If the number of observations is shown in the short report, a
  * column containing the number of observations in this tally is added.
  *  @return the string containing the report.
@@ -446,10 +466,12 @@ public String shortReport() {
       pf.append (9, 3, 2, min()).append ("   ");
       pf.append (9, 3, 2, max()).append ("   ");
       pf.append (10, 3, 2, average()).append ("   ");
-      if (numberObs() >= 2)
+      if (numberObs() >= 2) {
+         pf.append (10, 3, 2, variance()).append ("   ");
          pf.append (11, 3, 2, standardDeviation());
+      }
       else
-         pf.append (11, "---");
+         pf.append (21, "---");
 
       if (confidenceInterval != CIType.CI_NONE) {
          double[] ci = new double[2];
@@ -465,7 +487,6 @@ public String shortReport() {
          pf.append (9, 3, 2, ci[0] - ci[1]).append (',');
          pf.append (9, 3, 2, ci[0] + ci[1]).append (")");
       }
-
       return pf.toString();
    }
 
@@ -573,7 +594,7 @@ public String shortReport() {
       try {
          return (Tally)super.clone();
       } catch (CloneNotSupportedException e) {
-         throw new IllegalStateException ("Tally can't clone");
+         throw new IllegalStateException ("This Tally cannot be cloned");
       }
    }
 

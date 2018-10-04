@@ -23,11 +23,7 @@
  */
 package umontreal.ssj.hups;
 
-import java.util.NoSuchElementException;
-import java.util.*;
 import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.util.Num;
-import umontreal.ssj.hups.*;
 import umontreal.ssj.rng.*;
 
 /**
@@ -59,48 +55,47 @@ public class LatinHypercube extends CachedPointSet {
         this.dim = dim;
         delta = 1.0 / n;
         numPoints=n;
-   	  x = new double[numPoints][dim];  
+   	    x = new double[numPoints][dim];  
     }
 
-/**
- * This randomization generates a random LHS point set. The points are sorted
- * by their first coordinate. The LHS points are defined only after this
- * method has been called.
- *  @param stream       Random stream to generate the permutations and the
- *                      random points in the intervals
- */
-public void randomize (RandomStream stream) {
-   int[] permutation = new int[numPoints];  
-   // RandomPermutation.init (permutation, numPoints);
-	// Generate one random number uniformly in each interval for first coord. 
-   for (int i = 0; i < numPoints; i++) {
-	   permutation [i] = i;
-      x[i][0] =  (i + stream.nextDouble()) * delta;
+	/**
+	 * This randomization generates a random LHS point set. The points are sorted by their first
+	 * coordinate. The LHS points are defined only after this method has been called.
+	 * 
+	 * @param stream
+	 *            Random stream to generate the permutations and the random points in the intervals
+	 */
+	public void randomize(RandomStream stream) {
+		int[] permutation = new int[numPoints];
+		// RandomPermutation.init (permutation, numPoints);
+		// Generate one random number uniformly in each interval for first coord.
+		for (int i = 0; i < numPoints; i++) {
+			permutation[i] = i;
+			x[i][0] = (i + stream.nextDouble()) * delta;
 		}
-	for (int j=1; j < dim; j++) {
-	   RandomPermutation.shuffle (permutation, stream);
-	   // Generate one random number uniformly in each interval for coord. j.
-	   for (int i = 0; i < numPoints; i++)
-          x[permutation[i]][j] =  (i + stream.nextDouble()) * delta;
-   }
-}
+		for (int j = 1; j < dim; j++) {
+			RandomPermutation.shuffle(permutation, stream);
+			// Generate one random number uniformly in each interval for coord. j.
+			for (int i = 0; i < numPoints; i++)
+				x[permutation[i]][j] = (i + stream.nextDouble()) * delta;
+		}
+	}
 
-/**
- * Random shifts and partial randomizations are irrelevant here, so this
- * method is redefined to be equivalent to `randomize (stream)`. The
- * parameters `fromDim` and `toDim` are *not used*.
- */
-public void addRandomShift (int fromDim, int toDim, RandomStream stream) {
-	randomize (stream);
-}
+	/**
+	 * Random shifts and partial randomizations are irrelevant here, so this method is redefined to
+	 * be equivalent to `randomize (stream)`. The parameters `fromDim` and `toDim` are *not used*.
+	 */
+	public void addRandomShift(int fromDim, int toDim, RandomStream stream) {
+		randomize(stream);
+	}
 
-/**
- * Randomizes the points using LHS, regardless of what `rand` is. Equivalent
- * to `randomize (rand.getStream)`.
- */
-public void randomize (PointSetRandomization rand) {
-	randomize (rand.getStream());
-}
+	/**
+	 * Randomizes the points using LHS, regardless of what `rand` is. Equivalent to `randomize
+	 * (rand.getStream)`.
+	 */
+	public void randomize(PointSetRandomization rand) {
+		randomize(rand.getStream());
+	}
 
    public String toString() {
       return "LatinHypercube: LHS over the unit cube in " + dim + "dimensions.";

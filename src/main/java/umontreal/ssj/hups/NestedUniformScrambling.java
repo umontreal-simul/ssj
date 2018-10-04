@@ -33,7 +33,6 @@ import java.lang.IllegalArgumentException;
  * To use this randomization, one should should call the randomize() function of
  * an instance of NestedUniformScrambling with, as its argument, an instance of
  * CachedPointSet with a reference to a DigitalNetBase2 instance.
- *
  * The actual implementation is done in DigitalNetBase2.nestedUniformScramble().
  *
  * @warning Calling CachedPointSet.randomize() with an instance of
@@ -55,7 +54,7 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Create a NestedUniformScrambling instance, using `stream` as the random
+    * Create a `NestedUniformScrambling` instance, using `stream` as the random
     * generator, and randomizing all of the DigitalNet.outDigits output bits of
     * the DigitalNetBase2, up to 31 bits.
     *  @param stream       stream to use in the randomization
@@ -65,9 +64,9 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Create a NestedUniformScrambling instance, using `stream` as the random
+    * Create a `NestedUniformScrambling` instance, using `stream` as the random
     * generator, and randomizing only the first `numBits` output bits of
-    * the DigitalNetBase2.
+    * the `DigitalNetBase2`.
     *
     *  @param stream       stream to use in the randomization
     *  @param numBits      number of output bits to scramble (it can be smaller
@@ -111,4 +110,11 @@ public class NestedUniformScrambling implements PointSetRandomization {
       throw new IllegalArgumentException("NestedUniformScrambling" +
          " can only randomize a CachedPointSet of a DigitalNetBase2");
    }
+   
+   /**
+    * Returns a descriptor of this object.
+    */
+   public String toString () {
+		return "Nested uniform scrambling";
+	}
 }

@@ -98,12 +98,8 @@ public class LCGPointSet extends CycleBasedPointSet {
       return n;
    }
 
-
    public String toString() {
-      StringBuffer sb = new StringBuffer ("LCGPointSet:" +
-                                           PrintfFormat.NEWLINE);
-      sb.append (super.toString());
-      sb.append (PrintfFormat.NEWLINE + "Multiplier a: ");
+      StringBuffer sb = new StringBuffer ("LCGPointSet with multiplier a = ");
       sb.append (a);
       return sb.toString();
    }

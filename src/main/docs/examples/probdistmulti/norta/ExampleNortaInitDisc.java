@@ -1,3 +1,5 @@
+package probdistmulti.norta;
+
 import umontreal.ssj.probdist.*;
 import umontreal.ssj.probdistmulti.norta.*;
 

@@ -1,0 +1,9 @@
+/**
+ * @package umontreal.ssj.discrepancy
+ *
+ * Methods to compute various types of discrepancies for quasi-Monte Carlo point sets.
+ * 
+ * These old classes are specialized to specific types of discrepancies and are not necessarily
+ * the most efficient and general.  For more recent and efficient tools, see the @ref latnetbuilder package.
+ * 
+ */

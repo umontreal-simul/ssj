@@ -3,7 +3,7 @@
  * Description:  Used to randomize a PointSet
  * Environment:  Java
  * Software:     SSJ 
- * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
+ * Copyright (C) 2001--2018  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
  * @author       
  * @since
@@ -26,24 +26,18 @@ package umontreal.ssj.hups;
 import umontreal.ssj.rng.RandomStream;
 
 /**
- * This interface is used to randomize a  @ref umontreal.ssj.hups.PointSet.
+ * This interface is for a *randomization* that can be used to 
+ * randomize a  @ref umontreal.ssj.hups.PointSet.
  * One can implement method  #randomize(PointSet) in any way. This method
  * must use an internal  @ref umontreal.ssj.rng.RandomStream. This stream can
  * be set in the constructor, but the methods  #getStream and
- * #setStream(RandomStream) must be implemented.
+ * #setStream(RandomStream) must also be implemented.
  *
- * The method  #randomize(PointSet) must be implemented using combinations of
+ * The method  #randomize(PointSet) can be implemented using combinations of
  * the randomization methods from the point set such as
  * umontreal.ssj.hups.PointSet.addRandomShift,
  * umontreal.ssj.hups.DigitalNet.leftMatrixScramble,
- * umontreal.ssj.hups.DigitalNet.stripedMatrixScramble, …
- *
- * If more than one  @ref PointSetRandomization is applied to the same point
- * set, the randomizations will concatenate if they are of different types,
- * but only the last of each type will remain.
- *
- * @remark **Pierre:** There should be examples to illustrate how this works
- * and how to use it.
+ * umontreal.ssj.hups.DigitalNet.stripedMatrixScramble, etc.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */

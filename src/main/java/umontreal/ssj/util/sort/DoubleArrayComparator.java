@@ -26,37 +26,38 @@ package umontreal.ssj.util.sort;
 import java.util.Comparator;
 
 /**
- * An implementation of  Comparator which compares two `double` arrays by
- * comparing their <tt>i</tt>-<em>th</em> element, where `i` is given in the
- * constructor. Method `compare(d1, d2)` returns @f$-1@f$, @f$0@f$, or
- * @f$1@f$ depending on whether `d1[i]` is less than, equal to, or greater
- * than `d2[i]`.
+ * This provides an implementation of  Comparator in which arrays of `double`
+ * in @f$d@f$ dimensions are compared by comparing their coordinate @f$j@f$
+ * in the natural order of real numbers, where @f$j \in\{0,…,d-1\}@f$ is
+ * given in the constructor. The method `compare(d1, d2)` returns @f$-1@f$,
+ * @f$0@f$, or @f$1@f$ depending on whether `d1[j]` is less than, equal to,
+ * or greater than `d2[j]`.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public class DoubleArrayComparator implements Comparator<double[]> {
-   private int i;
+   private int j;
 
    /**
-    * Constructs a comparator, where `i` is the index used for the
+    * Constructs a comparator, where `j` is the coordinate used for the
     * comparisons.
-    *  @param i            index used for comparison
+    *  @param j            index used for comparison
     */
-   public DoubleArrayComparator (int i) {
-      this.i = i;
+   public DoubleArrayComparator (int j) {
+      this.j = j;
    }
 
    /**
-    * Returns @f$-1@f$, @f$0@f$, or @f$1@f$ depending on whether `d1[i]`
-    * is less than, equal to, or greater than `d2[i]`.
+    * Returns @f$-1@f$, @f$0@f$, or @f$1@f$ depending on whether `d1[j]`
+    * is less than, equal to, or greater than `d2[j]`.
     *  @param d1           first array
     *  @param d2           second array
     */
    public int compare (double[] d1, double[] d2) {
-      if (i >= d1.length || i >= d2.length)
+      if (j >= d1.length || j >= d2.length)
          throw new IllegalArgumentException("Comparing in a"+
-                    "dimension larger than arary dimension");
-      return (d1[i]< d2[i] ? -1 : (d1[i] > d2[i] ? 1 : 0));
+                    "dimension larger than array dimension");
+      return (d1[j]< d2[j] ? -1 : (d1[j] > d2[j] ? 1 : 0));
    }
 
 }

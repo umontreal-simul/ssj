@@ -114,11 +114,11 @@ public class LogarithmicGen extends RandomVariateGenInt {
          return lk (stream, theta, h);
    }
 
-/**
- * Uses stream `s` to generate a new variate from the *logarithmic*
- * distribution with parameter @f$\theta=@f$ `theta`.
- */
-public static int nextInt (RandomStream s, double theta) {
+   /**
+    * Uses stream `s` to generate a new variate from the *logarithmic*
+    * distribution with parameter @f$\theta=@f$ `theta`.
+    */
+   public static int nextInt (RandomStream s, double theta) {
       if (theta < default_theta_limit)
          return ls (s, theta, -theta/Math.log1p(-theta));
       else   // Transformation
@@ -160,10 +160,10 @@ public static int nextInt (RandomStream s, double theta) {
       return ((u > q) ? 1 : 2);
    }
 
-/**
- * Returns the @f$\theta@f$ associated with this object.
- */
-public double getTheta() {
+   /**
+    * Returns the @f$\theta@f$ associated with this object.
+    */
+   public double getTheta() {
       return theta;
    }
 

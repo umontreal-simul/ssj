@@ -3,6 +3,8 @@
  *
  * Goodness-of-fit test Statistics.
  *
+ * @anchor REF_gof_overview_sec_overview
+ *
  * This package contains tools for performing univariate *goodness-of-fit*
  * (GOF) statistical tests. Methods for computing (or approximating) the
  * distribution function @f$F(x)@f$ of certain GOF test statistics, as well
@@ -10,15 +12,15 @@
  * are implemented in classes of package  @ref umontreal.ssj.probdist. Tools
  * for computing the GOF test statistics and the corresponding
  * @f$p@f$-values, and for formating the results, are provided in classes
- * @ref umontreal.ssj.gof.GofStat and  @ref umontreal.ssj.gof.GofFormat.
+ * @ref GofStat and  @ref GofFormat.
  *
  * We are concerned here with GOF test statistics for testing the hypothesis
  * @f$\mathcal{H}_0@f$ that a sample of @f$N@f$ observations @f$X_1,…,X_N@f$
  * comes from a given univariate probability distribution @f$F@f$. We
  * consider tests such as those of Kolmogorov-Smirnov, Anderson-Darling,
  * Crámer-von Mises, etc. These test statistics generally measure, in
- * different ways, the distance between a *continuous* distribution function
- * @f$F@f$ and the *empirical distribution function* (EDF) @f$\hat{F}_N@f$ of
+ * different ways, the distance between a *continuous* cumulative distribution function (cdf)
+ * @f$F@f$ and the corresponding *empirical distribution function* (EDF) @f$\hat{F}_N@f$ of
  * @f$X_1,…,X_N@f$. They are also called EDF test statistics. The
  * observations @f$X_i@f$ are usually transformed into @f$U_i = F (X_i)@f$,
  * which satisfy @f$0\le U_i\le1@f$ and which follow the @f$U(0,1)@f$
@@ -91,19 +93,19 @@
  * Assuming that all @f$e_i@f$’s are large enough (a popular rule of thumb
  * asks for @f$e_i \ge5@f$ for each @f$i@f$), @f$X^2@f$ follows
  * approximately the chi-square distribution with @f$k-1@f$ degrees of
- * freedom @cite tREA88a&thinsp;. The class
- * @ref umontreal.ssj.gof.GofStat.OutcomeCategoriesChi2, a nested class
- * defined inside the  @ref umontreal.ssj.gof.GofStat class, provides tools
+ * freedom @cite tREA88a. The class
+ * @ref GofStat.OutcomeCategoriesChi2, a nested class
+ * defined inside the  @ref GofStat class, provides tools
  * to automatically regroup categories in the cases where some @f$e_i@f$’s
  * are too small.
  *
- * The class  @ref umontreal.ssj.gof.GofFormat contains methods used to
+ * The class  @ref GofFormat contains methods used to
  * format results of GOF test statistics, or to apply several such tests
  * simultaneously to a given data set and format the results to produce a
  * report that also contains the @f$p@f$-values of all these tests. A C
  * version of this class is actually used extensively in the package TestU01,
  * which applies statistical tests to random number generators
- * @cite iLEC01t&thinsp;. The class also provides tools to plot an empirical
+ * @cite iLEC01t. The class also provides tools to plot an empirical
  * or theoretical distribution function, by creating a data file that
  * contains a graphic plot in a format compatible with a given software.
  */

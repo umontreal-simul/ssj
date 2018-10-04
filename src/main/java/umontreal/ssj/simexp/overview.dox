@@ -1,0 +1,126 @@
+/**
+ * @package umontreal.ssj.simexp
+ *
+ * Tools for Simulation Experiments.
+ *
+ * Provides some classes to manage simulation experiments
+ * with many replications, batch means, etc. Let
+ * @f$\bar{\mathbf{X}}_n@f$ be an average of random vectors:
+ * @f[
+ *   \bar{\mathbf{X}}_n=\frac{1}{n}\sum_{r=0}^{n-1}\mathbf{X}_r,
+ * @f]
+ * where @f$\mathbf{X}_r@f$ is the @f$r@f$th observation obtained during an
+ * experiment. Assuming that the @f$\mathbf{X}_r@f$’s are i.i.d.,
+ * @f$\{\bar{\mathbf{X}}_n, n\ge0\}@f$ is a sequence of vectors in
+ * @f$\mathbb{R}^d@f$ converging to a vector
+ * @f$\boldsymbol{\mu}=E[\mathbf{X}_r]@f$ when @f$n\to\infty@f$. We use
+ * simulation to estimate this @f$\boldsymbol{\mu}@f$.
+ *
+ * The simplest way to generate the sample @f$(\mathbf{X}_0, …,
+ * \mathbf{X}_{n-1})@f$ is by simulating the same system @f$n@f$ times,
+ * independently. In that setting, @f$r@f$ becomes the index of a
+ * replication. In general, a simulation generates @f$n@f$ copies of
+ * @f$\mathbf{X}_r@f$ to compute @f$\bar{\mathbf{X}}_n@f$, in order to
+ * estimate @f$\boldsymbol{\mu}@f$. We may also be interested in some sample
+ * covariances of components of @f$\mathbf{X}_r@f$, for computing confidence
+ * intervals on functions of @f$\boldsymbol{\mu}@f$. The most common
+ * functions return a single component of @f$\boldsymbol{\mu}@f$, or a ratio
+ * of two components.
+ *
+ * For example, when simulating a @f$M/M/1@f$ queue, we may be able to get
+ * the total waiting time @f$W@f$ for all customers, the number @f$N@f$ of
+ * served customers, and the integral of the queue size over simulation time
+ * @f$Q(T)=\int_0^Tq(t) dt@f$, where @f$q(t)@f$ is the queue size at time
+ * @f$t@f$. In this case, @f$\mathbf{X}_r=(W_r, N_r, Q_r(T))@f$, and
+ * @f$\boldsymbol{\mu}=(E[W], E[N], E[Q(T)])@f$. Two interesting functions of
+ * @f$\boldsymbol{\mu}@f$ are the expected waiting time per customer
+ * @f$E[W]/E[N]@f$, and the time-average queue size @f$E[Q(T)]/T@f$. The
+ * functions are simply evaluated at @f$\bar{\mathbf{X}}_n@f$ to estimate the
+ * latter quantities.
+ *
+ * The number of observations @f$n@f$ is usually constant, but it may also be
+ * random if *sequential sampling* is used. With this scheme, after @f$n_0@f$
+ * observations are available, an error check is performed to determine if
+ * simulation should continue. For example, this check may evaluate the
+ * relative error of an estimated performance measure by dividing the
+ * half-width of a computed confidence interval by the point estimator, and
+ * require additional observations if this error is too high. The procedure
+ * is repeated until the stopping conditions are verified, or a maximal
+ * number of observations is obtained. However, because the sample size
+ * @f$n@f$ is random, the estimator @f$\bar{\mathbf{X}}_n@f$ is biased when
+ * using sequential sampling.
+ *
+ * The vector @f$\mathbf{X}_r@f$ is usually computed by summing costs
+ * incurred for various events during a part of the experiment. These costs
+ * can be waiting times, number of items, etc., not necessarily money. The
+ * computed sums may then be processed in a way depending of the simulated
+ * horizon and model to get the required values. If the horizon is finite,
+ * simulation stops after a finite time @f$T@f$, or a finite number @f$N@f$
+ * of events, and is usually repeated @f$n@f$ times independently. Then, for
+ * replication&nbsp;@f$r@f$,
+ * @f[
+ *   \mathbf{X}_r=\sum_{k=0}^{N-1}\mathbf{C}_{k, r}
+ * @f]
+ * or
+ * @f[
+ *   \mathbf{X}_r=\sum_{k=0}^{N_r(T)-1}\mathbf{C}_{k, r}
+ * @f]
+ * where @f$\mathbf{C}_{k, r}@f$ is the cost of the @f$k@f$th event during
+ * replication&nbsp;@f$r@f$, and @f$N_r(T)@f$ is the total number of events
+ * occurring during the time interval @f$[0, T]@f$. This estimates the total
+ * expected cost over the horizon.
+ *
+ * When the horizon is infinite, a single replication is usually simulated,
+ * and the cost per time unit or per event is computed in the long run in
+ * order to estimate
+ * @f[
+ *   \boldsymbol{\mu}=\lim_{N\to\infty} \left(\frac{1}{N}\; E\!\left[\sum_{k=0}^{N-1} \mathbf{C}_k\right]\right)
+ *   =\lim_{N\to\infty} \left(\frac{1}{N}\sum_{k=0}^{N-1} \mathbf{C}_k\right)
+ * @f]
+ * or
+ * @f[
+ *   \boldsymbol{\mu}=\lim_{T\to\infty} \left(\frac{1}{T}\; E\!\left[\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right]\right)
+ *   =\lim_{T\to\infty} \left(\frac{1}{T}\sum_{k=0}^{N(T) - 1} \mathbf{C}_k\right).
+ * @f]
+ * Any estimator of these previous quantities is biased, because the horizon
+ * must be truncated, and the model does not necessarily start in steady
+ * state. A single long replication is simulated to reduce the bias, and the
+ * first events are dropped (warmup).
+ *
+ * However, with a single long replication, computing sample covariances and
+ * confidence intervals is more difficult. A simple technique to overcome
+ * this problem is *batch means* @cite sLAW00a&thinsp;, which divides the
+ * truncated horizon into successive intervals called *batches*. More
+ * specifically, let @f$T_0@f$ be the time at which the warmup ends. We
+ * divide the horizon @f$[T_0, T]@f$ in @f$n@f$ batches starting at times
+ * @f$T_0 < \cdots< T_{n-1}@f$, and the last batch ends at
+ * @f$T_n=T>T_{n-1}@f$. Then, for batch&nbsp;@f$r@f$,
+ * @f[
+ *   \mathbf{X}_r=\sum_{k=N(T_r)}^{N(T_{r+1})-1}\mathbf{C}_k,
+ * @f]
+ * where @f$r=0,…, n-1@f$. Batches may have a fixed duration in simulation
+ * time units, contain a fixed number of events, etc. The beginning of each
+ * batch can even correspond to a *regeneration point*, i.e., a simulation
+ * time at which the state and behavior of the model does not depend on the
+ * past. In the latter case, each batch corresponds to a *regenerative
+ * cycle*. In all these cases, @f$\boldsymbol{\mu}@f$ is estimated by
+ * @f[
+ *   \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{\sum\limits_{r=0}^{n-1} (T_{r+1} - T_r)}  
+ *   =  \frac{\sum\limits_{r=0}^{n-1}\mathbf{X}_r}{T-T_0}.
+ * @f]
+ * The simplest way for estimating covariances when all batches have the same
+ * length is to consider the @f$\mathbf{X}_r@f$’s as i.i.d. random vectors,
+ * and use the same techniques as with independent replications. For
+ * regenerative cycles, confidence intervals must be computed on ratios of
+ * means. The class  @ref umontreal.ssj.stat.FunctionOfMultipleMeansTally can
+ * be used for this.
+ *
+ * This package provides helper classes to facilitate management of a complex
+ * simulation experiment. A base class called
+ * @ref SimExp contains methods to initialize lists of
+ * statistical probes and to help in sequential sampling. The subclass
+ * @ref RepSim is used for simulating independent
+ * replications of a given model on a finite horizon. The subclass
+ * @ref BatchMeansSim can be used for simulating a
+ * stationary model using the batch means technique.
+ */

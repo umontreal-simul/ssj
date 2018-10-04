@@ -46,38 +46,27 @@ public class DoublyLinked implements EventList {
 
    // First and last elements in the list.
    private Node first = null, last = null;
-   private static Node free = null;     // Pointer to stack of free nodes.
+
+   @Override
    public boolean isEmpty() {
       return first == null;
    }
 
+   @Override
    public void clear() {
       if (first == null)
          return;
-      /*      Node p = first;
-              while (p != null) {
-              p.ev.setTime(-20.0);
-              p.ev = null;
-              p = p.succ;
-              }
-      */
-      synchronized (DoublyLinked.class) {
-         last.succ = free;   free = first;
-      }
+
+      last.succ = null;
       last = first = null;
       ++modCount;
    }
 
+   @Override
    public void add (Event ev) {
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+
       newNode.ev = ev;
       ++modCount;
       if (last == null) {     // Easy: the event list was empty.
@@ -104,16 +93,11 @@ public class DoublyLinked implements EventList {
       }
    }
 
+   @Override
    public void addFirst (Event ev) {
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+      
       newNode.ev = ev;
       newNode.prec = null;
       if (first == null) {
@@ -128,6 +112,7 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addBefore (Event ev, Event other) {
       Node node = last;
       while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
@@ -136,14 +121,8 @@ public class DoublyLinked implements EventList {
          throw new IllegalArgumentException ("Event not in list.");
 
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+      
       newNode.ev = ev;
 
       newNode.prec = node.prec;
@@ -156,6 +135,7 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public void addAfter (Event ev, Event other) {
       Node node = last;
       while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
@@ -164,14 +144,8 @@ public class DoublyLinked implements EventList {
          throw new IllegalArgumentException ("Event not in list.");
 
       Node newNode;
-      synchronized (DoublyLinked.class) {
-         if (free == null)
-            newNode = new Node();
-         else {
-            newNode = free;
-            free = free.succ;
-         }
-      }
+      newNode = new Node();
+      
       newNode.ev = ev;
 
       newNode.prec = node;
@@ -184,10 +158,12 @@ public class DoublyLinked implements EventList {
       ++modCount;
    }
 
+   @Override
    public Event getFirst() {
       return first == null ? null : first.ev;
    }
 
+   @Override
    public Event getFirstOfClass (String cl) {
       Node node = first;
       while (node != null) {
@@ -199,6 +175,7 @@ public class DoublyLinked implements EventList {
    }
 
    @SuppressWarnings("unchecked")
+   @Override
    public <E extends Event> E getFirstOfClass (Class<E> cl) {
       Node node = first;
       while (node != null) {
@@ -209,6 +186,7 @@ public class DoublyLinked implements EventList {
       return null;
    }
 
+   @Override
    public boolean remove (Event ev) {
       // Find the node corresponding to this event ev.
       Node node = last;
@@ -236,13 +214,13 @@ public class DoublyLinked implements EventList {
          }
       }
       node.ev = null;
-      synchronized (DoublyLinked.class) {
-         node.succ = free;  free = node;  // Recycle node.
-      }
+      node.succ = null;
+              
       ++modCount;
       return true;
    }
 
+   @Override
    public Event removeFirst() {
       if (first == null)
          return null;
@@ -256,23 +234,25 @@ public class DoublyLinked implements EventList {
          first.prec = null;
 
       temp.ev = null;
-      synchronized (DoublyLinked.class) {
-         temp.succ = free;  free = temp;   // Recycle node.
-      }
+      temp.succ = null;
+
       ++modCount;
       return ev;
    }
 
+   @Override
    public Iterator<Event> iterator() {
       return listIterator();
    }
 
+   @Override
    public ListIterator<Event> listIterator() {
       return new DLItr();
    }
 
+   @Override
    public String toString() {
-      StringBuffer sb = new StringBuffer ("Contents of the event list DoublyLinked:");
+      StringBuilder sb = new StringBuilder ("Contents of the event list DoublyLinked:");
       Node node = first;
       while (node != null) {
          sb.append (PrintfFormat.NEWLINE +
@@ -306,6 +286,7 @@ public class DoublyLinked implements EventList {
          nextIndex = 0;
       }
 
+      @Override
       public void add(Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -321,14 +302,8 @@ public class DoublyLinked implements EventList {
          }
 
          Node newNode;
-         synchronized (DoublyLinked.class) {
-            if (free == null)
-               newNode = new Node();
-            else {
-               newNode = free;
-               free = free.succ;
-            }
-         }
+         newNode = new Node();
+         
          newNode.ev = ev;
          ++nextIndex;
          ++modCount;
@@ -362,18 +337,21 @@ public class DoublyLinked implements EventList {
          }
       }
 
+      @Override
       public boolean hasNext() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return next != null;
       }
 
+      @Override
       public boolean hasPrevious() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
          return prev != null;
       }
 
+      @Override
       public Event next() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -386,6 +364,7 @@ public class DoublyLinked implements EventList {
          return ev;
       }
 
+      @Override
       public int nextIndex() {
          if (!hasNext())
             throw new NoSuchElementException();
@@ -393,6 +372,7 @@ public class DoublyLinked implements EventList {
          return nextIndex;
       }
 
+      @Override
       public Event previous() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -405,6 +385,7 @@ public class DoublyLinked implements EventList {
          return ev;
       }
 
+      @Override
       public int previousIndex() {
          if (!hasPrevious())
             throw new NoSuchElementException();
@@ -412,6 +393,7 @@ public class DoublyLinked implements EventList {
          return nextIndex - 1;
       }
 
+      @Override
       public void remove() {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
@@ -445,14 +427,14 @@ public class DoublyLinked implements EventList {
             }
          }
          lastRet.ev = null;
-         synchronized (DoublyLinked.class) {
-            lastRet.succ = free;  free = lastRet;  // Recycle node.
-         }
+         lastRet.succ = null;
+
          lastRet = null;
          ++modCount;
          ++expectedModCount;
       }
 
+      @Override
       public void set (Event ev) {
          if (modCount != expectedModCount)
             throw new ConcurrentModificationException();
