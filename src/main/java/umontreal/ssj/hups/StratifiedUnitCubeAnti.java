@@ -23,12 +23,7 @@
  */
 package umontreal.ssj.hups;
 
-import java.util.NoSuchElementException;
-import java.util.*;
 import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.util.Num;
-import umontreal.ssj.hups.*;
-import umontreal.ssj.rng.*;
 
 /**
  * This class implements a stratification of the unit cube in rectangular
@@ -43,8 +38,15 @@ import umontreal.ssj.rng.*;
  */
 public class StratifiedUnitCubeAnti extends CachedPointSet {
 
-    protected int[] numDiv;             // Number of divisions in each dimension, k_i
-    protected double[] delta;           // Size of divisions in each dimension, 1/k_i
+    /**
+     * Number of divisions in each dimension, `numDiv[j]` for coordinate `j`.
+     */
+	protected int[] numDiv;   // Number of divisions in each dimension, k_j
+
+	 /**
+     * Size of divisions in each dimension, `delta[j] = 1/numDiv[j]`.
+     */
+	protected double[] delta;
 
     /**
      * Builds a stratified points set in <tt>dim</tt> dimensions, with
@@ -84,59 +86,60 @@ public class StratifiedUnitCubeAnti extends CachedPointSet {
    	  x = new double[numPoints][dim];  
     }
 
-/**
- * This randomization generates one point randomly in its corresponding box,
- * and the compute a locally antithetic point in the same box, for each of
- * the @f$n@f$ boxes. The stratified points are defined only after this
- * method has been called.
- *  @param stream       Random stream to generate the
- *                      @f$n\times{\mathtt{dim}}@f$ uniforms required to
- *                      randomize the points
- */
-public void randomize (RandomStream stream) {
-   int i;
-	double u;
-   int[] current = new int[dim];  // current[j] = current division for
-	                                         // dim j when we enumerate the points
-	for (int j=0; j < dim; j++) current[j] = 0;
-	int numBoxes = numPoints/2;
-   for (int b = 0; b < numBoxes; b++) {
-	   // Generate random point i=2b in box b, and compute locally antithetic point i+1.
-		i = 2 * b;
-      for (int j=0; j < dim; j++) {
-		    u =  stream.nextDouble();
-          x[i][j] =  (current[j] + u) * delta[j];
-          x[i+1][j] =  (current[j] + 1.0 - u) * delta[j];
-	   }
-      // Find the next box.
-      for (int l=0; l<dim; l++) {
-         current[l]++;
-         if (current[l] >= numDiv[l])
-            current[l]=0;   // next, we will add the carry to current[l+1].
-         else
-            l = dim;  // Exit loop.
-      }
-   }
-}
+	/**
+	 * This randomization generates one point randomly in its corresponding box, and the compute a
+	 * locally antithetic point in the same box, for each of the @f$n@f$ boxes. The stratified
+	 * points are defined only after this method has been called.
+	 * 
+	 * @param stream
+	 *            Random stream to generate the
+	 * @f$n\times{\mathtt{dim}}@f$ uniforms required to randomize the points
+	 */
+	public void randomize(RandomStream stream) {
+		int i;
+		double u;
+		int[] current = new int[dim];  // current[j] = current division for
+		                               // dim j when we enumerate the points
+		for (int j = 0; j < dim; j++)
+			current[j] = 0;
+		int numBoxes = numPoints / 2;
+		for (int b = 0; b < numBoxes; b++) {
+			// Generate random point i=2b in box b, and compute locally antithetic point i+1.
+			i = 2 * b;
+			for (int j = 0; j < dim; j++) {
+				u = stream.nextDouble();
+				x[i][j] = (current[j] + u) * delta[j];
+				x[i + 1][j] = (current[j] + 1.0 - u) * delta[j];
+			}
+			// Find the next box.
+			for (int l = 0; l < dim; l++) {
+				current[l]++;
+				if (current[l] >= numDiv[l])
+					current[l] = 0;   // next, we will add the carry to current[l+1].
+				else
+					l = dim;  // Exit loop.
+			}
+		}
+	}
 
-/**
- * Random shifts and partial randomizations are irrelevant here, so this
- * method is redefined to be equivalent to `randomize (stream)`. The
- * parameters `fromDim` and `toDim` are *not used*.
- */
-public void addRandomShift (int fromDim, int toDim, RandomStream stream) {
-	randomize (stream);
-}
+	/**
+	 * Random shifts and partial randomizations are irrelevant here, so this method is redefined to
+	 * be equivalent to `randomize (stream)`. The parameters `fromDim` and `toDim` are *not used*.
+	 */
+	public void addRandomShift(int fromDim, int toDim, RandomStream stream) {
+		randomize(stream);
+	}
 
-/**
- * Randomizes the points using the locally antithetic stratification,
- * regardless of what `rand` is. Equivalent to `randomize (rand.getStream)`.
- */
-public void randomize (PointSetRandomization rand) {
-	randomize (rand.getStream());
-}
+	/**
+	 * Randomizes the points using the locally antithetic stratification, regardless of what `rand`
+	 * is. Equivalent to `randomize (rand.getStream)`.
+	 */
+	public void randomize(PointSetRandomization rand) {
+		randomize(rand.getStream());
+	}
 
-   public String toString() {
-      return "StratifiedUnitCubeAnti: locally antithetic stratified point set over the unit cube in " + dim + "dimensions.";
-   }
+	public String toString() {
+		return "StratifiedUnitCubeAnti: locally antithetic stratified point set over the unit cube in "
+		        + dim + "dimensions.";
+	}
 }

@@ -28,7 +28,7 @@ package umontreal.ssj.discrepancy;
    import umontreal.ssj.util.Num;
 
 /**
- * This class implements searches to find the best lattices of rank 1,
+ * This class implements methods to search for the best lattices of rank 1,
  * defined as follows @cite vSLO94a&thinsp;. Given a positive integer @f$n@f$
  * and a @f$s@f$-dimensional integer vector @f$(a_0,…,a_{s-1})@f$, where @f$0
  * \le a_j < n@f$ for each @f$j@f$, the points are defined by

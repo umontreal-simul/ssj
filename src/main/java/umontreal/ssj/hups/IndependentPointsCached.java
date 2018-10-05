@@ -23,63 +23,62 @@
  */
 package umontreal.ssj.hups;
 
-import java.util.NoSuchElementException;
-import java.util.*;
 import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.hups.*;
-import umontreal.ssj.rng.*;
 
 /**
- * Similar to  IndependentPoints, but the points are all generated and stored
- * (cached) when the point set is randomized. The points are independent and
- * uniformly distributed over the @f$s@f$-dimensional unit hypercube. They
- * are enumerated in the order in which they are generated.
+ * Similar to IndependentPoints, but the points are all generated and stored (cached) when the point
+ * set is randomized. The points are independent and uniformly distributed over
+ * the @f$s@f$-dimensional unit hypercube. They are enumerated in the order in which they are
+ * generated.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class IndependentPointsCached extends CachedPointSet {
 
-    /**
-     * Constructs the structure for `n` points in <tt>dim</tt>
-     * dimensions.
-     *  @param n            number of points
-     *  @param dim          dimension of the points set
-     */
-    public IndependentPointsCached (int n, int dim) {
-        this.dim = dim;
-        numPoints=n;
-   	  x = new double[numPoints][dim];  
-    }
+	/**
+	 * Constructs the structure for `n` points in `dim` dimensions.
+	 * 
+	 * @param n
+	 *            number of points
+	 * @param dim
+	 *            dimension of the points set
+	 */
+	public IndependentPointsCached(int n, int dim) {
+		this.dim = dim;
+		numPoints = n;
+		x = new double[numPoints][dim];
+	}
 
-/**
- * This randomization generates and stores independent random points.
- *  @param stream       Random stream used to generate the random points
- */
-public void randomize (RandomStream stream) {
-	for (int j=0; j < dim; j++) {
-	   for (int i = 0; i < numPoints; i++)
-          x[i][j] = stream.nextDouble();
-   }
-}
+	/**
+	 * This randomization generates and stores independent random points.
+	 * 
+	 * @param stream
+	 *            Random stream used to generate the random points
+	 */
+	public void randomize(RandomStream stream) {
+		for (int j = 0; j < dim; j++) {
+			for (int i = 0; i < numPoints; i++)
+				x[i][j] = stream.nextDouble();
+		}
+	}
 
-/**
- * Random shifts and partial randomizations are irrelevant here, so this
- * method is redefined to be equivalent to `randomize (stream)`. The
- * parameters `fromDim` and `toDim` are *not used*.
- */
-public void addRandomShift (int fromDim, int toDim, RandomStream stream) {
-	randomize (stream);
-}
+	/**
+	 * Random shifts and partial randomizations are irrelevant here, so this method is redefined to
+	 * be equivalent to `randomize (stream)`. The parameters `fromDim` and `toDim` are *not used*.
+	 */
+	public void addRandomShift(int fromDim, int toDim, RandomStream stream) {
+		randomize(stream);
+	}
 
-/**
- * Generates new independent points, regardless of what `rand` is. Equivalent
- * to `randomize (rand.getStream)`.
- */
-public void randomize (PointSetRandomization rand) {
-	randomize (rand.getStream());
-}
+	/**
+	 * Generates a new set of @f$n@f$ independent points, regardless of what `rand` is. 
+	 * Equivalent to `randomize(rand.getStream())`.
+	 */
+	public void randomize(PointSetRandomization rand) {
+		randomize(rand.getStream());
+	}
 
-   public String toString() {
-      return "IndependentPointsCached: independent points in " + dim + "dimensions.";
-   }
+	public String toString() {
+		return "IndependentPointsCached: independent points in " + dim + "dimensions.";
+	}
 }

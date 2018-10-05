@@ -5,7 +5,7 @@ import umontreal.ssj.rng.*;
 /**
  * An interface for a simple simulation model for which Monte Carlo (MC) or RQMC
  * experiments are to be performed. It generalizes @ref MonteCarloModelDouble.
- * This interface allows the output (performance) from the model to be of arbitrary type @ref E.
+ * This interface allows the output (performance) from the model to be of arbitrary type `E`.
  * It could be a scalar, an array, etc.
  */
 

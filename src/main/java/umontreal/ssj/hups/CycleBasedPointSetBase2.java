@@ -30,7 +30,7 @@ import cern.colt.list.*;
 
 /**
  * Similar to  @ref CycleBasedPointSet, except that the successive values in
- * the cycles are stored as integers in the range @f$\{0,…,2^k-1\}@f$, where
+ * the cycles are stored as integers in the range @f$\{0,\dots,2^k-1\}@f$, where
  * @f$1\le k \le31@f$. The output values @f$u_{i,j}@f$ are obtained by
  * dividing these integer values by @f$2^k@f$. Point sets where the
  * successive coordinates of each point are obtained via linear recurrences
@@ -188,7 +188,7 @@ public void addRandomShift (int d1, int d2, RandomStream stream) {
             outOfBounds();
          if (curCoordIndex + dim >= dimShift)
             addRandomShift (dimShift, curCoordIndex + dim + 1, shiftStream);
-         int j = curCoordInCycle;
+         // int j = curCoordInCycle;
          int maxj = curCycle.size();
          int x;
          for (int i = 0; i < dim; i++) {

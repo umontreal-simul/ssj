@@ -27,7 +27,9 @@ import cern.colt.list.*;
 import java.io.*;
 
 /**
- * LFSR generators produce numbers by generating a sequence of bits from a
+ * Linear feedback shift register (LFSR) random number
+ * generators @cite rLEC96a, @cite vLEC99a, @cite rNIE92b,
+ * produce numbers by generating a sequence of bits from a
  * linear recurrence modulo 2, and forming fractional numbers by taking
  * blocks of successive bits. More precisely, let @f$\mathbb F_2@f$ denote
  * the finite field with two elements (say, 0 and 1). Let @f$P(z) = z^k - a_1
@@ -38,9 +40,9 @@ import java.io.*;
  *   x_n = a_1 x_{n-1} + \cdots+ a_k x_{n-k}, \tag{mrg}
  * @f]
  * whose characteristic polynomial is @f$P(z)@f$. It should be understood
- * that in ( {@link REF_hups_CycleBasedLFSR_mrg mrg} ) all
+ * that in ({@link REF_hups_CycleBasedLFSR_mrg mrg}) all
  * computations are performed in @f$\mathbb F_2@f$ (this can be identified
- * with working in integer arithmetic modulo&nbsp;2). Suppose that
+ * with working in integer arithmetic modulo 2). Suppose that
  * @f$\mathbf{s}_0 = (x_0,…,x_{k-1})\in\{0,1\}^k@f$ is fixed and define
  * @anchor REF_hups_CycleBasedLFSR_taus
  * @f[
@@ -48,18 +50,18 @@ import java.io.*;
  * @f]
  * where @f$s@f$ and @f$L@f$ are positive integers. If @f$P@f$ is primitive,
  * @f$\mathbf{s}_0\not0@f$, and @f$\rho= 2^k-1@f$ is coprime to @f$s@f$,
- * then the sequences ( {@link REF_hups_CycleBasedLFSR_mrg mrg}
- * ) and ( {@link REF_hups_CycleBasedLFSR_taus taus} ) are both
+ * then the sequences ({@link REF_hups_CycleBasedLFSR_mrg mrg}) 
+ * and ({@link REF_hups_CycleBasedLFSR_taus taus}) are both
  * purely periodic with period @f$\rho@f$. Computing @f$u_n@f$ from
- * @f$u_{n-1}@f$ involves performing @f$s@f$ steps of the recurrence (
- * {@link REF_hups_CycleBasedLFSR_mrg mrg} ).
+ * @f$u_{n-1}@f$ involves performing @f$s@f$ steps of the 
+ * recurrence ({@link REF_hups_CycleBasedLFSR_mrg mrg}).
  *
  * Suppose now that we have @f$J@f$ LFSR recurrences, the @f$j@f$-th one
  * having a primitive characteristic polynomial @f$P_j(z)@f$ of degree
  * @f$k_j@f$, and step size @f$s_j@f$. Let @f$\{x_{j,n},  n\ge0\}@f$ be the
- * @f$j@f$-th LFSR sequence, and define @f$x_n = (x_{1,n} + \cdots+ x_{J,n})
- * \mod2@f$ and @f$u_n@f$ as in (
- * {@link REF_hups_CycleBasedLFSR_taus taus} ). Equivalently,
+ * @f$j@f$-th LFSR sequence,
+ * and define @f$x_n = (x_{1,n} + \cdots+ x_{J,n}) \bmod 2@f$ 
+ * and @f$u_n@f$ as in ({@link REF_hups_CycleBasedLFSR_taus taus}). Equivalently,
  * if @f$\{u_{j,n},  n\ge0\}@f$ is the output sequence from the @f$j@f$-th
  * LFSR, then @f$u_n = u_{1,n}\oplus\cdots\oplus u_{J,n}@f$ where
  * @f$\oplus@f$ denotes the bitwise exclusive-or in the binary expansion.

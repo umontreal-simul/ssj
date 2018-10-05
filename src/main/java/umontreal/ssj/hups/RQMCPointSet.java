@@ -26,8 +26,8 @@ package umontreal.ssj.hups;
 
 /**
  * This class is used for *randomized quasi-Monte Carlo* (RQMC) simulations
- * @cite vLEC00b, @cite vLEC02a, @cite vOWE97a, @cite vOWE97b&thinsp;. The
- * idea is to randomize a point set so that:
+ * @cite vLEC00b, @cite vLEC02a, @cite vOWE97a, @cite vOWE97b. The
+ * idea is to randomize a point set `p` so that:
  *
  * <ul><li>
  * it retains its high uniformity when taken as a set and
@@ -41,14 +41,15 @@ package umontreal.ssj.hups;
  *  A RQMC point set is one that satisfies these two conditions. One simple
  * randomization that satisfies these conditions for an arbirary point set
  * @f$P_n@f$ is a random shift modulo 1 @cite vCRA76a, @cite vLEC00b,
- * @cite vSLO94a&thinsp;: Generate a single point @f$\mathbf{U}@f$ uniformly
+ * @cite vSLO94a: Generate a single point @f$\mathbf{U}@f$ uniformly
  * over @f$(0, 1)^s@f$ and add it to each point of @f$P_n@f$, modulo 1,
  * coordinate-wise. Another one is a random digital shift in base @f$b@f$
- * @cite vLEC99a, @cite vLEC02a, @cite mMAT99a&thinsp;: generate again
+ * @cite vLEC99a, @cite vLEC02a, @cite mMAT99a: generate again
  * @f$\mathbf{U}@f$ uniformly over @f$(0, 1)^s@f$, expand each of its
  * coordinates in base @f$b@f$, and add the digits, modulo @f$b@f$, to the
- * corresponding digits of each point of @f$P_n@f$. <div
- * class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ * corresponding digits of each point of @f$P_n@f$. 
+ * 
+ * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class RQMCPointSet {
    protected PointSet set;
@@ -56,13 +57,13 @@ public class RQMCPointSet {
    protected String label;
 
    /**
-    * Constructor with the point set `set` and the randomization `rand`.
-    *  @param set          the point set
+    * Constructor with the point set `p` and the randomization `rand`.
+    *  @param p            the point set
     *  @param rand         the randomization
     */
-   public RQMCPointSet (PointSet set, PointSetRandomization rand) {
+   public RQMCPointSet (PointSet p, PointSetRandomization rand) {
       this.rand = rand;
-      this.set = set;
+      this.set = p;
    }
 
    /**

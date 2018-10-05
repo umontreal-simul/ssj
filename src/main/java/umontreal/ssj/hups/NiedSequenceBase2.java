@@ -59,7 +59,7 @@ public class NiedSequenceBase2 extends DigitalSequenceBase2 {
 
 
    public String toString() {
-      StringBuffer sb = new StringBuffer ("Niederreiter sequence:" +
+      StringBuffer sb = new StringBuffer ("Niederreiter sequence in base 2" +
                                            PrintfFormat.NEWLINE);
       sb.append (super.toString());
       return sb.toString();

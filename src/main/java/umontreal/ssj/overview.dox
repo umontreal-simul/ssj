@@ -134,7 +134,7 @@
  * contains tools for performing univariate
  * goodness-of-fit (GOF) statistical tests.
  *
- *  @ref umontreal.ssj.density 
+ *  @ref umontreal.ssj.stat.density 
  *  offers tools to construct histograms and estimate densities from data.
  *
  *

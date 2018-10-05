@@ -24,6 +24,7 @@
  */
 package umontreal.ssj.hups;
 
+import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.util.PrintfFormat;
 
  /*Attention: No array index range tests neither for the dimension
@@ -61,19 +62,19 @@ public class SubsetOfPointSet extends PointSet {
    protected int j_from, j_to, j_index[]; // Limits or lookup for column
 
    /**
-    * Constructs a new  @ref PointSet object, initially identical to `P`,
+    * Constructs a new  @ref PointSet object, initially identical to `p`,
     * and from which a subset of the points and/or a subset of the
     * coordinates is to be extracted.
-    *  @param P            point set for which a subset is constructed
+    *  @param p            point set for which a subset is constructed
     */
-   public SubsetOfPointSet (PointSet P) {
-      this.P = P;
-      numPoints = P.getNumPoints();
-      dim = P.getDimension();
+   public SubsetOfPointSet (PointSet p) {
+      this.P = p;
+      numPoints = p.getNumPoints();
+      dim = p.getDimension();
       i_from = 0;
-      i_to = P.getNumPoints();
+      i_to = p.getNumPoints();
       j_from = 0;
-      j_to = P.getDimension();
+      j_to = p.getDimension();
    }
 
    /**
@@ -103,7 +104,6 @@ public class SubsetOfPointSet extends PointSet {
    public void selectPoints (int[] pointIndices, int numPoints) {
       if (numPoints > P.getNumPoints() || numPoints > pointIndices.length)
          throw new IllegalArgumentException ("Number of indices too large");
-
       i_index = pointIndices;
       this.numPoints = numPoints;
    }
@@ -120,7 +120,6 @@ public class SubsetOfPointSet extends PointSet {
    public void selectCoordinatesRange (int from, int to) {
       if (0 > from || from >= to || to > P.getDimension())
          throw new IllegalArgumentException("Invalid column range");
-
       j_index = null;
       j_from = from;
       j_to = to;

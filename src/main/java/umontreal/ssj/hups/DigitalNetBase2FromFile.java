@@ -31,13 +31,13 @@ import java.net.MalformedURLException;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This class allows us to read the parameters defining a digital net *in
- * base 2* either from a file, or from a URL address on the World Wide Web.
- * See the documentation in  @ref umontreal.ssj.hups.DigitalNetFromFile. The
- * parameters used in building the net are those defined in class
+ * This class permits one to read the parameters that define a digital net *in
+ * base 2* either from a file, or from a URL address.
+ * See the documentation of  @ref umontreal.ssj.hups.DigitalNetFromFile. The
+ * parameters used in building the net are those defined in the class
  * @ref umontreal.ssj.hups.DigitalNetBase2. The format of the data files must
- * be the following (where @f$B@f$ is any @f$C_j@f$):
- *  (see the format in @ref umontreal.ssj.hups)
+ * be as follows, where @f$B@f$ represents any generating matrix @f$C_j@f$
+ *  (see the format in @ref umontreal.ssj.hups):
  *
  * <center>
  *  <tt><div class="SSJ-fbox">
@@ -100,9 +100,9 @@ import umontreal.ssj.util.PrintfFormat;
  *  </div> </tt>
  * </center>
  *
- * For each dimension @f$j@f$, there must be a @f$k@f$-vector of 32-bit
+ * For each dimension @f$j@f$, there must be a @f$k@f$-dimensional vector of 32-bit
  * integers (the @f$a_i@f$) corresponding to the columns of
- * @f$\mathbf{C}_j@f$. The correspondance is such that integer @f$a_i =
+ * @f$\mathbf{C}_j@f$. The correspondence is such that the integer @f$a_i =
  * 2^{30}(\mathbf{C}_j)_{1i} + 2^{29}(\mathbf{C}_j)_{2i} + \cdots+ 2^{31 -
  * r}(\mathbf{C}_j)_{ri}@f$.
  *

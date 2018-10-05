@@ -33,7 +33,7 @@
  * goal is to estimate @f$\mu=\mathbb E[Y_{\tau}]@f$.  It is not rare that
  * @f$c_j(\cdot)=0@f$ for all @f$j<\tau@f$, i.e., that the cost or revenue occurs only at the end.
  *
- * The base class @ref umontreal.ssj.markovchainrqmc.MarkovChain
+ * The base class @ref MarkovChain
  * offers methods to simulate one or more copies of the Markov chain one step at a time,
  * or over several steps, 
  * collect the realizations of $Y$ in statistical probes,
@@ -41,9 +41,9 @@
  * The chains can be simulated by Monte Carlo, RQMC, or Array-RQMC.
  *
  * To use these tools, one must define a subclass of
- * @ref umontreal.ssj.markovchainrqmc.MarkovChain and implement its three
+ * @ref MarkovChain and implement its three
  * abstract methods:
- * {@link umontreal.ssj.markovchainrqmc.MarkovChain.initialState()
+ * {@link MarkovChain.initialState()
  * initialState()} which resets the chain to its initial state @f$x_0@f$;
  * {@link umontreal.ssj.markovchainrqmc.MarkovChain.nextStep(RandomStream)
  * nextStep(stream)} which advances the chain by one step from the current state
@@ -55,20 +55,20 @@
  *
  * If the chains have to be sorted as in the Array-RQMC method, 
  * one must implement the 
- * @ref umontreal.ssj.markovchainrqmc.MarkovChainComparable interface,
+ * @ref MarkovChainComparable interface,
  * unless the chain is a subclass of
- * @ref umontreal.ssj.markovchainrqmc.MarkovChainDouble,  
+ * @ref MarkovChainDouble,  
  * in which case the state is just a real number and the chains are sorted 
  * by increasing order of their state in a trivial way.
- * For a direct subclass of @ref umontreal.ssj.markovchainrqmc.MarkovChain, 
+ * For a direct subclass of @ref MarkovChain, 
  * other methods are then needed. See the examples below for more details.
  *
- * The classes  @ref umontreal.ssj.markovchainrqmc.ArrayOfComparableChains
- * and  @ref umontreal.ssj.markovchainrqmc.ArrayOfDoubleChains 
+ * The classes  @ref ArrayOfComparableChains
+ * and  @ref ArrayOfDoubleChains 
  * work with multiple Markov chains in parallel.
  * They implement Array-RQMC.
  * The chains can be sorted using the method
- * umontreal.ssj.markovchainrqmc.ArrayOfComparableChains.sortChains.
+ * ArrayOfComparableChains.sortChains.
  *
  *
  * ## Examples
@@ -122,7 +122,7 @@
  * classes.
  *
  * 4- Same as 2 but with the array-RQMC method of @cite vLEC08a&thinsp;.
- * The  @ref umontreal.ssj.markovchainrqmc.ArrayOfComparableChains is used to
+ * The  @ref ArrayOfComparableChains is used to
  * simulate chains in parallel. It uses a
  * @ref umontreal.ssj.hups.PointSetRandomization to randomize the point sets
  * and a  @ref umontreal.ssj.util.MultiDimSort to sort the chains. Here, as
@@ -135,7 +135,7 @@
  * 5- How to simulate the trajectories with array-RQMC and do something with
  * the chains at each step. The `Do something with mc` comment should be
  * replaced by anything, using the
- * @ref umontreal.ssj.markovchainrqmc.MarkovChain `mc`. For example to store
+ * @ref MarkovChain `mc`. For example to store
  * or print the state `x` of each chain for a later use.
  *
  *   <strong>Tests using a `MarkovChainComparable`</strong>
