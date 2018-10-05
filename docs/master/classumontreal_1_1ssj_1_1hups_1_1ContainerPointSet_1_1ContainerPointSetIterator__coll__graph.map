@@ -1,4 +1,4 @@
 <map id="ContainerPointSet.ContainerPointSetIterator" name="ContainerPointSet.ContainerPointSetIterator">
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" title="This is the interface for iterators that permit one to go through the points of a #PointSet and the s..." alt="" coords="185,81,298,108"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="185,5,298,32"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html" title="This is the interface for iterators that permit one to go through the points of a #PointSet and the s..." alt="" coords="181,81,293,108"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="181,5,293,32"/>
 </map>

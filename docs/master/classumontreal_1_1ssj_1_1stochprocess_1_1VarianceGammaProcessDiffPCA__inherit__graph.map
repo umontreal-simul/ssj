@@ -1,7 +1,7 @@
 <map id="VarianceGammaProcessDiffPCA" name="VarianceGammaProcessDiffPCA">
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiffPCABridge.html" title="Same as VarianceGammaProcessDiff, but the two inner GammaProcess ’es are of the type PCABridge..." alt="" coords="5,304,193,345"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiffPCASymmetricalBridge.html" title="Same as VarianceGammaProcessDiff, but the two inner GammaProcess ’es are of the PCASymmetricalBridge..." alt="" coords="217,304,405,345"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiff.html" title="This class represents a variance gamma (VG) process . " alt="" coords="111,155,299,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" title="This class represents a variance gamma (VG) process . " alt="" coords="121,80,288,107"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="139,5,271,32"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiffPCABridge.html" title="Same as VarianceGammaProcessDiff, but the two inner GammaProcess ’es are of the type PCABridge..." alt="" coords="5,304,191,345"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiffPCASymmetricalBridge.html" title="Same as VarianceGammaProcessDiff, but the two inner GammaProcess ’es are of the PCASymmetricalBridge..." alt="" coords="215,304,400,345"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcessDiff.html" title="This class represents a variance gamma (VG) process . " alt="" coords="109,155,295,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" title="This class represents a variance gamma (VG) process . " alt="" coords="119,80,285,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="136,5,268,32"/>
 </map>

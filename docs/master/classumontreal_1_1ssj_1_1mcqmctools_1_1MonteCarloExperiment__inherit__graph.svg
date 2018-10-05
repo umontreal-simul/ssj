@@ -10,13 +10,13 @@
 <title>MonteCarloExperiment</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="-7.10543e-15,-56.5 -7.10543e-15,-75.5 116,-75.5 116,-56.5 -7.10543e-15,-56.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="0,-56.5 0,-75.5 116,-75.5 116,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="58" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">MonteCarloExperiment</text>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html" target="_top" xlink:title="Provides basic generic tools to perform RQMC experiments with a simulation model that implements the ...">
-<polygon fill="none" stroke="black" points="9.5,-0.5 9.5,-19.5 106.5,-19.5 106.5,-0.5 9.5,-0.5"/>
+<polygon fill="none" stroke="black" points="10.5,-0.5 10.5,-19.5 105.5,-19.5 105.5,-0.5 10.5,-0.5"/>
 <text text-anchor="middle" x="58" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">RQMCExperiment</text>
 </a>
 </g>

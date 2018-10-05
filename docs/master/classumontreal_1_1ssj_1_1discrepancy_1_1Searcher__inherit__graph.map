@@ -1,4 +1,4 @@
 <map id="Searcher" name="Searcher">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1SearcherCBC.html" title="This class implements searches to find the best rank&#45;1 lattices with respect to a given discrepancy..." alt="" coords="5,80,108,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1SearcherKorobov.html" title="This class implements searches to find the best Korobov lattices with respect to a given discrepancy..." alt="" coords="133,80,255,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1SearcherCBC.html" title="This class implements searches to find the best rank&#45;1 lattices with respect to a given discrepancy..." alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1SearcherKorobov.html" title="This class implements searches to find the best Korobov lattices with respect to a given discrepancy..." alt="" coords="131,80,251,107"/>
 </map>

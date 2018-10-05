@@ -1,5 +1,5 @@
 <map id="GammaDistFromMoments" name="GammaDistFromMoments">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html" title="Extends the class ContinuousDistribution for the gamma distribution   (page 337) with shape paramete..." alt="" coords="47,155,139,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="16,80,171,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="49,5,137,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1GammaDist.html" title="Extends the class ContinuousDistribution for the gamma distribution   (page 337) with shape paramete..." alt="" coords="47,155,138,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="17,80,169,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="49,5,136,32"/>
 </map>

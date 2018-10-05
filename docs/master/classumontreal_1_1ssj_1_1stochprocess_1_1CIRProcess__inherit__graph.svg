@@ -10,7 +10,7 @@
 <title>CIRProcess</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="14,-0.5 14,-19.5 85,-19.5 85,-0.5 14,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="15.5,-0.5 15.5,-19.5 83.5,-19.5 83.5,-0.5 15.5,-0.5"/>
 <text text-anchor="middle" x="49.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">CIRProcess</text>
 </g>
 <!-- Node1 -->

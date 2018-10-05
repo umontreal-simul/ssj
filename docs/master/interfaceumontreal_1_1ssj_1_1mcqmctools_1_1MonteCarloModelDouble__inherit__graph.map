@@ -1,8 +1,8 @@
 <map id="MonteCarloModelDouble" name="MonteCarloModelDouble">
-<area shape="rect" id="node2" href="$classtutorial_1_1AsianNew.html" title="AsianNew" alt="" coords="282,5,365,32"/>
-<area shape="rect" id="node3" href="$classtutorial_1_1NewTestAsianRQMC.html" title="NewTestAsianRQMC" alt="" coords="249,56,398,83"/>
-<area shape="rect" id="node4" href="$classtutorial_1_1San13Dist.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links, taken from Elmaghraby (1977) and used again in L&#39;Ecuyer and Lemieux (2000), &quot;Variance Reduction via Lattice Rules&quot;. " alt="" coords="282,107,365,133"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloModelDoubleRQMC.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="220,157,427,184"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An extension of MonteCarloModelDouble that also implements a vector of control variates. " alt="" coords="252,208,395,235"/>
-<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="219,259,428,285"/>
+<area shape="rect" id="node2" href="$classtutorial_1_1AsianNew.html" title="AsianNew" alt="" coords="279,5,359,32"/>
+<area shape="rect" id="node3" href="$classtutorial_1_1NewTestAsianRQMC.html" title="NewTestAsianRQMC" alt="" coords="247,56,391,83"/>
+<area shape="rect" id="node4" href="$classtutorial_1_1San13Dist.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links, taken from Elmaghraby (1977) and used again in L&#39;Ecuyer and Lemieux (2000), &quot;Variance Reduction via Lattice Rules&quot;. " alt="" coords="278,107,361,133"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloModelDoubleRQMC.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="218,157,421,184"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An extension of MonteCarloModelDouble that also implements a vector of control variates. " alt="" coords="249,208,390,235"/>
+<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="216,259,423,285"/>
 </map>

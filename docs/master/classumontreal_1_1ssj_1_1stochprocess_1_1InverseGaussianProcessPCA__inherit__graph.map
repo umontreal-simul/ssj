@@ -1,4 +1,4 @@
 <map id="InverseGaussianProcessPCA" name="InverseGaussianProcessPCA">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html" title="The inverse Gaussian process is a non&#45;decreasing process where the increments are additive and are gi..." alt="" coords="19,80,187,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="37,5,169,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html" title="The inverse Gaussian process is a non&#45;decreasing process where the increments are additive and are gi..." alt="" coords="19,80,184,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="35,5,167,32"/>
 </map>

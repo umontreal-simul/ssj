@@ -10,7 +10,7 @@
 <title>DiscShift2</title>
 <!-- Node3 -->
 <g id="node1" class="node"><title>Node3</title>
-<polygon fill="#bfbfbf" stroke="black" points="4.5,-0.5 4.5,-19.5 66.5,-19.5 66.5,-0.5 4.5,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="5,-0.5 5,-19.5 66,-19.5 66,-0.5 5,-0.5"/>
 <text text-anchor="middle" x="35.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">DiscShift2</text>
 </g>
 <!-- Node4 -->

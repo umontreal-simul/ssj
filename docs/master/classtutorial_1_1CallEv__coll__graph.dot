@@ -1,0 +1,40 @@
+digraph "CallEv"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="CallEv",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" waitList" ,fontname="Helvetica"];
+  Node2 [label="LinkedListStat\< tutorial.\lCallEv.Call \>",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1simevents_1_1LinkedListStat.html"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" statWaitsDay\nstatWaits\nstatArrivals\nstatAbandon\nstatGoodQoS" ,fontname="Helvetica"];
+  Node3 [label="Tally",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1stat_1_1Tally.html",tooltip="A subclass of StatProbe. "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="StatProbe",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html",tooltip="The objects of this class are statistical probes or collectors, which are elementary devices for coll..."];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Cloneable",height=0.2,width=0.4,color="grey75"];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" confidenceInterval" ,fontname="Helvetica"];
+  Node6 [label="Tally.CIType",height=0.2,width=0.4,color="grey75"];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" genServ" ,fontname="Helvetica"];
+  Node7 [label="GammaGen",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html",tooltip="This class implements random variate generators for the gamma distribution. "];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="RandomVariateGen",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html",tooltip="This is the base class for all random variate generators over the real line. "];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dist" ,fontname="Helvetica"];
+  Node9 [label="Distribution",height=0.2,width=0.4,color="black",URL="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html",tooltip="This interface should be implemented by all classes supporting discrete and continuous distributions..."];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stream" ,fontname="Helvetica"];
+  Node10 [label="RandomStream",height=0.2,width=0.4,color="black",URL="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html",tooltip="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..."];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nextArrival" ,fontname="Helvetica"];
+  Node11 [label="Event",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1simevents_1_1Event.html",tooltip="This abstract class provides event scheduling tools. "];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Comparable\< Event \>",height=0.2,width=0.4,color="grey75"];
+  Node13 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sim" ,fontname="Helvetica"];
+  Node13 [label="Simulator",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html",tooltip="Represents the executive of a discrete-event simulator. "];
+  Node13 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" defaultSimulator" ,fontname="Helvetica"];
+  Node14 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" eventList" ,fontname="Helvetica"];
+  Node14 [label="EventList",height=0.2,width=0.4,color="black",URL="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html",tooltip="An interface for implementations of event lists. "];
+  Node15 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Iterable\< Event \>",height=0.2,width=0.4,color="grey75"];
+  Node16 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" continuousState" ,fontname="Helvetica"];
+  Node16 [label="ContinuousState",height=0.2,width=0.4,color="black",URL="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html",tooltip="Represents the portion of the simulator’s state associated with continuous-time simulation. "];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" streamArr\nstreamPatience\nstreamW" ,fontname="Helvetica"];
+}

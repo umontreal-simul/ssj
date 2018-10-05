@@ -1,6 +1,6 @@
 <map id="GammaDist" name="GammaDist">
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ErlangDist.html" title="Extends the class GammaDist for the special case of the Erlang distribution with shape parameter &#160;and..." alt="" coords="5,229,88,256"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1GammaDistFromMoments.html" title="Extends the GammaDist distribution with constructors accepting the mean &#160;and variance &#160;as arguments i..." alt="" coords="112,229,288,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="45,80,200,107"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="79,5,167,32"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1GammaDistFromMoments.html" title="Extends the GammaDist distribution with constructors accepting the mean &#160;and variance &#160;as arguments i..." alt="" coords="113,229,287,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="47,80,199,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="79,5,166,32"/>
 </map>

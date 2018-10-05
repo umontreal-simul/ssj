@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
 <g id="a_node1"><a xlink:href="classumontreal_1_1ssj_1_1rng_1_1Rijndael__Algorithm.html" target="_top" xlink:title="Rijndael –pronounced Reindaal– is a variable block&#45;size (128&#45;, 192&#45; and 256&#45;bit), variable key&#45;size (128&#45;, 192&#45; and 256&#45;bit) symmetric cipher. ">
-<polygon fill="none" stroke="black" points="-7.10543e-15,-0.5 -7.10543e-15,-19.5 98,-19.5 98,-0.5 -7.10543e-15,-0.5"/>
+<polygon fill="none" stroke="black" points="0,-0.5 0,-19.5 98,-19.5 98,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="49" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Rijndael_Algorithm</text>
 </a>
 </g>

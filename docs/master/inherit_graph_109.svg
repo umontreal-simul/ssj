@@ -19,14 +19,14 @@
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch.html" target="_top" xlink:title="Class for the search of good digital nets using LatNet Builder. ">
-<polygon fill="none" stroke="black" points="94,-38.5 94,-57.5 185,-57.5 185,-38.5 94,-38.5"/>
+<polygon fill="none" stroke="black" points="95,-38.5 95,-57.5 184,-57.5 184,-38.5 95,-38.5"/>
 <text text-anchor="middle" x="139.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">DigitalNetSearch</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node0&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M57.0194,-34.4199C68.4797,-36.3299 81.5699,-38.5117 93.8557,-40.5593"/>
+<path fill="none" stroke="midnightblue" d="M57.2239,-34.454C68.9264,-36.4044 82.3077,-38.6346 94.7888,-40.7148"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="57.4621,-30.9455 47.0227,-32.7538 56.3112,-37.8502 57.4621,-30.9455"/>
 </g>
 <!-- Node3 -->
@@ -52,8 +52,8 @@
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M195.314,-48C207.118,-48 219.673,-48 231.721,-48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="195.165,-44.5001 185.165,-48 195.165,-51.5001 195.165,-44.5001"/>
+<path fill="none" stroke="midnightblue" d="M194.703,-48C206.768,-48 219.644,-48 231.979,-48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="194.344,-44.5001 184.344,-48 194.344,-51.5001 194.344,-44.5001"/>
 </g>
 </g>
 </svg>

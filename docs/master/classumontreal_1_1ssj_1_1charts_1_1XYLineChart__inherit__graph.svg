@@ -5,12 +5,12 @@
  -->
 <!-- Title: XYLineChart Pages: 1 -->
 <svg width="203pt" height="140pt"
- viewBox="0.00 0.00 203.00 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 202.50 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>XYLineChart</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="53.5,-56.5 53.5,-75.5 125.5,-75.5 125.5,-56.5 53.5,-56.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="54.5,-56.5 54.5,-75.5 124.5,-75.5 124.5,-56.5 54.5,-56.5"/>
 <text text-anchor="middle" x="89.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">XYLineChart</text>
 </g>
 <!-- Node2 -->
@@ -42,7 +42,7 @@
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1charts_1_1YListChart.html" target="_top" xlink:title="This class extends the class umontreal.ssj.charts.XYLineChart. ">
-<polygon fill="none" stroke="black" points="132,-0.5 132,-19.5 195,-19.5 195,-0.5 132,-0.5"/>
+<polygon fill="none" stroke="black" points="132.5,-0.5 132.5,-19.5 194.5,-19.5 194.5,-0.5 132.5,-0.5"/>
 <text text-anchor="middle" x="163.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">YListChart</text>
 </a>
 </g>
@@ -55,7 +55,7 @@
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1charts_1_1XYChart.html" target="_top" xlink:title="This class provides tools to create charts from data in a simple way. ">
-<polygon fill="none" stroke="black" points="62.5,-112.5 62.5,-131.5 116.5,-131.5 116.5,-112.5 62.5,-112.5"/>
+<polygon fill="none" stroke="black" points="63.5,-112.5 63.5,-131.5 115.5,-131.5 115.5,-112.5 63.5,-112.5"/>
 <text text-anchor="middle" x="89.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">XYChart</text>
 </a>
 </g>

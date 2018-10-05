@@ -1,7 +1,7 @@
 <map id="PolInterp" name="PolInterp">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1functions_1_1Polynomial.html" title="Represents a polynomial of degree &#160;in power form. " alt="" coords="416,145,503,171"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,69,107,95"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="155,43,368,70"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="168,94,355,121"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="176,145,347,171"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1functions_1_1Polynomial.html" title="Represents a polynomial of degree &#160;in power form. " alt="" coords="411,144,497,171"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="5,68,107,95"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double). " alt="" coords="155,43,363,69"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,int). " alt="" coords="167,93,350,120"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,double) method. " alt="" coords="173,144,344,171"/>
 </map>

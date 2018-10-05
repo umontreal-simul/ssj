@@ -1,4 +1,4 @@
 <map id="StratifiedUnitCubeAnti" name="StratifiedUnitCubeAnti">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array..." alt="" coords="23,80,140,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. " alt="" coords="45,5,117,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array..." alt="" coords="22,80,138,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. " alt="" coords="44,5,116,32"/>
 </map>

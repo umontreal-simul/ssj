@@ -1,7 +1,7 @@
 <map id="PreyPred.Preys" name="PreyPred.Preys">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation. " alt="" coords="82,349,170,376"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1Event.html" title="This abstract class provides event scheduling tools. " alt="" coords="98,260,154,287"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete&#45;event simulator. " alt="" coords="181,171,258,197"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="110,81,187,108"/>
-<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="212,81,331,108"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation. " alt="" coords="79,349,166,376"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1Event.html" title="This abstract class provides event scheduling tools. " alt="" coords="95,260,150,287"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete&#45;event simulator. " alt="" coords="176,171,253,197"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="108,81,183,108"/>
+<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="207,81,326,108"/>
 </map>

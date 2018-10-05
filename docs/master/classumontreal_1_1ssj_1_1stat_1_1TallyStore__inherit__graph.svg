@@ -5,18 +5,18 @@
  -->
 <!-- Title: TallyStore Pages: 1 -->
 <svg width="146pt" height="140pt"
- viewBox="0.00 0.00 146.00 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 145.50 140.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136)">
 <title>TallyStore</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="38.5,-0.5 38.5,-19.5 99.5,-19.5 99.5,-0.5 38.5,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="39,-0.5 39,-19.5 99,-19.5 99,-0.5 39,-0.5"/>
 <text text-anchor="middle" x="69" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">TallyStore</text>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1stat_1_1Tally.html" target="_top" xlink:title="A subclass of StatProbe. ">
-<polygon fill="none" stroke="black" points="50,-56.5 50,-75.5 88,-75.5 88,-56.5 50,-56.5"/>
+<polygon fill="none" stroke="black" points="50.5,-56.5 50.5,-75.5 87.5,-75.5 87.5,-56.5 50.5,-56.5"/>
 <text text-anchor="middle" x="69" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Tally</text>
 </a>
 </g>
@@ -41,7 +41,7 @@
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
-<polygon fill="none" stroke="#bfbfbf" points="78,-112.5 78,-131.5 138,-131.5 138,-112.5 78,-112.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="78.5,-112.5 78.5,-131.5 137.5,-131.5 137.5,-112.5 78.5,-112.5"/>
 <text text-anchor="middle" x="108" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Cloneable</text>
 </g>
 <!-- Node3&#45;&gt;Node1 -->

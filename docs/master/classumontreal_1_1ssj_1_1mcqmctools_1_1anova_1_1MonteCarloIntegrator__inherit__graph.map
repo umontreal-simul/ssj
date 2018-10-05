@@ -1,7 +1,7 @@
 <map id="MonteCarloIntegrator" name="MonteCarloIntegrator">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html" title="Monte Carlo sampler. " alt="" coords="5,155,143,181"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomSampler.html" title="RandomSampler" alt="" coords="15,80,133,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html" title="Sampler" alt="" coords="39,5,109,32"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="167,155,293,181"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" title="Integrator" alt="" coords="191,80,269,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloSampler.html" title="Monte Carlo sampler. " alt="" coords="5,155,141,181"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomSampler.html" title="RandomSampler" alt="" coords="14,80,133,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Sampler.html" title="Sampler" alt="" coords="38,5,109,32"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="166,155,290,181"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" title="Integrator" alt="" coords="190,80,266,107"/>
 </map>

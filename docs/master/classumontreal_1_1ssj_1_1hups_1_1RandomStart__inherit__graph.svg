@@ -15,7 +15,7 @@
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
-<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" target="_top" xlink:title="This interface is used to randomize a umontreal.ssj.hups.PointSet. ">
+<g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" target="_top" xlink:title="This interface is for a randomization that can be used to randomize a umontreal.ssj.hups.PointSet. ">
 <polygon fill="none" stroke="black" points="0,-56.5 0,-75.5 119,-75.5 119,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="59.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetRandomization</text>
 </a>

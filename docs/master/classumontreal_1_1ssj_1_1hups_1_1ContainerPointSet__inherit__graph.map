@@ -1,6 +1,6 @@
 <map id="ContainerPointSet" name="ContainerPointSet">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet.html" title="This container class provides antithetic points. " alt="" coords="5,155,132,181"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet.html" title="This container class embodies a point set to which a Baker transformation is applied (see..." alt="" coords="157,155,335,181"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1RandShiftedMod1PointSet.html" title="This container class embodies a point set to which a random shift modulo 1 is applied (i..." alt="" coords="359,155,535,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. " alt="" coords="210,5,282,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet.html" title="This container class provides antithetic versions of the contained points. " alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet.html" title="This container class embodies a point set to which a baker&#39;s transformation (also called a tent trans..." alt="" coords="156,155,333,181"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1RandShiftedMod1PointSet.html" title="This container class embodies an arbitrary point set and its iterator adds a random shift modulo 1 to..." alt="" coords="357,155,532,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class represents a general point set. " alt="" coords="209,5,281,32"/>
 </map>

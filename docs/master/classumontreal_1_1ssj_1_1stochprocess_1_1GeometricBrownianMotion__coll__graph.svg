@@ -5,7 +5,7 @@
  -->
 <!-- Title: GeometricBrownianMotion Pages: 1 -->
 <svg width="263pt" height="286pt"
- viewBox="0.00 0.00 263.00 286.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 262.50 286.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 282)">
 <title>GeometricBrownianMotion</title>
 <!-- Node2 -->
@@ -42,7 +42,7 @@
 <!-- Node4 -->
 <g id="node3" class="node"><title>Node4</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" target="_top" xlink:title="This class implements methods for generating random variates from the normal distribution ...">
-<polygon fill="none" stroke="black" points="132.5,-134.5 132.5,-153.5 198.5,-153.5 198.5,-134.5 132.5,-134.5"/>
+<polygon fill="none" stroke="black" points="133,-134.5 133,-153.5 198,-153.5 198,-134.5 133,-134.5"/>
 <text text-anchor="middle" x="165.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">NormalGen</text>
 </a>
 </g>
@@ -51,7 +51,7 @@
 <g id="edge2" class="edge"><title>Node4&#45;&gt;Node2</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M165.652,-123.806C165.053,-107.821 162.47,-84.8677 153.5,-67 143.619,-47.3174 124.688,-29.6143 112.598,-19.5995"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="162.155,-124.093 165.799,-134.041 169.155,-123.991 162.155,-124.093"/>
-<text text-anchor="middle" x="170" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00"> gen</text>
+<text text-anchor="middle" x="171" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00"> gen</text>
 </g>
 <!-- Node4&#45;&gt;Node8 -->
 <g id="edge8" class="edge"><title>Node4&#45;&gt;Node8</title>
@@ -62,7 +62,7 @@
 <!-- Node5 -->
 <g id="node4" class="node"><title>Node5</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
-<polygon fill="none" stroke="black" points="114.5,-191.5 114.5,-210.5 216.5,-210.5 216.5,-191.5 114.5,-191.5"/>
+<polygon fill="none" stroke="black" points="115,-191.5 115,-210.5 216,-210.5 216,-191.5 115,-191.5"/>
 <text text-anchor="middle" x="165.5" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
@@ -75,21 +75,21 @@
 <!-- Node6 -->
 <g id="node5" class="node"><title>Node6</title>
 <g id="a_node5"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
-<polygon fill="none" stroke="black" points="85.5,-258.5 85.5,-277.5 151.5,-277.5 151.5,-258.5 85.5,-258.5"/>
-<text text-anchor="middle" x="118.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
+<polygon fill="none" stroke="black" points="87,-258.5 87,-277.5 152,-277.5 152,-258.5 87,-258.5"/>
+<text text-anchor="middle" x="119.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M130.862,-249.904C139.995,-237.273 152.048,-220.604 159.262,-210.627"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="127.862,-248.079 124.839,-258.234 133.534,-252.181 127.862,-248.079"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M131.599,-249.904C140.538,-237.273 152.334,-220.604 159.395,-210.627"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="128.624,-248.049 125.704,-258.234 134.337,-252.093 128.624,-248.049"/>
 <text text-anchor="middle" x="155" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
 <!-- Node7 -->
 <g id="node6" class="node"><title>Node7</title>
 <g id="a_node6"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
-<polygon fill="none" stroke="black" points="170,-258.5 170,-277.5 255,-277.5 255,-258.5 170,-258.5"/>
+<polygon fill="none" stroke="black" points="170.5,-258.5 170.5,-277.5 254.5,-277.5 254.5,-258.5 170.5,-258.5"/>
 <text text-anchor="middle" x="212.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>

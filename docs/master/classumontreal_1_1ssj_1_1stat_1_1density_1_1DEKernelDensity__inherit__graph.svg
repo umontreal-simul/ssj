@@ -10,7 +10,7 @@
 <title>DEKernelDensity</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 92,-19.5 92,-0.5 0,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="0.5,-0.5 0.5,-19.5 91.5,-19.5 91.5,-0.5 0.5,-0.5"/>
 <text text-anchor="middle" x="46" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">DEKernelDensity</text>
 </g>
 <!-- Node1 -->

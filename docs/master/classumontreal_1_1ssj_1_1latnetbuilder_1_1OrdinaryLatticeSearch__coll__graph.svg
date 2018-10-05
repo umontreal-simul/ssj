@@ -24,7 +24,7 @@
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node3&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M56.5,-47.1166C56.5,-37.8173 56.5,-27.0557 56.5,-19.7149"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="53.0001,-47.4062 56.5,-57.4062 60.0001,-47.4063 53.0001,-47.4062"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="53.0001,-47.4062 56.5,-57.4063 60.0001,-47.4063 53.0001,-47.4062"/>
 </g>
 <!-- Node4 -->
 <g id="node3" class="node"><title>Node4</title>

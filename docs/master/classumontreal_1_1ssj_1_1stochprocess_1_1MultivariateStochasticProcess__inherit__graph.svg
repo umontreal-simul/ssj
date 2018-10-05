@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 674;
+var viewWidth = 668;
 var viewHeight = 127;
 var sectionId = 'dynsection-0';
 </script>
@@ -56,35 +56,35 @@ var sectionId = 'dynsection-0';
 <title>MultivariateStochasticProcess</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="135,-28 135,-47 284,-47 284,-28 135,-28"/>
-<text text-anchor="middle" x="209.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateStochasticProcess</text>
+<polygon fill="#bfbfbf" stroke="black" points="135,-28 135,-47 283,-47 283,-28 135,-28"/>
+<text text-anchor="middle" x="209" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateStochasticProcess</text>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
 <g id="a_node3"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html" target="_top" xlink:title="This class represents a multivariate Brownian motion process , sampled at times . ...">
-<polygon fill="none" stroke="black" points="327.5,-50 327.5,-69 464.5,-69 464.5,-50 327.5,-50"/>
-<text text-anchor="middle" x="396" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
+<polygon fill="none" stroke="black" points="327,-50 327,-69 461,-69 461,-50 327,-50"/>
+<text text-anchor="middle" x="394" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node0&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M294.319,-47.4947C305.392,-48.815 316.628,-50.1548 327.382,-51.4372"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="294.559,-43.9986 284.215,-46.2898 293.73,-50.9493 294.559,-43.9986"/>
+<path fill="none" stroke="midnightblue" d="M293.351,-47.5203C304.568,-48.8688 315.949,-50.2371 326.814,-51.5432"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="293.462,-44.0085 283.115,-46.2898 292.626,-50.9585 293.462,-44.0085"/>
 </g>
 <!-- Node6 -->
 <g id="node7" class="node"><title>Node6</title>
 <g id="a_node7"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateGeometricBrownianMotion.html" target="_top" xlink:title="This class is a multivariate version of GeometricBrownianMotion. ">
-<polygon fill="none" stroke="black" points="320,-0.5 320,-30.5 472,-30.5 472,-0.5 320,-0.5"/>
-<text text-anchor="start" x="328" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateGeometricBrownian</text>
-<text text-anchor="middle" x="396" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Motion</text>
+<polygon fill="none" stroke="black" points="319,-0.5 319,-30.5 469,-30.5 469,-0.5 319,-0.5"/>
+<text text-anchor="start" x="327" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateGeometricBrownian</text>
+<text text-anchor="middle" x="394" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Motion</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node6 -->
 <g id="edge6" class="edge"><title>Node0&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M294.205,-27.519C302.769,-26.4978 311.432,-25.4648 319.895,-24.4556"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="293.73,-24.0507 284.215,-28.7102 294.559,-31.0014 293.73,-24.0507"/>
+<path fill="none" stroke="midnightblue" d="M293.109,-27.5087C301.677,-26.4787 310.343,-25.4369 318.805,-24.4196"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="292.626,-24.0415 283.115,-28.7102 293.462,-30.9915 292.626,-24.0415"/>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
@@ -96,49 +96,49 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node0 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node0</title>
-<path fill="none" stroke="midnightblue" d="M109.241,-37.5C117.634,-37.5 126.353,-37.5 134.985,-37.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="109.194,-34.0001 99.1944,-37.5 109.194,-41.0001 109.194,-34.0001"/>
+<path fill="none" stroke="midnightblue" d="M109.055,-37.5C117.421,-37.5 126.113,-37.5 134.717,-37.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="109.04,-34.0001 99.0403,-37.5 109.04,-41.0001 109.04,-34.0001"/>
 </g>
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotionBridge.html" target="_top" xlink:title="A multivariate Brownian motion process &#160;sampled via bridge sampling. ">
-<polygon fill="none" stroke="black" points="518.5,-88.5 518.5,-118.5 655.5,-118.5 655.5,-88.5 518.5,-88.5"/>
-<text text-anchor="start" x="526.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
-<text text-anchor="middle" x="587" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">Bridge</text>
+<polygon fill="none" stroke="black" points="515.5,-88.5 515.5,-118.5 649.5,-118.5 649.5,-88.5 515.5,-88.5"/>
+<text text-anchor="start" x="523.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
+<text text-anchor="middle" x="582.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">Bridge</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge3" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M448.047,-71.384C470.594,-76.6331 497.36,-82.8642 521.287,-88.4346"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="448.543,-67.906 438.01,-69.0473 446.956,-74.7237 448.543,-67.906"/>
+<path fill="none" stroke="midnightblue" d="M445.372,-71.384C467.621,-76.6331 494.032,-82.8642 517.643,-88.4346"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="446.004,-67.9371 435.468,-69.0473 444.397,-74.7501 446.004,-67.9371"/>
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotionPCA.html" target="_top" xlink:title="A multivariate Brownian motion process &#160;sampled entirely using the principal component decomposition ...">
-<polygon fill="none" stroke="black" points="508,-50 508,-69 666,-69 666,-50 508,-50"/>
-<text text-anchor="middle" x="587" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotionPCA</text>
+<polygon fill="none" stroke="black" points="505,-50 505,-69 660,-69 660,-50 505,-50"/>
+<text text-anchor="middle" x="582.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotionPCA</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge4" class="edge"><title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M474.989,-59.5C485.836,-59.5 496.984,-59.5 507.835,-59.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="474.7,-56.0001 464.7,-59.5 474.699,-63.0001 474.7,-56.0001"/>
+<path fill="none" stroke="midnightblue" d="M471.094,-59.5C482.192,-59.5 493.625,-59.5 504.737,-59.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="471.015,-56.0001 461.015,-59.5 471.015,-63.0001 471.015,-56.0001"/>
 </g>
 <!-- Node5 -->
 <g id="node6" class="node"><title>Node5</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotionPCABigSigma.html" target="_top" xlink:title="A multivariate Brownian motion process &#160;sampled entirely using the principal component decomposition ...">
-<polygon fill="none" stroke="black" points="518.5,-0.5 518.5,-30.5 655.5,-30.5 655.5,-0.5 518.5,-0.5"/>
-<text text-anchor="start" x="526.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
-<text text-anchor="middle" x="587" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PCABigSigma</text>
+<polygon fill="none" stroke="black" points="515.5,-0.5 515.5,-30.5 649.5,-30.5 649.5,-0.5 515.5,-0.5"/>
+<text text-anchor="start" x="523.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultivariateBrownianMotion</text>
+<text text-anchor="middle" x="582.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">PCABigSigma</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge5" class="edge"><title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M448.047,-47.616C470.594,-42.3669 497.36,-36.1358 521.287,-30.5654"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="446.956,-44.2763 438.01,-49.9527 448.543,-51.094 446.956,-44.2763"/>
+<path fill="none" stroke="midnightblue" d="M445.372,-47.616C467.621,-42.3669 494.032,-36.1358 517.643,-30.5654"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="444.397,-44.2499 435.468,-49.9527 446.004,-51.0629 444.397,-44.2499"/>
 </g>
 </g>
 </svg>

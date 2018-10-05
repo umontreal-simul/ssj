@@ -1,4 +1,4 @@
 <map id="MultiDimComparable&lt; T &gt;" name="MultiDimComparable&lt; T &gt;">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl..." alt="" coords="5,80,199,121"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" title="A special kind of Markov chain whose state space is a subset of the real numbers. ..." alt="" coords="32,169,172,196"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl..." alt="" coords="5,80,195,121"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" title="A special kind of Markov chain whose state space is a subset of the real numbers. ..." alt="" coords="32,169,168,196"/>
 </map>

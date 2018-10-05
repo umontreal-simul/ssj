@@ -42,7 +42,7 @@
 <!-- Node3 -->
 <g id="node4" class="node"><title>Node3</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
-<polygon fill="none" stroke="black" points="14,-168.5 14,-187.5 116,-187.5 116,-168.5 14,-168.5"/>
+<polygon fill="none" stroke="black" points="14.5,-168.5 14.5,-187.5 115.5,-187.5 115.5,-168.5 14.5,-168.5"/>
 <text text-anchor="middle" x="65" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>

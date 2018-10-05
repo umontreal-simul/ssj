@@ -1,7 +1,7 @@
 <map id="JohnsonSystem" name="JohnsonSystem">
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSBDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution , ,   with shape parameters &#160;..." alt="" coords="5,229,119,256"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSLDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution (see ,  ). " alt="" coords="143,229,253,256"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSUDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution (see   (page 316))..." alt="" coords="278,229,393,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="121,80,275,107"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="154,5,242,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSBDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution , ,   with shape parameters &#160;..." alt="" coords="5,229,116,256"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSLDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution (see ,  ). " alt="" coords="141,229,250,256"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSUDist.html" title="Extends the class ContinuousDistribution for the Johnson &#160;distribution (see   (page 316))..." alt="" coords="275,229,385,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="119,80,271,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="152,5,239,32"/>
 </map>

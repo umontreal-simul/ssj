@@ -1,5 +1,5 @@
 <map id="JohnsonSBDist" name="JohnsonSBDist">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSystem.html" title="This class contains common parameters and methods for the Johnson system of distributions ..." alt="" coords="25,155,141,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="5,80,160,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="39,5,127,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1JohnsonSystem.html" title="This class contains common parameters and methods for the Johnson system of distributions ..." alt="" coords="24,155,139,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="5,80,157,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="38,5,125,32"/>
 </map>

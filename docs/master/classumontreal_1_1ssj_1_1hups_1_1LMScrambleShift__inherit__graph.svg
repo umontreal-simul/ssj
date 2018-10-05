@@ -10,13 +10,13 @@
 <title>LMScrambleShift</title>
 <!-- Node0 -->
 <g id="node1" class="node"><title>Node0</title>
-<polygon fill="#bfbfbf" stroke="black" points="13.5,-0.5 13.5,-19.5 105.5,-19.5 105.5,-0.5 13.5,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="14,-0.5 14,-19.5 105,-19.5 105,-0.5 14,-0.5"/>
 <text text-anchor="middle" x="59.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">LMScrambleShift</text>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node"><title>Node1</title>
 <g id="a_node2"><a xlink:href="classumontreal_1_1ssj_1_1hups_1_1RandomShift.html" target="_top" xlink:title="This class implements a umontreal.ssj.hups.PointSetRandomization. ">
-<polygon fill="none" stroke="black" points="22.5,-56.5 22.5,-75.5 96.5,-75.5 96.5,-56.5 22.5,-56.5"/>
+<polygon fill="none" stroke="black" points="23.5,-56.5 23.5,-75.5 95.5,-75.5 95.5,-56.5 23.5,-56.5"/>
 <text text-anchor="middle" x="59.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomShift</text>
 </a>
 </g>
@@ -28,7 +28,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" target="_top" xlink:title="This interface is used to randomize a umontreal.ssj.hups.PointSet. ">
+<g id="a_node3"><a xlink:href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" target="_top" xlink:title="This interface is for a randomization that can be used to randomize a umontreal.ssj.hups.PointSet. ">
 <polygon fill="none" stroke="black" points="0,-112.5 0,-131.5 119,-131.5 119,-112.5 0,-112.5"/>
 <text text-anchor="middle" x="59.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointSetRandomization</text>
 </a>

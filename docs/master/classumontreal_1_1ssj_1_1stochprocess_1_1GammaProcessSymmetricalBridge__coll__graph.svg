@@ -69,7 +69,7 @@
 <!-- Node9 -->
 <g id="node6" class="node"><title>Node9</title>
 <g id="a_node6"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
-<polygon fill="none" stroke="black" points="50,-268.5 50,-287.5 152,-287.5 152,-268.5 50,-268.5"/>
+<polygon fill="none" stroke="black" points="50.5,-268.5 50.5,-287.5 151.5,-287.5 151.5,-268.5 50.5,-268.5"/>
 <text text-anchor="middle" x="101" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
@@ -95,7 +95,7 @@
 <!-- Node10 -->
 <g id="node7" class="node"><title>Node10</title>
 <g id="a_node7"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
-<polygon fill="none" stroke="black" points="68,-335.5 68,-354.5 134,-354.5 134,-335.5 68,-335.5"/>
+<polygon fill="none" stroke="black" points="68.5,-335.5 68.5,-354.5 133.5,-354.5 133.5,-335.5 68.5,-335.5"/>
 <text text-anchor="middle" x="101" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
@@ -109,21 +109,21 @@
 <!-- Node11 -->
 <g id="node8" class="node"><title>Node11</title>
 <g id="a_node8"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
-<polygon fill="none" stroke="black" points="183.5,-335.5 183.5,-354.5 268.5,-354.5 268.5,-335.5 183.5,-335.5"/>
-<text text-anchor="middle" x="226" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
+<polygon fill="none" stroke="black" points="183,-335.5 183,-354.5 267,-354.5 267,-335.5 183,-335.5"/>
+<text text-anchor="middle" x="225" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node6 -->
 <g id="edge8" class="edge"><title>Node11&#45;&gt;Node6</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M237.6,-326.678C254.542,-299.042 281.979,-243.737 262,-201 251.792,-179.164 228.419,-162.85 212.171,-153.622"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="234.569,-324.921 232.139,-335.233 240.47,-328.687 234.569,-324.921"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M236.799,-326.695C254.043,-299.082 282.012,-243.808 262,-201 251.792,-179.164 228.419,-162.85 212.171,-153.622"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="233.758,-324.951 231.243,-335.242 239.628,-328.765 233.758,-324.951"/>
 <text text-anchor="middle" x="285" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
 <!-- Node11&#45;&gt;Node9 -->
 <g id="edge7" class="edge"><title>Node11&#45;&gt;Node9</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M200.237,-330.603C175.483,-317.731 138.808,-298.66 117.668,-287.667"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="198.914,-333.86 209.401,-335.369 202.144,-327.65 198.914,-333.86"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M199.443,-330.603C174.887,-317.731 138.505,-298.66 117.534,-287.667"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="198.052,-333.826 208.534,-335.369 201.302,-327.626 198.052,-333.826"/>
 <text text-anchor="middle" x="188" y="-309" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
 <!-- Node12&#45;&gt;Node5 -->

@@ -1,5 +1,5 @@
 <map id="MultivariateBrownianMotionPCABigSigma" name="MultivariateBrownianMotionPCABigSigma">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html" title="This class represents a multivariate Brownian motion process , sampled at times . ..." alt="" coords="13,155,196,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateStochasticProcess.html" title="This class is a multivariate version of StochasticProcess where the process evolves in the &#45;dimension..." alt="" coords="5,80,204,107"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="39,5,171,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html" title="This class represents a multivariate Brownian motion process , sampled at times . ..." alt="" coords="15,155,193,181"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateStochasticProcess.html" title="This class is a multivariate version of StochasticProcess where the process evolves in the &#45;dimension..." alt="" coords="5,80,203,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="38,5,170,32"/>
 </map>

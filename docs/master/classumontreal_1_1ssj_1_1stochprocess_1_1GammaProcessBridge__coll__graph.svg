@@ -24,7 +24,7 @@
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M123.704,-51.287C110.146,-41.2095 92.6217,-28.1851 81.2255,-19.7149"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="121.824,-54.2501 131.938,-57.4062 125.999,-48.6319 121.824,-54.2501"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="121.824,-54.2501 131.938,-57.4063 125.999,-48.6319 121.824,-54.2501"/>
 </g>
 <!-- Node6 -->
 <g id="node3" class="node"><title>Node6</title>
@@ -56,15 +56,15 @@
 <!-- Node8 -->
 <g id="node5" class="node"><title>Node8</title>
 <g id="a_node5"><a xlink:href="classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" target="_top" xlink:title="This is the base class for all random variate generators over the real line. ">
-<polygon fill="none" stroke="black" points="10.5,-200.5 10.5,-219.5 112.5,-219.5 112.5,-200.5 10.5,-200.5"/>
-<text text-anchor="middle" x="61.5" y="-207.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
+<polygon fill="none" stroke="black" points="12,-200.5 12,-219.5 113,-219.5 113,-200.5 12,-200.5"/>
+<text text-anchor="middle" x="62.5" y="-207.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomVariateGen</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node7 -->
 <g id="edge4" class="edge"><title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M68.2237,-190.79C72.8326,-178.308 78.7381,-162.314 82.3145,-152.627"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="64.9172,-189.641 64.7367,-200.234 71.4839,-192.065 64.9172,-189.641"/>
+<path fill="none" stroke="midnightblue" d="M68.9435,-190.79C73.3604,-178.308 79.0198,-162.314 82.4473,-152.627"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="65.6382,-189.639 65.6019,-200.234 72.2373,-191.974 65.6382,-189.639"/>
 </g>
 <!-- Node11 -->
 <g id="node8" class="node"><title>Node11</title>
@@ -76,27 +76,27 @@
 </g>
 <!-- Node8&#45;&gt;Node11 -->
 <g id="edge9" class="edge"><title>Node8&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M54.6753,-190.673C50.6881,-179.778 45.642,-165.657 41.5,-153 37.1573,-139.73 32.633,-124.173 29.9421,-114.706"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="51.49,-192.151 58.237,-200.32 58.0567,-189.726 51.49,-192.151"/>
+<path fill="none" stroke="midnightblue" d="M55.2728,-190.703C51.0651,-179.817 45.766,-165.697 41.5,-153 37.0529,-139.764 32.558,-124.198 29.9017,-114.719"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="52.138,-192.297 59.038,-200.337 58.6578,-189.749 52.138,-192.297"/>
 </g>
 <!-- Node9 -->
 <g id="node6" class="node"><title>Node9</title>
 <g id="a_node6"><a xlink:href="interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" target="_top" xlink:title="This interface should be implemented by all classes supporting discrete and continuous distributions...">
-<polygon fill="none" stroke="black" points="21.5,-267.5 21.5,-286.5 87.5,-286.5 87.5,-267.5 21.5,-267.5"/>
-<text text-anchor="middle" x="54.5" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
+<polygon fill="none" stroke="black" points="23,-267.5 23,-286.5 88,-286.5 88,-267.5 23,-267.5"/>
+<text text-anchor="middle" x="55.5" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00">Distribution</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node8 -->
 <g id="edge5" class="edge"><title>Node9&#45;&gt;Node8</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M55.7266,-257.227C56.1957,-251.09 56.7915,-244.247 57.5,-238 58.1835,-231.973 59.1835,-225.223 60.0126,-219.98"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="52.2334,-257.008 55.0218,-267.23 59.2161,-257.501 52.2334,-257.008"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M56.0026,-257.21C56.2964,-251.072 56.7621,-244.233 57.5,-238 58.2174,-231.94 59.4674,-225.19 60.5381,-219.955"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="52.5045,-257.097 55.6375,-267.218 59.4998,-257.353 52.5045,-257.097"/>
 <text text-anchor="middle" x="67" y="-241" font-family="Helvetica,sans-Serif" font-size="10.00"> dist</text>
 </g>
 <!-- Node10 -->
 <g id="node7" class="node"><title>Node10</title>
 <g id="a_node7"><a xlink:href="interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" target="_top" xlink:title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb...">
-<polygon fill="none" stroke="black" points="106,-267.5 106,-286.5 191,-286.5 191,-267.5 106,-267.5"/>
+<polygon fill="none" stroke="black" points="106.5,-267.5 106.5,-286.5 190.5,-286.5 190.5,-267.5 106.5,-267.5"/>
 <text text-anchor="middle" x="148.5" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00">RandomStream</text>
 </a>
 </g>
@@ -109,8 +109,8 @@
 </g>
 <!-- Node10&#45;&gt;Node8 -->
 <g id="edge6" class="edge"><title>Node10&#45;&gt;Node8</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M121.29,-262.312C114.287,-258.359 106.921,-253.805 100.5,-249 88.541,-240.051 76.488,-227.674 69.0124,-219.508"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="120.03,-265.61 130.49,-267.296 123.365,-259.455 120.03,-265.61"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M121.247,-262.368C114.245,-258.415 106.89,-253.846 100.5,-249 88.7549,-240.092 77.0327,-227.705 69.779,-219.526"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="119.992,-265.668 130.453,-267.346 123.321,-259.511 119.992,-265.668"/>
 <text text-anchor="middle" x="117.5" y="-241" font-family="Helvetica,sans-Serif" font-size="10.00"> stream</text>
 </g>
 <!-- Node11&#45;&gt;Node4 -->

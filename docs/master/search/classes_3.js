@@ -9,7 +9,7 @@ var searchData=
   ['dekerneldensity',['DEKernelDensity',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DEKernelDensity.html',1,'umontreal::ssj::stat::density']]],
   ['densityderivativeestimator',['DensityDerivativeEstimator',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityDerivativeEstimator.html',1,'umontreal::ssj::stat::density']]],
   ['densityestimator',['DensityEstimator',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimator.html',1,'umontreal::ssj::stat::density']]],
-  ['departure',['Departure',['../classtutorial_1_1QueueEv_1_1Departure.html',1,'QueueEv.Departure'],['../classtutorial_1_1BankEv_1_1Departure.html',1,'BankEv.Departure']]],
+  ['departure',['Departure',['../classtutorial_1_1BankEv_1_1Departure.html',1,'BankEv.Departure'],['../classtutorial_1_1QueueEv_1_1Departure.html',1,'QueueEv.Departure']]],
   ['digitalnet',['DigitalNet',['../classumontreal_1_1ssj_1_1hups_1_1DigitalNet.html',1,'umontreal::ssj::hups']]],
   ['digitalnetbase2',['DigitalNetBase2',['../classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2.html',1,'umontreal::ssj::hups']]],
   ['digitalnetbase2fromfile',['DigitalNetBase2FromFile',['../classumontreal_1_1ssj_1_1hups_1_1DigitalNetBase2FromFile.html',1,'umontreal::ssj::hups']]],

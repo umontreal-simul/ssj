@@ -1,6 +1,6 @@
 <map id="SplitStream" name="SplitStream">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built. " alt="" coords="167,157,309,184"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="37,81,207,108"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates. " alt="" coords="333,157,439,184"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built. " alt="" coords="165,157,307,184"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable. " alt="" coords="37,81,206,108"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates. " alt="" coords="332,157,436,184"/>
 </map>

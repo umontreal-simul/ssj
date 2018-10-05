@@ -1,6 +1,6 @@
 <map id="RepSim" name="RepSim">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1SimExp.html" title="Represents a framework for performing experiments using simulation. " alt="" coords="111,260,179,287"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete&#45;event simulator. " alt="" coords="107,171,184,197"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="28,81,105,108"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="130,81,249,108"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1SimExp.html" title="Represents a framework for performing experiments using simulation. " alt="" coords="109,260,177,287"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simevents_1_1Simulator.html" title="Represents the executive of a discrete&#45;event simulator. " alt="" coords="104,171,181,197"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1simevents_1_1eventlist_1_1EventList.html" title="An interface for implementations of event lists. " alt="" coords="28,81,103,108"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1simevents_1_1ContinuousState.html" title="Represents the portion of the simulator’s state associated with continuous&#45;time simulation. " alt="" coords="127,81,246,108"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="Replicator" name="Replicator">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="5,102,132,129"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" title="Integrator" alt="" coords="30,5,107,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="ListOfTallies\&lt; umontreal.ssj.stat.\lTally \&gt;" alt="" coords="156,95,371,136"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="395,102,446,129"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="277,5,357,32"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" title="RandomIntegrator" alt="" coords="5,102,129,129"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" title="Integrator" alt="" coords="29,5,105,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="ListOfTallies\&lt; umontreal.ssj.stat.\lTally \&gt;" alt="" coords="154,95,367,136"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe. " alt="" coords="392,102,441,129"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="273,5,353,32"/>
 </map>
