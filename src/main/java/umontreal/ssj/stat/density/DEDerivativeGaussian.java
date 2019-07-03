@@ -133,9 +133,10 @@ public class DEDerivativeGaussian extends DensityDerivativeEstimator {
 		for (int j = 0; j < k; j++) { // evalPoints indexed by j
 			for (int i = 0; i < n; i++) { // data points indexed by i
 				z = (evalPoints[j] - data[i]) * hInv;
+				density[j] += NormalDist.density01(z) * hermitePoly(getOrder(), z);
 			}
-			density[k] += NormalDist.density01(z) * hermitePoly(getOrder(), z);
-			density[k] *= norma;
+			
+			density[j] *= norma;
 		}
 
 		return density;
@@ -202,9 +203,10 @@ public class DEDerivativeGaussian extends DensityDerivativeEstimator {
 		for (int j = 0; j < k; j++) { // evalPoints indexed by j
 			for (int i = 0; i < n; i++) { // data points indexed by i
 				z = (evalPoints[j] - data[i]) * hInv;
+				density[j] += NormalDist.density01(z) * hermitePoly(order, z);
 			}
-			density[k] += NormalDist.density01(z) * hermitePoly(order, z);
-			density[k] *= norma;
+			
+			density[j] *= norma;
 		}
 
 		return density;
