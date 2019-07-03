@@ -1,3 +1,4 @@
 <map id="DirichletGen" name="DirichletGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node1" title="Extends RandomMultivariateGen for a Dirichlet   distribution." alt="" coords="39,80,134,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen." alt="" coords="5,5,168,32"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="DiscreteDistribution" name="DiscreteDistribution">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ConstantDist.html" title="Represents a constant discrete distribution taking a single real value with probability 1..." alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node1" title="This class implements discrete distributions over a finite set of real numbers (also over integers as..." alt="" coords="47,80,185,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ConstantDist.html" title="Represents a constant discrete distribution taking a single real value with probability 1." alt="" coords="5,155,104,181"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1EmpiricalDist.html" title="Extends DiscreteDistribution to an empirical distribution function, based on the observations &#160;(sorte..." alt="" coords="129,155,229,181"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="72,5,160,32"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="72,5,160,32"/>
 </map>

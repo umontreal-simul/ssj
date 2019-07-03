@@ -1,4 +1,5 @@
 <map id="VarianceGammaProcessAlternate" name="VarianceGammaProcessAlternate">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" title="This class represents a variance gamma (VG) process . " alt="" coords="31,80,198,107"/>
+<area shape="rect" id="node1" title="This is a VarianceGammaProcess for which the successive random numbers are used in a different order ..." alt="" coords="5,155,224,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1VarianceGammaProcess.html" title="This class represents a variance gamma (VG) process ." alt="" coords="31,80,198,107"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="49,5,181,32"/>
 </map>

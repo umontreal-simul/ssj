@@ -1,5 +1,6 @@
 <map id="LCGPointSet" name="LCGPointSet">
+<area shape="rect" id="node1" title="Implements a recurrence&#45;based point set defined via a linear congruential recurrence of the form &#160;and..." alt="" coords="27,247,126,273"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CycleBasedPointSet.html" title="This abstract class provides the basic structures for storing and manipulating a highly uniform point..." alt="" coords="5,171,148,197"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="41,95,113,121"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="41,95,113,121"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="20,5,133,32"/>
 </map>

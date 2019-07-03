@@ -12,5 +12,6 @@ var searchData=
   ['default_5fcolumn_5fseparator',['DEFAULT_COLUMN_SEPARATOR',['../classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html#a92f5ae65c1b55f3acdf8ff52a97bc5f1',1,'umontreal::ssj::util::io::TextDataWriter']]],
   ['default_5fheader_5fprefix',['DEFAULT_HEADER_PREFIX',['../classumontreal_1_1ssj_1_1util_1_1io_1_1TextDataWriter.html#a24e25f9ef65a3e8819ea9d4aaef3bf5d',1,'umontreal::ssj::util::io::TextDataWriter']]],
   ['defaultsimulator',['defaultSimulator',['../classumontreal_1_1ssj_1_1simevents_1_1Simulator.html#a92fb72ba344f3426eb371d7b6f975f0e',1,'umontreal::ssj::simevents::Simulator']]],
+  ['defaultweight',['defaultWeight',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1Weights.html#abcfb738b20ad72f351437768a0d9837f',1,'umontreal::ssj::latnetbuilder::weights::Weights']]],
   ['dists',['dists',['../classumontreal_1_1ssj_1_1randvar_1_1MixtureGen.html#abfebf4f0b1b54fd3e560206f2fcc33cd',1,'umontreal::ssj::randvar::MixtureGen']]]
 ];

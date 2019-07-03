@@ -27,5 +27,6 @@ var searchData=
   ['sort',['sort',['../namespaceumontreal_1_1ssj_1_1util_1_1sort.html',1,'umontreal::ssj::util']]],
   ['stat',['stat',['../namespaceumontreal_1_1ssj_1_1stat.html',1,'umontreal::ssj']]],
   ['stochprocess',['stochprocess',['../namespaceumontreal_1_1ssj_1_1stochprocess.html',1,'umontreal::ssj']]],
-  ['util',['util',['../namespaceumontreal_1_1ssj_1_1util.html',1,'umontreal::ssj']]]
+  ['util',['util',['../namespaceumontreal_1_1ssj_1_1util.html',1,'umontreal::ssj']]],
+  ['weights',['weights',['../namespaceumontreal_1_1ssj_1_1latnetbuilder_1_1weights.html',1,'umontreal::ssj::latnetbuilder']]]
 ];

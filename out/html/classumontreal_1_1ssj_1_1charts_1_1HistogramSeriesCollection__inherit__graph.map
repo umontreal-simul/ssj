@@ -1,3 +1,4 @@
 <map id="HistogramSeriesCollection" name="HistogramSeriesCollection">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart. " alt="" coords="15,5,173,32"/>
+<area shape="rect" id="node1" title="Stores data used in a HistogramChart." alt="" coords="5,80,183,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart." alt="" coords="15,5,173,32"/>
 </map>

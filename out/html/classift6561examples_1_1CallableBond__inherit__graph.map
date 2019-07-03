@@ -1,5 +1,6 @@
 <map id="CallableBond" name="CallableBond">
-<area shape="rect" id="node3" href="$classift6561examples_1_1CallableBondCMC.html" title="Estimates the value of a callable bond where the coupons are paid at the same time as in..." alt="" coords="5,155,136,181"/>
-<area shape="rect" id="node4" href="$classift6561examples_1_1CallableBondCV.html" title="Estimates the value of a callable bond using the uncallable bond as a control variate. " alt="" coords="160,155,277,181"/>
+<area shape="rect" id="node1" title="Estimates the value of a callable bond." alt="" coords="95,80,193,107"/>
+<area shape="rect" id="node3" href="$classift6561examples_1_1CallableBondCMC.html" title="Estimates the value of a callable bond where the coupons are paid at the same time as in." alt="" coords="5,155,136,181"/>
+<area shape="rect" id="node4" href="$classift6561examples_1_1CallableBondCV.html" title="Estimates the value of a callable bond using the uncallable bond as a control variate." alt="" coords="160,155,277,181"/>
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="61,5,227,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="GeometricLevyProcess" name="GeometricLevyProcess">
+<area shape="rect" id="node1" title="Abstract class used as a parent class for the exponentiation of a Lévy process : &#160;The interest rate i..." alt="" coords="5,95,164,121"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="19,5,151,32"/>
 </map>

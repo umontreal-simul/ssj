@@ -1,9 +1,12 @@
 <map id="MultivariateGeometricBrownianMotion" name="MultivariateGeometricBrownianMotion">
+<area shape="rect" id="node1" title="This class is a multivariate version of GeometricBrownianMotion." alt="" coords="227,364,429,405"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateStochasticProcess.html" title="This class is a multivariate version of StochasticProcess where the process evolves in the &#45;dimension..." alt="" coords="509,171,707,197"/>
-<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html" title="This class represents a multivariate Brownian motion process , sampled at times . ..." alt="" coords="237,275,419,301"/>
+<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html" title="This class represents a multivariate Brownian motion process , sampled at times ." alt="" coords="237,275,419,301"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="542,95,674,121"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="68,171,156,197"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="45,95,179,121"/>
-<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ." alt="" coords="68,171,156,197"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="45,95,179,121"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="5,5,93,32"/>
 <area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="118,5,231,32"/>
+<area shape="rect" id="node9" title=" " alt="" coords="181,171,345,197"/>
+<area shape="rect" id="node10" title=" " alt="" coords="369,171,485,197"/>
 </map>

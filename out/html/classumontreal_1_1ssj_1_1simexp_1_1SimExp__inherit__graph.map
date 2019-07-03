@@ -1,4 +1,5 @@
 <map id="SimExp" name="SimExp">
+<area shape="rect" id="node1" title="Represents a framework for performing experiments using simulation." alt="" coords="89,5,157,32"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1BatchMeansSim.html" title="Performs a simulation experiment on an infinite horizon, for estimating steady&#45;state performance meas..." alt="" coords="5,80,124,107"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1simexp_1_1RepSim.html" title="Performs a simulation experiment on a finite horizon, using a certain number of independent runs or r..." alt="" coords="149,80,218,107"/>
 </map>

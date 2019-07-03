@@ -1,5 +1,6 @@
 <map id="RandomShift" name="RandomShift">
+<area shape="rect" id="node1" title="This class implements a umontreal.ssj.hups.PointSetRandomization." alt="" coords="91,80,189,107"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1LMScrambleShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a left matrix scrambli..." alt="" coords="5,155,128,181"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1SMScrambleShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a striped matrix scram..." alt="" coords="153,155,277,181"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" title="This interface is used to randomize a umontreal.ssj.hups.PointSet. " alt="" coords="61,5,219,32"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" title="This interface is used to randomize a umontreal.ssj.hups.PointSet." alt="" coords="61,5,219,32"/>
 </map>

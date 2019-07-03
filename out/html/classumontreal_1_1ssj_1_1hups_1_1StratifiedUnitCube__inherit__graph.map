@@ -1,4 +1,5 @@
 <map id="StratifiedUnitCube" name="StratifiedUnitCube">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array..." alt="" coords="11,80,129,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="34,5,106,32"/>
+<area shape="rect" id="node1" title="This class implements a stratification of the unit cube in rectangular boxes of same size and orienta..." alt="" coords="5,155,135,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array." alt="" coords="11,80,129,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="34,5,106,32"/>
 </map>

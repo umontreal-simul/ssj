@@ -1,3 +1,4 @@
 <map id="SqrtMathFunction" name="SqrtMathFunction">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="17,5,119,32"/>
+<area shape="rect" id="node1" title="Represents a function computing the square root of another function ." alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="17,5,119,32"/>
 </map>

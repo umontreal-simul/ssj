@@ -1,4 +1,5 @@
 <map id="ListOfTalliesWithCV&lt; E extends Tally &gt;" name="ListOfTalliesWithCV&lt; E extends Tally &gt;">
+<area shape="rect" id="node1" title="Represents a list of tallies with control variables that inherits the functionalities of a list of ta..." alt="" coords="46,155,185,196"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTalliesWithCovariance.html" title="Extends ListOfTallies to add support for the computation of the sample covariance between each pair o..." alt="" coords="5,80,225,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="ListOfTallies\&lt; E \&gt;" alt="" coords="52,5,179,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title=" " alt="" coords="52,5,179,32"/>
 </map>

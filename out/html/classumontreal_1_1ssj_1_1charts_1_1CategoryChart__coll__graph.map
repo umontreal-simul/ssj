@@ -1,4 +1,8 @@
 <map id="CategoryChart" name="CategoryChart">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html" title="Stores data used in a CategoryChart. " alt="" coords="50,95,245,121"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart. " alt="" coords="381,95,429,121"/>
+<area shape="rect" id="node1" title="This class provides tools to create charts from data in a simple way." alt="" coords="259,184,366,211"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1SSJCategorySeriesCollection.html" title="Stores data used in a CategoryChart." alt="" coords="50,95,245,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="151,5,306,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="269,95,356,121"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart." alt="" coords="381,95,429,121"/>
 </map>

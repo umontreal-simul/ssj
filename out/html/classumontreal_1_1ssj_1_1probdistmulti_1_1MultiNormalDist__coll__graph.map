@@ -1,3 +1,6 @@
 <map id="MultiNormalDist" name="MultiNormalDist">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistributionMulti.html" title="Classes implementing continuous multi&#45;dimensional distributions should inherit from this class..." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node1" title="Implements the abstract class ContinuousDistributionMulti for the multinormal distribution with mean ..." alt="" coords="212,109,328,136"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistributionMulti.html" title="Classes implementing continuous multi&#45;dimensional distributions should inherit from this class." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="212,5,328,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="353,5,419,32"/>
 </map>

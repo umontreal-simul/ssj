@@ -1,5 +1,6 @@
 <map id="AsianOptionGBMCV" name="AsianOptionGBMCV">
-<area shape="rect" id="node2" href="$classift6561examples_1_1AsianOption.html" title="This class represents an Asian average price call option with European exercise type. " alt="" coords="5,80,99,107"/>
+<area shape="rect" id="node1" title="This class represents an Asian Option based on a geometric Brownian motion, for which we use the payo..." alt="" coords="52,155,193,181"/>
+<area shape="rect" id="node2" href="$classift6561examples_1_1AsianOption.html" title="This class represents an Asian average price call option with European exercise type." alt="" coords="5,80,99,107"/>
 <area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="40,5,205,32"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An MonteCarloModelDouble that also implements a vector of control variates. " alt="" coords="123,80,266,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An MonteCarloModelDouble that also implements a vector of control variates." alt="" coords="123,80,266,107"/>
 </map>

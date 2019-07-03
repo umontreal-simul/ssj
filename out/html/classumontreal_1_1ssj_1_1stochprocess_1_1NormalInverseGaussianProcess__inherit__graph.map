@@ -1,3 +1,4 @@
 <map id="NormalInverseGaussianProcess" name="NormalInverseGaussianProcess">
+<area shape="rect" id="node1" title="This class represents a normal inverse gaussian process (NIG)." alt="" coords="5,80,216,107"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="45,5,177,32"/>
 </map>

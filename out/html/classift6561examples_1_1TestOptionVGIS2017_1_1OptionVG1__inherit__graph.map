@@ -1,5 +1,6 @@
 <map id="TestOptionVGIS2017.OptionVG1" name="TestOptionVGIS2017.OptionVG1">
-<area shape="rect" id="node3" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS1.html" title="TestOptionVGIS2017.Option\lVGIS1" alt="" coords="5,155,192,196"/>
-<area shape="rect" id="node4" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS2.html" title="TestOptionVGIS2017.Option\lVGIS2" alt="" coords="216,155,403,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="99,80,309,107"/>
+<area shape="rect" id="node3" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS1.html" title=" " alt="" coords="5,155,192,196"/>
+<area shape="rect" id="node4" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS2.html" title=" " alt="" coords="216,155,403,196"/>
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="121,5,287,32"/>
 </map>

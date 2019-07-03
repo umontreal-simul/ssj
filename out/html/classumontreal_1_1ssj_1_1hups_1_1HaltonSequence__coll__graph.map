@@ -1,4 +1,5 @@
 <map id="HaltonSequence" name="HaltonSequence">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets..." alt="" coords="29,95,101,121"/>
+<area shape="rect" id="node1" title="This class implements the sequence of Halton  , which is essentially a modification of Hammersley net..." alt="" coords="5,171,124,197"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="29,95,101,121"/>
 <area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="8,5,121,32"/>
 </map>

@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NortaInitDisc.html" title="This abstract class defines the algorithms used for NORTA initialization when the marginal distributi..." alt="" coords="5,81,104,108"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI1.html" title="Extends the class NortaInitDisc and implements the algorithm NI1. " alt="" coords="156,5,199,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2a.html" title="Extends the class NortaInitDisc and implements the algorithm NI2a. " alt="" coords="152,56,203,83"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2b.html" title="Extends the class NortaInitDisc and implements the algorithm NI2b. " alt="" coords="152,107,203,133"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI3.html" title="Extends the class NortaInitDisc and implements the algorithm NI3. " alt="" coords="156,157,199,184"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1stat_1_1ObservationListener.html" title="Represents an object that can listen to observations broadcast by statistical probes." alt="" coords="5,31,144,57"/>
+<area shape="rect" id="node2" href="$classtutorial_1_1QueueObs_1_1LargeWaitsCollector.html" title=" " alt="" coords="192,5,399,32"/>
+<area shape="rect" id="node3" href="$classtutorial_1_1QueueObs_1_1ObservationTrace.html" title=" " alt="" coords="201,56,390,83"/>
 </map>

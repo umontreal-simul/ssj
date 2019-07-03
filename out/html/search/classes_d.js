@@ -3,7 +3,6 @@ var searchData=
   ['nakagamidist',['NakagamiDist',['../classumontreal_1_1ssj_1_1probdist_1_1NakagamiDist.html',1,'umontreal::ssj::probdist']]],
   ['nakagamigen',['NakagamiGen',['../classumontreal_1_1ssj_1_1randvar_1_1NakagamiGen.html',1,'umontreal::ssj::randvar']]],
   ['nameconflictexception',['NameConflictException',['../classumontreal_1_1ssj_1_1util_1_1NameConflictException.html',1,'umontreal::ssj::util']]],
-  ['nativeparams',['NativeParams',['../structNativeParams.html',1,'']]],
   ['nativeutils',['NativeUtils',['../classumontreal_1_1ssj_1_1util_1_1NativeUtils.html',1,'umontreal::ssj::util']]],
   ['negativebinomialdist',['NegativeBinomialDist',['../classumontreal_1_1ssj_1_1probdist_1_1NegativeBinomialDist.html',1,'umontreal::ssj::probdist']]],
   ['negativebinomialgen',['NegativeBinomialGen',['../classumontreal_1_1ssj_1_1randvar_1_1NegativeBinomialGen.html',1,'umontreal::ssj::randvar']]],

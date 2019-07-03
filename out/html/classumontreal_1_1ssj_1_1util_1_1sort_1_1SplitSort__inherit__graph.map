@@ -1,3 +1,4 @@
 <map id="SplitSort&lt; T extends MultiDimComparable&lt;? super T &gt;" name="SplitSort&lt; T extends MultiDimComparable&lt;? super T &gt;">
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title="MultiDimSortComparable\&lt; T \&gt;" alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node1" title="Implements a MultiDimSortComparable that performs a split sort on a MultiDimComparable&lt;T&gt; array based..." alt="" coords="27,80,183,136"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title=" " alt="" coords="5,5,205,32"/>
 </map>

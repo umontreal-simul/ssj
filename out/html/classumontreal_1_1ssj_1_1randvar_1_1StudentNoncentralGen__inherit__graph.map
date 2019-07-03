@@ -1,3 +1,4 @@
 <map id="StudentNoncentralGen" name="StudentNoncentralGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="15,5,150,32"/>
+<area shape="rect" id="node1" title="This class implements random variate generators for the noncentral Student&#45;t distribution with &#160;degre..." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="15,5,150,32"/>
 </map>

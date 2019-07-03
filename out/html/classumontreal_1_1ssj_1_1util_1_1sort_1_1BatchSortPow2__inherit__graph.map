@@ -1,4 +1,5 @@
 <map id="BatchSortPow2" name="BatchSortPow2">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort.html" title="This class implements a MultiDimSortComparable that performs a batch sort on multivariate arrays..." alt="" coords="27,80,183,136"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title="MultiDimSortComparable\&lt; T \&gt;" alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node1" title="This is a subclass of BatchSort for which the batch numbers &#160;are always powers of 2." alt="" coords="49,184,162,211"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1BatchSort.html" title="This class implements a MultiDimSortComparable that performs a batch sort on multivariate arrays." alt="" coords="27,80,183,136"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title=" " alt="" coords="5,5,205,32"/>
 </map>

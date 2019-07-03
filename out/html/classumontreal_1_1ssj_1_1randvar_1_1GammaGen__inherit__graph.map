@@ -1,7 +1,8 @@
 <map id="GammaGen" name="GammaGen">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1ErlangGen.html" title="This class implements random variate generators for the Erlang distribution with parameters &#160;and ..." alt="" coords="40,155,123,181"/>
+<area shape="rect" id="node1" title="This class implements random variate generators for the gamma distribution." alt="" coords="209,80,301,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1ErlangGen.html" title="This class implements random variate generators for the Erlang distribution with parameters &#160;and ." alt="" coords="40,155,123,181"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaAcceptanceRejectionGen.html" title="This class implements gamma random variate generators using a method that combines acceptance&#45;rejecti..." alt="" coords="147,155,363,181"/>
 <area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaRejectionLoglogisticGen.html" title="This class implements gamma random variate generators using a rejection method with loglogistic envel..." alt="" coords="387,155,597,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="187,5,322,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1ErlangConvolutionGen.html" title="This class implements Erlang random variate generators using the convolution method. " alt="" coords="5,229,157,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="187,5,322,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvar_1_1ErlangConvolutionGen.html" title="This class implements Erlang random variate generators using the convolution method." alt="" coords="5,229,157,256"/>
 </map>

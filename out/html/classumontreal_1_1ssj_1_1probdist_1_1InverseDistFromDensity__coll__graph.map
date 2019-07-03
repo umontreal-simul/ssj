@@ -1,5 +1,6 @@
 <map id="InverseDistFromDensity" name="InverseDistFromDensity">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="5,81,160,108"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="39,5,127,32"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions..." alt="" coords="184,81,285,108"/>
+<area shape="rect" id="node1" title="Implements a method for computing the inverse of an arbitrary continuous distribution function when o..." alt="" coords="114,171,278,197"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="5,81,160,108"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="39,5,127,32"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="184,81,285,108"/>
 </map>

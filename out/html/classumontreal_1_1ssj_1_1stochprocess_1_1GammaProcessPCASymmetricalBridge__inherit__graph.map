@@ -1,6 +1,7 @@
 <map id="GammaProcessPCASymmetricalBridge" name="GammaProcessPCASymmetricalBridge">
+<area shape="rect" id="node1" title="Same as GammaProcessPCABridge, but uses the fast inversion method for the symmetrical beta distributi..." alt="" coords="5,304,223,345"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessPCABridge.html" title="Same as GammaProcessPCA, but the generated uniforms correspond to a bridge transformation of the Brow..." alt="" coords="23,229,205,256"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessPCA.html" title="Represents a gamma process sampled using the principal component analysis (PCA). " alt="" coords="42,155,186,181"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ..." alt="" coords="56,80,172,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcessPCA.html" title="Represents a gamma process sampled using the principal component analysis (PCA)." alt="" coords="42,155,186,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1GammaProcess.html" title="This class represents a gamma process   (page 82) &#160;with mean parameter &#160;and variance parameter ." alt="" coords="56,80,172,107"/>
 <area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="48,5,180,32"/>
 </map>

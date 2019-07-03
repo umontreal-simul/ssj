@@ -1,3 +1,4 @@
 <map id="CoordinateSetLong" name="CoordinateSetLong">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates. " alt="" coords="19,5,125,32"/>
+<area shape="rect" id="node1" title="Implementation of CoordinateSet using a long bit&#45;mask internal representation." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1CoordinateSet.html" title="Represents a set of coordinates." alt="" coords="19,5,125,32"/>
 </map>

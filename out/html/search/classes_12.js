@@ -21,6 +21,8 @@ var searchData=
   ['sim',['Sim',['../classumontreal_1_1ssj_1_1simevents_1_1Sim.html',1,'umontreal::ssj::simevents']]],
   ['simexp',['SimExp',['../classumontreal_1_1ssj_1_1simexp_1_1SimExp.html',1,'umontreal::ssj::simexp']]],
   ['simulator',['Simulator',['../classumontreal_1_1ssj_1_1simevents_1_1Simulator.html',1,'umontreal::ssj::simevents']]],
+  ['singletonweight',['SingletonWeight',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1SingletonWeight.html',1,'umontreal::ssj::latnetbuilder::weights']]],
+  ['singletonweightcomparable',['SingletonWeightComparable',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1SingletonWeightComparable.html',1,'umontreal::ssj::latnetbuilder::weights']]],
   ['smoothingcubicspline',['SmoothingCubicSpline',['../classumontreal_1_1ssj_1_1functionfit_1_1SmoothingCubicSpline.html',1,'umontreal::ssj::functionfit']]],
   ['smscrambleshift',['SMScrambleShift',['../classumontreal_1_1ssj_1_1hups_1_1SMScrambleShift.html',1,'umontreal::ssj::hups']]],
   ['snippet',['Snippet',['../classtutorial_1_1Snippet.html',1,'tutorial']]],

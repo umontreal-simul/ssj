@@ -1,4 +1,7 @@
 <map id="BinaryDataReader" name="BinaryDataReader">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataReader.html" title="This abstract class implements shared functionality for data readers. " alt="" coords="5,81,147,108"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataReader.html" title="Data reader interface. " alt="" coords="30,5,122,32"/>
+<area shape="rect" id="node1" title="Binary data reader." alt="" coords="127,171,257,197"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1io_1_1AbstractDataReader.html" title="This abstract class implements shared functionality for data readers." alt="" coords="5,81,147,108"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1io_1_1DataReader.html" title="Data reader interface." alt="" coords="30,5,122,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="171,81,213,108"/>
+<area shape="rect" id="node5" title=" " alt="" coords="238,81,287,108"/>
 </map>

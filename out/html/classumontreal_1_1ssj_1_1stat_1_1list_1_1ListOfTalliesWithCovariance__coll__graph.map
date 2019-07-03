@@ -1,3 +1,4 @@
 <map id="ListOfTalliesWithCovariance&lt; E extends Tally &gt;" name="ListOfTalliesWithCovariance&lt; E extends Tally &gt;">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="ListOfTallies\&lt; E \&gt;" alt="" coords="35,5,162,32"/>
+<area shape="rect" id="node1" title="Extends ListOfTallies to add support for the computation of the sample covariance between each pair o..." alt="" coords="5,80,192,121"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title=" " alt="" coords="35,5,162,32"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="BigDiscrepancy" name="BigDiscrepancy">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1.html" title="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1 [see eq..." alt="" coords="25,155,161,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes. " alt="" coords="45,5,140,32"/>
+<area shape="rect" id="node1" title="This abstract class is the base class of all discrepancy classes programmed with floating&#45;point numbe..." alt="" coords="35,80,150,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1.html" title="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1 [see eq." alt="" coords="25,155,161,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes." alt="" coords="45,5,140,32"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1discrepancy_1_1BigDiscShiftBaker1Lattice.html" title="This class computes the same discrepancy as in umontreal.ssj.discrepancy.DiscShiftBaker1Lattice [see ..." alt="" coords="5,229,180,256"/>
 </map>

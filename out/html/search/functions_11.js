@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['radicalinverse',['RadicalInverse',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a54ee64ac2946dac9ad8dd774bcab000b',1,'umontreal.ssj.hups.RadicalInverse.RadicalInverse(int b, double x0)'],['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a568d2c9327bd2773eacee17ecbc967bb',1,'umontreal.ssj.hups.RadicalInverse.radicalInverse(int b, long i)']]],
+  ['radicalinverse',['radicalInverse',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a568d2c9327bd2773eacee17ecbc967bb',1,'umontreal.ssj.hups.RadicalInverse.radicalInverse(int b, long i)'],['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a54ee64ac2946dac9ad8dd774bcab000b',1,'umontreal.ssj.hups.RadicalInverse.RadicalInverse(int b, double x0)']]],
   ['radicalinverseinteger',['radicalInverseInteger',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#ad7b5a468785c79ebbd2c9a5671021fd8',1,'umontreal::ssj::hups::RadicalInverse']]],
   ['radicalinverselong',['radicalInverseLong',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a8b79863c454b0d931060992a744917d1',1,'umontreal::ssj::hups::RadicalInverse']]],
   ['randmrg',['RandMrg',['../classumontreal_1_1ssj_1_1rng_1_1RandMrg.html#ad31078059e6aa4b29c425d2a69c73758',1,'umontreal.ssj.rng.RandMrg.RandMrg()'],['../classumontreal_1_1ssj_1_1rng_1_1RandMrg.html#a81458cf6499909f49b49de619a6fc83c',1,'umontreal.ssj.rng.RandMrg.RandMrg(String name)']]],

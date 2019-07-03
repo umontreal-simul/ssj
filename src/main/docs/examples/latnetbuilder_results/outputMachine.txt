@@ -225,4 +225,4 @@ Explicit  // Construction method
 1 1 0 0 1 0 0 0 0 1
 1 1 0 1 1 1 0 0 1 1
 0.0385827  // Merit
-0.0181674  // Time
+0.0296707  // Time

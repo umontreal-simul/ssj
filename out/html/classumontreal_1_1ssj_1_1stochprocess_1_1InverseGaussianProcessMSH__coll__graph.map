@@ -1,8 +1,9 @@
 <map id="InverseGaussianProcessMSH" name="InverseGaussianProcessMSH">
+<area shape="rect" id="node1" title="Uses a faster generating method (MSH)   than the simple inversion of the distribution function used b..." alt="" coords="119,273,317,300"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stochprocess_1_1InverseGaussianProcess.html" title="The inverse Gaussian process is a non&#45;decreasing process where the increments are additive and are gi..." alt="" coords="13,95,181,121"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="5,5,137,32"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="161,5,275,32"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="256,95,391,121"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="265,184,353,211"/>
-<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="299,5,387,32"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="256,95,391,121"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ." alt="" coords="265,184,353,211"/>
+<area shape="rect" id="node7" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="299,5,387,32"/>
 </map>

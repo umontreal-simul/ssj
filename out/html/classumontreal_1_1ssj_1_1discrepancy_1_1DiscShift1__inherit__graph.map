@@ -1,4 +1,5 @@
 <map id="DiscShift1" name="DiscShift1">
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1Lattice.html" title="This class computes the same discrepancy for randomly shifted points of a set &#160;as given in eq..." alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes. " alt="" coords="19,5,114,32"/>
+<area shape="rect" id="node1" title="This class computes the discrepancy for randomly shifted points of a set &#160;  (eq." alt="" coords="25,80,108,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1discrepancy_1_1DiscShift1Lattice.html" title="This class computes the same discrepancy for randomly shifted points of a set &#160;as given in eq." alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes." alt="" coords="19,5,114,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="RepSim" name="RepSim">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1SimExp.html" title="Represents a framework for performing experiments using simulation. " alt="" coords="6,5,74,32"/>
+<area shape="rect" id="node1" title="Performs a simulation experiment on a finite horizon, using a certain number of independent runs or r..." alt="" coords="5,80,75,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1SimExp.html" title="Represents a framework for performing experiments using simulation." alt="" coords="6,5,74,32"/>
 </map>

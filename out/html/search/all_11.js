@@ -1,7 +1,7 @@
 var searchData=
 [
   ['rac2',['RAC2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a0b22089b39adb19fefdf014105ad08bd',1,'umontreal::ssj::util::Num']]],
-  ['radicalinverse',['RadicalInverse',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html',1,'RadicalInverse'],['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a54ee64ac2946dac9ad8dd774bcab000b',1,'umontreal.ssj.hups.RadicalInverse.RadicalInverse(int b, double x0)'],['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a568d2c9327bd2773eacee17ecbc967bb',1,'umontreal.ssj.hups.RadicalInverse.radicalInverse(int b, long i)']]],
+  ['radicalinverse',['RadicalInverse',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html',1,'RadicalInverse'],['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a568d2c9327bd2773eacee17ecbc967bb',1,'umontreal.ssj.hups.RadicalInverse.radicalInverse(int b, long i)'],['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a54ee64ac2946dac9ad8dd774bcab000b',1,'umontreal.ssj.hups.RadicalInverse.RadicalInverse(int b, double x0)']]],
   ['radicalinverseinteger',['radicalInverseInteger',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#ad7b5a468785c79ebbd2c9a5671021fd8',1,'umontreal::ssj::hups::RadicalInverse']]],
   ['radicalinverselong',['radicalInverseLong',['../classumontreal_1_1ssj_1_1hups_1_1RadicalInverse.html#a8b79863c454b0d931060992a744917d1',1,'umontreal::ssj::hups::RadicalInverse']]],
   ['randmrg',['RandMrg',['../classumontreal_1_1ssj_1_1rng_1_1RandMrg.html',1,'RandMrg'],['../classumontreal_1_1ssj_1_1rng_1_1RandMrg.html#ad31078059e6aa4b29c425d2a69c73758',1,'umontreal.ssj.rng.RandMrg.RandMrg()'],['../classumontreal_1_1ssj_1_1rng_1_1RandMrg.html#a81458cf6499909f49b49de619a6fc83c',1,'umontreal.ssj.rng.RandMrg.RandMrg(String name)']]],
@@ -116,6 +116,6 @@ var searchData=
   ['rqmcpointset',['RQMCPointSet',['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html',1,'RQMCPointSet'],['../classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html#acef79f87cf4b0b351ea723db24d282cf',1,'umontreal.ssj.hups.RQMCPointSet.RQMCPointSet()']]],
   ['rqmcsampler',['RQMCSampler',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RQMCSampler.html',1,'umontreal::ssj::mcqmctools::anova']]],
   ['ruinis',['RuinIS',['../classift6561examples_1_1RuinIS.html',1,'ift6561examples']]],
-  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'RunClass'],['../classRunClass.html',1,'RunClass']]],
-  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'RunClass.RunClassException'],['../classRunClass_1_1RunClassException.html',1,'RunClass.RunClassException']]]
+  ['runclass',['RunClass',['../classtutorial_1_1RunClass.html',1,'tutorial']]],
+  ['runclassexception',['RunClassException',['../classtutorial_1_1RunClass_1_1RunClassException.html',1,'tutorial::RunClass']]]
 ];

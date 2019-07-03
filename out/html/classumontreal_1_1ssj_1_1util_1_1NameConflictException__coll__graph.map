@@ -1,2 +1,4 @@
 <map id="NameConflictException" name="NameConflictException">
+<area shape="rect" id="node1" title="This exception is thrown by a ClassFinder when two or more fully qualified class names can be associa..." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="45,5,125,32"/>
 </map>

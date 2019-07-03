@@ -1,3 +1,4 @@
 <map id="IIDMultivariateGen" name="IIDMultivariateGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen. " alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node1" title="Extends RandomMultivariateGen for a vector of independent identically distributed (i...." alt="" coords="21,80,152,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1RandomMultivariateGen.html" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen." alt="" coords="5,5,168,32"/>
 </map>

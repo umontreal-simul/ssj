@@ -1,5 +1,6 @@
 <map id="SMScrambleShift" name="SMScrambleShift">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1RandomShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization. " alt="" coords="115,95,214,121"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" title="This interface is used to randomize a umontreal.ssj.hups.PointSet. " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node1" title="This class implements a umontreal.ssj.hups.PointSetRandomization that performs a striped matrix scram..." alt="" coords="103,171,227,197"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1RandomShift.html" title="This class implements a umontreal.ssj.hups.PointSetRandomization." alt="" coords="115,95,214,121"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html" title="This interface is used to randomize a umontreal.ssj.hups.PointSet." alt="" coords="5,5,164,32"/>
 <area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="188,5,301,32"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="DiscreteDistributionIntMulti" name="DiscreteDistributionIntMulti">
+<area shape="rect" id="node1" title="Classes implementing multi&#45;dimensional discrete distributions over the integers should inherit from t..." alt="" coords="53,5,233,32"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1MultinomialDist.html" title="Implements the abstract class DiscreteDistributionIntMulti for the multinomial distribution with para..." alt="" coords="5,80,117,107"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1NegativeMultinomialDist.html" title="Implements the class DiscreteDistributionIntMulti for the negative multinomial distribution with para..." alt="" coords="142,80,306,107"/>
 </map>

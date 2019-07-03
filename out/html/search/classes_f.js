@@ -17,6 +17,7 @@ var searchData=
   ['piecewiseconstantfunction',['PiecewiseConstantFunction',['../classumontreal_1_1ssj_1_1functions_1_1PiecewiseConstantFunction.html',1,'umontreal::ssj::functions']]],
   ['piecewiselinearempiricaldist',['PiecewiseLinearEmpiricalDist',['../classumontreal_1_1ssj_1_1probdist_1_1PiecewiseLinearEmpiricalDist.html',1,'umontreal::ssj::probdist']]],
   ['plotformat',['PlotFormat',['../classumontreal_1_1ssj_1_1charts_1_1PlotFormat.html',1,'umontreal::ssj::charts']]],
+  ['podweights',['PODWeights',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1PODWeights.html',1,'umontreal::ssj::latnetbuilder::weights']]],
   ['pointset',['PointSet',['../classumontreal_1_1ssj_1_1hups_1_1PointSet.html',1,'umontreal::ssj::hups']]],
   ['pointsetiterator',['PointSetIterator',['../interfaceumontreal_1_1ssj_1_1hups_1_1PointSetIterator.html',1,'umontreal::ssj::hups']]],
   ['pointsetrandomization',['PointSetRandomization',['../interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html',1,'umontreal::ssj::hups']]],
@@ -34,5 +35,7 @@ var searchData=
   ['preypred',['PreyPred',['../classtutorial_1_1PreyPred.html',1,'tutorial']]],
   ['preys',['Preys',['../classtutorial_1_1PreyPred_1_1Preys.html',1,'tutorial::PreyPred']]],
   ['printfformat',['PrintfFormat',['../classumontreal_1_1ssj_1_1util_1_1PrintfFormat.html',1,'umontreal::ssj::util']]],
-  ['printpoint',['PrintPoint',['../classtutorial_1_1PreyPred_1_1PrintPoint.html',1,'tutorial::PreyPred']]]
+  ['printpoint',['PrintPoint',['../classtutorial_1_1PreyPred_1_1PrintPoint.html',1,'tutorial::PreyPred']]],
+  ['productweights',['ProductWeights',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1ProductWeights.html',1,'umontreal::ssj::latnetbuilder::weights']]],
+  ['projectiondependentweights',['ProjectionDependentWeights',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1ProjectionDependentWeights.html',1,'umontreal::ssj::latnetbuilder::weights']]]
 ];

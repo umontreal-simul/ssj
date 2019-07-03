@@ -1,3 +1,4 @@
 <map id="InverseFromDensityGen" name="InverseFromDensityGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="20,5,155,32"/>
+<area shape="rect" id="node1" title="Implements a method for generating random variates by numerical inversion of an arbitrary continuous ..." alt="" coords="5,80,169,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="20,5,155,32"/>
 </map>

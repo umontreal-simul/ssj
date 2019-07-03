@@ -1,5 +1,6 @@
 <map id="San13Dist" name="San13Dist">
+<area shape="rect" id="node1" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="103,171,185,197"/>
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,81,171,108"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="195,81,349,108"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="228,5,316,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="195,81,349,108"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="228,5,316,32"/>
 </map>

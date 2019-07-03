@@ -1,5 +1,6 @@
 <map id="HypoExponentialDistEqual" name="HypoExponentialDistEqual">
+<area shape="rect" id="node1" title="This class implements the hypoexponential distribution for the case of equidistant ." alt="" coords="5,229,184,256"/>
 <area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1HypoExponentialDist.html" title="This class implements the hypoexponential distribution, also called the generalized Erlang distributi..." alt="" coords="22,155,167,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class. " alt="" coords="17,80,172,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions..." alt="" coords="51,5,139,32"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="17,80,172,107"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="51,5,139,32"/>
 </map>

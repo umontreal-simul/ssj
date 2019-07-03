@@ -1,7 +1,8 @@
 <map id="RandomMultivariateGen" name="RandomMultivariateGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1DirichletGen.html" title="Extends RandomMultivariateGen for a Dirichlet   distribution. " alt="" coords="5,80,100,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1IIDMultivariateGen.html" title="Extends RandomMultivariateGen for a vector of independent identically distributed (i..." alt="" coords="125,80,255,107"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html" title="Extends RandomMultivariateGen for a multivariate normal (or multinormal) distribution  ..." alt="" coords="280,80,393,107"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalCholeskyGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via a Cholesky decomposit..." alt="" coords="163,155,331,181"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalPCAGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via the method of princip..." alt="" coords="355,155,497,181"/>
+<area shape="rect" id="node1" title="This class is the multivariate counterpart of umontreal.ssj.randvar.RandomVariateGen." alt="" coords="109,5,271,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1DirichletGen.html" title="Extends RandomMultivariateGen for a Dirichlet   distribution." alt="" coords="5,80,100,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1IIDMultivariateGen.html" title="Extends RandomMultivariateGen for a vector of independent identically distributed (i...." alt="" coords="125,80,255,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html" title="Extends RandomMultivariateGen for a multivariate normal (or multinormal) distribution  ." alt="" coords="280,80,393,107"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalCholeskyGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via a Cholesky decompositi..." alt="" coords="163,155,331,181"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalPCAGen.html" title="Extends MultinormalGen for a multivariate normal distribution  , generated via the method of principa..." alt="" coords="355,155,497,181"/>
 </map>

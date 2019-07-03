@@ -1,4 +1,5 @@
 <map id="NormalPolarGen" name="NormalPolarGen">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ..." alt="" coords="29,80,117,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line. " alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node1" title="This class implements normal random variate generators using the polar method with rejection  ." alt="" coords="13,155,132,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ." alt="" coords="29,80,117,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="5,5,140,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="DiscShiftBaker1" name="DiscShiftBaker1">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes. " alt="" coords="17,5,111,32"/>
+<area shape="rect" id="node1" title="This class computes the discrepancy for randomly shifted, then baker folded points of a set ." alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1discrepancy_1_1Discrepancy.html" title="This abstract class is the base class of all discrepancy classes." alt="" coords="17,5,111,32"/>
 </map>
