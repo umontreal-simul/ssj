@@ -50,8 +50,8 @@ import umontreal.ssj.stat.TallyHistogram;
  * any of these intervals. Since the probability of an observation being exactly
  * equal to \f$b\f$ is zero, we can effectively ignore this subtlety.
  * 
- * This class also offers static methods so that the user can simply evaluate the density based on
- * a set of observations, a \ref
+ * This class also offers static methods so that the user can simply evaluate
+ * the density based on a set of observations, a \ref
  * umontreal.ssj.stat.TallyHistogram or a \ref
  * umontreal.ssj.stat.ScaledHistogram without having to construct a histogram.
  *
@@ -66,12 +66,9 @@ public class DEHistogram extends DensityEstimator {
 	 * Constructs a histogram estimator over the interval \f$[a,b]\f$ with \a
 	 * numBins number of bins.
 	 * 
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param a       the left boundary of the histogram.
+	 * @param b       the right boundary of the histogram.
+	 * @param numBins the number of bins.
 	 */
 	public DEHistogram(double a, double b, int numBins) {
 		histDensity = new ScaledHistogram(a, b, numBins);
@@ -81,43 +78,37 @@ public class DEHistogram extends DensityEstimator {
 	 * Constructs a histogram over the interval \f$[a,b]\f$ with \a numBins number
 	 * of bins from the observations passed in \a data.
 	 * 
-	 * @param data
-	 *            the observations from the underlying model.
+	 * @param data    the observations from the underlying model.
 	 * 
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param a       the left boundary of the histogram.
+	 * @param b       the right boundary of the histogram.
+	 * @param numBins the number of bins.
 	 */
 	public DEHistogram(double[] data, double a, double b, int numBins) {
 		// this.data = data;
 		TallyHistogram tallyHist = new TallyHistogram(a, b, numBins);
 		tallyHist.fillFromArray(data);
-		histDensity = new ScaledHistogram(tallyHist, tallyHist.getRelNumPoints());
+		histDensity = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
 	}
 
 	/**
 	 * Constructs a histogram from a \ref umontreal.ssj.stat.TallyHistogram \a
 	 * tallyHist.
 	 * 
-	 * @param tallyHist
-	 *            a \ref umontreal.ssj.stat.TallyHistogram from which the estimator
-	 *            is constructed.
+	 * @param tallyHist a \ref umontreal.ssj.stat.TallyHistogram from which the
+	 *                  estimator is constructed.
 	 */
 	public DEHistogram(TallyHistogram tallyHist) {
 
-		histDensity = new ScaledHistogram(tallyHist, tallyHist.getRelNumPoints());
+		histDensity = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
 	}
 
 	/**
 	 * Constructs a histogram from a \ref umontreal.ssj.stat.ScaledHistogram \a
 	 * scaledHist.
 	 * 
-	 * @param scaledHist
-	 *            a \ref umontreal.ssj.stat.ScaledHistogram from which the estimator
-	 *            is constructed.
+	 * @param scaledHist a \ref umontreal.ssj.stat.ScaledHistogram from which the
+	 *                   estimator is constructed.
 	 */
 	public DEHistogram(ScaledHistogram scaledHist) {
 		histDensity = scaledHist;
@@ -127,15 +118,14 @@ public class DEHistogram extends DensityEstimator {
 	 * Takes the observations in \a data and constructs and redefines the histogram
 	 * with these observations.
 	 * 
-	 * @param data
-	 *            the observations to define the histogram.
+	 * @param data the observations to define the histogram.
 	 * 
 	 */
 	@Override
 	public void setData(double[] data) {
 		TallyHistogram tallyHist = new TallyHistogram(histDensity.getA(), histDensity.getB(), histDensity.getNumBins());
 		tallyHist.fillFromArray(data);
-		histDensity = new ScaledHistogram(tallyHist, tallyHist.getRelNumPoints());
+		histDensity = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
 	}
 
 	/**
@@ -202,8 +192,7 @@ public class DEHistogram extends DensityEstimator {
 	/**
 	 * Evaluates the histogram estimator at the points in \a evalPoints.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
+	 * @param evalPoints the evaluation points.
 	 * 
 	 * @return the histogram density estimator evaluated at the points \a x.
 	 */
@@ -231,22 +220,32 @@ public class DEHistogram extends DensityEstimator {
 		return histDensity.getHeights();
 	}
 
+	/**
+	 * Sets the number of bins according to the provided binwidth @f$h@f$ via
+	 * \f$\lfloor (b-a)/h \rfloor\f$. Note that the actual binwidth might differ
+	 * from the provided @f$h@f$ due to the floor-function.
+	 * 
+	 * @param h The desired binwidth.
+	 */
+	public void setH(double h) {
+		int numBins = (int) ((getB() - getA()) / h);
+		TallyHistogram tallyHist = new TallyHistogram(histDensity.getA(), histDensity.getB(), numBins);
+		tallyHist.fillFromArray(data);
+		histDensity = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
+
+	}
+
 	// STATIC METHODS
 
 	/**
 	 * Evaluates the histogram with \a numBins bins over \f$[a,b]\f$ which is
 	 * defined by the observations \a data at the evaluation point \a x.
 	 * 
-	 * @param x
-	 *            the evaluation point.
-	 * @param data
-	 *            the observations.
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param x       the evaluation point.
+	 * @param data    the observations.
+	 * @param a       the left boundary of the histogram.
+	 * @param b       the right boundary of the histogram.
+	 * @param numBins the number of bins.
 	 * @return the histogram defined be the above parameters evaluated at \a x.
 	 */
 	public static double evalDensity(double x, double[] data, double a, double b, int numBins) {
@@ -260,16 +259,11 @@ public class DEHistogram extends DensityEstimator {
 	 * defined by the observations \a data at each of the evaluation points \a
 	 * evalPoints and returns the results in an array.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
-	 * @param data
-	 *            the observations.
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param evalPoints the evaluation points.
+	 * @param data       the observations.
+	 * @param a          the left boundary of the histogram.
+	 * @param b          the right boundary of the histogram.
+	 * @param numBins    the number of bins.
 	 * @return the histogram defined by the above parameters evaluated at the points
 	 *         in \a evalPoints
 	 */
@@ -284,14 +278,10 @@ public class DEHistogram extends DensityEstimator {
 	 * defined by the observations \a data once in each bin and returns the results
 	 * in an array.
 	 * 
-	 * @param data
-	 *            the observations.
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param data    the observations.
+	 * @param a       the left boundary of the histogram.
+	 * @param b       the right boundary of the histogram.
+	 * @param numBins the number of bins.
 	 * @return the histogram defined by the above parameters evaluated once in each
 	 *         bin.
 	 */
@@ -307,14 +297,10 @@ public class DEHistogram extends DensityEstimator {
 	 * the density is evaluated once in each bin instead of at a given array of
 	 * evaluation points.
 	 * 
-	 * @param data
-	 *            the observations.
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param data    the observations.
+	 * @param a       the left boundary of the histogram.
+	 * @param b       the right boundary of the histogram.
+	 * @param numBins the number of bins.
 	 * @return the histogram defined by the above parameters evaluated once in each
 	 *         bin.
 	 * @return the histogram for each realization evaluated once in each bin.
@@ -345,16 +331,11 @@ public class DEHistogram extends DensityEstimator {
 	 * corresponds to the point of \a evalPoints at which the histogram was
 	 * evaluated.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
-	 * @param data
-	 *            the two-dimensional array of observations.
-	 * @param a
-	 *            the left boundary of the histogram.
-	 * @param b
-	 *            the right boundary of the histogram.
-	 * @param numBins
-	 *            the number of bins.
+	 * @param evalPoints the evaluation points.
+	 * @param data       the two-dimensional array of observations.
+	 * @param a          the left boundary of the histogram.
+	 * @param b          the right boundary of the histogram.
+	 * @param numBins    the number of bins.
 	 * @return the histogram for each realization evaluated at \a evalPoints.
 	 * @return
 	 */
@@ -372,15 +353,13 @@ public class DEHistogram extends DensityEstimator {
 	/**
 	 * Evaluates a histogram estimator defined by \a tallylist at \a x.
 	 * 
-	 * @param x
-	 *            the evaluation point.
-	 * @param tallyHist
-	 *            the \ref umontreal.ssj.stat.TallyHistogram which defines the
-	 *            histogram
+	 * @param x         the evaluation point.
+	 * @param tallyHist the \ref umontreal.ssj.stat.TallyHistogram which defines the
+	 *                  histogram
 	 * @return the histogram density estimator evaluated at \a x.
 	 */
 	public static double evalDensity(double x, TallyHistogram tallyHist) {
-		ScaledHistogram hist = new ScaledHistogram(tallyHist, tallyHist.getRelNumPoints());
+		ScaledHistogram hist = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
 		double h = (hist.getB() - hist.getA()) / (double) hist.getNumBins();
 		return hist.getHeights()[(int) ((x - hist.getA()) / h)];
 	}
@@ -389,17 +368,15 @@ public class DEHistogram extends DensityEstimator {
 	 * Evaluates a histogram estimator defined by \a tallyHist at the evaluation
 	 * points \a evalPoints.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
-	 * @param tallyHist
-	 *            the \ref umontreal.ssj.stat.TallyHistogram which defines the
-	 *            histogram.
+	 * @param evalPoints the evaluation points.
+	 * @param tallyHist  the \ref umontreal.ssj.stat.TallyHistogram which defines
+	 *                   the histogram.
 	 * @return the histogram estimator defined by \a tallyHist evaluated at each
 	 *         point in \a evalPoints.
 	 */
 	public static double[] evalDensity(double[] evalPoints, TallyHistogram tallyHist) {
 
-		ScaledHistogram hist = new ScaledHistogram(tallyHist, tallyHist.getRelNumPoints());
+		ScaledHistogram hist = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
 		int k = evalPoints.length;
 		double[] density = new double[k];
 		double h = (hist.getB() - hist.getA()) / (double) hist.getNumBins();
@@ -412,14 +389,13 @@ public class DEHistogram extends DensityEstimator {
 	/**
 	 * Evaluates a histogram estimator defined by \a tallyHist once in each bin.
 	 * 
-	 * @param tallyHist
-	 *            the \ref umontreal.ssj.stat.TallyHistogram which defines the
-	 *            histogram.
+	 * @param tallyHist the \ref umontreal.ssj.stat.TallyHistogram which defines the
+	 *                  histogram.
 	 * @return the histogram density estimator defined by \a tallyHist evaluated
 	 *         once in each bin.
 	 */
 	public static double[] evalDensity(TallyHistogram tallyHist) {
-		ScaledHistogram hist = new ScaledHistogram(tallyHist, tallyHist.getRelNumPoints());
+		ScaledHistogram hist = new ScaledHistogram(tallyHist, tallyHist.getProportionInBoundaries());
 		return hist.getHeights();
 	}
 
@@ -429,11 +405,9 @@ public class DEHistogram extends DensityEstimator {
 	 * \f$k\f$ evaluation points \a evalPoints. The result is returned in a
 	 * \f$m\times k\f$ array.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
-	 * @param tallyHistArray
-	 *            the array of the \ref umontreal.ssj.stat.TallyHistogram which
-	 *            define the histograms.
+	 * @param evalPoints     the evaluation points.
+	 * @param tallyHistArray the array of the \ref umontreal.ssj.stat.TallyHistogram
+	 *                       which define the histograms.
 	 * @return the histogram for each element of \a tallyHistArray evaluated at each
 	 *         point of \a evalPoints.
 	 */
@@ -450,9 +424,8 @@ public class DEHistogram extends DensityEstimator {
 	 * Same as `evalDensity(double[], TallyHistogram[])` but this method evaluates
 	 * each histogram only once in each bin.
 	 * 
-	 * @param tallyHistArray
-	 *            the array of the \ref umontreal.ssj.stat.TallyHistogram which
-	 *            define the histograms.
+	 * @param tallyHistArray the array of the \ref umontreal.ssj.stat.TallyHistogram
+	 *                       which define the histograms.
 	 * @return the histogram for each element of \a tallyHistArray evaluated once in
 	 *         each bin.
 	 * 
@@ -469,11 +442,9 @@ public class DEHistogram extends DensityEstimator {
 	 * Evaluates the histogram defined by the \ref
 	 * umontreal.ssj.stat.ScaledHistogram at \a x.
 	 * 
-	 * @param x
-	 *            the evaluation point.
-	 * @param scaledHist
-	 *            the \ref umontreal.ssj.stat.ScaledHistogram which defines the
-	 *            histogram.
+	 * @param x          the evaluation point.
+	 * @param scaledHist the \ref umontreal.ssj.stat.ScaledHistogram which defines
+	 *                   the histogram.
 	 * @return the histogram density estimator evaluated at \a x.
 	 */
 
@@ -486,11 +457,9 @@ public class DEHistogram extends DensityEstimator {
 	 * Evaluates the histogram defined by the \ref
 	 * umontreal.ssj.stat.ScaledHistogram at each evaluation point in \a evalPoints.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
-	 * @param scaledHist
-	 *            the \ref umontreal.ssj.stat.ScaledHistogram which defines the
-	 *            histogram.
+	 * @param evalPoints the evaluation points.
+	 * @param scaledHist the \ref umontreal.ssj.stat.ScaledHistogram which defines
+	 *                   the histogram.
 	 * @return the histogram density estimator evaluated at each point in \a
 	 *         evalPoints.
 	 */
@@ -507,9 +476,8 @@ public class DEHistogram extends DensityEstimator {
 	 * Same as `evalDensity(double[], ScaledHistogram)` but evaluation is done once
 	 * in each bin.
 	 * 
-	 * @param scaledHist
-	 *            \ref umontreal.ssj.stat.ScaledHistogram which defines the
-	 *            histogram.
+	 * @param scaledHist \ref umontreal.ssj.stat.ScaledHistogram which defines the
+	 *                   histogram.
 	 * @return the histogram density estimator evaluated at each point in \a
 	 *         evalPoints.
 	 */
@@ -523,11 +491,10 @@ public class DEHistogram extends DensityEstimator {
 	 * at \f$k\f$ evaluation points \a evalPoints. The result is returned in a
 	 * \f$m\times k\f$ array.
 	 * 
-	 * @param evalPoints
-	 *            the evaluation points.
-	 * @param scaledHistArray
-	 *            the array of the \ref umontreal.ssj.stat.ScaledHistogram which
-	 *            define the histograms.
+	 * @param evalPoints      the evaluation points.
+	 * @param scaledHistArray the array of the \ref
+	 *                        umontreal.ssj.stat.ScaledHistogram which define the
+	 *                        histograms.
 	 * @return the histogram for each element of \a scaledHistArray evaluated at
 	 *         each point of \a evalPoints.
 	 */
@@ -545,11 +512,11 @@ public class DEHistogram extends DensityEstimator {
 	 * Same as `evalDensity(double[], ScaledHistogram[])` but the histograms are
 	 * evaluated once in each bin.
 	 * 
-	 * @param scaledHistArray
-	 *            the array of the \ref umontreal.ssj.stat.ScaledHistogram which
-	 *            define the histograms.
-	 * @return the histogram for each element of \a scaledHistArray evaluated once in
-	 *         each bin.
+	 * @param scaledHistArray the array of the \ref
+	 *                        umontreal.ssj.stat.ScaledHistogram which define the
+	 *                        histograms.
+	 * @return the histogram for each element of \a scaledHistArray evaluated once
+	 *         in each bin.
 	 */
 	public static double[][] evalDensity(ScaledHistogram[] scaledHistArray) {
 		int m = scaledHistArray.length;

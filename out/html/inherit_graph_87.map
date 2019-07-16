@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDoubleArray.html" title="Similar to MonteCarloModelDouble except that the returned performance is an array of real numbers." alt="" coords="5,5,201,32"/>
+<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModel.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="5,56,163,83"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1AnovaVarianceEstimator.html" title="ANOVA variance estimator." alt="" coords="227,5,393,32"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloModelRQMC.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="211,56,409,83"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVarianceEstimator.html" title="Partial variance estimator." alt="" coords="227,107,393,133"/>
 </map>

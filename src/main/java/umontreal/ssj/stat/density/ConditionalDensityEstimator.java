@@ -16,7 +16,7 @@ package umontreal.ssj.stat.density;
  *         applies in many different settings.
  * @remark **TODO:** Add citations when papers for these estimators are published. 
  * 
- *         The evaluation of $g(x;\mathbf{X})$ at @f$x@f$ given @f$\mathbf{X}@f$
+ *         The evaluation of @f$g(x;\mathbf{X})@f$ at @f$x@f$ given @f$\mathbf{X}@f$
  *         is handled by the abstract function #evalEstimator.
  * 
  * @author florian

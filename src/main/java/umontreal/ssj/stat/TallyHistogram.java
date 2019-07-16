@@ -307,7 +307,7 @@ public class TallyHistogram extends Tally {
 	 * Returns the relative number of observations that lie within the boundaries of the histogram.
 	 * @return the relative number of observations within the histogram.
 	 */
-	public double getRelNumPoints() {
+	public double getProportionInBoundaries() {
 		int total = 0;
 		for(int num : count) {
 			total += num;
