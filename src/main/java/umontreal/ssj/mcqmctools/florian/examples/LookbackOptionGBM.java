@@ -6,7 +6,7 @@ import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.stochprocess.BrownianMotionBridge;
 
 /**
- * Implements the current value for a Lookback call option under a geometric
+ * Implements the current value of a Lookback call option under a geometric
  * Brownian motion. This value is defined as the maximum of the
  * (discounted)values of the asset at several observation times. Here, the observation times are automatically selected as equidistant. The
  * Brownian motion is constructed via bridge sampling.
@@ -28,7 +28,7 @@ public class LookbackOptionGBM implements MonteCarloModelDouble {
 	 * @param dim number of observation times.
 	 * @param s0 initial value of the asset.
 	 * @param K strike price.
-	 * @param r discount factor.
+	 * @param r discount rate.
 	 * @param sigma volatility.
 	 * @param bm the brownian bridge.
 	 */
