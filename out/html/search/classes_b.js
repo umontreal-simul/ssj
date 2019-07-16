@@ -35,5 +35,12 @@ var searchData=
   ['lognormalgen',['LognormalGen',['../classumontreal_1_1ssj_1_1randvar_1_1LognormalGen.html',1,'umontreal::ssj::randvar']]],
   ['lognormalspecialgen',['LognormalSpecialGen',['../classumontreal_1_1ssj_1_1randvar_1_1LognormalSpecialGen.html',1,'umontreal::ssj::randvar']]],
   ['longindexcomparator2',['LongIndexComparator2',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html',1,'umontreal::ssj::util::sort::HilbertCurveSort']]],
-  ['lookbackoptiongbm',['LookbackOptionGBM',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1LookbackOptionGBM.html',1,'umontreal::ssj::mcqmctools::florian::examples']]]
+  ['lookbackoptiongbm',['LookbackOptionGBM',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1LookbackOptionGBM.html',1,'umontreal::ssj::mcqmctools::florian::examples']]],
+  ['lookbackoptiongbmvars',['LookbackOptionGBMVars',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1LookbackOptionGBMVars.html',1,'umontreal::ssj::mcqmctools::florian::examples']]],
+  ['lrbucklingstrength',['LRBucklingStrength',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1LRBucklingStrength.html',1,'umontreal::ssj::stat::density::florian::examples']]],
+  ['lrcantilever',['LRCantilever',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1LRCantilever.html',1,'umontreal::ssj::stat::density::florian::examples']]],
+  ['lrlookbackoptiongbm',['LRLookbackOptionGBM',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1LRLookbackOptionGBM.html',1,'umontreal::ssj::stat::density::florian::examples']]],
+  ['lrnormalizedsumofnormals',['LRNormalizedSumOfNormals',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1LRNormalizedSumOfNormals.html',1,'umontreal::ssj::stat::density::florian::examples']]],
+  ['lrsan13',['LRSan13',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1LRSan13.html',1,'umontreal::ssj::stat::density::florian::examples']]],
+  ['lrshortcolumnfunction',['LRShortColumnFunction',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1LRShortColumnFunction.html',1,'umontreal::ssj::stat::density::florian::examples']]]
 ];

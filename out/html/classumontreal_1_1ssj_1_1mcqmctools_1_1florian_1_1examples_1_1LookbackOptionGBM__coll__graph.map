@@ -1,5 +1,5 @@
 <map id="LookbackOptionGBM" name="LookbackOptionGBM">
-<area shape="rect" id="node1" title="Implements the current value for a Lookback call option under a geometric Brownian motion." alt="" coords="36,425,183,452"/>
+<area shape="rect" id="node1" title="Implements the current value of a Lookback call option under a geometric Brownian motion." alt="" coords="36,425,183,452"/>
 <area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,336,171,363"/>
 <area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionBridge.html" title="Represents a Brownian motion process &#160;sampled using the bridge sampling technique (see for example  )..." alt="" coords="195,336,347,363"/>
 <area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotion.html" title="This class represents a Brownian motion process , sampled at times ." alt="" coords="213,260,328,287"/>

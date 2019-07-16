@@ -8,27 +8,27 @@
  viewBox="0.00 0.00 469.00 104.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>Graphical Class Hierarchy</title>
-<!-- Node433 -->
+<!-- Node444 -->
 <g id="node1" class="node">
-<title>Node433</title>
+<title>Node444</title>
 <g id="a_node1"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Integrator.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="104.5,-76.5 104.5,-95.5 162.5,-95.5 162.5,-76.5 104.5,-76.5"/>
 <text text-anchor="middle" x="133.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Integrator</text>
 </a>
 </g>
 </g>
-<!-- Node434 -->
+<!-- Node445 -->
 <g id="node2" class="node">
-<title>Node434</title>
+<title>Node445</title>
 <g id="a_node2"><a xlink:href="interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1RandomIntegrator.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="#000000" points="218,-76.5 218,-95.5 313,-95.5 313,-76.5 218,-76.5"/>
 <text text-anchor="middle" x="265.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RandomIntegrator</text>
 </a>
 </g>
 </g>
-<!-- Node433&#45;&gt;Node434 -->
+<!-- Node444&#45;&gt;Node445 -->
 <g id="edge1" class="edge">
-<title>Node433&#45;&gt;Node434</title>
+<title>Node444&#45;&gt;Node445</title>
 <path fill="none" stroke="#191970" d="M173.1341,-86C187.2126,-86 203.2067,-86 217.8829,-86"/>
 <polygon fill="#191970" stroke="#191970" points="172.7951,-82.5001 162.7951,-86 172.795,-89.5001 172.7951,-82.5001"/>
 </g>
@@ -41,24 +41,24 @@
 </a>
 </g>
 </g>
-<!-- Node434&#45;&gt;Node4 -->
+<!-- Node445&#45;&gt;Node4 -->
 <g id="edge2" class="edge">
-<title>Node434&#45;&gt;Node4</title>
+<title>Node445&#45;&gt;Node4</title>
 <path fill="none" stroke="#191970" d="M311.101,-73.7538C330.605,-68.516 353.0404,-62.4909 371.305,-57.5859"/>
 <polygon fill="#191970" stroke="#191970" points="309.9564,-70.4371 301.2064,-76.411 311.772,-77.1975 309.9564,-70.4371"/>
 </g>
-<!-- Node435 -->
+<!-- Node446 -->
 <g id="node4" class="node">
-<title>Node435</title>
+<title>Node446</title>
 <g id="a_node4"><a xlink:href="classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Replicator.html" target="_top" xlink:title="Replicator class.">
 <polygon fill="none" stroke="#000000" points="376.5,-76.5 376.5,-95.5 437.5,-95.5 437.5,-76.5 376.5,-76.5"/>
 <text text-anchor="middle" x="407" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Replicator</text>
 </a>
 </g>
 </g>
-<!-- Node434&#45;&gt;Node435 -->
+<!-- Node445&#45;&gt;Node446 -->
 <g id="edge3" class="edge">
-<title>Node434&#45;&gt;Node435</title>
+<title>Node445&#45;&gt;Node446</title>
 <path fill="none" stroke="#191970" d="M323.2396,-86C341.4056,-86 360.7567,-86 376.2775,-86"/>
 <polygon fill="#191970" stroke="#191970" points="323.0111,-82.5001 313.0111,-86 323.0111,-89.5001 323.0111,-82.5001"/>
 </g>

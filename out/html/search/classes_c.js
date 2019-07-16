@@ -48,6 +48,7 @@ var searchData=
   ['multinormalcholeskygen',['MultinormalCholeskyGen',['../classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalCholeskyGen.html',1,'umontreal::ssj::randvarmulti']]],
   ['multinormaldist',['MultiNormalDist',['../classumontreal_1_1ssj_1_1probdistmulti_1_1MultiNormalDist.html',1,'umontreal::ssj::probdistmulti']]],
   ['multinormalgen',['MultinormalGen',['../classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalGen.html',1,'umontreal::ssj::randvarmulti']]],
+  ['multinormalindependent',['MultiNormalIndependent',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1MultiNormalIndependent.html',1,'umontreal::ssj::mcqmctools::florian::examples']]],
   ['multinormalpcagen',['MultinormalPCAGen',['../classumontreal_1_1ssj_1_1randvarmulti_1_1MultinormalPCAGen.html',1,'umontreal::ssj::randvarmulti']]],
   ['multipledatasetchart',['MultipleDatasetChart',['../classumontreal_1_1ssj_1_1charts_1_1MultipleDatasetChart.html',1,'umontreal::ssj::charts']]],
   ['multivariatebrownianmotion',['MultivariateBrownianMotion',['../classumontreal_1_1ssj_1_1stochprocess_1_1MultivariateBrownianMotion.html',1,'umontreal::ssj::stochprocess']]],

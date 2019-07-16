@@ -43,5 +43,7 @@ var searchData=
   ['brownianmotionpca',['BrownianMotionPCA',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCA.html',1,'umontreal::ssj::stochprocess']]],
   ['brownianmotionpcaequalsteps',['BrownianMotionPCAEqualSteps',['../classumontreal_1_1ssj_1_1stochprocess_1_1BrownianMotionPCAEqualSteps.html',1,'umontreal::ssj::stochprocess']]],
   ['browniantest',['BrownianTest',['../classmarkovchainrqmc_1_1BrownianTest.html',1,'markovchainrqmc']]],
-  ['bspline',['BSpline',['../classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html',1,'umontreal::ssj::functionfit']]]
+  ['bspline',['BSpline',['../classumontreal_1_1ssj_1_1functionfit_1_1BSpline.html',1,'umontreal::ssj::functionfit']]],
+  ['bucklingstrength',['BucklingStrength',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1BucklingStrength.html',1,'umontreal::ssj::mcqmctools::florian::examples']]],
+  ['bucklingstrengthvars',['BucklingStrengthVars',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1BucklingStrengthVars.html',1,'umontreal::ssj::mcqmctools::florian::examples']]]
 ];

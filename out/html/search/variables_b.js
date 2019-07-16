@@ -9,5 +9,6 @@ var searchData=
   ['mean',['MEAN',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ade0ce44c8b2b8a568c71616a3d13cb6b',1,'umontreal::ssj::gof::GofFormat']]],
   ['microsecond',['MICROSECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a752955570acb9a507ab8877f6c881cba',1,'umontreal::ssj::util::TimeUnit']]],
   ['millisecond',['MILLISECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a9788f3cd68e899bc14c2795920c28cd0',1,'umontreal::ssj::util::TimeUnit']]],
-  ['minute',['MINUTE',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a7655e3bf4e033da761e90fc241da1dc6',1,'umontreal::ssj::util::TimeUnit']]]
+  ['minute',['MINUTE',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a7655e3bf4e033da761e90fc241da1dc6',1,'umontreal::ssj::util::TimeUnit']]],
+  ['mu',['mu',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1BucklingStrengthVars.html#aa64dd217fc908692722fe674fcd6b4a5',1,'umontreal::ssj::mcqmctools::florian::examples::BucklingStrengthVars']]]
 ];
