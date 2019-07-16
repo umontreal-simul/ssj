@@ -33,6 +33,7 @@ var searchData=
   ['mrg32k3a',['MRG32k3a',['../classumontreal_1_1ssj_1_1rng_1_1MRG32k3a.html',1,'umontreal::ssj::rng']]],
   ['mrg32k3al',['MRG32k3aL',['../classumontreal_1_1ssj_1_1rng_1_1MRG32k3aL.html',1,'umontreal::ssj::rng']]],
   ['mt19937',['MT19937',['../classumontreal_1_1ssj_1_1rng_1_1MT19937.html',1,'umontreal::ssj::rng']]],
+  ['multidim',['MultiDim',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1florian_1_1MultiDim.html',1,'umontreal::ssj::util::sort::florian']]],
   ['multidim01',['MultiDim01',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDim01.html',1,'umontreal::ssj::util::sort']]],
   ['multidimcomparable',['MultiDimComparable',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparable.html',1,'umontreal::ssj::util::sort']]],
   ['multidimcomparable_3c_20markovchaincomparable_20_3e',['MultiDimComparable&lt; MarkovChainComparable &gt;',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparable.html',1,'umontreal::ssj::util::sort']]],

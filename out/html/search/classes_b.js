@@ -34,5 +34,6 @@ var searchData=
   ['lognormaldistfrommoments',['LognormalDistFromMoments',['../classumontreal_1_1ssj_1_1probdist_1_1LognormalDistFromMoments.html',1,'umontreal::ssj::probdist']]],
   ['lognormalgen',['LognormalGen',['../classumontreal_1_1ssj_1_1randvar_1_1LognormalGen.html',1,'umontreal::ssj::randvar']]],
   ['lognormalspecialgen',['LognormalSpecialGen',['../classumontreal_1_1ssj_1_1randvar_1_1LognormalSpecialGen.html',1,'umontreal::ssj::randvar']]],
-  ['longindexcomparator2',['LongIndexComparator2',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html',1,'umontreal::ssj::util::sort::HilbertCurveSort']]]
+  ['longindexcomparator2',['LongIndexComparator2',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1HilbertCurveSort_1_1LongIndexComparator2.html',1,'umontreal::ssj::util::sort::HilbertCurveSort']]],
+  ['lookbackoptiongbm',['LookbackOptionGBM',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1LookbackOptionGBM.html',1,'umontreal::ssj::mcqmctools::florian::examples']]]
 ];

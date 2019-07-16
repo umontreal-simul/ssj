@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gnuplot',['GNUPLOT',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#aff7da8cd3d0435a797b17bd0cb512a81',1,'umontreal::ssj::gof::GofFormat']]],
-  ['graphsoft',['graphSoft',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a0ef39b3e2173f3a4ad837b34a2998a66',1,'umontreal::ssj::gof::GofFormat']]]
+  ['filedir',['fileDir',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1OrderDependentWeights.html#a5f4fb4b8e5d1049b4424bcb2498918f0',1,'umontreal::ssj::latnetbuilder::weights::OrderDependentWeights']]],
+  ['filename',['fileName',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1OrderDependentWeights.html#a3a5f56162810aa1e371620c4c18cc82a',1,'umontreal::ssj::latnetbuilder::weights::OrderDependentWeights']]]
 ];

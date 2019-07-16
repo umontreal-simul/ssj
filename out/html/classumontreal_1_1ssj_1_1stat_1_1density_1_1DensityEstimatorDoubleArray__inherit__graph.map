@@ -1,0 +1,4 @@
+<map id="DensityEstimatorDoubleArray" name="DensityEstimatorDoubleArray">
+<area shape="rect" id="node1" title="Same as DensityEstimator but here the observations of the underlying model are &#45;dimensional." alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1ConditionalDensityEstimator.html" title="This is an abstract class that implements an DensityEstimatorDoubleArray." alt="" coords="9,80,197,107"/>
+</map>

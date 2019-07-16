@@ -1,18 +1,19 @@
 <map id="MonteCarloModelDouble" name="MonteCarloModelDouble">
-<area shape="rect" id="node1" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,405,171,432"/>
-<area shape="rect" id="node2" href="$classift6561examples_1_1AsianOption.html" title="This class represents an Asian average price call option with European exercise type." alt="" coords="277,380,371,407"/>
+<area shape="rect" id="node1" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,436,171,463"/>
+<area shape="rect" id="node2" href="$classift6561examples_1_1AsianOption.html" title="This class represents an Asian average price call option with European exercise type." alt="" coords="277,385,371,412"/>
 <area shape="rect" id="node5" href="$classift6561examples_1_1CallableBond.html" title="Estimates the value of a callable bond." alt="" coords="275,56,373,83"/>
-<area shape="rect" id="node8" href="$classift6561examples_1_1OldAsianGBM.html" title=" " alt="" coords="271,228,377,255"/>
-<area shape="rect" id="node9" href="$classift6561examples_1_1San13connect.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="271,152,377,179"/>
-<area shape="rect" id="node11" href="$classift6561examples_1_1San13Dist.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="283,279,365,305"/>
-<area shape="rect" id="node13" href="$classift6561examples_1_1San13Prob.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="281,329,367,356"/>
-<area shape="rect" id="node19" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVG1.html" title=" " alt="" coords="219,481,429,508"/>
-<area shape="rect" id="node22" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVG1.html" title=" " alt="" coords="233,684,415,711"/>
-<area shape="rect" id="node25" href="$classtutorial_1_1AsianNew.html" title=" " alt="" coords="283,532,365,559"/>
-<area shape="rect" id="node26" href="$classtutorial_1_1NewTestAsianRQMC.html" title=" " alt="" coords="250,583,398,609"/>
-<area shape="rect" id="node27" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloModelDoubleRQMC.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="221,633,427,660"/>
-<area shape="rect" id="node28" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An MonteCarloModelDouble that also implements a vector of control variates." alt="" coords="253,431,395,457"/>
-<area shape="rect" id="node29" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="219,735,429,761"/>
+<area shape="rect" id="node8" href="$classift6561examples_1_1OldAsianGBM.html" title=" " alt="" coords="271,233,377,260"/>
+<area shape="rect" id="node9" href="$classift6561examples_1_1San13connect.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="271,132,377,159"/>
+<area shape="rect" id="node11" href="$classift6561examples_1_1San13Dist.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="283,284,365,311"/>
+<area shape="rect" id="node13" href="$classift6561examples_1_1San13Prob.html" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="281,335,367,361"/>
+<area shape="rect" id="node19" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVG1.html" title=" " alt="" coords="219,487,429,513"/>
+<area shape="rect" id="node22" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVG1.html" title=" " alt="" coords="233,740,415,767"/>
+<area shape="rect" id="node25" href="$classtutorial_1_1AsianNew.html" title=" " alt="" coords="283,537,365,564"/>
+<area shape="rect" id="node26" href="$classtutorial_1_1NewTestAsianRQMC.html" title=" " alt="" coords="250,588,398,615"/>
+<area shape="rect" id="node27" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloModelDoubleRQMC.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="221,639,427,665"/>
+<area shape="rect" id="node28" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1LookbackOptionGBM.html" title="Implements the current value for a Lookback call option under a geometric Brownian motion." alt="" coords="251,689,397,716"/>
+<area shape="rect" id="node29" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An MonteCarloModelDouble that also implements a vector of control variates." alt="" coords="253,436,395,463"/>
+<area shape="rect" id="node30" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDensityKnown.html" title="An interface for a simulation model for which Monte Carlo (MC) and RQMC experiments are to be perform..." alt="" coords="219,791,429,817"/>
 <area shape="rect" id="node3" href="$classift6561examples_1_1AsianOptionGBMCV.html" title="This class represents an Asian Option based on a geometric Brownian motion, for which we use the payo..." alt="" coords="505,461,646,488"/>
 <area shape="rect" id="node4" href="$classift6561examples_1_1OldAsianRQMC.html" title=" " alt="" coords="517,411,633,437"/>
 <area shape="rect" id="node6" href="$classift6561examples_1_1CallableBondCMC.html" title="Estimates the value of a callable bond where the coupons are paid at the same time as in." alt="" coords="510,5,641,32"/>
@@ -26,6 +27,6 @@
 <area shape="rect" id="node15" href="$classift6561examples_1_1San13CMCDist.html" title="Here we compute the empirical distribution of the CMC estimator." alt="" coords="721,309,836,336"/>
 <area shape="rect" id="node20" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS1.html" title=" " alt="" coords="482,513,669,554"/>
 <area shape="rect" id="node21" href="$classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS2.html" title=" " alt="" coords="482,578,669,619"/>
-<area shape="rect" id="node23" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS1.html" title=" " alt="" coords="477,653,673,680"/>
-<area shape="rect" id="node24" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS2.html" title=" " alt="" coords="477,704,673,731"/>
+<area shape="rect" id="node23" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS1.html" title=" " alt="" coords="477,715,673,741"/>
+<area shape="rect" id="node24" href="$classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS2.html" title=" " alt="" coords="477,765,673,792"/>
 </map>
