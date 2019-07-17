@@ -30,4 +30,6 @@ public interface MultiDim {
 	 */
 	public double getCoordinate(int j);
 
+
+
 }

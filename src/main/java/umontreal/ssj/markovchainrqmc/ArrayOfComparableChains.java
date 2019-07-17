@@ -1,5 +1,6 @@
 package umontreal.ssj.markovchainrqmc;
- import umontreal.ssj.stat.Tally;
+ import umontreal.ssj.stat.PgfDataTable;
+import umontreal.ssj.stat.Tally;
  import umontreal.ssj.rng.RandomStream;
  import umontreal.ssj.util.*;
  import umontreal.ssj.util.sort.*;
@@ -70,6 +71,12 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
    protected PointSetRandomization randomization;
    protected MultiDimSort<T> savedSort;
 	protected int sortCoordPts = 0;   // Point coordinates used to sort points.
+	
+	/**
+	 * Performance measure at each step of the chain.
+	 */
+	public Tally[] performancePerRun;
+
 
    /**
     * Creates an array of the comparable chain `baseChain`. The method
@@ -443,6 +450,108 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
 		}
 		return str.toString();
    }
+	
+	/**
+	 * Same as above, but produces a plot of the mean and the variance as a function of the step.
+	 * @param rqmcPts
+	 * @param sort
+	 * @param sortCoordPts
+	 * @param numSteps
+	 * @param m
+	 * @param varMC
+	 * @param filenamePlot
+	 * @param methodLabel
+	 * @return
+	 */
+	public String testVarianceRateFormat(RQMCPointSet[] rqmcPts, MultiDimSort sort,
+			int sortCoordPts, int numSteps, int m, double varMC, String filenamePlot, String methodLabel) {
+		int numSets = rqmcPts.length; // Number of point sets.
+		Tally statPerf = new Tally("Performance");
+		double[] logn = new double[numSets];
+		double[] variance = new double[numSets];
+		double[] logVariance = new double[numSets];
+		long initTime; // For timings.
+
+		StringBuffer str = new StringBuffer("\n\n --------------------------");
+		str.append(methodLabel + "\n  MC Variance per Run : " + varMC / (double) n + "\n\n");
+
+		// Array-RQMC experiment with each pointSet.
+		for (int i = 0; i < numSets; ++i) {
+			
+//			performancePerRun = new Tally[numSteps]; 
+			for(int j = 0; j < numSteps; ++j)
+				performancePerRun[j] = new Tally();
+			initTime = System.currentTimeMillis();
+			n = rqmcPts[i].getNumPoints();
+			str.append("n = " + n + "\n");
+			simulReplicatesArrayRQMC(rqmcPts[i].getPointSet(),rqmcPts[i].getRandomization(), sort, sortCoordPts, numSteps, m, statPerf);
+			logn[i] = Num.log2(n);
+			variance[i] = statPerf.variance();
+			logVariance[i] = Num.log2(variance[i]);
+			str.append("  Average = " + statPerf.average() + "\n");
+			str.append(" RQMC Variance : " +  variance[i] + "\n\n");
+			str.append("  VRF =  " + varMC / (n * variance[i]) + "\n");
+			str.append(formatTime((System.currentTimeMillis() - initTime) / 1000.) + "\n");
+		}
+		// Estimate regression slope and print plot and overall results.
+		double regSlope = slope(logn, logVariance, numSets);
+		str.append("Regression slope (log) for variance = " + regSlope + "\n\n");
+
+		String[] tableField = { "log(n)", "log(Var)" };
+		double[][] data = new double[numSets][2];
+		for (int s = 0; s < numSets; s++) { // For each cardinality n
+			data[s][0] = logn[s];
+			data[s][1] = logVariance[s];
+		}
+
+		// Print plot and overall results in files.
+		if (filenamePlot != null)
+			try {
+				
+				PgfDataTable pgf = new PgfDataTable(filenamePlot, rqmcPts[0].getLabel(), tableField, data);
+				String pVar = pgf.drawPgfPlotSingleCurve(filenamePlot, "axis", 0, 1, 2, "", "");
+				String plotIV = (PgfDataTable.pgfplotFileHeader() + pVar + PgfDataTable.pgfplotEndDocument());
+
+				FileWriter fileIV = new FileWriter(filenamePlot + "_" + "VAr.tex");
+				fileIV.write(plotIV);
+				fileIV.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		
+		tableField = new String[] {"step", "average", "variance"};
+		data = new double[numSteps][3];
+		for (int s = 0; s < numSteps; s++) { // For each cardinality n
+			data[s][0] = s+1;
+			data[s][1] = performancePerRun[s].average();
+			data[s][2] = performancePerRun[s].variance();
+		}
+		
+		if (filenamePlot != null)
+			try {
+
+				PgfDataTable pgf = new PgfDataTable(filenamePlot, rqmcPts[0].getLabel(), tableField, data);
+				String pMean = pgf.drawPgfPlotSingleCurve(filenamePlot, "axis", 0, 1, 2, "", "");
+				String pVar = pgf.drawPgfPlotSingleCurve(filenamePlot, "axis", 0, 2, 2, "", "");
+				
+				String plotMean = (PgfDataTable.pgfplotFileHeader() + pMean + PgfDataTable.pgfplotEndDocument());
+				String plotVar = (PgfDataTable.pgfplotFileHeader() + pVar + PgfDataTable.pgfplotEndDocument());
+
+				FileWriter fileIV = new FileWriter(filenamePlot + "_" + "MeanPerStep.tex");
+				fileIV.write(plotMean);
+				fileIV.close();
+				
+				fileIV = new FileWriter(filenamePlot + "_" + "VariancePerStep.tex");
+				fileIV.write(plotVar);
+				fileIV.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		return str.toString();
+	}
+	
+	
 
    /**
     * Sorts the chains that have not stopped yet using the stored
