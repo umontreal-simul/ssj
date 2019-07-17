@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main',['main',['../classumontreal_1_1ssj_1_1rng_1_1GenF2w32.html#a8b260eecbaabcef8473fd87ada040682',1,'umontreal::ssj::rng::GenF2w32']]],
+  ['main',['main',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1TestChemicalReactionNetworkMultipleSorts.html#a8b260eecbaabcef8473fd87ada040682',1,'umontreal.ssj.markovchainrqmc.florian.chemicalReactionNetworks.TestChemicalReactionNetworkMultipleSorts.main()'],['../classumontreal_1_1ssj_1_1rng_1_1GenF2w32.html#a8b260eecbaabcef8473fd87ada040682',1,'umontreal.ssj.rng.GenF2w32.main()']]],
   ['makecopies',['makeCopies',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#a09c89a71ce5be772a282dd0aa9607050',1,'umontreal.ssj.markovchainrqmc.ArrayOfComparableChains.makeCopies()'],['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfDoubleChains.html#a09c89a71ce5be772a282dd0aa9607050',1,'umontreal.ssj.markovchainrqmc.ArrayOfDoubleChains.makeCopies()']]],
   ['makeindex',['makeIndex',['../classumontreal_1_1ssj_1_1hups_1_1SortedAndCutPointSet.html#a53d3ca3359a40fa4f027de4fe06a3ae7',1,'umontreal::ssj::hups::SortedAndCutPointSet']]],
   ['makekey',['makeKey',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Algorithm.html#ab11fa30b9f37c858464fae9a74b6fc7d',1,'umontreal.ssj.rng.Rijndael_Algorithm.makeKey(byte[] k)'],['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Algorithm.html#abe10643e2a49c6188fc1e3fae1c43cee',1,'umontreal.ssj.rng.Rijndael_Algorithm.makeKey(byte[] k, int blockSize)']]],
@@ -31,6 +31,7 @@ var searchData=
   ['maxn',['MAXN',['../classumontreal_1_1ssj_1_1probdist_1_1BinomialDist.html#a6e3aa883e6f211777a4b4e9895dde9b3',1,'umontreal.ssj.probdist.BinomialDist.MAXN()'],['../classumontreal_1_1ssj_1_1probdist_1_1HypergeometricDist.html#a6e3aa883e6f211777a4b4e9895dde9b3',1,'umontreal.ssj.probdist.HypergeometricDist.MAXN()'],['../classumontreal_1_1ssj_1_1probdist_1_1NegativeBinomialDist.html#a6e3aa883e6f211777a4b4e9895dde9b3',1,'umontreal.ssj.probdist.NegativeBinomialDist.MAXN()']]],
   ['maxtwoexp',['MAXTWOEXP',['../classumontreal_1_1ssj_1_1util_1_1Num.html#ae0075294f8dff071e38bb9bb5e3b1002',1,'umontreal::ssj::util::Num']]],
   ['mean',['MEAN',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ade0ce44c8b2b8a568c71616a3d13cb6b',1,'umontreal::ssj::gof::GofFormat']]],
+  ['means',['means',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1PKA.html#aaf4227502298cc152ae91206b1826c73',1,'umontreal.ssj.markovchainrqmc.florian.chemicalReactionNetworks.PKA.means()'],['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1SchloeglSystem.html#aaf4227502298cc152ae91206b1826c73',1,'umontreal.ssj.markovchainrqmc.florian.chemicalReactionNetworks.SchloeglSystem.means()']]],
   ['meanvarexperiment',['MeanVarExperiment',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MeanVarExperiment.html',1,'umontreal::ssj::mcqmctools::anova']]],
   ['merit',['merit',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1Search.html#ada116ac64888cc3454a3596ecee9a457',1,'umontreal::ssj::latnetbuilder::Search']]],
   ['microsecond',['MICROSECOND',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#a752955570acb9a507ab8877f6c881cba',1,'umontreal::ssj::util::TimeUnit']]],
@@ -57,6 +58,7 @@ var searchData=
   ['mt19937',['MT19937',['../classumontreal_1_1ssj_1_1rng_1_1MT19937.html',1,'MT19937'],['../classumontreal_1_1ssj_1_1rng_1_1MT19937.html#a0eda9139de4c7e5f9eaa62c9005f35cb',1,'umontreal.ssj.rng.MT19937.MT19937(CloneableRandomStream rng)'],['../classumontreal_1_1ssj_1_1rng_1_1MT19937.html#ab53b7cb9383a5f0e64397ec55b662e25',1,'umontreal.ssj.rng.MT19937.MT19937(CloneableRandomStream rng, String name)']]],
   ['mu',['mu',['../classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1BucklingStrengthVars.html#aa64dd217fc908692722fe674fcd6b4a5',1,'umontreal::ssj::mcqmctools::florian::examples::BucklingStrengthVars']]],
   ['multband',['multBand',['../classumontreal_1_1ssj_1_1util_1_1DMatrix.html#a5948012bc1851227afa1e9ed1f33ddbf',1,'umontreal.ssj.util.DMatrix.multBand(final DoubleMatrix2D A, int sa, final DoubleMatrix2D B, int sb, DoubleMatrix2D C)'],['../classumontreal_1_1ssj_1_1util_1_1DMatrix.html#af6b448915d44296a30cf7644e658ce88',1,'umontreal.ssj.util.DMatrix.multBand(DoubleMatrix2D A, int sa, double h)']]],
+  ['multdimtoonedimsort',['MultDimToOneDimSort',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1florian_1_1MultDimToOneDimSort.html',1,'umontreal::ssj::util::sort::florian']]],
   ['multidim',['MultiDim',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1florian_1_1MultiDim.html',1,'umontreal::ssj::util::sort::florian']]],
   ['multidim01',['MultiDim01',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDim01.html',1,'umontreal::ssj::util::sort']]],
   ['multidimcomparable',['MultiDimComparable',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimComparable.html',1,'umontreal::ssj::util::sort']]],
@@ -65,6 +67,7 @@ var searchData=
   ['multidimsort',['MultiDimSort',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html',1,'umontreal::ssj::util::sort']]],
   ['multidimsort01',['MultiDimSort01',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html',1,'umontreal::ssj::util::sort']]],
   ['multidimsort01_3c_20multidim01_20_3e',['MultiDimSort01&lt; MultiDim01 &gt;',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html',1,'umontreal::ssj::util::sort']]],
+  ['multidimsort_3c_20multidim_20_3e',['MultiDimSort&lt; MultiDim &gt;',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html',1,'umontreal::ssj::util::sort']]],
   ['multidimsortcomparable',['MultiDimSortComparable',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html',1,'umontreal::ssj::util::sort']]],
   ['multidimsortcomparable_3c_20t_20_3e',['MultiDimSortComparable&lt; T &gt;',['../interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html',1,'umontreal::ssj::util::sort']]],
   ['multifunction',['MultiFunction',['../interfaceumontreal_1_1ssj_1_1functions_1_1MultiFunction.html',1,'umontreal::ssj::functions']]],

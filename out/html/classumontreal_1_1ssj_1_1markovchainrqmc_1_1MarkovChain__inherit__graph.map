@@ -1,7 +1,11 @@
 <map id="MarkovChain" name="MarkovChain">
-<area shape="rect" id="node1" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ..." alt="" coords="59,80,158,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl..." alt="" coords="24,155,193,181"/>
-<area shape="rect" id="node2" title=" " alt="" coords="69,5,149,32"/>
+<area shape="rect" id="node1" title="This class defines a generic Markov chain and provides basic tools to simulate it for a given number ..." alt="" coords="146,80,245,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainComparable.html" title="A subclass of MarkovChain for which there is a total ordering between the states, induced by the impl..." alt="" coords="111,155,280,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="155,5,235,32"/>
 <area shape="rect" id="node4" href="$classmarkovchainrqmc_1_1Brownian.html" title=" " alt="" coords="5,229,81,256"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" title="A special kind of Markov chain whose state space is a subset of the real numbers." alt="" coords="105,229,245,256"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ChemicalReactionNetwork.html" title="Implements an abstract class to simulate chemical reaction networks with Gillespie&#39;s &#160;algorithm." alt="" coords="106,229,285,256"/>
+<area shape="rect" id="node9" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1MarkovChainDouble.html" title="A special kind of Markov chain whose state space is a subset of the real numbers." alt="" coords="309,229,449,256"/>
+<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1PKA.html" title="Implements the #ChemicalReactionNetwork for the cyclic AMP activation of PKA, see Koh and Blackwell &#39;..." alt="" coords="40,304,89,331"/>
+<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ReversibleIsomerization.html" title="Implements the Reversible Isomerization example from, e.g., Beentjes and Baker &#39;18." alt="" coords="114,304,277,331"/>
+<area shape="rect" id="node8" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1SchloeglSystem.html" title="Implements the Schloegl system, see, e.g., Beentjes and Baker &#39;18." alt="" coords="301,304,418,331"/>
 </map>

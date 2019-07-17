@@ -10,7 +10,7 @@ var searchData=
   ['nesteduniformscrambling',['NestedUniformScrambling',['../classumontreal_1_1ssj_1_1hups_1_1NestedUniformScrambling.html',1,'umontreal::ssj::hups']]],
   ['netcomparator',['NetComparator',['../classumontreal_1_1ssj_1_1hups_1_1DigitalNetFromFile_1_1NetComparator.html',1,'umontreal::ssj::hups::DigitalNetFromFile']]],
   ['newtestasianrqmc',['NewTestAsianRQMC',['../classtutorial_1_1NewTestAsianRQMC.html',1,'tutorial']]],
-  ['nextperiod',['NextPeriod',['../classift6561examples_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod'],['../classtutorial_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod']]],
+  ['nextperiod',['NextPeriod',['../classtutorial_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod'],['../classift6561examples_1_1CallCenter_1_1NextPeriod.html',1,'CallCenter.NextPeriod']]],
   ['ni1',['NI1',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI1.html',1,'umontreal::ssj::probdistmulti::norta']]],
   ['ni2a',['NI2a',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2a.html',1,'umontreal::ssj::probdistmulti::norta']]],
   ['ni2b',['NI2b',['../classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2b.html',1,'umontreal::ssj::probdistmulti::norta']]],

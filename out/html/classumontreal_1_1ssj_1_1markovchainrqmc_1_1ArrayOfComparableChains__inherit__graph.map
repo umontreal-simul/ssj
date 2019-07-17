@@ -1,4 +1,5 @@
 <map id="ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;" name="ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;">
-<area shape="rect" id="node1" title="This class provides tools to simulate an array of MarkovChainComparable objects with the array&#45;RQMC m..." alt="" coords="5,5,260,47"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfDoubleChains.html" title="Similar to ArrayOfComparableChains, except that instead of working with &#160;clones of a MarkovChain,..." alt="" coords="58,95,207,121"/>
+<area shape="rect" id="node1" title="This class provides tools to simulate an array of MarkovChainComparable objects with the array&#45;RQMC m..." alt="" coords="58,5,313,47"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfDoubleChains.html" title="Similar to ArrayOfComparableChains, except that instead of working with &#160;clones of a MarkovChain,..." alt="" coords="5,102,155,129"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ArrayOfComparableChainsMultipleSorts.html" title="This class offers a subset of the methods of #MarkovChainComparable but allows to have a different so..." alt="" coords="179,95,402,136"/>
 </map>

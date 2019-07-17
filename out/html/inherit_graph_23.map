@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1charts_1_1ContinuousDistChart.html" title="This class provides tools to plot the density and the cumulative probability of a continuous probabil..." alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node1" href="$classumontreal_1_1ssj_1_1simevents_1_1Continuous.html" title="Represents a variable in a continuous&#45;time simulation." alt="" coords="5,31,93,57"/>
+<area shape="rect" id="node2" href="$classtutorial_1_1PreyPred_1_1Preds.html" title=" " alt="" coords="141,5,256,32"/>
+<area shape="rect" id="node3" href="$classtutorial_1_1PreyPred_1_1Preys.html" title=" " alt="" coords="141,56,256,83"/>
 </map>

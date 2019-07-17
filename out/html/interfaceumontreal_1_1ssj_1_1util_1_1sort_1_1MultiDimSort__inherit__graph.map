@@ -1,5 +1,8 @@
 <map id="MultiDimSort&lt; T &gt;" name="MultiDimSort&lt; T &gt;">
-<area shape="rect" id="node1" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="109,5,240,32"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort points ..." alt="" coords="5,80,149,107"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort objects..." alt="" coords="173,80,373,107"/>
+<area shape="rect" id="node1" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="217,5,347,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1florian_1_1MultDimToOneDimSort.html" title="This abstract class takes multi&#45;dimensional objects such as arrays or #MultiDim&#39;s,..." alt="" coords="29,80,186,121"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort01.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort points ..." alt="" coords="210,87,354,114"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort objects..." alt="" coords="378,87,578,114"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1PKASort.html" title="Implements a #MultDimToOneDimSort for the #PKA class, where the score function is a multivariate poly..." alt="" coords="5,169,79,196"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1SchloeglSystemSort.html" title="Implements a #MultDimToOneDimSort for the #SchloeglSystem class, where the score function is a bivari..." alt="" coords="103,169,245,196"/>
 </map>

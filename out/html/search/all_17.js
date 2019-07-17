@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['x',['X',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ChemicalReactionNetwork.html#a4bf8fd70afdcb2754dc7901e1d5b3a7e',1,'umontreal::ssj::markovchainrqmc::florian::chemicalReactionNetworks::ChemicalReactionNetwork']]],
+  ['x0',['X0',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ChemicalReactionNetwork.html#ac88b44ba56f9ab7d17926806a03bd37b',1,'umontreal::ssj::markovchainrqmc::florian::chemicalReactionNetworks::ChemicalReactionNetwork']]],
   ['xformatpgfcurve',['XformatPgfCurve',['../classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#af269ca343d59b51c07f663b13d2e3fcd',1,'umontreal::ssj::mcqmctools::RQMCExperimentSeries']]],
   ['xor',['xor',['../classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a8427e4786314c3708c4b5105ecd899b8',1,'umontreal.ssj.util.BitMatrix.xor()'],['../classumontreal_1_1ssj_1_1util_1_1BitVector.html#a25b04cced991e402633809e547070a9c',1,'umontreal.ssj.util.BitVector.xor()']]],
   ['xychart',['XYChart',['../classumontreal_1_1ssj_1_1charts_1_1XYChart.html',1,'umontreal::ssj::charts']]],

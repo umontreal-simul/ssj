@@ -20,6 +20,7 @@ var searchData=
   ['cdeshortcolumnfunction',['CDEShortColumnFunction',['../classumontreal_1_1ssj_1_1stat_1_1density_1_1florian_1_1examples_1_1CDEShortColumnFunction.html',1,'umontreal::ssj::stat::density::florian::examples']]],
   ['charttest1',['ChartTest1',['../classcharts_1_1ChartTest1.html',1,'charts']]],
   ['charttest2',['ChartTest2',['../classcharts_1_1ChartTest2.html',1,'charts']]],
+  ['chemicalreactionnetwork',['ChemicalReactionNetwork',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ChemicalReactionNetwork.html',1,'umontreal::ssj::markovchainrqmc::florian::chemicalReactionNetworks']]],
   ['chidist',['ChiDist',['../classumontreal_1_1ssj_1_1probdist_1_1ChiDist.html',1,'umontreal::ssj::probdist']]],
   ['chigen',['ChiGen',['../classumontreal_1_1ssj_1_1randvar_1_1ChiGen.html',1,'umontreal::ssj::randvar']]],
   ['chiratioofuniformsgen',['ChiRatioOfUniformsGen',['../classumontreal_1_1ssj_1_1randvar_1_1ChiRatioOfUniformsGen.html',1,'umontreal::ssj::randvar']]],

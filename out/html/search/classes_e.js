@@ -10,7 +10,7 @@ var searchData=
   ['onedimsort',['OneDimSort',['../classumontreal_1_1ssj_1_1util_1_1sort_1_1OneDimSort.html',1,'umontreal::ssj::util::sort']]],
   ['optionvg1',['OptionVG1',['../classift6561examples_1_1TestOptionVGIS_1_1OptionVG1.html',1,'TestOptionVGIS.OptionVG1'],['../classift6561examples_1_1TestOptionVGIS2017_1_1OptionVG1.html',1,'TestOptionVGIS2017.OptionVG1']]],
   ['optionvgis1',['OptionVGIS1',['../classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS1.html',1,'TestOptionVGIS.OptionVGIS1'],['../classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS1.html',1,'TestOptionVGIS2017.OptionVGIS1']]],
-  ['optionvgis2',['OptionVGIS2',['../classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS2.html',1,'TestOptionVGIS2017.OptionVGIS2'],['../classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS2.html',1,'TestOptionVGIS.OptionVGIS2']]],
+  ['optionvgis2',['OptionVGIS2',['../classift6561examples_1_1TestOptionVGIS_1_1OptionVGIS2.html',1,'TestOptionVGIS.OptionVGIS2'],['../classift6561examples_1_1TestOptionVGIS2017_1_1OptionVGIS2.html',1,'TestOptionVGIS2017.OptionVGIS2']]],
   ['orderdependentweights',['OrderDependentWeights',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1OrderDependentWeights.html',1,'umontreal::ssj::latnetbuilder::weights']]],
   ['ordinarylatticesearch',['OrdinaryLatticeSearch',['../classumontreal_1_1ssj_1_1latnetbuilder_1_1OrdinaryLatticeSearch.html',1,'umontreal::ssj::latnetbuilder']]],
   ['ornsteinuhlenbeckprocess',['OrnsteinUhlenbeckProcess',['../classumontreal_1_1ssj_1_1stochprocess_1_1OrnsteinUhlenbeckProcess.html',1,'umontreal::ssj::stochprocess']]],

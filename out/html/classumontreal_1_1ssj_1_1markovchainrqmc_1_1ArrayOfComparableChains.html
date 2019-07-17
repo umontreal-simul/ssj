@@ -75,6 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -87,12 +88,14 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__inherit__graph.svg" width="266" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__inherit__graph.svg" width="408" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ArrayOfComparableChains&lt; T extends MarkovChainComparable &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__coll__graph.svg" width="266" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains__coll__graph.svg" width="387" height="231"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -174,6 +177,9 @@ String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memitem:aa0484ad46af634b97b2aace6dafce992"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#aa0484ad46af634b97b2aace6dafce992">testVarianceRateFormat</a> (<a class="el" href="classumontreal_1_1ssj_1_1hups_1_1PointSet.html">PointSet</a>[] pointSets, <a class="el" href="interfaceumontreal_1_1ssj_1_1hups_1_1PointSetRandomization.html">PointSetRandomization</a> rand, <a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html">MultiDimSort</a> sort, int sortCoordPts, int numSteps, int m, double varMC, String filenamePlot, String methodLabel)</td></tr>
 <tr class="memdesc:aa0484ad46af634b97b2aace6dafce992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an experiment to estimate the convergence rate of the RQMC variance as a function of \(n\), by invoking #simulReplicatesArrayRQMC(r) epeatedly with a given array of point sets of different sizes \(n\).  <a href="#aa0484ad46af634b97b2aace6dafce992">More...</a><br /></td></tr>
 <tr class="separator:aa0484ad46af634b97b2aace6dafce992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0ca2155d60aa43f08be971d8ed788a5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#ab0ca2155d60aa43f08be971d8ed788a5">testVarianceRateFormat</a> (<a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html">RQMCPointSet</a>[] rqmcPts, <a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html">MultiDimSort</a> sort, int sortCoordPts, int numSteps, int m, double varMC, String filenamePlot, String methodLabel)</td></tr>
+<tr class="memdesc:ab0ca2155d60aa43f08be971d8ed788a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above, but produces a plot of the mean and the variance as a function of the step.  <a href="#ab0ca2155d60aa43f08be971d8ed788a5">More...</a><br /></td></tr>
+<tr class="separator:ab0ca2155d60aa43f08be971d8ed788a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fabb191ab51641f5d96e10ed2c3a13f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#a3fabb191ab51641f5d96e10ed2c3a13f">sortNotStoppedChains</a> (<a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html">MultiDimSort</a> sort)</td></tr>
 <tr class="memdesc:a3fabb191ab51641f5d96e10ed2c3a13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the chains that have not stopped yet using the stored umontreal.ssj.util.MultiDimSort.  <a href="#a3fabb191ab51641f5d96e10ed2c3a13f">More...</a><br /></td></tr>
 <tr class="separator:a3fabb191ab51641f5d96e10ed2c3a13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,6 +193,13 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>formatTime</b> (dou
 <tr class="memitem:adfade535bbead4473d3076cf82f75cfd"><td class="memItemLeft" align="right" valign="top"><a id="adfade535bbead4473d3076cf82f75cfd"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>slope</b> (double[] x, double[] y, int n)</td></tr>
 <tr class="separator:adfade535bbead4473d3076cf82f75cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a785cfe98b2a48f7e2056bc9edfc01635"><td class="memItemLeft" align="right" valign="top"><a id="a785cfe98b2a48f7e2056bc9edfc01635"></a>
+<a class="el" href="classumontreal_1_1ssj_1_1stat_1_1Tally.html">Tally</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classumontreal_1_1ssj_1_1markovchainrqmc_1_1ArrayOfComparableChains.html#a785cfe98b2a48f7e2056bc9edfc01635">performancePerRun</a></td></tr>
+<tr class="memdesc:a785cfe98b2a48f7e2056bc9edfc01635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance measure at each step of the chain. <br /></td></tr>
+<tr class="separator:a785cfe98b2a48f7e2056bc9edfc01635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -515,7 +528,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>sortCoordPts</b> = 0</
 </div>
 </div>
 <a id="aa0484ad46af634b97b2aace6dafce992"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0484ad46af634b97b2aace6dafce992">&#9670;&nbsp;</a></span>testVarianceRateFormat()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0484ad46af634b97b2aace6dafce992">&#9670;&nbsp;</a></span>testVarianceRateFormat() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -584,6 +597,86 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>sortCoordPts</b> = 0</
 
 <p>Performs an experiment to estimate the convergence rate of the RQMC variance as a function of \(n\), by invoking #simulReplicatesArrayRQMC(r) epeatedly with a given array of point sets of different sizes \(n\). </p>
 <p>Returns a string that reports the mean, variance, and variance reduction factor (VRF) with respect to MC for each point set, and the estimated convergence rate of the RQMC variance as a function of \(n\). Assumes that <code>varMC</code> is the variance per run for MC. The string <code>methodLabel</code> should be a brief descriptor of the method (e.g., the type of point set, type of randomization, and type of sort). If the string <code>filenamePlot != null</code>, then the method also creates a <code>.tex</code> file with that name that contains a plot in log scale of the variance vs \(n\). </p>
+
+</div>
+</div>
+<a id="ab0ca2155d60aa43f08be971d8ed788a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ca2155d60aa43f08be971d8ed788a5">&#9670;&nbsp;</a></span>testVarianceRateFormat() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String testVarianceRateFormat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classumontreal_1_1ssj_1_1hups_1_1RQMCPointSet.html">RQMCPointSet</a> []&#160;</td>
+          <td class="paramname"><em>rqmcPts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html">MultiDimSort</a>&#160;</td>
+          <td class="paramname"><em>sort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sortCoordPts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numSteps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>varMC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>filenamePlot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>methodLabel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as above, but produces a plot of the mean and the variance as a function of the step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rqmcPts</td><td></td></tr>
+    <tr><td class="paramname">sort</td><td></td></tr>
+    <tr><td class="paramname">sortCoordPts</td><td></td></tr>
+    <tr><td class="paramname">numSteps</td><td></td></tr>
+    <tr><td class="paramname">m</td><td></td></tr>
+    <tr><td class="paramname">varMC</td><td></td></tr>
+    <tr><td class="paramname">filenamePlot</td><td></td></tr>
+    <tr><td class="paramname">methodLabel</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

@@ -30,6 +30,7 @@ var searchData=
   ['replicator',['Replicator',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Replicator.html',1,'umontreal::ssj::mcqmctools::anova']]],
   ['report',['Report',['../classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1Report.html',1,'umontreal::ssj::mcqmctools::anova']]],
   ['repsim',['RepSim',['../classumontreal_1_1ssj_1_1simexp_1_1RepSim.html',1,'umontreal::ssj::simexp']]],
+  ['reversibleisomerization',['ReversibleIsomerization',['../classumontreal_1_1ssj_1_1markovchainrqmc_1_1florian_1_1chemicalReactionNetworks_1_1ReversibleIsomerization.html',1,'umontreal::ssj::markovchainrqmc::florian::chemicalReactionNetworks']]],
   ['rijndael_5falgorithm',['Rijndael_Algorithm',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Algorithm.html',1,'umontreal::ssj::rng']]],
   ['rijndael_5fproperties',['Rijndael_Properties',['../classumontreal_1_1ssj_1_1rng_1_1Rijndael__Properties.html',1,'umontreal::ssj::rng']]],
   ['rootfinder',['RootFinder',['../classumontreal_1_1ssj_1_1util_1_1RootFinder.html',1,'umontreal::ssj::util']]],
