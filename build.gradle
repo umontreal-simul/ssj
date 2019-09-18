@@ -363,7 +363,7 @@ task data(dependsOn: [dataRng, dataHups]) {
 sourceSets {
     test {
         java {
-            srcDir 'src/main/docs/examples'
+            srcDirs = ['src/main/docs/examples']
             exclude 'markovchainrqmc/**' // FIXME: broken examples
             exclude 'ift6561examples/**'
             exclude 'latnetbuilder/**'  // Not yet ready.
