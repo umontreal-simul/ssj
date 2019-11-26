@@ -1,0 +1,4 @@
+<map id="BucklingStrength" name="BucklingStrength">
+<area shape="rect" id="node1" title="This class implements the buckling strength &#160;of a steel plate as given by Schields and Zhang &#39;16,..." alt="" coords="27,80,149,107"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,5,171,32"/>
+</map>

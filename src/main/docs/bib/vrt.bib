@@ -256,11 +256,12 @@ pages =  {605--621}
 	author={Asmussen, S{\o}ren}, 
   title={Conditional {Monte Carlo} for sums, with applications to insurance and finance}, 
 	journal={Annals of Actuarial Science}, 
-	publisher={Cambridge University Press}, 
-	DOI={10.1017/S1748499517000252},
-	note={(online prepublication)},
+	OPTpublisher={Cambridge University Press}, 
+	OPTdoi={10.1017/S1748499517000252},
 	year={2018}, 
-	pages={1--24}}
+	volume={12},
+	number={2},
+	pages={455--478}}
 
 @ARTICLE {vAU01a,
 	AUTHOR="S.-K. Au and J. L. Beck",
@@ -404,6 +405,17 @@ pages =  {605--621}
   number =	 {4},
   pages =	 {946--960},
   OPTannote = 	 {}
+}
+
+@unpublished{vBEN19a,
+  author = 	 {A. {Ben Abdellah} and P. L'Ecuyer and A. Owen and F. Puchhammer},
+  title = 	 {Density estimation by Randomized Quasi-{Monte Carlo}},
+  Xjournal =  {},
+  year = 	 {2019},
+  OPTvolume =	 {},
+  OPTnumber =	 {},
+  OPTpages =	 {},
+  note = {Submitted manuscript}
 }
 
 @Article{vBER98a,
@@ -886,8 +898,7 @@ pages =  {605--621}
   OPTeditor = 	 {},
   year =	 {2018},
   publisher =	 {IEEE Press},
-  pages =	 {},
-	note = {to appear}
+  pages =	 {1706--1717},
 }
 
 @article{vBOT18f,
@@ -2170,6 +2181,17 @@ pages =  {457--469}
   OPTannote = 	 {}
 }
 
+@article{vFU09a,
+author = {Fu, Michael C. and Hong, L. Jeff and Hu, Jian-Qiang},
+title = {Conditional {Monte Carlo} Estimation of Quantile Sensitivities},
+journal = {Management Science},
+volume = {55},
+number = {12},
+pages = {2019--2027},
+year = {2009},
+doi = {10.1287/mnsc.1090.1090},
+}
+
 @ARTICLE {vGAL84a,
 	AUTHOR="S. Gal and Y. Rubinstein and A. Ziv",
 	YEAR={1984},
@@ -2999,8 +3021,8 @@ year = {2015},
 }
 
 @article{vHIC03b,
-  title={The existence of good extensible rank-1 lattices},
   author={F. J. Hickernell and H. Niederreiter},
+  title={The existence of good extensible rank-1 lattices},
   journal={Journal of Complexity},
   volume={19},
   number={3},
@@ -3641,6 +3663,18 @@ pages =  {376--380}
   pages     = {630--651}
 }
     
+@article{vKUO10a,
+author = "Frances Y. Kuo and Ian H. Sloan and Grzegorz W. Wasilkowski and Benjamin J. Waterhouse",
+title = "Randomly shifted lattice rules with the optimal rate of convergence for unbounded integrands",
+journal = "Journal of Complexity",
+volume = "26",
+number = "2",
+pages = "135--160",
+year = "2010",
+Xdoi = "https://doi.org/10.1016/j.jco.2009.07.005",
+keywords = "Unbounded integrands, Randomly shifted lattice rules, Quasi-Monte Carlo methods, Worst case error",
+}
+
 @article{vKUO11a,
    old={vKUO12a},
 	author={F. Y. Kuo and C. Schwab and I. H. Sloan},
@@ -3660,6 +3694,22 @@ pages =  {376--380}
   volume    = {50},
   year      = {2012},
   pages     = {3351--3374}
+}
+
+@Article{vKUO16a,
+author="Kuo, Frances Y. and Nuyens, Dirk",
+title="Application of Quasi-{Monte Carlo} Methods to Elliptic PDEs with Random Diffusion Coefficients: 
+       A Survey of Analysis and Implementation",
+journal="Foundations of Computational Mathematics",
+year="2016",
+Xmonth="Dec",
+Xday="01",
+volume="16",
+number="6",
+pages="1631--1696",
+abstract="This article provides a survey of recent research efforts on the application of quasi-Monte Carlo (QMC) methods to elliptic partial differential equations (PDEs) with random diffusion coefficients. It considers and contrasts the uniform case versus the lognormal case, single-level algorithms versus multi-level algorithms, first-order QMC rules versus higher-order QMC rules, and deterministic QMC methods versus randomized QMC methods. It gives a summary of the error analysis and proof techniques in a unified view, and provides a practical guide to the software for constructing and generating QMC points tailored to the PDE problems. The analysis for the uniform case can be generalized to cover a range of affine parametric operator equations.",
+Xdoi="10.1007/s10208-016-9329-5",
+Xurl="https://doi.org/10.1007/s10208-016-9329-5"
 }
 
 @inproceedings{vKUO17a,
@@ -3725,6 +3775,18 @@ pages =  {376--380}
   number =	 {4},
   pages =	 {326--347},
   OPTannote = 	 {importance sampling}
+}
+
+@article{vLAU19a,
+author = "Patrick J. Laub and Robert Salomone and Zdravko I. Botev",
+title = "{Monte Carlo} estimation of the density of the sum of dependent random variables",
+journal = "Mathematics and Computers in Simulation",
+volume = "161",
+pages = "23--31",
+year = "2019",
+doi = "https://doi.org/10.1016/j.matcom.2018.12.001",
+Xurl = "http://www.sciencedirect.com/science/article/pii/S0378475418303197",
+keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, Sums of random variables, Likelihood ratio method",
 }
 
 @ARTICLE {vLAV81a,
@@ -4310,7 +4372,7 @@ pages =  {376--380}
   author =       {P. L'Ecuyer and D. Munger},
   title =        {Algorithm 958: Lattice Builder: 
 	      A General Software Tool for Constructing Rank-1 Lattice Rules},
-	JOURNAL={ACM Trans. on Mathematical Software},
+	JOURNAL={ACM Transactions on Mathematical Software},
 	VOLUME={42},
 	NUMBER={2},
 	PAGES={Article 15},
@@ -4319,7 +4381,6 @@ pages =  {376--380}
 }
 
 @article{vLEC16b,
-    old= {vLEC16b},
    author =       {P. L'Ecuyer and D. Munger and C. L\'ecot and B. Tuffin},
    title =        {Sorting Methods and Convergence Rates for {Array-RQMC}: 
 	                 Some Empirical Comparisons},
@@ -4343,15 +4404,26 @@ pages =  {376--380}
   publisher =    {Springer},
 }
 
+@article{vLEC18b,
+   author =       {P. L'Ecuyer and D. Munger and C. L\'ecot and B. Tuffin},
+   title =        {Sorting Methods and Convergence Rates for {Array-RQMC}: 
+	                 Some Empirical Comparisons},
+   journal = 	 {Mathematics and Computers in Simulation},
+   year =	     {2018},
+   volume =  {143},
+   Xnumber = {}, 
+   pages = {191--201},
+	 note = {{\tt http://dx.doi.org/10.1016/j.matcom.2016.07.010}}
+ }
+
 @InProceedings{vLEC18s,
   author = "P. L'Ecuyer and Z. I. Botev and D. P. Kroese",
   title = "On a Generalized Splitting Method for Sampling from A Conditional Distribution",
   booktitle = 	 {Proceedings of the 2018 Winter Simulation Conference},
   OPTeditor = 	 {},
-	note = {to appear},
   year =	 {2018},
   publisher =	 {IEEE Press},
-  Xpages =	 {},
+  pages =	 {1694--1705},
 }
 
 @ARTICLE {vLEH92a,

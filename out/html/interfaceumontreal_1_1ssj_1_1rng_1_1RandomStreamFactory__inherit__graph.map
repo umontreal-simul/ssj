@@ -1,0 +1,4 @@
+<map id="RandomStreamFactory" name="RandomStreamFactory">
+<area shape="rect" id="node1" title="Represents a random stream factory capable of constructing instances of a given type of random stream..." alt="" coords="22,5,179,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1BasicRandomStreamFactory.html" title="Represents a basic random stream factory that can constructs new instances of a given RandomStream im..." alt="" coords="5,80,196,107"/>
+</map>

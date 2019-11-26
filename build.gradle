@@ -476,7 +476,7 @@ distTar.extension = 'tar.bz2'
 // ****************************** WRAPPER ******************************
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.9'
+    gradleVersion = '4.10.2'
 }
 
 task showClasspath(dependsOn: configurations.runtime) << {

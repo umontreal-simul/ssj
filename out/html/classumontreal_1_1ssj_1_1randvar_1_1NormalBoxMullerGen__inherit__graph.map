@@ -1,0 +1,5 @@
+<map id="NormalBoxMullerGen" name="NormalBoxMullerGen">
+<area shape="rect" id="node1" title="This class implements normal random variate generators using the Box&#45;Muller method from  ." alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1NormalGen.html" title="This class implements methods for generating random variates from the normal distribution ." alt="" coords="35,80,123,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="11,5,146,32"/>
+</map>

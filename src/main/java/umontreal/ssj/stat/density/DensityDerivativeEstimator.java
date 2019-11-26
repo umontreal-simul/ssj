@@ -33,7 +33,7 @@ package umontreal.ssj.stat.density;
  * obtain such a reasonable initial value, one can, for instance, assume that
  * \f$ f \f$ belongs to a known family of distributions (e.g. normal
  * distributions), such that its defining parameters (e.g. mean, standard
- * deviation) can be estimated from the observations \f$X_0,X_1,\dots,X_{n-1}\f$
+ * deviation) can be estimated from the observations \f$x_0,x_1,\dots,x_{n-1}\f$
  * and for which the roughness functional \f$R(p^{(r+2)})\f$ (see
  * umontreal.ssj.stat.density.DensityEstimator#roughnessFunctional(double[],
  * double, double) ) can be easily estimated or even computed analytically.

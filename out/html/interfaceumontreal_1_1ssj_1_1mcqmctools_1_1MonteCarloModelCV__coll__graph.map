@@ -1,0 +1,4 @@
+<map id="MonteCarloModelCV" name="MonteCarloModelCV">
+<area shape="rect" id="node1" title="An MonteCarloModelDouble that also implements a vector of control variates." alt="" coords="17,80,159,107"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,5,171,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="GammaRejectionLoglogisticGen" name="GammaRejectionLoglogisticGen">
+<area shape="rect" id="node1" title="This class implements gamma random variate generators using a rejection method with loglogistic envel..." alt="" coords="5,155,215,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1GammaGen.html" title="This class implements random variate generators for the gamma distribution." alt="" coords="64,80,156,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="43,5,177,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="LatinHypercube" name="LatinHypercube">
+<area shape="rect" id="node1" title="Implements Latin Hypercube Sampling (LHS) with &#160;points in the &#45;dimensional unit hypercube." alt="" coords="7,155,121,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array." alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="28,5,100,32"/>
+</map>

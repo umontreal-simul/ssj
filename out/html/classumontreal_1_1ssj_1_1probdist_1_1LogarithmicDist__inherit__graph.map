@@ -1,0 +1,5 @@
+<map id="LogarithmicDist" name="LogarithmicDist">
+<area shape="rect" id="node1" title="Extends the class DiscreteDistributionInt for the logarithmic distribution." alt="" coords="25,155,138,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html" title="Classes implementing discrete distributions over the integers should inherit from this class." alt="" coords="5,80,157,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="37,5,125,32"/>
+</map>

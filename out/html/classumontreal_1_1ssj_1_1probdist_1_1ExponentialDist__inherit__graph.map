@@ -1,0 +1,6 @@
+<map id="ExponentialDist" name="ExponentialDist">
+<area shape="rect" id="node1" title="Extends the class ContinuousDistribution for the exponential distribution   (page 494) with mean &#160;whe..." alt="" coords="36,155,151,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ExponentialDistFromMean.html" title="Extends the ExponentialDist class with a constructor accepting as argument the mean &#160;instead of the r..." alt="" coords="5,229,181,256"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="16,80,171,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="49,5,137,32"/>
+</map>

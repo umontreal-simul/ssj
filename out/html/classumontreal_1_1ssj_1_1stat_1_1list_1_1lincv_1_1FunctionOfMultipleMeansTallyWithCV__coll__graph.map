@@ -1,0 +1,8 @@
+<map id="FunctionOfMultipleMeansTallyWithCV" name="FunctionOfMultipleMeansTallyWithCV">
+<area shape="rect" id="node1" title="Represents a function of multiple means tally for an estimator with linear control variables." alt="" coords="117,185,315,227"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1FunctionOfMultipleMeansTally.html" title="Represents a statistical collector for estimating a function of multiple means with a confidence inte..." alt="" coords="117,109,315,136"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="5,13,85,39"/>
+<area shape="rect" id="node4" title=" " alt="" coords="109,13,189,39"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1util_1_1MultivariateFunction.html" title="Represents a function of multiple variables." alt="" coords="213,13,352,39"/>
+<area shape="rect" id="node6" title=" " alt="" coords="376,5,576,47"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="HistogramOnly" name="HistogramOnly">
+<area shape="rect" id="node1" title="This class is similar to TallyHistogram, except that it does not maintain the min,..." alt="" coords="220,247,329,273"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1TallyHistogram.html" title="This class extends Tally." alt="" coords="165,171,275,197"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1Tally.html" title="A subclass of StatProbe." alt="" coords="142,95,191,121"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stat_1_1StatProbe.html" title="The objects of this class are statistical probes or collectors, which are elementary devices for coll..." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="265,5,345,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="110,5,205,32"/>
+</map>

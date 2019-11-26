@@ -1,0 +1,7 @@
+<map id="CDESan13" name="CDESan13">
+<area shape="rect" id="node1" title="This class implements a CDE for a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="156,171,244,197"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1ConditionalDensityEstimator.html" title="This is an abstract class that implements an DensityEstimatorDoubleArray." alt="" coords="9,81,197,108"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimatorDoubleArray.html" title="Same as DensityEstimator but here the observations of the underlying model are &#45;dimensional." alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="221,81,376,108"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="255,5,343,32"/>
+</map>

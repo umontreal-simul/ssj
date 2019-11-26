@@ -1,0 +1,9 @@
+<map id="HistogramChart" name="HistogramChart">
+<area shape="rect" id="node1" title="This class provides tools to create and manage histograms." alt="" coords="83,275,198,301"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1charts_1_1XYChart.html" title="This class provides tools to create charts from data in a simple way." alt="" coords="105,199,176,225"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,95,92,121"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart." alt="" coords="117,95,165,121"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1charts_1_1SSJXYSeriesCollection.html" title="Stores data used in a XYChart." alt="" coords="189,95,348,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="161,5,248,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="273,5,392,32"/>
+</map>
