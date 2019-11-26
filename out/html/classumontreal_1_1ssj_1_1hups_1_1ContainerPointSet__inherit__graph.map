@@ -1,0 +1,7 @@
+<map id="ContainerPointSet" name="ContainerPointSet">
+<area shape="rect" id="node1" title="This acts as a generic base class for all container classes that contain a point set and apply some k..." alt="" coords="182,80,310,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1AntitheticPointSet.html" title="This container class provides antithetic points." alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1hups_1_1BakerTransformedPointSet.html" title="This container class embodies a point set to which a Baker transformation is applied (see,..." alt="" coords="157,155,335,181"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1hups_1_1RandShiftedPointSet.html" title=" " alt="" coords="359,155,503,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="210,5,282,32"/>
+</map>

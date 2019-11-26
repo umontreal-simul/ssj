@@ -1,0 +1,9 @@
+<map id="Polynomial" name="Polynomial">
+<area shape="rect" id="node1" title="Represents a polynomial of degree &#160;in power form." alt="" coords="416,117,503,144"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="5,66,107,93"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double)." alt="" coords="155,41,368,68"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,..." alt="" coords="168,92,355,118"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,..." alt="" coords="176,142,347,169"/>
+<area shape="rect" id="node6" title=" " alt="" coords="217,193,306,220"/>
+<area shape="rect" id="node7" title=" " alt="" coords="221,244,301,270"/>
+</map>

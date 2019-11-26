@@ -1,0 +1,5 @@
+<map id="PowerMathFunction" name="PowerMathFunction">
+<area shape="rect" id="node1" title="Represents a function computing &#160;for a user&#45;defined function &#160;and power ." alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="24,5,125,32"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double)." alt="" coords="40,80,253,107"/>
+</map>

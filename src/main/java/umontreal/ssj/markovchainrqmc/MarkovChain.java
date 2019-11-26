@@ -33,7 +33,7 @@ import umontreal.ssj.hups.*;
 public abstract class MarkovChain implements Cloneable {
 
    Chrono timer = Chrono.createForSingleThread();
-   int numSteps;                // Number of steps
+   public int numSteps;                // Number of steps
    protected boolean stopped = false;
 
    /**

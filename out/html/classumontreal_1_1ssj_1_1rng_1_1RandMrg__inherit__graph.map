@@ -1,0 +1,7 @@
+<map id="RandMrg" name="RandMrg">
+<area shape="rect" id="node1" title="USE MRG32k3a INSTEAD of this class." alt="" coords="162,155,237,181"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable." alt="" coords="37,80,207,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="143,5,223,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="232,80,321,107"/>
+</map>

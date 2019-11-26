@@ -1,0 +1,4 @@
+<map id="FisherFGen" name="FisherFGen">
+<area shape="rect" id="node1" title="This class implements random variate generators for the Fisher F distribution with &#160;and &#160;degrees of f..." alt="" coords="27,80,118,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="5,5,140,32"/>
+</map>

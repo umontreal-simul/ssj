@@ -1,0 +1,10 @@
+<map id="PolInterp" name="PolInterp">
+<area shape="rect" id="node1" title="Represents a polynomial that interpolates through a set of points." alt="" coords="551,195,625,222"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1functions_1_1Polynomial.html" title="Represents a polynomial of degree &#160;in power form." alt="" coords="416,145,503,171"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="5,69,107,95"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double)." alt="" coords="155,43,368,70"/>
+<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithDerivative.html" title="Represents a mathematical function whose th derivative can be computed using derivative(double,..." alt="" coords="168,94,355,121"/>
+<area shape="rect" id="node6" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithIntegral.html" title="Represents a mathematical function whose integral can be computed by the integral(double,..." alt="" coords="176,145,347,171"/>
+<area shape="rect" id="node7" title=" " alt="" coords="217,246,306,273"/>
+<area shape="rect" id="node8" title=" " alt="" coords="221,195,301,222"/>
+</map>

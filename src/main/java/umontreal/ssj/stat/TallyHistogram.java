@@ -48,6 +48,7 @@ public class TallyHistogram extends Tally {
 	protected double m_a; // left boundary of first bin
 	protected double m_b; // right boundary of last bin
 
+
 	/**
 	 * Constructs a `TallyHistogram` statistical probe. Divide the interval
 	 * 
@@ -301,7 +302,18 @@ public class TallyHistogram extends Tally {
 	public double getH() {
 		return m_h;
 	}
-
+	
+	/**
+	 * Returns the relative number of observations that lie within the boundaries of the histogram.
+	 * @return the relative number of observations within the histogram.
+	 */
+	public double getProportionInBoundaries() {
+		int total = 0;
+		for(int num : count) {
+			total += num;
+		}
+		return  (double) total / (double)(total + leftCount + rightCount); 
+	}
 	/**
 	 * Returns the proportion of the collected observations that lie within the boundaries 
 	 * @f$[a,b]@f$ of the histogram;  that is, the number that fell within @f$[a,b]@f$

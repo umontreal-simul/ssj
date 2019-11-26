@@ -1,0 +1,6 @@
+<map id="IndependentPointsCached" name="IndependentPointsCached">
+<area shape="rect" id="node1" title="Similar to IndependentPoints, but the points are all generated and stored (cached) when the point set..." alt="" coords="5,260,180,287"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array." alt="" coords="34,184,151,211"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="57,95,129,121"/>
+<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="36,5,149,32"/>
+</map>
