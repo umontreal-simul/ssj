@@ -1,0 +1,45 @@
+/**
+ * @package umontreal.ssj.latnetbuilder.weights
+ *
+ * This package implements weights that can be used in the search of *good* quasi-Monte Carlo Point 
+ * sets with search tools such as LatNet Builder. Typically, weights serve to assign to certain features
+ * of a Point set, such as for instance all projections of the points onto three coordinates, an importance
+ * in the form of a real number. Said feature will be called the *index* in what follows. For more information
+ * on this topic see, e.g., @cite vDIC04a&thinsp; @cite vDIC13a&thinsp;.
+ *
+ *
+ * The class @ref SingletonWeight forms the basic building block for any type of weight and consists of a
+ * index, which is implemented as an arbitrary template datatype, and a value for the weight. 
+ * @ref SingletonWeightComparable differs only in that the index has to have a datatype that has an 
+ * ordering. For instance, @ref Integer can be used for the index to address the index of a coordinate.
+ *
+ * These basic basic building blocks are collected in @ref Weights or @ref WeightsComparable, depending
+ * on whether the index is comparable or not. These are the structures point search algorithms such as 
+ * LatNet Builder are working with. These two abstract classes enable the handling of the weights, such as
+ * adding new singleton weights and setting default weight values.
+ *
+ *
+ * In practice, when searching for @f$s@f$-dimensional point sets, it is common to use subsets of coordinate 
+ * indices @f$\mathfrak{u}\subseteq\{1,2,\dots,s\}@f$ to define the features of the weights. Usually, the
+ * sets @f$\mathfrak u@f$ are used to identify the projections of the point set to the coordinates in 
+ * @f$\mathfrak u@f$. Such weights are called projection dependent weights. They are implemented in
+ * @ref ProjectionDependentWeights and, for a given set of coordinate indices @f$\mathfrak u@f$ they are
+ * denoted by @f$\gamma_{\mathfrak u}@f$.
+ *
+ * Determining good values for the weights can be a very complicated and computationally expensive task. Hence,
+ * one often attempts to reduce the number of weights that need to be computed. There are several ways to do so
+ * and this package implements the most common ones. See also @cite vLEC12a&thinsp;, for instance.
+ * 
+ * @ref OrderDependentWeights assigns one weight to all @f$\mathfrak u@f$ of the same size, i.e. 
+ * @f$\gamma_{\mathfrak u}=\Gamma_{|\mathfrak u|}@f$. One special instance of this type of weights are the 
+ * @ref GeometricWeights, which are of the form @f$\Gamma_{\mathfrak u} = c\rho^{|\mathfrak u|-1}@f$. Another possibility
+ * is to assign a weight @f$\gamma_j@f$ to coordinate @f$j@f$. These weights are called @ref ProductWeights and are defined as
+ * @f$\gamma_{\mathfrak u} = \prod_{j\in\mathfrak u}\gamma_j@f$. Note that all these weight types can be indexed by 
+ * integers. 
+ *
+ * Finally, it is also possible to combine order dependent
+ * weights with product weights to form so-called product and order dependent weights @ref PODWeights, 
+ * @f$\gamma_{\mathfrak u} = \Gamma_{|\mathfrak u|}\prod_{j\in\mathfrak u}\gamma_j@f$.
+ * 
+ */
+ 

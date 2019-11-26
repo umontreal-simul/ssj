@@ -1,0 +1,5 @@
+<map id="AnovaVarianceCollector" name="AnovaVarianceCollector">
+<area shape="rect" id="node1" title="Extends ListOfTallies to collect ANOVA variances." alt="" coords="27,155,189,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfTallies.html" title="Represents a list of tally statistical collectors." alt="" coords="5,80,211,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1list_1_1ListOfStatProbes.html" title=" " alt="" coords="31,5,185,32"/>
+</map>

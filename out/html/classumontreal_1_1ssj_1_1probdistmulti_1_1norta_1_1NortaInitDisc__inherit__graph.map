@@ -1,0 +1,7 @@
+<map id="NortaInitDisc" name="NortaInitDisc">
+<area shape="rect" id="node1" title="This abstract class defines the algorithms used for NORTA initialization when the marginal distributi..." alt="" coords="85,5,184,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI1.html" title="Extends the class NortaInitDisc and implements the algorithm NI1." alt="" coords="5,80,48,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2a.html" title="Extends the class NortaInitDisc and implements the algorithm NI2a." alt="" coords="72,80,123,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI2b.html" title="Extends the class NortaInitDisc and implements the algorithm NI2b." alt="" coords="147,80,197,107"/>
+<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1norta_1_1NI3.html" title="Extends the class NortaInitDisc and implements the algorithm NI3." alt="" coords="221,80,264,107"/>
+</map>

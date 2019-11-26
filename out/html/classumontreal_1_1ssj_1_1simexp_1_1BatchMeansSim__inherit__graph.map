@@ -1,0 +1,4 @@
+<map id="BatchMeansSim" name="BatchMeansSim">
+<area shape="rect" id="node1" title="Performs a simulation experiment on an infinite horizon, for estimating steady&#45;state performance meas..." alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1simexp_1_1SimExp.html" title="Represents a framework for performing experiments using simulation." alt="" coords="31,5,99,32"/>
+</map>

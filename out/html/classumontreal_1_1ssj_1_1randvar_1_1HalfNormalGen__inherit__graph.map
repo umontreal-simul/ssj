@@ -1,0 +1,4 @@
+<map id="HalfNormalGen" name="HalfNormalGen">
+<area shape="rect" id="node1" title="This class implements methods for generating random variates from the half&#45;normal distribution with p..." alt="" coords="17,80,129,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1randvar_1_1RandomVariateGen.html" title="This is the base class for all random variate generators over the real line." alt="" coords="5,5,140,32"/>
+</map>

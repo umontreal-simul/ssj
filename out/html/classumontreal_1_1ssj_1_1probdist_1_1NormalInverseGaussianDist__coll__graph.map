@@ -1,0 +1,5 @@
+<map id="NormalInverseGaussianDist" name="NormalInverseGaussianDist">
+<area shape="rect" id="node1" title="Extends the class ContinuousDistribution for the normal inverse gaussian distribution with location p..." alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="21,80,176,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="55,5,143,32"/>
+</map>

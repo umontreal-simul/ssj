@@ -27,7 +27,7 @@ public abstract class MarkovChainComparable extends MarkovChain
           implements MultiDimComparable<MarkovChainComparable>
 {
 
-   protected int stateDim;         // Dimension of the state
+   public int stateDim;         // Dimension of the state
 
    /**
     * Returns the dimension of the state.

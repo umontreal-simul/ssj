@@ -1,0 +1,5 @@
+<map id="SquareMathFunction" name="SquareMathFunction">
+<area shape="rect" id="node1" title="Represents a function computing &#160;for a user&#45;defined function ." alt="" coords="41,155,183,181"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunctionWithFirstDerivative.html" title="Represents a mathematical function whose derivative can be computed using derivative(double)." alt="" coords="5,80,219,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="61,5,163,32"/>
+</map>

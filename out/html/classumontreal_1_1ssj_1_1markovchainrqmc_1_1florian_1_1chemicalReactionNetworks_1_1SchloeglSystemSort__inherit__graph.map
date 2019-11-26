@@ -1,0 +1,5 @@
+<map id="SchloeglSystemSort" name="SchloeglSystemSort">
+<area shape="rect" id="node1" title="Implements a #MultDimToOneDimSort for the #SchloeglSystem class, where the score function is a bivari..." alt="" coords="22,155,163,181"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1util_1_1sort_1_1florian_1_1MultDimToOneDimSort.html" title="This abstract class takes multi&#45;dimensional objects such as arrays or #MultiDim&#39;s,..." alt="" coords="14,80,171,107"/>
+<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="5,5,180,32"/>
+</map>

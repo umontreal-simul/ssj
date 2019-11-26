@@ -1,0 +1,6 @@
+<map id="Search" name="Search">
+<area shape="rect" id="node1" title="Abstract class for the search of highly uniform point sets with LatNet Builder." alt="" coords="137,5,200,32"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch.html" title="Class for the search of good digital nets using LatNet Builder." alt="" coords="28,80,149,107"/>
+<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1OrdinaryLatticeSearch.html" title="Class for the search of good rank&#45;1 ordinary lattice rules using LatNet Builder." alt="" coords="173,80,324,107"/>
+<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1PolynomialLatticeSearch.html" title="Class for the search of good polynomial lattice rules using LatNet Builder." alt="" coords="5,155,172,181"/>
+</map>

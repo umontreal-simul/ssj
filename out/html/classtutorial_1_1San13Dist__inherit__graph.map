@@ -1,0 +1,4 @@
+<map id="San13Dist" name="San13Dist">
+<area shape="rect" id="node1" title="This class simulates a specific stochastic activity network with 9 nodes and 13 links,..." alt="" coords="47,80,129,107"/>
+<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,5,171,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="DirichletDist" name="DirichletDist">
+<area shape="rect" id="node1" title="Implements the abstract class ContinuousDistributionMulti for the Dirichlet distribution with paramet..." alt="" coords="49,80,144,107"/>
+<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistributionMulti.html" title="Classes implementing continuous multi&#45;dimensional distributions should inherit from this class." alt="" coords="5,5,188,32"/>
+</map>
