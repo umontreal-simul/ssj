@@ -363,7 +363,7 @@ task data(dependsOn: [dataRng, dataHups]) {
 sourceSets {
     test {
         java {
-            srcDir 'src/main/docs/examples'
+            srcDirs = ['src/main/docs/examples']
             exclude 'markovchainrqmc/**' // FIXME: broken examples
             exclude 'ift6561examples/**'
             exclude 'latnetbuilder/**'  // Not yet ready.
@@ -476,7 +476,7 @@ distTar.extension = 'tar.bz2'
 // ****************************** WRAPPER ******************************
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.10.2'
+    gradleVersion = '4.9'
 }
 
 task showClasspath(dependsOn: configurations.runtime) << {
