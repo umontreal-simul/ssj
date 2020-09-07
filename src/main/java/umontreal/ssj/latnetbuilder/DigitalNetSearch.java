@@ -109,10 +109,10 @@ public class DigitalNetSearch extends Search {
 	 * Offset for the parsing of generating matrices.
 	 */
 	private int offsetForParsingGeneratingMatrix(int dimension){
-		if (construction=="sobol"){
+		if (construction.equals("sobol")){
 			return 7 + dimension;
 		}
-		else if (construction == "explicit"){
+		else if (construction.equals("explicit")){
 			return 7;
 		}
 		else

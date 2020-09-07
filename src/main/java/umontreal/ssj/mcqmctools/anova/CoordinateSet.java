@@ -105,12 +105,21 @@ public abstract class CoordinateSet {
       return subsets(false, maxOrder);
    }
 
+
    @Override public String toString() {
-      String s = "";
-      for (Integer coord : asList()) {
-         if (s.length() > 0) s += ",";
-         s += (coord + 1);
-      }
-      return "{" + s + "}";
+     
+      return "{" + toStringNoBraces() + "}";
    }
+/**
+ * Prints the coordinates separated by commas without enclosing braces.
+ * @return the coordinates as a String without enclosing braces.
+ */
+public String toStringNoBraces() {
+	String s = "";
+    for (Integer coord : asList()) {
+       if (s.length() > 0) s += ",";
+       s += (coord + 1);
+    }
+	return s;
+}
 }

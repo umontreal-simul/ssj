@@ -521,11 +521,16 @@ public abstract class DensityEstimator {
 	 * @return
 	 */
 	public static String plotDensity(double[] evalPoints, double[] density, String plotTitle, String[] axisTitles) {
-		double[][] plotData = { evalPoints, density };
+		double[][] plotData = new double[evalPoints.length][];
+		for(int i = 0; i < evalPoints.length; i++) {
+			plotData[i] = new double [2];
+			plotData[i][0] =evalPoints[i];
+			plotData[i][1] = density[i];
+		}
 		PgfDataTable table = new PgfDataTable(plotTitle, "", axisTitles, plotData);
 		StringBuffer sb = new StringBuffer("");
 		sb.append(PgfDataTable.pgfplotFileHeader());
-		sb.append(table.drawPgfPlotSingleCurve(plotTitle, "axis", 0, 1, -1, "", ""));
+		sb.append(table.drawPgfPlotSingleCurve(plotTitle, "axis", 0, 1, 2, "", ""));
 		sb.append(PgfDataTable.pgfplotEndDocument());
 		return sb.toString();
 	}
