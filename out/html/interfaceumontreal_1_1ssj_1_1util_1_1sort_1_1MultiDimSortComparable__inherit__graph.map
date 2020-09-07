@@ -1,4 +1,0 @@
-<map id="MultiDimSortComparable&lt; T extends MultiDimComparable&lt;? super T &gt;" name="MultiDimSortComparable&lt; T extends MultiDimComparable&lt;? super T &gt;">
-<area shape="rect" id="node1" title="This interface extends MultiDimSort&lt;T&gt; to implement multivariate sorting algorithms that sort objects..." alt="" coords="5,80,224,136"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSort.html" title="This interface is meant to be implemented by certain multivariate sorting algorithms that sort object..." alt="" coords="49,5,180,32"/>
-</map>

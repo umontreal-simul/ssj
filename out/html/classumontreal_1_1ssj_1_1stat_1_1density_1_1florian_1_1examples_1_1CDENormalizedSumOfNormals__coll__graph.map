@@ -1,5 +1,0 @@
-<map id="CDENormalizedSumOfNormals" name="CDENormalizedSumOfNormals">
-<area shape="rect" id="node1" title="This class implements the CDE for a sum of &#160;normals with mean 0, which is normalized to have variance..." alt="" coords="5,155,212,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1ConditionalDensityEstimator.html" title="This is an abstract class that implements an DensityEstimatorDoubleArray." alt="" coords="15,80,203,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimatorDoubleArray.html" title="Same as DensityEstimator but here the observations of the underlying model are &#45;dimensional." alt="" coords="11,5,206,32"/>
-</map>

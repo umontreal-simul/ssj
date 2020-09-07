@@ -1,8 +1,0 @@
-<map id="ContinuousDistribution2Dim" name="ContinuousDistribution2Dim">
-<area shape="rect" id="node1" title="Classes implementing 2&#45;dimensional continuous distributions should inherit from this class." alt="" coords="133,80,319,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1BiNormalDist.html" title="Extends the class ContinuousDistribution2Dim for the bivariate normal distribution   (page 84)." alt="" coords="113,155,213,181"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1BiStudentDist.html" title="Extends the class ContinuousDistribution2Dim for the standard bivariate Student’s &#160;distribution   (pa..." alt="" coords="237,155,340,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1ContinuousDistributionMulti.html" title="Classes implementing continuous multi&#45;dimensional distributions should inherit from this class." alt="" coords="135,5,317,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1BiNormalDonnellyDist.html" title="Extends the class BiNormalDist for the bivariate normal distribution   (page 84) using a translation ..." alt="" coords="5,229,156,256"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1probdistmulti_1_1BiNormalGenzDist.html" title="Extends the class BiNormalDist for the bivariate normal distribution   (page 84) using Genz’s algorit..." alt="" coords="181,229,311,256"/>
-</map>

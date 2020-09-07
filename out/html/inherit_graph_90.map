@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDoubleArray.html" title="Similar to MonteCarloModelDouble except that the returned performance is an array of real numbers." alt="" coords="5,132,201,159"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1BucklingStrengthVars.html" title=" " alt="" coords="263,5,410,32"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1LookbackOptionGBMVars.html" title="Class to generate several random variates involved in the estimation of the current value of a Lookba..." alt="" coords="251,56,423,83"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1MultiNormalIndependent.html" title="Class, that generates an of independent normal variables.This is frequently used for density estimati..." alt="" coords="255,107,418,133"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1San13Vars.html" title="With this class one can generate several random variates involved in the estimation of the longest pa..." alt="" coords="294,157,379,184"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1San13VarsCDE.html" title="With this class one can generate several random variates involved in the estimation of the longest pa..." alt="" coords="279,208,394,235"/>
-<area shape="rect" id="node7" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1florian_1_1examples_1_1ShortColumnFunctionVars.html" title="This class can be used to generate the random variables &#160;that are used in the so&#45;called short column ..." alt="" coords="249,259,424,285"/>
-</map>

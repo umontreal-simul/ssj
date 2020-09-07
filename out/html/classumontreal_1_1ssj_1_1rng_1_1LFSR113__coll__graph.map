@@ -1,8 +1,0 @@
-<map id="LFSR113" name="LFSR113">
-<area shape="rect" id="node1" title="Extends RandomStreamBase using a composite linear feedback shift register (LFSR) (or Tausworthe) RNG ..." alt="" coords="161,229,238,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1rng_1_1RandomStreamBase.html" title="This class provides a convenient foundation on which RNGs can be built." alt="" coords="128,155,271,181"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1rng_1_1CloneableRandomStream.html" title="CloneableRandomStream extends RandomStream and Cloneable." alt="" coords="37,80,207,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1rng_1_1RandomStream.html" title="This interface defines the basic structures to handle multiple streams of uniform (pseudo)random numb..." alt="" coords="5,5,119,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="143,5,223,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="232,80,321,107"/>
-</map>

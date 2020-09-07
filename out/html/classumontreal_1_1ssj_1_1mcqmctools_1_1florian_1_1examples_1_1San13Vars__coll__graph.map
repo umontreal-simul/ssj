@@ -1,6 +1,0 @@
-<map id="San13Vars" name="San13Vars">
-<area shape="rect" id="node1" title="With this class one can generate several random variates involved in the estimation of the longest pa..." alt="" coords="82,171,167,197"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDoubleArray.html" title="Similar to MonteCarloModelDouble except that the returned performance is an array of real numbers." alt="" coords="5,81,201,108"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="226,81,381,108"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="259,5,347,32"/>
-</map>

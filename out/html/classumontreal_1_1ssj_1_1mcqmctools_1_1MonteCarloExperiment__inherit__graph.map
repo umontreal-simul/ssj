@@ -1,4 +1,0 @@
-<map id="MonteCarloExperiment" name="MonteCarloExperiment">
-<area shape="rect" id="node1" title="Provides generic tools to perform simple Monte Carlo experiments with a simulation model that impleme..." alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperiment.html" title="Provides basic generic tools to perform RQMC experiments with a simulation model that implements the ..." alt="" coords="18,80,147,107"/>
-</map>

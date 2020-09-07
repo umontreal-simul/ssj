@@ -1,4 +1,0 @@
-<map id="MathFunctionWithIntegral" name="MathFunctionWithIntegral">
-<area shape="rect" id="node1" title="Represents a mathematical function whose integral can be computed by the integral(double,..." alt="" coords="5,80,176,107"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1functions_1_1MathFunction.html" title="This interface should be implemented by classes which represent univariate mathematical functions." alt="" coords="40,5,141,32"/>
-</map>

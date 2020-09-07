@@ -1,4 +1,0 @@
-<map id="HilbertCurveBatchSort&lt; T extends MultiDimComparable&lt;? super T &gt;" name="HilbertCurveBatchSort&lt; T extends MultiDimComparable&lt;? super T &gt;">
-<area shape="rect" id="node1" title="This sort is similar to BatchSortPow2, except that after applying the batch sort, the objects are giv..." alt="" coords="5,80,224,136"/>
-<area shape="rect" id="node2" href="$interfaceumontreal_1_1ssj_1_1util_1_1sort_1_1MultiDimSortComparable.html" title=" " alt="" coords="15,5,215,32"/>
-</map>

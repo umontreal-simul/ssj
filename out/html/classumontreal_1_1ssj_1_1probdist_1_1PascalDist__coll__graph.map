@@ -1,6 +1,0 @@
-<map id="PascalDist" name="PascalDist">
-<area shape="rect" id="node1" title="The Pascal distribution is a special case of the negative binomial distribution   (page 324) with par..." alt="" coords="38,229,125,256"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1NegativeBinomialDist.html" title="Extends the class DiscreteDistributionInt for the negative binomial distribution   (page 324) with re..." alt="" coords="7,155,155,181"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html" title="Classes implementing discrete distributions over the integers should inherit from this class." alt="" coords="5,80,157,107"/>
-<area shape="rect" id="node4" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="37,5,125,32"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="CDECantilever" name="CDECantilever">
-<area shape="rect" id="node1" title="This class implements a conditional density estimator for the displacement of a cantilever beam." alt="" coords="47,155,158,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1ConditionalDensityEstimator.html" title="This is an abstract class that implements an DensityEstimatorDoubleArray." alt="" coords="9,80,197,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1stat_1_1density_1_1DensityEstimatorDoubleArray.html" title="Same as DensityEstimator but here the observations of the underlying model are &#45;dimensional." alt="" coords="5,5,200,32"/>
-</map>

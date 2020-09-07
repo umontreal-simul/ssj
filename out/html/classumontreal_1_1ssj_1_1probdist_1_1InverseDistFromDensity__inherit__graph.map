@@ -1,5 +1,0 @@
-<map id="InverseDistFromDensity" name="InverseDistFromDensity">
-<area shape="rect" id="node1" title="Implements a method for computing the inverse of an arbitrary continuous distribution function when o..." alt="" coords="5,155,169,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1probdist_1_1ContinuousDistribution.html" title="Classes implementing continuous distributions should inherit from this base class." alt="" coords="10,80,165,107"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1probdist_1_1Distribution.html" title="This interface should be implemented by all classes supporting discrete and continuous distributions." alt="" coords="43,5,131,32"/>
-</map>
