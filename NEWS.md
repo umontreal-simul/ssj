@@ -2,6 +2,10 @@
 ---
 
 
+## SSJ 3.3.1
+
+In this release, we have improved the documentation (mostly) for the hups package.  We also made a few corrections and added a few methods in packages mcqmctools, stat, and hups.  
+
 ## SSJ 3.3.0
 
 This release contains new packages, several new classes, an improved tutorial and improved documentation in general.

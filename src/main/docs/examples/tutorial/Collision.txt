@@ -1,0 +1,6 @@
+REPORT on Tally stat. collector ==> Statistics on collisions
+    num. obs.      min          max        average     standard dev.
+    100000        1.000       29.000       12.271        3.380
+  95.0% confidence interval for mean (student): (    12.250,    12.292 )
+
+ Theoretical mean: 12.5

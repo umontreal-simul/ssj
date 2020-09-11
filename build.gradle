@@ -24,8 +24,7 @@ group = 'ca.umontreal.iro.simul'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = '3.3.0'
-
+version = '3.3.1'
 
 repositories {
     jcenter()
@@ -364,7 +363,7 @@ task data(dependsOn: [dataRng, dataHups]) {
 sourceSets {
     test {
         java {
-            srcDir 'src/main/docs/examples'
+            srcDirs = ['src/main/docs/examples']
             exclude 'markovchainrqmc/**' // FIXME: broken examples
             exclude 'ift6561examples/**'
             exclude 'latnetbuilder/**'  // Not yet ready.
@@ -380,6 +379,7 @@ test {
     useJUnit()
     workingDir = file(sourceSets.test.java.srcDirs[-1].path)
     exclude 'ExamplesTest.class'
+    exclude 'LatNetBuilderTest.java'
     if (!project.hasProperty('ssjutil.jni.build'))
         exclude 'ChronoTest.class'
     if (!project.hasProperty('randvar.jni.build'))
@@ -394,6 +394,7 @@ task examples(type: Test) {
     useJUnit()
     workingDir = temporaryDir
     include 'ExamplesTest.class'
+    exclude 'LatNetBuilderTest.java'
     doFirst {
         workingDir.mkdir()
     }
