@@ -1,6 +1,0 @@
-<map id="MultipleDatasetChart" name="MultipleDatasetChart">
-<area shape="rect" id="node1" title="Provides tools to plot many datasets on the same chart." alt="" coords="209,124,354,151"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,213,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="238,13,325,39"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1charts_1_1Axis.html" title="Represents an axis of a chart encapsulated by an instance of XYChart." alt="" coords="349,13,397,39"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="OldAsianRQMC" name="OldAsianRQMC">
-<area shape="rect" id="node1" title=" " alt="" coords="117,171,233,197"/>
-<area shape="rect" id="node2" href="$classift6561examples_1_1AsianOption.html" title="This class represents an Asian average price call option with European exercise type." alt="" coords="128,95,221,121"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="195,5,327,32"/>
-</map>

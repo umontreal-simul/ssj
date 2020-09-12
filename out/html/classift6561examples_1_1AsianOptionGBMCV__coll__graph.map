@@ -1,7 +1,0 @@
-<map id="AsianOptionGBMCV" name="AsianOptionGBMCV">
-<area shape="rect" id="node1" title="This class represents an Asian Option based on a geometric Brownian motion, for which we use the payo..." alt="" coords="101,171,243,197"/>
-<area shape="rect" id="node2" href="$classift6561examples_1_1AsianOption.html" title="This class represents an Asian average price call option with European exercise type." alt="" coords="184,95,277,121"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelDouble.html" title="An interface for a very simple simulation model for which Monte Carlo (MC) and RQMC experiments are t..." alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node5" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1MonteCarloModelCV.html" title="An MonteCarloModelDouble that also implements a vector of control variates." alt="" coords="17,95,159,121"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1stochprocess_1_1StochasticProcess.html" title="Abstract base class for a stochastic process &#160;sampled (or observed) at a finite number of time points..." alt="" coords="195,5,327,32"/>
-</map>

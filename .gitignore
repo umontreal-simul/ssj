@@ -7,3 +7,5 @@ hs_err*
 .settings
 .project
 .classpath
+/out
+.html

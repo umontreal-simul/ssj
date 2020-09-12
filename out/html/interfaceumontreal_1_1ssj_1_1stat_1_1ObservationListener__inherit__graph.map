@@ -1,5 +1,0 @@
-<map id="ObservationListener" name="ObservationListener">
-<area shape="rect" id="node1" title="Represents an object that can listen to observations broadcast by statistical probes." alt="" coords="150,5,289,32"/>
-<area shape="rect" id="node2" href="$classtutorial_1_1QueueObs_1_1LargeWaitsCollector.html" title=" " alt="" coords="5,80,212,107"/>
-<area shape="rect" id="node3" href="$classtutorial_1_1QueueObs_1_1ObservationTrace.html" title=" " alt="" coords="237,80,426,107"/>
-</map>

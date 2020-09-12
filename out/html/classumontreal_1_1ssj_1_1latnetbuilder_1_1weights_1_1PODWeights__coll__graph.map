@@ -1,8 +1,0 @@
-<map id="PODWeights" name="PODWeights">
-<area shape="rect" id="node1" title="This class implements so&#45;called product&#45; and order dependent weights (POD weights)." alt="" coords="752,63,851,90"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1Weights.html" title="This abstract class implements generic weights that can be used to search for good quasi&#45;Monte Carlo ..." alt="" coords="425,13,527,39"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,296,47"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1OrderDependentWeights.html" title="Class implementing order dependent weights." alt="" coords="393,63,559,90"/>
-<area shape="rect" id="node5" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1WeightsComparable.html" title=" " alt="" coords="77,83,225,124"/>
-<area shape="rect" id="node6" href="$classumontreal_1_1ssj_1_1latnetbuilder_1_1weights_1_1ProductWeights.html" title="Class implementing product weights." alt="" coords="419,114,533,141"/>
-</map>

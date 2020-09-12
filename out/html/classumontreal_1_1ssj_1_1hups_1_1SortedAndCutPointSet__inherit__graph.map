@@ -1,5 +1,0 @@
-<map id="SortedAndCutPointSet" name="SortedAndCutPointSet">
-<area shape="rect" id="node1" title=" " alt="" coords="5,155,160,181"/>
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1hups_1_1CachedPointSet.html" title="This container class caches a point set by precomputing and storing its points locally in an array." alt="" coords="24,80,141,107"/>
-<area shape="rect" id="node3" href="$classumontreal_1_1ssj_1_1hups_1_1PointSet.html" title="This abstract class defines the basic methods for accessing and manipulating point sets." alt="" coords="47,5,119,32"/>
-</map>
