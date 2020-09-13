@@ -253,7 +253,7 @@ pages =  {605--621}
 }
 
 @article{vASM18a, 
-	author={Asmussen, S{\o}ren}, 
+	author={Asmussen, S.}, 
   title={Conditional {Monte Carlo} for sums, with applications to insurance and finance}, 
 	journal={Annals of Actuarial Science}, 
 	OPTpublisher={Cambridge University Press}, 
@@ -415,7 +415,31 @@ pages =  {605--621}
   OPTvolume =	 {},
   OPTnumber =	 {},
   OPTpages =	 {},
-  note = {Submitted manuscript}
+  note = {Manuscript, \url{arXiv:1807.06133}}
+}
+
+@InProceedings{vBEN19b,
+  author = "A. {Ben Abdellah} and P. L'Ecuyer and F. Puchhammer",
+  title = "{Array-RQMC} for Option Pricing Under Stochastic Volatility Models",
+  booktitle = {Proceedings of the 2019 Winter Simulation Conference},
+  OPTeditor = {},
+  year =	 {2019},
+	Xeditors = {N. Mustafee and K.-H.G. Bae and S. Lazarova-Molnar 
+	            and M. Rabe and C. Szabo and P. Haas and Y.-J. Son},
+  publisher =	 {IEEE Press},
+  pages =	 {440--451},
+  note =  {},
+	url={https://www.informs-sim.org/wsc19papers/429.pdf}
+}
+
+@PHDTHESIS {vBEN19t,
+	AUTHOR="A. {Ben Abdellah}",
+	YEAR={2019},
+	TITLE="Randomized Quasi-{Monte Carlo} Methods for Density
+         Estimation and Simulation of Markov Chains",
+	SCHOOL={DIRO, Universit\'e de Montr\'eal},
+	ADDRESS={Montr\'eal, Canada},
+	NOTE={Forthcoming}
 }
 
 @Article{vBER98a,
@@ -577,7 +601,16 @@ pages =  {605--621}
    journal =      {{ACM} Transactions on Modeling and Computer Simulation},
    OPTnote =         {To appear},
 }
-      
+
+@article{vBLA19a,
+  author = {J. Blanchet and J. Li and M. K. Nakayama},
+	title =  {Rare-Event Simulation for Distribution Networks},
+  journal = {Operations Research}, 
+	volume = {67},
+  pages =	 {1383--1396},
+  year =	 {2019},
+}
+
 @TECHREPORT{vBLO05a,
    AUTHOR = {H. A. P. Blom and G. J. Bakker and J. Krystul and 
           M. H. C. Everdij and B. K. Obbink and M. B. Klompstra},
@@ -1735,28 +1768,27 @@ pages = {1263--1274}
   pages     = {63--97},
 }
 
-@unpublished{vDIC08a,
-  author    = {J. Dick},
-  title     = {{W}alsh Spaces Containing Smooth Functions and 
-               Quasi-{M}onte {C}arlo Rules of Arbitrary High Order},
-  OPTjournal   = {},
-  OPTvolume    = {},
-  OPTnumber    = {},
-  year      = {2008},
-  OPTpages     = {},
-  note = {Manuscript, Sydney, Australia},
-}
-
-@unpublished{vDIC08b,
+@article{vDIC07b,
+    old = vDIC08b,
   author    = {J. Dick},
   title     = {Explicit Constructions of Quasi-{M}onte {C}arlo Rules 
                for the Numerical Integration of High-Dimensional Periodic Functions},
-  OPTjournal   = {},
-  OPTvolume    = {},
-  OPTnumber    = {},
-  year      = {2008},
-  OPTpages     = {},
-  note = {Manuscript, Sydney, Australia},
+  journal   = {SIAM Journal on Numerical Analysis},
+  volume    = {45},
+  number    = {5},
+  year      = {2007},
+  pages     = {2141--2176},
+}
+
+@article{vDIC08a,
+	title={{W}alsh Spaces Containing Smooth Functions and 
+	       Quasi-{M}onte {C}arlo Rules of Arbitrary High Order},
+	author={Dick, Josef},
+	journal={SIAM Journal on Numerical Analysis},
+	volume={46},
+	number={3},
+	pages={1519--1553},
+	year={2008},
 }
 
 @article{vDIC08c,
@@ -1831,6 +1863,15 @@ pages = {2705--2720}
 	VOLUME={3},
 	NUMBER={3},
 	PAGES={190--224}  }
+
+@ARTICLE {vDON17a,
+	AUTHOR="Dong, H. and Nakayama, M. K.",
+	YEAR={2017},
+	TITLE="Quantile estimation with {Latin} hypercube sampling",
+	JOURNAL={Operations Research},
+	VOLUME={65},
+	NUMBER={6},
+	PAGES={1678--1695}  }
 
 @Article{vDUF95a,
   author = 	 {D. Duffie and P. Glynn},
@@ -1989,6 +2030,14 @@ pages =  {457--469}
   address =	 {Dordrecht, The Netherlands},
   OPTannote = 	 {splitting, importance sampling}
 }
+
+@ARTICLE {vFAK17a,
+    AUTHOR  = {R. Fakhereddine and R. {El Haddad} and C. Lécot and J. El Maalouf},
+    TITLE   = {Stratified {Monte Carlo} simulation of {Markov} chains},
+    YEAR    = {2017},
+    JOURNAL = {Mathematics and Computers in Simulation},
+    VOLUME  = {135},
+    PAGES   = {51--62}  }
 
 @ARTICLE {vFAL99a,
     AUTHOR  = {M. Falkner and M. Devetsikiotis and I. Lambadaris},
@@ -2189,7 +2238,7 @@ volume = {55},
 number = {12},
 pages = {2019--2027},
 year = {2009},
-doi = {10.1287/mnsc.1090.1090},
+OPTdoi = {10.1287/mnsc.1090.1090},
 }
 
 @ARTICLE {vGAL84a,
@@ -2242,6 +2291,16 @@ doi = {10.1287/mnsc.1090.1090},
     volume={56},
     number={3},
     pages={607--617},
+    year={2008}
+}
+
+@article{vGIL08b,
+    author={M. B. Giles and F. Y. Kuo and I. H. Sloan and B. J. Waterhouse},
+    title={Quasi-{Monte Carlo} for Finance Applications},
+    journal={ANZIAM Journal},
+    volume={50},
+    OPTnumber={},
+    pages={C308--C323},
     year={2008}
 }
 
@@ -2703,7 +2762,7 @@ ATM Delay Time Distributions with RESTART/LRE",
        PAGES   = {654--668}    }
 
 @article {vHE15a,
-author = {He, Zhijian and Owen, Art B.},
+author = {He, Z. and Owen, Art B.},
 title = {Extensible grids: uniform sampling on a space filling curve},
 journal = {Journal of the Royal Statistical Society: Series B (Statistical Methodology)},
 Xissn = {1467-9868},
@@ -2711,6 +2770,17 @@ Xurl = {http://dx.doi.org/10.1111/rssb.12132},
 doi = {10.1111/rssb.12132},
 OPTpages = {n/a--n/a},
 keywords = {van der Corput sequence, Hilbert space filling curve, Lattice sequence, Randomized quasi-Monte-Carlo sampling, Sequential quasi-Monte-Carlo method},
+year = {2015},
+}
+
+@article {vHE15b,
+author = {He, Z. and Wang, X.},
+title = {On the Convergence Rate of Randomized Quasi-Monte Carlo for Discontinuous Functions},
+journal = {{SIAM} Journal on Numerical Analysis},
+volume={53},
+number={5},
+pages = {2488--2503},
+keywords = {quasi-Monte-Carlo},
 year = {2015},
 }
 
@@ -3712,16 +3782,28 @@ Xdoi="10.1007/s10208-016-9329-5",
 Xurl="https://doi.org/10.1007/s10208-016-9329-5"
 }
 
-@inproceedings{vKUO17a,
-  author =       {F. Y. Kuo},
-  title =        {... forthcoming title ... },
+@inproceedings{vKUO18a,
+  author =       {F. Y. Kuo and D. Nuyens},
+  title =        {Application of Quasi-{Monte Carlo} Methods to {PDEs} with random 
+	                Coefficients -- An Overview an Tutorial},
   booktitle = 	 {{M}onte {C}arlo and Quasi-{M}onte {C}arlo Methods 2016}, 
-  Xpages =	       {},
-  year =         {2017},
+  pages =	       {53--71},
+  year =         {2018},
   editor =     	 {P. W. Glynn and A. B. Owen},
-  Xaddress =	     {Berlin},
-  Xpublisher =    {Springer-Verlag},
-  note =       {manuscript},
+  address =	     {Berlin},
+  publisher =    {Springer-Verlag},
+}
+
+@inproceedings{vKUO18b,
+  author =       {F. Y. Kuo and D. Nuyens},
+  title =        {Hot New Directions for Quasi-{Monte Carlo} Research 
+	                in Step with Applications},
+  booktitle = 	 {{M}onte {C}arlo and Quasi-{M}onte {C}arlo Methods 2016}, 
+  pages =	      {123--144},
+  year =         {2018},
+  editor =     	 {P. W. Glynn and A. B. Owen},
+  address =	     {Berlin},
+  publisher =    {Springer-Verlag},
 }
 
 @InProceedings{vKUR96a,
@@ -3778,13 +3860,13 @@ Xurl="https://doi.org/10.1007/s10208-016-9329-5"
 }
 
 @article{vLAU19a,
-author = "Patrick J. Laub and Robert Salomone and Zdravko I. Botev",
+author = "P. J. Laub and R. Salomone and Z. I. Botev",
 title = "{Monte Carlo} estimation of the density of the sum of dependent random variables",
 journal = "Mathematics and Computers in Simulation",
 volume = "161",
 pages = "23--31",
 year = "2019",
-doi = "https://doi.org/10.1016/j.matcom.2018.12.001",
+Xdoi = "https://doi.org/10.1016/j.matcom.2018.12.001",
 Xurl = "http://www.sciencedirect.com/science/article/pii/S0378475418303197",
 keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, Sums of random variables, Likelihood ratio method",
 }
@@ -4381,15 +4463,16 @@ keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, 
 }
 
 @article{vLEC16b,
+    new = {vLEC18b},
    author =       {P. L'Ecuyer and D. Munger and C. L\'ecot and B. Tuffin},
    title =        {Sorting Methods and Convergence Rates for {Array-RQMC}: 
 	                 Some Empirical Comparisons},
    journal = 	 {Mathematics and Computers in Simulation},
-   year =	     {2016},
+   year =	     {2018},
    volume =  {143},
    Xnumber = {}, 
    pages = {191--201},
-	 note = {{\tt http://dx.doi.org/10.1016/j.matcom.2016.07.010}}
+	 Xnote = {{\tt http://dx.doi.org/10.1016/j.matcom.2016.07.010}}
  }
 
 @inproceedings{vLEC18a,
@@ -4413,7 +4496,7 @@ keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, 
    volume =  {143},
    Xnumber = {}, 
    pages = {191--201},
-	 note = {{\tt http://dx.doi.org/10.1016/j.matcom.2016.07.010}}
+	 Xnote = {{\tt http://dx.doi.org/10.1016/j.matcom.2016.07.010}}
  }
 
 @InProceedings{vLEC18s,
@@ -4424,6 +4507,39 @@ keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, 
   year =	 {2018},
   publisher =	 {IEEE Press},
   pages =	 {1694--1705},
+}
+
+@unpublished{vLEC19a,
+  author = 	 {P. L'Ecuyer and F. Puchhammer and A. {Ben Abdellah}},
+  title = 	 {{Monte Carlo} and Quasi-{Monte Carlo} Density
+              Estimation via Conditioning},
+  Xjournal =  {},
+  year = 	 {2019},
+  OPTvolume =	 {},
+  OPTnumber =	 {},
+  OPTpages =	 {},
+  note = {Manuscript, \url{http://arxiv.org/abs/1906.04607}}
+}
+
+@article{vLEC19c,
+author = "C. L\'ecot and P. L'Ecuyer and R. {El Haddad} and A. Tarhini",
+title = "Quasi-{Monte Carlo} simulation of coagulation-fragmentation",
+journal = "Mathematics and Computers in Simulation",
+volume = "161",
+pages = "113--124",
+year = "2019",
+Xdoi = "https://doi.org/10.1016/j.matcom.2019.02.003",
+}
+
+@inbook{vLEC20b,
+author = {P. L'Ecuyer},
+title = {Randomized Quasi-Monte Carlo},
+booktitle = {Wiley StatsRef: Statistics Reference Online},
+chapter = {},
+pages = {1-9},
+Xdoi = {10.1002/9781118445112.stat0xxxx.pub2},
+Xurl = {https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118445112.stat04386.pub2},
+year = {2020},
 }
 
 @ARTICLE {vLEH92a,
@@ -4443,7 +4559,20 @@ keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, 
 	JOURNAL={Scandinavian Actuarial Journal},
 	VOLUME={24},
 	PAGES={858--874},
-        note={rare events, ruin, risk}  }
+  note={rare events, ruin, risk}  }
+
+@Article{vLEI18a,
+author="Lei, L.  and Peng, Y.  and Fu, M. C. and Hu, J.-Q.",
+title="Applications of generalized likelihood ratio method to distribution sensitivities 
+       and steady-state simulation",
+journal="Discrete Event Dynamic Systems",
+year="2018",
+volume="28",
+number="1",
+pages="109--125",
+abstract="We provide applications of the generalized likelihood ratio (GLR) method proposed in Peng et al. (2016c) to distribution sensitivity estimation for both finite-horizon and steady-state simulation. Applications on sensitivity of distortion risk measure, gradient-based maximum likelihood estimation, and quantile sensitivity in both finite-horizon and steady-state settings are put together under a single umbrella, and addressed uniformly by the proposed estimator. Empirical comparison of the performance of different methods is presented.",
+Xdoi="10.1007/s10626-017-0247-8",
+}
 
 @MastersThesis{vLEM96a,
   author = 	 {C. Lemieux},
@@ -4603,7 +4732,7 @@ keywords = "Density estimation, Sensitivity estimator, Conditional Monte Carlo, 
   journal =      {{SIAM} Journal on Scientific Computing},
   volume =	 {24},
   number =	 {5},
-  pages =	 {1768--1789},
+  pages =	   {1768--1789},
   year =         {2003},
   OPTannote =    {}
 }   
@@ -5107,6 +5236,43 @@ pages={177--189},
         YEAR               = {2004}
 }
 
+@article{vNAK14a,
+  author = {M. K. Nakayama},
+	title =  {Confidence Intervals for Quantiles Using Sectioning when 
+	          Applying Variance-Reduction Techniques},
+  journal = {ACM Transactions on Modeling and Computer Simulation}, 
+	volume = {24},
+	number = {4},
+  pages =	 {Article 9},
+  year =	 {2014},
+}
+
+@inproceedings{vNAK14b,
+  author = {M. K. Nakayama},
+	title =  {Quantile Estimation when Applying Conditional {Monte Carlo}},
+  booktitle = {2014 International Conference on Simulation and Modeling Methodologies, 
+	   Technologies, and Applications (SIMULTECH)}, 
+  pages =	 {280--285},
+  year =	 {2014},
+  Xeditor =	 {},
+  Xaddress =	 {},
+  publisher =	 {IEEE},
+  OPTannote = 	 {}
+}
+
+@inproceedings{vNAK14b,
+  author = {M. K. Nakayama and Z. T. Kaplan and B. Tuffin and and P. L'Ecuyer},
+	title =  {Quantile Estimation via a Combination of Conditional {Monte Carlo} 
+	          and Randomized Quasi-{Monte Carlo}},
+  Xbooktitle = {Proceedings of the 2020 Winter Simulation Conference}, 
+  Xpages =	 {},
+  year =	 {2020},
+  Xeditor =	 {},
+  Xaddress =	 {},
+  Xpublisher =	 {IEEE},
+  note = 	 {Submitted}
+}
+
 @ARTICLE {vNEL85a,
 	AUTHOR="B. L. Nelson",
 	YEAR={1985},
@@ -5424,6 +5590,18 @@ year     = 1992}}
   PAGES = "466--489",
   YEAR = {1998}  }
 
+@InProceedings{vOWE00a,
+  author="Owen, A. B.",
+  editor="Niederreiter, Harald and Spanier, Jerome",
+  title="{Monte Carlo}, Quasi-{Monte Carlo}, and Randomized Quasi-{Monte Carlo}",
+  booktitle="{Monte-Carlo} and Quasi-{Monte Carlo} Methods 1998",
+  year="2000",
+  publisher="Springer-Verlag",
+  address="Berlin, Heidelberg",
+  pages="86--97",
+  abstract="This paper surveys recent research on using Monte Carlo techniques to improve quasi-Monte Carlo  techniques. Randomized quasi-Monte Carlo methods provide a basis for error estimation. They have, in the special case of scrambled nets, also been observed to improve accuracy. Finally through Latin supercube sampling it is possible to use Monte Carlo methods to extend quasi-Monte Carlo methods to higher dimensional problems.",
+}
+
 @unpublished {vOWE02a,
   author = 	 {A. B. Owen},
   title = 	 {Necessity of Low Effective Dimension},
@@ -5590,6 +5768,17 @@ year     = 1992}}
   publisher =	 {Springer-Verlag},
 }
 
+@article{vPEN18a,
+author = {Peng, Yijie and Fu, Michael C. and Hu, Jian-Qiang and Heidergott, Bernd},
+title = {A New Unbiased Stochastic Derivative Estimator for 
+         Discontinuous Sample Performances with Structural Parameters},
+journal = {Operations Research},
+volume = {66},
+number = {2},
+pages = {487--499},
+year = {2018}
+}
+
 @inproceedings{vPHI00a,
   title={Quasi-Random Sampling for Condensation},
   author={Philomin, Vasanth and Duraiswami, Ramani and Davis, Larry},
@@ -5617,6 +5806,26 @@ year     = 1992}}
 	JOURNAL={European Journal of Operational Research},
 	VOLUME={71},
 	PAGES={80--94}  }
+
+@unpublished{vPUC19a,
+  author = 	 {F. Puchhammer and P. L'Ecuyer and A. {Ben Abdellah} and Z. I. Botev},
+  title = 	 {Likelihood Ratio Density Estimation for Simulation Models},
+  Xjournal =  {},
+  year = 	 {2019},
+  OPTvolume =	 {},
+  OPTnumber =	 {},
+  OPTpages =	 {},
+  note = {In preparation},  
+  Xnote = {Submitted manuscript}
+}
+
+@misc{vPUC19b,
+author = {Puchhammer, F. and {Ben Abdellah}, A. and L'Ecuyer, P.},
+title = {Variance reduction for chemical reaction networks with {Array-RQMC}},
+year  = 2019,
+howpublished = {MCM 2019 slides},
+note = {\url{http://www.iro.umontreal.ca/~lecuyer/myftp/slides/MCM19-tau-leaping-arrayRQMC.pdf}},
+}
 
 @article{vRAD96a,
   author = {I. Radovic and I. M. Sobol and R. F. Tichy},
@@ -6454,6 +6663,14 @@ keywords = "Uncertainty quantification, Monte Carlo simulation,
         YEAR               = {2014}
 }
 
+@book {vTUF20a,
+  title = 	 {{M}onte {C}arlo and Quasi-{M}onte {C}arlo Methods 2018},
+  editor =	 {B. Tuffin and P. L'Ecuyer},
+  publisher =	 {Springer-Verlag},
+  address =	 {Berlin},
+  year =	 {2020},
+}
+
 @InProceedings{vVAZ98a,
   author = 	 {F. J. V\'azquez-Abad and D. Dufresne},
   title = 	 {Accelerated Simulation for Pricing {A}sian Options},
@@ -6553,6 +6770,13 @@ keywords = "Uncertainty quantification, Monte Carlo simulation,
   editor =	 {A. Keller and S. Heinrich and H. Niederreiter},
   address =	 {Berlin},
   publisher =  {Springer-Verlag},
+}
+
+@unpublished{vWAC11a,
+  author =       {C. W\"achter and A. Keller},
+  title =        {Quasi-{Monte Carlo} light transport simulation by efficient ray tracing},
+  note =       {{US Patent} 7,952,583},
+  year =       {2011},
 }
 
 @Article{vWAN93a,

@@ -39,10 +39,16 @@ for your Maven- or Gradle-based project, by downloading a [binary
 release](#binary-releases) or by [compiling it from
 scratch](#compiling-the-source-code).
 
-SSJ is compatible with Java SE8 (JDK 8) and later versions of Java. The latest
-Java JDK is available at
+SSJ is compatible with Java SE8 and later versions of Java. 
+It requires the Java Development Kit (JDK), whose latest version is available at
 [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-with installation instructions.  It should be installed *before* installing SSJ.
+with installation instructions. It must be installed *before* installing SSJ.
+
+It is also useful to install an integrated development environments (IDE) such as 
+[Eclipse](http://www.eclipse.org/),
+[NetBeans](http://netbeans.org/),
+[IntelliJ IDEA](http://www.jetbrains.com/idea/), for example, 
+to write, compile, and run your Java code.
 
 ### Using Maven
 
@@ -60,18 +66,15 @@ then you can start working on your SSJ-based project right-away.
 
 ##### IDE integration
 
-Several integrated development environments (IDEs) such as 
-[Eclipse](http://www.eclipse.org/),
-[NetBeans](http://netbeans.org/),
-[IntelliJ IDEA](http://www.jetbrains.com/idea/), for example, support Maven.  
-If you work in one of these IDEs, simply create your project as a *Maven project* instead
-of a Java project, then add SSJ to the Maven dependencies of the
-project (refer to your IDE documentation), with the following parameters:
+Most IDEs support Maven. In Eclipse, NetBeans, or IntelliJ IDEA, for example, it suffices to create 
+your project as a *Maven project* instead of a Java project.  
+After creating your project, add SSJ to its Maven dependencies 
+(refer to your IDE documentation), with the following parameters:
 
 - **Group Id**: `ca.umontreal.iro.simul`;
 - **Artifact Id**: `ssj`;
 - **Version**: any [valid release number for SSJ](http://github.com/umontreal-simul/ssj/releases),
-  e.g., `3.3.0`,
+  e.g., `3.3.1`,
 
 and you are ready to go!
 
