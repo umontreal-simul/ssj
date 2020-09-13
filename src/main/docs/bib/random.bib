@@ -375,12 +375,13 @@ title={{RNGSSELIB}: Program Library for Random Number Generation:
 journal={Computer Physics Communications},
 volume={184},
 year={2013},
-pages={2367–-2369}
+pages={2367--2369}
 }
 
-@unpublished{rBAR14a,
+@article{rBAR14a,
 author={L. Y. Barash and L. N. Shchur},
-title={{PRAND}: {GPU} Accelerated Parallel Random Number Generation Library: Using Most Reliable Algorithms and 
+title={{PRAND}: {GPU} Accelerated Parallel Random Number Generation Library: 
+  Using Most Reliable Algorithms and 
   Applying Parallelism of Modern {GPUs} and {CPUs}},
 journal={Computer Physics Communications},
 volume={185},
@@ -479,14 +480,14 @@ pages={1343--1353}
 	}
 
 @article{rBEL13a,
+author={G. Beliakov and M. Johnstone and D. Creighton and T. Wilkin},
+title={An efficient implementation of {Bailey and Borwein's} algorithm for
+parallel random number generation on graphics processing units},
 year={2013},
 journal={Computing},
 volume={95},
 number={4},
-title={An efficient implementation of {Bailey and Borwein's} algorithm for
-parallel random number generation on graphics processing units},
 publisher={Springer Vienna},
-author={G. Beliakov and M. Johnstone and D. Creighton and T. Wilkin},
 pages={309--326}
 }
 
@@ -616,12 +617,13 @@ pages={309--326}
 	PAGES={827--830}  }
 
 @unpublished{rBLA18a,
-  author    = {David Blackman and Sebastiano Vigna},
+  author    = {D. Blackman and S. Vigna},
   title     = {Scrambled Linear Pseudorandom Number Generators},
   Xjournal   = {},
   Xvolume    = {},
   year      = {2018},
   url       = {http://arxiv.org/abs/1805.01407},
+	note   = {Manuscript},
   Xeprint    = {1805.01407},
   timestamp = {Mon, 04 Jun 2018 17:53:36 +0200},
 }
@@ -1485,13 +1487,13 @@ pages={Article 156}}
    pages     = {73--84} }
 
 @article{rDEM11a,
+  author = "V. Demchik",
   title = "Pseudo-random number generators for {Monte Carlo} simulations on {ATI} Graphics Processing Units",
   journal = "Computer Physics Communications",
   volume = "182",
   number = "3",
   pages = "692--705",
   year = "2011",
-  author = "V. Demchik"
 }
 
 @Article{rDEN90a,
@@ -1820,7 +1822,7 @@ pages={289--296}
 @article{rDIC13a,
 author = {Dick, J. and Matsumoto, M.},
 title = {On the Fast Computation of the Weight Enumerator Polynomial and 
-         the \$t\$ Value of Digital Nets over Finite {Abelian} Groups},
+         the {$t$} Value of Digital Nets over Finite {Abelian} Groups},
 journal = {SIAM Journal on Discrete Mathematics},
 volume = {27},
 number = {3},
@@ -3072,6 +3074,14 @@ Xurl = "http://www.sciencedirect.com/science/article/pii/0167819187900275",
 	YEAR={1989},
 	PAGES={309--341}  }
 
+@ARTICLE {rGIL16a,
+	AUTHOR="M. B. Giles",
+	TITLE="Algorithm 955: approximation of the inverse {Poisson} cumulative distribution",
+	JOURNAL={ACM Transactions on Mathematical Software},
+	VOLUME={42},
+	YEAR={2016},
+	PAGES={1--22}  }
+
 @ARTICLE {rGLE88a,
 	AUTHOR="J. Gleick",
 	TITLE="The Quest for True Randomness Finally Appears Successful",
@@ -3090,7 +3100,7 @@ Xurl = "http://www.sciencedirect.com/science/article/pii/0167819187900275",
 }
 
 @Article{rGOD14a,
-author="Goda, Takashi",
+author="T. Goda",
 title="On the {$L_p$} discrepancy of two-dimensional folded {H}ammersley point sets",
 journal="Archiv der Mathematik",
 year="2014",
@@ -3099,6 +3109,19 @@ number="4",
 pages="389--398",
 Xdoi="10.1007/s00013-014-0698-1",
 Xurl="http://dx.doi.org/10.1007/s00013-014-0698-1"
+}
+
+@article{rGOD15a,
+  author = "T. Goda",
+  title = "Good interlaced polynomial lattice rules for numerical integration 
+	         in weighted {Walsh} spaces",
+   journal = "Journal of Computational and Applied Mathematics",
+   volume = "285",
+   pages = "279--294",
+   year = "2015",
+   Xdoi = "https://doi.org/10.1016/j.cam.2015.02.041",
+   keywords = "Quasi-Monte Carlo, Numerical integration, Higher order digital nets,     
+            Interlaced polynomial lattice rules",
 }
 
 @Book{rGOL67a,
@@ -3280,6 +3303,19 @@ Xurl="http://dx.doi.org/10.1007/s00013-014-0698-1"
 	YEAR={1989},
 	PAGES={1--13}  }
 
+@InProceedings{rGUY10a,
+  author="Guyeux, Christophe and Wang, Qianxue  and Bahi, Jacques M.",
+  editor="Wang, Fu Lee  and Gong, Zhiguo and Luo, Xiangfeng   and Lei, Jingsheng",
+  title="A Pseudo Random Numbers Generator Based on Chaotic Iterations: Application to Watermarking",
+  booktitle="Web Information Systems and Mining",
+  year="2010",
+  publisher="Springer",
+  address="Berlin, Heidelberg",
+  pages="202--211",
+  abstract="In this paper, a new chaotic pseudo-random number generator (PRNG) is proposed. It combines the well-known ISAAC and XORshift generators with chaotic iterations. This PRNG possesses important properties of topological chaos and can successfully pass NIST and TestU01 batteries of tests. This makes our generator suitable for information security applications like cryptography. As an illustrative example, an application in the field of watermarking is presented.",
+  isbn="978-3-642-16515-3"
+}
+
 @ARTICLE {rHAA87a,
 	AUTHOR="A. Haas",
 	TITLE="The Multiple Prime Random Number Generator",
@@ -3370,6 +3406,29 @@ Xurl="http://dx.doi.org/10.1007/s00013-014-0698-1"
   editor =     	 {P. L'Ecuyer and A. B. Owen},
   address =	     {Berlin},
   publisher =    {Springer-Verlag}
+}
+
+@InProceedings{rHAR18a,
+   author="Haramoto, Hiroshi  and Matsumoto, Makoto",
+   editor="Owen, Art B. and Glynn, Peter W.",
+   title="A Method to Compute an Appropriate Sample Size of a Two-Level Test 
+	        for the {NIST} Test Suite",
+   booktitle="Monte Carlo and Quasi-Monte Carlo Methods 2016",
+   year="2018",
+   publisher="Springer",
+   pages="283--294",
+}
+
+@article{rHAR19a,
+title = "Checking the quality of approximation of $p$-values in statistical tests 
+         for random number generators by using a three-level test",
+journal = "Mathematics and Computers in Simulation",
+volume = "161",
+pages = "66--75",
+year = "2019",
+url = "http://www.sciencedirect.com/science/article/pii/S0378475418302039",
+author = "Hiroshi Haramoto and Makoto Matsumoto",
+keywords = "Statistical testing, Pseudorandom number generations, Three-level test",
 }
 
 @inproceedings{rHAW11a,
@@ -3817,6 +3876,34 @@ year = {2013}
 	YEAR={1962},
 	PAGES={230--254}  }
 
+@InProceedings{rHUR18a,
+author="Hurley-Smith, Darren and Hernandez-Castro, Julio",
+editor="Cremers, Cas and Lehmann, Anja",
+title="Great Expectations: A Critique of Current Approaches to 
+       Random Number Generation Testing {\&} Certification",
+booktitle="Security Standardisation Research",
+year="2018",
+publisher="Springer",
+pages="143--163",
+}
+
+@ARTICLE {rHUR20a,
+	AUTHOR="D. Hurley-Smith and J. Hernandez-Castro",
+	TITLE="Quantum Leap and Crash: Searching and Finding Bias in 
+	       Quantum Random Number Generators",
+	JOURNAL={ACM Transactions on Privacy and Security},
+	VOLUME={23},
+	NUMBER = {3},
+	YEAR={2020},
+	PAGES={Aticle 16, 25 pages}  }
+	
+@ARTICLE {rHUR20b,
+	AUTHOR="D. Hurley-Smith and C. Patsakis and J. Hernandez-Castro",
+	TITLE = {On the unbearable lightness of FIPS 140-2 randomness tests},
+  JOURNAL = {IEEE Transactions on Information Forensics and Security},
+	note = {to appear},
+  YEAR = 2020} }
+
 @INPROCEEDINGS {rIMP89a,
 	AUTHOR="R. Impagliazzo and L. A. Levin and M. Luby",
 	TITLE="Pseudo-random Generation From One-Way Functions (Extended
@@ -4233,6 +4320,19 @@ keywords={OpenMP; MPI; Multicore; Rstream},
   OPTnumber = 	 {},
   pages =	 {271--281},
   OPTannote = 	 {}
+}
+
+@article{rKUB16a,
+    title = {New results on reduced-round {Tiny Encryption Algorithm} using genetic programming},
+    author = {Karel Kub\'\i\v{c}ek and Ji\v{r}\'\i{} Novotn\'{y} and 
+		          Petr \v{S}venda and Martin Ukrop},
+    journal = {IEEE Infocommunications},
+    volume = {8},
+    number = {1},
+    pages = {2--9},
+    year = {2016},
+    OPTpublisher = {Scientific Association for Infocommunications, Budapest, Hungary},
+		annote = {TEA algorithm}
 }
 
 @book {rKUI74a,
@@ -5249,6 +5349,20 @@ Xurl="https://doi.org/10.1023/A:1023605123264"
   OPTannote =  {}
 }
 
+@inbook{rLEC15b,
+author = {P. L'Ecuyer},
+OPTpublisher = {American Cancer Society},
+OPTisbn = {9781118445112},
+title = {Random Number Generation and Quasi-Monte Carlo},
+booktitle = {Wiley StatsRef: Statistics Reference Online},
+chapter = {},
+pages = {1-9},
+doi = {10.1002/9781118445112.stat04386.pub2},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118445112.stat04386.pub2},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781118445112.stat04386.pub2},
+year = {2015},
+}
+
 @unpublished{rLEC15c,
   author = 	 {P. L'Ecuyer and D. Munger and N. Kemerchou},
   title = 	 {{clRNG}: A Random Number {API} with Multiple Streams for {OpenCL}},
@@ -5300,16 +5414,17 @@ Xurl="https://doi.org/10.1023/A:1023605123264"
   note = {Open access at \url{http://dx.doi.org/10.1016/j.matcom.2016.05.005}} 
 }
 
-@article{rLEC18m,
+@article{rLEC20m,
+   old = {rLEC18m},
   author = 	 {P. L'Ecuyer and P. Wambergue and E. Bourceret},
   title = 	 {Spectral Analysis of the {MIXMAX} Random Number Generators},
   journal = {INFORMS Journal on Computing},
-  Xvolume =    {},
-  Xnumber =    {},
-  Xpages =      {},
-  year =	     {2019},
-  url = {http://www.iro.umontreal.ca/~lecuyer/myftp/papers/mixmax-lattice.pdf},
-  note = {To appear} 
+  volume =    {32},
+  number =    {1},
+  pages =     {135--144},
+  year =	    {2020},
+  Xurl = {http://www.iro.umontreal.ca/~lecuyer/myftp/papers/mixmax-lattice.pdf},
+	note = {Available at {\tt https://pubsonline.informs.org/doi/10.1287/ijoc.2018.0878}},
 }
 
 @inproceedings{rLEE94a,
@@ -6004,6 +6119,19 @@ pages={209--220},
 Xlanguage={English}
 }
 
+@article{rMAR20a,
+   old = rMAR19a,
+  author = 	 {P. Marion and M. Godin and P. L'Ecuyer},
+  title = 	 {An algorithm to compute the $t$-value of a digital net and 
+              of its projections},
+  journal = {Journal of Computational and Applied Mathematics},
+  volume =    {371},
+  number =    {June},
+  pages =      {112669},
+  year =	     {2020},
+  Xurl = {http://www.iro.umontreal.ca/~lecuyer/myftp/papers/tvalue.pdf},
+}
+
 @INCOLLECTION {rMAS95a,
 	AUTHOR="M. Mascagni and M. L. Robinson and D. V. Pryor and
                 S. A. Cuccaro",
@@ -6416,6 +6544,17 @@ Xlanguage={English}
   publisher =    {Springer},
   year =         2007,
   pages =        {569--574},
+}
+
+@article{rMRA19a,
+  title = {Efficient On-Chip Randomness Testing Utilizing Machine Learning Techniques},
+  author = {Vojtech Mrazek and Marek S\'{y}s a Petr \v{S}venda},
+  journal = {IEEE Transactions on Very Large Scale Integration Systems},
+  year = {2019},
+	volume = {27},
+	number = {12},
+	pages = {2734--2744},
+  keywords = {FPGA, genetic-algorithms, randomness, distinguishers},
 }
 
 @ARTICLE {rMUL68a,
@@ -7076,17 +7215,18 @@ PUBLISHER = {Cambridge Univ. Press},
 @inproceedings{rNUY10a,
   author = "Nuyens, Dirk and Cools, Ronald",
   title = "Higher order quasi-{M}onte {C}arlo methods: {A} comparison",
-  booktitle = "AIP Conference Proceedings, International Conference on Numerical Analysis and Applied Mathematics {(ICNAAM2010)}, Rhodes, Greece, 19-25 September 2010",
+  booktitle = "AIP Conference Proceedings, International Conference on Numerical Analysis 
+	    and Applied Mathematics {(ICNAAM2010)}, Rhodes, Greece, 19-25 September 2010",
   editor = "Simos, Theodore E. and Psihoyios, George and Tsitouras, Charalambos",
   publisher = "Springer, New York, LLC",
   pages = "553--557",
   month = Sep,
   year = "2010",
- OPTurl = "https://lirias.kuleuven.be/handle/123456789/281485",
+  OPTurl = "https://lirias.kuleuven.be/handle/123456789/281485",
 }
 
 @incollection{rNUY14a,
-  author = "Nuyens, Dirk",
+  author = "Nuyens, D.",
   title = "The construction of good lattice rules and polynomial lattice rules",
   booktitle = "Uniform Distribution and Quasi-{Monte Carlo} Methods: 
 	             Discrepancy, Integration and Applications",
@@ -7125,6 +7265,18 @@ PUBLISHER = {Cambridge Univ. Press},
   volume = {25},
   number = {4},
   year =       {2009},
+}
+
+@techreport{rONE14a,
+    title = "{PCG}: A Family of Simple Fast Space-Efficient Statistically 
+		          Good Algorithms for Random Number Generation",
+    author = "M. E. O'Neill",
+    institution = "Harvey Mudd College",
+    address = "Claremont, CA",
+    number = "HMC-CS-2014-0905",
+    year = "2014",
+    Xmonth = Sep,
+    xurl = "https://www.cs.hmc.edu/tr/hmc-cs-2014-0905.pdf",
 }
 
 @INCOLLECTION {rOWE95a,
@@ -7172,7 +7324,8 @@ PUBLISHER = {Cambridge Univ. Press},
 @manual{rPAN03b,
   author = {F. Panneton},
   title =  {REGPOLY},
-  note =  {Software {user's} guide, see \url{http://www.iro.umontreal.ca/~panneton/guide.ps.gz}},
+  OLDnote =  {Software {user's} guide, see \url{http://www.iro.umontreal.ca/~panneton/guide.ps.gz}},
+  note =  {Software {user's} guide, see \url{http://www.iro.umontreal.ca/~lecuyer/REGPOLY3}},
   institution = {D\'epartement d'Informatique et de Recherche
           Op\'erationnelle, Universit\'e de Montr\'eal},
   year =  {2003}
@@ -7405,7 +7558,7 @@ year={2015},
 volume={27},
 number={13},
 pages={3383--3398},
-Xnote={To appear, \url{doi:10.1002/cpe.3214}}
+Xnote={\url{doi:10.1002/cpe.3214}}
 }
 
 @ARTICLE {rPAT62a,
@@ -7512,6 +7665,18 @@ author = "C. L. Phillips and J. A. Anderson and S. C. Glotzer"
 	VOLUME={2},
 	YEAR={1985},
 	PAGES={317--322}  }
+
+@inproceedings{rPIL19a,
+  author =       {F. Pillichshammer},
+  title =        {Discrepancy of Digital Sequences: New Results
+                  on a Classical {QMC} Topic},
+  booktitle = 	 {{M}onte {C}arlo and Quasi-{M}onte {C}arlo Methods 2018},
+  OPTpages =	 {},
+  year =       {2019},
+  editor =	 {P. L'Ecuyer and B. Tuffin},
+  OPTaddress =	 {Berlin},
+  publisher =  {Springer-Verlag},
+}
 
 @ARTICLE {rPIN97a,
 	AUTHOR="S. Pincus and R. E. Kalman",
@@ -7855,6 +8020,16 @@ Xurl="http://dx.doi.org/10.1007/978-1-4757-3240-5_34"
   OPTannote =          {LA-UR-12-23206}
 }
 
+@article{rRYA20a,
+author = {Boris Ryabko},
+title = {Time-Adaptive Statistical Test for Random Number Generators},
+journal = {Entropy},
+volume = {22},
+number = {6},
+year = {2020},
+doi = {10.3390/e22060630},
+}
+
 @unpublished {rSAA93a,
    author    = {J. Saarinen and K. Kankaala and T. Ala-Nissila
                 and I. Vattulainen},
@@ -7989,6 +8164,15 @@ Xurl = "http://www.sciencedirect.com/science/article/pii/S0960077916301576",
 	TITLE="{MIXMAX} Manual",
 	note="see \url{https://www.hepforge.org/archive/mixmax/MANUAL.pdf}",
 	YEAR={2017} }
+
+@MASTERSTHESIS {rSAV20a,
+	AUTHOR = "M.-A. Savard",
+	TITLE = {G\'en\'erateurs de nombres al\'eatoires modulo un grand entier, 
+	         dont l'uniformit\'e est assur\'ee},
+	SCHOOL={DIRO, Universit\'e de Montr\'eal},
+  language={french},
+  xmonth = {},
+	YEAR ={2020} }
 
 @ARTICLE {rSCH70a,
 	AUTHOR="H. Schmidt",
@@ -8424,7 +8608,7 @@ keywords = "Random number software"
    pages     = {595--598} }
 
 @article{rSTE14a,
- author = {{Steele, Jr.}, Guy L. and Lea, Doug and Flood, Christine H.},
+ author = {{Steele, Jr.}, G. L. and Lea, D. and Flood, C. H.},
  title = {Fast Splittable Pseudorandom Number Generators},
  journal = {SIGPLAN Notices},
  Xissue_date = {October 2014},
@@ -8509,6 +8693,27 @@ Xurl="http://dx.doi.org/10.1007/978-3-319-10683-0_12"
  publisher = {ACM},
 }
 
+@InProceedings{rSVE13a,
+  title = {Towards cryptographic function distinguishers with evolutionary circuits},
+  author = {Petr \v{S}venda and Martin Ukrop and Vashek Matyas},
+  booktitle = {Proceedings of the 10th International Conference on Security and Cryptography},
+  pages = {135--146},
+  year = {2013},
+  OPTdoi = {10.5220/0004524001350146},
+  keywords = {eacirc, randomness},
+  Xeventtitle = {ICETE},
+}
+
+@InProceedings{rSYS14a,
+  title = {Constructing empirical tests of randomness},
+  author = {Marek S\'ys and Petr \v{S}venda and Martin Ukrop and Vashek Matyas},
+  booktitle = {Proceedings of the 11th International Conference on Security and Cryptography},
+  year = {2014},
+  doi = {10.5220/0005023902290237},
+  keywords = {eacirc, randomness},
+  eventtitle = {ICETE},
+}
+
 @article{rSYS16a,
  author = {S\'{y}s, Marek and \v{R}\'{\i}ha, Zden\v{e}k and Maty\'{a}\v{s}, Vashek},
  title = {Algorithm 970: Optimizing the {NIST} Statistical Test Suite and 
@@ -8528,6 +8733,31 @@ Xurl="http://dx.doi.org/10.1007/978-3-319-10683-0_12"
  Xaddress = {New York, NY, USA},
  keywords = {Berlekamp-Massey algorithm, NIST STS, statistical randomness testing},
 } 
+
+@inproceedings{rSYS17a,
+   author = {Marek S\'{y}s and Du\v{s}an Klinec and Petr \v{S}venda},
+   title = {The Efficient Randomness Testing using Boolean Functions},
+   booktitle = {14th International Conference on Security and Cryptography (Secrypt'2017)},
+   year = {2017},
+   pages = {92--103},
+   isbn = {978-989-758-259-2},
+   publisher = {SCITEPRESS},
+	 annote = {BoolTest Software on GitHub: https://github.com/crocs-muni/booltest}
+}
+
+@InProceedings{rSYS19a,
+ author = {Marek S\'{y}s and Du\v{s}an Klinec and Karel Kub\'{\i}\v{c}ek and Petr \v{S}venda},
+ Editor={Obaidat, Mohammad S. and Cabello, Enrique},
+ Title= {{BoolTest}: {The} Fast Randomness Testing Strategy Based on Boolean Functions 
+         with Application to {DES}, {3-DES}, {MD5}, {MD6} and {SHA-256}},
+ BookTitle={E-Business and Telecommunications},
+ Year={2019},
+ Publisher={Springer},
+ XAddress={Cham},
+ Pages={123--149},
+ ISBN={978-3-030-11039-0},
+ Keywords = {statistical radomness testing, hypothesis testing, boolean function},
+}
 
 @ARTICLE {rSVA10a,
 	AUTHOR="P. Svaba and T. van Trung",
@@ -9186,7 +9416,7 @@ pages={460--464}
 	PAGES={375--392}}
 
 @article{rVIG16a,
- author = {Vigna, Sebastiano},
+ author = {Vigna, S.},
  title = {An Experimental Exploration of {Marsaglia's} Xorshift Generators, Scrambled},
  journal = {ACM Transactions on Mathematical Software},
  volume = {42},
@@ -9304,7 +9534,7 @@ pages={460--464}
 	PAGES={363--374}  }
 
 @InProceedings{rWAN96a,
-  author = 	 {Yongge Wang},
+  author = 	 {Y. Wang},
   title = 	 {The Law of the Iterated Logarithm for $p$-Random Sequences},
   booktitle = 	 {11th Annual {IEEE} Conference on Computational Complexity},
   editor =	 {S. Homer and J.-Y. Cai},
