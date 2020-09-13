@@ -304,17 +304,6 @@ public class TallyHistogram extends Tally {
 	}
 	
 	/**
-	 * Returns the relative number of observations that lie within the boundaries of the histogram.
-	 * @return the relative number of observations within the histogram.
-	 */
-	public double getProportionInBoundaries() {
-		int total = 0;
-		for(int num : count) {
-			total += num;
-		}
-		return  (double) total / (double)(total + leftCount + rightCount); 
-	}
-	/**
 	 * Returns the proportion of the collected observations that lie within the boundaries 
 	 * @f$[a,b]@f$ of the histogram;  that is, the number that fell within @f$[a,b]@f$
 	 * divided by the total number that were collected.
@@ -337,8 +326,8 @@ public class TallyHistogram extends Tally {
 		int[] coco = new int[numBins];
 		System.arraycopy(count, 0, coco, 0, numBins);
 		image.count = coco;
-        image.leftCount = leftCount;
-        image.rightCount = rightCount;
+                image.leftCount = leftCount;
+                image.rightCount = rightCount;
 		image.m_h = m_h;
 		image.m_a = m_a;
 		image.m_b = m_b;
