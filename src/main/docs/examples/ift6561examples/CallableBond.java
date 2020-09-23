@@ -4,7 +4,6 @@ import umontreal.ssj.stat.TallyStore;
 import umontreal.ssj.randvar.NormalGen;
 import umontreal.ssj.rng.RandomStream;
 import umontreal.ssj.rng.MRG32k3a;
-import umontreal.ssj.stochprocess.*;
 import umontreal.ssj.mcqmctools.*;
 import umontreal.ssj.charts.HistogramChart;
 
@@ -101,7 +100,7 @@ public class CallableBond implements MonteCarloModelDouble {
         int n = 100000;
 		TallyStore statValue = new TallyStore ("Stats on bond payoffs");
         CallableBond bond = new CallableBond (new MRG32k3a());
-		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport 
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportStudent 
 				(bond, n, new MRG32k3a(), statValue));
         HistogramChart chart = new HistogramChart("Callable bond", "bond value", "frequency", statValue);
         chart.toLatexFile ("CallableBondHist.tex", 4.0, 4.0);
