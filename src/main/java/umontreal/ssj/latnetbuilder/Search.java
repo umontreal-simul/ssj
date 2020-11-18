@@ -102,7 +102,7 @@ abstract public class Search {
 	/**
 	 * Returns the interlacing factor of the search.
 	 */
-	abstract public int interlacing();
+	abstract public String interlacing();
 	
 	
 	abstract public String construction();

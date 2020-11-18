@@ -109,7 +109,7 @@ public class LatNetBuilderTest {
 	public void testInterlacedDigitalNet(){
 		System.out.println("====================");
 		DigitalNetSearch search = new DigitalNetSearch("explicit");
-		search.setInterlacing(4);
+		search.setInterlacing("4");
 		search.setDimension(5);
 		search.setSizeParameter("2^10");
 		search.setFigureOfMerit("CU:IB");

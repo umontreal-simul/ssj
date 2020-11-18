@@ -25,8 +25,6 @@
 
 package umontreal.ssj.latnetbuilder;
 
-import umontreal.ssj.latnetbuilder.Search;
-
 import umontreal.ssj.hups.Rank1Lattice;
 
 import java.util.ArrayList;
@@ -68,9 +66,9 @@ public class OrdinaryLatticeSearch extends Search{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int interlacing()
+	public String interlacing()
 	{
-		return 1;
+		return "1";
 	}
 	
 	/**
