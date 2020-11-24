@@ -32,6 +32,9 @@ import java.io.FileReader;
 
 import java.util.List;
 import java.util.ArrayList;
+
+import com.google.gson.Gson;
+
 import umontreal.ssj.hups.PointSet;
 
 /**
@@ -43,10 +46,10 @@ abstract public class Search {
 
 	String pathToOutputFolder;
 	
-	static String PATH_TO_LATNETBUILDER = "latnetbuilder"; // path to the latnetbuilder executable
+	String pathToLatNetBuilder = "latnetbuilder"; // path to the latnetbuilder executable
 	
 	String sizeParameter;
-	int dimension;
+	String dimension;
 	boolean multilevel;
 	String combiner;
 	String explorationMethod;
@@ -111,7 +114,7 @@ abstract public class Search {
 	 * Constructs the command-line for the LatNet Builder executable.
 	 */
 	private String constructCommandLine() {
-		StringBuffer sb = new StringBuffer(PATH_TO_LATNETBUILDER + " -v 0");
+		StringBuffer sb = new StringBuffer(pathToLatNetBuilder + " -v 0");
 		sb.append(" -t " +  pointSetType());
 		sb.append(" -c " +  construction());
 		sb.append(" -M " +  multilevel);
@@ -215,14 +218,14 @@ abstract public class Search {
 	 * @param path Path to the latnetbuilder executable.
 	 */
 	public void setPathToLatNetBuilder(String path) {
-		PATH_TO_LATNETBUILDER = path;
+		pathToLatNetBuilder = path;
 	}
 	
 	/**
 	 * Sets the dimension of the searched point set.
 	 * @param dimension Dimension of the point set.
 	 */
-	public void setDimension(int dimension) {
+	public void setDimension(String dimension) {
 		this.dimension = dimension;
 	}
 	
@@ -303,5 +306,22 @@ abstract public class Search {
 	 */
 	public void setPathToOutputFolder(String path) {
 		this.pathToOutputFolder = path;
+	}
+
+	public static Search fromJSON(String json) {
+		Gson gson = new Gson();
+		if (json.contains("\"construction\":\"polynomial\"")){
+			return gson.fromJson(json, PolynomialLatticeSearch.class);
+		}
+		else if ((json.contains("\"pointSetType\":\"net\""))){
+			return gson.fromJson(json, DigitalNetSearch.class);
+		}
+		else if ((json.contains("\"pointSetType\":\"lattice\""))){
+			return gson.fromJson(json, OrdinaryLatticeSearch.class);
+		}
+		else {
+			throw new RuntimeException("Parsing error.");
+		}
+
 	}
 }

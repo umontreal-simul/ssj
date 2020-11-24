@@ -46,9 +46,9 @@ import umontreal.ssj.util.*;
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class DigitalNetBase2 extends DigitalNet {
-	private int[] originalMat;    // Original matrices, without randomization.
+	private transient int[] originalMat;    // Original matrices, without randomization.
 	protected int[] genMat;       // The current generator matrix.
-	protected int[] digitalShift;   // Stores the digital shift vector.
+	protected transient int[] digitalShift;   // Stores the digital shift vector.
 	 //  **Pierre:** Check if @f$w@f$ is used sometimes in place of @f$r@f$, and clarify.
 
 	/**

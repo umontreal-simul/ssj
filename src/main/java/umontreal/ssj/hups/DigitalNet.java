@@ -123,7 +123,7 @@ public class DigitalNet extends PointSet {
 	protected int numRows = 0;   // The number of rows in each C_j. (= r)
 	protected int outDigits = 0; // Number of output digits (= w)
 	private int[][] originalMat; // Original gen. matrices without randomizat.
-	protected int[][] genMat;    // The current generator matrices.
+	protected transient int[][] genMat;    // The current generator matrices.
 	                             // genMat[j*numCols+c][l] contains column c
 	                             // and row l of C_j.
 	protected int[][] digitalShift; // The digital shift, initially zero (null).
@@ -185,6 +185,13 @@ public class DigitalNet extends PointSet {
 	*/
 	public int getInterlacing() {
 		return interlacing;
+	 }
+
+	/**
+	* Sets the interlacing factor
+	*/
+	public void setInterlacing(int interlacing) {
+		this.interlacing = interlacing;
 	 }
 
 	/**
