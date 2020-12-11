@@ -212,6 +212,10 @@ abstract public class Search {
 	public boolean successful(){
 		return this.successful;
 	}
+
+	public String getExplorationMethod() {
+		return this.explorationMethod;
+	}
 	
 	/**
 	 * Sets the path to the latnetbuilder executable.
@@ -313,15 +317,11 @@ abstract public class Search {
 		if (json.contains("\"construction\":\"polynomial\"")){
 			return gson.fromJson(json, PolynomialLatticeSearch.class);
 		}
-		else if ((json.contains("\"pointSetType\":\"net\""))){
+		else if ((json.contains("\"construction\":"))){
 			return gson.fromJson(json, DigitalNetSearch.class);
 		}
-		else if ((json.contains("\"pointSetType\":\"lattice\""))){
+		else {
 			return gson.fromJson(json, OrdinaryLatticeSearch.class);
 		}
-		else {
-			throw new RuntimeException("Parsing error.");
-		}
-
 	}
 }

@@ -12,18 +12,55 @@ interface Integrand {
 public class SobolTestFunc implements Integrand {
    double c;
    int s;
+   int r = -1;
+   double[] coordinates;
 
    public SobolTestFunc(double c, int s) {
       this.c = c;
       this.s = s;
    }
 
+   public SobolTestFunc(double c, int s, int r) {
+      this.c = c;
+      this.s = s;
+      this.r = r;
+   }
+
+   public SobolTestFunc(double[] coordinates, int s) {
+      assert s == coordinates.length;
+      this.s = s;
+      this.coordinates = coordinates;
+   }
+
+   public SobolTestFunc(double[] coordinates, int s, int r) {
+      assert s == coordinates.length;
+      this.s = s;
+      this.r = r;
+      this.coordinates = coordinates;
+   }
+
    // Computes and returns the value of the function at a given point.
    public double getValue(double[] point) {
       assert point.length == s;
+      assert c == 0. || coordinates == null;
       double average = 1.0;
       for (int j = 0; j < s; j++) {
-         average *= (1 + c * (point[j] - 0.5));
+         double coordinate;
+         if (c != 0.){
+            coordinate = c;
+         }
+         else {
+            coordinate = coordinates[j];
+         }
+         if (r == -1){
+            average *= (1 + coordinate * (point[j] - 0.5));
+         }
+         else if (r == 1){
+            average *= (1 + coordinate * (point[j] - 0.5) * Math.abs(point[j] - 0.5));
+         }
+         else {
+            throw new RuntimeException("r value not set correctly.");
+         }
       }
       return average - 1.0;
    }

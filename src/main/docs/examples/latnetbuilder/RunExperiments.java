@@ -1,7 +1,5 @@
 package latnetbuilder;
 
-import umontreal.ssj.hups.DigitalNetBase2;
-import umontreal.ssj.hups.SobolSequence;
 import umontreal.ssj.latnetbuilder.PolynomialLatticeSearch;
 import umontreal.ssj.rng.MRG32k3a;
 import umontreal.ssj.stat.Tally;
@@ -24,119 +22,65 @@ public class RunExperiments {
 	private static void createExperimentFiles(Path experimentDirPath, String pathToLNB, String pathToJoeKuo,
 			String experimentName, Set<Integer> experimentHashes) throws IOException {
 
-		for (int effectDim = 1; effectDim <= 1; effectDim += 3) {
-			for (int s = 3; s <= 3; s += 10) {
-				for (int k = 3; k <= 5; k += 1) {
+		int s = 3;
+		double[] c = {0.7, 0.2, 0.5};
+		int r = -1;
+		String w = "product:0:0.7,0.2,0.5";
+		for (int k = 5; k <= 18; k += 1) {
 
-					double c = (double) effectDim / s;
-					double w = c * c;
-					SobolTestFunc integrand = new SobolTestFunc(c, s);
+			SobolTestFunc integrand = new SobolTestFunc(c, s, r);
 
-					int n = 10000;
-					Tally statValue = new Tally("MC method");
-					integrand.simulateRuns(n, new MRG32k3a(), statValue);
-					double varMC = statValue.variance();
+			int n = 10000;
+			Tally statValue = new Tally("MC method");
+			integrand.simulateRuns(n, new MRG32k3a(), statValue);
+			double varMC = statValue.variance();
 
-					{
-						PolynomialLatticeSearch search = initializePLRSearch(s, k, pathToLNB, "net");
-						search.setFigureOfMerit("CU:P2");
-						search.setNormType("2");
-						search.addWeight("product:" + w);
-						Experiment exp = new Experiment(experimentName, search, integrand, "LMS - Shift");
-						exp.setVarianceMC(varMC);
-
-						search.setExplorationMethod("random:1");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-
-						search.setExplorationMethod("random:100");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-
-						search.changePointSetTypeView("lattice");
-						search.setExplorationMethod("fast-CBC");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-					}
-
-					{
-						PolynomialLatticeSearch search = initializePLRSearch(s, k, pathToLNB, "net");
-						search.setFigureOfMerit("CU:IC2");
-						search.setNormType("1");
-						search.addWeight("product:" + w);
-						search.setExplorationMethod("random:100");
-						Experiment exp = new Experiment(experimentName, search, integrand, "NUS - Interlace");
-						exp.setVarianceMC(varMC);
-
-						search.setInterlacing("2");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-
-						search.changePointSetTypeView("lattice");
-						search.setExplorationMethod("fast-CBC");
-						search.setInterlacing("2");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-					}
-
-					{
-						PolynomialLatticeSearch search = initializePLRSearch(s, k, pathToLNB, "net");
-						search.setFigureOfMerit("CU:IC2");
-						search.setNormType("1");
-						search.addWeight("product:" + w);
-						search.setExplorationMethod("random:100");
-						Experiment exp = new Experiment(experimentName, search, integrand, "LMS - Interlace - Shift");
-						exp.setVarianceMC(varMC);
-
-						search.setInterlacing("2");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-
-						search.setInterlacing("3");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-
-						search.changePointSetTypeView("lattice");
-						search.setExplorationMethod("fast-CBC");
-						search.setInterlacing("2");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-
-						search.setInterlacing("3");
-						exp.setSearch(search);
-						exp.toJson(experimentDirPath, experimentHashes);
-					}
-
-					{
-						DigitalNetBase2 q = new SobolSequence(pathToJoeKuo, k, DigitalNetBase2.getMaxBits(), s);
-						Experiment exp = new Experiment(experimentName, q, integrand, "LMS - Shift");
-						exp.setVarianceMC(varMC);
-						exp.toJson(experimentDirPath, experimentHashes);
-					}
-
-					{
-						DigitalNetBase2 q = new SobolSequence(pathToJoeKuo, k, DigitalNetBase2.getMaxBits(), 2 * s);
-						q.setInterlacing(2);
-						Experiment exp = new Experiment(experimentName, q, integrand, "LMS - Interlace - Shift");
-						exp.setVarianceMC(varMC);
-						exp.toJson(experimentDirPath, experimentHashes);
-					}
-
-					{
-						DigitalNetBase2 q = new SobolSequence(pathToJoeKuo, k, DigitalNetBase2.getMaxBits(), 3 * s);
-						q.setInterlacing(3);
-						Experiment exp = new Experiment(experimentName, q, integrand, "LMS - Interlace - Shift");
-						exp.setVarianceMC(varMC);
-						exp.toJson(experimentDirPath, experimentHashes);
-					}
-				}
+			for (String randomization : new String[]{"LMS - Shift", "NUS - Interlace"})
+			{
+				PolynomialLatticeSearch search = initializePLRSearch(s, k, pathToLNB, "lattice");
+				search.setFigureOfMerit("CU:P2");
+				search.setExplorationMethod("fast-CBC");
+				search.setNormType("2");
+				search.addWeight(w);
+				Experiment exp = new Experiment(experimentName, search, integrand, randomization);
+				exp.setVarianceMC(varMC);
+				
+				exp.setSearch(search);
+				exp.toJson(experimentDirPath, experimentHashes);
 			}
+
+			for (String randomization : new String[]{"LMS - Interlace - Shift", "NUS - Interlace"})
+			{
+				PolynomialLatticeSearch search = initializePLRSearch(s, k, pathToLNB, "lattice");
+				search.setFigureOfMerit("CU:IC2");
+				search.setInterlacing("2");
+				search.setExplorationMethod("fast-CBC");
+				search.setNormType("1");
+				search.addWeight(w);
+				Experiment exp = new Experiment(experimentName, search, integrand, randomization);
+				exp.setSearch(search);
+				exp.toJson(experimentDirPath, experimentHashes);
+			}
+
+			for (String randomization : new String[]{"LMS - Interlace - Shift", "NUS - Interlace"})
+			{
+				PolynomialLatticeSearch search = initializePLRSearch(s, k, pathToLNB, "lattice");
+				search.setFigureOfMerit("CU:IC3");
+				search.setInterlacing("3");
+				search.setExplorationMethod("fast-CBC");
+				search.setNormType("1");
+				search.addWeight(w);
+				Experiment exp = new Experiment(experimentName, search, integrand, randomization);
+				exp.setSearch(search);
+				exp.toJson(experimentDirPath, experimentHashes);
+			}
+
 		}
 	}
 
-	private static void runExperiments(Path experimentDirPath, Experiment[] constructedExperiments) throws IOException {
+	private static void runExperiments(Path experimentDirPath, Experiment[] constructedExperiments, boolean redoRandomization) throws IOException {
 		for (int i = 0; i < constructedExperiments.length; i++){
-			constructedExperiments[i].runExperiment(experimentDirPath, i);
+			constructedExperiments[i].runExperiment(experimentDirPath, i, redoRandomization);
 		}
 	}
 
@@ -163,7 +107,8 @@ public class RunExperiments {
 		String pathToResults = args[2];
 		String pathToJoeKuo = args[3];
 		boolean createExperimentFiles = Boolean.parseBoolean(args[4]);
-		boolean runExperiments = Boolean.parseBoolean(args[5]);
+		boolean runNewExperiments = Boolean.parseBoolean(args[5]);
+		boolean runAllExperiments = Boolean.parseBoolean(args[6]);
 
 
 		Path experimentDirPath = Paths.get(pathToResults, experimentName);
@@ -180,8 +125,12 @@ public class RunExperiments {
 			createExperimentFiles(experimentDirPath, pathToLNB, pathToJoeKuo, experimentName, experimentHashes);
 		}
 		
-		if (runExperiments){
-			runExperiments(experimentDirPath, constructedExperiments);
+		if (runNewExperiments){
+			runExperiments(experimentDirPath, constructedExperiments, false);
+		}
+
+		if (runAllExperiments){
+			runExperiments(experimentDirPath, constructedExperiments, true);
 		}
 	}
 }

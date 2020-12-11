@@ -100,14 +100,19 @@ public class Experiment {
         }
     }
 
-    private void simulateNUSInterlace(int m, RandomStream noise, Tally statQMC) {
+    private void simulateNUS(int m, RandomStream noise, Tally statQMC) {
         Tally statValue = new Tally("stat on value simple test function");
         DigitalNetBase2 net = (DigitalNetBase2) this.pointSet; // This randomization only works for nets.
         for (int j = 0; j < m; j++) {
             int[][] randomizedPoints = new int[net.getNumPoints()][net.getDimension()];
             double[][] interlacedPoints = new double[net.getNumPoints()][net.getDimension() / net.getInterlacing()];
-            net.nestedUniformScramble(noise, randomizedPoints, 0);
-            net.outputInterlace(randomizedPoints, interlacedPoints);
+            if (net.getInterlacing() > 1){
+                net.nestedUniformScramble(noise, randomizedPoints, 0);
+                net.outputInterlace(randomizedPoints, interlacedPoints);
+            }
+            else{
+                net.nestedUniformScramble(noise, interlacedPoints, 0);
+            }
             this.integrand.simulateRuns(net.getNumPoints(), interlacedPoints, statValue);
             statQMC.add(statValue.average());
         }
@@ -126,7 +131,7 @@ public class Experiment {
         }
     }
 
-    public void runExperiment(Path experimentDirPath, int experimentNumber) throws IOException {
+    public void runExperiment(Path experimentDirPath, int experimentNumber, boolean redoRandomization) throws IOException {
 
         if (this.pointSet == null) {
             System.out.println("Computing pointSet " + experimentNumber);
@@ -137,18 +142,21 @@ public class Experiment {
             this.serializedPointSet = gson.toJson(pointSet);
         }
 
-        if (this.variance == 0){
+        if (this.pointSet != null && (this.variance == 0 || redoRandomization)){
             System.out.println("Computing variance " + experimentNumber);
-            int m = 100; // Number of QMC randomizations.
+            int m; // Number of QMC randomizations.
             Tally statValue = new Tally("RQMC method");
             long startTime = System.nanoTime();
             if (this.randomization.equals("LMS - Shift")){
+                m = 1000;
                 simulateLMSShift(m, new MRG32k3a(), statValue);
             }
             else if (this.randomization.equals("NUS - Interlace")){
-                simulateNUSInterlace(m, new MRG32k3a(), statValue);
+                m = 100;
+                simulateNUS(m, new MRG32k3a(), statValue);
             }
             else if (this.randomization.equals("LMS - Interlace - Shift")){
+                m = 1000;
                 simulateLMSInterlaceShift(m, new MRG32k3a(), statValue);
             }
             else {
@@ -156,7 +164,7 @@ public class Experiment {
             }
             long endTime = System.nanoTime();
             this.ssjComputeTime = (endTime - startTime) / 1000000;
-            this.variance = this.pointSet.getNumPoints() * statValue.variance();
+            this.variance = statValue.variance();
         }
 
         saveToFile(experimentDirPath, experimentNumber);
