@@ -123,7 +123,7 @@ public class DigitalNet extends PointSet {
 	protected int numRows = 0;   // The number of rows in each C_j. (= r)
 	protected int outDigits = 0; // Number of output digits (= w)
 	private int[][] originalMat; // Original gen. matrices without randomizat.
-	protected int[][] genMat;    // The current generator matrices.
+	protected transient int[][] genMat;    // The current generator matrices.
 	                             // genMat[j*numCols+c][l] contains column c
 	                             // and row l of C_j.
 	protected int[][] digitalShift; // The digital shift, initially zero (null).
@@ -131,7 +131,8 @@ public class DigitalNet extends PointSet {
 	                                // for 0 <= l < outDigits.
 	protected double normFactor; // To convert output to (0,1); 1/b^outDigits.
 	protected double[] factor;   // Lookup table in ascending order: factor[i]
-	                             // = 1/b^{i+1} for 0 <= i < outDigits.
+		                         // = 1/b^{i+1} for 0 <= i < outDigits.
+	protected int interlacing = 1; // Interlacing factor.
 
 	// primes gives the first index in array FaureFactor
 	// for the prime p. If primes[i] = p, then
@@ -178,6 +179,20 @@ public class DigitalNet extends PointSet {
 	 */
 	public DigitalNet() {
 	}
+
+	/**
+	* Returns the interlacing factor
+	*/
+	public int getInterlacing() {
+		return interlacing;
+	 }
+
+	/**
+	* Sets the interlacing factor
+	*/
+	public void setInterlacing(int interlacing) {
+		this.interlacing = interlacing;
+	 }
 
 	/**
 	 * Returns @f$u_{i',j}@f$, the coordinate @f$j@f$ of point @f$i'@f$, where @f$i'@f$ is the Gray

@@ -24,6 +24,8 @@
  */
 package umontreal.ssj.hups;
 
+import java.util.Arrays;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.util.*;
 
@@ -44,38 +46,67 @@ import umontreal.ssj.util.*;
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class DigitalNetBase2 extends DigitalNet {
-	private int[] originalMat;    // Original matrices, without randomization.
-	protected int[] genMat;       // The current generator matrix.  Explain how it is stored...
-	protected int[] digitalShift;   // Stores the digital shift vector.
+	private transient int[] originalMat;    // Original matrices, without randomization.
+	protected int[] genMat;       // The current generator matrix.
+	protected transient int[] digitalShift;   // Stores the digital shift vector.
 	 //  **Pierre:** Check if @f$w@f$ is used sometimes in place of @f$r@f$, and clarify.
+
+	/**
+	 * Returns the generator matrices in standard format.
+	 * Standard format is a 3-dimensional array of shape dimension x number of rows x number of columns.
+	 */
+	public int[][][] generatorMatricesToStandardFormat(){
+		int r, c, j;	// Row r, column c, dimension j.
+		int[][][] standardMatrices = new int[dim][numRows][numCols];
+		for (j = 0; j < dim; j++) {
+			for (c = 0; c < numCols; c++) {
+				int column = genMat[j * numCols + c];
+				column >>= outDigits - numRows;		// outDigits is used here.
+				for (r = numRows - 1; r >= 0; r--) {
+					standardMatrices[j][r][c] = (column & 1);
+					column >>= 1;
+				}
+			}
+		}
+		return standardMatrices;
+	}
+
+	/**
+	 * Sets the generator matrices from matrices in the standard format.
+	 * Standard format is a 3-dimensional array of shape dimension x number of rows x number of columns.
+	 */
+	public void generatorMatricesFromStandardFormat(int[][][] matrices){
+		assert matrices.length == dim;
+		assert matrices.length > 0;
+		assert matrices[0].length == numRows;
+		assert matrices[0].length > 0;
+		assert matrices[0][0].length == numCols;
+
+		genMat = new int[dim * numCols];
+		int r, c, j;	// Row r, column c, dimension j.
+		for(j = 0; j < dim; ++j){
+			for(r = 0; r < numRows; ++r){
+				for(c = 0; c < numCols; ++c){
+					if (matrices[j][r][c] > 0)
+						genMat[j * numCols + c] += (1 << (outDigits - 1 - r));
+				}
+			}
+		}
+	}
 	 
 	/**
 	 * Prints the generator matrices as bit matrices in standard form for dimensions 1 to @f$s@f$.
 	 * Each matrix has @f$r@f$ rows and @f$k@f$ columns.
 	 */
 	public void printGeneratorMatrices(int s) {
-		int r, c, j;                            // row r, column c, dimension j
-		int[] mat = new int[numCols];           // Bit matrix
-		int[] matTrans = new int[numRows];      // Transposed bit matrix
+		int r, c, j;	// Row r, column c, dimension j.
+		int[][][] standardMatrices = generatorMatricesToStandardFormat();
 		for (j = 0; j < s; j++) {
 			System.out.println("dim = " + (j + 1) + PrintfFormat.NEWLINE);
-			for (r = 0; r < numRows; r++)
-				matTrans[r] = 0;
-			for (c = 0; c < numCols; c++) {
-				mat[c] = genMat[j * numCols + c];
-				mat[c] >>= outDigits - numRows;  // outDigits is used here.
-				for (r = numRows - 1; r >= 0; r--) {
-					matTrans[r] <<= 1;
-					matTrans[r] |= mat[c] & 1;
-					mat[c] >>= 1;
-				}
-			}
 			for (r = 0; r < numRows; r++) {
 				StringBuffer sb = new StringBuffer();
-				int x = matTrans[r];
 				for (c = 0; c < numCols; c++) {
-					sb.insert(0, x & 1);
-					x >>= 1;
+					sb.append(standardMatrices[j][r][c]);
 				}
 				System.out.println(sb);
 			}
@@ -95,6 +126,14 @@ public class DigitalNetBase2 extends DigitalNet {
 				System.out.println(genMat[j * numCols + c]);
 			System.out.println("----------------------------------");
 		}
+	}
+
+	/**
+	 * Returns a copy of the generator matrices transposed in the form of integers for dimensions 1 to @f$s@f$.
+	 * Each integer corresponds to one column of bits.
+	 */
+	public int[] getGeneratorMatricesTrans() {
+		return Arrays.copyOf(genMat, genMat.length);
 	}
 
 	public double getCoordinate(int i, int j) {
@@ -449,6 +488,24 @@ public class DigitalNetBase2 extends DigitalNet {
 		assert output.length > 0;
 		assert output[0].length == dim;
 
+		int[][] int_output = new int[numPoints][dim];
+		nestedUniformScramble(stream, int_output, numBits);
+		for (int j = 0; j < dim; ++j) {
+			for (int i = 1; i < numPoints; i++) {
+				output[i][j] = int_output[i][j] * normFactor + EpsilonHalf;
+			}
+		}
+	}
+
+	/**
+	 * Same as @link nestedUniformScramble(RandomStream,double[][],int)@endlink, but it
+	 * returns the points as integers between 0 and 2^outDigits - 1, instead of doubles.
+	 */
+	public void nestedUniformScramble(RandomStream stream, int[][] output, int numBits) {
+		assert output.length == numPoints;
+		assert output.length > 0;
+		assert output[0].length == dim;
+
 		if (numBits == 0)
 			numBits = outDigits;
 
@@ -492,14 +549,14 @@ public class DigitalNetBase2 extends DigitalNet {
 				}
 			}
 			int bv = randomBitVector(stream, numBits);
-			output[poslist[0]][j] = (bvlist[0] ^ bv) * normFactor + EpsilonHalf;
+			output[poslist[0]][j] = bvlist[0] ^ bv;
 			for (int i = 1; i < numPoints; i++) {
 				int bv2 = bvlist[i - 1];
 				bv2 ^= bvlist[i];
 				bv2 = randomBitVector(stream, numBits)
 				        & ((int) (1 << (int) Num.log2((double) bv2)) - 1);
 				bv ^= bv2;
-				output[poslist[i]][j] = (bvlist[i] ^ bv) * normFactor + EpsilonHalf;
+				output[poslist[i]][j] = bvlist[i] ^ bv;
 			}
 
 		}
@@ -541,6 +598,84 @@ public class DigitalNetBase2 extends DigitalNet {
 
 	public void stripedMatrixScrambleFaurePermutAll(RandomStream stream, int sb) {
 		ScrambleError("stripedMatrixScrambleFaurePermutAll");
+	}
+
+
+	/**
+	 * Interlaces the points from a digital net.
+	 *
+	 * This is useful for interlacing after NUS, since NUS returns the points. For other use
+	 * cases, @link matrixInterlace()@endlink should be prefered.
+	 *
+	 * @param points
+	 *            Array that stores the non-interlaced points as integers. The size of its first
+	 *            dimension must be getNumPoints() and the size of its second dimension must be
+	 *            getDimension().
+	 * @param interlacedPoints
+	 *            Output array that will store the interlaced points. The size of its first
+	 *            dimension must be getNumPoints() and the size of its second dimension must be
+	 *            getDimension() / getInterlacing().
+	 */
+	public void outputInterlace(int[][] points, double[][] interlacedPoints) {
+		assert points.length == numPoints;
+		assert points.length > 0;
+		assert points[0].length == dim;
+
+		assert interlacedPoints.length == numPoints;
+		assert interlacedPoints.length > 0;
+		assert interlacedPoints[0].length * interlacing == dim;
+
+		double longNormFactor = 1 / (Math.pow(2, 63));
+
+		for (int i = 0; i < numPoints; i++) {
+			for (int j = 0; j < dim / interlacing; ++j){
+				long result = 0;
+				for (int idx = 0; idx < interlacing; ++idx){
+					int coord = j * interlacing + idx;
+					int interlaced_pos = 62 - idx;
+					int original_pos = 30;
+					int mask = 1 << original_pos;
+					while (interlaced_pos >= 0 && original_pos >= 0){
+						assert interlaced_pos >= original_pos;
+						result += (((long) (points[i][coord] & mask)) << (interlaced_pos - original_pos));
+						interlaced_pos -= interlacing;
+						original_pos -= 1;
+						mask >>= 1;
+					}
+				}
+				interlacedPoints[i][j] = result * longNormFactor + EpsilonHalf;
+			}
+		}
+	}
+
+	/**
+	 * Interlaces the matrices from a digital net.
+	 *
+	 * This function returns a new digital net, whose dimension equals getDimension() / getInterlacing(),
+	 * and whose generating matrices are interlaced.
+	 */
+	public DigitalNetBase2 matrixInterlace() {
+		DigitalNetBase2 result = new DigitalNetBase2();
+		result.dim = dim / interlacing;
+		result.interlacing = 1;
+		result.numCols = numCols;
+		result.numRows = Math.min(MAXBITS, numRows*interlacing);
+		result.numPoints = numPoints;
+		result.outDigits = outDigits;
+		result.normFactor = normFactor;
+
+		int[][][] nonInterlacedMatrices = generatorMatricesToStandardFormat();
+		int[][][] interlacedMatrices = new int[result.dim][result.numRows][result.numCols];
+		int r, j;	// Row r, dimension j.
+		for(j = 0; j < result.dim; ++j){
+			for(r = 0; r < result.numRows; ++r){
+				interlacedMatrices[j][r] = nonInterlacedMatrices[j * interlacing + r % interlacing][r / interlacing];
+			}
+		}
+		result.generatorMatricesFromStandardFormat(interlacedMatrices);
+		
+		return result;
+		
 	}
 
 	
