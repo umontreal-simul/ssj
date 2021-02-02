@@ -170,11 +170,11 @@ public class MonteCarloExperiment {
 		PrintfFormat str = new PrintfFormat();
 		timer.init();
 		simulateRuns(model, n, stream, statValue);
-		// statValue.setConfidenceIntervalStudent();
+		statValue.setConfidenceIntervalStudent();
 		str.append(model.toString() + "\n");
 		str.append(statValue.report(level, d));
-		// str.append("Variance per run: " + statValue.variance() + "\n");
-		// str.append(7 + 5, 5, 4, statValue.variance());
+		str.append("Variance per run: ");
+		str.append (10, d, d-1, statValue.variance());	str.append ("\n");
 		str.append("\n");
 		str.append("Total CPU time:      " + timer.format() + "\n");
 		return str.toString();
