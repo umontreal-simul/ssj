@@ -25,8 +25,6 @@
 
 package umontreal.ssj.latnetbuilder;
 
-import umontreal.ssj.latnetbuilder.DigitalNetSearch;
-
 /**
  * Class for the search of good polynomial lattice rules using LatNet Builder.
 */

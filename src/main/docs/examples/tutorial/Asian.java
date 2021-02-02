@@ -1,3 +1,5 @@
+package tutorial;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.NormalDist;
 import umontreal.ssj.stat.Tally;
