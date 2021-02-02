@@ -27,7 +27,6 @@ package umontreal.ssj.latnetbuilder;
 
 import umontreal.ssj.hups.DigitalNetBase2;
 import java.util.ArrayList;
-import java.lang.Math;
 
 /**
  * Class for the search of good digital nets using LatNet Builder.
@@ -39,15 +38,18 @@ public class DigitalNetSearch extends Search {
 	 */
 	protected class DigitalNetBase2FromLatNetBuilder extends DigitalNetBase2 {
 		
-		public DigitalNetBase2FromLatNetBuilder (int numRows, int numCols, int dim, int[] matrices) {
+		public DigitalNetBase2FromLatNetBuilder (int numRows, int numCols, int dim, int interlacing, int[][][] matrices) {
+			if (numRows > MAXBITS || numCols > MAXBITS)
+				throw new RuntimeException (String.format("SSJ cannot handle matrices with more than %d rows or columns.", MAXBITS));
 			this.numCols = numCols;
-			this.numRows = Math.min(numRows, MAXBITS);
+			this.numRows = numRows;
 			this.numPoints = 1 << this.numCols;
 			this.dim = dim;
-			this.genMat = matrices;
 			this.outDigits = MAXBITS;
-			// this.outDigits = this.numRows;
 			this.normFactor = 1.0 / ( (double) (1L << this.outDigits) );
+			this.interlacing = interlacing;
+
+			generatorMatricesFromStandardFormat(matrices);
 		}
 	}
 	
@@ -76,6 +78,7 @@ public class DigitalNetSearch extends Search {
 		int numRows = Integer.parseInt(res.get(1).split("  //")[0]);
 		int interlacing = Integer.parseInt(res.get(4).split("  //")[0]);
 		int dimension = Integer.parseInt(res.get(3).split("  //")[0]);
+
 		int[][][] mats = new int[dimension][numRows][numCols];
 		for(int coord = 0; coord < dimension; ++coord){
 			for(int row = 0; row < numRows; ++row){
@@ -86,23 +89,11 @@ public class DigitalNetSearch extends Search {
 			}
 		}
 
-		dimension = dimension / interlacing;
-
-		int[] genMat = new int[dimension*numCols];
-		int trueNumRows = Math.min(31, numRows*interlacing);
-		for(int coord = 0; coord < dimension; ++coord){
-			for(int col = 0; col < numCols; ++col){
-				genMat[coord * numCols + col] = 0;
-				for(int row = 0; row < trueNumRows; ++row){
-					// genMat[coord * numCols + col] += (1 << (trueNumRows - 1 - row)) * mats[coord*interlacing + row % interlacing][row/interlacing][col];
-					genMat[coord * numCols + col] += (1 << (31 - 1 - row)) * mats[coord*interlacing + row % interlacing][row/interlacing][col];
-				}
-			}
-		}
 		this.merit = Double.parseDouble(res.get(res.size() - 2).split("  //")[0]);
 		this.time = Double.parseDouble(res.get(res.size() - 1).split("  //")[0]);
 		this.successful = true;
-		return new DigitalNetBase2FromLatNetBuilder(trueNumRows, numCols, dimension, genMat);
+
+		return new DigitalNetBase2FromLatNetBuilder(numRows, numCols, dimension, interlacing, mats);
 	}
 	
 	/**
@@ -134,17 +125,17 @@ public class DigitalNetSearch extends Search {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int interlacing()
+	public String interlacing()
 	{
-		return interlacing;
+		return String.valueOf(interlacing);
 	}
 
 	/**
 	 * Sets the interlacing factor of the searched digital net.
 	 * @param interlacing Interlacing factor.
 	 */
-	public void setInterlacing(int interlacing){
-		this.interlacing = interlacing;
+	public void setInterlacing(String interlacing){
+		this.interlacing = Integer.parseInt(interlacing);
 	}
 	
 	/**

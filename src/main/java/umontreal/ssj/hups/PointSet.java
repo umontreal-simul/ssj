@@ -167,6 +167,13 @@ public abstract class PointSet {
       return numPoints;
    }
 
+    /**
+    * Returns the maximum number of usable bits.
+    */
+    public static int getMaxBits() {
+      return MAXBITS;
+   }
+
    /**
     * Returns @f$u_{i,j}@f$, the coordinate @f$j@f$ of the point @f$i@f$.
     * When the points are randomized (e.g., a random shift is added), the values

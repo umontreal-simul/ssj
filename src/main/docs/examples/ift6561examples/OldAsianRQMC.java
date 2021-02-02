@@ -18,11 +18,12 @@ public class OldAsianRQMC extends AsianOption {
    public void simulateQMC (int m, PointSet p, PointSetRandomization rand,
 		   RandomStream noise, Tally statQMC) {
 	   Tally statValue  = new Tally ("stat on value of Asian option");
+	   Tally statValuePos  = new Tally ("stat on positive payoffs of Asian option");
 	   PointSetIterator stream = p.iterator ();
 	   for (int j=0; j<m; j++) {	
 		   rand.randomize(p);
 		   stream.resetStartStream();
-		   simulateRuns (p.getNumPoints(), stream, statValue);
+		   simulateRuns (p.getNumPoints(), stream, statValue, statValuePos);
 		   statQMC.add (statValue.average());
 		   }
 	   }
@@ -53,10 +54,11 @@ public class OldAsianRQMC extends AsianOption {
 
 	  asian.setProcess(process);
 	  Tally statValue = new Tally("Stats on value of Asian option");		
+	  Tally statValuePos  = new Tally ("stat on positive payoffs of Asian option");
 	  Tally statQMC = new Tally ("QMC averages for Asian option");
 
       System.out.println ("Ordinary MC:\n");
-      asian.simulateRuns (n, stream, statValue);
+      asian.simulateRuns (n, stream, statValue, statValuePos);
       statValue.setConfidenceIntervalStudent();
       System.out.println (statValue.report (0.95, 3));
       double varMC = statValue.variance();
