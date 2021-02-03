@@ -13,12 +13,12 @@ public class ObservationCollectorList<E> extends ArrayList<ObservationCollector<
       super(initialCapacity);
    }
    
-   @Override public void init() {
+   public void init() {
       for (ObservationCollector<? super E> collector : this)
          collector.init();
    }
    
-   @Override public void observe(E obs) {
+   public void observe(E obs) {
       for (ObservationCollector<? super E> collector : this)
          collector.observe(obs);
    }

@@ -23,17 +23,17 @@ public class QMCSampler implements Sampler {
    }
    
    /** @copydoc Sampler::getNumSimulationsPerSample() */
-   @Override public int getNumSimulationsPerSample() {
+   public int getNumSimulationsPerSample() {
       return 1;
    }
 
    /** @copydoc Sampler::getNumSamples() */
-   @Override public int getNumSamples() {
+   public int getNumSamples() {
       return points.getNumPoints();
    }
 
    /** @copydoc Sampler::simulate(MonteCarloModel<? extends E>, ObservationCollector<E>) */
-   @Override public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
+   public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
 
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
     	  model.simulate(it);
@@ -42,7 +42,7 @@ public class QMCSampler implements Sampler {
    }
 
    /** @copydoc Sampler::simulate(MonteCarloModelDouble, ObservationCollector<Double>) */
-   @Override public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
+   public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
           model.simulate(it);
           collector.add(model.getPerformance());

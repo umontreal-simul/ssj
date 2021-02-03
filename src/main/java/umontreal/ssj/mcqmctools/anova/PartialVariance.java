@@ -51,7 +51,7 @@ public class PartialVariance extends Tally implements Comparable<PartialVariance
     * partial variance \c var, respectively.
     *
     */
-   @Override public int compareTo(PartialVariance var) {
+   public int compareTo(PartialVariance var) {
       double v = average();
       double vx = var.average();
       return v > vx ? 1 : v < vx ? -1 : 0;

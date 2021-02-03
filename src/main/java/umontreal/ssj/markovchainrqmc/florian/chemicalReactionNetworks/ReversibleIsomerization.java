@@ -47,7 +47,6 @@ public class ReversibleIsomerization extends ChemicalReactionNetwork implements 
 		this.N0 = N0;
 	}
 
-	@Override
 	public int compareTo(MarkovChainComparable m, int i) {
 		if (!(m instanceof ReversibleIsomerization)) {
 			throw new IllegalArgumentException("Can't compare an ReversibleIso with other types of Markov chains.");
@@ -91,7 +90,6 @@ public class ReversibleIsomerization extends ChemicalReactionNetwork implements 
 		return state01;
 	}
 
-	@Override
 	public double getCoordinate(int j) {
 		return X[0];
 	}

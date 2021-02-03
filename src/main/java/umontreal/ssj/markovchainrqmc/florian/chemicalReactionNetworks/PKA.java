@@ -90,7 +90,6 @@ public class PKA extends ChemicalReactionNetwork implements MultiDim01 {
 		return sb.toString();
 	}
 
-	@Override
 	public int compareTo(MarkovChainComparable m, int i) {
 		if (!(m instanceof PKA)) {
 			throw new IllegalArgumentException("Can't compare a PKA with other types of Markov chains.");
@@ -109,7 +108,6 @@ public class PKA extends ChemicalReactionNetwork implements MultiDim01 {
 		return state01;
 	}
 
-	@Override
 	public double getCoordinate(int j) {
 		double zvalue;
 
