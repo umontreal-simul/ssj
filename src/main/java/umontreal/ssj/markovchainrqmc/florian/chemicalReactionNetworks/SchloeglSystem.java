@@ -78,7 +78,6 @@ public class SchloeglSystem extends ChemicalReactionNetwork implements MultiDim{
 		this.N0 = N0;
 	}
 
-	@Override
 	public int compareTo(MarkovChainComparable m, int i) {
 		if (!(m instanceof SchloeglSystem)) {
 			throw new IllegalArgumentException("Can't compare an SchloeglSystem with other types of Markov chains.");
@@ -127,7 +126,6 @@ public class SchloeglSystem extends ChemicalReactionNetwork implements MultiDim{
 		a[3] = c[3] * X[0];
 	}
 
-	@Override
 	public double getCoordinate(int j) {
 
 

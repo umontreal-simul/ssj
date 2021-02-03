@@ -37,7 +37,7 @@ public class TestAsianOptionGBMCV {
 		TallyStore statValueMC = new TallyStore ("Stats on payoff with crude MC");
 
 		Chrono timer = new Chrono();
-		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport 
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportStudent
 				(asian, n, noise, statValueMC));
 
 		// Extract positive payoffs, put them in collector statValuePosMC, and print report.

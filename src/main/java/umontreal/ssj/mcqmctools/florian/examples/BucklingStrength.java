@@ -60,7 +60,6 @@ public class BucklingStrength implements MonteCarloModelDouble {
 		return (Math.sqrt(Math.log(1.0 + sigma * sigma / (mu * mu))));
 	}
 
-	@Override
 	public void simulate(RandomStream stream) {
 		double b = NormalDist.inverseF(mu[0], sigma[0], stream.nextDouble());
 		double t = Math.exp(NormalDist.inverseF(transformMu(mu[1], sigma[1]), transformSigma(mu[1], sigma[1]),
@@ -75,7 +74,6 @@ public class BucklingStrength implements MonteCarloModelDouble {
 
 	}
 
-	@Override
 	public double getPerformance() {
 		return performance;
 	}

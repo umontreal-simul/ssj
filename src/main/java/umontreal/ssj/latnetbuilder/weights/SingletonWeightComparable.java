@@ -29,8 +29,7 @@ public class SingletonWeightComparable<T extends Comparable<T>> extends Singleto
 	 * Method to be able to compare the current weight to another based on the ordering
 	 * defined on 'T'. This enables sorting the weights by their index.
 	 */
-	@Override
-	public int compareTo(SingletonWeightComparable<T> w) {
+	public int compareTo (SingletonWeightComparable<T> w) {
 		return getIndex().compareTo(w.getIndex());
 	}
 }

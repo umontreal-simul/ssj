@@ -100,7 +100,7 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
     * \li \c vars[\c nSets+1] contains the total variance.
     *
     */
-   @Override public void simulate (RandomStream stream) {
+   public void simulate (RandomStream stream) {
 
       List<CoordinateSet> coordSets = varEstimator.getCoordinateSets();
       int nSets = coordSets.size();
@@ -133,7 +133,7 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
    }
 
 
-   @Override public double[] getPerformance () {
+   public double[] getPerformance () {
 	   return vars;
 	   }
 	   

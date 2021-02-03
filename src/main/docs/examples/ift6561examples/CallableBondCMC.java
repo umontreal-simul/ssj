@@ -97,7 +97,7 @@ public class CallableBondCMC extends CallableBond {
         for (int iThreshold = 1; iThreshold < bond.getThresholdRates().length; iThreshold++)
             bond.getThresholdRates()[iThreshold] = Double.NEGATIVE_INFINITY;
 		TallyStore statValue = new TallyStore ("Callable bond value with single threshold (-0.124) and no CMC");
-		System.out.println (MonteCarloExperiment.simulateRunsDefaultReport 
+		System.out.println (MonteCarloExperiment.simulateRunsDefaultReportStudent
 				(bond, n, new MRG32k3a(), statValue));
 
         CallableBondCMC bondCMC = new CallableBondCMC(randomStream);

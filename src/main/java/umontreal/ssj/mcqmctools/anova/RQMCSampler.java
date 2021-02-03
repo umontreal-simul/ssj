@@ -33,27 +33,27 @@ public class RQMCSampler implements RandomSampler {
    }
    
    /** @copydoc RandomSampler::getStream() */
-   @Override public RandomStream getStream() {
+   public RandomStream getStream() {
       return points.getRandomization().getStream();
    }
 
    /** @copydoc RandomSampler::setStream(RandomStream) */
-   @Override public void setStream (RandomStream stream) {
+   public void setStream (RandomStream stream) {
       points.getRandomization().setStream(stream);
    }
 
    /** @copydoc Sampler::getNumSimulationsPerSample() */
-   @Override public int getNumSimulationsPerSample() {
+   public int getNumSimulationsPerSample() {
       return 1;
    }
 
    /** @copydoc Sampler::getNumSamples() */
-   @Override public int getNumSamples() {
+   public int getNumSamples() {
       return points.getPointSet().getNumPoints();
    }
 
    /** @copydoc Sampler::simulate(MonteCarloModel<? extends E>, ObservationCollector<E>) */
-   @Override public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
+   public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
       randomize();
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
          model.simulate(it);
@@ -62,7 +62,7 @@ public class RQMCSampler implements RandomSampler {
    }
 
    /** @copydoc Sampler::simulate(MonteCarloModelDouble, ObservationCollector<Double>) */
-   @Override public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
+   public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
       randomize();
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
           model.simulate(it);
