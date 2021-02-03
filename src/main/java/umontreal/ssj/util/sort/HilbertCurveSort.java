@@ -148,7 +148,6 @@ public class HilbertCurveSort implements MultiDimSort01<MultiDim01> {
      * The type `T` must actually be  MultiDimComparable01. This is
      * verified in the method.
      */
-    @Override
     public void sort (MultiDim01[] a, int iMin, int iMax) {
 			 // Copy the (0,1)^d transformations of the states in array b.
        double b[][] = new double[iMax][dimension];
@@ -168,7 +167,6 @@ public class HilbertCurveSort implements MultiDimSort01<MultiDim01> {
     /**
      * Sorts the entire array: same as `sort (a, 0, a.length)`.
      */
-    @Override
     public void sort (MultiDim01[] a) {
         sort (a, 0, a.length);
     }
@@ -229,7 +227,6 @@ public long[][] getIndexAfterSort () {
  * The comparator class used by  #sortIndexOfLong2.
  */
 public static class LongIndexComparator2 implements Comparator<long[]> {
-     @Override
      public int compare (long[] p1, long[] p2) {
         if (p1[1] > p2[1]) return 1;
         else if (p1[1] < p2[1])  return -1;

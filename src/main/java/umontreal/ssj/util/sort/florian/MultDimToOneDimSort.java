@@ -83,7 +83,6 @@ public abstract class MultDimToOneDimSort implements MultiDimSort<MultiDim> {
 		Arrays.sort(index, iMin, iMax, new DoubleIndexComparator2());
 	}
 
-	@Override
 	public void sort(double[][] a, int iMin, int iMax) {
 //		if (iMin + 1 == iMax)
 //			return;
@@ -105,7 +104,6 @@ public abstract class MultDimToOneDimSort implements MultiDimSort<MultiDim> {
 		}
 	}
 
-	@Override
 	public void sort(double[][] a) {
 		sort(a, 0, a.length);
 

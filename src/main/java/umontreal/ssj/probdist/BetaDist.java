@@ -139,7 +139,6 @@ public class BetaDist extends ContinuousDistribution {
       return Math.exp(logFactor + temp);
    }
 
-   @Override
    public double cdf (double x) {
       return cdf (alpha, beta, (x - a)/bminusa);
    }
@@ -946,7 +945,6 @@ public void setParams (double alpha, double beta, double a, double b) {
     * Return an array containing the parameters of the current
     * distribution as [@f$\alpha@f$, @f$\beta@f$, @f$a@f$, @f$b@f$].
     */
-   @Override
    public double[] getParams () {
       double[] retour = {alpha, beta, a, b};
       return retour;

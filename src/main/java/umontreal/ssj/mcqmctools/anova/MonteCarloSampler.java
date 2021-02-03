@@ -32,12 +32,12 @@ public class MonteCarloSampler implements RandomSampler {
    }
    
    /** @copydoc Sampler::getNumSimulationsPerSample() */
-   @Override public int getNumSimulationsPerSample() {
+   public int getNumSimulationsPerSample() {
       return 1;
    }
 
    /** @copydoc Sampler::getNumSamples() */
-   @Override public int getNumSamples() {
+   public int getNumSamples() {
       return nSamples;
    }
 
@@ -55,12 +55,12 @@ public class MonteCarloSampler implements RandomSampler {
     * Sets the internal random stream to \c stream.
     *
     */
-   @Override public void setStream (RandomStream stream) {
+   public void setStream (RandomStream stream) {
       this.stream = stream;
    }
 
    /** @copydoc Sampler::simulate(MonteCarloModel<? extends E>, ObservationCollector<E>) */
-   @Override public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
+   public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
 
       PointSetIterator psit = null;
       if (stream instanceof PointSetIterator)
@@ -75,7 +75,7 @@ public class MonteCarloSampler implements RandomSampler {
    }
 
    /** @copydoc Sampler::simulate(MonteCarloModelDouble, ObservationCollector<Double>) */
-   @Override public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
+   public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
  
       boolean isPointSet = (stream instanceof PointSetIterator);
       

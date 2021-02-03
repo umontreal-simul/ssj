@@ -242,7 +242,6 @@ public abstract class ChemicalReactionNetwork extends MarkovChainComparable impl
 
 	}
 
-	@Override
 	public int dimension() {
 		return N;
 	}
