@@ -57,14 +57,12 @@ public class LookbackOptionGBM implements MonteCarloModelDouble {
 		this(dim, s0, K, r, sigma, new BrownianMotionBridge(0.0, 0.0, 1.0, new MRG32k3a()));
 	}
 
-	@Override
 	public void simulate(RandomStream stream) {
 		bm.setStream(stream);
 		path = bm.generatePath();
 
 	}
 
-	@Override
 	public double getPerformance() {
 
 		double res = sigma * path[0];

@@ -82,7 +82,7 @@ public class NestedUniformScrambling implements PointSetRandomization {
       return stream;
    }
 
-   public void setStream(RandomStream stream) {
+   public void setStream (RandomStream stream) {
       this.stream = stream;
    }
 

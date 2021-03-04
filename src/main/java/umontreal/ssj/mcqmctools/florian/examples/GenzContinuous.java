@@ -69,7 +69,7 @@ public class GenzContinuous implements MonteCarloModelDouble {
 		this.dim = dim;
 	}
 
-	@Override
+	
 	public void simulate(RandomStream stream) {
 		double exponent = 0.0;
 		for (int j = 0; j < dim; ++j)
@@ -77,7 +77,7 @@ public class GenzContinuous implements MonteCarloModelDouble {
 		performance = Math.exp(-exponent);
 	}
 
-	@Override
+	
 	public double getPerformance() {
 		return performance;
 	}

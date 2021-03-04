@@ -1,10 +1,8 @@
 package umontreal.ssj.mcqmctools.florian.examples;
 
 import umontreal.ssj.mcqmctools.MonteCarloModelDoubleArray;
-import umontreal.ssj.probdist.NormalDist;
 import umontreal.ssj.rng.MRG32k3a;
 import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.stochprocess.BrownianMotion;
 import umontreal.ssj.stochprocess.BrownianMotionBridge;
 
 /**
@@ -50,7 +48,6 @@ public class LookbackOptionGBMVars implements MonteCarloModelDoubleArray {
 		this(dim, new BrownianMotionBridge(0.0, 0.0, 1.0, new MRG32k3a()));
 	}
 
-	@Override
 	public void simulate(RandomStream stream) {
 
 		bm.setStream(stream);
@@ -58,12 +55,10 @@ public class LookbackOptionGBMVars implements MonteCarloModelDoubleArray {
 
 	}
 
-	@Override
 	public double[] getPerformance() {
 		return path;
 	}
 
-	@Override
 	public int getPerformanceDim() {
 		return (dim + 1);
 	}
