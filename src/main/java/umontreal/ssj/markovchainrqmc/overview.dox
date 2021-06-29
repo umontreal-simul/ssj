@@ -30,8 +30,8 @@
  * where @f$c_j@f$ is a cost (or revenue) function for step @f$j@f$ and
  * @f$\tau@f$ is either a constant of a random stopping time.
  * Often, @f$c_j@f$  does not depend on @f$j@f$.  The
- * goal is to estimate @f$\mu=\mathbb E[Y_{\tau}]@f$.  It is not rare that
- * @f$c_j(\cdot)=0@f$ for all @f$j<\tau@f$, i.e., that the cost or revenue occurs only at the end.
+ * goal is to estimate @f$\mu=\mathbb E[Y_{\tau}]@f$.  Often, 
+ * @f$c_j(\cdot)=0@f$ for all @f$j<\tau@f$, i.e., the cost or revenue occurs only at the end.
  *
  * The base class @ref MarkovChain
  * offers methods to simulate one or more copies of the Markov chain one step at a time,
@@ -51,14 +51,13 @@
  * {@link umontreal.ssj.markovchainrqmc.MarkovChain.getPerformance()
  * getPerformance()} which returns the performance realization for the chain, 
  * i.e., the value taken by @f$Y_{\tau}@f$, assuming that the chain has reached 
- * its stopping time $\tau$. 
+ * its stopping time @f$\tau@f$.
  *
  * If the chains have to be sorted as in the Array-RQMC method, 
  * one must implement the 
  * @ref MarkovChainComparable interface,
  * unless the chain is a subclass of
- * @ref MarkovChainDouble,  
- * in which case the state is just a real number and the chains are sorted 
+ * @ref MarkovChainDouble, in which case the state is just a real number and the chains are sorted 
  * by increasing order of their state in a trivial way.
  * For a direct subclass of @ref MarkovChain, 
  * other methods are then needed. See the examples below for more details.
@@ -91,6 +90,7 @@
  * @f$0@f$ and variance `dt` to the current position. The performance mesure
  * here is just the positive distance between the current position and the
  * initial position, but it could be anything else.
+ * (The displayed files are in the directory  src/main/docs/examples/markovchainrqmc/ )
  *
  *   <strong>A simple implementation of `MarkovChainComparable`</strong>
  * &emsp;[Brownian]

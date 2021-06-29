@@ -1,13 +1,11 @@
 package umontreal.ssj.markovchainrqmc;
  import umontreal.ssj.stat.PgfDataTable;
-import umontreal.ssj.stat.Tally;
- import umontreal.ssj.rng.RandomStream;
+ import umontreal.ssj.stat.Tally;
  import umontreal.ssj.util.*;
  import umontreal.ssj.util.sort.*;
  import umontreal.ssj.hups.*;
  import umontreal.ssj.charts.*;
  import umontreal.ssj.functionfit.LeastSquares;
- import java.util.*;
  import java.io.IOException;
  import java.io.Writer;
  import java.io.FileWriter;
@@ -20,45 +18,52 @@ import umontreal.ssj.stat.Tally;
  * array of chains, simulate with array-RQMC for one step or multiple steps,
  * perform experiments, and report some results.
  *
- * At each step, the @f$n@f$ states (which correspond to the @f$n@f$ copies
- * of the chain) are sorted in @f$\ell@f$ dimensions (usually the dimension
- * of the state). If @f$\ell=1@f$, this is an ordinary sort. If @f$\ell>
- * 1@f$, they are sorted using a  @ref umontreal.ssj.util.MultiDimSort, which
- * in general can sort  @ref umontreal.ssj.util.MultiDimComparable objects.
- * As a special case, they can also be sorted using a
- * @ref umontreal.ssj.util.MultiDimSort01 type of sort. Some of these sorts
+ * The method simulates @f$n@f$ realizations of a Markov chain having an 
+ * @f$\ell@f$-dimensional state.  
+ * At each step, the @f$n@f$ states are sorted in some way and then advance
+ * to the next state by using the RQMC points. 
+ * If @f$\ell=1@f$, we just une an ordinary sort. 
+ * If @f$\ell> 1@f$, there are two possibilities. The first one is to define a 
+ * mapping from the state space to the real numbers, called a sorting function,
+ * and sort according to the value of this sorting function.
+ * We end up sorting in @f$\ell’=1@f$ dimensions.
+ * The second possibility is to use a multivariate sort of the type 
+ *  @ref umontreal.ssj.util.sort.MultiDimSort, which
+ * in general can sort  @ref umontreal.ssj.util.sort.MultiDimComparable objects.
+ * Special cases of these multivariate sorts are of type
+ * @ref umontreal.ssj.util.sort.MultiDimSort01.  Some of them
  * effectively map the chain states to the one-dimensional interval
  * @f$(0,1)@f$. For example, the sorts based on a Hilbert curve, such as
- * @ref umontreal.ssj.util.HilbertCurveSort, do that. In that case, we put
- * @f$\ell’=1@f$, otherwise @f$\ell’=\ell@f$.
+ * @ref umontreal.ssj.util.sort.HilbertCurveSort, do that. 
+ * In that case, we end up again sorting in @f$\ell’=1@f$ dimensions.
+ * Otherwise, we sort in @f$\ell’ \leq \ell@f$ dimensions.
  *
  * To move the chains ahead, we use an @f$(\ell’+d)@f$-dimensional RQMC
  * @ref umontreal.ssj.hups.PointSet. The first @f$\ell’@f$ coordinates are
- * used to sort the points to map them to the (sorted) chains. In some cases,
- * when @f$\ell’=1@f$, the first coordinate of the points is not stored
- * explicitly; the points are already sorted by a first coordinate which is
- * only implicit (it serves to enumerate the points). This is what happens
- * for a Sobol’ sequence, or a  @ref umontreal.ssj.hups.KorobovLattice for
- * which the first coordinate is dropped, for example. Only @f$d@f$
- * coordinates are produced with those point sets and have to be randomized.
- * In the other cases, the points must be sorted by their first @f$\ell’@f$
- * coordinates.
- *
- * At each step the  @ref umontreal.ssj.hups.PointSet is randomized by using
+ * used to sort the points in the same way as the states of the chains,
+ * to match each point with a state and vice-versa.  
+ * 
+ * When @f$\ell’=1@f$, we are also allowed to use only @f$d@f$-dimensional RQMC points
+ * exactly as in @ref ArrayOfDoubleChains. That is, the points are assumed to be
+ * already sorted by a virtual coordinate which is not stored explicitly,
+ * and can be assumed to be @f$i/n@f$ for state @f$i@f$.
+ * In this case, we can take for example the first @f$n@f$ points of 
+ * a Sobol’ sequence, or a  rank-1 lattice for
+ * which the first coordinate is dropped. 
+ * To choose this option, we must pass `sortCoordPts=0` when running the Array-RQMC simulations. 
+ * Otherwise, the points will be sorted by their first `sortCoordPts` coordinates,
+ * where `sortCoordPts` should be the value of @f$\ell’@f$.
+ * When `sortCoordPts > 0`, the current implementation also imposes that the 
+ * point set is a @ref umontreal.ssj.hups.CachedPointSet, and the RQMC points 
+ * are sorted at each step.  This constraint can be satisfied by using a
+ * @ref umontreal.ssj.hups.SortedAndCutPointSet.
+ * 
+ * At each step the RQMC points are randomized using
  * a  @ref umontreal.ssj.hups.PointSetRandomization. There are types of point
  * sets for which only the last @f$d@f$ coordinates have to be randomized
  * (e.g., digital nets and lattice rules) and others for which all @f$\ell’
  * + d@f$ coordinates must be randomized (e.g., a stratified sample).
  *
- * When applying the array-RQMC method, the number of point coordinates used
- * explicitly to sort the points and match the chains (which is either
- * @f$\ell’@f$ or 0) is passed in a variable named `sortCoord`, and the
- * number of these coordinates that must be randomized at each step is passed
- * in a variable named `sortCoordRand`. In the case where @f$\ell’=1@f$ and
- * the first coordinate is only implicit, both should be 0. In the case where
- * @f$\ell’ > 1@f$ but only the last @f$d@f$ coordinates have to be
- * randomized at each step, one would put `sortCoord` to @f$\ell’@f$ and
- * `sortCoordRand` to 0.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -96,7 +101,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     */
    public ArrayOfComparableChains (T baseChain,
                                    PointSetRandomization rand,
-                                   MultiDimSort sort) {
+                                   MultiDimSort<T> sort) {
       this.baseChain = baseChain;
       // stateDim = baseChain.stateDim;
       randomization = rand;
@@ -107,9 +112,9 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * Creates <tt>n</tt> copies (clones) of the chain <tt>baseChain</tt>
     * and puts them in an array, ready for the array RQMC simulation.
     */
-   public void makeCopies (int n) {
+@SuppressWarnings("unchecked")
+public void makeCopies (int n) {
 
-		@SuppressWarnings("unchecked")
 		final T[] c = (T[]) Array.newInstance(baseChain.getClass(), n);
 		chains = c; // Array of Markov chains.
 
@@ -173,14 +178,14 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
    /**
     * Sets the internal  @ref umontreal.ssj.util.MultiDimSort to `sort`.
     */
-   public void setSort (MultiDimSort sort) {
+   public void setSort (MultiDimSort<T> sort) {
        savedSort = sort;
    }
 
    /**
     * Returns the saved  @ref umontreal.ssj.util.MultiDimSort.
     */
-   public MultiDimSort getSort () {
+   public MultiDimSort<T> getSort () {
        return savedSort;
    }
 
@@ -201,13 +206,13 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * number of chains that have not stopped yet.
     */
    public int simulOneStepArrayRQMC (PointSet p, PointSetRandomization rand, 
-	       MultiDimSort sort, int sortCoordPts) {
+	       MultiDimSort<T> sort, int sortCoordPts) {
       int nStopped = 0;
       p.randomize(rand);                        // Randomize point set.
          if (sortCoordPts > 0) { 
              if (!(p instanceof CachedPointSet))
                 throw new IllegalArgumentException("p is not a CachedPointSet.");
-				 if (sortCoordPts > 1)
+		     if (sortCoordPts > 1)
                 ((CachedPointSet) p).sort(sort);   // Sort points using first sortCoordPts coordinates. 
              else
                 ((CachedPointSet) p).sortByCoordinate (0);  // Sort by first coordinate.
@@ -261,7 +266,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * also be obtained via  #getPerformances()(.)
     */
    public double simulArrayRQMC (PointSet p, PointSetRandomization rand, 
-	       MultiDimSort sort, int sortCoordPts, int numSteps) {
+	       MultiDimSort<T> sort, int sortCoordPts, int numSteps) {
       int numNotStopped = n;
       initialStates();
       int step = 0;
@@ -303,7 +308,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * need to sort the points at each step.
     */
    public double simulArrayRQMC (PointSet p, PointSetRandomization rand, 
-         MultiDimSort sort, int numSteps) {
+         MultiDimSort<T> sort, int numSteps) {
       return simulArrayRQMC (p, rand, sort, 0, numSteps);
    }
 
@@ -340,7 +345,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * <tt>statReps</tt>.
     */
    public void simulReplicatesArrayRQMC (PointSet p, PointSetRandomization rand, 
-	        MultiDimSort sort, int sortCoordPts, 
+	        MultiDimSort<T> sort, int sortCoordPts, 
           int numSteps, int m, Tally statReps) {
       makeCopies (p.getNumPoints());
       statReps.init ();
@@ -356,7 +361,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * <tt>statReps</tt> and the results are also returned in a string.
     */
    public String simulReplicatesArrayRQMCFormat (PointSet p, PointSetRandomization rand, 
-	        MultiDimSort sort, int sortCoordPts, 
+	        MultiDimSort<T> sort, int sortCoordPts, 
           int numSteps, int m, Tally statReps) {
       Chrono timer = Chrono.createForSingleThread();
       makeCopies (p.getNumPoints());
@@ -405,7 +410,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
 	 * of the variance vs @f$n@f$.
 	 */
 	public String testVarianceRateFormat (PointSet[] pointSets, PointSetRandomization rand, 
-	        MultiDimSort sort, int sortCoordPts, 
+	        MultiDimSort<T> sort, int sortCoordPts, 
           int numSteps, int m, double varMC, String filenamePlot, String methodLabel) {
 
 	  int numSets = pointSets.length; // Number of point sets.
@@ -463,7 +468,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
 	 * @param methodLabel
 	 * @return
 	 */
-	public String testVarianceRateFormat(RQMCPointSet[] rqmcPts, MultiDimSort sort,
+	public String testVarianceRateFormat(RQMCPointSet[] rqmcPts, MultiDimSort<T> sort,
 			int sortCoordPts, int numSteps, int m, double varMC, String filenamePlot, String methodLabel) {
 		int numSets = rqmcPts.length; // Number of point sets.
 		Tally statPerf = new Tally("Performance");
@@ -558,7 +563,7 @@ public class ArrayOfComparableChains <T extends MarkovChainComparable> {
     * @ref umontreal.ssj.util.MultiDimSort. All the stopped chains are
     * placed at the end, then the chains that have not stopped are sorted.
     */
-   public void sortNotStoppedChains (MultiDimSort sort) {
+   public void sortNotStoppedChains (MultiDimSort<T> sort) {
       int j = n - 1;
       int i = 0;
       T mc;

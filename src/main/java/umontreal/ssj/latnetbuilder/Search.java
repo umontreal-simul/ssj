@@ -33,7 +33,7 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.google.gson.Gson;
+//  import com.google.gson.Gson;
 
 import umontreal.ssj.hups.PointSet;
 
@@ -312,7 +312,8 @@ abstract public class Search {
 		this.pathToOutputFolder = path;
 	}
 
-	public static Search fromJSON(String json) {
+/*  public static Search fromJSON(String json) {
+
 		Gson gson = new Gson();
 		if (json.contains("\"construction\":\"polynomial\"")){
 			return gson.fromJson(json, PolynomialLatticeSearch.class);
@@ -324,4 +325,5 @@ abstract public class Search {
 			return gson.fromJson(json, OrdinaryLatticeSearch.class);
 		}
 	}
+*/	
 }

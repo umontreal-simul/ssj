@@ -1,4 +1,5 @@
-import org.junit.Test;
+import org.junit.jupiter.api.*;
+// import static org.junit.jupiter.api.Assertions.*;
 import umontreal.ssj.util.GlobalCPUTimeChrono;
 
 public class ChronoTest {
