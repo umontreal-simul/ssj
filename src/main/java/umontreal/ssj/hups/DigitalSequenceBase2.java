@@ -79,6 +79,8 @@ public abstract void extendSequence (int k);
 /**
  * Transforms this digital sequence into a digital net without changing the
  * coordinates of the points. Returns the digital net.
+ * Note that since this class is already a subclass of DigitalNetBase2, 
+ * this transformation is not really needed!
  */
 public DigitalNetBase2 toNet() {
       DigitalNetBase2 net = initNetVar (false);

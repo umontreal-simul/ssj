@@ -61,9 +61,8 @@ package umontreal.ssj.util.sort;
  * (approximately) @f$n_j = n^{\alpha_j}@f$. With this construction, one can
  * easily handle very different (arbitrary) values of @f$n@f$ with the same
  * BatchSort object. The vector of batch numbers is recomputed each time
- * we sort with a new value of @f$n@f$, as follows: @f$n_0 =
- * \lceil n^{\alpha_0} \rceil@f$, @f$n_1 = \lceil(n/n_0)^{\alpha_1}
- * \rceil@f$, …, @f$n_{d-1} = \lceil n / (n_0 \cdots n_{d-2}) \rceil@f$.
+ * we sort with a new value of @f$n@f$, as follows: @f$n_j =
+ * \lceil n^{\alpha_j} \rceil@f$, for @f$j = 0,\dots,d-1@f$.
  * These values are saved in case we use the same @f$n@f$ the next time. They
  * give @f$p = n_0 \cdots n_{d-1} \ge n@f$. The batch size at level @f$j@f$
  * is again @f$n_{j+1} \cdots n_{d-1}@f$. When @f$n < p@f$, some batches (the
@@ -109,7 +108,7 @@ public class BatchSort<T extends MultiDimComparable<? super T>> implements Multi
       if (batchExponents == null)
          throw new NullPointerException("batchExponents is null");
       this.batchExponents = batchExponents;
-			useExponents = true;
+	 useExponents = true;
       dimension = batchExponents.length;
       batchNumbers = new int[dimension];
       double sum = 0.0;

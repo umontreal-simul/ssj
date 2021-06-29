@@ -51,6 +51,8 @@ import java.net.MalformedURLException;
  * Since each @f$m_{j,c}@f$ is odd, the first @f$k@f$ rows of each
  * @f$\mathbf{C}_j@f$ form a non-singular upper triangular matrix whose
  * diagonal elements are all ones.
+ * The first one, @f$\mathbf{C}_0@f$, is the identity matrix, with @f$w-k@f$
+ * rows of zeros at the bottom.
  *
  * For each dimension @f$j@f$, the integers @f$m_{j,c}@f$ are defined by
  * selecting a primitive polynomial over @f$\mathbb F_2@f$ of degree
@@ -132,7 +134,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
     * instead of this constructor.
     *
     *  @param k            there will be 2^k points
-    *  @param r            number of rows of the generator matrices
+    *  @param r            number of rows of the generator matrices.
     *  @param w            number of output digits after a random digital shift
     *  @param dim          dimension of the point set
     */
@@ -154,7 +156,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
          throw new IllegalArgumentException
             ("One must have k < 31 and k <= r <= w <= 31 for SobolSequence");
       numCols   = k;
-      numRows   = r;   // Not used?
+      numRows   = r;   // Used in DigitalNetBase2, to read and print matrices and for interlacing.
       outDigits = w;
       numPoints = (1 << k);
       this.dim  = dim;
@@ -247,13 +249,13 @@ public class SobolSequence extends DigitalSequenceBase2 {
     * polynomial (the first and the last coefficients are always 1), and
     * @f$m_i@f$ are the direction numbers. Thus if @f$a = (a_1 a_2
     * …a_{s-1})_2@f$ for a given @f$s@f$, then the polynomial is @f$x^s +
-    * a_1x^{s-1} + a_2x^{s-2} + \cdots+ a_{s-1} x + 1@f$. For example, if
-    * @f$s=4@f$ and @f$a=4 = 100_2@f$, then the polynomial is @f$x^4 + x^3
-    * +1@f$.
+    * a_1x^{s-1} + a_2x^{s-2} + \cdots+ a_{s-1} x + 1@f$, so @f$a_0 = a_s = 1@f$. 
+    * For example, if @f$s=4@f$ and @f$a=4 = 100_2@f$, then the polynomial 
+    * is @f$x^4 + x^3 +1@f$.
     *
     * Several files of parameters for Sobol sequences in this format are given
     * on [F. Kuo’s Web site](http://web.maths.unsw.edu.au/~fkuo/sobol/) up to
-    * very high dimensions.
+    * 21201 dimensions.
     * The different files give parameters that were selected using different criteria.
     * To avoid waiting for a file to download every time a SobolSequence object
     * is created, one should download the desired files and store them locally
@@ -280,7 +282,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
 
       // Dimension d = 1
       int d = 1;
-      poly_from_file[d - 1] = 1;
+      poly_from_file[0] = 1;
 
       // Read the direction number file up to a certain number of dimension dim
       try {
@@ -411,7 +413,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
       int start, degree, nextCol;
       int i, j, c;
 
-      // the first dimension, j = 0.
+      // the first dimension, j = 0.  This is the identity matrix.
       for (c = 0; c < numCols; c++)
          genMat[c] = (1 << (outDigits-c-1));
 
@@ -420,8 +422,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
          // if a direction number file was provided, use it
          int polynomial = (filename != null ? poly_from_file[j] : poly[j]);
          // find the degree of primitive polynomial f_j
-         for (degree = MAXDEGREE; ((polynomial >> degree) & 1) == 0; degree--)
-            ;
+         for (degree = MAXDEGREE; ((polynomial >> degree) & 1) == 0; degree--);
          // Get initial direction numbers m_{j,0},..., m_{j,degree-1}.
          start = j * numCols;
          for (c = 0; (c < degree && c < numCols); c++) {
@@ -447,7 +448,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
       int start, degree, nextCol;
       int i, j, c;
 
-      // the first dimension, j = 0.
+      // the first dimension, j = 0.  Will be the reflected identity.
       for (c = 0; c < numCols; c++)
          genMat[c] = (1 << (outDigits-numCols+c));
 
@@ -481,7 +482,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
     protected int[] poly_from_file;
 
     /**
-     * Ordered list of the first `MAXDIM` primitive polynomials. 
+     * Ordered list of the first `MAXDIM = 360` primitive polynomials. 
      */
     protected static final int[] poly = {
      1, 3, 7, 11, 13, 19, 25, 37, 59,
@@ -534,7 +535,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
    /**
     *  The default direction numbers.  For @f$j > 0@f$ and @f$c < c_j@f$,
     *  `minit[j-1][c]` contains the integer @f$m_{j,c}@f$.
-    * The values for @f$j=0@f$ are not stored, since @f$\boldmath{C}_0@f$ is the identity matrix.
+    * The values for @f$j=0@f$ are not stored, since @f$\mathbf{C}_0@f$ is the identity matrix.
     */
    protected static final int minit[][] = {
      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
