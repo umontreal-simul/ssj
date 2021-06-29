@@ -26,7 +26,6 @@
 package umontreal.ssj.hups;
 
 import java.io.*;
-import java.net.URL;
 import java.net.MalformedURLException;
 import umontreal.ssj.util.PrintfFormat;
 

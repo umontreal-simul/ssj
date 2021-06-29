@@ -58,7 +58,7 @@ public class Replicator implements RandomIntegrator {
     * method: the number of replications multiplied by the number of points.
     *
     */
-   @Override public int getTotalSimulations() {
+   public int getTotalSimulations() {
       return getNumReplicates() * getNumPoints();
    }
 
@@ -68,7 +68,7 @@ public class Replicator implements RandomIntegrator {
     * Sets the random stream of the point set randomization to \c stream.
     *
     */
-   @Override public void setStream(RandomStream stream) {
+   public void setStream(RandomStream stream) {
       integrator.setStream(stream);
    }
 
@@ -86,7 +86,7 @@ public class Replicator implements RandomIntegrator {
     * The output values are added to the statistical collector \c statValue.
     *
     */
-   @Override public void integrate (MonteCarloModelDouble model, Tally statValue) {
+   public void integrate (MonteCarloModelDouble model, Tally statValue) {
 	  statValue.init();
       for (int i = 0; i < nReplicates; i++)
          statValue.add(integrator.integrate(model));
@@ -96,7 +96,7 @@ public class Replicator implements RandomIntegrator {
     * Shorthand to integrate without having to pass a Tally object.
     *
     */
-   @Override public double integrate (MonteCarloModelDouble model) {
+   public double integrate (MonteCarloModelDouble model) {
       if (statValue == null)
          this.statValue = new Tally();
       else
@@ -111,7 +111,7 @@ public class Replicator implements RandomIntegrator {
     * The output values are added to the statistical collector \c stat.
     *
     */
-   @Override public void integrate (MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> stat) {
+   public void integrate (MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> stat) {
       double[] val = new double[stat.size()];
       ListOfTallies<Tally> innerStat = ListOfTallies.createWithTally(stat.size());
 

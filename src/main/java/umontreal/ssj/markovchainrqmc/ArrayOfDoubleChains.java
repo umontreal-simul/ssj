@@ -12,10 +12,16 @@ import java.util.Arrays;
  * with @f$n@f$ clones of a  @ref MarkovChain, we use a *single*
  * @ref MarkovChainDouble object for all the chains. The states of the chains
  * are maintained in an array of real numbers (<tt>double</tt>) and the
- * MarkovChainDouble.nextStepDouble method is used to advance each chain by
+ * @ref MarkovChainDouble.nextStepDouble method is used to advance each chain by
  * one step. The performance measure is assumed to be additive over all steps
- * of all copies of the chain. The sum is cumulated in a *single* accumulator
+ * of all copies of the chain. The sum is maintained in a *single* accumulator
  * for all copies of the chain, updated at each step of each copy.
+ * 
+ * Another difference with @ref ArrayOfComparableChains is that here, no coordinate
+ * of the RQMC points is used for the sort.  The points are assumed to be sorted 
+ * correctly but not by their first coordinate.  It is assumed that the points are sorted
+ * by a virtual (implicit) extra coordinate which is @f$i/n@f$ for point @f$i@f$, so the 
+ * first coordinate must *not* be @f$i/n@f$. 
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -96,16 +102,15 @@ public class ArrayOfDoubleChains extends ArrayOfComparableChains {
       boolean allStopped = true;
       p.randomize(randomization);        // Randomize point set.
       PointSetIterator stream = p.iterator ();
-      stream.resetStartStream (); // Beginning of pt set
+      stream.resetStartStream (); // Beginning of point set.
       for (int i = 0; i < n; i++) {
           if(state[i] == Double.POSITIVE_INFINITY) continue;
           state[i] = baseChain.nextStepDouble (step, state[i], stream);
           stream.resetNextSubstream ();
           if(state[i] == Double.POSITIVE_INFINITY){
              perfState[i] = baseChain.getPerformance();
-          }else{
-             perfState[i] = baseChain.getPerformanceDouble(state[i],step);
-          }
+          } else
+             perfState[i] = baseChain.getPerformanceDouble (state[i], step);
           allStopped = allStopped && state[i] == Double.POSITIVE_INFINITY;
       }
       return allStopped;
@@ -119,7 +124,9 @@ public class ArrayOfDoubleChains extends ArrayOfComparableChains {
     * randomized using the stored
     * @ref umontreal.ssj.hups.PointSetRandomization. The dimension of
     * <tt>p</tt> must be at least as large as the number of uniforms
-    * required to simulate one step of the chain. Returns the average
+    * required to simulate one step of the chain. That is, no coordinate is
+    * used for the sort, so the user must be careful that the points of <tt>p</tt>
+    * are *not* sorted by their first coordinate.  Returns the average
     * performance per run.
     */
    public double simulArrayRQMC (PointSet p, int numSteps) {
@@ -129,7 +136,6 @@ public class ArrayOfDoubleChains extends ArrayOfComparableChains {
       for (int step = 0; step < numSteps && !allStopped; step++) {
          sortChains();
          allStopped = simulOneStepArrayRQMC(step, p);
-
       }
       return calcMeanPerf();
    }
@@ -161,7 +167,6 @@ public class ArrayOfDoubleChains extends ArrayOfComparableChains {
       for(int i=0;i<n;++i)
          sb.append (" ; " + PrintfFormat.g(15, 6, state[i]));
       sb.append("PrintfFormat.NEWLINE");
-
       return sb.toString();
    }
 } 

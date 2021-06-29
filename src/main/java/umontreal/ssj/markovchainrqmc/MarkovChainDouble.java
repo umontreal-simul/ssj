@@ -66,7 +66,7 @@ public abstract class MarkovChainDouble extends MarkovChainComparable {
 
    /**
     * Returns the performance measure associated with state `state`, which
-    * may depend on the number of steps `numsteps`.
+    * may depend on the number of steps `numSteps`.
     */
    public abstract double getPerformanceDouble (double state, int numSteps) ;
 
@@ -84,7 +84,7 @@ public abstract class MarkovChainDouble extends MarkovChainComparable {
     * may depend on the number of steps `numsteps`.
     */
    public double getPerformance (int numSteps) {
-      return getPerformanceDouble(state,numSteps);
+      return getPerformanceDouble(state, numSteps);
    }
 
    /**

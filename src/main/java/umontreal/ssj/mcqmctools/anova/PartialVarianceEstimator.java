@@ -99,7 +99,7 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
     * \li \c vars[\c nSets+1] contains the square of the above correction.
     *
     */
-   @Override public void simulate (RandomStream stream) {
+   public void simulate (RandomStream stream) {
 
       // initialize storage
       if (vars == null || vars.length != coordSets.size() + 2)
@@ -152,7 +152,7 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
    }
    
 
-   @Override public double[] getPerformance () {
+   public double[] getPerformance () {
 	   return vars;
 	   }
 	   

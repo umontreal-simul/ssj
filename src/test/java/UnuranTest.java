@@ -1,5 +1,5 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 import umontreal.ssj.randvar.UnuranContinuous;
 import umontreal.ssj.randvar.UnuranDiscreteInt;
 import umontreal.ssj.rng.MRG31k3p;
@@ -22,7 +22,7 @@ public class UnuranTest {
       };
       UnuranContinuous gen = new UnuranContinuous(new MRG31k3p(), "normal()");
       for (int i = 0; i < expected.length; i++)
-         assertEquals("output[" + i + "]", expected[i], gen.nextDouble(), 1e-9);
+         assertEquals(expected[i], gen.nextDouble(), 1e-9, "output[" + i + "]");
    }
 
    @Test
@@ -30,6 +30,6 @@ public class UnuranTest {
       final int[] expected = new int[]{ 11, 8, 9, 7, 11, 9, 10, 6, 9, 15 };
       UnuranDiscreteInt gen = new UnuranDiscreteInt(new MRG31k3p(), "poisson(10)");
       for (int i = 0; i < expected.length; i++)
-         assertEquals("output[" + i + "]", expected[i], gen.nextInt());
+         assertEquals(expected[i], gen.nextInt(), "output[" + i + "]");
    }
 }

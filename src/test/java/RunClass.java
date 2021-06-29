@@ -1,4 +1,6 @@
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -150,7 +152,7 @@ public class RunClass {
             if (it2.next().trim().length() > 0)
                 trailingLines += 1;
         }
-        assertEquals(label + ":" + lineNum + " trailing lines", 0, trailingLines);
+        assertEquals(0, trailingLines, label + ":" + lineNum + " trailing lines");
     }
 }
 
