@@ -333,6 +333,7 @@ public class SobolSequence extends DigitalSequenceBase2 {
             if (d > dim)
                break;
 
+            // We add a 1 on each side!  Those '1' had been removed in the file.
             poly_from_file[d - 1] = (1 << s) ^ (a << 1) ^ 1;
 
             // Parse the s direction numbers
