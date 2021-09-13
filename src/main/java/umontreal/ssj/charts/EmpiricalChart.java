@@ -36,7 +36,6 @@ import   org.jfree.data.xy.XYSeries;
 
 import   cern.colt.list.DoubleArrayList;
 
-import   java.util.ListIterator;
 import   java.util.Locale;
 import   java.util.Formatter;
 import   javax.swing.JFrame;
@@ -251,7 +250,6 @@ public class EmpiricalChart extends XYChart {
     */
    public String toLatex (double width, double height) {
       double xunit, yunit;
-      double[] save = new double[4];
 
       if(dataset.getSeriesCollection().getSeriesCount() == 0)
          throw new IllegalArgumentException("Empty chart");
@@ -308,6 +306,7 @@ public class EmpiricalChart extends XYChart {
       }
       if (latexDocFlag)
          formatter.format("\\end{document}%n");
+      formatter.close();     //  Ok  ????????
       return formatter.toString();
    }
 

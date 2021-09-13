@@ -32,8 +32,6 @@ import   cern.colt.list.DoubleArrayList;
 
 import   java.util.Locale;
 import   java.util.Formatter;
-import   java.util.List;
-import   java.util.ListIterator;
 import   java.awt.Color;
 
 /**
@@ -360,6 +358,7 @@ public class EmpiricalSeriesCollection extends SSJXYSeriesCollection {
    public void setDashPattern (int series, String dashPattern) {
       this.dashPattern[series] = dashPattern;
    }
+   
    public String toLatex (double XScale, double YScale,
                           double XShift, double YShift,
                           double xmin, double xmax,
@@ -373,7 +372,6 @@ public class EmpiricalSeriesCollection extends SSJXYSeriesCollection {
 
       XYSeriesCollection tempSeriesCollection = (XYSeriesCollection)seriesCollection;
       Formatter formatter = new Formatter(Locale.US);
-      double var;
       for (int i = tempSeriesCollection.getSeriesCount()-1; i >= 0; i--) {
 
          Color color = (Color)renderer.getSeriesPaint(i);
@@ -384,7 +382,7 @@ public class EmpiricalSeriesCollection extends SSJXYSeriesCollection {
                               colorString, color.getRed()/255.0, color.getGreen()/255.0, color.getBlue()/255.0);
          }
 
-         double currentX, currentY, nextX, nextY;
+         double currentX, nextX;
          for (int j = 0; j < tempSeriesCollection.getItemCount(i); j++) {
             currentX = tempSeriesCollection.getXValue(i, j);
             if (j == tempSeriesCollection.getItemCount(i)-1)

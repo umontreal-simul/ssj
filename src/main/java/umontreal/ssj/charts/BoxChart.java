@@ -30,9 +30,6 @@ import   org.jfree.chart.ChartPanel;
 import   org.jfree.chart.plot.CategoryPlot;
 import   org.jfree.chart.renderer.category.BoxAndWhiskerRenderer;
 import   org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
-
-import   java.util.Locale;
-import   java.util.Formatter;
 import   javax.swing.JFrame;
 
 /**
