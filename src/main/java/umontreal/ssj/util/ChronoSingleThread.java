@@ -1,11 +1,11 @@
 /*
  * Class:        ChronoSingleThread
- * Description:  deprecated
+ * Description:  Compute the CPU time for a single thread
  * Environment:  Java
  * Software:     SSJ 
  * Copyright (C) 2001  Pierre L'Ecuyer and Universite de Montreal
  * Organization: DIRO, Universite de Montreal
- * @author       
+ * @author       Éric Buist
  * @since
  *
  *
@@ -28,31 +28,58 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 
 /**
- * **This class is deprecated** but kept for compatibility with older
- * versions of SSJ.  @ref Chrono should be used instead of
- * @ref ChronoSingleThread. The  @ref ChronoSingleThread class extends the
- * @ref AbstractChrono class and computes the CPU time for the current thread
- * only. This is the simplest way to use chronos. Classes
- * @ref AbstractChrono,  @ref SystemTimeChrono,  @ref GlobalCPUTimeChrono and
- * @ref ThreadCPUTimeChrono provide different chronos implementations (see
- * these classes to learn more about SSJ chronos).
+ * Extends the  @ref AbstractChrono class to compute the CPU time for a
+ * single thread. This uses the getThreadCpuTime function from a @ref ThreadMXBean object,
+ * from  @ref java.lang.management.ManagementFactory.
+ * If the associated thread is dead, the returned time will be 0.
  *
  * <div class="SSJ-bigskip"></div>
  */
-@Deprecated
 public class ChronoSingleThread extends AbstractChrono {
-
-   private ThreadCPUTimeChrono chrono = new ThreadCPUTimeChrono();
+   private  long           myThreadId;
+   static   ThreadMXBean   threadMXBean = null;
 
    protected void getTime (long[] tab) {
-         chrono.getTime(tab);
+      long rawTime = getTime();
+      final long DIV = 1000000000L;
+      long seconds = rawTime/DIV;
+      long micros = (rawTime % DIV)/1000L;
+      tab[0] = seconds;
+      tab[1] = micros;
+   }
+
+   protected long getTime() {
+      if (threadMXBean == null) {
+         // We use lazy initialization to avoid a potential exception being wrapped into a confusing
+         // ExceptionInInitializerError. That would happen if this initialization was in a static block instead of
+         // in this method.
+         threadMXBean = ManagementFactory.getThreadMXBean();
+         if (!threadMXBean.isThreadCpuTimeEnabled())
+            // Call this only when necessary, because this can throw a SecurityException if
+            // run under a security manager.
+            threadMXBean.setThreadCpuTimeEnabled (true);
+      }
+      long time = threadMXBean.getThreadCpuTime(myThreadId);
+      return time < 0 ? 0 : time;
    }
 
    /**
-    * Constructs a `ChronoSingleThread` object and initializes it to zero.
+    * Constructs a `ChronoSingleThread` object associated with current
+    * thread and initializes it to zero.
     */
    public ChronoSingleThread() {
-      chrono.init();
+      super();
+      myThreadId = Thread.currentThread().getId();
+      init();
+   }
+
+   /**
+    * Constructs a `ChronoSingleThread` object associated with the given
+    * Thread variable and initializes it to zero.
+    */
+   public ChronoSingleThread(Thread inThread) {
+      super();
+      myThreadId = inThread.getId();
       init();
    }
 

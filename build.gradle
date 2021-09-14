@@ -3,14 +3,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.ysb33r.gradle:doxygen-gradle-plugin:0.6'
+        classpath 'org.ysb33r.gradle:doxygen-gradle-plugin:0.7.0'
     }
 }
 
 plugins {
     id 'java-library'
     id 'c'
-    id 'org.ysb33r.doxygen' version '0.6'
+    id 'org.ysb33r.doxygen' version '0.7.0'
     id 'distribution'
     id 'maven-publish'
     id 'eclipse'
@@ -58,7 +58,7 @@ publishing {
             from components.java				
 						
             // Populate the pom file
-						pom {
+            pom {
                 name = 'SSJ'
                 description = 'Stochastic Simulation in Java'
                 url = 'http://umontreal-simul.github.io/ssj/'
@@ -78,7 +78,7 @@ doxygen {
     project_number project.version
 
     source new File(projectDir, 'src/main/java')
-    source new File(projectDir, 'src/main/docs/examples/tutorial')
+    // source new File(projectDir, 'src/main/docs/examples/tutorial')
     image_paths new File(projectDir, 'src/main/docs/images')
  
     template 'src/main/docs/Doxyfile'

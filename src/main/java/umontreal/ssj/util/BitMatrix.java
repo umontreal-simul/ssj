@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * This class implements matrices of bits of arbitrary dimensions. Basic
  * facilities for bits operations, multiplications and exponentiations are
- * provided.
+ * provided. Each matrix is represented as a array of `BitVector`.
  *
  * <div class="SSJ-bigskip"></div>
  */

@@ -1,5 +1,5 @@
 /*
- * Class:        ChronoWallTime
+ * Class:        ChronoWall
  * Description:  
  * Environment:  Java
  * Software:     SSJ 
@@ -32,7 +32,7 @@ package umontreal.ssj.util;
  *
  * <div class="SSJ-bigskip"></div>
  */
-public class ChronoWallTime extends AbstractChrono {
+public class ChronoWall extends AbstractChrono {
 
    protected void getTime (long[] tab) {
       long rawTime = System.nanoTime();
@@ -46,7 +46,7 @@ public class ChronoWallTime extends AbstractChrono {
    /**
     * Constructs a new chrono object and initializes it to zero.
     */
-   public ChronoWallTime() {
+   public ChronoWall() {
       super();
       init();
    }

@@ -29,8 +29,8 @@ package umontreal.ssj.util;
    import cern.jet.math.Functions;
 
 /**
- * This class implements a few methods for matrix calculations with `double`
- * numbers.
+ * This class implements a few methods for matrix calculations when the matrix 
+ * entries are in `double`.
  *
  * <div class="SSJ-bigskip"></div>
  */

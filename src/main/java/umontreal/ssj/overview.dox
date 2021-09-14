@@ -5,58 +5,56 @@
  ********************************************************************** 
  * @section REF_0_sec_01 Introduction and overview
  * 
- * SSJ (Stochastic Simulation in Java) is a Java library offering tools
+ * SSJ (Stochastic Simulation in Java) is a Java library that offers software facilities
  * for stochastic (Monte Carlo) simulation @cite sASM07a, @cite sLAW14a.
- * It provides basic facilities for random number generation with multiple
+ * It provides basic tools for random number generation with multiple
  * streams and substreams, implements univariate and multivariate probability
  * distributions and variate generators for them, functions to simulate certain types 
  * of stochastic processes, efficient event-list management tools for 
- * discrete-event simulation, support for an extensive collection of randomized
+ * discrete-event simulation, support for most randomized
  * quasi-Monte Carlo methods, statistical probes to collect data from simulation
  * experiments, statistical estimation and goodness-of-fit methods, 
+ * density estimation methods,
  * some tools to produce plots in LaTeX, and various other classes and methods 
  * that can be useful for simulation.
  * 
- * These tools are organized in a powerful and flexible system (or framework)
+ * These tools are organized in a powerful and flexible system (framework)
  * of packages and classes.
  * SSJ can be used to write simulation programs for stochastic models of various types
  * of real-life systems, simple or very complex.
  * It is also appropriate for implementing Monte Carlo methods for various types
  * of applications.
  * 
- * For discrete-event simulation, commercial tools with
- * drag-and-drop graphical interfaces such as *AnyLogic*, *Arena*, *Automod*,
- * *ProModel*, *Simio*, *Simul8*, *Witness*, and many others, are widely used.
- * Among their advantages, these tools do
+ * For discrete-event simulation, there are several widely-used commercial tools with
+ * drag-and-drop graphical interfaces (e.g., *AnyLogic*, *Arena*, *Automod*,
+ * *ProModel*, *Simio*, *Simul8*, *Witness*), which do
  * not require knowledge of a programming language, provide graphical
  * animation, have automatic facilities to collect statistics and perform
  * experiments, and can sometimes perform optimization to a certain extent.
- * On the other hand, they are often too restrictive, because they are
+ * On the other hand, these tools are often too restrictive, because they are
  * targeted at specific classes of models. With these tools, simulating a
  * system whose logic is complicated or unconventional may become
  * difficult. The graphical and automatic devices also tend to slow down
  * the simulation significantly.  Fast execution times are important for
  * example in a context of optimization, where thousands of variants of a
- * base system may have to be simulated, or for on-line applications where a
+ * base system may have to be simulated, and for on-line applications where a
  * fast response time is required.
- *
  * SSJ, on the other hand, is very flexible and designed to facilitate efficient
  * simulation modeling and programming in the Java language. A first version was described 
  * in @cite sLEC02a and  @cite sLEC05a&thinsp;.
- * It is growing actively: new packages, classes, and methods are added regularly.
  * It can be used freely by anyone and the source code is also freely available.
  
- * The facilities offered are grouped into different packages
+ * The offered facilities are grouped into different packages
  * that are connected to each other.
  * All the packages and classes have a detailed documentation produced by Doxygen.
  * One may also want to look at the old .pdf manuals available at
  * [Old pdf doc](http://www-labs.iro.umontreal.ca/~simul/ssj-2/doc/pdf/);
  * they are out of date but contains more detailed explanations in some parts.
- * (A detailed `.pdf` manual will be available in the future.)
+ * (A detailed `.pdf` manual may be available in the future.)
  * 
  * There is also a tutorial guide that contains a set of commented-out examples of 
  * simulation programs, together with the Java code (see the Documentation section below).
- * Some of these examples are taken from books such as @cite sLAW14a
+ * Some of the examples are taken from books such as @cite sLAW14a
  * and @cite fGLA04a, for example. The best way to start learning SSJ is to study 
  * these examples and refer to the online detailed documentation when needed. 
  *
@@ -84,7 +82,7 @@
  * values, and other types of simple random objects such as random
  * permutations.  The basic type of object here is a *stream* of random numbers.
  *
- *  @ref umontreal.ssj.randvar 
+   @ref umontreal.ssj.randvar 
  *  provides a collection of classes for
  * non-uniform random variate generation, primarily from standard
  * distributions.
@@ -110,7 +108,7 @@
  *  to constructs quasi-Monte Carlo point sets and sequences of various types
  *  (lattices, polynomial lattices, digital nets, etc.) for arbitrary dimension
  *  and cardinality, various uniformity criteria, etc.
- * 
+ *  **This will be moved to a separate Java project, to avoid having SSJ depend on LatNet Builder.** 
  *
  * **Statistical tools:**
  *
@@ -153,16 +151,16 @@
  *
  *  @ref umontreal.ssj.charts
  *  provides tools for construction,
- * visualization, and customization of @f$x--y@f$ plots, histograms, and
- * empirical styled charts from a Java program.
+ * visualization, and customization of @f$x-y@f$ plots, histograms, and
+ * empirical styled charts from a Java program. 
+ * It extends the jfreechart library and offers LaTeX source code as an output option.
  *
  *  @ref umontreal.ssj.simexp
  *  provides facilities for performing simulation
- * experiments using independent replications as well as simulations using
- * batch means.
+ * experiments using independent replications as well as simulations using batch means.
  *
  *  @ref umontreal.ssj.mcqmctools
- * offers some predefined methods to perform Monte Carlo and 
+ * offers simple predefined methods to perform Monte Carlo and 
  *  (randomized) quasi-Monte Carlo experiments.
  *
  *  @ref umontreal.ssj.mcqmctools.anova
@@ -212,11 +210,10 @@
  * @ref umontreal.ssj.hups. The reason is that this class provides a very
  * efficient and convenient implementation of an (automatically) extensible
  * array of <tt>double</tt>, together with several methods for computing
- * statistics for the observations stored in the array (see, e.g.,
- * <tt>Descriptive</tt>).  Using Colt was more efficient than using what was available in Java,
- * at least when we decided to do that around 2002.  
- * The Colt library is distributed with the SSJ
- * package as **colt.jar**.
+ * statistics for the observations stored in the array (see, e.g., <tt>Descriptive</tt>).  
+ * Using Colt for extensible arrays is still more efficient than using standard Java,
+ * even in 2021.  
+ * The Colt library is distributed with the SSJ package as **colt.jar**.
  *
  * The optimization package of Steve Verrill includes Java translations of
  * the [MINPACK](http://simul.iro.umontreal.ca/Uncmin_f77/Minpack_f77.html)
@@ -243,14 +240,12 @@
  * **jcommon-*.jar**. JFreeChart (and JCommon) are used in the SSJ package
  * **charts** to create different kinds of charts.
  *
- * SSJ provides an interface to the
+ * SSJ used to provide an interface to the
  * [UNURAN](http://statistik.wu-wien.ac.at/unuran/)
- *  library for nonuniform random number generation @cite iLEY02a&thinsp;, in
- * the  @ref umontreal.ssj.randvar package. UNURAN does not have to be
- * installed to be used with SSJ, because it is linked statically with the
- * appropriate SSJ native library. However, the UNURAN documentation will be
- * required to take full advantage of the library.
- * 
+ *  library for nonuniform random number generation @cite iLEY02a&thinsp;, 
+ * but this has been removed in the interest of simplifying the build by 
+ * removing dependencies on C code.
+ *
  * The package @ref umontreal.ssj.latnetbuilder provides an interface to
  * [LatNet Builder](http://umontreal-simul.github.io/latnetbuilder/)
  *  which is a C++ library and tool to construct highly-uniform point sets
@@ -280,10 +275,10 @@
  * 
  * SSJ was designed and implemented under the supervision of Pierre L’Ecuyer.
  * A first version was released around 2001.  
- * The following people (by alphabetic order) have contributed significantly to SSJ:
+ * The following people (by alphabetic order) have contributed to SSJ:
  *
  * Mathieu Bague, Sylvain Bonnet, Éric Buist, Wyean Chan, Maxime Dion, Yves Edel, Regina
- * H. S. Hong, Alexander Keller, Pierre L'Ecuyer, Étienne Marcotte, Lakhdar
+ * H. S. Hong, Alexander Keller, Pierre L'Ecuyer, Étienne Marcotte, Pierre Marion, Lakhdar
  * Meliani, David Munger, François Panneton, Florian Puchhammer, Jean-Sebastien Parent-Chartier, 
  * Richard Simard, Clément Teule, Mamadou Thiongane, Pierre-Alexandre Tremblay, Jean Vaucher.
  *
