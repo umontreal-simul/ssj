@@ -41,11 +41,10 @@ import   java.util.Formatter;
 import   javax.swing.JFrame;
 
 /**
- * This class provides additional tools to create and manage empirical plots.
- * Empirical plots are used to plot empirical distributions. The
- * @ref EmpiricalChart class is the simplest way to produce empirical plots
- * only. Each  @ref EmpiricalChart object is linked with an
- * @ref umontreal.ssj.charts.EmpiricalSeriesCollection data set.
+ * Provides tools to create and manage empirical plots, which are used to
+ * plot empirical distributions.  
+ * Each `EmpiricalChart` object is linked with an
+ * `EmpiricalSeriesCollection` data set.
  *
  * <div class="SSJ-bigskip"></div>
  */

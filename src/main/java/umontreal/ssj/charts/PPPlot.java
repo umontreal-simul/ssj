@@ -27,13 +27,13 @@ package umontreal.ssj.charts;
    import java.util.Arrays;
 
 /**
- * This class implements *PP-plot* (or probability-probability plot) objects
- * that compare two probability distributions. The data is given as a list of
- * @f$x@f$-coordinates @f$(x_1, x_2, …, x_n)@f$, and one is given a reference
- * continuous probability distribution @f$F(x)@f$. One first sorts the
- * @f$x_i@f$ in ascending order, then noted @f$x_{(i)}@f$, and plots the
- * points @f$(i/n, F(x_{(i)}))@f$, @f$i= 1, 2, …, n@f$, to see if the data
- * @f$x_i@f$ comes from the reference distribution @f$F(x)@f$. The graph of
+ * Provides *PP-plot* (probability-probability plot) objects
+ * that compare two probability distributions. The data is given as a list
+ * of @f$x@f$-coordinates @f$(x_1, x_2, …, x_n)@f$, and one is given a reference
+ * continuous probability distribution @f$F(x)@f$. One first sorts 
+ * the @f$x_i@f$ in ascending order, then noted @f$x_{(i)}@f$, and plots the
+ * points @f$(i/n, F(x_{(i)}))@f$, @f$i= 1, 2, ..., n@f$, to see if the 
+ * data @f$x_i@f$ comes from the reference distribution @f$F(x)@f$. The graph of
  * the straight line @f$y=x@f$ is also plotted for comparison.
  *
  * <div class="SSJ-bigskip"></div>

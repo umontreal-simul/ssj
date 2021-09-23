@@ -28,11 +28,11 @@ package umontreal.ssj.charts;
 
 /**
  * This class implements *QQ-plot* (or quantile-quantile plot) objects that
- * compare two probability distributions. The data is given as a list of
- * @f$x@f$-coordinates @f$(x_1, x_2, …, x_n)@f$, and one is given a reference
- * continuous probability distribution @f$F(x)@f$. One first sorts the
- * @f$x_i@f$ in ascending order, then noted @f$x_{(i)}@f$, and plots the
- * points @f$(F^{-1}(p_i), x_{(i)})@f$, where @f$i= 1, 2, …, n@f$ and @f$p_i
+ * compare two probability distributions. The data is given as a list
+ * of @f$x@f$-coordinates @f$(x_1, x_2, …, x_n)@f$, and one is given a reference
+ * continuous probability distribution @f$F(x)@f$. One first sorts 
+ * the @f$x_i@f$ in ascending order, then noted @f$x_{(i)}@f$, and plots the
+ * points @f$(F^{-1}(p_i), x_{(i)})@f$, where @f$i= 1, 2, ..., n@f$ and @f$p_i
  * = (i- 1/2)/n@f$, to see if the data @f$x_i@f$ comes from the reference
  * distribution @f$F(x)@f$. The graph of the straight line @f$y=x@f$ is also
  * plotted for comparison.
@@ -74,10 +74,10 @@ public class QQPlot extends XYLineChart {
     * Constructs a new `QQPlot` instance using the points `X`. `title` is
     * a title, `XLabel` is a short description of the @f$x@f$-axis, and
     * `YLabel` a short description of the @f$y@f$-axis. The plot is a
-    * QQ-plot of the points @f$(F^{-1}(p_i), x_{(i)})@f$, @f$i= 1, 2, …,
+    * QQ-plot of the points @f$(F^{-1}(p_i), x_{(i)})@f$, @f$i= 1, 2, ...,
     * n@f$, where @f$p_i = (i- 1/2)/n@f$, @f$x_i = @f$<tt>
-    * X[</tt>@f$i@f$<tt>-1]</tt>, @f$x_{(i)}@f$ are the sorted points, and
-    * @f$x = F^{-1}(p) = @f$<tt> dist.inverseF(</tt>@f$p@f$<tt>)</tt>. The
+    * X[</tt>@f$i@f$<tt>-1]</tt>, @f$x_{(i)}@f$ are the sorted points, 
+    * and @f$x = F^{-1}(p) = @f$<tt> dist.inverseF(</tt>@f$p@f$<tt>)</tt>. The
     * points `X` are not sorted.
     *  @param title        chart title.
     *  @param XLabel       Label on @f$x@f$-axis.
@@ -119,8 +119,8 @@ public class QQPlot extends XYLineChart {
     * description of the @f$y@f$-axis. The input vectors in `data`
     * represents several sets of @f$x@f$-points. @f$r@f$ determine the set
     * of points to be plotted in the QQ-plot, that is, one will plot only
-    * the points `data[r][i]`, for @f$i=0, 1, …, (n-1)@f$ and a given
-    * @f$r@f$, where @f$n@f$ is the number of points in set @f$r@f$. The
+    * the points `data[r][i]`, for @f$i=0, 1, …, (n-1)@f$ and a 
+    * given @f$r@f$, where @f$n@f$ is the number of points in set @f$r@f$. The
     * points are assumed to follow the distribution `dist`.
     *  @param title        chart title.
     *  @param XLabel       Label on @f$x@f$-axis.

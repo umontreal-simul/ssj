@@ -41,10 +41,9 @@ import   java.util.Formatter;
 import   javax.swing.JFrame;
 
 /**
- * This class provides tools to create and manage histograms. The
- * @ref HistogramChart class is the simplest way to produce histograms. Each
- * @ref HistogramChart object is linked with an
- * @ref umontreal.ssj.charts.HistogramSeriesCollection dataset.
+ * Provides tools to create and manage histograms.  Each
+ * `HistogramChart` object is linked with an
+ * `HistogramSeriesCollection` dataset.
  *
  * <div class="SSJ-bigskip"></div>
  */

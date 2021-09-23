@@ -33,18 +33,16 @@ import   org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
 import   javax.swing.JFrame;
 
 /**
- * This class provides tools to create and manage box-and-whisker plots. Each
- * @ref BoxChart object is linked with a
- * @ref umontreal.ssj.charts.BoxSeriesCollection data set.
- *
+ * Provides tools to create and manage box-and-whisker plots. 
+ * Each `BoxChart` object is linked with a `BoxSeriesCollection` data set.
+ * 
  * A boxplot is a convenient way of viewing sets of numerical data through
  * their summaries: the smallest observation, first quartile (@f$Q_1 =
  * x_{.25}@f$), median (@f$Q_2 = x_{.5}@f$), third quartile (@f$Q_3 =
  * x_{.75}@f$), and largest observation. Sometimes, the mean and the outliers
  * are also plotted.
- *
- * In the charts created by this class, the box has its lower limit at
- * @f$Q_1@f$ and its upper limit at @f$Q_3@f$. The median is indicated by the
+ * In the charts created by this class, the box has its lower limit at @f$Q_1@f$ 
+ * and its upper limit at @f$Q_3@f$. The median is indicated by the
  * line inside the box, while the mean is at the center of the filled circle
  * inside the box. Define the interquartile range as (@f$Q_3 - Q_1@f$). Any
  * data observation which is more than @f$1.5(Q_3 - Q_1)@f$ lower than the
@@ -52,8 +50,7 @@ import   javax.swing.JFrame;
  * considered an outlier. The smallest and the largest values that are not
  * outliers are connected to the box with a vertical line or "whisker" which
  * is ended by a horizontal line. Outliers are indicated by hollow circles
- * outside the whiskers. Triangles indicate the existence of very far
- * outliers.
+ * outside the whiskers. Triangles indicate the existence of very far outliers.
  *
  * <div class="SSJ-bigskip"></div>
  */

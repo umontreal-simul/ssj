@@ -40,10 +40,8 @@ import   cern.colt.list.DoubleArrayList;
 import   javax.swing.JFrame;
 
 /**
- * This class provides tools to create and manage curve plots. Using the
- * @ref XYLineChart class is the simplest way to produce curve plots only.
- * Each  @ref XYLineChart object is linked with a
- * @ref umontreal.ssj.charts.XYListSeriesCollection data set.
+ * Provides tools to create and manage curve plots. 
+ * Each `XYLineChart` object is linked with a `XYListSeriesCollection` data set.
  *
  * <div class="SSJ-bigskip"></div>
  */

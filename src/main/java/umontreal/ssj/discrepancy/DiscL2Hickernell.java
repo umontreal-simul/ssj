@@ -29,40 +29,31 @@ package umontreal.ssj.discrepancy;
  * discrepancy</strong> in @cite vHIC98a&thinsp; (eq. 5.1c) for a point set.
  * It is based on the reproducing kernel Hilbert space which consists of
  * functions with square-integrable first-order derivatives, and whose
- * reproducing kernel is given by
- * @f[
- *   K(\mathbf{x},\mathbf{y}) = \prod_{j=1}^s \eta_j(x_j,y_j),
- * @f]
- * where
- * @f[
- *   \eta_j(x,y) = 1 + \frac{|x-a_j| + |y - a_j| - |x-y|}{2}.
- * @f]
- * The inner product is given by
- * @f[
- *   \langle f, g \rangle= \sum_{\mathfrak u\subseteq S} \int_{[0, 1)^{|\mathfrak u|}} \frac{\partial^{|\mathfrak u|}f(\mathbf{x}_{\mathfrak u}, \boldsymbol a)}{\partial\mathbf{x_{\mathfrak u}}} \frac{\partial^{|\mathfrak u|}g(\mathbf{x}_{\mathfrak u}, \boldsymbol a)}{\partial\mathbf{x_{\mathfrak u}}} d\mathbf{x_{\mathfrak u}},
- * @f]
- * where @f$S@f$ is the set of coordinates indices @f$\{1, 2, …, s\}@f$,
- * @f$|\mathfrak u|@f$ denotes the cardinality of @f$\mathfrak u@f$,
- * @f$\mathbf{x_{\mathfrak u}}@f$ denotes the vector made of the components
- * of @f$ \mathbf{x} @f$ whose indices are in @f$\mathfrak u@f$, and
- * @f$\boldsymbol a \in[0, 1]^s@f$ is called the anchor.
+ * reproducing kernel is given 
+ * by  @f[
+ *     K(\mathbf{x},\mathbf{y}) = \prod_{j=1}^s \eta_j(x_j,y_j),  @f]
+ * where  @f[
+ *   \eta_j(x,y) = 1 + \frac{|x-a_j| + |y - a_j| - |x-y|}{2}. @f]
+ * The inner product is given 
+ * by  @f[
+ *   \langle f, g \rangle= \sum_{\mathfrak u\subseteq S} \int_{[0, 1)^{|\mathfrak u|}} \frac{\partial^{|\mathfrak u|}f(\mathbf{x}_{\mathfrak u}, \boldsymbol a)}{\partial\mathbf{x_{\mathfrak u}}} \frac{\partial^{|\mathfrak u|}g(\mathbf{x}_{\mathfrak u}, \boldsymbol a)}{\partial\mathbf{x_{\mathfrak u}}} d\mathbf{x_{\mathfrak u}},  @f]
+ * where @f$S@f$ is the set of coordinates indices @f$\{1, 2, ..., s\}@f$, @f$|\mathfrak u|@f$ 
+ * denotes the cardinality of @f$\mathfrak u@f$,  @f$\mathbf{x_{\mathfrak u}}@f$ 
+ * denotes the vector made of the components
+ * of @f$ \mathbf{x} @f$ whose indices are in @f$\mathfrak u@f$, and @f$\boldsymbol a \in[0, 1]^s@f$ is called the anchor.
  *
  * The worst-case error for this function space is the @f$\mathcal{L}_2@f$
- * version of the star discrepancy @f$\mathcal{D}_2^*@f$. Choosing
- * @f$\boldsymbol a =\mathbf{1}@f$, Hickernell obtained the formula
- * @anchor REF_discrepancy_DiscL2Hickernell_disc_hicks
- * @f[
- *   [\mathcal{D}_2^*(\mathcal{P})]^2 = \left(\frac{4}{3}\right)^s - \frac{2}{n} \sum_{i=1}^n \prod_{k=1}^s \left(\frac{3 - z_{ik}^2}{2}\right) + \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \prod_{k=1}^s \Bigl(2 - \max(z_{ik}, z_{jk})\Bigr), \tag{disc.hicks}
- * @f]
+ * version of the star discrepancy @f$\mathcal{D}_2^*@f$.
+ * Choosing @f$\boldsymbol a =\mathbf{1}@f$, Hickernell obtained the
+ * formula @anchor REF_discrepancy_DiscL2Hickernell_disc_hicks  @f[
+ *   [\mathcal{D}_2^*(\mathcal{P})]^2 = \left(\frac{4}{3}\right)^s - \frac{2}{n} \sum_{i=1}^n \prod_{k=1}^s \left(\frac{3 - z_{ik}^2}{2}\right) + \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \prod_{k=1}^s \Bigl(2 - \max(z_{ik}, z_{jk})\Bigr), \tag{disc.hicks}   @f]
  * where @f$n@f$ is the number of points of set @f$\mathcal{P}@f$, @f$s@f$ is
  * the dimension of the points, and @f$z_{ik}@f$ is the @f$k@f$-th coordinate
  * of point @f$i@f$.
  *
- * In 1 dimension, the formula is equivalent to
- * @anchor REF_discrepancy_DiscL2Hickernell_disc_hickD1
- * @f[
- *   [\mathcal{D}_2^*(\mathcal{P})]^2 = \frac{1}{3} + \frac{1}{n} \sum_{i=1}^n {z_i^2} - \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \max(z_i, z_j), \tag{hickD1}
- * @f]
+ * In 1 dimension, the formula is equivalent 
+ * to @anchor REF_discrepancy_DiscL2Hickernell_disc_hickD1    @f[
+ *   [\mathcal{D}_2^*(\mathcal{P})]^2 = \frac{1}{3} + \frac{1}{n} \sum_{i=1}^n {z_i^2} - \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \max(z_i, z_j), \tag{hickD1}  @f]
  * where @f$z_i@f$ is the coordinate of point @f$i@f$.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>

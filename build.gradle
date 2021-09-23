@@ -84,6 +84,16 @@ doxygen {
     template 'src/main/docs/Doxyfile'
 }
 
+tasks.withType(Javadoc) {
+      failOnError false
+      options.addStringOption('Xdoclint:none', '-quiet')
+      options.addStringOption('encoding', 'UTF-8')
+      options.addStringOption('charSet', 'UTF-8')
+}
+
+// task generateAPIDocs(type: Javadoc) {
+//   options.header = '<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>';
+// }
 
 
 // ****************************** DATA ******************************
