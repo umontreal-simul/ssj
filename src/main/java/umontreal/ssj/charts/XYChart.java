@@ -27,7 +27,7 @@ import java.io.*;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.annotations.*;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.ui.TextAnchor;
+import org.jfree.chart.ui.TextAnchor;
 import javax.swing.JFrame;
 
 /**

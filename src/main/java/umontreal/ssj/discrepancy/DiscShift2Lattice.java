@@ -29,17 +29,17 @@ package umontreal.ssj.discrepancy;
  * This class computes the same **discrepancy** for randomly shifted points
  * of a set @f$\mathcal{L}@f$ as given in eq. (
  * {@link REF_discrepancy_DiscShift2_shift2 shift2} ) for class
- * @ref DiscShift2, but for the special case when the points are the nodes of
+ * `DiscShift2`, but for the special case when the points are the nodes of
  * an integration lattice @cite vHIC02a&thinsp; (eq. 16). It is given by
  * @anchor REF_discrepancy_DiscShift2Lattice_shift2lat
- * @f[
+ *   @f[
  *   [\mathcal{D}(\mathcal{L})]^2 = -1 + \frac{1}{n} \sum_{i=1}^n \prod_{r=1}^s \left[1 + \frac{\gamma_r^2}{2} B_2(x_{ir}) - \frac{\gamma_r^4}{12}B_4(x_{ir}) \right], \tag{shift2lat}
- * @f]
+ *   @f]
  * For a *1-dimensional* lattice, the discrepancy becomes
  * @anchor REF_discrepancy_DiscShift2Lattice_shift2dim1lat
- * @f[
+ *   @f[
  *   [\mathcal{D}(\mathcal{L})]^2 = \frac{1}{n} \sum_{i=1}^n \left[\frac{\gamma^2}{2} B_2(x_i) - \frac{\gamma^4}{12}B_4(x_i)\right]. \tag{shift2dim1lat}
- * @f]
+ *   @f]
  * Computing the discrepancy for a lattice is much faster than for a general
  * point set.
  *

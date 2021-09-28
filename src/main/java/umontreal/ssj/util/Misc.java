@@ -23,7 +23,6 @@
  *
  */
 package umontreal.ssj.util;
-   import umontreal.ssj.functions.MathFunction;
 
 /**
  * This class provides miscellaneous functions that are hard to classify.

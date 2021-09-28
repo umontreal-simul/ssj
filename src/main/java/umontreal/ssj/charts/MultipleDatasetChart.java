@@ -39,7 +39,7 @@ import   javax.swing.JFrame;
 /**
  * Provides tools to plot many datasets on the same chart. This class is
  * mainly used to draw plots with different styles. Class
- * @ref umontreal.ssj.charts.XYChart and its subclasses are to be preferred
+ * `XYChart` and its subclasses are to be preferred
  * to draw simple charts with one style. Datasets are stored in an
  * `ArrayList`. The first dataset is called as the *primary dataset*.
  *

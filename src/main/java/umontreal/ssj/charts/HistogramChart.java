@@ -41,10 +41,9 @@ import   java.util.Formatter;
 import   javax.swing.JFrame;
 
 /**
- * This class provides tools to create and manage histograms. The
- * @ref HistogramChart class is the simplest way to produce histograms. Each
- * @ref HistogramChart object is linked with an
- * @ref umontreal.ssj.charts.HistogramSeriesCollection dataset.
+ * Provides tools to create and manage histograms.  Each
+ * `HistogramChart` object is linked with an
+ * `HistogramSeriesCollection` dataset.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -272,7 +271,6 @@ public HistogramSeriesCollection getSeriesCollection() {
          DoubleArrayList newTicks = new DoubleArrayList();
          ListIterator binsIter = ((HistogramSeriesCollection)this.dataset).getBins(s).listIterator();
 
-         int i = 0;
          HistogramBin prec = (HistogramBin)binsIter.next();
          double var;
          newTicks.add(prec.getStartBoundary());
@@ -335,7 +333,6 @@ public HistogramSeriesCollection getSeriesCollection() {
     */
    public String toLatex (double width, double height) {
       double xunit, yunit;
-      double[] save = new double[4];
 
       if (dataset.getSeriesCollection().getSeriesCount() == 0)
          throw new IllegalArgumentException("Empty chart");

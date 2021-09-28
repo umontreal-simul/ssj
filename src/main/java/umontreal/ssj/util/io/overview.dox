@@ -1,7 +1,7 @@
 /**
  * @package umontreal.ssj.util.io
  *
- * This package provides tools for exporting data to text and binary files,
+ * This subpackage provides tools for exporting data to text and binary files,
  * as well as for importing data from files.
  *
  * Each of the `write()` methods takes a *field label* as their first

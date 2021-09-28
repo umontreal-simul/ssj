@@ -34,7 +34,7 @@ import java.util.ListIterator;
 import java.util.Set;
 
 /**
- * Provides utility methods for introspection using Java Reflection API.
+ * Provides utility methods for introspection using the Java Reflection API.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -47,10 +47,10 @@ public class Introspection {
  * methods as well as public ones. This method uses
  * java.lang.Class.getDeclaredMethods to get the declared methods of `c`. It
  * also gets the declared methods of superclasses. If a method is defined in
- * a superclass and overriden in a subclass, only the overriden method will
+ * a superclass and overriden in a subclass, only the overridden method will
  * be in the returned array.
  *
- * Note that since this method uses  java.lang.Class.getDeclaredMethods, it
+ * Since this method uses  java.lang.Class.getDeclaredMethods, it
  * can throw a  SecurityException if a security manager is present.
  *  @param c            the class being processed.
  *  @return the array of methods.

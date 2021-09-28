@@ -38,10 +38,8 @@ import   cern.colt.list.DoubleArrayList;
 import   javax.swing.JFrame;
 
 /**
- * This class provides tools to create and manage scatter plots. Using the
- * @ref ScatterChart class is the simplest way to produce scatter plots only.
- * Each  @ref ScatterChart object is linked with a
- * @ref umontreal.ssj.charts.XYListSeriesCollection data set.
+ * Provides tools to create and manage scatter plots. 
+ * Each `ScatterChart` object is linked with a `XYListSeriesCollection` data set.
  *
  * <div class="SSJ-bigskip"></div>
  */

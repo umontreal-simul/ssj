@@ -25,9 +25,8 @@
 package umontreal.ssj.charts;
 
 /**
- * This class extends the class  @ref umontreal.ssj.charts.XYLineChart. Each
- * @ref YListChart object is associated with a
- * @ref umontreal.ssj.charts.YListSeriesCollection data set. The data is
+ * Extends `XYLineChart`; each `YListChart` object is associated with a
+ * `YListSeriesCollection` data set. The data is
  * given as one or more lists of @f$y@f$-coordinates. The @f$x@f$-coordinates
  * are regularly-spaced multiples of the indices of the data points.
  *

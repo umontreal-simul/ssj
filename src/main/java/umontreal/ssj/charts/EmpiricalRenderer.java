@@ -72,10 +72,10 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
     */
    public EmpiricalRenderer(XYToolTipGenerator toolTipGenerator, XYURLGenerator urlGenerator)
    {
-      setBaseToolTipGenerator(toolTipGenerator);
+      setDefaultToolTipGenerator(toolTipGenerator);
       setURLGenerator(urlGenerator);
-      setShapesFilled(true);
-      setShapesVisible(true);
+      setDefaultShapesFilled(true);
+      setDefaultShapesVisible(true);
    }
 
    /**
@@ -112,8 +112,8 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
       double y0 = dataset.getYValue(series, item);
       if (java.lang.Double.isNaN(y0))
          return ;
-      org.jfree.ui.RectangleEdge xAxisLocation = plot.getDomainAxisEdge();
-      org.jfree.ui.RectangleEdge yAxisLocation = plot.getRangeAxisEdge();
+      org.jfree.chart.ui.RectangleEdge xAxisLocation = plot.getDomainAxisEdge();
+      org.jfree.chart.ui.RectangleEdge yAxisLocation = plot.getRangeAxisEdge();
       double transX0 = domainAxis.valueToJava2D(x0, dataArea, xAxisLocation);
       double transY0 = rangeAxis.valueToJava2D(y0, dataArea, yAxisLocation);
 
@@ -182,8 +182,12 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
          drawItemLabel(g2, orientation, dataset, series, item, xx, yy, y0 < 0.0D);
       }
       int domainAxisIndex = plot.getDomainAxisIndex(domainAxis);
-      int rangeAxisIndex = plot.getRangeAxisIndex(rangeAxis);
-      updateCrosshairValues(crosshairState, x0, y0, domainAxisIndex, rangeAxisIndex, transX0, transY0, orientation);
+      // int rangeAxisIndex = plot.getRangeAxisIndex(rangeAxis);
+      //  ???????????????????????????????????????????????????????
+      // int datasetIndex = getIndexOf();
+      //  ?  Should be dataset index, but how can we get it ????
+      //  
+      updateCrosshairValues(crosshairState, x0, y0, domainAxisIndex, transX0, transY0, orientation);
       if (state.getInfo() != null) {
          EntityCollection entities = state.getEntityCollection();
          if (entities != null) {

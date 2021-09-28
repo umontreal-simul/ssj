@@ -29,14 +29,14 @@ import java.math.*;
 
 /**
  * This class computes the same discrepancy as in
- * @ref umontreal.ssj.discrepancy.DiscShiftBaker1 [see eq. (
+ * `DiscShiftBaker1` [see eq. (
  * {@link REF_discrepancy_DiscShiftBaker1_baker1 baker1} )],
  * but uses multi-precision real numbers.
  *
  * **No method are implemented yet for this class.**
  *
  * <strong>Only the subclass
- * @ref umontreal.ssj.discrepancy.BigDiscShiftBaker1Lattice has implemented
+ * `BigDiscShiftBaker1Lattice` has implemented
  * methods to compute the discrepancy.</strong>
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
