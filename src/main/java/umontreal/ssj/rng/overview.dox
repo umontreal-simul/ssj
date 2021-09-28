@@ -1,11 +1,10 @@
 /**
  * @package umontreal.ssj.rng
  *
- * This package offers the basic facilities for generating multiple streams and substreams
+ * This package offers basic facilities for generating multiple streams and substreams
  * of uniform random numbers over the interval @f$U(0,1)@f$ or over a range of integer values. 
- * It provides an interface called
- * @ref RandomStream and various implementations of that interface,
- * using recurrence-based (sequential) random number generators. 
+ * The design is based on the interface @ref RandomStream and the package offers various 
+ * implementations of this interface, with recurrence-based (sequential) random number generators. 
  * The interface specifies that each stream of random numbers is
  * partitioned into multiple substreams and that methods are available to
  * jump between the substreams, as discussed in @cite rLEC91a, @cite rLEC97d,
