@@ -36,17 +36,15 @@ import   org.jfree.data.xy.XYSeries;
 
 import   cern.colt.list.DoubleArrayList;
 
-import   java.util.ListIterator;
 import   java.util.Locale;
 import   java.util.Formatter;
 import   javax.swing.JFrame;
 
 /**
- * This class provides additional tools to create and manage empirical plots.
- * Empirical plots are used to plot empirical distributions. The
- * @ref EmpiricalChart class is the simplest way to produce empirical plots
- * only. Each  @ref EmpiricalChart object is linked with an
- * @ref umontreal.ssj.charts.EmpiricalSeriesCollection data set.
+ * Provides tools to create and manage empirical plots, which are used to
+ * plot empirical distributions.  
+ * Each `EmpiricalChart` object is linked with an
+ * `EmpiricalSeriesCollection` data set.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -251,7 +249,6 @@ public class EmpiricalChart extends XYChart {
     */
    public String toLatex (double width, double height) {
       double xunit, yunit;
-      double[] save = new double[4];
 
       if(dataset.getSeriesCollection().getSeriesCount() == 0)
          throw new IllegalArgumentException("Empty chart");
@@ -308,6 +305,7 @@ public class EmpiricalChart extends XYChart {
       }
       if (latexDocFlag)
          formatter.format("\\end{document}%n");
+      formatter.close();     //  Ok  ????????
       return formatter.toString();
    }
 

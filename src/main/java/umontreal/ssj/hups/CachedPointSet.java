@@ -31,22 +31,14 @@ import umontreal.ssj.util.sort.MultiDimSort;
 import umontreal.ssj.rng.RandomStream;
 
 /**
- * This container class caches a point set by precomputing and storing its
- * points locally in an array. This can be used to speed up computations when
- * using a small low-dimensional point set more than once. Some types of
- * point sets are also implemented directly as subclasses of this one,
- * without having a contained point set `p`.  Examples include 
- * `LatinHypercube` and `StratifiedUnitCube`.
- *
- * After the points are stored in the array, this class uses the default
- * methods and the default iterator type provided by the base class
- * @ref PointSet. This iterator relies exclusively on the  #getCoordinate
- * method. This is one (simple) special case where direct use of
- * #getCoordinate is efficient.
- * **Pierre:** We could also implement an iterator that directly
- * returns `x[i][j]` instead of calling `getCoordinate`, for slightly better
- * efficiency. On the other hand, even better efficiency can be achieved by
- * getting an entire point at a time in an array.
+ * This container class caches a point set by precomputing and storing all the 
+ * points locally in an array. Its primary usage is for the situations in which 
+ * the points *must* be stored explicitly; see, e.g., @ref LatinHypercube, 
+ * @ref StratifiedUnitCube, and @ref NestedUniformScambling.  Some types of
+ * point sets are implemented directly as subclasses of this one,
+ * without having a contained point set `p`. 
+ * It may also be used to speed up computations when
+ * using a small low-dimensional point set more than once.  
  *
  * There is a  #sort  method available to sort the cached points via a
  * @ref umontreal.ssj.util.MultiDimSort, and a  #stripCoordinates  method
@@ -134,8 +126,8 @@ public class CachedPointSet extends PointSet {
    }
 
    /**
-    * Constructs and returns a point set iterator which gets the values
-    * directly from the array.
+    * Constructs and returns a point set iterator that gets the values
+    * directly from the cached array.
     */
    public PointSetIterator iterator() {
       return new CachedPointSetIterator();
@@ -243,9 +235,9 @@ public class CachedPointSet extends PointSet {
 // 
 
    /**
-    * This class implements a `CachedPointSet` iterator which takes the value 
+    * This class implements a @ref CachedPointSet iterator which takes the values 
     * directly in the array `x` in which the points are cached, rather than 
-    * calling `getCoordinate` inherited from `CachedPointSet`.
+    * calling @ref CachedPointSet.getCoordinate.
     */
    protected class CachedPointSetIterator extends DefaultPointSetIterator {
 

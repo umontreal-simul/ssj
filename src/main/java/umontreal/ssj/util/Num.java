@@ -25,7 +25,7 @@
 package umontreal.ssj.util; import cern.jet.math.Bessel;
 
 /**
- * This class provides a few constants and some methods to compute numerical
+ * This class provides various constants and methods to compute numerical
  * quantities such as factorials, combinations, gamma functions, and so on.
  *
  * <div class="SSJ-bigskip"></div>

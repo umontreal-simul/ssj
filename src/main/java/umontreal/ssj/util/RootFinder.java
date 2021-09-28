@@ -26,7 +26,7 @@ package umontreal.ssj.util;
    import umontreal.ssj.functions.MathFunction;
 
 /**
- * This class provides methods to solve non-linear equations.
+ * This class provides numerical methods to solve non-linear equations.
  *
  * <div class="SSJ-bigskip"></div>
  */

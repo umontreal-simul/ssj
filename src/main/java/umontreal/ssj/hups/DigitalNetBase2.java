@@ -470,12 +470,12 @@ public class DigitalNetBase2 extends DigitalNet {
 	}
 
 	/**
-	 * Apply Owen's nested uniform scrambling.
-	 *
-	 * This type of scrambling does not modify the DigitalNetBase2 object. In particular, it does
-	 * not randomize the generator matrices stored in the object. Rather, it computes the randomized
-	 * points all at once and stores them in the two-dimensional array `output`. All points are
-	 * randomized at once to avoid storing all the permutations.
+	 * Applies Owen's nested uniform scrambling to the digital net and returns the scrambled points 
+	 * in the two-dimensional array `output`.  The points are computed by using the generating matrices,
+	 * and scrambled right away.  Only the first `numBits` bits are scrambled. 
+	 * This function does not modify the @ref DigitalNetBase2 object. In particular, it does
+	 * not change the generating matrices stored in the object. All points are
+	 * randomized at once to avoid storing the permutations.
 	 *
 	 * The implementation is an adaptation of that found in [SAMPLE
 	 * PACKage](http://www.uni-kl.de/AG-Heinrich/SamplePack.html) by Thomas Kollig and Alexander
@@ -488,9 +488,8 @@ public class DigitalNetBase2 extends DigitalNet {
 	 *            dimension must be getNumPoints() and the size of its second dimension must be
 	 *            getDimension().
 	 * @param numBits
-	 *            Number of ouput bits to scramble. If it is zero, the number of ouput bits of the
-	 *            DigitalNetBase2 instance is used. It can be smaller than, equal to or larger than
-	 *            DigitalNet.outDigits.
+	 *            Number of output bits to scramble. It can be smaller than, equal to or larger than
+	 *            DigitalNet.outDigits. If this parameter is zero, `outDigits` bits will be scrambled.
 	 */
 	public void nestedUniformScramble(RandomStream stream, double[][] output, int numBits) {
 		assert output.length == numPoints;
@@ -527,7 +526,7 @@ public class DigitalNetBase2 extends DigitalNet {
 			bvlist[0] = 0;
 			poslist[0] = 0;
 			for (int i = 1; i < numPoints; i++) {
-				// Gray code order (could be optional)
+				// We use Gray code order (could be optional).
 				// We could have used a point set iterator here, but the iterator computes all
 				// coordinates at once and we need only one at a time.
 				int pos = 0;
@@ -574,7 +573,7 @@ public class DigitalNetBase2 extends DigitalNet {
 	// -----------------------------------------------------------------------
 	private void ScrambleError(String method) {
 		throw new UnsupportedOperationException(
-		        PrintfFormat.NEWLINE + "  " + method + " is meaningless for DigitalNetBase2");
+		        PrintfFormat.NEWLINE + "  " + method + " is not implemented for a DigitalNetBase2");
 	}
 
 	public void leftMatrixScrambleDiag(RandomStream stream) {
@@ -614,7 +613,7 @@ public class DigitalNetBase2 extends DigitalNet {
 	 * Interlaces the points from a digital net.
 	 *
 	 * This is useful for interlacing after NUS, since NUS returns the points. For other use
-	 * cases, @link matrixInterlace()@endlink should be prefered.
+	 * cases, @link matrixInterlace()@endlink should be preferred.
 	 *
 	 * @param points
 	 *            Array that stores the non-interlaced points as integers. The size of its first

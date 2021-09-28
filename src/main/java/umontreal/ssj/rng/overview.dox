@@ -1,36 +1,35 @@
 /**
  * @package umontreal.ssj.rng
  *
- * Random Number Generators.
- *
- * This package offers the basic facilities for generating uniform random
- * numbers. It provides an interface called
- * @ref umontreal.ssj.rng.RandomStream and some implementations of that
- * interface. The interface specifies that each stream of random numbers is
+ * This package offers the basic facilities for generating multiple streams and substreams
+ * of uniform random numbers over the interval @f$U(0,1)@f$ or over a range of integer values. 
+ * It provides an interface called
+ * @ref RandomStream and various implementations of that interface,
+ * using recurrence-based (sequential) random number generators. 
+ * The interface specifies that each stream of random numbers is
  * partitioned into multiple substreams and that methods are available to
  * jump between the substreams, as discussed in @cite rLEC91a, @cite rLEC97d,
- * @cite rLEC02a, @cite rLEC15a, @cite rLEC17p. For an example of how to use these streams
- * properly, see `InventoryCRN` in the set of example programs.
+ * @cite rLEC02a, @cite rLEC15a, @cite rLEC17p. For examples of how to use these streams
+ * properly, see  @cite rLEC15a and the `InventoryCRN.java` program in the tutorial examples. 
  *
  * Each implementation uses a specific backbone uniform random number
  * generator (RNG), whose period length is typically partitioned into very
  * long non-overlapping segments to provide the streams and substreams. A
  * stream can generate uniform variates (real numbers) over the interval
- * (0,1), uniform integers over a given range of values @f$\{i,…,j\}@f$, and
+ * (0,1), uniform integers over a given range of values @f$\{i,...,j\}@f$, and
  * arrays of these.
  *
  * The generators provided here have various speeds and period lengths.
- * @ref umontreal.ssj.rng.MRG32k3a is the one that has been most extensively
- * tested, but it is not among the fastest. The
- * @ref umontreal.ssj.rng.LFSR113,  @ref umontreal.ssj.rng.GenF2w32,
- * @ref umontreal.ssj.rng.MT19937, and the `WELL` generators produce
+ * @ref MRG32k3a is the one that has been most extensively
+ * tested, but it is not among the fastest. The @ref LFSR113, 
+ * @ref MT19937, and the `WELL` generators produce
  * sequences of bits that obey a linear recurrence, so they eventually fail
  * statistical tests that measure the linear complexity of these bits
  * sequences. But this can affect only very special types of applications.
  *
- * We recommend primarily @ref umontreal.ssj.rng.MRG31k3p,
- * @ref umontreal.ssj.rng.MRG32k3a, and @ref umontreal.ssj.rng.LFSR113.
- * Note that all the generators provided currently in SSJ were originally 
+ * We recommend primarily @ref MRG31k3p,
+ * @ref MRG32k3a, and @ref LFSR113.
+ * Most of the generators provided currently in SSJ were originally 
  * designed for 32-bit computers.
  *
  * For each base generator, the following tables give the approximate period

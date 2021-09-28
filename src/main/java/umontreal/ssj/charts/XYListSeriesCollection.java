@@ -38,16 +38,16 @@ import   java.util.Formatter;
 import   java.awt.Color;
 
 /**
- * This class extends  @ref umontreal.ssj.charts.SSJXYSeriesCollection. It
- * stores data used in a `XYLineChart` or in other related charts.
- * `XYListSeriesCollection` provides complementary tools to draw simple
- * curves; for example, one may add or remove plots series and modify plot
- * style. This class is linked with the JFreeChart `XYSeriesCollection` class
+ * Stores data used in a `XYLineChart` or in other related charts,
+ * and provides complementary tools to draw simple curves. 
+ * For example, one may add or remove plots series and modify plot
+ * style.  It extends extends `SSJXYSeriesCollection and 
+ * is linked with the JFreeChart `XYSeriesCollection` class
  * to store data plots, and linked with the JFreeChart
  * `XYLineAndShapeRenderer` to render the plot. Each series must contain
  * enough points to plot a nice curve. It is recommended to use about 30
  * points. However, some rapidly varying functions may require many more
- * points. This class can be used to draw scatter plots.
+ * points. It can be used to draw scatter plots.
  *
  * <div class="SSJ-bigskip"></div>
  */

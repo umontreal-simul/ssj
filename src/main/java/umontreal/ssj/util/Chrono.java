@@ -26,18 +26,14 @@ package umontreal.ssj.util;
 
 /**
  * The  @ref Chrono class extends the  @ref umontreal.ssj.util.AbstractChrono
- * class and computes the CPU time for the current thread only. This is the
- * simplest way to use chronos. Classes `AbstractChrono`,
- * @ref umontreal.ssj.util.SystemTimeChrono,
- * @ref umontreal.ssj.util.GlobalCPUTimeChrono and
- * @ref umontreal.ssj.util.ThreadCPUTimeChrono provide different chronos
- * implementations. See these classes to learn more about SSJ chronos, if
- * problems appear with class `Chrono`.
+ * class and computes the CPU time for the current thread only.  It is equivalent to
+ * @ref ChronoSingleThread.
+ * The class @ref umontreal.ssj.util.ChronoWall provides another option.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public class Chrono extends AbstractChrono {
-   private ThreadCPUTimeChrono chrono = new ThreadCPUTimeChrono();
+   private ChronoSingleThread chrono = new ChronoSingleThread();
 
    protected void getTime (long[] tab) {
          chrono.getTime(tab);
@@ -52,11 +48,9 @@ public class Chrono extends AbstractChrono {
    }
 
    /**
-    * Creates a `Chrono` instance adapted for a program using a single
-    * thread. Under Java 1.5, this method returns an instance of
-    * @ref ChronoSingleThread which can measure CPU time for one thread.
-    * Under Java versions prior to 1.5, this returns an instance of this
-    * class. This method must not be used to create a timer for a
+    * Creates a `Chrono` instance adapted for a program using a single thread.
+    * It is equivalent to @ref ChronoSingleThread.
+    * This class should not be used to create a timer for a
     * multi-threaded program, because the obtained CPU times will differ
     * depending on the used Java version.
     *  @return the constructed timer.

@@ -33,12 +33,12 @@ import java.util.List;
  * class object. The  Class class can be used to obtain information about a
  * class (its name, its fields, methods, constructors, etc.), and to
  * construct objects, even if the exact class is known at runtime only. It
- * provides a  java.lang.Class.forName static method converting a string to a
+ * provides a  @ref java.lang.Class.forName static method converting a string to a
  * Class, but the given string must be a fully qualified name.
  *
  * Sometimes, configuration files may need to contain Java class names. After
  * they are extracted from the file, these class names are given to
- * java.lang.Class.forName to be converted into  Class objects.
+ * @ref java.lang.Class.forName to be converted into  Class objects.
  * Unfortunately, only fully qualified class names will be accepted as input,
  * which clutters configuration files, especially if long package names are
  * used. This class permits the definition of a set of import declarations in

@@ -25,7 +25,6 @@
 package umontreal.ssj.charts;
    import umontreal.ssj.probdist.DiscreteDistributionInt;
 
-import org.jfree.chart.JFreeChart;
 import javax.swing.JFrame;
 import java.awt.*;
 

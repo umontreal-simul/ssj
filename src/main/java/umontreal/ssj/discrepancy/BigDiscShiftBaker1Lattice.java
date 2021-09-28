@@ -26,7 +26,7 @@ package umontreal.ssj.discrepancy; import java.math.*;
 
 /**
  * This class computes the same discrepancy as in
- * @ref umontreal.ssj.discrepancy.DiscShiftBaker1Lattice [see eq. (
+ * `DiscShiftBaker1Lattice` [see eq. (
  * {@link REF_discrepancy_DiscShiftBaker1Lattice_shiftBaker1lat
  * shiftBaker1lat} )], but uses multi-precision real numbers.
  *

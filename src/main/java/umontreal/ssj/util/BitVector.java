@@ -30,7 +30,8 @@ import java.io.Serializable;
  * This class implements vectors of bits and the operations needed to use
  * them. The vectors can be of arbitrary length. The operations provided are
  * all the binary operations available to the `int` and `long` primitive
- * types in Java.
+ * types in Java.  In the implementation, the vector is split in blocks of 32 bits 
+ * and each block is represented as an integer. 
  *
  * All bit operations are present in two forms: a normal form and a `self`
  * form. The normal form returns a newly created object containing the
