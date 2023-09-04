@@ -74,10 +74,31 @@ After creating your project, add SSJ to its Maven dependencies
 - **Group Id**: `ca.umontreal.iro.simul`;
 - **Artifact Id**: `ssj`;
 - **Version**: any [valid release number for SSJ](http://github.com/umontreal-simul/ssj/releases),
-  e.g., `3.3.1`,
+  e.g., `3.3.2`,
 
 and you are ready to go!
 
+In Eclipse, for example, click:  `File -> New -> Project -> Maven -> Maven Project`.
+Click the box "Create a simple project", then `Next`.
+In the next window, enter whatever names you want, such as:
+- **Group Id**: `UdeM`;
+- **Artifact Id**: `mesdevoirs`;
+- **Version**: `0.0.1-SNAPSHOT`;
+- **Packaging**: `jar`;
+- **Name**: `mesdevoirs-ift6561`;
+- **Description**: `Code Java pour mes devoirs de IFT6561`;
+- **Parent project**: Leave empty;  Then `Finish`.
+After that, right-click on the new project name `mesdevoirs` and click on `Maven -> Maven Dependencies`
+and add the SSJ dependency as mentioned earlier:
+- **Group Id**: `ca.umontreal.iro.simul`;
+- **Artifact Id**: `ssj`;
+- **Version**: `3.3.2`
+If you want to use other Maven Java libraries than SSJ in your code, just add them in the same way.
+For example, if you want to use the tools of jfreechart (used inside SSJ) directly in your code, you can add the dependency:
+- **Group Id**: `org.jfree`;
+- **Artifact Id**: `jfreechart`;
+- **Version**: `1.5.3`
+All the dependencies will appear in the `pom.xml` file of your project.  You can also edit this `xml` file directly if you prefer.
 
 ### Binary releases
 
