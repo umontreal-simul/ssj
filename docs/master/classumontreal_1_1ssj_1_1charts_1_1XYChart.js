@@ -1,0 +1,25 @@
+var classumontreal_1_1ssj_1_1charts_1_1XYChart =
+[
+    [ "disableGrid", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#ab17d96abf416a2608fadc30dda4069ea", null ],
+    [ "drawVerticalLine", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a2d62f6e4c4728c577b44abbfc0cef38b", null ],
+    [ "enableGrid", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a235bcc0092efa72beb78783286f85d8c", null ],
+    [ "getChartMargin", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a6b661c03027a656a61409bf98a627a7f", null ],
+    [ "getJFreeChart", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#ac876b2e7c55491941df38c1bcd5e7d60", null ],
+    [ "getTitle", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a27ada12221b3ef61b1ccc61f7a47410f", null ],
+    [ "getXAxis", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a38f0545d3f2e72f65695348661d782ca", null ],
+    [ "getYAxis", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#ae8b0ac91f89d42231160824db1716ea6", null ],
+    [ "setAutoRange", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a963e4e6dfe420cb2c8683acbab0dfa89", null ],
+    [ "setAutoRange", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#af48bb5ed6fbbc5274b7c50f0078a8332", null ],
+    [ "setAutoRange00", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#add63ea1e0e76b1b652db317f218eff5d", null ],
+    [ "setChartMargin", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#af08ee897f903780815bdc198f028eb9b", null ],
+    [ "setLatexDocFlag", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a52699636e80be46458a86586fffdf44b", null ],
+    [ "setManualRange", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a9f351131b099e0ef46ed37c089238321", null ],
+    [ "setManualRange", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a749670da62493b01d87c0c44d70b6b5c", null ],
+    [ "setManualRange00", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a4ab2756478fd7458a013abb87797cb0e", null ],
+    [ "setprobFlag", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a6c292c57e581d4e1fab8d5c3a39a7bff", null ],
+    [ "setTicksSynchro", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a7d4df387545c89e519068525b85a0b00", null ],
+    [ "setTitle", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#aa8735add518e4143273132fd668fc0a6", null ],
+    [ "toLatex", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#aea2a04926a0b1785cfa5dc23991514c0", null ],
+    [ "toLatexFile", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#a465cee91444ef1081e38f03239c94ef8", null ],
+    [ "view", "classumontreal_1_1ssj_1_1charts_1_1XYChart.html#aaeaddd46df5467b156ea5008af482c67", null ]
+];

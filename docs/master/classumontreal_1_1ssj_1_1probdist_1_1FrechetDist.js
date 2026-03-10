@@ -1,0 +1,27 @@
+var classumontreal_1_1ssj_1_1probdist_1_1FrechetDist =
+[
+    [ "FrechetDist", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a4e8319ae05df043ca5c4aa1210600a69", null ],
+    [ "FrechetDist", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a3e9be6e4ce4157fd113aa6ca0b9315f8", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#af7753a78eef3649861eed310e8e8a6ef", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a761b1f0e25acc2169dffb40e30beb10d", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a785820500a8300e984c144a7d8b8fe9f", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a1b2e6b1d333a06356f93975201cb12ed", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#ab2418fd6455498e4f0a1c8a26653e988", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#ace32a0c8e2f73951c9b0d393fe471f33", null ],
+    [ "getAlpha", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#adb218332ea22d897d0854b62a949f271", null ],
+    [ "getBeta", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a8970709d48945b92feb87c6e7621bef0", null ],
+    [ "getDelta", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#aeee506d0d4ba6e2577c54d0d61bea4b1", null ],
+    [ "getInstanceFromMLE", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a261ed4815429541c8b6e3d842b61b0ad", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#ade7f9a283d318082814aaf7c1efec579", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a2b4fb31ff4382b70be450453f698979f", null ],
+    [ "getMLE", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#aea954f38009069a4e6e20e101fd64682", null ],
+    [ "getParams", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a2fa65168fdc803650fdfc1c64cbd85c1", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a88503a8c95c25a242ece9f9a2b16c465", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#ac73d55fd339cf12f66aeb71a33c2539d", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#adb1b0fa5acf63ff4bc3d220a6add3399", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#aff03fc3c3b207503f362586ef28518ef", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a362a57184beb0d2a63fe7ef87fddb8ec", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a01453f271746c3d9433480632c921b82", null ],
+    [ "setParams", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a753139d3dfdbdc4b7332d142d173f47d", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1probdist_1_1FrechetDist.html#a05227b6f84fb7c84fee3fc11b322a16a", null ]
+];

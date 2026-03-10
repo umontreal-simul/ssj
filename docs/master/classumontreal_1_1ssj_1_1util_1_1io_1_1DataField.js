@@ -1,0 +1,28 @@
+var classumontreal_1_1ssj_1_1util_1_1io_1_1DataField =
+[
+    [ "DataField", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#ac16b5f14ae2500cd60124c761f450b07", null ],
+    [ "DataField", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a6125761b733b936a005c5303d9a51c79", null ],
+    [ "asDouble", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a34ca8339047ac29a8e7aa13e92e4e425", null ],
+    [ "asDoubleArray", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a5edd433c4a7b90752128d79a54eedb35", null ],
+    [ "asDoubleArray2D", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a1b7a0eabaa52224840a7dc1ca1d58123", null ],
+    [ "asFloat", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a5f31b0e8012fc5415e5aca8bbc78c9cc", null ],
+    [ "asFloatArray", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#accecca0da393296ac87bde7d9e1ef8c1", null ],
+    [ "asFloatArray2D", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a68abbfd2f8d559de92fb644241aa32df", null ],
+    [ "asInt", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#aa80e6938fadfed5e77a34612dfc29fe3", null ],
+    [ "asIntArray", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a26f0a5f4f5b5a4dbafd8024d793f9c42", null ],
+    [ "asIntArray2D", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#aa7f15b9e1f15e92afd32ca362112f550", null ],
+    [ "asObject", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#acee1671df9defd2f748005ca0fa263f3", null ],
+    [ "asString", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a36a6c9d39f1b3d3cac6146cb117542ed", null ],
+    [ "asStringArray", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a67f8bcfc7b1f7f3886843ecd8602188e", null ],
+    [ "asStringArray2D", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#ac28c8289c6cdc99d9b0dad2fc2fcb96d", null ],
+    [ "getArrayLength", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a735535fdf142d0ef85bce4711090d93f", null ],
+    [ "getLabel", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a11fd37c99c2179936598e3aa31a73bb9", null ],
+    [ "getType", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a0a70b0068ad7379d9d701d391a0ff251", null ],
+    [ "isArray", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a86dd628b168e022bdb1375fb091bd824", null ],
+    [ "isArray2D", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a766c39a4692dfb5c309a5589b351a564", null ],
+    [ "isAtomic", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a385fdc18bdfe95e56a639de76d3b20a0", null ],
+    [ "isDouble", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a9a1c748f48355689220c10631eb05785", null ],
+    [ "isFloat", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a53aeb862e9d045e1acdcd54625de9673", null ],
+    [ "isInt", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#ad6d053eb605701abdff9bfafd77b5a7b", null ],
+    [ "isString", "classumontreal_1_1ssj_1_1util_1_1io_1_1DataField.html#a72e24434f9f0c2da975a3caaf5ad8fd3", null ]
+];

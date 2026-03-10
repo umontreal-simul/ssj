@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['h',['H',['../classumontreal_1_1ssj_1_1functions_1_1MathFunctionUtil.html#a982cf43f120ff8978010e078bd49d9a3',1,'umontreal::ssj::functions::MathFunctionUtil']]],
-  ['hour',['HOUR',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#af741dbcd31247afd6bc83df682250210',1,'umontreal::ssj::util::TimeUnit']]]
+  ['gnuplot_0',['GNUPLOT',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ab270d671c0a3c93c21b0212c5b058cef',1,'umontreal::ssj::gof::GofFormat']]],
+  ['graphsoft_1',['graphSoft',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a2505358cf68f9d7a98fef8f616116764',1,'umontreal::ssj::gof::GofFormat']]]
 ];

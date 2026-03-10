@@ -1,0 +1,28 @@
+var classumontreal_1_1ssj_1_1probdist_1_1PowerDist =
+[
+    [ "PowerDist", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a90a286ec49e3b1fd88286d768418fc45", null ],
+    [ "PowerDist", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#ab66134934c75f87394e1c0698a2c60b4", null ],
+    [ "PowerDist", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a0b2747430f03ace35f9a9d158e266c73", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a01c92914390178c7aa958a15f3724e80", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#aff21b422df6ded0b4aeea7aecfa8dc5a", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a0e8520918b6851d87a3b159d95f9425e", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a9ab25cad2ab7011c1c1549b173f5c199", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a240154156c414f06104d3c8b18bc7efc", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#ab11d4bb3f056955fd8dfe8e62b99ee5f", null ],
+    [ "getA", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a12316f9c03dde93d8f23e5cd3b60a8c2", null ],
+    [ "getB", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a8df71f37751520d849013115210b2c17", null ],
+    [ "getC", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a75eec1bf77b49ff6ada127529c1b226d", null ],
+    [ "getInstanceFromMLE", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a17b7fc7f55aad4944547705fc9495f44", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a34aab46c4c3e3641690e62a6f1c75192", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a2386aebc766a9aadd7395c4014f4dc60", null ],
+    [ "getMLE", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#accd280aff4d1d2d9351a4dcebbe2d476", null ],
+    [ "getParams", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#ae28696718403e40ec0b09d98ac39e82f", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a6a6f0e458c343d1b351c1b9880196281", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#ab1df9515ab39d4201c05ebd83f79f019", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#af3c2abdfef7870ae1288f7540b89db2e", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a09417369533d6947fea5e39665a0b50a", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#ad320bc976d2980bd788d6c9b69146fb7", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a5087e847c4e8186cc39aff414f46886e", null ],
+    [ "setParams", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#aadd69ef4e84b1f9ffc645601781cac9e", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1probdist_1_1PowerDist.html#a2952e0fceb344d5602adbecea3467de5", null ]
+];

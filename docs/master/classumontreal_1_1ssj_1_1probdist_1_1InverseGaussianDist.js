@@ -1,0 +1,25 @@
+var classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist =
+[
+    [ "InverseGaussianDist", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#ad007acfd2eeee402aa337adbdf26b566", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a900cd3bf12923e594bbd0d81572f9b90", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a7c72deddf3bc748923bfd264a1b1b991", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a73d6a806d3eb4eb8aa67fc812d12ea28", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#acfe560e3c01ff931707c9ebee275dae5", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#ac62c5cf2f76b0acfc2f0441a30c43c91", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a4cc84aeed773b99e5ce17fb995a0773c", null ],
+    [ "getInstanceFromMLE", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a15998bc822bc53ba954b33cbc8063dee", null ],
+    [ "getLambda", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a147c2b907683b954e5e769b1fb3efe70", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a44bddfa43edc932b2d4be67c6366b80e", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a00507105e7b998ca60dcffe1bbc64ec4", null ],
+    [ "getMLE", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a560c513dea9f092080e6d76189656477", null ],
+    [ "getMu", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#af05d5d55d7aa40d2587f05183469c6d8", null ],
+    [ "getParams", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#ac8b95e9700c4115dfb9835bfe2daf344", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#af519e6dd63002f509a5e7eb04a0e7661", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a3adf0674eaf90ad148d411441349b000", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#ac9314b967830e93ff52855f813c5e8a9", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a6967536cceb4853378a33ddc51614663", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a7fba00e2d9c17c151dcacdfdb66e9dc7", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#aa443214fbda8e6c876634ccfc11f1b51", null ],
+    [ "setParams", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#ad91ef9e4ff3696e8ec7813b62257b688", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1probdist_1_1InverseGaussianDist.html#a41943488aca16635b294a4821e94e591", null ]
+];

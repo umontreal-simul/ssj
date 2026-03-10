@@ -1,0 +1,26 @@
+var classumontreal_1_1ssj_1_1probdist_1_1LogisticDist =
+[
+    [ "LogisticDist", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a3d99d8eabc68ad4368a6089caa972bf0", null ],
+    [ "LogisticDist", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a529002d9037edd81729e46756fc1627c", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a610969daa32726460de96b08974f10a0", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a776dea6fcfa3b982dc809bf6125584e6", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#ae22685be5d8082740f08556d4a026b02", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a38eabd07bc7ad516fa04e929f78ae6e9", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a33174cfcc2107ed26e95d8743eff42ff", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a5c6b8c2598b8e4330cc6d1e31621d51e", null ],
+    [ "getAlpha", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#abdaf436ca8f4c0280030cb58056cc6ff", null ],
+    [ "getInstanceFromMLE", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a9bfaec220bd836abcad86bef2e004b3a", null ],
+    [ "getLambda", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a7165d1b329800fec4fbf2238595c40a1", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a8f864382b227e0dbbefd20ffd7146134", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a083723da88b5d0bdbc8d057575c0150e", null ],
+    [ "getMLE", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a0c99ea066a481c18041dc933ffb08ca8", null ],
+    [ "getParams", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a1102886f3b3b81edc9795b51f76ac837", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a62ccc1c54afc7f3aed629d0e40f70aa8", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a42005c31f861cb556c0492b5455699bf", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a0461586d1de591ff53b97ec6b53afc5b", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#a9aa76ae27febdc43183d8535f51a57c5", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#aabb477b7882b173a8f70a7b4121769de", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#aa58c0acff5f481a6e10b723aadb98ff8", null ],
+    [ "setParams", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#aa6ee65e5cdf2722c24e61964d52a3b83", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1probdist_1_1LogisticDist.html#abb19e924f7c0865f90428036608ee6f7", null ]
+];

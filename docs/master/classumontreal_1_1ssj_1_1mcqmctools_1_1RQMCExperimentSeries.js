@@ -1,0 +1,25 @@
+var classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries =
+[
+    [ "RQMCExperimentSeries", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a18d58b2b22aec35488fb59d4d1cdabe1", null ],
+    [ "RQMCExperimentSeries", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#ab5f393afd4d01fe6ab25d1854acb3688", null ],
+    [ "dataForPlot", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a5361f4196a172449e8ecbfa11ff5ba47", null ],
+    [ "dataLogForPlot", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#aad1f9a4fd4d664605657b00058ee4aac", null ],
+    [ "formatRegression", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#ab71227fdcd56498d0e3adae9bb22a6f4", null ],
+    [ "getBase", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a4b6347428dd10e2f7c2397f498197207", null ],
+    [ "getLogn", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#ad5099284976b3041e11c4e86d6dfd90d", null ],
+    [ "getLogVariances", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#afe781343cb7d5935c0ce74dc52916a9a", null ],
+    [ "getMeans", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a8221d5ea1b7909c05d60402446babcb9", null ],
+    [ "getSet", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a3c0963bdb4a9bd18279f94b2bcedea9d", null ],
+    [ "getValuesn", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#acd5631822b971a4d182e677e1d54898a", null ],
+    [ "getVariances", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a7352f82bea4edcb4aff14f2547713219", null ],
+    [ "init", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a1a7c7363f8dd68913891166a42f7cb5c", null ],
+    [ "regressionLogVariance", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a2d5594f8e471671be90f7e63edd303ab", null ],
+    [ "reportVarianceRate", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a345239b0df98f907312e429ab58f786e", null ],
+    [ "setBase", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a4e8d715ea45de67265e1fde86e7ddc24", null ],
+    [ "setExecutionDisplay", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a1408562fdebad31b833278bf3657452f", null ],
+    [ "testVarianceRate", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a9ad3260512dc09b85b70048489324d47", null ],
+    [ "testVarianceRateCV", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a7b17dc819d44ba0ad62ecc0e63a91539", null ],
+    [ "testVarianceRateManyPointTypes", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#aa637a531b00594492c5dad315f6a1be8", null ],
+    [ "toPgfDataTable", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#a120a1c09cf8cc2058e6843178e9ec52b", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1mcqmctools_1_1RQMCExperimentSeries.html#ab11aa0a099b4f99251b02468e1651a72", null ]
+];

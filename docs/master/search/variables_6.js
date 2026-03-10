@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['iln2',['ILN2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a85c6c9d6b799125edd2d9abad006573c',1,'umontreal::ssj::util::Num']]],
-  ['irac2',['IRAC2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#abd1a2da9e8710e773d43eda765c968db',1,'umontreal::ssj::util::Num']]]
+  ['h_0',['H',['../classumontreal_1_1ssj_1_1functions_1_1MathFunctionUtil.html#a6c3b94a2e659b88d43f8808fecd5843b',1,'umontreal::ssj::functions::MathFunctionUtil']]],
+  ['hour_1',['HOUR',['../enumumontreal_1_1ssj_1_1util_1_1TimeUnit.html#aa43eb5b1fa82d8fcd001c303b96c89f3',1,'umontreal::ssj::util::TimeUnit']]]
 ];

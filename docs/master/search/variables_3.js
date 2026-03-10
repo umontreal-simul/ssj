@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['ebase',['EBASE',['../classumontreal_1_1ssj_1_1util_1_1Num.html#ae080a951953c79c981939764c4b261e2',1,'umontreal::ssj::util::Num']]],
-  ['epsilon',['EPSILON',['../classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#a3644fc584736c1c2e36037a085c416b9',1,'umontreal::ssj::probdist::DiscreteDistributionInt']]],
-  ['epsilonad',['EPSILONAD',['../classumontreal_1_1ssj_1_1gof_1_1GofStat.html#a090c461c5f9c3539e0b9f2b8b8d92c7a',1,'umontreal::ssj::gof::GofStat']]],
-  ['epsilonhalf',['EpsilonHalf',['../classumontreal_1_1ssj_1_1hups_1_1PointSet.html#ad6139df4229d8c5bfe34f5e96f45ee9a',1,'umontreal.ssj.hups.PointSet.EpsilonHalf()'],['../classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#ad6139df4229d8c5bfe34f5e96f45ee9a',1,'umontreal.ssj.hups.PointSet.DefaultPointSetIterator.EpsilonHalf()']]],
-  ['epsilonp',['EPSILONP',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a73a7bd75e5a03d7ae6df820b697c43fe',1,'umontreal::ssj::gof::GofFormat']]],
-  ['euler',['EULER',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a0d44d24a529d55a740fdb72b7cf82061',1,'umontreal::ssj::util::Num']]]
+  ['ebase_0',['EBASE',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a9bad0009963a991cb69f8610f07f66a3',1,'umontreal::ssj::util::Num']]],
+  ['epsilon_1',['EPSILON',['../classumontreal_1_1ssj_1_1probdist_1_1DiscreteDistributionInt.html#ad16aa92abc4bdcbf8d7775ffa85fd321',1,'umontreal::ssj::probdist::DiscreteDistributionInt']]],
+  ['epsilonad_2',['EPSILONAD',['../classumontreal_1_1ssj_1_1gof_1_1GofStat.html#acd9792f1be176669894cd0ad8090dfc6',1,'umontreal::ssj::gof::GofStat']]],
+  ['epsilonhalf_3',['EpsilonHalf',['../classumontreal_1_1ssj_1_1hups_1_1PointSet.html#a884715e0832a25a3df87863511f81622',1,'umontreal.ssj.hups.PointSet.EpsilonHalf'],['../classumontreal_1_1ssj_1_1hups_1_1PointSet_1_1DefaultPointSetIterator.html#a629eea39a19ee711a7c675bcc04c2caa',1,'umontreal.ssj.hups.PointSet.DefaultPointSetIterator.EpsilonHalf']]],
+  ['epsilonp_4',['EPSILONP',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#ac0d0bae7427af1daadd017b5c2c07cca',1,'umontreal::ssj::gof::GofFormat']]],
+  ['euler_5',['EULER',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a193947b32e13e9de5b01b50c3a0e0bc2',1,'umontreal::ssj::util::Num']]]
 ];

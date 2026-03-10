@@ -1,0 +1,25 @@
+var classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist =
+[
+    [ "UniformIntDist", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a85d211a01f5c7ecf999b850b160f31ee", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#adac05ed29216a1b37a94a43b83806431", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#ac9a58709afcaf305940c47c78f65758c", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a1f29f4efe3d4ac89bed9ae50ea593be6", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a1c08672e48e073d17a4063172acc5ef6", null ],
+    [ "getI", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a8f3e77fcbdfd25e9fb974656e35e6004", null ],
+    [ "getInstanceFromMLE", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#ada51330bb7d6d6d6003c4af85cba84d4", null ],
+    [ "getJ", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a0198c170aac1c4cfc67ed652b132b108", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a0bb8c052cf91441eb7d5d079ca8efcaa", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#ae3a5f60ec7058ca2a3b7db26983dc165", null ],
+    [ "getMLE", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a8d18978c87d726cb1fe219b5e1a319a9", null ],
+    [ "getParams", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#aa7162d41c15b177264023fe23a65667b", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a822eb873fa1275ed77346ad92ca53d10", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#ab2a1f35b4cd21fbb476983f9b72cbe1d", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a3e7a09622c06ca069bfea80b44f72790", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a4ae88013f92922f5a52bdeb11d49a7aa", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a42c0905ea783a75fd17735294cdb2ec6", null ],
+    [ "inverseFInt", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a639b7b1e1c1bf3feee503ae1f390dc18", null ],
+    [ "prob", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#ac7b5eeb8eed2d94fdad181bfedf1fd85", null ],
+    [ "prob", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a406420388ea7d0af05b230fb08027ced", null ],
+    [ "setParams", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a567693a66604f65e719023054524bf9e", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1probdist_1_1UniformIntDist.html#a59b96277895d3f4257748d65367d364e", null ]
+];

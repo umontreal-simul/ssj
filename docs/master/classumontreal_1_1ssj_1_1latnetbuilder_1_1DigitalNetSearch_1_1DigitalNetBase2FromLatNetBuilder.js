@@ -1,0 +1,4 @@
+var classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch_1_1DigitalNetBase2FromLatNetBuilder =
+[
+    [ "DigitalNetBase2FromLatNetBuilder", "classumontreal_1_1ssj_1_1latnetbuilder_1_1DigitalNetSearch_1_1DigitalNetBase2FromLatNetBuilder.html#a2f16b79f4fe73570be86552c247d30d5", null ]
+];

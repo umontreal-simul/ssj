@@ -1,0 +1,26 @@
+var classumontreal_1_1ssj_1_1util_1_1BitMatrix =
+[
+    [ "IncompatibleDimensionException", "classumontreal_1_1ssj_1_1util_1_1BitMatrix_1_1IncompatibleDimensionException.html", null ],
+    [ "BitMatrix", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a08cd435c79decb9c389f9cb5e2746f95", null ],
+    [ "BitMatrix", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a9f6f1ff3f4dec21416bd2d249b70d206", null ],
+    [ "BitMatrix", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#ab2595656f53f75e7c0d7d637569a3b3e", null ],
+    [ "BitMatrix", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a0009462878575e690c32a8c60882e3c7", null ],
+    [ "and", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#aee2da4dcebc3955916e840ba1e810d1a", null ],
+    [ "clone", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a27b6cd6278dfcc62a0b4911f596a325b", null ],
+    [ "equals", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a3207d0493022d47681055931b5279a42", null ],
+    [ "getBool", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#ac2ab63cd3bf3b1e8a07dd7b4080dda17", null ],
+    [ "multiply", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#abc49d4d7d1fc90eb2ee668b29ac71b03", null ],
+    [ "multiply", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a7307d51d299b05e8afb2255245cb18c4", null ],
+    [ "multiply", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#ad21e17ca8b91cf55b1758097660ed83c", null ],
+    [ "not", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#aad932497d43107221689822a5003c757", null ],
+    [ "numColumns", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a2934aa16e4f9e9fba1fb9cbaea696212", null ],
+    [ "numRows", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a675d3535f9f85573d5ec86ceee4d7189", null ],
+    [ "or", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#aecf5331e13d1b76049194ee1eb0a5e03", null ],
+    [ "power", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a027931d5d5444bc061664ae571b731bd", null ],
+    [ "power2e", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a7c5a0200cedabb9cd73370d1f701284f", null ],
+    [ "printData", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a0b0bc26a44c4aea1430408a9298a4b29", null ],
+    [ "setBool", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#a479e6ca38ead139a9a1508b2d8a7efbe", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#ac04b6dc3fe5891861e723739c032f676", null ],
+    [ "transpose", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#aeff9d3d2cd57e6ea113cb16b49d1c9e8", null ],
+    [ "xor", "classumontreal_1_1ssj_1_1util_1_1BitMatrix.html#ab7fcbadb2fcec33c24011cd946af56b8", null ]
+];

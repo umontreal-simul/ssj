@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ks',['KS',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#afe09ae346bfe7f39235291bcf565d9b5',1,'umontreal::ssj::gof::GofFormat']]],
-  ['ksm',['KSM',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a290bb1f16ad44cc17521b3e44d40c93c',1,'umontreal::ssj::gof::GofFormat']]],
-  ['ksp',['KSP',['../classumontreal_1_1ssj_1_1gof_1_1GofFormat.html#a4bd63ae9916342f98a3e102b6643925b',1,'umontreal::ssj::gof::GofFormat']]]
+  ['iln2_0',['ILN2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a526eff9468b0e7aaec38df2e7a26b8ac',1,'umontreal::ssj::util::Num']]],
+  ['irac2_1',['IRAC2',['../classumontreal_1_1ssj_1_1util_1_1Num.html#a73bd16398cfdf1a2e648ad73c3297ee1',1,'umontreal::ssj::util::Num']]]
 ];

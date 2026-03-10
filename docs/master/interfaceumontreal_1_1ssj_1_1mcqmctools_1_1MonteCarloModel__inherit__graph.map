@@ -1,5 +1,0 @@
-<map id="MonteCarloModel&lt; E &gt;" name="MonteCarloModel&lt; E &gt;">
-<area shape="rect" id="node2" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1AnovaVarianceEstimator.html" title="ANOVA variance estimator. " alt="" coords="225,5,389,47"/>
-<area shape="rect" id="node3" href="$interfaceumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1MonteCarloModelRQMC.html" title="An interface for a simple simulation model for which Monte Carlo (MC) or RQMC experiments are to be p..." alt="" coords="209,71,404,98"/>
-<area shape="rect" id="node4" href="$classumontreal_1_1ssj_1_1mcqmctools_1_1anova_1_1PartialVarianceEstimator.html" title="Partial variance estimator. " alt="" coords="223,123,390,164"/>
-</map>

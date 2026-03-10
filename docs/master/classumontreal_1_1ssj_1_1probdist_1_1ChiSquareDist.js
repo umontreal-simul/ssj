@@ -1,0 +1,25 @@
+var classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist =
+[
+    [ "ChiSquareDist", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a04ced1c9d214c9b25958b6a6998584b7", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a7ec1b898089e9157d23e2d5843721dfc", null ],
+    [ "barF", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a8f3f5f7cfbf992ee0571fa73c9c1dae0", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a0dda229722b4b4c953120e95a8b69418", null ],
+    [ "cdf", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#affdb8d15abb49787bdc095f042b79f67", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a69cd76e6257e105a80c4c0d6ce8d4e41", null ],
+    [ "density", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a0c416e70eb1c6f8708c0e9ea64485329", null ],
+    [ "getInstanceFromMLE", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a4a792f60eeb2338bcc5668f184a8fc6a", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#ad80ec6aed4e8c0875b391c5ab755edb9", null ],
+    [ "getMean", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a6b37ecb70f5c199e398091e7d08dd19a", null ],
+    [ "getMLE", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a860965b3efe6402161813da1763bd19a", null ],
+    [ "getMomentsEstimate", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#afb8f15beded15b68156378327bd80f88", null ],
+    [ "getN", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#afa9e9b88f370fce9015b60bc4ec267b9", null ],
+    [ "getParams", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a0b4e7c0a5965c3c2d87c7b9e68202cec", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a83cf1cc5deb97454f7714738c7dd2ca5", null ],
+    [ "getStandardDeviation", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a4840fc237361e6c334e8cf6bf4480fe5", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a362671bce626bc3b5f29ac6c33318081", null ],
+    [ "getVariance", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#aafd4198c2e62acf8b82404bd321fcd6c", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a99481a965b7dd7245a9def8120c15529", null ],
+    [ "inverseF", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#ac58252b59c7eaecfff73d396d9664377", null ],
+    [ "setN", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#ab4aba57071f64bc419aceff633393cbe", null ],
+    [ "toString", "classumontreal_1_1ssj_1_1probdist_1_1ChiSquareDist.html#a34d0109a842378056191ae214c725b73", null ]
+];
