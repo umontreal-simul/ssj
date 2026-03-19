@@ -23,30 +23,24 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
- * <strong>THIS CLASS HAS BEEN RENAMED  @ref InverseGammaGen </strong>.
+ * <strong>THIS CLASS HAS BEEN RENAMED @ref InverseGammaGen </strong>.
  *
  * This class implements random variate generators for the *Pearson type V*
  * distribution with shape parameter @f$\alpha> 0@f$ and scale parameter
+ * 
  * @f$\beta> 0@f$. The density function of this distribution is
- * @anchor REF_randvar_Pearson5Gen_eq_fpearson5
- * @f[
- *   f(x) = \left\{\begin{array}{ll}
- *    \displaystyle\frac{x^{-(\alpha+ 1)}e^{-\beta/ x}}{\beta^{-\alpha} \Gamma(\alpha)} 
- *    & 
- *    \quad\mbox{for } x > 0 
- *    \\ 
- *    0 
- *    & 
- *    \quad\mbox{otherwise,} 
- *   \end{array} \right. \tag{fpearson5}
- * @f]
- * where @f$\Gamma@f$ is the gamma function.
+ * @anchor REF_randvar_Pearson5Gen_eq_fpearson5 @f[ f(x) =
+ *         \left\{\begin{array}{ll} \displaystyle\frac{x^{-(\alpha+
+ *         1)}e^{-\beta/ x}}{\beta^{-\alpha} \Gamma(\alpha)} & \quad\mbox{for }
+ *         x > 0 \\ 0 & \quad\mbox{otherwise,} \end{array} \right.
+ *         \tag{fpearson5} @f] where @f$\Gamma@f$ is the gamma function.
  *
- * <div class="SSJ-bigskip"></div>
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -56,29 +50,30 @@ public class Pearson5Gen extends RandomVariateGen {
    protected double beta;
 
    /**
-    * <strong>THIS CLASS HAS BEEN RENAMED  @ref InverseGammaGen </strong>.
-    * Creates a Pearson5 random variate generator with parameters
+    * <strong>THIS CLASS HAS BEEN RENAMED @ref InverseGammaGen </strong>. Creates a
+    * Pearson5 random variate generator with parameters
+    * 
     * @f$\alpha=@f$ `alpha` and @f$\beta=@f$ `beta`, using stream `s`.
     */
-   public Pearson5Gen (RandomStream s, double alpha, double beta) {
-      super (s, new Pearson5Dist(alpha, beta));
+   public Pearson5Gen(RandomStream s, double alpha, double beta) {
+      super(s, new Pearson5Dist(alpha, beta));
       setParams(alpha, beta);
    }
 
    /**
     * Creates a Pearson5 random variate generator with parameters
+    * 
     * @f$\alpha=@f$ `alpha` and @f$\beta= 1@f$, using stream `s`.
     */
-   public Pearson5Gen (RandomStream s, double alpha) {
-      this (s, alpha, 1.0);
+   public Pearson5Gen(RandomStream s, double alpha) {
+      this(s, alpha, 1.0);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public Pearson5Gen (RandomStream s, Pearson5Dist dist) {
-      super (s, dist);
+   public Pearson5Gen(RandomStream s, Pearson5Dist dist) {
+      super(s, dist);
       if (dist != null)
          setParams(dist.getAlpha(), dist.getBeta());
    }
@@ -87,9 +82,8 @@ public class Pearson5Gen extends RandomVariateGen {
     * Generates a variate from the Pearson V distribution with shape
     * parameter @f$\alpha> 0@f$ and scale parameter @f$\beta> 0@f$.
     */
-   public static double nextDouble (RandomStream s,
-                                    double alpha, double beta) {
-      return Pearson5Dist.inverseF (alpha, beta, s.nextDouble());
+   public static double nextDouble(RandomStream s, double alpha, double beta) {
+      return Pearson5Dist.inverseF(alpha, beta, s.nextDouble());
    }
 
    /**
@@ -106,12 +100,11 @@ public class Pearson5Gen extends RandomVariateGen {
       return beta;
    }
 
-
-   protected void setParams (double alpha, double beta) {
+   protected void setParams(double alpha, double beta) {
       if (alpha <= 0.0)
-         throw new IllegalArgumentException ("alpha <= 0");
+         throw new IllegalArgumentException("alpha <= 0");
       if (beta <= 0.0)
-         throw new IllegalArgumentException ("beta <= 0");
+         throw new IllegalArgumentException("beta <= 0");
       this.alpha = alpha;
       this.beta = beta;
    }

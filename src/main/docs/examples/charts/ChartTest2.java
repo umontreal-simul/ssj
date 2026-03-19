@@ -1,9 +1,9 @@
 package charts;
+
 import umontreal.ssj.charts.*;
 import java.awt.Color;
 
-public class ChartTest2
-{
+public class ChartTest2 {
    private static double[][] getPoints1() {
       double[][] points = new double[2][40];
       for (int i = 0; i < points[0].length; i++) {
@@ -44,8 +44,7 @@ public class ChartTest2
       // Customizing axes
       Axis xaxis = chart.getXAxis();
       Axis yaxis = chart.getYAxis();
-      String[] labels = { "-9", "$-\\lambda$", "$-\\sqrt{2}$",
-                          "0", "$\\frac{14}{\\pi}$", "\\LaTeX" };
+      String[] labels = { "-9", "$-\\lambda$", "$-\\sqrt{2}$", "0", "$\\frac{14}{\\pi}$", "\\LaTeX" };
       double[] values = { -9, -5, -Math.sqrt(2), 0, 14.0 / Math.PI, 9 };
       xaxis.setLabels(values, labels);
       yaxis.setLabels(1);
@@ -63,6 +62,6 @@ public class ChartTest2
       collec.setMarksType(2, "*");
 
       // Export to LaTex format
-      chart.toLatexFile("ChartTest2.tex", 12, 8);  // 12cm width, 8cm height
+      chart.toLatexFile("ChartTest2.tex", 12, 8); // 12cm width, 8cm height
    }
 }

@@ -23,25 +23,26 @@
  *
  */
 package umontreal.ssj.randvarmulti;
+
 import umontreal.ssj.randvar.RandomVariateGen;
 
 /**
- * Extends  @ref RandomMultivariateGen for a vector of independent
- * identically distributed (i.i.d.) random variables.
+ * Extends @ref RandomMultivariateGen for a vector of independent identically
+ * distributed (i.i.d.) random variables.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public class IIDMultivariateGen extends RandomMultivariateGen {
 
    /**
-    * Constructs a generator for a <tt>d</tt>-dimensional vector of i.i.d.
-    * variates with a common one-dimensional generator `gen1`.
-    *  @param gen1         the one-dimensional generator
-    *  @param d            dimension of the vector (number of i.i.d.
-    *                      variates).
+    * Constructs a generator for a <tt>d</tt>-dimensional vector of i.i.d. variates
+    * with a common one-dimensional generator `gen1`.
+    * 
+    * @param gen1 the one-dimensional generator
+    * @param d    dimension of the vector (number of i.i.d. variates).
     */
-   public IIDMultivariateGen (RandomVariateGen gen1, int d) {
-      setGen1 (gen1);
+   public IIDMultivariateGen(RandomVariateGen gen1, int d) {
+      setGen1(gen1);
       this.stream = gen1.getStream();
       dimension = d;
    }
@@ -49,17 +50,17 @@ public class IIDMultivariateGen extends RandomMultivariateGen {
    /**
     * Changes the dimension of the vector to `d`.
     */
-   public void setDimension (int d) {
+   public void setDimension(int d) {
       dimension = d;
    }
 
    /**
     * Generates a vector of i.i.d. variates.
     */
-   public void nextPoint (double[] p) {
+   public void nextPoint(double[] p) {
       if (p.length != dimension)
-         throw new IllegalArgumentException(String.format(
-            "p's dimension (%d) does not mach dimension (%d)", p.length, dimension));
+         throw new IllegalArgumentException(
+               String.format("p's dimension (%d) does not mach dimension (%d)", p.length, dimension));
 
       for (int i = 0; i < dimension; i++)
          p[i] = gen1.nextDouble();
@@ -68,9 +69,9 @@ public class IIDMultivariateGen extends RandomMultivariateGen {
    /**
     * Sets the common one-dimensional generator to `gen1`.
     */
-   public void setGen1 (RandomVariateGen gen1) {
+   public void setGen1(RandomVariateGen gen1) {
       if (gen1 == null)
-         throw new NullPointerException ("gen1 is null");
+         throw new NullPointerException("gen1 is null");
       this.gen1 = gen1;
    }
 
@@ -78,15 +79,14 @@ public class IIDMultivariateGen extends RandomMultivariateGen {
     * Returns the common one-dimensional generator used in this class.
     */
    public RandomVariateGen getGen1() {
-     return gen1;
+      return gen1;
    }
 
    /**
     * Returns a string representation of the generator.
     */
    public String toString() {
-      return dimension + "-dimensional vector of i.i.d. " +
-            gen1.getDistribution().toString();
+      return dimension + "-dimensional vector of i.i.d. " + gen1.getDistribution().toString();
    }
 
 }

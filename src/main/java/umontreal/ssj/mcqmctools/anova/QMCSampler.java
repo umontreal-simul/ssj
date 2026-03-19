@@ -13,15 +13,15 @@ import umontreal.ssj.mcqmctools.*;
 public class QMCSampler implements Sampler {
 
    protected PointSet points;
-   
-   public QMCSampler (PointSet points) {
+
+   public QMCSampler(PointSet points) {
       this.points = points;
    }
-   
+
    public PointSet getPointSet() {
       return points;
    }
-   
+
    /** @copydoc Sampler::getNumSimulationsPerSample() */
    public int getNumSimulationsPerSample() {
       return 1;
@@ -32,25 +32,32 @@ public class QMCSampler implements Sampler {
       return points.getNumPoints();
    }
 
-   /** @copydoc Sampler::simulate(MonteCarloModel<? extends E>, ObservationCollector<E>) */
-   public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
+   /**
+    * @copydoc Sampler::simulate(MonteCarloModel<? extends E>,
+    *          ObservationCollector<E>)
+    */
+   public <E> void simulateRuns(MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
 
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
-    	  model.simulate(it);
-          collector.observe(model.getPerformance());
+         model.simulate(it);
+         collector.observe(model.getPerformance());
       }
    }
 
-   /** @copydoc Sampler::simulate(MonteCarloModelDouble, ObservationCollector<Double>) */
-   public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
+   /**
+    * @copydoc Sampler::simulate(MonteCarloModelDouble,
+    *          ObservationCollector<Double>)
+    */
+   public void simulateRuns(MonteCarloModelDouble model, Tally collector) {
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
-          model.simulate(it);
-          collector.add(model.getPerformance());
-       }
+         model.simulate(it);
+         collector.add(model.getPerformance());
+      }
    }
 
-   @Override public String toString() {
-      return "QMC Sampler [nPoints=" + points.getNumPoints() + "]"
-         + " [points=" + points.getClass().getSimpleName() + "]";
+   @Override
+   public String toString() {
+      return "QMC Sampler [nPoints=" + points.getNumPoints() + "]" + " [points=" + points.getClass().getSimpleName()
+            + "]";
    }
 }

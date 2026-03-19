@@ -22,25 +22,26 @@
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
 package umontreal.ssj.stat.matrix;
+
 import umontreal.ssj.stat.StatProbe;
 import cern.colt.matrix.DoubleMatrix2D;
 
 /**
- * Represents an object that can listen to observations broadcast by matrices
- * of statistical probes.
+ * Represents an object that can listen to observations broadcast by matrices of
+ * statistical probes.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public interface MatrixOfObservationListener {
 
-/**
- * Receives the new matrix of observations `x` broadcast by the matrix of
- * statistical probes `matrixOfProbes`.
- *  @param matrixOfProbes the matrix of statistical probes broadcasting the
- *                        observation.
- *  @param x            the matrix of observations being broadcast.
- */
-public void newMatrixOfObservations (MatrixOfStatProbes<?> matrixOfProbes,
-                                        DoubleMatrix2D x);
+   /**
+    * Receives the new matrix of observations `x` broadcast by the matrix of
+    * statistical probes `matrixOfProbes`.
+    * 
+    * @param matrixOfProbes the matrix of statistical probes broadcasting the
+    *                       observation.
+    * @param x              the matrix of observations being broadcast.
+    */
+   public void newMatrixOfObservations(MatrixOfStatProbes<?> matrixOfProbes, DoubleMatrix2D x);
 
 }

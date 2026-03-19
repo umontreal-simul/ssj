@@ -6,7 +6,8 @@ package umontreal.ssj.mcqmctools.anova;
 // import umontreal.ssj.mcqmctools.anova.*;
 
 /**
- * This class automates the process of replicating estimators of the ANOVA variances.
+ * This class automates the process of replicating estimators of the ANOVA
+ * variances.
  *
  * For more flexibility, use the AnovaVarianceEstimator class.
  *
@@ -19,32 +20,32 @@ public class Anova {
    protected RandomIntegrator innerIntegrator;
    protected Integrator outerIntegrator;
 
-   public Anova (Integrator outerIntegrator, RandomIntegrator innerIntegrator) {
+   public Anova(Integrator outerIntegrator, RandomIntegrator innerIntegrator) {
       this.outerIntegrator = outerIntegrator;
       this.innerIntegrator = innerIntegrator;
    }
 
-   public Anova () {
+   public Anova() {
       this(null, null);
    }
-   
+
    /**
-    * Sets the outer integrator from which provides a RandomStream to the randomization of the inner
-    * integrator.
-    * The number of points in the outer integrator corresponds to the number of replications of the
-    * ANOVA variance estimators.
+    * Sets the outer integrator from which provides a RandomStream to the
+    * randomization of the inner integrator. The number of points in the outer
+    * integrator corresponds to the number of replications of the ANOVA variance
+    * estimators.
     *
     */
-   public void setOuterIntegrator (Integrator integrator) {
+   public void setOuterIntegrator(Integrator integrator) {
       this.outerIntegrator = integrator;
    }
 
    /**
-    * Sets the inner integrator which is used to generate one random estimation of the ANOVA variances
-    * at a time.
+    * Sets the inner integrator which is used to generate one random estimation of
+    * the ANOVA variances at a time.
     *
     */
-   public void setInnerIntegrator (RandomIntegrator integrator) {
+   public void setInnerIntegrator(RandomIntegrator integrator) {
       this.innerIntegrator = integrator;
    }
 
@@ -52,7 +53,7 @@ public class Anova {
     * Sets the maximum coordinate index to consider.
     *
     */
-   public void setMaxCoordinate (int maxCoordinate) {
+   public void setMaxCoordinate(int maxCoordinate) {
       this.maxCoordinate = maxCoordinate;
    }
 
@@ -60,7 +61,7 @@ public class Anova {
     * Sets the maximum projection order to consider.
     *
     */
-   public void setMaxOrder (int maxOrder) {
+   public void setMaxOrder(int maxOrder) {
       this.maxOrder = maxOrder;
    }
 
@@ -70,18 +71,19 @@ public class Anova {
     * Equivalent to estimate(model, approxMean, null)
     *
     */
-   public AnovaVarianceCollector estimate (MonteCarloModelDoubleRQMC model, double approxMean) {
+   public AnovaVarianceCollector estimate(MonteCarloModelDoubleRQMC model, double approxMean) {
       return estimate(model, approxMean, null);
    }
 
    /**
     * Produces multiple replicates of the ANOVA variance estimators.
     *
-    * The number of replicates is determined by the number of points in the outer integrator.
-    * Best precision is achieved when the mean value of the model is close to \c approxMean.
+    * The number of replicates is determined by the number of points in the outer
+    * integrator. Best precision is achieved when the mean value of the model is
+    * close to \c approxMean.
     *
     */
-   public AnovaVarianceCollector estimate (MonteCarloModelDoubleRQMC model, double approxMean, AnovaObserver observer) {
+   public AnovaVarianceCollector estimate(MonteCarloModelDoubleRQMC model, double approxMean, AnovaObserver observer) {
 
       int dimension = Math.min(maxCoordinate + 1, model.getDimension());
 
@@ -100,7 +102,8 @@ public class Anova {
       return varCollector;
    }
 
-   @Override public String toString() {
+   @Override
+   public String toString() {
       String s = "ANOVA";
       if (maxCoordinate < Integer.MAX_VALUE)
          s += " [maxCoordinate=" + maxCoordinate + "]";

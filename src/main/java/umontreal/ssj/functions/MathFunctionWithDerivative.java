@@ -25,22 +25,23 @@
 package umontreal.ssj.functions;
 
 /**
- * Represents a mathematical function whose @f$n@f$th derivative can be
- * computed using  #derivative(double,int).
+ * Represents a mathematical function whose @f$n@f$th derivative can be computed
+ * using #derivative(double,int).
  *
  * <div class="SSJ-bigskip"></div>
  */
 public interface MathFunctionWithDerivative extends MathFunction {
 
-/**
- * Computes (or estimates) the @f$n@f$th derivative of the function at point
- * `x`. For @f$n=0@f$, this returns the result of
- * umontreal.ssj.functions.MathFunction.evaluate(double).
- *  @param x            the point to evaluate the derivate to.
- *  @param n            the order of the derivative.
- *  @return the resulting derivative.
- *
- *  @exception IllegalArgumentException if `n` is negative or 0.
- */
-public double derivative (double x, int n);
+   /**
+    * Computes (or estimates) the @f$n@f$th derivative of the function at point
+    * `x`. For @f$n=0@f$, this returns the result of
+    * umontreal.ssj.functions.MathFunction.evaluate(double).
+    * 
+    * @param x the point to evaluate the derivate to.
+    * @param n the order of the derivative.
+    * @return the resulting derivative.
+    *
+    * @exception IllegalArgumentException if `n` is negative or 0.
+    */
+   public double derivative(double x, int n);
 }

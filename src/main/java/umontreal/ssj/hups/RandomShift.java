@@ -23,21 +23,20 @@
  *
  */
 package umontreal.ssj.hups;
- import umontreal.ssj.rng.RandomStream;
+
+import umontreal.ssj.rng.RandomStream;
 
 /**
- * This class implements a  @ref umontreal.ssj.hups.PointSetRandomization.
- * When the `PointSet` to be randomized is a `DigitalNet`,
- * the random shift is a *random digital shift*, otherwise it is a
- * random shift modulo 1.
- * The  @ref umontreal.ssj.rng.RandomStream is stored internally. 
+ * This class implements a @ref umontreal.ssj.hups.PointSetRandomization. When
+ * the `PointSet` to be randomized is a `DigitalNet`, the random shift is a
+ * *random digital shift*, otherwise it is a random shift modulo 1. The @ref
+ * umontreal.ssj.rng.RandomStream is stored internally.
  * 
- * In the current implementation, the method
- * `randomize(PointSet)` simply calls
+ * In the current implementation, the method `randomize(PointSet)` simply calls
  * {@link umontreal.ssj.hups.PointSet.addRandomShift(RandomStream)
- * addRandomShift(stream)}. This may change in the future.
- * This class can be used as a base class to implement a specific
- * randomization by overriding #randomize(PointSet).
+ * addRandomShift(stream)}. This may change in the future. This class can be
+ * used as a base class to implement a specific randomization by overriding
+ * #randomize(PointSet).
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -46,54 +45,59 @@ public class RandomShift implements PointSetRandomization {
    protected RandomStream stream;
 
    /**
-    * Empty constructor: No stream is passed here for the randomization;
-    * one must be passed later by  #setStream.
-    * **Pierre:** Not sure if we should keep this; we always need a
-    * stream!
+    * Empty constructor: No stream is passed here for the randomization; one must
+    * be passed later by #setStream. **Pierre:** Not sure if we should keep this;
+    * we always need a stream!
     */
    public RandomShift() {
    }
 
    /**
-    * Constructor that sets the internal  @ref umontreal.ssj.rng.RandomStream to `stream`.
-    *  @param stream       stream to use in the randomization
+    * Constructor that sets the internal @ref umontreal.ssj.rng.RandomStream to
+    * `stream`.
+    * 
+    * @param stream stream to use in the randomization
     */
-   public RandomShift (RandomStream stream) {
-       this.stream = stream;
+   public RandomShift(RandomStream stream) {
+      this.stream = stream;
    }
 
    /**
     * This method calls
     * {@link umontreal.ssj.hups.PointSet.addRandomShift(RandomStream)
     * addRandomShift(stream)}.
-    *  @param p            Point set to randomize
+    * *** WARNING: Here the randomization is stored in \texttt{p}, so one
+    * cannot have multiple randomizations for the same \texttt{p}.  ***
+    * 
+    * @param p Point set to randomize
     */
-   public void randomize (PointSet p) {
+   public void randomize(PointSet p) {
       p.addRandomShift(stream);
    }
 
    /**
-    * Sets the internal  @ref umontreal.ssj.rng.RandomStream to `stream`.
-    *  @param stream       stream to use in the randomization
+    * Sets the internal @ref umontreal.ssj.rng.RandomStream to `stream`.
+    * 
+    * @param stream stream to use in the randomization
     */
-   public void setStream (RandomStream stream) {
+   public void setStream(RandomStream stream) {
       this.stream = stream;
    }
 
    /**
-    * Returns the internal  @ref umontreal.ssj.rng.RandomStream.
-    *  @return stream used in the randomization
+    * Returns the internal @ref umontreal.ssj.rng.RandomStream.
+    * 
+    * @return stream used in the randomization
     */
    public RandomStream getStream() {
       return stream;
    }
 
-   
    /**
     * Returns a descriptor of this object.
     */
-   public String toString () {
-		return "Random shift (digital if applied to a digital net)";
-	}
-   
+   public String toString() {
+      return "Random shift (digital if applied to a digital net)";
+   }
+
 }

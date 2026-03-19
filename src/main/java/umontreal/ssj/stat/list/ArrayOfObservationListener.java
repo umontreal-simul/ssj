@@ -23,7 +23,6 @@
  *
  */
 package umontreal.ssj.stat.list;
-import umontreal.ssj.stat.StatProbe;
 
 /**
  * Represents an object that can listen to observations broadcast by lists of
@@ -33,14 +32,14 @@ import umontreal.ssj.stat.StatProbe;
  */
 public interface ArrayOfObservationListener {
 
-/**
- * Receives the new array of observations `x` broadcast by the list of
- * statistical probes `listOfProbes`.
- *  @param listOfProbes the list of statistical probes broadcasting the
- *                      observation.
- *  @param x            the array of observations being broadcast.
- */
-public void newArrayOfObservations (ListOfStatProbes<?> listOfProbes,
-                                       double[] x);
+   /**
+    * Receives the new array of observations `x` broadcast by the list of
+    * statistical probes `listOfProbes`.
+    * 
+    * @param listOfProbes the list of statistical probes broadcasting the
+    *                     observation.
+    * @param x            the array of observations being broadcast.
+    */
+   public void newArrayOfObservations(ListOfStatProbes<?> listOfProbes, double[] x);
 
 }

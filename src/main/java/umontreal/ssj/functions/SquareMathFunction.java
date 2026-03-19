@@ -34,23 +34,25 @@ public class SquareMathFunction implements MathFunctionWithFirstDerivative {
    private MathFunction func;
    private double a, b;
 
-/**
- * Constructs a new square function for function `func`. The values of the
- * constants are @f$a=1@f$ and @f$b=0@f$.
- *  @param func         the function @f$f(x)@f$.
- */
-public SquareMathFunction (MathFunction func) {
-      this (func, 1, 0);
+   /**
+    * Constructs a new square function for function `func`. The values of the
+    * constants are @f$a=1@f$ and @f$b=0@f$.
+    * 
+    * @param func the function @f$f(x)@f$.
+    */
+   public SquareMathFunction(MathFunction func) {
+      this(func, 1, 0);
    }
 
    /**
-    * Constructs a new power function for function `func`, and constants
-    * `a` and `b`.
-    *  @param func         the function @f$f(x)@f$.
-    *  @param a            the multiplicative constant.
-    *  @param b            the additive constant.
+    * Constructs a new power function for function `func`, and constants `a` and
+    * `b`.
+    * 
+    * @param func the function @f$f(x)@f$.
+    * @param a    the multiplicative constant.
+    * @param b    the additive constant.
     */
-   public SquareMathFunction (MathFunction func, double a, double b) {
+   public SquareMathFunction(MathFunction func, double a, double b) {
       if (func == null)
          throw new NullPointerException();
       this.func = func;
@@ -60,7 +62,8 @@ public SquareMathFunction (MathFunction func) {
 
    /**
     * Returns the function @f$f(x)@f$.
-    *  @return the function.
+    * 
+    * @return the function.
     */
    public MathFunction getFunction() {
       return func;
@@ -68,7 +71,8 @@ public SquareMathFunction (MathFunction func) {
 
    /**
     * Returns the value of @f$a@f$.
-    *  @return the value of @f$a@f$.
+    * 
+    * @return the value of @f$a@f$.
     */
    public double getA() {
       return a;
@@ -76,20 +80,20 @@ public SquareMathFunction (MathFunction func) {
 
    /**
     * Returns the value of @f$b@f$.
-    *  @return the value of @f$b@f$.
+    * 
+    * @return the value of @f$b@f$.
     */
    public double getB() {
       return b;
    }
 
-
-   public double evaluate (double x) {
-      final double v = a*func.evaluate (x) + b;
-      return v*v;
+   public double evaluate(double x) {
+      final double v = a * func.evaluate(x) + b;
+      return v * v;
    }
 
-   public double derivative (double x) {
-      final double fder = MathFunctionUtil.derivative (func, x);
-      return 2*a*(a*func.evaluate (x) + b)*fder;
+   public double derivative(double x) {
+      final double fder = MathFunctionUtil.derivative(func, x);
+      return 2 * a * (a * func.evaluate(x) + b) * fder;
    }
 }

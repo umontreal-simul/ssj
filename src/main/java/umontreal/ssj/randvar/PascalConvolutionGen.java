@@ -23,13 +23,14 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * Implements *Pascal* random variate generators by the *convolution* method
- * (see @cite sLAW00a&thinsp;). The method generates @f$n@f$ geometric
- * variates with probability @f$p@f$ and adds them up.
+ * (see @cite sLAW00a&thinsp;). The method generates @f$n@f$ geometric variates
+ * with probability @f$p@f$ and adds them up.
  *
  * The algorithm is slow if @f$n@f$ is large.
  *
@@ -43,39 +44,39 @@ public class PascalConvolutionGen extends PascalGen {
     * Creates a *Pascal* random variate generator with parameters @f$n@f$
     * and @f$p@f$, using stream `s`.
     */
-   public PascalConvolutionGen (RandomStream s, int n, double p) {
-      super (s, null);
-      setParams (n, p);
+   public PascalConvolutionGen(RandomStream s, int n, double p) {
+      super(s, null);
+      setParams(n, p);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public PascalConvolutionGen (RandomStream s, PascalDist dist) {
-      super (s, dist);
+   public PascalConvolutionGen(RandomStream s, PascalDist dist) {
+      super(s, dist);
    }
- 
-    
+
    public int nextInt() {
       int x = 0;
       for (int i = 0; i < n; i++)
-         x += GeometricDist.inverseF (p, stream.nextDouble());
+         x += GeometricDist.inverseF(p, stream.nextDouble());
       return x;
 
    }
 
-/**
- * Generates a new variate from the *Pascal* distribution, with parameters
- * @f$n = @f$&nbsp;`n` and @f$p = @f$&nbsp;`p`, using the stream `s`.
- */
-public static int nextInt (RandomStream s, int n, double p) {
-     return convolution (s, n, p);
+   /**
+    * Generates a new variate from the *Pascal* distribution, with parameters
+    * 
+    * @f$n = @f$&nbsp;`n` and @f$p = @f$&nbsp;`p`, using the stream `s`.
+    */
+   public static int nextInt(RandomStream s, int n, double p) {
+      return convolution(s, n, p);
    }
-   private static int convolution (RandomStream stream, int n, double p) {
+
+   private static int convolution(RandomStream stream, int n, double p) {
       int x = 0;
       for (int i = 0; i < n; i++)
-         x += GeometricDist.inverseF (p, stream.nextDouble());
+         x += GeometricDist.inverseF(p, stream.nextDouble());
       return x;
    }
 }

@@ -1,14 +1,14 @@
 package charts;
+
 import umontreal.ssj.charts.XYLineChart;
 
-public class ChartTest1
-{
+public class ChartTest1 {
    private static double[][] getPoints1() {
       double[][] points = new double[2][200];
       for (int i = 0; i < points[0].length; i++) {
          double x = i / 25.0;
          points[0][i] = x;
-         points[1][i] = Math.sqrt (x);
+         points[1][i] = Math.sqrt(x);
       }
       return points;
    }
@@ -18,7 +18,7 @@ public class ChartTest1
       for (int i = 0; i < points[0].length; i++) {
          double x = -Math.PI + 2 * i * Math.PI / (points[0].length - 1);
          points[0][i] = x;
-         points[1][i] = Math.cos (x);
+         points[1][i] = Math.cos(x);
       }
       return points;
    }

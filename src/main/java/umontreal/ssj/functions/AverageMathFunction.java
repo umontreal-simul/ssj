@@ -25,70 +25,66 @@
 package umontreal.ssj.functions;
 
 /**
- * Represents a function computing the average of several functions. Let
- * @f$f_0(x), …, f_{n-1}(x)@f$ be a set of @f$n@f$ functions. This function
- * represents the average
- * @f[
- *   f(x)=\frac{1}{n}\sum_{i=0}^{n-1} f_i(x).
- * @f]
- * <div class="SSJ-bigskip"></div>
+ * Represents a function computing the average of several functions.
+ * Let @f$f_0(x), …, f_{n-1}(x)@f$ be a set of @f$n@f$ functions. This
+ * function represents the average @f[ f(x)=\frac{1}{n}\sum_{i=0}^{n-1}
+ * f_i(x). @f] <div class="SSJ-bigskip"></div>
  */
 public class AverageMathFunction implements MathFunction
 
-,
-   MathFunctionWithFirstDerivative, MathFunctionWithDerivative,
-   MathFunctionWithIntegral {
+      , MathFunctionWithFirstDerivative, MathFunctionWithDerivative, MathFunctionWithIntegral {
    private MathFunction[] func;
 
-/**
- * Constructs a function computing the average of the functions in the array
- * `func`.
- *  @param func         the array of functions to average.
- */
-public AverageMathFunction (MathFunction... func) {
+   /**
+    * Constructs a function computing the average of the functions in the array
+    * `func`.
+    * 
+    * @param func the array of functions to average.
+    */
+   public AverageMathFunction(MathFunction... func) {
       if (func == null)
          throw new NullPointerException();
-      this.func = func.clone ();
+      this.func = func.clone();
    }
 
    /**
     * Returns the functions being averaged.
-    *  @return the averaged functions.
+    * 
+    * @return the averaged functions.
     */
    public MathFunction[] getFunctions() {
-      return func.clone ();
+      return func.clone();
    }
 
-
-   public double evaluate (double x) {
+   public double evaluate(double x) {
       double sum = 0;
       for (final MathFunction fi : func)
-         sum += fi.evaluate (x);
+         sum += fi.evaluate(x);
       return sum / func.length;
    }
-   
-   public double derivative (double x, int n) {
+
+   public double derivative(double x, int n) {
       if (n < 0)
-         throw new IllegalArgumentException ("n must be greater than or equal to 0");
+         throw new IllegalArgumentException("n must be greater than or equal to 0");
       if (n == 0)
-         return evaluate (x);
+         return evaluate(x);
       double sum = 0;
       for (final MathFunction fi : func)
-         sum += MathFunctionUtil.derivative (fi, x, n);
+         sum += MathFunctionUtil.derivative(fi, x, n);
       return sum / func.length;
    }
 
-   public double derivative (double x) {
+   public double derivative(double x) {
       double sum = 0;
       for (final MathFunction fi : func)
-         sum += MathFunctionUtil.derivative (fi, x);
+         sum += MathFunctionUtil.derivative(fi, x);
       return sum / func.length;
    }
 
-   public double integral (double a, double b) {
+   public double integral(double a, double b) {
       double sum = 0;
       for (final MathFunction fi : func)
-         sum += MathFunctionUtil.integral (fi, a, b);
+         sum += MathFunctionUtil.integral(fi, a, b);
       return sum / func.length;
    }
 }

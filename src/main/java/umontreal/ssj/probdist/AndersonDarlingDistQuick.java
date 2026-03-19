@@ -23,14 +23,15 @@
  *
  */
 package umontreal.ssj.probdist;
+
 import umontreal.ssj.util.*;
 import umontreal.ssj.functions.MathFunction;
 
 /**
- * Extends the class  @ref AndersonDarlingDist for the *Anderson–Darling*
- * distribution (see @cite tAND52a, @cite tLEW61a, @cite tSTE86b&thinsp;).
- * This class implements a version faster and more precise in the tails than
- * class  @ref AndersonDarlingDist.
+ * Extends the class @ref AndersonDarlingDist for the *Anderson–Darling*
+ * distribution (see @cite tAND52a, @cite tLEW61a, @cite tSTE86b&thinsp;). This
+ * class implements a version faster and more precise in the tails than
+ * class @ref AndersonDarlingDist.
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -42,64 +43,60 @@ public class AndersonDarlingDistQuick extends AndersonDarlingDist {
       protected int n;
       protected double u;
 
-      public Function (int n, double u) {
+      public Function(int n, double u) {
          this.n = n;
          this.u = u;
       }
 
-      public double evaluate (double x) {
-         return u - cdf(n,x);
+      public double evaluate(double x) {
+         return u - cdf(n, x);
       }
    }
 
-   //-------------------------------------------------------------------------
+   // -------------------------------------------------------------------------
 
-   private static double lower_Marsaglia (int n, double x) {
+   private static double lower_Marsaglia(int n, double x) {
       // queue inférieure de l'algorithme de Marsaglia pour n = inf
 
-      double p0 = (2.00012 + (.247105 - (.0649821 - (.0347962 -
-                  (.011672 - .00168691 * x) * x) * x) * x) * x);
-      p0 *= Math.exp (-1.2337141 / x) / Math.sqrt (x);
+      double p0 = (2.00012 + (.247105 - (.0649821 - (.0347962 - (.011672 - .00168691 * x) * x) * x) * x) * x);
+      p0 *= Math.exp(-1.2337141 / x) / Math.sqrt(x);
       return p0 >= 0 ? p0 : 0;
    }
 
-
-   private static double diffcdf (int n, double x, double EPS) {
+   private static double diffcdf(int n, double x, double EPS) {
       return (cdf(n, x + EPS) - cdf(n, x - EPS)) / (2.0 * EPS);
    }
 
    /**
-    * Constructs an *Anderson–Darling* distribution for a sample of size
-    * @f$n@f$.
+    * Constructs an *Anderson–Darling* distribution for a sample of size @f$n@f$.
     */
-   public AndersonDarlingDistQuick (int n) {
-      super (n);
+   public AndersonDarlingDistQuick(int n) {
+      super(n);
    }
 
-
-   public double density (double x) {
-      return density (n, x);
+   public double density(double x) {
+      return density(n, x);
    }
 
-   public double cdf (double x) {
-      return cdf (n, x);
+   public double cdf(double x) {
+      return cdf(n, x);
    }
 
-   public double barF (double x) {
-      return barF (n, x);
+   public double barF(double x) {
+      return barF(n, x);
    }
 
-   public double inverseF (double u) {
-      return inverseF (n, u);
+   public double inverseF(double u) {
+      return inverseF(n, u);
    }
 
-/**
- * Computes the density of the *Anderson–Darling* distribution with parameter
- * @f$n@f$.
- */
-public static double density (int n, double x) {
+   /**
+    * Computes the density of the *Anderson–Darling* distribution with
+    * parameter @f$n@f$.
+    */
+   public static double density(int n, double x) {
       if (n <= 0)
-         throw new IllegalArgumentException ("n <= 0");
+         throw new IllegalArgumentException("n <= 0");
       if (n == 1)
          return density_N_1(x);
 
@@ -326,45 +323,46 @@ public static double density (int n, double x) {
       CoAD[102] = -0.0016;
    }
 
-/**
- * Computes the *Anderson–Darling* distribution function @f$F_n(x)@f$ at
- * @f$x@f$ for sample size @f$n@f$. For @f$0.2 < x < 5@f$, the asymptotic
- * distribution @f$F_{\infty}(x) = \lim_{n\to\infty} F_n(x)@f$ was first
- * computed by numerical integration; then a linear correction @f$O(1/n)@f$
- * obtained by simulation was added. For @f$5 < x@f$, the Grace-Wood
- * empirical approximation @cite tGRA12a&thinsp; is used. For @f$x < 0.2@f$,
- * the Marsaglias’ approximation @cite tMAR04a&thinsp; for @f$n=\infty@f$ is
- * used.
- *
- * For @f$n>6@f$, the method gives at least 3 decimal digits of precision
- * except for small @f$x@f$; for @f$n \le6@f$, it gives at least 2 decimal
- * digits of precision except for small @f$x@f$. For @f$n=1@f$, the exact
- * formula @f$F_1(x) = \sqrt{1 - 4e^{-x-1}}@f$, for @f$x\ge\ln(4) - 1@f$,
- * is used.
- */
-public static double cdf (int n, double x) {
+   /**
+    * Computes the *Anderson–Darling* distribution function @f$F_n(x)@f$ at
+    * 
+    * @f$x@f$ for sample size @f$n@f$. For @f$0.2 < x < 5@f$, the asymptotic
+    *         distribution @f$F_{\infty}(x) = \lim_{n\to\infty} F_n(x)@f$ was first
+    *         computed by numerical integration; then a linear
+    *         correction @f$O(1/n)@f$ obtained by simulation was added. For @f$5 <
+    *         x@f$, the Grace-Wood empirical approximation @cite tGRA12a&thinsp; is
+    *         used. For @f$x < 0.2@f$, the Marsaglias’ approximation @cite
+    *         tMAR04a&thinsp; for @f$n=\infty@f$ is used.
+    *
+    *         For @f$n>6@f$, the method gives at least 3 decimal digits of
+    *         precision except for small @f$x@f$; for @f$n \le6@f$, it gives at
+    *         least 2 decimal digits of precision except for small @f$x@f$.
+    *         For @f$n=1@f$, the exact formula @f$F_1(x) = \sqrt{1 - 4e^{-x-1}}@f$,
+    *         for @f$x\ge\ln(4) - 1@f$, is used.
+    */
+   public static double cdf(int n, double x) {
       if (n <= 0)
-         throw new IllegalArgumentException ("   n <= 0");
+         throw new IllegalArgumentException("   n <= 0");
       if (1 == n)
-         return cdf_N_1 (x);
+         return cdf_N_1(x);
       if (x <= 0.0)
          return 0.0;
       if (x >= XBIG)
          return 1.0;
       if (x <= 0.2)
-         return lower_Marsaglia (n, x);
-      return 1.0 - barF (n, x);
+         return lower_Marsaglia(n, x);
+      return 1.0 - barF(n, x);
    }
 
    /**
-    * Computes the complementary distribution function @f$\bar{F}_n(x)@f$
-    * with parameter @f$n@f$.
+    * Computes the complementary distribution function @f$\bar{F}_n(x)@f$ with
+    * parameter @f$n@f$.
     */
-   public static double barF (int n, double x) {
+   public static double barF(int n, double x) {
       if (n <= 0)
-         throw new IllegalArgumentException ("n <= 0");
+         throw new IllegalArgumentException("n <= 0");
       if (n == 1)
-         return barF_N_1 (x);
+         return barF_N_1(x);
 
       if (x <= 0.0)
          return 1.0;
@@ -375,59 +373,56 @@ public static double cdf (int n, double x) {
       if (x > 5.) {
          // Grace-Wood approx. in upper tail
          double nd = n;
-         q = (0.23945*Math.pow(nd, -0.9379) - 0.1201*Math.pow(nd, -0.96) -
-             1.0002816)*x - 1.437*Math.pow(nd, -0.9379) +
-             1.441*Math.pow(nd, -0.96) - 0.0633101;
+         q = (0.23945 * Math.pow(nd, -0.9379) - 0.1201 * Math.pow(nd, -0.96) - 1.0002816) * x
+               - 1.437 * Math.pow(nd, -0.9379) + 1.441 * Math.pow(nd, -0.96) - 0.0633101;
          return Math.pow(x, -0.48897) * Math.exp(q);
       }
 
       if (x <= 0.2)
-         return 1.0 - cdf (n, x);
+         return 1.0 - cdf(n, x);
 
-      final double H = 0.05;  // the step of the interpolation table
-      final int i = (int) (1 +  x / H);
+      final double H = 0.05; // the step of the interpolation table
+      final int i = (int) (1 + x / H);
       double res;
-      q = x/H - i;
+      q = x / H - i;
 
       // Newton backwards quadratic interpolation
-      res = (F2AD[i - 2] - 2.0*F2AD[i - 1] + F2AD[i])*q*(q + 1.0)/2.0
-         + (F2AD[i] - F2AD[i - 1])*q + F2AD[i];
+      res = (F2AD[i - 2] - 2.0 * F2AD[i - 1] + F2AD[i]) * q * (q + 1.0) / 2.0 + (F2AD[i] - F2AD[i - 1]) * q + F2AD[i];
 
       // Empirical correction in 1/n
-      res += (CoAD[i]*(q + 1.0) - CoAD[i - 1]*q)/n;
+      res += (CoAD[i] * (q + 1.0) - CoAD[i - 1] * q) / n;
 
       res = 1.0 - res;
       if (res >= 1.0)
          return 1.0;
       if (res <= 0.0)
          return 0.0;
-   return res;
+      return res;
    }
 
    /**
     * Computes the inverse @f$x = F_n^{-1}(u)@f$ of the *Anderson–Darling*
     * distribution with parameter @f$n@f$.
     */
-   public static double inverseF (int n, double u) {
+   public static double inverseF(int n, double u) {
       if (n <= 0)
-         throw new IllegalArgumentException ("n <= 0");
+         throw new IllegalArgumentException("n <= 0");
       if (u < 0.0 || u > 1.0)
-         throw new IllegalArgumentException ("u must be in [0,1]");
+         throw new IllegalArgumentException("u must be in [0,1]");
       if (n == 1)
-         return inverse_N_1 (u);
+         return inverse_N_1(u);
       if (u == 1.0)
          return Double.POSITIVE_INFINITY;
       if (u == 0.0)
          return 0.0;
-      Function f = new Function (n,u);
-      return RootFinder.brentDekker (0.0, 50.0, f, 1.0e-5);
+      Function f = new Function(n, u);
+      return RootFinder.brentDekker(0.0, 50.0, f, 1.0e-5);
    }
 
    /**
-    * Returns a `String` containing information about the current
-    * distribution.
+    * Returns a `String` containing information about the current distribution.
     */
-   public String toString () {
+   public String toString() {
       return getClass().getSimpleName() + " : n = " + n;
    }
 

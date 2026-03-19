@@ -23,14 +23,15 @@
  *
  */
 package umontreal.ssj.probdistmulti;
+
 import umontreal.ssj.util.PrintfFormat;
 import umontreal.ssj.util.Num;
 
 /**
  * Classes implementing continuous multi-dimensional distributions should
- * inherit from this class. Such distributions are characterized by a
- * *density* function @f$f(x_1, x_2, …, x_d)@f$; thus the signature of a
- * `density` method is supplied here. All array indices start at 0.
+ * inherit from this class. Such distributions are characterized by a *density*
+ * function @f$f(x_1, x_2, …, x_d)@f$; thus the signature of a `density`
+ * method is supplied here. All array indices start at 0.
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -39,14 +40,15 @@ import umontreal.ssj.util.Num;
 public abstract class ContinuousDistributionMulti {
    protected int dimension;
 
-/**
- * Returns @f$f(x_1, x_2, …, x_d)@f$, the probability density of @f$X@f$
- * evaluated at the point @f$x@f$, where @f$x = \{x_1, x_2, …, x_d\}@f$. The
- * convention is that @f$\mathtt{x[i-1]} = x_i@f$.
- *  @param x            value at which the density is evaluated
- *  @return density function evaluated at `x`
- */
-public abstract double density (double[] x);
+   /**
+    * Returns @f$f(x_1, x_2, …, x_d)@f$, the probability density of @f$X@f$
+    * evaluated at the point @f$x@f$, where @f$x = \{x_1, x_2, …, x_d\}@f$. The
+    * convention is that @f$\mathtt{x[i-1]} = x_i@f$.
+    * 
+    * @param x value at which the density is evaluated
+    * @return density function evaluated at `x`
+    */
+   public abstract double density(double[] x);
 
    /**
     * Returns the dimension @f$d@f$ of the distribution.
@@ -56,19 +58,19 @@ public abstract double density (double[] x);
    }
 
    /**
-    * Returns the mean vector of the distribution, defined as @f$\mu_i =
-    * E[X_i]@f$.
+    * Returns the mean vector of the distribution, defined as @f$\mu_i = E[X_i]@f$.
     */
    public abstract double[] getMean();
 
    /**
-    * Returns the variance-covariance matrix of the distribution, defined
-    * as<br>@f$\sigma_{ij} = E[(X_i - \mu_i)(X_j - \mu_j)]@f$.
+    * Returns the variance-covariance matrix of the distribution, defined as<br>
+    * @f$\sigma_{ij} = E[(X_i - \mu_i)(X_j - \mu_j)]@f$.
     */
    public abstract double[][] getCovariance();
 
    /**
     * Returns the correlation matrix of the distribution, defined as
+    * 
     * @f$\rho_{ij} = \sigma_{ij}/\sqrt{\sigma_{ii}\sigma_{jj}}@f$.
     */
    public abstract double[][] getCorrelation();

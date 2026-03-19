@@ -23,18 +23,17 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements methods for generating random variates from the
- * <em>Fréchet</em> distribution, with location parameter @f$\delta@f$,
- * scale parameter @f$\beta> 0@f$, and shape parameter @f$\alpha> 0@f$,
- * where we use the notation @f$z = (x-\delta)/\beta@f$. It has density
- * @f[
- *   f (x) = \frac{\alpha e^{-z^{-\alpha}}}{\beta z^{\alpha+1}}, \qquad\mbox{for } x > \delta.
- * @f]
- * The density is 0 for @f$x \le\delta@f$.
+ * <em>Fréchet</em> distribution, with location parameter @f$\delta@f$, scale
+ * parameter @f$\beta> 0@f$, and shape parameter @f$\alpha> 0@f$, where we use
+ * the notation @f$z = (x-\delta)/\beta@f$. It has density @f[ f (x) =
+ * \frac{\alpha e^{-z^{-\alpha}}}{\beta z^{\alpha+1}}, \qquad\mbox{for } x >
+ * \delta. @f] The density is 0 for @f$x \le\delta@f$.
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -47,42 +46,42 @@ public class FrechetGen extends RandomVariateGen {
 
    /**
     * Creates a <em>Fréchet</em> random number generator with
-    * @f$\alpha=@f$ `alpha`, @f$\beta= 1@f$ and @f$\delta= 0@f$ using
-    * stream `s`.
+    * 
+    * @f$\alpha=@f$ `alpha`, @f$\beta= 1@f$ and @f$\delta= 0@f$ using stream `s`.
     */
-   public FrechetGen (RandomStream s, double alpha) {
-      this (s, alpha, 1.0, 0.0);
+   public FrechetGen(RandomStream s, double alpha) {
+      this(s, alpha, 1.0, 0.0);
    }
 
    /**
     * Creates a <em>Fréchet</em> random number generator with parameters
-    * @f$\alpha@f$ = `alpha`, @f$\beta@f$ = `beta` and @f$\delta@f$ =
-    * `delta` using stream `s`.
+    * 
+    * @f$\alpha@f$ = `alpha`, @f$\beta@f$ = `beta` and @f$\delta@f$ = `delta` using
+    *              stream `s`.
     */
-   public FrechetGen (RandomStream s, double alpha, double beta,
-                      double delta) {
-      super (s, new FrechetDist (alpha, beta, delta));
-      setParams (alpha, beta, delta);
+   public FrechetGen(RandomStream s, double alpha, double beta, double delta) {
+      super(s, new FrechetDist(alpha, beta, delta));
+      setParams(alpha, beta, delta);
    }
 
    /**
-    * Creates a new generator for the <em>Fréchet</em> distribution `dist`
-    * and stream `s`.
+    * Creates a new generator for the <em>Fréchet</em> distribution `dist` and
+    * stream `s`.
     */
-   public FrechetGen (RandomStream s, FrechetDist dist) {
-      super (s, dist);
+   public FrechetGen(RandomStream s, FrechetDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getAlpha(), dist.getBeta(), dist.getDelta());
+         setParams(dist.getAlpha(), dist.getBeta(), dist.getDelta());
    }
 
    /**
     * Generates a new variate from the <em>Fréchet</em> distribution with
     * parameters @f$\alpha=@f$ `alpha`, @f$\beta= @f$&nbsp;`beta` and
+    * 
     * @f$\delta= @f$&nbsp;`delta` using stream `s`.
     */
-   public static double nextDouble (RandomStream s, double alpha,
-                                    double beta, double delta) {
-      return FrechetDist.inverseF (alpha, beta, delta, s.nextDouble());
+   public static double nextDouble(RandomStream s, double alpha, double beta, double delta) {
+      return FrechetDist.inverseF(alpha, beta, delta, s.nextDouble());
    }
 
    /**
@@ -107,14 +106,14 @@ public class FrechetGen extends RandomVariateGen {
    }
 
    /**
-    * Sets the parameters @f$\alpha@f$, @f$\beta@f$ and @f$\delta@f$ of
-    * this object.
+    * Sets the parameters @f$\alpha@f$, @f$\beta@f$ and @f$\delta@f$ of this
+    * object.
     */
-   protected void setParams (double alpha, double beta, double delta) {
-     if (beta <= 0.0)
-         throw new IllegalArgumentException ("beta <= 0");
+   protected void setParams(double alpha, double beta, double delta) {
+      if (beta <= 0.0)
+         throw new IllegalArgumentException("beta <= 0");
       if (alpha <= 0.0)
-         throw new IllegalArgumentException ("alpha <= 0");
+         throw new IllegalArgumentException("alpha <= 0");
       this.delta = delta;
       this.beta = beta;
       this.alpha = alpha;

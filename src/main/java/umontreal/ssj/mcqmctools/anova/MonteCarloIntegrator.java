@@ -12,14 +12,14 @@ public class MonteCarloIntegrator extends MonteCarloSampler implements RandomInt
    protected Tally statValue = null;
    protected ListOfTallies<Tally> statValueList = null;
 
-   public MonteCarloIntegrator (int samples) {
+   public MonteCarloIntegrator(int samples) {
       super(samples);
    }
-   
-   public MonteCarloIntegrator (int samples, RandomStream stream) {
+
+   public MonteCarloIntegrator(int samples, RandomStream stream) {
       super(samples, stream);
    }
-   
+
    /**
     * Returns the number of samples.
     */
@@ -33,20 +33,20 @@ public class MonteCarloIntegrator extends MonteCarloSampler implements RandomInt
    }
 
    /** @copydoc Integrator::integrate(MonteCarloModelDouble, Tally) */
-   public void integrate (MonteCarloModelDouble model, Tally statValue) {
- 
+   public void integrate(MonteCarloModelDouble model, Tally statValue) {
+
       boolean isPointSet = (stream instanceof PointSetIterator);
-      
+
       for (int i = 0; i < nSamples; i++) {
          model.simulate(stream);
          statValue.add(model.getPerformance());
          if (isPointSet)
-            ((PointSetIterator)stream).resetToNextPoint();
+            ((PointSetIterator) stream).resetToNextPoint();
       }
    }
-   
+
    /** @copydoc Integrator::integrate(MonteCarloModelDouble) */
-   public double integrate (MonteCarloModelDouble model) {
+   public double integrate(MonteCarloModelDouble model) {
       if (statValue == null)
          this.statValue = new Tally();
       else
@@ -55,21 +55,24 @@ public class MonteCarloIntegrator extends MonteCarloSampler implements RandomInt
       return statValue.average();
    }
 
-   /** @copydoc Integrator::integrate(MonteCarloModel<double[]>, ListOfTallies<? extends Tally>) */
-   public void integrate (MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> statValue) {
+   /**
+    * @copydoc Integrator::integrate(MonteCarloModel<double[]>, ListOfTallies<?
+    *          extends Tally>)
+    */
+   public void integrate(MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> statValue) {
 
       boolean isPointSet = (stream instanceof PointSetIterator);
-      
+
       for (int i = 0; i < nSamples; i++) {
          model.simulate(stream);
          statValue.add(model.getPerformance());
          if (isPointSet)
-            ((PointSetIterator)stream).resetToNextPoint();
+            ((PointSetIterator) stream).resetToNextPoint();
       }
    }
 
    /** @copydoc Integrator::integrate(MonteCarloModel<double[]>, double[]) */
-   public void integrate (MonteCarloModel<double[]> model, double[] values) {
+   public void integrate(MonteCarloModel<double[]> model, double[] values) {
       if (statValueList == null || statValueList.size() != values.length)
          this.statValueList = ListOfTallies.createWithTally(values.length);
       else
@@ -78,10 +81,11 @@ public class MonteCarloIntegrator extends MonteCarloSampler implements RandomInt
       statValueList.average(values);
    }
 
-   @Override public String toString() {
+   @Override
+   public String toString() {
       String s = "Monte Carlo Integrator [samples=" + getNumSamples() + "]";
       if (getStream() != null)
          s += " [stream=" + getStream().getClass().getSimpleName() + "]";
       return s;
-   }   
+   }
 }

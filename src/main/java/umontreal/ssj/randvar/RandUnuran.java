@@ -23,13 +23,14 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.util.NativeUtils;
 
 /**
  * This internal class provides the access point to the C package UNURAN. It
- * provides native methods used by  @ref UnuranContinuous,  UnuranDiscrete
- * and  @ref UnuranEmpirical.
+ * provides native methods used by @ref UnuranContinuous, UnuranDiscrete
+ * and @ref UnuranEmpirical.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -45,9 +46,11 @@ class RandUnuran {
    protected RandomStream auxStream;
    protected long nativeParams = 0;
 
-   protected RandUnuran() {}
+   protected RandUnuran() {
+   }
 
-   protected native void init (String genStr);
+   protected native void init(String genStr);
+
    protected void finalize() {
       close();
    }
@@ -55,28 +58,32 @@ class RandUnuran {
    public native void close();
 
    // random variate generation native methods
-   protected native int getRandDisc (double u, long np);
-   protected native double getRandCont (double u, long np);
-   protected native void getRandVec (double u, long np, double[] vec);
+   protected native int getRandDisc(double u, long np);
+
+   protected native double getRandCont(double u, long np);
+
+   protected native void getRandVec(double u, long np, double[] vec);
 
    // random array of variates generation native methods
-   protected native void getRandDiscArray (long np, double[] u, double[] uaux,
-        int[] v, int start, int n);
-   protected native void getRandContArray (long np, double[] u, double[] uaux,
-        double[] v, int start, int n);
+   protected native void getRandDiscArray(long np, double[] u, double[] uaux, int[] v, int start, int n);
+
+   protected native void getRandContArray(long np, double[] u, double[] uaux, double[] v, int start, int n);
 
    // methods to query the type of distribution for error checking
    protected native boolean isDiscrete();
+
    protected native boolean isContinuous();
+
    protected native boolean isContinuousMultivariate();
+
    protected native boolean isEmpirical();
+
    protected native boolean isEmpiricalMultivariate();
 
    static {
       try {
          NativeUtils.loadLibraryFromJar("/jni/" + System.mapLibraryName("randvar"));
-      }
-      catch (java.io.IOException e) {
+      } catch (java.io.IOException e) {
          throw new UnsatisfiedLinkError(e.getMessage());
       }
    }

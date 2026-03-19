@@ -36,27 +36,28 @@ import java.util.Collections;
 import java.util.RandomAccess;
 
 /**
- * Represents a matrix of statistical probes that can be managed
- * simultaneously. Each element of this matrix is a
+ * Represents a matrix of statistical probes that can be managed simultaneously.
+ * Each element of this matrix is a
+ * 
  * @ref umontreal.ssj.stat.StatProbe instance which can be obtained and
- * manipulated. Alternatively, several methods are provided to manipulate all
- * probes in the matrix simultaneously.
+ *      manipulated. Alternatively, several methods are provided to manipulate
+ *      all probes in the matrix simultaneously.
  *
- * Each matrix of probes can have a global name describing the contents of
- * its elements, and local names for each cell. For example, a matrix of
- * statistical probes for the waiting times can have the global name
- * "<tt>Waiting times</tt>" while the first cell has local name "<tt>type 1,
+ *      Each matrix of probes can have a global name describing the contents of
+ *      its elements, and local names for each cell. For example, a matrix of
+ *      statistical probes for the waiting times can have the global name
+ *      "<tt>Waiting times</tt>" while the first cell has local name
+ *      "<tt>type 1,
  * period 1</tt>".
  *
- * Facilities are provided to fill matrices of sums, averages, etc. obtained
- * from the individual statistical probes.  DoubleMatrix2D is used instead of
- * 2D arrays because it more efficiently stores the values, and it supports
- * computations on the elements.
+ *      Facilities are provided to fill matrices of sums, averages, etc.
+ *      obtained from the individual statistical probes. DoubleMatrix2D is used
+ *      instead of 2D arrays because it more efficiently stores the values, and
+ *      it supports computations on the elements.
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  */
-public class MatrixOfStatProbes<E extends StatProbe>
-                                implements Cloneable, Iterable<E> {
+public class MatrixOfStatProbes<E extends StatProbe> implements Cloneable, Iterable<E> {
    private List<MatrixOfObservationListener> listeners = new ArrayList<MatrixOfObservationListener>();
    protected boolean collect = true;
    protected boolean broadcast = false;
@@ -66,55 +67,55 @@ public class MatrixOfStatProbes<E extends StatProbe>
    private int numColumns;
    private int modCount = 0;
 
-   private static enum ListType { ROW, COLUMN }
+   private static enum ListType {
+      ROW, COLUMN
+   }
 
    /**
-    * Constructs a new unnamed matrix of statistical probes with `numRows`
+    * Constructs a new unnamed matrix of statistical probes with `numRows` rows,
+    * and `numColumns` columns, and filled with `null` references.
+    * 
+    * @param numRows    the number of rows in the matrix.
+    * @param numColumns the number of columns in the matrix.
+    * @exception NegativeArraySizeException if `numRows` or `numColumns` are
+    *                                       negative.
+    */
+   public MatrixOfStatProbes(int numRows, int numColumns) {
+      createProbes(numRows, numColumns);
+   }
+
+   /**
+    * Constructs a new matrix of statistical probes with name `name`, `numRows`
     * rows, and `numColumns` columns, and filled with `null` references.
-    *  @param numRows      the number of rows in the matrix.
-    *  @param numColumns   the number of columns in the matrix.
-    *  @exception NegativeArraySizeException if `numRows` or `numColumns`
-    * are negative.
+    * 
+    * @param name       the global name of the matrix.
+    * @param numRows    the number of rows in the matrix.
+    * @param numColumns the number of columns in the matrix.
+    * @exception NegativeArraySizeException if `numRows` or `numColumns` are
+    *                                       negative.
     */
-   public MatrixOfStatProbes (int numRows, int numColumns) {
-      createProbes (numRows, numColumns);
-   }
-
-   /**
-    * Constructs a new matrix of statistical probes with name `name`,
-    * `numRows` rows, and `numColumns` columns, and filled with `null`
-    * references.
-    *  @param name         the global name of the matrix.
-    *  @param numRows      the number of rows in the matrix.
-    *  @param numColumns   the number of columns in the matrix.
-    *  @exception NegativeArraySizeException if `numRows` or `numColumns`
-    * are negative.
-    */
-   public MatrixOfStatProbes (String name, int numRows, int numColumns) {
+   public MatrixOfStatProbes(String name, int numRows, int numColumns) {
       this.name = name;
-      createProbes (numRows, numColumns);
+      createProbes(numRows, numColumns);
    }
 
-   
    // @SuppressWarnings("unchecked")
-   private void createProbes (int numRows, int numColumns) {
+   private void createProbes(int numRows, int numColumns) {
       if (numRows < 0)
-         throw new NegativeArraySizeException
-            ("The number of rows must not be negative");
+         throw new NegativeArraySizeException("The number of rows must not be negative");
       if (numColumns < 0)
-         throw new NegativeArraySizeException
-            ("The number of columns must not be negative");
+         throw new NegativeArraySizeException("The number of columns must not be negative");
       this.numRows = numRows;
       this.numColumns = numColumns;
-      int length = numRows*numColumns;
+      int length = numRows * numColumns;
 
-      probes = (E[])new StatProbe[length];
+      probes = (E[]) new StatProbe[length];
    }
-
 
    /**
     * Returns the global name of this matrix of statistical probes.
-    *  @return the global name of the matrix.
+    * 
+    * @return the global name of the matrix.
     */
    public String getName() {
       return name;
@@ -122,15 +123,17 @@ public class MatrixOfStatProbes<E extends StatProbe>
 
    /**
     * Sets the global name of this matrix to `name`.
-    *  @param name         the new global name of the matrix.
+    * 
+    * @param name the new global name of the matrix.
     */
-   public void setName (String name) {
+   public void setName(String name) {
       this.name = name;
    }
 
    /**
     * Returns the number of rows in this matrix.
-    *  @return the total number of rows.
+    * 
+    * @return the total number of rows.
     */
    public int rows() {
       return numRows;
@@ -138,57 +141,57 @@ public class MatrixOfStatProbes<E extends StatProbe>
 
    /**
     * Returns the number of columns in this matrix.
-    *  @return the total number of columns.
+    * 
+    * @return the total number of columns.
     */
    public int columns() {
       return numColumns;
    }
 
    /**
-    * Sets the number of rows of this matrix of statistical probes to
-    * `newRows`, adding or removing cells as necessary. If `newRows` is
-    * negative, a `NegativeArraySizeException` is thrown. Otherwise, if
-    * `newRows` is equal to  #rows, nothing happens. If the number of rows
-    * is reduced, the last  #rows ` - newRows` rows of statistical probes
-    * are lost. If the number of rows is increased, the new elements of
-    * the matrix are set to `null`.
-    *  @param newRows      the new number of rows of the matrix.
-    *  @exception IllegalArgumentException if an error occurs during
-    * construction of statistical probes.
-    *  @exception NegativeArraySizeException if `newRows` is negative.
+    * Sets the number of rows of this matrix of statistical probes to `newRows`,
+    * adding or removing cells as necessary. If `newRows` is negative, a
+    * `NegativeArraySizeException` is thrown. Otherwise, if `newRows` is equal to
+    * #rows, nothing happens. If the number of rows is reduced, the last #rows ` -
+    * newRows` rows of statistical probes are lost. If the number of rows is
+    * increased, the new elements of the matrix are set to `null`.
+    * 
+    * @param newRows the new number of rows of the matrix.
+    * @exception IllegalArgumentException   if an error occurs during construction
+    *                                       of statistical probes.
+    * @exception NegativeArraySizeException if `newRows` is negative.
     */
-   public void setRows (int newRows) {
+   public void setRows(int newRows) {
       if (newRows < 0)
-         throw new NegativeArraySizeException
-            ("The given number of rows is negative");
+         throw new NegativeArraySizeException("The given number of rows is negative");
       if (rows() == newRows)
          return;
-      E[] newProbes = (E[])new StatProbe[newRows*columns()];
-      int m = Math.min (rows(), newRows);
-      System.arraycopy (probes, 0, newProbes, 0, m*columns());
+      E[] newProbes = (E[]) new StatProbe[newRows * columns()];
+      int m = Math.min(rows(), newRows);
+      System.arraycopy(probes, 0, newProbes, 0, m * columns());
       probes = newProbes;
       numRows = newRows;
       ++modCount;
    }
 
    /**
-    * Similar to  #setRows(int), for setting the number of columns.
-    *  @param newColumns   the new number of columns of the matrix.
-    *  @exception IllegalArgumentException if an error occurs during
-    * construction of statistical probes.
-    *  @exception NegativeArraySizeException if `newolumns` is negative.
+    * Similar to #setRows(int), for setting the number of columns.
+    * 
+    * @param newColumns the new number of columns of the matrix.
+    * @exception IllegalArgumentException   if an error occurs during construction
+    *                                       of statistical probes.
+    * @exception NegativeArraySizeException if `newolumns` is negative.
     */
-   public void setColumns (int newColumns) {
+   public void setColumns(int newColumns) {
       if (newColumns < 0)
-         throw new IllegalArgumentException
-            ("The given number of columns is negative");
+         throw new IllegalArgumentException("The given number of columns is negative");
       if (columns() == newColumns)
          return;
-      //E[] newProbes = (E[])new StatProbe[probeClass, rows()*newColumns];
-      E[] newProbes = (E[])new StatProbe[rows()*newColumns];
-      int m = Math.min (columns(), newColumns);
+      // E[] newProbes = (E[])new StatProbe[probeClass, rows()*newColumns];
+      E[] newProbes = (E[]) new StatProbe[rows() * newColumns];
+      int m = Math.min(columns(), newColumns);
       for (int r = 0; r < rows(); r++)
-         System.arraycopy (probes, columns()*r, newProbes, newColumns*r, m);
+         System.arraycopy(probes, columns() * r, newProbes, newColumns * r, m);
       probes = newProbes;
       numColumns = newColumns;
       ++modCount;
@@ -197,254 +200,254 @@ public class MatrixOfStatProbes<E extends StatProbe>
    /**
     * Returns the statistical probe corresponding to the row&nbsp;`r` and
     * column&nbsp;`c`.
-    *  @param r            the row to look at.
-    *  @param c            the column to look at.
-    *  @return the corresponding statistical probe.
+    * 
+    * @param r the row to look at.
+    * @param c the column to look at.
+    * @return the corresponding statistical probe.
     *
-    *  @exception ArrayIndexOutOfBoundsException if `r` or `c` are
-    * negative, if `r` is greater than or equal to  #rows, or if `c` is
-    * greater than or equal to  #columns.
+    * @exception ArrayIndexOutOfBoundsException if `r` or `c` are negative, if `r`
+    *                                           is greater than or equal to #rows,
+    *                                           or if `c` is greater than or equal
+    *                                           to #columns.
     */
-   public E get (int r, int c) {
+   public E get(int r, int c) {
       if (r < 0 || r >= numRows)
-         throw new ArrayIndexOutOfBoundsException
-            ("Row index out of bounds: " + r);
+         throw new ArrayIndexOutOfBoundsException("Row index out of bounds: " + r);
       if (c < 0 || c >= numColumns)
-         throw new ArrayIndexOutOfBoundsException
-            ("Column index out of bounds: " + c);
-      return probes[numColumns*r + c];
+         throw new ArrayIndexOutOfBoundsException("Column index out of bounds: " + c);
+      return probes[numColumns * r + c];
    }
 
    /**
     * Sets the statistical probe corresponding to the row&nbsp;`r` and
     * column&nbsp;`c` to `probe`.
-    *  @param r            the row to modify.
-    *  @param c            the column to modify.
-    *  @param probe        t
-    * he new probe.
-    *  @exception ArrayIndexOutOfBoundsException if `r` or `c` are
-    * negative, if `r` is greater than or equal to  #rows, or if `c` is
-    * greater than or equal to  #columns.
+    * 
+    * @param r     the row to modify.
+    * @param c     the column to modify.
+    * @param probe t he new probe.
+    * @exception ArrayIndexOutOfBoundsException if `r` or `c` are negative, if `r`
+    *                                           is greater than or equal to #rows,
+    *                                           or if `c` is greater than or equal
+    *                                           to #columns.
     */
-   public void set (int r, int c, E probe) {
+   public void set(int r, int c, E probe) {
       if (r < 0 || r >= numRows)
-         throw new ArrayIndexOutOfBoundsException
-            ("Row index out of bounds: " + r);
+         throw new ArrayIndexOutOfBoundsException("Row index out of bounds: " + r);
       if (c < 0 || c >= numColumns)
-         throw new ArrayIndexOutOfBoundsException
-            ("Column index out of bounds: " + c);
-      probes[numColumns*r + c] = probe;
+         throw new ArrayIndexOutOfBoundsException("Column index out of bounds: " + c);
+      probes[numColumns * r + c] = probe;
       ++modCount;
    }
 
    /**
-    * Initializes this matrix of statistical probes by calling
-    * `StatProbe.init` on each element.
+    * Initializes this matrix of statistical probes by calling `StatProbe.init` on
+    * each element.
     */
    public void init() {
       int rows = rows();
       int columns = columns();
       for (int r = 0; r < rows; r++)
          for (int c = 0; c < columns; c++)
-            get (r, c).init();
+            get(r, c).init();
    }
 
    /**
     * For each probe in the matrix, computes the sum by calling
-    * umontreal.ssj.stat.StatProbe.sum, and stores it into the given
-    * matrix `m`.
-    *  @param m            the matrix to be filled with sums.
-    *  @exception NullPointerException if `m` is `null`.
-    *  @exception IllegalArgumentException if `m.rows()` does not
-    * correspond to  #rows, or `m.columns()` does not correspond to
-    * #columns.
+    * umontreal.ssj.stat.StatProbe.sum, and stores it into the given matrix `m`.
+    * 
+    * @param m the matrix to be filled with sums.
+    * @exception NullPointerException     if `m` is `null`.
+    * @exception IllegalArgumentException if `m.rows()` does not correspond to
+    *                                     #rows, or `m.columns()` does not
+    *                                     correspond to #columns.
     */
-   public void sum (DoubleMatrix2D m) {
+   public void sum(DoubleMatrix2D m) {
       if (m.rows() != rows())
-         throw new IllegalArgumentException
-            ("Invalid number of rows in the given matrix: required " + rows() +
-             " but found " + m.rows());
+         throw new IllegalArgumentException(
+               "Invalid number of rows in the given matrix: required " + rows() + " but found " + m.rows());
       if (m.columns() != columns())
-         throw new IllegalArgumentException
-            ("Invalid number of columns in the given matrix: required " + columns() +
-             " but found " + m.columns());
+         throw new IllegalArgumentException(
+               "Invalid number of columns in the given matrix: required " + columns() + " but found " + m.columns());
       for (int r = 0; r < rows(); r++)
          for (int c = 0; c < columns(); c++) {
-            StatProbe probe = get (r, c);
-            m.setQuick (r, c, probe == null ? Double.NaN : probe.sum());
+            StatProbe probe = get(r, c);
+            m.setQuick(r, c, probe == null ? Double.NaN : probe.sum());
          }
    }
 
    /**
-    * For each statistical probe in the matrix, computes the average by
-    * calling  umontreal.ssj.stat.StatProbe.average, and stores it into
-    * the given matrix `m`.
-    *  @param m            the matrix to be filled with averages.
-    *  @exception NullPointerException if `m` is `null`.
-    *  @exception IllegalArgumentException if `m.rows()` does not
-    * correspond to  #rows, or `m.columns()` does not correspond to
-    * #columns.
+    * For each statistical probe in the matrix, computes the average by calling
+    * umontreal.ssj.stat.StatProbe.average, and stores it into the given matrix
+    * `m`.
+    * 
+    * @param m the matrix to be filled with averages.
+    * @exception NullPointerException     if `m` is `null`.
+    * @exception IllegalArgumentException if `m.rows()` does not correspond to
+    *                                     #rows, or `m.columns()` does not
+    *                                     correspond to #columns.
     */
-   public void average (DoubleMatrix2D m) {
+   public void average(DoubleMatrix2D m) {
       if (m.rows() != rows())
-         throw new IllegalArgumentException
-            ("Invalid number of rows in the given matrix: required " + rows() +
-             " but found " + m.rows());
+         throw new IllegalArgumentException(
+               "Invalid number of rows in the given matrix: required " + rows() + " but found " + m.rows());
       if (m.columns() != columns())
-         throw new IllegalArgumentException
-            ("Invalid number of columns in the given matrix: required " + columns() +
-             " but found " + m.columns());
+         throw new IllegalArgumentException(
+               "Invalid number of columns in the given matrix: required " + columns() + " but found " + m.columns());
       for (int r = 0; r < rows(); r++)
          for (int c = 0; c < columns(); c++) {
-            StatProbe probe = get (r, c);
-            m.setQuick (r, c, probe == null ? Double.NaN : probe.average());
+            StatProbe probe = get(r, c);
+            m.setQuick(r, c, probe == null ? Double.NaN : probe.average());
          }
    }
 
    /**
-    * Determines if this matrix of statistical probes is collecting
-    * values. The default is `true`.
-    *  @return the status of statistical collecting.
+    * Determines if this matrix of statistical probes is collecting values. The
+    * default is `true`.
+    * 
+    * @return the status of statistical collecting.
     */
    public boolean isCollecting() {
       return collect;
    }
 
    /**
-    * Sets the status of the statistical collecting mechanism to `c`. A
-    * `true` value turns statistical collecting ON, a `false` value turns
-    * it OFF.
-    *  @param c            the status of statistical collecting.
+    * Sets the status of the statistical collecting mechanism to `c`. A `true`
+    * value turns statistical collecting ON, a `false` value turns it OFF.
+    * 
+    * @param c the status of statistical collecting.
     */
-   public void setCollecting (boolean c) {
+   public void setCollecting(boolean c) {
       collect = c;
    }
 
    /**
-    * Determines if this matrix of statistical probes is broadcasting
-    * values to registered observers. The default is `false`.
-    *  @return the status of broadcasting.
+    * Determines if this matrix of statistical probes is broadcasting values to
+    * registered observers. The default is `false`.
+    * 
+    * @return the status of broadcasting.
     */
    public boolean isBroadcasting() {
       return broadcast;
    }
 
    /**
-    * Sets the status of the observation broadcasting mechanism to `b`. A
-    * `true` value turns broadcasting ON, a `false` value turns it OFF.
-    *  @param b            the status of broadcasting.
+    * Sets the status of the observation broadcasting mechanism to `b`. A `true`
+    * value turns broadcasting ON, a `false` value turns it OFF.
+    * 
+    * @param b the status of broadcasting.
     */
-   public void setBroadcasting (boolean b) {
+   public void setBroadcasting(boolean b) {
       broadcast = b;
    }
 
    /**
-    * Adds the observation listener `l` to the list of observers of this
-    * matrix of statistical probes.
-    *  @param l            the new observation listener.
-    *  @exception NullPointerException if `l` is `null`.
+    * Adds the observation listener `l` to the list of observers of this matrix of
+    * statistical probes.
+    * 
+    * @param l the new observation listener.
+    * @exception NullPointerException if `l` is `null`.
     */
-   public void addMatrixOfObservationListener (MatrixOfObservationListener l) {
+   public void addMatrixOfObservationListener(MatrixOfObservationListener l) {
       if (l == null)
          throw new NullPointerException();
-      if (!listeners.contains (l))
-         listeners.add (l);
+      if (!listeners.contains(l))
+         listeners.add(l);
    }
 
    /**
-    * Removes the observation listener `l` from the list of observers of
-    * this matrix of statistical probes.
-    *  @param l            the observation listener to be deleted.
-    */
-   public void removeMatrixOfObservationListener
-                      (MatrixOfObservationListener l) {
-      listeners.remove (l);
-   }
-
-   /**
-    * Removes all observation listeners from the list of observers of this
+    * Removes the observation listener `l` from the list of observers of this
     * matrix of statistical probes.
+    * 
+    * @param l the observation listener to be deleted.
+    */
+   public void removeMatrixOfObservationListener(MatrixOfObservationListener l) {
+      listeners.remove(l);
+   }
+
+   /**
+    * Removes all observation listeners from the list of observers of this matrix
+    * of statistical probes.
     */
    public void clearMatrixOfObservationListeners() {
       listeners.clear();
    }
 
    /**
-    * Notifies the observation `x` to all registered observers if
-    * broadcasting is ON. Otherwise, does nothing.
+    * Notifies the observation `x` to all registered observers if broadcasting is
+    * ON. Otherwise, does nothing.
     */
-   public void notifyListeners (DoubleMatrix2D x) {
+   public void notifyListeners(DoubleMatrix2D x) {
       if (!broadcast)
          return;
       // We could also use the enhanced for loop here, but this is less efficient.
       final int nl = listeners.size();
       for (int i = 0; i < nl; i++)
-         listeners.get (i).newMatrixOfObservations (this, x);
+         listeners.get(i).newMatrixOfObservations(this, x);
    }
 
    /**
-    * Returns a list representing a view on row `r` of this matrix of
-    * statistical probe. The returned list cannot be modified, and becomes
-    * invalid if the number of rows in this matrix of statistical probes
-    * is changed.
-    *  @param r            the row to look at.
-    *  @return the list of statistical probes on the row.
+    * Returns a list representing a view on row `r` of this matrix of statistical
+    * probe. The returned list cannot be modified, and becomes invalid if the
+    * number of rows in this matrix of statistical probes is changed.
+    * 
+    * @param r the row to look at.
+    * @return the list of statistical probes on the row.
     */
-   public List<E> viewRow (int r) {
-      return new MyList<E> (this, ListType.ROW, r);
+   public List<E> viewRow(int r) {
+      return new MyList<E>(this, ListType.ROW, r);
    }
 
    /**
     * Returns a list representing a view on column `c` of this matrix of
-    * statistical probe. The returned list cannot be modified, and becomes
-    * invalid if the number of columns in this matrix of statistical
-    * probes is changed.
-    *  @param c            the column to look at.
-    *  @return the list of statistical probes on the column.
+    * statistical probe. The returned list cannot be modified, and becomes invalid
+    * if the number of columns in this matrix of statistical probes is changed.
+    * 
+    * @param c the column to look at.
+    * @return the list of statistical probes on the column.
     */
-   public List<E> viewColumn (int c) {
-      return new MyList<E> (this, ListType.COLUMN, c);
+   public List<E> viewColumn(int c) {
+      return new MyList<E>(this, ListType.COLUMN, c);
    }
 
    /**
-    * Formats a report for the row&nbsp;`r` of the statistical probe
-    * matrix. The returned string is constructed by getting a view of row
-    * `r` and using `StatProbe.report` on this list.
-    *  @param r            the row being reported.
-    *  @return the report formatted as a string.
+    * Formats a report for the row&nbsp;`r` of the statistical probe matrix. The
+    * returned string is constructed by getting a view of row `r` and using
+    * `StatProbe.report` on this list.
+    * 
+    * @param r the row being reported.
+    * @return the report formatted as a string.
     */
-   public String rowReport (int r) {
-      return StatProbe.report (getName(), viewRow (r));
+   public String rowReport(int r) {
+      return StatProbe.report(getName(), viewRow(r));
    }
 
    /**
-    * Formats a report for the column&nbsp;`c` of the statistical probe
-    * matrix. The returned string is constructed by getting a view of
-    * column `c` and using `StatProbe.report` on this list.
-    *  @param c            the column being reported.
-    *  @return the report formatted as a string.
+    * Formats a report for the column&nbsp;`c` of the statistical probe matrix. The
+    * returned string is constructed by getting a view of column `c` and using
+    * `StatProbe.report` on this list.
+    * 
+    * @param c the column being reported.
+    * @return the report formatted as a string.
     */
-   public String columnReport (int c) {
-      return StatProbe.report (getName(), viewColumn (c));
+   public String columnReport(int c) {
+      return StatProbe.report(getName(), viewColumn(c));
    }
 
    /**
-    * Clones this object. This makes a shallow copy of this matrix, i.e.,
-    * this does not clone all the probes in the matrix.
+    * Clones this object. This makes a shallow copy of this matrix, i.e., this does
+    * not clone all the probes in the matrix.
     */
    public MatrixOfStatProbes<E> clone() {
       MatrixOfStatProbes<E> sm;
       try {
-         sm = (MatrixOfStatProbes<E>)super.clone();
-      }
-      catch (CloneNotSupportedException cne) {
-         throw new IllegalStateException ("CloneNotSupportedException for a class implementing Cloneable");
+         sm = (MatrixOfStatProbes<E>) super.clone();
+      } catch (CloneNotSupportedException cne) {
+         throw new IllegalStateException("CloneNotSupportedException for a class implementing Cloneable");
       }
       if (probes != null)
-         sm.probes = (E[])probes.clone();
+         sm.probes = (E[]) probes.clone();
       return sm;
    }
-
 
    private class MyIterator implements Iterator<E> {
       private int index = 0;
@@ -476,30 +479,27 @@ public class MatrixOfStatProbes<E extends StatProbe>
       private ListType type;
       private int index;
 
-      public MyList (MatrixOfStatProbes<E> matrix, ListType type, int index) {
+      public MyList(MatrixOfStatProbes<E> matrix, ListType type, int index) {
          this.matrix = matrix;
          this.type = type;
          this.index = index;
       }
 
-      public E get (int index) {
+      public E get(int index) {
          if (type == ListType.ROW) {
-            return matrix.get (this.index, index);
-         }
-         else {
-            return matrix.get (index, this.index);
+            return matrix.get(this.index, index);
+         } else {
+            return matrix.get(index, this.index);
          }
       }
 
       public int size() {
          if (type == ListType.ROW) {
             return matrix.numColumns;
-         }
-         else {
+         } else {
             return matrix.numRows;
          }
       }
    }
 
 }
-

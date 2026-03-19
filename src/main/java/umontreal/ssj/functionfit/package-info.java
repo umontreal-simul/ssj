@@ -1,0 +1,12 @@
+/**
+ * @package umontreal.ssj.functionfit
+ *
+ * Function fit utilities.
+ *
+ * This package provides basic facilities for curve fitting and interpolation
+ * with polynomials as, for example, least square fit, spline interpolation,
+ * and smoothing splines.
+ * 
+ */
+
+package umontreal.ssj.functionfit;

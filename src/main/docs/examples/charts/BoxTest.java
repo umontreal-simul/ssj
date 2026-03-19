@@ -1,12 +1,12 @@
 package charts;
+
 import umontreal.ssj.charts.*;
 import umontreal.ssj.randvar.*;
 import umontreal.ssj.rng.*;
 import java.io.*;
 
-public class BoxTest
-{
-   public static void main (String[] args) throws IOException {
+public class BoxTest {
+   public static void main(String[] args) throws IOException {
       int count = 1000;
       double[] data1 = new double[count];
       double[] data2 = new double[count];

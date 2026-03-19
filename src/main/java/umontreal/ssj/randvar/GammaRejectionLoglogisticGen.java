@@ -24,14 +24,15 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements *gamma* random variate generators using a rejection
- * method with loglogistic envelopes, from @cite rCHE77a&thinsp;. For each
- * gamma variate, the first two uniforms are taken from the main stream and
- * all additional uniforms (after the first rejection) are obtained from the
+ * method with loglogistic envelopes, from @cite rCHE77a&thinsp;. For each gamma
+ * variate, the first two uniforms are taken from the main stream and all
+ * additional uniforms (after the first rejection) are obtained from the
  * auxiliary stream.
  *
  * <div class="SSJ-bigskip"></div>
@@ -39,7 +40,7 @@ import umontreal.ssj.probdist.*;
  * @ingroup randvar_continuous
  */
 public class GammaRejectionLoglogisticGen extends GammaGen {
-    
+
    private RandomStream auxStream;
 
    // UNURAN parameters for the distribution
@@ -53,54 +54,51 @@ public class GammaRejectionLoglogisticGen extends GammaGen {
 
    /**
     * Creates a gamma random variate generator with parameters
-    * @f$\alpha=@f$ `alpha` and @f$\lambda=@f$ `lambda`, using main
-    * stream `s` and auxiliary stream `aux`. The auxiliary stream is used
-    * when a random number of uniforms is required for a rejection-type
-    * generation method.
+    * 
+    * @f$\alpha=@f$ `alpha` and @f$\lambda=@f$ `lambda`, using main stream `s` and
+    *               auxiliary stream `aux`. The auxiliary stream is used when a
+    *               random number of uniforms is required for a rejection-type
+    *               generation method.
     */
-   public GammaRejectionLoglogisticGen (RandomStream s, RandomStream aux,
-                                        double alpha, double lambda) {
-      super (s, null);
+   public GammaRejectionLoglogisticGen(RandomStream s, RandomStream aux, double alpha, double lambda) {
+      super(s, null);
       auxStream = aux;
-      setParams (alpha, lambda);
-      beta  = 1.0/lambda;
+      setParams(alpha, lambda);
+      beta = 1.0 / lambda;
       gamma = 0.0;
-      init ();
+      init();
    }
 
    /**
     * Creates a gamma random variate generator with parameters
-    * @f$\alpha=@f$ `alpha` and @f$\lambda=@f$ `lambda`, using stream
-    * `s`.
+    * 
+    * @f$\alpha=@f$ `alpha` and @f$\lambda=@f$ `lambda`, using stream `s`.
     */
-   public GammaRejectionLoglogisticGen (RandomStream s,
-                                        double alpha, double lambda) {
-      this (s, s, alpha, lambda);
+   public GammaRejectionLoglogisticGen(RandomStream s, double alpha, double lambda) {
+      this(s, s, alpha, lambda);
    }
 
    /**
-    * Creates a new generator object for the gamma distribution `dist`,
-    * using main stream `s` and auxiliary stream `aux`. The auxiliary
-    * stream is used when a random number of uniforms is required for a
-    * rejection-type generation method.
+    * Creates a new generator object for the gamma distribution `dist`, using main
+    * stream `s` and auxiliary stream `aux`. The auxiliary stream is used when a
+    * random number of uniforms is required for a rejection-type generation method.
     */
-   public GammaRejectionLoglogisticGen (RandomStream s, RandomStream aux, 
-                                        GammaDist dist) {
-      super (s, dist);
+   public GammaRejectionLoglogisticGen(RandomStream s, RandomStream aux, GammaDist dist) {
+      super(s, dist);
       auxStream = aux;
       if (dist != null)
-         setParams (dist.getAlpha(), dist.getLambda());
-      beta  = 1.0/dist.getLambda();
+         setParams(dist.getAlpha(), dist.getLambda());
+      beta = 1.0 / dist.getLambda();
       gamma = 0.0;
-      init ();
+      init();
    }
 
    /**
-    * Creates a new generator object for the gamma distribution `dist` and
-    * stream `s` for both the main and auxiliary stream.
+    * Creates a new generator object for the gamma distribution `dist` and stream
+    * `s` for both the main and auxiliary stream.
     */
-   public GammaRejectionLoglogisticGen (RandomStream s, GammaDist dist) {
-      this (s, s, dist);
+   public GammaRejectionLoglogisticGen(RandomStream s, GammaDist dist) {
+      this(s, s, dist);
    }
 
    /**
@@ -110,64 +108,59 @@ public class GammaRejectionLoglogisticGen extends GammaGen {
       return auxStream;
    }
 
-
    public double nextDouble() {
-      return rejectionLogLogistic 
-                      (stream, auxStream, alpha, beta, gamma, aa, bb, cc);
-   }
-
-/**
- * Generates a new gamma variate with parameters @f$\alpha= @f$&nbsp;`alpha`
- * and @f$\lambda= @f$&nbsp;`lambda`, using main stream `s` and auxiliary
- * stream `aux`.
- */
-public static double nextDouble (RandomStream s, RandomStream aux, 
-                                    double alpha, double lambda) {
-      double aa, bb, cc;
-
-      // Code taken from UNURAN
-      aa = (alpha > 1.0) ? Math.sqrt (alpha + alpha - 1.0) : alpha;
-      bb = alpha - 1.386294361;
-      cc = alpha + aa;
-    
-      return rejectionLogLogistic (s, aux, alpha, 1.0/lambda, 0.0, aa, bb, cc);
+      return rejectionLogLogistic(stream, auxStream, alpha, beta, gamma, aa, bb, cc);
    }
 
    /**
-    * Same as  {@link #nextDouble() nextDouble(s, s, alpha, lambda)}.
+    * Generates a new gamma variate with parameters @f$\alpha= @f$&nbsp;`alpha`
+    * and @f$\lambda= @f$&nbsp;`lambda`, using main stream `s` and auxiliary stream
+    * `aux`.
     */
-   public static double nextDouble (RandomStream s, double alpha, 
-                                    double lambda) {
-      return nextDouble (s, s, alpha, lambda);
+   public static double nextDouble(RandomStream s, RandomStream aux, double alpha, double lambda) {
+      double aa, bb, cc;
+
+      // Code taken from UNURAN
+      aa = (alpha > 1.0) ? Math.sqrt(alpha + alpha - 1.0) : alpha;
+      bb = alpha - 1.386294361;
+      cc = alpha + aa;
+
+      return rejectionLogLogistic(s, aux, alpha, 1.0 / lambda, 0.0, aa, bb, cc);
    }
 
+   /**
+    * Same as {@link #nextDouble() nextDouble(s, s, alpha, lambda)}.
+    */
+   public static double nextDouble(RandomStream s, double alpha, double lambda) {
+      return nextDouble(s, s, alpha, lambda);
+   }
 
-   private static double rejectionLogLogistic
-      (RandomStream stream, RandomStream auxStream,
-       double alpha, double beta, double gamma,
-        double aa, double bb, double cc) {
+   private static double rejectionLogLogistic(RandomStream stream, RandomStream auxStream, double alpha, double beta,
+         double gamma, double aa, double bb, double cc) {
       // Code taken from UNURAN
       double X;
-      double u1,u2,v,r,z;
+      double u1, u2, v, r, z;
 
       while (true) {
          u1 = stream.nextDouble();
          u2 = stream.nextDouble();
          stream = auxStream;
-         v = Math.log (u1/(1.0 - u1))/aa;
-         X = alpha*Math.exp (v);
-         r = bb + cc*v - X;
-         z = u1*u1*u2;
-         if (r + 2.504077397 >= 4.5*z) break;
-         if (r >= Math.log (z)) break;
+         v = Math.log(u1 / (1.0 - u1)) / aa;
+         X = alpha * Math.exp(v);
+         r = bb + cc * v - X;
+         z = u1 * u1 * u2;
+         if (r + 2.504077397 >= 4.5 * z)
+            break;
+         if (r >= Math.log(z))
+            break;
       }
 
-      return gamma + beta*X;
+      return gamma + beta * X;
    }
 
    private void init() {
       // Code taken from UNURAN
-      aa = (alpha > 1.0) ? Math.sqrt (alpha + alpha - 1.0) : alpha;
+      aa = (alpha > 1.0) ? Math.sqrt(alpha + alpha - 1.0) : alpha;
       bb = alpha - 1.386294361;
       cc = alpha + aa;
    }

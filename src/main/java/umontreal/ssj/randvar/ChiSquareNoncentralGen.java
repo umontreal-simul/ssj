@@ -23,16 +23,18 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *noncentral chi
- * square* distribution with @f$\nu> 0@f$ degrees of freedom and
- * noncentrality parameter @f$\lambda> 0@f$. See the definition in
+ * square* distribution with @f$\nu> 0@f$ degrees of freedom and noncentrality
+ * parameter @f$\lambda> 0@f$. See the definition in
+ * 
  * @ref umontreal.ssj.probdist.ChiSquareNoncentralDist.
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -42,32 +44,31 @@ public class ChiSquareNoncentralGen extends RandomVariateGen {
 
    /**
     * Creates a *noncentral chi square* random variate generator with `nu`
-    * @f$=\nu>0@f$ degrees of freedom and noncentrality parameter
-    * `lambda` @f$= \lambda>0@f$, using stream `s`.
+    * 
+    * @f$=\nu>0@f$ degrees of freedom and noncentrality parameter `lambda` @f$=
+    *              \lambda>0@f$, using stream `s`.
     */
-   public ChiSquareNoncentralGen (RandomStream s, double nu, double lambda) {
-      super (s, new ChiSquareNoncentralDist(nu, lambda));
-      setParams (nu, lambda);
+   public ChiSquareNoncentralGen(RandomStream s, double nu, double lambda) {
+      super(s, new ChiSquareNoncentralDist(nu, lambda));
+      setParams(nu, lambda);
    }
 
    /**
     * Create a new generator for the distribution `dist` and stream `s`.
     */
-   public ChiSquareNoncentralGen (RandomStream s,
-                                  ChiSquareNoncentralDist dist) {
-      super (s, dist);
+   public ChiSquareNoncentralGen(RandomStream s, ChiSquareNoncentralDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getNu (), dist.getLambda());
+         setParams(dist.getNu(), dist.getLambda());
    }
 
    /**
-    * Generates a new variate from the noncentral chi square distribution
-    * with `nu` = @f$\nu@f$ degrees of freedom and noncentrality
-    * parameter `lambda` @f$=\lambda@f$, using stream `s`.
+    * Generates a new variate from the noncentral chi square distribution with `nu`
+    * = @f$\nu@f$ degrees of freedom and noncentrality parameter
+    * `lambda` @f$=\lambda@f$, using stream `s`.
     */
-   public static double nextDouble (RandomStream s,
-                                    double nu, double lambda) {
-      return ChiSquareNoncentralDist.inverseF (nu, lambda, s.nextDouble());
+   public static double nextDouble(RandomStream s, double nu, double lambda) {
+      return ChiSquareNoncentralDist.inverseF(nu, lambda, s.nextDouble());
    }
 
    /**
@@ -85,14 +86,14 @@ public class ChiSquareNoncentralGen extends RandomVariateGen {
    }
 
    /**
-    * Sets the parameters @f$\nu=@f$ `nu` and @f$\lambda= @f$ `lambda`
-    * of this object.
+    * Sets the parameters @f$\nu=@f$ `nu` and @f$\lambda= @f$ `lambda` of this
+    * object.
     */
-   protected void setParams (double nu, double lambda) {
+   protected void setParams(double nu, double lambda) {
       if (nu <= 0.0)
-         throw new IllegalArgumentException ("nu <= 0");
+         throw new IllegalArgumentException("nu <= 0");
       if (lambda < 0.0)
-         throw new IllegalArgumentException ("lambda < 0");
+         throw new IllegalArgumentException("lambda < 0");
       this.nu = nu;
       this.lambda = lambda;
    }

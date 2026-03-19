@@ -27,44 +27,42 @@ package umontreal.ssj.hups;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This container class provides antithetic versions of the contained points: 
- * @f$1 - u_{i,j}@f$ is returned in place of coordinate @f$u_{i,j}@f$. To generate
- * regular and antithetic variates with a point set `p`, e.g., for variance
- * reduction, one can define an  @ref AntitheticPointSet object `pa` that
- * contains `p`, and then generate the regular variates with `p` and the
- * antithetic variates with `pa`.
+ * This container class provides antithetic versions of the contained points:
+ * 
+ * @f$1 - u_{i,j}@f$ is returned in place of coordinate @f$u_{i,j}@f$. To
+ *      generate regular and antithetic variates with a point set `p`, e.g., for
+ *      variance reduction, one can define an @ref AntitheticPointSet object
+ *      `pa` that contains `p`, and then generate the regular variates with `p`
+ *      and the antithetic variates with `pa`.
  *
- * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class AntitheticPointSet extends ContainerPointSet {
 
    /**
     * Constructs an antithetic point set from the given point set `p`.
-    *  @param p            point set for which we want the antithetic version
+    * 
+    * @param p point set for which we want the antithetic version
     */
-   public AntitheticPointSet (PointSet p) {
-      init (p);
+   public AntitheticPointSet(PointSet p) {
+      init(p);
    }
 
-
-   public double getCoordinate (int i, int j) {
-      return 1.0 - P.getCoordinate (i, j);
+   public double getCoordinate(int i, int j) {
+      return 1.0 - P.getCoordinate(i, j);
    }
 
-   public PointSetIterator iterator(){
+   public PointSetIterator iterator() {
       return new AntitheticPointSetIterator();
    }
 
    public String toString() {
-      return "Antithetic point set of: {" + PrintfFormat.NEWLINE +
-              P.toString() + PrintfFormat.NEWLINE + "}";
+      return "Antithetic point set of: {" + PrintfFormat.NEWLINE + P.toString() + PrintfFormat.NEWLINE + "}";
    }
-
 
    // ***************************************************************
 
-   protected class AntitheticPointSetIterator
-                   extends ContainerPointSetIterator {
+   protected class AntitheticPointSetIterator extends ContainerPointSetIterator {
 
       public double nextCoordinate() {
          return 1.0 - innerIterator.nextCoordinate();
@@ -74,14 +72,14 @@ public class AntitheticPointSet extends ContainerPointSet {
          return 1.0 - innerIterator.nextCoordinate();
       }
 
-      public void nextCoordinates (double p[], int d)  {
-         innerIterator.nextCoordinates (p, d);
+      public void nextCoordinates(double p[], int d) {
+         innerIterator.nextCoordinates(p, d);
          for (int j = 0; j < d; j++)
             p[j] = 1.0 - p[j];
       }
 
-      public int nextPoint (double p[], int d)  {
-         innerIterator.nextPoint (p, d);
+      public int nextPoint(double p[], int d) {
+         innerIterator.nextPoint(p, d);
          for (int j = 0; j < d; j++)
             p[j] = 1.0 - p[j];
          return getCurPointIndex();

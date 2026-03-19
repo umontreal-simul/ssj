@@ -23,13 +23,14 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *hypoexponential*
- * distribution (see classes  @ref umontreal.ssj.probdist.HypoExponentialDist
- * and  @ref umontreal.ssj.probdist.HypoExponentialDistQuick in package
+ * distribution (see classes @ref umontreal.ssj.probdist.HypoExponentialDist
+ * and @ref umontreal.ssj.probdist.HypoExponentialDistQuick in package
  * `probdist` for the definition).
  *
  * <div class="SSJ-bigskip"></div>
@@ -40,46 +41,49 @@ public class HypoExponentialGen extends RandomVariateGen {
 
    /**
     * Creates a hypoexponential random variate generator with rates
-    * @f$\lambda_i = @f$ <tt>lambda[</tt>@f$i-1@f$<tt>]</tt>, @f$i =
-    * 1,…,k@f$, using stream `stream`.
+    * 
+    * @f$\lambda_i = @f$ <tt>lambda[</tt>@f$i-1@f$<tt>]</tt>, @f$i = 1,…,k@f$,
+    *              using stream `stream`.
     */
-   public HypoExponentialGen (RandomStream stream, double[] lambda) {
-      super (stream, new HypoExponentialDist(lambda));
+   public HypoExponentialGen(RandomStream stream, double[] lambda) {
+      super(stream, new HypoExponentialDist(lambda));
    }
 
    /**
-    * Creates a new generator for the hypoexponential distribution `dist`
-    * with stream `stream`.
+    * Creates a new generator for the hypoexponential distribution `dist` with
+    * stream `stream`.
     */
-   public HypoExponentialGen (RandomStream stream, HypoExponentialDist dist) {
-      super (stream, dist);
+   public HypoExponentialGen(RandomStream stream, HypoExponentialDist dist) {
+      super(stream, dist);
 //      if (dist != null)
 //         setParams (dist.getLambda());
    }
 
    /**
     * Uses inversion to generate a new hypoexponential variate with rates
-    * @f$\lambda_i = @f$ <tt>lambda[</tt>@f$i-1@f$<tt>]</tt>, @f$i =
-    * 1,…,k@f$, using stream `stream`. The inversion uses a root-finding
-    * method and is very slow.
+    * 
+    * @f$\lambda_i = @f$ <tt>lambda[</tt>@f$i-1@f$<tt>]</tt>, @f$i = 1,…,k@f$,
+    *              using stream `stream`. The inversion uses a root-finding method
+    *              and is very slow.
     */
-   public static double nextDouble (RandomStream stream, double[] lambda) {
-      return HypoExponentialDist.inverseF (lambda, stream.nextDouble());
+   public static double nextDouble(RandomStream stream, double[] lambda) {
+      return HypoExponentialDist.inverseF(lambda, stream.nextDouble());
    }
 
    /**
     * Returns the @f$\lambda_i@f$ associated with this object.
     */
    public double[] getLambda() {
-      return ((HypoExponentialDist)dist).getLambda();
+      return ((HypoExponentialDist) dist).getLambda();
    }
 
    /**
     * Sets the rates @f$\lambda_i = @f$ <tt>lam[</tt>@f$i-1@f$<tt>]</tt>,
+    * 
     * @f$i = 1,…,k@f$ of this object.
     */
-   public void setLambda (double[] lambda) {
-      ((HypoExponentialDist)dist).setLambda(lambda);
+   public void setLambda(double[] lambda) {
+      ((HypoExponentialDist) dist).setLambda(lambda);
    }
 
 }

@@ -21,31 +21,33 @@ public abstract class CoordinateSet {
    public abstract int maxCoordinate();
 
    /**
-    * Returns all subsets of the current coordinate set, whose cardinality is at most \c maxOrder.
+    * Returns all subsets of the current coordinate set, whose cardinality is at
+    * most \c maxOrder.
     *
     */
    public abstract List<CoordinateSet> subsets(boolean includeEmptySet, int maxOrder);
 
-   @Override public boolean equals(Object o) {
+   @Override
+   public boolean equals(Object o) {
       if (o instanceof CoordinateSet)
-         return ((CoordinateSet)o).containsAll(this) && this.containsAll((CoordinateSet)o);
+         return ((CoordinateSet) o).containsAll(this) && this.containsAll((CoordinateSet) o);
       else
          return false;
    }
 
-
    /**
-    * Returns \c true if the current set contains coordinate \c coord.
-    * Subclasses should override this method.
+    * Returns \c true if the current set contains coordinate \c coord. Subclasses
+    * should override this method.
     *
     */
    public boolean contains(int coord) {
       return asList().contains(coord);
    }
-   
+
    /**
     * Returns \c true if the current set contains all coordinates in \c cs.
-    * Subclasses should override this method. The default implementation is inefficient.
+    * Subclasses should override this method. The default implementation is
+    * inefficient.
     *
     */
    public boolean containsAll(CoordinateSet cs) {
@@ -53,14 +55,14 @@ public abstract class CoordinateSet {
    }
 
    /**
-    * Returns the cardinality of the current coordinate set.
-    * Subclasses should override this method. The default implementation is inefficient.
+    * Returns the cardinality of the current coordinate set. Subclasses should
+    * override this method. The default implementation is inefficient.
     *
     */
    public int cardinality() {
       return asList().size();
    }
-   
+
    /**
     * Returns \c true if \c cs is a subset of the current coordinate set.
     *
@@ -70,8 +72,8 @@ public abstract class CoordinateSet {
    }
 
    /**
-    * Returns all subsets of the current coordinate set, whose cardinality is at most \c maxOrder.
-    * Includes the empty sets.
+    * Returns all subsets of the current coordinate set, whose cardinality is at
+    * most \c maxOrder. Includes the empty sets.
     *
     */
    public List<CoordinateSet> subsets() {
@@ -79,8 +81,8 @@ public abstract class CoordinateSet {
    }
 
    /**
-    * Returns all subsets of the current coordinate set, whose cardinality is at most \c maxOrder.
-    * Does not include the empty set.
+    * Returns all subsets of the current coordinate set, whose cardinality is at
+    * most \c maxOrder. Does not include the empty set.
     *
     */
    public List<CoordinateSet> subsetsNotEmpty() {
@@ -88,8 +90,8 @@ public abstract class CoordinateSet {
    }
 
    /**
-    * Returns all subsets of the current coordinate set, whose cardinality is at most \c maxOrder.
-    * Includes the empty set.
+    * Returns all subsets of the current coordinate set, whose cardinality is at
+    * most \c maxOrder. Includes the empty set.
     *
     */
    public List<CoordinateSet> subsets(int maxOrder) {
@@ -97,29 +99,32 @@ public abstract class CoordinateSet {
    }
 
    /**
-    * Returns all subsets of the current coordinate set, whose cardinality is at most \c maxOrder.
-    * Does not include the empty set.
+    * Returns all subsets of the current coordinate set, whose cardinality is at
+    * most \c maxOrder. Does not include the empty set.
     *
     */
    public List<CoordinateSet> subsetsNotEmpty(int maxOrder) {
       return subsets(false, maxOrder);
    }
 
+   @Override
+   public String toString() {
 
-   @Override public String toString() {
-     
       return "{" + toStringNoBraces() + "}";
    }
-/**
- * Prints the coordinates separated by commas without enclosing braces.
- * @return the coordinates as a String without enclosing braces.
- */
-public String toStringNoBraces() {
-	String s = "";
-    for (Integer coord : asList()) {
-       if (s.length() > 0) s += ",";
-       s += (coord + 1);
-    }
-	return s;
-}
+
+   /**
+    * Prints the coordinates separated by commas without enclosing braces.
+    * 
+    * @return the coordinates as a String without enclosing braces.
+    */
+   public String toStringNoBraces() {
+      String s = "";
+      for (Integer coord : asList()) {
+         if (s.length() > 0)
+            s += ",";
+         s += (coord + 1);
+      }
+      return s;
+   }
 }

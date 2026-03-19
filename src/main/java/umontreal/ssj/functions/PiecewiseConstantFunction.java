@@ -35,38 +35,40 @@ public class PiecewiseConstantFunction implements MathFunction {
    private double[] x;
    private double[] y;
 
-/**
- * Constructs a new piecewise-constant function with @f$X@f$ and @f$Y@f$
- * coordinates given by `x` and `y`.
- *  @param x            the @f$X@f$ coordinates.
- *  @param y            the @f$Y@f$ coordinates.
- */
-public PiecewiseConstantFunction (double[] x, double[] y) {
+   /**
+    * Constructs a new piecewise-constant function with @f$X@f$ and @f$Y@f$
+    * coordinates given by `x` and `y`.
+    * 
+    * @param x the @f$X@f$ coordinates.
+    * @param y the @f$Y@f$ coordinates.
+    */
+   public PiecewiseConstantFunction(double[] x, double[] y) {
       if (x.length != y.length)
          throw new IllegalArgumentException();
-      this.x = x.clone ();
-      this.y = y.clone ();
+      this.x = x.clone();
+      this.y = y.clone();
    }
 
    /**
     * Returns the @f$X@f$ coordinates of the function.
-    *  @return the @f$X@f$ coordinates of the function.
+    * 
+    * @return the @f$X@f$ coordinates of the function.
     */
    public double[] getX() {
-      return x.clone ();
+      return x.clone();
    }
 
    /**
     * Returns the @f$Y@f$ coordinates of the function.
-    *  @return the @f$Y@f$ coordinates of the function.
+    * 
+    * @return the @f$Y@f$ coordinates of the function.
     */
    public double[] getY() {
-      return y.clone ();
+      return y.clone();
    }
 
-
-   public double evaluate (double x) {
-      final int idx = Arrays.binarySearch (this.x, x);
+   public double evaluate(double x) {
+      final int idx = Arrays.binarySearch(this.x, x);
       if (idx >= 0)
          return y[idx];
       final int insertionPoint = -(idx + 1);

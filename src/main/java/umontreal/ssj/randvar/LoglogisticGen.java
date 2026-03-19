@@ -23,18 +23,19 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *log-logistic*
  * distribution with shape parameter @f$\alpha> 0@f$ and scale parameter
+ * 
  * @f$\beta> 0@f$. The density function of this distribution is
- * @anchor REF_randvar_LoglogisticGen_eq_floglogistic
- * @f[
- *   f(x) = \frac{\alpha(x / \beta)^{\alpha- 1}}{\beta[1 + (x / \beta)^{\alpha}]^2} \qquad\qquad\mbox{for } x > 0. \tag{floglogistic}
- * @f]
- * <div class="SSJ-bigskip"></div>
+ * @anchor REF_randvar_LoglogisticGen_eq_floglogistic @f[ f(x) = \frac{\alpha(x
+ *         / \beta)^{\alpha- 1}}{\beta[1 + (x / \beta)^{\alpha}]^2}
+ *         \qquad\qquad\mbox{for } x > 0. \tag{floglogistic} @f]
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -44,30 +45,29 @@ public class LoglogisticGen extends RandomVariateGen {
 
    /**
     * Creates a log-logistic random variate generator with parameters
+    * 
     * @f$\alpha=@f$ `alpha` and @f$\beta=@f$ `beta`, using stream `s`.
     */
-   public LoglogisticGen (RandomStream s, double alpha, double beta) {
-      super (s, new LoglogisticDist(alpha, beta));
-      setParams (alpha, beta);
+   public LoglogisticGen(RandomStream s, double alpha, double beta) {
+      super(s, new LoglogisticDist(alpha, beta));
+      setParams(alpha, beta);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public LoglogisticGen (RandomStream s, LoglogisticDist dist) {
-      super (s, dist);
+   public LoglogisticGen(RandomStream s, LoglogisticDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getAlpha(), dist.getBeta());
+         setParams(dist.getAlpha(), dist.getBeta());
    }
 
    /**
     * Generates a variate from the *log-logistic* distribution with shape
     * parameter @f$\alpha> 0@f$ and scale parameter @f$\beta> 0@f$.
     */
-   public static double nextDouble (RandomStream s,
-                                    double alpha, double beta) {
-      return LoglogisticDist.inverseF (alpha, beta, s.nextDouble());
+   public static double nextDouble(RandomStream s, double alpha, double beta) {
+      return LoglogisticDist.inverseF(alpha, beta, s.nextDouble());
    }
 
    /**
@@ -84,12 +84,11 @@ public class LoglogisticGen extends RandomVariateGen {
       return beta;
    }
 
-
-   protected void setParams (double alpha, double beta) {
+   protected void setParams(double alpha, double beta) {
       if (alpha <= 0.0)
-         throw new IllegalArgumentException ("alpha <= 0");
+         throw new IllegalArgumentException("alpha <= 0");
       if (beta <= 0.0)
-         throw new IllegalArgumentException ("beta <= 0");
+         throw new IllegalArgumentException("beta <= 0");
       this.alpha = alpha;
       this.beta = beta;
    }

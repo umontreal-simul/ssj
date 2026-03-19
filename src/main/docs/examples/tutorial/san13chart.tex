@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+
+\usepackage{tikz}
+\usetikzlibrary{plotmarks}
+\begin{document}
+
+% PGF/TikZ picture from SSJ: Distribution of $T$
+% XScale = 1.0,  YScale = 0.01,  XShift = 0.0,  YShift = 0.0
+% Therefore, thisFileXValue = (originalSeriesXValue+XShift)*XScale
+%        and thisFileYValue = (originalSeriesYValue+YShift)*YScale
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[x=0.06cm, y=0.06666666666666667cm]
+\footnotesize
+\draw [-latex] ([xshift=-0mm] 0.0,0) -- ([xshift=3mm] 200.0,0) node[right] {Values of $T$};
+\draw (0.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {0};
+\draw (25.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {25};
+\draw (50.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {50};
+\draw (75.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {75};
+\draw (100.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {100};
+\draw (125.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {125};
+\draw (150.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {150};
+\draw (175.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {175};
+\draw (200.0,0) -- +(0mm,1mm) -- +(0mm,-1mm) node[below] {200};
+\draw [-latex] ([yshift=-0mm] 0,0.0) -- ([yshift=3mm] 0, 120.0) node[above] {Frequency $(10^{3})$};
+\draw (0,0.0) -- +(1mm,0mm) -- +(-1mm,0mm) node[left] {0};
+\draw (0,25.0) -- +(1mm,0mm) -- +(-1mm,0mm) node[left] {2.5};
+\draw (0,50.0) -- +(1mm,0mm) -- +(-1mm,0mm) node[left] {5};
+\draw (0,75.0) -- +(1mm,0mm) -- +(-1mm,0mm) node[left] {7.5};
+\draw (0,100.0) -- +(1mm,0mm) -- +(-1mm,0mm) node[left] {10};
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 0.0000, 0.0000) rectangle ([xshift=-0.0000] 5.0000, 0.0000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 5.0000, 0.0000) rectangle ([xshift=-0.0000] 10.0000, 0.0000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 10.0000, 0.0000) rectangle ([xshift=-0.0000] 15.0000, 0.0000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 15.0000, 0.0000) rectangle ([xshift=-0.0000] 20.0000, 0.0700); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 20.0000, 0.0000) rectangle ([xshift=-0.0000] 25.0000, 0.9400); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 25.0000, 0.0000) rectangle ([xshift=-0.0000] 30.0000, 6.8600); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 30.0000, 0.0000) rectangle ([xshift=-0.0000] 35.0000, 25.6000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 35.0000, 0.0000) rectangle ([xshift=-0.0000] 40.0000, 55.6500); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 40.0000, 0.0000) rectangle ([xshift=-0.0000] 45.0000, 84.8000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 45.0000, 0.0000) rectangle ([xshift=-0.0000] 50.0000, 104.1600); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 50.0000, 0.0000) rectangle ([xshift=-0.0000] 55.0000, 111.7000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 55.0000, 0.0000) rectangle ([xshift=-0.0000] 60.0000, 109.8800); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 60.0000, 0.0000) rectangle ([xshift=-0.0000] 65.0000, 98.6800); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 65.0000, 0.0000) rectangle ([xshift=-0.0000] 70.0000, 83.4500); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 70.0000, 0.0000) rectangle ([xshift=-0.0000] 75.0000, 70.1400); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 75.0000, 0.0000) rectangle ([xshift=-0.0000] 80.0000, 56.8000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 80.0000, 0.0000) rectangle ([xshift=-0.0000] 85.0000, 43.3900); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 85.0000, 0.0000) rectangle ([xshift=-0.0000] 90.0000, 34.0300); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 90.0000, 0.0000) rectangle ([xshift=-0.0000] 95.0000, 27.4300); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 95.0000, 0.0000) rectangle ([xshift=-0.0000] 100.0000, 20.6900); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 100.0000, 0.0000) rectangle ([xshift=-0.0000] 105.0000, 16.3400); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 105.0000, 0.0000) rectangle ([xshift=-0.0000] 110.0000, 11.5300); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 110.0000, 0.0000) rectangle ([xshift=-0.0000] 115.0000, 9.1700); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 115.0000, 0.0000) rectangle ([xshift=-0.0000] 120.0000, 6.9800); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 120.0000, 0.0000) rectangle ([xshift=-0.0000] 125.0000, 5.0300); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 125.0000, 0.0000) rectangle ([xshift=-0.0000] 130.0000, 4.0100); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 130.0000, 0.0000) rectangle ([xshift=-0.0000] 135.0000, 3.1200); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 135.0000, 0.0000) rectangle ([xshift=-0.0000] 140.0000, 2.2800); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 140.0000, 0.0000) rectangle ([xshift=-0.0000] 145.0000, 1.6700); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 145.0000, 0.0000) rectangle ([xshift=-0.0000] 150.0000, 1.5000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 150.0000, 0.0000) rectangle ([xshift=-0.0000] 155.0000, 1.1100); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 155.0000, 0.0000) rectangle ([xshift=-0.0000] 160.0000, 0.6600); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 160.0000, 0.0000) rectangle ([xshift=-0.0000] 165.0000, 0.5700); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 165.0000, 0.0000) rectangle ([xshift=-0.0000] 170.0000, 0.4300); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 170.0000, 0.0000) rectangle ([xshift=-0.0000] 175.0000, 0.3000); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 175.0000, 0.0000) rectangle ([xshift=-0.0000] 180.0000, 0.1500); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 180.0000, 0.0000) rectangle ([xshift=-0.0000] 185.0000, 0.1500); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 185.0000, 0.0000) rectangle ([xshift=-0.0000] 190.0000, 0.1900); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 190.0000, 0.0000) rectangle ([xshift=-0.0000] 195.0000, 0.1300); %
+\draw [line width=0.50pt, color=red] ([xshift=0.0000] 195.0000, 0.0000) rectangle ([xshift=-0.0000] 200.0000, 0.0800); %
+\end{tikzpicture}
+\end{center}
+\caption{Distribution of $T$}
+\end{figure}
+\end{document}

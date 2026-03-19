@@ -23,15 +23,16 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.probdist.*;
 import umontreal.ssj.rng.*;
 
 /**
- * Implements binomial random variate generators using the convolution
- * method. This method generates @f$n@f$ Bernouilli random variates with
+ * Implements binomial random variate generators using the convolution method.
+ * This method generates @f$n@f$ Bernouilli random variates with
  * parameter @f$p@f$ and adds them up. Its advantages are that it requires
- * little computer memory and no setup time. Its disadvantage is that it is
- * very slow for large @f$n@f$. It makes sense only when @f$n@f$ is small.
+ * little computer memory and no setup time. Its disadvantage is that it is very
+ * slow for large @f$n@f$. It makes sense only when @f$n@f$ is small.
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -41,23 +42,23 @@ public class BinomialConvolutionGen extends BinomialGen {
 
    /**
     * Creates a *binomial* random variate generator with parameters
+    * 
     * @f$n@f$ and @f$p@f$, using stream `s`.
     */
-   public BinomialConvolutionGen (RandomStream s, int n, double p) {
-      super (s, null);
-      setParams (n, p);
+   public BinomialConvolutionGen(RandomStream s, int n, double p) {
+      super(s, null);
+      setParams(n, p);
    }
 
    /**
-    * Creates a random variate generator for the *binomial* distribution
-    * `dist` and stream `s`.
+    * Creates a random variate generator for the *binomial* distribution `dist` and
+    * stream `s`.
     */
-   public BinomialConvolutionGen (RandomStream s, BinomialDist dist) {
-      super (s, dist);
+   public BinomialConvolutionGen(RandomStream s, BinomialDist dist) {
+      super(s, dist);
    }
 
-
-   public int nextInt() { 
+   public int nextInt() {
       int x = 0;
       for (int i = 0; i < n; i++) {
          double unif = stream.nextDouble();
@@ -67,18 +68,20 @@ public class BinomialConvolutionGen extends BinomialGen {
       return x;
    }
 
-/**
- * Generates a new integer from the binomial distribution with parameters
- * @f$n = @f$&nbsp;`n` and @f$p = @f$&nbsp;`p`, using the given stream `s`.
- */
-public static int nextInt (RandomStream s, int n, double p) {
+   /**
+    * Generates a new integer from the binomial distribution with parameters
+    * 
+    * @f$n = @f$&nbsp;`n` and @f$p = @f$&nbsp;`p`, using the given stream `s`.
+    */
+   public static int nextInt(RandomStream s, int n, double p) {
       if (n <= 0)
-         throw new IllegalArgumentException ("n <= 0");
+         throw new IllegalArgumentException("n <= 0");
       if (p < 0 || p > 1)
-         throw new IllegalArgumentException ("p must be in [0,1]");
-      return convolution (s, n, p);
+         throw new IllegalArgumentException("p must be in [0,1]");
+      return convolution(s, n, p);
    }
-   private static int convolution (RandomStream stream, int n, double p) {
+
+   private static int convolution(RandomStream stream, int n, double p) {
       int x = 0;
       for (int i = 0; i < n; i++) {
          double unif = stream.nextDouble();

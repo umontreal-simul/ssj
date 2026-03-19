@@ -23,6 +23,7 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.io.*;
 import java.lang.reflect.Array;
 
@@ -34,8 +35,7 @@ import java.lang.reflect.Array;
 public class TextDataWriter extends CachedDataWriter {
 
    /**
-    * @name Fields
-    * @{
+    * @name Fields @{
     */
 
    /**
@@ -48,7 +48,6 @@ public class TextDataWriter extends CachedDataWriter {
     */
    public final String DEFAULT_HEADER_PREFIX = "";
 
-
    protected BufferedWriter out;
 
    protected Format format;
@@ -56,16 +55,15 @@ public class TextDataWriter extends CachedDataWriter {
 
    protected String columnSeparator = DEFAULT_COLUMN_SEPARATOR;
    protected String headerPrefix = DEFAULT_HEADER_PREFIX;
-   
-   protected String floatFormatString = null;
 
+   protected String floatFormatString = null;
 
    /**
     * Returns the maximum field length.
     *
     */
    protected int getMaxFieldLength() {
-      int nRows = 0;      
+      int nRows = 0;
       for (DataField f : super.getFields()) {
          if (f.isArray())
             nRows = Math.max(nRows, f.getArrayLength());
@@ -78,7 +76,7 @@ public class TextDataWriter extends CachedDataWriter {
     *
     */
    protected void outputAsColumns() throws IOException {
-      
+
       if (withHeaders) {
          // output field headers
          out.write(headerPrefix);
@@ -118,8 +116,7 @@ public class TextDataWriter extends CachedDataWriter {
                // field is an array, output its current entry
                if (iRow < f.getArrayLength())
                   writeFormat(Array.get(f.asObject(), iRow));
-            }
-            else {
+            } else {
                // field is not an array, output only in first row
                if (iRow == 0)
                   writeFormat(f.asObject());
@@ -128,8 +125,7 @@ public class TextDataWriter extends CachedDataWriter {
          out.write("\n");
       }
    }
- 
-   
+
    /**
     * Outputs fields as rows.
     *
@@ -147,11 +143,11 @@ public class TextDataWriter extends CachedDataWriter {
                out.write(String.format("_data%02d_", ++iAnonymous));
             else
                // named field
-               out.write(f.getLabel());            
+               out.write(f.getLabel());
 
             out.write(columnSeparator);
          }
-         
+
          // output field data
 
          if (f.isArray()) {
@@ -163,19 +159,18 @@ public class TextDataWriter extends CachedDataWriter {
                // separator
                if (iCol > 0)
                   out.write(columnSeparator);
-               
+
                writeFormat(Array.get(f.asObject(), iCol));
             }
-         }
-         else {
+         } else {
             writeFormat(f.asObject());
          }
-         
+
          out.write("\n");
 
       }
    }
-   
+
    /**
     * Formats the object in accordance with the current format strings settings.
     *
@@ -183,7 +178,7 @@ public class TextDataWriter extends CachedDataWriter {
    protected void writeFormat(Object o) throws IOException {
       String s = null;
       if (floatFormatString != null && (o instanceof Double || o instanceof Float))
-         s = String.format((java.util.Locale)null, floatFormatString, o); // pass null to avoid localization
+         s = String.format((java.util.Locale) null, floatFormatString, o); // pass null to avoid localization
       else
          s = o.toString();
       out.write(s);
@@ -196,18 +191,19 @@ public class TextDataWriter extends CachedDataWriter {
    /**
     * Output format: organize fields as columns or as rows.
     */
-   public enum Format { COLUMNS, ROWS }
+   public enum Format {
+      COLUMNS, ROWS
+   }
 
    /**
-    * Class constructor. Truncates any existing file with the specified
-    * name.
-    *  @param filename     name of the file to write to
-    *  @param format       organize fields as columns if set to `COLUMNS`
-    *                      or as rows if set to `ROWS`
-    *  @param withHeaders  output headers or not
+    * Class constructor. Truncates any existing file with the specified name.
+    * 
+    * @param filename    name of the file to write to
+    * @param format      organize fields as columns if set to `COLUMNS` or as rows
+    *                    if set to `ROWS`
+    * @param withHeaders output headers or not
     */
-   public TextDataWriter (String filename, Format format, boolean withHeaders)
-         throws IOException {
+   public TextDataWriter(String filename, Format format, boolean withHeaders) throws IOException {
       this.out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename)));
       this.format = format;
       this.withHeaders = withHeaders;
@@ -215,13 +211,13 @@ public class TextDataWriter extends CachedDataWriter {
 
    /**
     * Class constructor. Truncates any conflicting file.
-    *  @param file         file to write to
-    *  @param format       organize fields as columns if set to `COLUMNS`
-    *                      or as rows if set to `ROWS`
-    *  @param withHeaders  output headers or not
+    * 
+    * @param file        file to write to
+    * @param format      organize fields as columns if set to `COLUMNS` or as rows
+    *                    if set to `ROWS`
+    * @param withHeaders output headers or not
     */
-   public TextDataWriter (File file, Format format, boolean withHeaders)
-         throws IOException {
+   public TextDataWriter(File file, Format format, boolean withHeaders) throws IOException {
       this.out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
       this.format = format;
       this.withHeaders = withHeaders;
@@ -229,14 +225,13 @@ public class TextDataWriter extends CachedDataWriter {
 
    /**
     * Class constructor.
-    *  @param outputStream output stream to write to
-    *  @param format       organize fields as columns if set to `COLUMNS`
-    *                      or as rows if set to `ROWS`
-    *  @param withHeaders  output headers or not
+    * 
+    * @param outputStream output stream to write to
+    * @param format       organize fields as columns if set to `COLUMNS` or as rows
+    *                     if set to `ROWS`
+    * @param withHeaders  output headers or not
     */
-   public TextDataWriter (OutputStream outputStream, Format format,
-                          boolean withHeaders)
-         throws IOException {
+   public TextDataWriter(OutputStream outputStream, Format format, boolean withHeaders) throws IOException {
       this.out = new BufferedWriter(new OutputStreamWriter(outputStream));
       this.format = format;
       this.withHeaders = withHeaders;
@@ -244,33 +239,35 @@ public class TextDataWriter extends CachedDataWriter {
 
    /**
     * Changes the output format.
-    *  @param format       organize fields as columns if set to `COLUMNS`
-    *                      or as rows if set to `ROWS`
+    * 
+    * @param format organize fields as columns if set to `COLUMNS` or as rows if
+    *               set to `ROWS`
     */
-   public void setFormat (Format format) {
+   public void setFormat(Format format) {
       this.format = format;
    }
 
    /**
     * Sets the format string used to output floating point numbers.
-    *  @param formatString format string (e.g., <tt>%.4g</tt>)
+    * 
+    * @param formatString format string (e.g., <tt>%.4g</tt>)
     */
-   public void setFloatFormatString (String formatString) {
+   public void setFloatFormatString(String formatString) {
       this.floatFormatString = formatString;
    }
 
    /**
     * Changes the column separator.
     */
-   public void setColumnSeparator (String columnSeparator) {
+   public void setColumnSeparator(String columnSeparator) {
       this.columnSeparator = columnSeparator;
    }
 
    /**
-    * Changes the header prefix (a string that indicates the beginning of
-    * the header line for the `COLUMNS` format).
+    * Changes the header prefix (a string that indicates the beginning of the
+    * header line for the `COLUMNS` format).
     */
-   public void setHeaderPrefix (String headerPrefix) {
+   public void setHeaderPrefix(String headerPrefix) {
       this.headerPrefix = headerPrefix;
    }
 

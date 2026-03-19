@@ -25,22 +25,24 @@
 package umontreal.ssj.rng;
 
 /**
- *  @ref CloneableRandomStream extends  @ref RandomStream and  Cloneable. All
- * classes that implements this interface are able to produce cloned objects.
+ * @ref CloneableRandomStream extends @ref RandomStream and Cloneable. All
+ *      classes that implements this interface are able to produce cloned
+ *      objects.
  *
- * The cloned object is entirely independent of the older odject. Moreover
- * the cloned object has all the same properties as the older one. All his
- * seeds are duplicated, and therefore both generators will produce the same
- * random number sequence.
+ *      The cloned object is entirely independent of the older odject. Moreover
+ *      the cloned object has all the same properties as the older one. All his
+ *      seeds are duplicated, and therefore both generators will produce the
+ *      same random number sequence.
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  */
 public interface CloneableRandomStream extends RandomStream, Cloneable {
 
    /**
     * Clones the current object and returns its copy.
-    *  @return A deep copy of the current object
+    * 
+    * @return A deep copy of the current object
     */
    public CloneableRandomStream clone();
- 
+
 }

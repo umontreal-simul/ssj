@@ -25,12 +25,12 @@
 package umontreal.ssj.probdist;
 
 /**
- * This interface should be implemented by all classes supporting discrete
- * and continuous distributions. It specifies the signature of methods that
- * compute the distribution function @f$F(x)@f$, the complementary
- * distribution function @f$\bar{F}(x)@f$, and the inverse distribution
- * function @f$ F^{-1} (u)@f$. It also specifies the signature of methods
- * that returns the mean, the variance and the standard deviation.
+ * This interface should be implemented by all classes supporting discrete and
+ * continuous distributions. It specifies the signature of methods that compute
+ * the distribution function @f$F(x)@f$, the complementary distribution
+ * function @f$\bar{F}(x)@f$, and the inverse distribution function @f$ F^{-1}
+ * (u)@f$. It also specifies the signature of methods that returns the mean, the
+ * variance and the standard deviation.
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -38,30 +38,31 @@ package umontreal.ssj.probdist;
  */
 public interface Distribution {
 
-/**
- * Returns the distribution function @f$F(x)@f$.
- *  @param x            value at which the distribution function is evaluated
- *  @return distribution function evaluated at `x`
- */
-public double cdf (double x);
+   /**
+    * Returns the distribution function @f$F(x)@f$.
+    * 
+    * @param x value at which the distribution function is evaluated
+    * @return distribution function evaluated at `x`
+    */
+   public double cdf(double x);
 
    /**
     * Returns @f$\bar{F}(x) = 1 - F(x)@f$.
-    *  @param x            value at which the complementary distribution
-    *                      function is evaluated
-    *  @return complementary distribution function evaluated at `x`
+    * 
+    * @param x value at which the complementary distribution function is evaluated
+    * @return complementary distribution function evaluated at `x`
     */
-   public double barF (double x);
+   public double barF(double x);
 
    /**
-    * Returns the inverse distribution function @f$F^{-1}(u)@f$, defined
-    * in ( {@link REF_probdist_overview_eq_inverseF
-    * inverseF} ).
-    *  @param u            value in the interval @f$(0,1)@f$ for which the
-    *                      inverse distribution function is evaluated
-    *  @return the inverse distribution function evaluated at `u`
+    * Returns the inverse distribution function @f$F^{-1}(u)@f$, defined in (
+    * {@link REF_probdist_overview_eq_inverseF inverseF} ).
+    * 
+    * @param u value in the interval @f$(0,1)@f$ for which the inverse distribution
+    *          function is evaluated
+    * @return the inverse distribution function evaluated at `u`
     */
-   public double inverseF (double u);
+   public double inverseF(double u);
 
    /**
     * Returns the mean of the distribution function.
@@ -79,8 +80,8 @@ public double cdf (double x);
    public double getStandardDeviation();
 
    /**
-    * Returns the parameters of the distribution function in the same
-    * order as in the constructors.
+    * Returns the parameters of the distribution function in the same order as in
+    * the constructors.
     */
    public double[] getParams();
 

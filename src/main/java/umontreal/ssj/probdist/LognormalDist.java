@@ -23,34 +23,32 @@
  *
  */
 package umontreal.ssj.probdist;
+
 import umontreal.ssj.util.*;
 
 /**
- * Extends the class  @ref ContinuousDistribution for the *lognormal*
+ * Extends the class @ref ContinuousDistribution for the *lognormal*
  * distribution @cite tJOH95a&thinsp;. (See also the <em>Johnson
+ * 
  * @f$S_L@f$</em> distribution `JohnsonSLDist` in this package.) It has scale
- * parameter @f$\mu@f$ and shape parameter @f$\sigma> 0@f$. The density is
- * @anchor REF_probdist_LognormalDist_eq_flognormal
- * @f[
- *   f(x) = \frac{1}{\sqrt{2\pi}\sigma x} e^{-(\ln(x) - \mu)^2/(2\sigma^2)} \qquad\mbox{for } x>0, \tag{flognormal}
- * @f]
- * and 0 elsewhere. The distribution function is
- * @f[
- *   F(x) = \Phi\left({(\ln(x) - \mu)/\sigma}\right) \qquad\mbox{for } x>0,
- * @f]
- * where @f$\Phi@f$ is the standard normal distribution function. Its
- * inverse is given by
- * @f[
- *   F^{-1}(u) = e^{\mu+ \sigma\Phi^{-1} (u)} \qquad\mbox{for } 0 \le u < 1.
- * @f]
- * If @f$\ln(Y)@f$ has a *normal* distribution, then @f$Y@f$ has a
- * *lognormal* distribution with the same parameters.
+ *                parameter @f$\mu@f$ and shape parameter @f$\sigma> 0@f$. The
+ *                density is
+ * @anchor REF_probdist_LognormalDist_eq_flognormal @f[ f(x) =
+ *         \frac{1}{\sqrt{2\pi}\sigma x} e^{-(\ln(x) - \mu)^2/(2\sigma^2)}
+ *         \qquad\mbox{for } x>0, \tag{flognormal} @f] and 0 elsewhere. The
+ *         distribution function is @f[ F(x) = \Phi\left({(\ln(x) -
+ *         \mu)/\sigma}\right) \qquad\mbox{for } x>0, @f] where @f$\Phi@f$ is
+ *         the standard normal distribution function. Its inverse is given
+ *         by @f[ F^{-1}(u) = e^{\mu+ \sigma\Phi^{-1} (u)} \qquad\mbox{for } 0
+ *         \le u < 1. @f] If @f$\ln(Y)@f$ has a *normal* distribution,
+ *         then @f$Y@f$ has a *lognormal* distribution with the same parameters.
  *
- * This class relies on the methods  NormalDist.cdf01 and
- * NormalDist.inverseF01 of  @ref NormalDist to approximate @f$\Phi@f$ and
+ *         This class relies on the methods NormalDist.cdf01 and
+ *         NormalDist.inverseF01 of @ref NormalDist to approximate @f$\Phi@f$
+ *         and
  * @f$\Phi^{-1}@f$.
  *
- * <div class="SSJ-bigskip"></div>
+ *                  <div class="SSJ-bigskip"></div>
  *
  * @ingroup probdist_continuous
  */
@@ -59,148 +57,135 @@ public class LognormalDist extends ContinuousDistribution {
    private double sigma;
 
    /**
-    * Constructs a `LognormalDist` object with default parameters @f$\mu=
-    * 0@f$ and @f$\sigma= 1@f$.
+    * Constructs a `LognormalDist` object with default parameters @f$\mu= 0@f$
+    * and @f$\sigma= 1@f$.
     */
    public LognormalDist() {
-      setParams (0.0, 1.0);
+      setParams(0.0, 1.0);
    }
 
    /**
-    * Constructs a `LognormalDist` object with parameters @f$\mu@f$ =
-    * `mu` and @f$\sigma@f$ = `sigma`.
+    * Constructs a `LognormalDist` object with parameters @f$\mu@f$ = `mu`
+    * and @f$\sigma@f$ = `sigma`.
     */
-   public LognormalDist (double mu, double sigma) {
-      setParams (mu, sigma);
+   public LognormalDist(double mu, double sigma) {
+      setParams(mu, sigma);
    }
 
-
-   public double density (double x) {
-      return density (mu, sigma, x);
+   public double density(double x) {
+      return density(mu, sigma, x);
    }
 
-   public double cdf (double x) {
-      return cdf (mu, sigma, x);
+   public double cdf(double x) {
+      return cdf(mu, sigma, x);
    }
 
-   public double barF (double x) {
-      return barF (mu, sigma, x);
+   public double barF(double x) {
+      return barF(mu, sigma, x);
    }
 
-   public double inverseF (double u) {
-      return inverseF (mu, sigma, u);
+   public double inverseF(double u) {
+      return inverseF(mu, sigma, u);
    }
 
    public double getMean() {
-      return LognormalDist.getMean (mu, sigma);
+      return LognormalDist.getMean(mu, sigma);
    }
 
    public double getVariance() {
-      return LognormalDist.getVariance (mu, sigma);
+      return LognormalDist.getVariance(mu, sigma);
    }
 
    public double getStandardDeviation() {
-      return LognormalDist.getStandardDeviation (mu, sigma);
-   }
-
-/**
- * Computes the lognormal density function @f$f(x)@f$ in (
- * {@link REF_probdist_LognormalDist_eq_flognormal flognormal}
- * ).
- */
-public static double density (double mu, double sigma, double x) {
-      if (sigma <= 0)
-         throw new IllegalArgumentException ("sigma <= 0");
-      if (x <= 0)
-         return 0;
-      double diff = Math.log (x) - mu;
-      return Math.exp (-diff*diff/(2*sigma*sigma))/
-              (Math.sqrt (2*Math.PI)*sigma*x);
+      return LognormalDist.getStandardDeviation(mu, sigma);
    }
 
    /**
-    * Computes the lognormal distribution function, using
-    * NormalDist.cdf01.
+    * Computes the lognormal density function @f$f(x)@f$ in (
+    * {@link REF_probdist_LognormalDist_eq_flognormal flognormal} ).
     */
-   public static double cdf (double mu, double sigma, double x) {
+   public static double density(double mu, double sigma, double x) {
+      if (sigma <= 0)
+         throw new IllegalArgumentException("sigma <= 0");
+      if (x <= 0)
+         return 0;
+      double diff = Math.log(x) - mu;
+      return Math.exp(-diff * diff / (2 * sigma * sigma)) / (Math.sqrt(2 * Math.PI) * sigma * x);
+   }
+
+   /**
+    * Computes the lognormal distribution function, using NormalDist.cdf01.
+    */
+   public static double cdf(double mu, double sigma, double x) {
       if (sigma <= 0.0)
-        throw new IllegalArgumentException ("sigma  <= 0");
+         throw new IllegalArgumentException("sigma  <= 0");
       if (x <= 0.0)
          return 0.0;
-      return NormalDist.cdf01 ((Math.log (x) - mu)/sigma);
+      return NormalDist.cdf01((Math.log(x) - mu) / sigma);
    }
 
    /**
     * Computes the lognormal complementary distribution function
-    * @f$\bar{F}(x)@f$, using  NormalDist.barF01.
+    * 
+    * @f$\bar{F}(x)@f$, using NormalDist.barF01.
     */
-   public static double barF (double mu, double sigma, double x) {
+   public static double barF(double mu, double sigma, double x) {
       if (sigma <= 0.0)
-        throw new IllegalArgumentException ("sigma  <= 0");
+         throw new IllegalArgumentException("sigma  <= 0");
       if (x <= 0.0)
          return 1.0;
-      return NormalDist.barF01 ((Math.log (x) - mu)/sigma);
+      return NormalDist.barF01((Math.log(x) - mu) / sigma);
    }
 
    /**
     * Computes the inverse of the lognormal distribution function, using
     * NormalDist.inverseF01.
     */
-   public static double inverseF (double mu, double sigma, double u) {
-        double t, v;
+   public static double inverseF(double mu, double sigma, double u) {
+      double t, v;
 
-        if (sigma <= 0.0)
-            throw new IllegalArgumentException ("sigma  <= 0");
+      if (sigma <= 0.0)
+         throw new IllegalArgumentException("sigma  <= 0");
 
-        if (u > 1.0 || u < 0.0)
-            throw new IllegalArgumentException ("u not in [0,1]");
+      if (u > 1.0 || u < 0.0)
+         throw new IllegalArgumentException("u not in [0,1]");
 
-        if (Num.DBL_EPSILON >= 1.0 - u)
-            return Double.POSITIVE_INFINITY;
+      if (Num.DBL_EPSILON >= 1.0 - u)
+         return Double.POSITIVE_INFINITY;
 
-        if (u <= 0.0)
-            return 0.0;
+      if (u <= 0.0)
+         return 0.0;
 
-        t = NormalDist.inverseF01 (u);
-        v = mu + sigma * t;
+      t = NormalDist.inverseF01(u);
+      v = mu + sigma * t;
 
-        if ((t >= XBIG) || (v >= Num.DBL_MAX_EXP * Num.LN2))
-            return Double.POSITIVE_INFINITY;
-        if ((t <= -XBIG) || (v <= -Num.DBL_MAX_EXP*Num.LN2))
-            return 0.0;
+      if ((t >= XBIG) || (v >= Num.DBL_MAX_EXP * Num.LN2))
+         return Double.POSITIVE_INFINITY;
+      if ((t <= -XBIG) || (v <= -Num.DBL_MAX_EXP * Num.LN2))
+         return 0.0;
 
-        return Math.exp (v);
+      return Math.exp(v);
    }
 
    /**
-    * Estimates the parameters @f$(\mu, \sigma)@f$ of the lognormal
-    * distribution using the maximum likelihood method, from the @f$n@f$
-    * observations @f$x[i]@f$, @f$i = 0, 1,…, n-1@f$. The estimates are
-    * returned in a two-element array, in regular order: [@f$\mu@f$,
-    * @f$\sigma@f$].  The maximum likelihood estimators are the values
+    * Estimates the parameters @f$(\mu, \sigma)@f$ of the lognormal distribution
+    * using the maximum likelihood method, from the @f$n@f$
+    * observations @f$x[i]@f$, @f$i = 0, 1,…, n-1@f$. The estimates are returned
+    * in a two-element array, in regular order: [@f$\mu@f$, @f$\sigma@f$]. The
+    * maximum likelihood estimators are the values
+    * 
     * @f$(\hat{\mu}, \hat{\sigma})@f$ that satisfy the equations:
-    * @f{align*}{
-    *    \hat{\mu} 
-    *    & 
-    *    = 
-    *    \frac{1}{n} \sum_{i=1}^n \ln(x_i)
-    *    \\ 
-    *    \hat{\sigma} 
-    *    & 
-    *    = 
-    *    \sqrt{\frac{1}{n} \sum_{i=1}^n (\ln(x_i) - \hat{\mu})^2}.
-    * @f}
-    * See @cite tJOH95a&thinsp; (page 220).
-    *  @param x            the list of observations used to evaluate
-    *                      parameters
-    *  @param n            the number of observations used to evaluate
-    *                      parameters
-    *  @return returns the parameters [@f$\hat{\mu}@f$,
+    * @f{align*}{ \hat{\mu} & = \frac{1}{n} \sum_{i=1}^n \ln(x_i) \\ \hat{\sigma} &
+    *             = \sqrt{\frac{1}{n} \sum_{i=1}^n (\ln(x_i) - \hat{\mu})^2}.
+    * @f} See @cite tJOH95a&thinsp; (page 220).
+    * @param x the list of observations used to evaluate parameters
+    * @param n the number of observations used to evaluate parameters
+    * @return returns the parameters [@f$\hat{\mu}@f$,
     * @f$\hat{\sigma}@f$]
     */
-   public static double[] getMLE (double[] x, int n) {
+   public static double[] getMLE(double[] x, int n) {
       if (n <= 0)
-         throw new IllegalArgumentException ("n <= 0");
+         throw new IllegalArgumentException("n <= 0");
 
       final double LN_EPS = Num.LN_DBL_MIN - Num.LN2;
       double parameters[];
@@ -208,9 +193,9 @@ public static double density (double mu, double sigma, double x) {
       double sum = 0.0;
       for (int i = 0; i < n; i++) {
          if (x[i] > 0.0)
-            sum += Math.log (x[i]);
+            sum += Math.log(x[i]);
          else
-            sum += LN_EPS;       // log(DBL_MIN / 2)
+            sum += LN_EPS; // log(DBL_MIN / 2)
       }
       parameters[0] = sum / n;
 
@@ -218,40 +203,39 @@ public static double density (double mu, double sigma, double x) {
       sum = 0.0;
       for (int i = 0; i < n; i++) {
          if (x[i] > 0.0)
-            temp = Math.log (x[i]) - parameters[0];
+            temp = Math.log(x[i]) - parameters[0];
          else
             temp = LN_EPS - parameters[0];
          sum += temp * temp;
       }
-      parameters[1] = Math.sqrt (sum / n);
+      parameters[1] = Math.sqrt(sum / n);
 
       return parameters;
    }
 
    /**
     * Creates a new instance of a lognormal distribution with parameters
-    * @f$\mu@f$ and @f$\sigma@f$ estimated using the maximum likelihood
-    * method based on the @f$n@f$ observations @f$x[i]@f$, @f$i = 0, 1, …,
-    * n-1@f$.
-    *  @param x            the list of observations to use to evaluate
-    *                      parameters
-    *  @param n            the number of observations to use to evaluate
-    *                      parameters
+    * 
+    * @f$\mu@f$ and @f$\sigma@f$ estimated using the maximum likelihood method
+    *           based on the @f$n@f$ observations @f$x[i]@f$, @f$i = 0, 1, …,
+    *           n-1@f$.
+    * @param x the list of observations to use to evaluate parameters
+    * @param n the number of observations to use to evaluate parameters
     */
-   public static LognormalDist getInstanceFromMLE (double[] x, int n) {
-      double parameters[] = getMLE (x, n);
-      return new LognormalDist (parameters[0], parameters[1]);
+   public static LognormalDist getInstanceFromMLE(double[] x, int n) {
+      double parameters[] = getMLE(x, n);
+      return new LognormalDist(parameters[0], parameters[1]);
    }
 
    /**
-    * Computes and returns the mean @f$E[X] = e^{\mu+ \sigma^2/2}@f$ of
-    * the lognormal distribution with parameters @f$\mu@f$ and
-    * @f$\sigma@f$.
-    *  @return the mean of the lognormal distribution
+    * Computes and returns the mean @f$E[X] = e^{\mu+ \sigma^2/2}@f$ of the
+    * lognormal distribution with parameters @f$\mu@f$ and
+    * 
+    * @f$\sigma@f$. @return the mean of the lognormal distribution
     */
-   public static double getMean (double mu, double sigma) {
+   public static double getMean(double mu, double sigma) {
       if (sigma <= 0.0)
-         throw new IllegalArgumentException ("sigma <= 0");
+         throw new IllegalArgumentException("sigma <= 0");
 
       return (Math.exp(mu + (sigma * sigma) / 2.0));
    }
@@ -260,22 +244,24 @@ public static double density (double mu, double sigma, double x) {
     * Computes and returns the variance @f$\mbox{Var}[X] = e^{2\mu+
     * \sigma^2}(e^{\sigma^2} - 1)@f$ of the lognormal distribution with
     * parameters @f$\mu@f$ and @f$\sigma@f$.
-    *  @return the variance of the lognormal distribution
+    * 
+    * @return the variance of the lognormal distribution
     */
-   public static double getVariance (double mu, double sigma) {
+   public static double getVariance(double mu, double sigma) {
       if (sigma <= 0.0)
-         throw new IllegalArgumentException ("sigma <= 0");
+         throw new IllegalArgumentException("sigma <= 0");
 
       return (Math.exp(2.0 * mu + sigma * sigma) * (Math.exp(sigma * sigma) - 1.0));
    }
 
    /**
-    * Computes and returns the standard deviation of the lognormal
-    * distribution with parameters @f$\mu@f$ and @f$\sigma@f$.
-    *  @return the standard deviation of the lognormal distribution
+    * Computes and returns the standard deviation of the lognormal distribution
+    * with parameters @f$\mu@f$ and @f$\sigma@f$.
+    * 
+    * @return the standard deviation of the lognormal distribution
     */
-   public static double getStandardDeviation (double mu, double sigma) {
-      return Math.sqrt (LognormalDist.getVariance (mu, sigma));
+   public static double getStandardDeviation(double mu, double sigma) {
+      return Math.sqrt(LognormalDist.getVariance(mu, sigma));
    }
 
    /**
@@ -295,28 +281,27 @@ public static double density (double mu, double sigma, double x) {
    /**
     * Sets the parameters @f$\mu@f$ and @f$\sigma@f$ of this object.
     */
-   public void setParams (double mu, double sigma) {
+   public void setParams(double mu, double sigma) {
       if (sigma <= 0)
-         throw new IllegalArgumentException ("sigma <= 0");
+         throw new IllegalArgumentException("sigma <= 0");
       this.mu = mu;
       this.sigma = sigma;
       supportA = 0.0;
    }
 
    /**
-    * Returns a table containing the parameters of the current
-    * distribution, in the order: [@f$\mu@f$, @f$\sigma@f$].
+    * Returns a table containing the parameters of the current distribution, in the
+    * order: [@f$\mu@f$, @f$\sigma@f$].
     */
-   public double[] getParams () {
-      double[] retour = {mu, sigma};
+   public double[] getParams() {
+      double[] retour = { mu, sigma };
       return retour;
    }
 
    /**
-    * Returns a `String` containing information about the current
-    * distribution.
+    * Returns a `String` containing information about the current distribution.
     */
-   public String toString () {
+   public String toString() {
       return getClass().getSimpleName() + " : mu = " + mu + ", sigma = " + sigma;
    }
 

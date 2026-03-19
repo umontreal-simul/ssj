@@ -30,31 +30,32 @@ import umontreal.ssj.rng.MRG32k3a;
 
 /**
  * Represents a random stream factory capable of constructing instances of a
- * given type of random stream by invoking the  #newInstance method each time
- * a new random stream is needed, instead of invoking directly the specific
- * constructor of the desired type. Hence, if several random streams of a
- * given type (class) must be constructed at different places in a large
- * simulation program, and if we decide to change the type of stream in the
- * future, there is no need to change the code at those different places.
- * With the random stream factory, the class-specific code for constructing
- * these streams appears at a single place, where the factory is constructed.
+ * given type of random stream by invoking the #newInstance method each time a
+ * new random stream is needed, instead of invoking directly the specific
+ * constructor of the desired type. Hence, if several random streams of a given
+ * type (class) must be constructed at different places in a large simulation
+ * program, and if we decide to change the type of stream in the future, there
+ * is no need to change the code at those different places. With the random
+ * stream factory, the class-specific code for constructing these streams
+ * appears at a single place, where the factory is constructed.
  *
- * The class  @ref BasicRandomStreamFactory provides an implementation of
- * this interface.
+ * The class @ref BasicRandomStreamFactory provides an implementation of this
+ * interface.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public interface RandomStreamFactory {
 
-/**
- * Constructs and returns a new random stream. If the instantiation of the
- * random stream fails, this method throws a
- * @ref RandomStreamInstantiationException.
- *  @return the newly-constructed random stream.
- *
- *  @exception RandomStreamInstantiationException if the new random stream
- * cannot be instantiated.
- */
-public RandomStream newInstance();
+   /**
+    * Constructs and returns a new random stream. If the instantiation of the
+    * random stream fails, this method throws a
+    * 
+    * @ref RandomStreamInstantiationException.
+    * @return the newly-constructed random stream.
+    *
+    * @exception RandomStreamInstantiationException if the new random stream cannot
+    *                                               be instantiated.
+    */
+   public RandomStream newInstance();
 
 }

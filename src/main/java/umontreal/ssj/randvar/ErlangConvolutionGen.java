@@ -23,6 +23,7 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
@@ -39,43 +40,44 @@ public class ErlangConvolutionGen extends ErlangGen {
 
    /**
     * Creates an Erlang random variate generator with parameters `k` and
+    * 
     * @f$\lambda@f$ = `lambda`, using stream `s`.
     */
-   public ErlangConvolutionGen (RandomStream s, int k, double lambda) {
-      super (s, null);
-      setParams (k, lambda);
+   public ErlangConvolutionGen(RandomStream s, int k, double lambda) {
+      super(s, null);
+      setParams(k, lambda);
    }
 
    /**
     * Creates an Erlang random variate generator with parameters `k` and
+    * 
     * @f$\lambda= 1@f$, using stream `s`.
     */
-   public ErlangConvolutionGen (RandomStream s, int k) {
-      this (s, k, 1.0);
+   public ErlangConvolutionGen(RandomStream s, int k) {
+      this(s, k, 1.0);
    }
 
    /**
     * Creates a new generator for the distribution `dist` and stream `s`.
     */
-   public ErlangConvolutionGen (RandomStream s, ErlangDist dist) {
-      super (s, dist);
+   public ErlangConvolutionGen(RandomStream s, ErlangDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getK(), dist.getLambda());
+         setParams(dist.getK(), dist.getLambda());
    }
-
 
    public double nextDouble() {
-      return convolution (stream, k, lambda);
+      return convolution(stream, k, lambda);
    }
 
-   public static double nextDouble (RandomStream s, int k, double lambda) {
-      return convolution (s, k, lambda);
+   public static double nextDouble(RandomStream s, int k, double lambda) {
+      return convolution(s, k, lambda);
    }
 
-   private static double convolution (RandomStream s, int k, double lambda) {
+   private static double convolution(RandomStream s, int k, double lambda) {
       double x = 0.0;
-      for (int i=0;  i<k;  i++)  
-         x += ExponentialDist.inverseF (lambda, s.nextDouble());
+      for (int i = 0; i < k; i++)
+         x += ExponentialDist.inverseF(lambda, s.nextDouble());
       return x;
    }
 }

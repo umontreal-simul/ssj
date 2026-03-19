@@ -42,394 +42,394 @@ import umontreal.ssj.simevents.Event;
  * <div class="SSJ-bigskip"></div>
  */
 public class DoublyLinked implements EventList {
-	private int modCount = 0;
+   private int modCount = 0;
 
-	// First and last elements in the list.
-	private Node first = null, last = null;
+   // First and last elements in the list.
+   private Node first = null, last = null;
 
-	public boolean isEmpty() {
-		return first == null;
-	}
+   public boolean isEmpty() {
+      return first == null;
+   }
 
-	public void clear() {
-		if (first == null)
-			return;
+   public void clear() {
+      if (first == null)
+         return;
 
-		last.succ = null;
-		last = first = null;
-		++modCount;
-	}
+      last.succ = null;
+      last = first = null;
+      ++modCount;
+   }
 
-	public void add(Event ev) {
-		Node newNode;
-		newNode = new Node();
+   public void add(Event ev) {
+      Node newNode;
+      newNode = new Node();
 
-		newNode.ev = ev;
-		++modCount;
-		if (last == null) { // Easy: the event list was empty.
-			first = last = newNode;
-			first.prec = first.succ = null;
-			return;
-		}
+      newNode.ev = ev;
+      ++modCount;
+      if (last == null) { // Easy: the event list was empty.
+         first = last = newNode;
+         first.prec = first.succ = null;
+         return;
+      }
 
-		Node node = findPosition(ev); // Finds where to insert.
-		if (node == null) { // Must be inserted first.
-			newNode.succ = first;
-			newNode.succ.prec = newNode;
-			first = newNode;
-			newNode.prec = null;
-		} else { // Insert after node.
-			newNode.prec = node;
-			newNode.succ = node.succ;
-			node.succ = newNode;
-			if (newNode.succ != null)
-				newNode.succ.prec = newNode;
-			else
-				last = newNode;
-		}
-	}
+      Node node = findPosition(ev); // Finds where to insert.
+      if (node == null) { // Must be inserted first.
+         newNode.succ = first;
+         newNode.succ.prec = newNode;
+         first = newNode;
+         newNode.prec = null;
+      } else { // Insert after node.
+         newNode.prec = node;
+         newNode.succ = node.succ;
+         node.succ = newNode;
+         if (newNode.succ != null)
+            newNode.succ.prec = newNode;
+         else
+            last = newNode;
+      }
+   }
 
-	public void addFirst(Event ev) {
-		Node newNode;
-		newNode = new Node();
+   public void addFirst(Event ev) {
+      Node newNode;
+      newNode = new Node();
 
-		newNode.ev = ev;
-		newNode.prec = null;
-		if (first == null) {
-			first = last = newNode;
-			first.succ = null;
-		} else {
-			newNode.succ = first;
-			first.prec = newNode;
-			first = newNode;
-		}
-		++modCount;
-	}
+      newNode.ev = ev;
+      newNode.prec = null;
+      if (first == null) {
+         first = last = newNode;
+         first.succ = null;
+      } else {
+         newNode.succ = first;
+         first.prec = newNode;
+         first = newNode;
+      }
+      ++modCount;
+   }
 
-	public void addBefore(Event ev, Event other) {
-		Node node = last;
-		while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
-			node = node.prec;
-		if (node.ev != other)
-			throw new IllegalArgumentException("Event not in list.");
+   public void addBefore(Event ev, Event other) {
+      Node node = last;
+      while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
+         node = node.prec;
+      if (node.ev != other)
+         throw new IllegalArgumentException("Event not in list.");
 
-		Node newNode;
-		newNode = new Node();
+      Node newNode;
+      newNode = new Node();
 
-		newNode.ev = ev;
+      newNode.ev = ev;
 
-		newNode.prec = node.prec;
-		newNode.succ = node;
-		node.prec = newNode;
-		if (newNode.prec != null)
-			newNode.prec.succ = newNode;
-		else
-			first = newNode;
-		++modCount;
-	}
+      newNode.prec = node.prec;
+      newNode.succ = node;
+      node.prec = newNode;
+      if (newNode.prec != null)
+         newNode.prec.succ = newNode;
+      else
+         first = newNode;
+      ++modCount;
+   }
 
-	public void addAfter(Event ev, Event other) {
-		Node node = last;
-		while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
-			node = node.prec;
-		if (node.ev != other)
-			throw new IllegalArgumentException("Event not in list.");
+   public void addAfter(Event ev, Event other) {
+      Node node = last;
+      while (node != null && node.ev.compareTo(other) >= 0 && node.ev != other)
+         node = node.prec;
+      if (node.ev != other)
+         throw new IllegalArgumentException("Event not in list.");
 
-		Node newNode;
-		newNode = new Node();
+      Node newNode;
+      newNode = new Node();
 
-		newNode.ev = ev;
+      newNode.ev = ev;
 
-		newNode.prec = node;
-		newNode.succ = node.succ;
-		node.succ = newNode;
-		if (newNode.succ != null)
-			newNode.succ.prec = newNode;
-		else
-			last = newNode;
-		++modCount;
-	}
+      newNode.prec = node;
+      newNode.succ = node.succ;
+      node.succ = newNode;
+      if (newNode.succ != null)
+         newNode.succ.prec = newNode;
+      else
+         last = newNode;
+      ++modCount;
+   }
 
-	public Event getFirst() {
-		return first == null ? null : first.ev;
-	}
+   public Event getFirst() {
+      return first == null ? null : first.ev;
+   }
 
-	public Event getFirstOfClass(String cl) {
-		Node node = first;
-		while (node != null) {
-			if (node.ev.getClass().getName().equals(cl))
-				return node.ev;
-			node = node.succ;
-		}
-		return null;
-	}
+   public Event getFirstOfClass(String cl) {
+      Node node = first;
+      while (node != null) {
+         if (node.ev.getClass().getName().equals(cl))
+            return node.ev;
+         node = node.succ;
+      }
+      return null;
+   }
 
-	@SuppressWarnings("unchecked")
-	public <E extends Event> E getFirstOfClass(Class<E> cl) {
-		Node node = first;
-		while (node != null) {
-			if (node.ev.getClass() == cl)
-				return (E) node.ev;
-			node = node.succ;
-		}
-		return null;
-	}
+   @SuppressWarnings("unchecked")
+   public <E extends Event> E getFirstOfClass(Class<E> cl) {
+      Node node = first;
+      while (node != null) {
+         if (node.ev.getClass() == cl)
+            return (E) node.ev;
+         node = node.succ;
+      }
+      return null;
+   }
 
-	public boolean remove(Event ev) {
-		// Find the node corresponding to this event ev.
-		Node node = last;
-		while (node != null && node.ev.compareTo(ev) >= 0 && node.ev != ev)
-			node = node.prec;
-		if (node == null || node.ev != ev)
-			return false;
+   public boolean remove(Event ev) {
+      // Find the node corresponding to this event ev.
+      Node node = last;
+      while (node != null && node.ev.compareTo(ev) >= 0 && node.ev != ev)
+         node = node.prec;
+      if (node == null || node.ev != ev)
+         return false;
 
-		if (node == last && node == first)
-			last = first = null; // The list is now empty.
-		else {
-			if (node == last) {
-				last = node.prec;
-				last.succ = null;
-			} else
-				node.succ.prec = node.prec;
-			if (node == first) {
-				first = node.succ;
-				first.prec = null;
-			} else {
-				node.prec.succ = node.succ;
-				node.prec = null;
-			}
-		}
-		node.ev = null;
-		node.succ = null;
+      if (node == last && node == first)
+         last = first = null; // The list is now empty.
+      else {
+         if (node == last) {
+            last = node.prec;
+            last.succ = null;
+         } else
+            node.succ.prec = node.prec;
+         if (node == first) {
+            first = node.succ;
+            first.prec = null;
+         } else {
+            node.prec.succ = node.succ;
+            node.prec = null;
+         }
+      }
+      node.ev = null;
+      node.succ = null;
 
-		++modCount;
-		return true;
-	}
+      ++modCount;
+      return true;
+   }
 
-	public Event removeFirst() {
-		if (first == null)
-			return null;
+   public Event removeFirst() {
+      if (first == null)
+         return null;
 
-		Event ev = first.ev;
-		Node temp = first;
-		first = first.succ;
-		if (first == null)
-			last = null;
-		else
-			first.prec = null;
+      Event ev = first.ev;
+      Node temp = first;
+      first = first.succ;
+      if (first == null)
+         last = null;
+      else
+         first.prec = null;
 
-		temp.ev = null;
-		temp.succ = null;
+      temp.ev = null;
+      temp.succ = null;
 
-		++modCount;
-		return ev;
-	}
+      ++modCount;
+      return ev;
+   }
 
-	public Iterator<Event> iterator() {
-		return listIterator();
-	}
+   public Iterator<Event> iterator() {
+      return listIterator();
+   }
 
-	public ListIterator<Event> listIterator() {
-		return new DLItr();
-	}
+   public ListIterator<Event> listIterator() {
+      return new DLItr();
+   }
 
-	public String toString() {
-		StringBuilder sb = new StringBuilder("Contents of the event list DoublyLinked:");
-		Node node = first;
-		while (node != null) {
-			sb.append(PrintfFormat.NEWLINE + PrintfFormat.g(12, 7, node.ev.time()) + ", "
-					+ PrintfFormat.g(8, 4, node.ev.priority()) + " : " + node.ev.toString());
-			node = node.succ;
-		}
-		return sb.toString();
-	}
+   public String toString() {
+      StringBuilder sb = new StringBuilder("Contents of the event list DoublyLinked:");
+      Node node = first;
+      while (node != null) {
+         sb.append(PrintfFormat.NEWLINE + PrintfFormat.g(12, 7, node.ev.time()) + ", "
+               + PrintfFormat.g(8, 4, node.ev.priority()) + " : " + node.ev.toString());
+         node = node.succ;
+      }
+      return sb.toString();
+   }
 
-	// A element of the event list. This node contains the event ev.
-	// His predecessor and successor are prec and succ.
-	private static class Node {
-		Event ev;
-		Node prec, succ;
-	}
+   // A element of the event list. This node contains the event ev.
+   // His predecessor and successor are prec and succ.
+   private static class Node {
+      Event ev;
+      Node prec, succ;
+   }
 
-	private class DLItr implements ListIterator<Event> {
-		private Node prev;
-		private Node next;
-		private Node lastRet;
-		private int expectedModCount;
-		private int nextIndex;
+   private class DLItr implements ListIterator<Event> {
+      private Node prev;
+      private Node next;
+      private Node lastRet;
+      private int expectedModCount;
+      private int nextIndex;
 
-		DLItr() {
-			prev = null;
-			next = first;
-			expectedModCount = modCount;
-			lastRet = null;
-			nextIndex = 0;
-		}
+      DLItr() {
+         prev = null;
+         next = first;
+         expectedModCount = modCount;
+         lastRet = null;
+         nextIndex = 0;
+      }
 
-		public void add(Event ev) {
-			if (modCount != expectedModCount)
-				throw new ConcurrentModificationException();
+      public void add(Event ev) {
+         if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
 
-			// Check the event time and priority
-			if (next != null && ev.compareTo(next.ev) > 0) {
-				ev.setTime(next.ev.time());
-				ev.setPriority(next.ev.priority());
-			}
-			if (prev != null && ev.compareTo(prev.ev) < 0) {
-				ev.setTime(prev.ev.time());
-				ev.setPriority(prev.ev.priority());
-			}
+         // Check the event time and priority
+         if (next != null && ev.compareTo(next.ev) > 0) {
+            ev.setTime(next.ev.time());
+            ev.setPriority(next.ev.priority());
+         }
+         if (prev != null && ev.compareTo(prev.ev) < 0) {
+            ev.setTime(prev.ev.time());
+            ev.setPriority(prev.ev.priority());
+         }
 
-			Node newNode;
-			newNode = new Node();
+         Node newNode;
+         newNode = new Node();
 
-			newNode.ev = ev;
-			++nextIndex;
-			++modCount;
-			++expectedModCount;
-			lastRet = null;
-			if (last == null) { // Easy: the event list was empty.
-				first = last = newNode;
-				first.prec = first.succ = null;
-				prev = newNode;
-				next = null;
-				nextIndex = 1;
-			} else if (prev == null) { // Must be inserted first.
-				// next is non-null or the list would be empty.
-				newNode.succ = first;
-				newNode.succ.prec = newNode;
-				first = newNode;
-				newNode.prec = null;
-				prev = newNode;
-			} else { // Insert after node.
-				// prev is non-null but next can be null.
-				newNode.prec = prev;
-				newNode.succ = next;
-				prev.succ = newNode;
-				if (newNode.succ != null)
-					newNode.succ.prec = newNode;
-				else
-					last = newNode;
-				prev = newNode;
-			}
-		}
+         newNode.ev = ev;
+         ++nextIndex;
+         ++modCount;
+         ++expectedModCount;
+         lastRet = null;
+         if (last == null) { // Easy: the event list was empty.
+            first = last = newNode;
+            first.prec = first.succ = null;
+            prev = newNode;
+            next = null;
+            nextIndex = 1;
+         } else if (prev == null) { // Must be inserted first.
+            // next is non-null or the list would be empty.
+            newNode.succ = first;
+            newNode.succ.prec = newNode;
+            first = newNode;
+            newNode.prec = null;
+            prev = newNode;
+         } else { // Insert after node.
+            // prev is non-null but next can be null.
+            newNode.prec = prev;
+            newNode.succ = next;
+            prev.succ = newNode;
+            if (newNode.succ != null)
+               newNode.succ.prec = newNode;
+            else
+               last = newNode;
+            prev = newNode;
+         }
+      }
 
-		public boolean hasNext() {
-			if (modCount != expectedModCount)
-				throw new ConcurrentModificationException();
-			return next != null;
-		}
+      public boolean hasNext() {
+         if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
+         return next != null;
+      }
 
-		public boolean hasPrevious() {
-			if (modCount != expectedModCount)
-				throw new ConcurrentModificationException();
-			return prev != null;
-		}
+      public boolean hasPrevious() {
+         if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
+         return prev != null;
+      }
 
-		public Event next() {
-			if (!hasNext())
-				throw new NoSuchElementException();
+      public Event next() {
+         if (!hasNext())
+            throw new NoSuchElementException();
 
-			++nextIndex;
-			Event ev = next.ev;
-			lastRet = next;
-			prev = next;
-			next = next.succ;
-			return ev;
-		}
+         ++nextIndex;
+         Event ev = next.ev;
+         lastRet = next;
+         prev = next;
+         next = next.succ;
+         return ev;
+      }
 
-		public int nextIndex() {
-			if (!hasNext())
-				throw new NoSuchElementException();
+      public int nextIndex() {
+         if (!hasNext())
+            throw new NoSuchElementException();
 
-			return nextIndex;
-		}
+         return nextIndex;
+      }
 
-		public Event previous() {
-			if (!hasPrevious())
-				throw new NoSuchElementException();
+      public Event previous() {
+         if (!hasPrevious())
+            throw new NoSuchElementException();
 
-			--nextIndex;
-			Event ev = prev.ev;
-			lastRet = prev;
-			next = prev;
-			prev = prev.prec;
-			return ev;
-		}
+         --nextIndex;
+         Event ev = prev.ev;
+         lastRet = prev;
+         next = prev;
+         prev = prev.prec;
+         return ev;
+      }
 
-		public int previousIndex() {
-			if (!hasPrevious())
-				throw new NoSuchElementException();
+      public int previousIndex() {
+         if (!hasPrevious())
+            throw new NoSuchElementException();
 
-			return nextIndex - 1;
-		}
+         return nextIndex - 1;
+      }
 
-		public void remove() {
-			if (modCount != expectedModCount)
-				throw new ConcurrentModificationException();
-			if (lastRet == null)
-				throw new IllegalStateException();
+      public void remove() {
+         if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
+         if (lastRet == null)
+            throw new IllegalStateException();
 
-			if (lastRet == next) // Last call to previous
-				next = next.succ;
-			else { // Last call to next
-				prev = prev.prec;
-				--nextIndex;
-			}
-			if (lastRet == last && lastRet == first) {
-				last = first = null; // The list is now empty.
-				next = prev = null;
-			} else {
-				if (lastRet == last) {
-					last = lastRet.prec;
-					last.succ = null;
-				} else
-					lastRet.succ.prec = lastRet.prec;
-				if (lastRet == first) {
-					first = lastRet.succ;
-					first.prec = null;
-				} else {
-					lastRet.prec.succ = lastRet.succ;
-					lastRet.prec = null;
-				}
-			}
-			lastRet.ev = null;
-			lastRet.succ = null;
+         if (lastRet == next) // Last call to previous
+            next = next.succ;
+         else { // Last call to next
+            prev = prev.prec;
+            --nextIndex;
+         }
+         if (lastRet == last && lastRet == first) {
+            last = first = null; // The list is now empty.
+            next = prev = null;
+         } else {
+            if (lastRet == last) {
+               last = lastRet.prec;
+               last.succ = null;
+            } else
+               lastRet.succ.prec = lastRet.prec;
+            if (lastRet == first) {
+               first = lastRet.succ;
+               first.prec = null;
+            } else {
+               lastRet.prec.succ = lastRet.succ;
+               lastRet.prec = null;
+            }
+         }
+         lastRet.ev = null;
+         lastRet.succ = null;
 
-			lastRet = null;
-			++modCount;
-			++expectedModCount;
-		}
+         lastRet = null;
+         ++modCount;
+         ++expectedModCount;
+      }
 
-		public void set(Event ev) {
-			if (modCount != expectedModCount)
-				throw new ConcurrentModificationException();
-			if (lastRet == null)
-				throw new IllegalStateException();
+      public void set(Event ev) {
+         if (modCount != expectedModCount)
+            throw new ConcurrentModificationException();
+         if (lastRet == null)
+            throw new IllegalStateException();
 
-			// Check the event time and priority
-			if (lastRet.prec != null && ev.compareTo(lastRet.prec.ev) < 0) {
-				ev.setTime(lastRet.prec.ev.time());
-				ev.setPriority(lastRet.prec.ev.priority());
-			}
-			if (lastRet.succ != null && ev.compareTo(lastRet.succ.ev) > 0) {
-				ev.setTime(lastRet.succ.ev.time());
-				ev.setPriority(lastRet.succ.ev.priority());
-			}
+         // Check the event time and priority
+         if (lastRet.prec != null && ev.compareTo(lastRet.prec.ev) < 0) {
+            ev.setTime(lastRet.prec.ev.time());
+            ev.setPriority(lastRet.prec.ev.priority());
+         }
+         if (lastRet.succ != null && ev.compareTo(lastRet.succ.ev) > 0) {
+            ev.setTime(lastRet.succ.ev.time());
+            ev.setPriority(lastRet.succ.ev.priority());
+         }
 
-			lastRet.ev = ev;
-		}
-	}
+         lastRet.ev = ev;
+      }
+   }
 
-	private Node findPosition(Event ev) {
-		// This implementation appears quite inefficient !!!!
-		// Must try to improve.
-		Node node = last;
+   private Node findPosition(Event ev) {
+      // This implementation appears quite inefficient !!!!
+      // Must try to improve.
+      Node node = last;
 
-		// Finds the occurrence time of the new event (evTime).
-		while (node != null && ev.compareTo(node.ev) < 0) {
-			node = node.prec;
-		}
-		return node;
-	}
+      // Finds the occurrence time of the new event (evTime).
+      while (node != null && ev.compareTo(node.ev) < 0) {
+         node = node.prec;
+      }
+      return node;
+   }
 }

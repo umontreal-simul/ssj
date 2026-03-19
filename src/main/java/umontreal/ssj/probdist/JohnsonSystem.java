@@ -25,35 +25,40 @@
 package umontreal.ssj.probdist;
 
 /**
- * This class contains common parameters and methods for the *Johnson* system
- * of distributions @cite tJOH49a, @cite tJOH95a&thinsp; with shape
+ * This class contains common parameters and methods for the *Johnson* system of
+ * distributions @cite tJOH49a, @cite tJOH95a&thinsp; with shape
  * parameters @f$\gamma@f$ and @f$\delta> 0@f$, location parameter
+ * 
  * @f$\xi@f$, and scale parameter @f$\lambda>0@f$. Denoting
- * @f$T=(X-\xi)/\lambda@f$, the variable @f$Z = \gamma+ \delta f(T)@f$ is
- * a standard normal variable, where @f$f(t)@f$ is one of the following
- * transformations:
+ * @f$T=(X-\xi)/\lambda@f$, the variable @f$Z = \gamma+ \delta f(T)@f$ is a
+ *                          standard normal variable, where @f$f(t)@f$ is one of
+ *                          the following transformations:
  *
- * <center>
+ *                          <center>
  *
- * <table class="SSJ-table SSJ-has-hlines">
- * <tr class="bt">
- *   <td class="c bl br">Family</td>
- *   <td class="c bl br">@f$f(t)@f$</td>
- * </tr><tr class="bt">
- *   <td class="c bl br">@f$S_L@f$</td>
- *   <td class="c bl br">@f$\ln(t)@f$</td>
- * </tr><tr>
- *   <td class="c bl br">@f$S_B@f$</td>
- *   <td class="c bl br">@f$\ln(t / (1-t))@f$</td>
- * </tr><tr>
- *   <td class="c bl br">@f$S_U@f$</td>
- *   <td class="c bl br">@f$\ln(t + \sqrt{1 + t^2})@f$</td>
- * </tr>
- * </table>
+ *                          <table class="SSJ-table SSJ-has-hlines">
+ *                          <tr class="bt">
+ *                          <td class="c bl br">Family</td>
+ *                          <td class="c bl br">@f$f(t)@f$</td>
+ *                          </tr>
+ *                          <tr class="bt">
+ *                          <td class="c bl br">@f$S_L@f$</td>
+ *                          <td class="c bl br">@f$\ln(t)@f$</td>
+ *                          </tr>
+ *                          <tr>
+ *                          <td class="c bl br">@f$S_B@f$</td>
+ *                          <td class="c bl br">@f$\ln(t / (1-t))@f$</td>
+ *                          </tr>
+ *                          <tr>
+ *                          <td class="c bl br">@f$S_U@f$</td>
+ *                          <td class="c bl br">@f$\ln(t + \sqrt{1 +
+ *                          t^2})@f$</td>
+ *                          </tr>
+ *                          </table>
  *
- * </center>
+ *                          </center>
  *
- * <div class="SSJ-bigskip"></div>
+ *                          <div class="SSJ-bigskip"></div>
  *
  * @ingroup probdist_continuous
  */
@@ -65,13 +70,13 @@ abstract class JohnsonSystem extends ContinuousDistribution {
 
    /**
     * Constructs a `JohnsonSystem` object with shape parameters
-    * @f$\gamma= \mathtt{gamma}@f$ and @f$\delta= \mathtt{delta}@f$,
-    * location parameter @f$\xi= \mathtt{xi}@f$, and scale parameter
+    * 
+    * @f$\gamma= \mathtt{gamma}@f$ and @f$\delta= \mathtt{delta}@f$, location
+    *            parameter @f$\xi= \mathtt{xi}@f$, and scale parameter
     * @f$\lambda= \mathtt{lambda}@f$.
     */
-   protected JohnsonSystem (double gamma, double delta, double xi,
-                            double lambda) {
-      setParams0 (gamma, delta, xi, lambda);
+   protected JohnsonSystem(double gamma, double delta, double xi, double lambda) {
+      setParams0(gamma, delta, xi, lambda);
    }
 
    /**
@@ -104,14 +109,14 @@ abstract class JohnsonSystem extends ContinuousDistribution {
 
    /**
     * Sets the value of the parameters @f$\gamma@f$, @f$\delta@f$,
+    * 
     * @f$\xi@f$ and @f$\lambda@f$.
     */
-   protected void setParams0(double gamma, double delta, double xi,
-                             double lambda) {
+   protected void setParams0(double gamma, double delta, double xi, double lambda) {
       if (lambda <= 0)
-         throw new IllegalArgumentException ("lambda <= 0");
+         throw new IllegalArgumentException("lambda <= 0");
       if (delta <= 0)
-         throw new IllegalArgumentException ("delta <= 0");
+         throw new IllegalArgumentException("delta <= 0");
       this.gamma = gamma;
       this.delta = delta;
       this.xi = xi;
@@ -119,21 +124,21 @@ abstract class JohnsonSystem extends ContinuousDistribution {
    }
 
    /**
-    * Return an array containing the parameters of the current
-    * distribution. This array is put in regular order: [@f$\gamma@f$,
-    * @f$\delta@f$, @f$\xi@f$, @f$\lambda@f$].
+    * Return an array containing the parameters of the current distribution. This
+    * array is put in regular order:
+    * [@f$\gamma@f$, @f$\delta@f$, @f$\xi@f$, @f$\lambda@f$].
     */
-   public double[] getParams () {
-      double[] retour = {gamma, delta, xi, lambda};
+   public double[] getParams() {
+      double[] retour = { gamma, delta, xi, lambda };
       return retour;
    }
 
    /**
-    * Returns a `String` containing information about the current
-    * distribution.
+    * Returns a `String` containing information about the current distribution.
     */
-   public String toString () {
-      return getClass().getSimpleName() + " : gamma = " + gamma + ", delta = " + delta + ", xi = " + xi + ", lambda = " + lambda;
+   public String toString() {
+      return getClass().getSimpleName() + " : gamma = " + gamma + ", delta = " + delta + ", xi = " + xi + ", lambda = "
+            + lambda;
    }
 
 }

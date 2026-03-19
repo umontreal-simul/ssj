@@ -23,18 +23,19 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
- * This class implements random variate generators for the *hyperbolic
- * secant* distribution with location parameter @f$\mu@f$ and scale
+ * This class implements random variate generators for the *hyperbolic secant*
+ * distribution with location parameter @f$\mu@f$ and scale
  * parameter @f$\sigma@f$. The density function of this distribution is
- * @anchor REF_randvar_HyperbolicSecantGen_eq_fHyperbolicSecant
- * @f[
- *   f(x) = \frac{1}{2 \sigma} \mbox{ sech}\left(\frac{\pi}{2} \frac{(x - \mu)}{\sigma}\right), \qquad-\infty<x < \infty. \tag{fHyperbolicSecant}
- * @f]
- * <div class="SSJ-bigskip"></div>
+ * 
+ * @anchor REF_randvar_HyperbolicSecantGen_eq_fHyperbolicSecant @f[ f(x) =
+ *         \frac{1}{2 \sigma} \mbox{ sech}\left(\frac{\pi}{2} \frac{(x -
+ *         \mu)}{\sigma}\right), \qquad-\infty<x < \infty.
+ *         \tag{fHyperbolicSecant} @f] <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -44,38 +45,36 @@ public class HyperbolicSecantGen extends RandomVariateGen {
 
    /**
     * Creates a *hyperbolic secant* random variate generator with
-    * parameters @f$\mu=@f$ `mu` and @f$\sigma=@f$ `sigma`, using stream
-    * `s`.
+    * parameters @f$\mu=@f$ `mu` and @f$\sigma=@f$ `sigma`, using stream `s`.
     */
-   public HyperbolicSecantGen (RandomStream s, double mu, double sigma) {
-      super (s, new HyperbolicSecantDist(mu, sigma));
-      setParams (mu, sigma);
+   public HyperbolicSecantGen(RandomStream s, double mu, double sigma) {
+      super(s, new HyperbolicSecantDist(mu, sigma));
+      setParams(mu, sigma);
    }
 
    /**
     * Creates a *hyperbolic secant* random variate generator with
     * parameters @f$\mu=0@f$ and @f$\sigma=1@f$, using stream `s`.
     */
-   public HyperbolicSecantGen (RandomStream s) {
-      this (s, 0.0, 1.0);
+   public HyperbolicSecantGen(RandomStream s) {
+      this(s, 0.0, 1.0);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public HyperbolicSecantGen (RandomStream s, HyperbolicSecantDist dist) {
-      super (s, dist);
+   public HyperbolicSecantGen(RandomStream s, HyperbolicSecantDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getMu(), dist.getSigma());
+         setParams(dist.getMu(), dist.getSigma());
    }
 
    /**
-    * Generates a variate from the *hyperbolic secant* distribution with
-    * location parameter @f$\mu@f$ and scale parameter @f$\sigma@f$.
+    * Generates a variate from the *hyperbolic secant* distribution with location
+    * parameter @f$\mu@f$ and scale parameter @f$\sigma@f$.
     */
-   public static double nextDouble (RandomStream s, double mu, double sigma) {
-      return HyperbolicSecantDist.inverseF (mu, sigma, s.nextDouble());
+   public static double nextDouble(RandomStream s, double mu, double sigma) {
+      return HyperbolicSecantDist.inverseF(mu, sigma, s.nextDouble());
    }
 
    /**
@@ -95,9 +94,9 @@ public class HyperbolicSecantGen extends RandomVariateGen {
    /**
     * Sets the parameters @f$\mu@f$ and @f$\sigma@f$ of this object.
     */
-   protected void setParams (double mu, double sigma) {
+   protected void setParams(double mu, double sigma) {
       if (sigma <= 0.0)
-         throw new IllegalArgumentException ("sigma <= 0");
+         throw new IllegalArgumentException("sigma <= 0");
       this.mu = mu;
       this.sigma = sigma;
    }

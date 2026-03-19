@@ -45,33 +45,27 @@ import org.jfree.util.ShapeUtilities;
  *
  */
 
-
 /**
- * A renderer that draws horizontal lines between points and/or draws shapes
- * at each data point to provide an empirical style chart.  This renderer is
+ * A renderer that draws horizontal lines between points and/or draws shapes at
+ * each data point to provide an empirical style chart. This renderer is
  * designed for use with the {XYPlot} class.
  */
-public class EmpiricalRenderer extends XYLineAndShapeRenderer
-         implements XYItemRenderer, Cloneable, PublicCloneable
-{
+public class EmpiricalRenderer extends XYLineAndShapeRenderer implements XYItemRenderer, Cloneable, PublicCloneable {
 
    /**
     * Creates a new renderer.
     */
-   public EmpiricalRenderer()
-   {
+   public EmpiricalRenderer() {
       this(null, null);
    }
-
 
    /**
     * Creates a new renderer with selected tool tip and url generators.
     *
-    * @param  toolTipGenerator   Tool tip generator.
-    * @param  urlGenerator       Url generator.
+    * @param toolTipGenerator Tool tip generator.
+    * @param urlGenerator     Url generator.
     */
-   public EmpiricalRenderer(XYToolTipGenerator toolTipGenerator, XYURLGenerator urlGenerator)
-   {
+   public EmpiricalRenderer(XYToolTipGenerator toolTipGenerator, XYURLGenerator urlGenerator) {
       setDefaultToolTipGenerator(toolTipGenerator);
       setURLGenerator(urlGenerator);
       setDefaultShapesFilled(true);
@@ -81,28 +75,27 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
    /**
     * Draws the visual representation of a single data item.
     *
-    * @param g2           the graphics device.
-    * @param state        the renderer state.
-    * @param dataArea     the area within which the data is being drawn.
-    * @param info         collects information about the drawing.
-    * @param plot         the plot (can be used to obtain standard color
-    *                     information etc).
-    * @param domainAxis   the domain axis.
-    * @param rangeAxis    the range axis.
-    * @param dataset      the dataset.
-    * @param series       the series index (zero-based).
-    * @param item         the item index (zero-based).
-    * @param crosshairState  crosshair information for the plot 
-    *                        (<code>null</code> permitted).
-    * @param pass         the pass index.
+    * @param g2             the graphics device.
+    * @param state          the renderer state.
+    * @param dataArea       the area within which the data is being drawn.
+    * @param info           collects information about the drawing.
+    * @param plot           the plot (can be used to obtain standard color
+    *                       information etc).
+    * @param domainAxis     the domain axis.
+    * @param rangeAxis      the range axis.
+    * @param dataset        the dataset.
+    * @param series         the series index (zero-based).
+    * @param item           the item index (zero-based).
+    * @param crosshairState crosshair information for the plot (<code>null</code>
+    *                       permitted).
+    * @param pass           the pass index.
     */
-   public void drawItem(Graphics2D g2, XYItemRendererState state, Rectangle2D dataArea,
-                        PlotRenderingInfo info, XYPlot plot, ValueAxis domainAxis, ValueAxis rangeAxis,
-                        XYDataset dataset, int series, int item, CrosshairState crosshairState, int pass)
-   {
+   public void drawItem(Graphics2D g2, XYItemRendererState state, Rectangle2D dataArea, PlotRenderingInfo info,
+         XYPlot plot, ValueAxis domainAxis, ValueAxis rangeAxis, XYDataset dataset, int series, int item,
+         CrosshairState crosshairState, int pass) {
 
       if (!getItemVisible(series, item))
-         return ;
+         return;
       PlotOrientation orientation = plot.getOrientation();
       java.awt.Paint seriesPaint = getItemPaint(series, item);
       java.awt.Stroke seriesStroke = getItemStroke(series, item);
@@ -111,7 +104,7 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
       double x0 = dataset.getXValue(series, item);
       double y0 = dataset.getYValue(series, item);
       if (java.lang.Double.isNaN(y0))
-         return ;
+         return;
       org.jfree.chart.ui.RectangleEdge xAxisLocation = plot.getDomainAxisEdge();
       org.jfree.chart.ui.RectangleEdge yAxisLocation = plot.getRangeAxisEdge();
       double transX0 = domainAxis.valueToJava2D(x0, dataArea, xAxisLocation);
@@ -183,16 +176,20 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
       }
       int domainAxisIndex = plot.getDomainAxisIndex(domainAxis);
       // int rangeAxisIndex = plot.getRangeAxisIndex(rangeAxis);
-      //  ???????????????????????????????????????????????????????
+      // ???????????????????????????????????????????????????????
       // int datasetIndex = getIndexOf();
-      //  ?  Should be dataset index, but how can we get it ????
-      //  
+      // ? Should be dataset index, but how can we get it ????
+      //
       updateCrosshairValues(crosshairState, x0, y0, domainAxisIndex, transX0, transY0, orientation);
       if (state.getInfo() != null) {
          EntityCollection entities = state.getEntityCollection();
          if (entities != null) {
             int r = getDefaultEntityRadius();
-            java.awt.Shape shape = orientation != PlotOrientation.VERTICAL ? ((java.awt.Shape) (new java.awt.geom.Rectangle2D.Double(transY0 - (double)r, transX0 - (double)r, 2 * r, 2 * r))) : ((java.awt.Shape) (new java.awt.geom.Rectangle2D.Double(transX0 - (double)r, transY0 - (double)r, 2 * r, 2 * r)));
+            java.awt.Shape shape = orientation != PlotOrientation.VERTICAL
+                  ? ((java.awt.Shape) (new java.awt.geom.Rectangle2D.Double(transY0 - (double) r, transX0 - (double) r,
+                        2 * r, 2 * r)))
+                  : ((java.awt.Shape) (new java.awt.geom.Rectangle2D.Double(transX0 - (double) r, transY0 - (double) r,
+                        2 * r, 2 * r)));
             if (shape != null) {
                String tip = null;
                XYToolTipGenerator generator = getToolTipGenerator(series, item);
@@ -215,8 +212,7 @@ public class EmpiricalRenderer extends XYLineAndShapeRenderer
     *
     * @throws CloneNotSupportedException if the clone cannot be created.
     */
-   public Object clone() throws CloneNotSupportedException
-   {
+   public Object clone() throws CloneNotSupportedException {
       return super.clone();
    }
 }

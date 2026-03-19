@@ -7,12 +7,11 @@ import umontreal.ssj.stat.Tally;
 
 import java.util.*;
 
-
 /**
  * ANOVA variance estimator.
  *
- * Estimates the partial variances of multiple coordinate sets using the PartialVarianceEstimator
- * class.
+ * Estimates the partial variances of multiple coordinate sets using the
+ * PartialVarianceEstimator class.
  *
  */
 public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
@@ -25,7 +24,6 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
 
    // variance storage
    double[] vars = null;
-   
 
    public AnovaVarianceEstimator() {
       this.integrator = null;
@@ -35,12 +33,12 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
    public MonteCarloModelDouble getModel() {
       return varEstimator.getModel();
    }
-   
+
    public double getApproximateMean() {
       return varEstimator.getApproximateMean();
    }
 
-   public void setModel (MonteCarloModelDoubleRQMC model, double approxMean) {
+   public void setModel(MonteCarloModelDoubleRQMC model, double approxMean) {
       varEstimator.setModel(model, approxMean);
    }
 
@@ -49,11 +47,11 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
    }
 
    /**
-    * Sets the integrator.
-    * The integrator must provide twice the dimension of the model.
+    * Sets the integrator. The integrator must provide twice the dimension of the
+    * model.
     *
     */
-   public void setIntegrator (RandomIntegrator integrator) {
+   public void setIntegrator(RandomIntegrator integrator) {
       this.integrator = integrator;
    }
 
@@ -69,7 +67,7 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
     * Set the coordinate sets to consider to \c coordSets.
     *
     */
-   public void setCoordinates (List<CoordinateSet> coordSets) {
+   public void setCoordinates(List<CoordinateSet> coordSets) {
       varEstimator.setCoordinateSets(coordSets);
    }
 
@@ -77,30 +75,28 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
     * Set the coordinate sets to consider to all non-empty subsets of \c coords.
     *
     */
-   public void setCoordinates (CoordinateSet coords) {
+   public void setCoordinates(CoordinateSet coords) {
       varEstimator.setCoordinateSets(coords.subsetsNotEmpty());
    }
 
    /**
-    * Set the coordinate sets to consider to all non-empty subsets of \c coords, up to
-    * cardinality \c maxOrder.
+    * Set the coordinate sets to consider to all non-empty subsets of \c coords, up
+    * to cardinality \c maxOrder.
     *
     */
-   public void setCoordinates (CoordinateSet coords, int maxOrder) {
+   public void setCoordinates(CoordinateSet coords, int maxOrder) {
       varEstimator.setCoordinateSets(coords.subsetsNotEmpty(maxOrder));
    }
 
-   
    /**
     * Simulates the model once.
     *
-    * Returns \c vars such that:
-    * \li \c vars.length is \c coordSets.size() + 2.
-    * \li \c vars[\c nSets] contains the correction to the approximate mean.
-    * \li \c vars[\c nSets+1] contains the total variance.
+    * Returns \c vars such that: \li \c vars.length is \c coordSets.size() + 2. \li
+    * \c vars[\c nSets] contains the correction to the approximate mean. \li \c
+    * vars[\c nSets+1] contains the total variance.
     *
     */
-   public void simulate (RandomStream stream) {
+   public void simulate(RandomStream stream) {
 
       List<CoordinateSet> coordSets = varEstimator.getCoordinateSets();
       int nSets = coordSets.size();
@@ -114,7 +110,7 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
       integrator.setStream(stream);
       integrator.integrate(varEstimator, vars);
 
-      vars[nSets+1] -= vars[nSets] * vars[nSets];
+      vars[nSets + 1] -= vars[nSets] * vars[nSets];
 
       for (int i = 0; i < nSets; i++) {
 
@@ -132,30 +128,33 @@ public class AnovaVarianceEstimator implements MonteCarloModel<double[]> {
       }
    }
 
+   public double[] getPerformance() {
+      return vars;
+   }
 
-   public double[] getPerformance () {
-	   return vars;
-	   }
-	   
-	   
-	   /**
+   /**
     * Returns the number of dimensions for the input.
     *
     */
    public int getDimension() {
       return varEstimator.getDimension();
    }
-   
 
    /**
     * Returns a description of the partial variance estimator.
     *
     */
-   @Override public String toString() {
-      String s = String.format("ANOVA Variance Estimator"
-            + " [model=%s]", varEstimator.getModel());
+   @Override
+   public String toString() {
+      String s = String.format("ANOVA Variance Estimator" + " [model=%s]", varEstimator.getModel());
       return s;
    }
-   
 
+   /**
+    * Returns a model tag.
+    */
+   public String getTag() {
+      return getModel().getTag();
+   }
+   
 }

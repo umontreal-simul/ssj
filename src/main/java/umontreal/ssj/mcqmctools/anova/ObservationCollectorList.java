@@ -8,21 +8,21 @@ public class ObservationCollectorList<E> extends ArrayList<ObservationCollector<
    public ObservationCollectorList() {
       super();
    }
-   
+
    public ObservationCollectorList(int initialCapacity) {
       super(initialCapacity);
    }
-   
+
    public void init() {
       for (ObservationCollector<? super E> collector : this)
          collector.init();
    }
-   
+
    public void observe(E obs) {
       for (ObservationCollector<? super E> collector : this)
          collector.observe(obs);
    }
-   
+
    public String toString() {
       String s = "List of Observation Collectors: ";
       for (ObservationCollector<? super E> collector : this)

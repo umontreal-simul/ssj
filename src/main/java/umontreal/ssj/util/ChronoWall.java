@@ -25,20 +25,20 @@
 package umontreal.ssj.util;
 
 /**
- * Extends the  @ref AbstractChrono class to compute the wall-clock time
- * using Java's builtin `System.nanoTime`. This can be used as a rough
- * approximation of the CPU time taken by a program if no other tasks are
- * executed on the host while the program is running.
+ * Extends the @ref AbstractChrono class to compute the wall-clock time using
+ * Java's builtin `System.nanoTime`. This can be used as a rough approximation
+ * of the CPU time taken by a program if no other tasks are executed on the host
+ * while the program is running.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public class ChronoWall extends AbstractChrono {
 
-   protected void getTime (long[] tab) {
+   protected void getTime(long[] tab) {
       long rawTime = System.nanoTime();
       final long DIV = 1000000000L;
-      long seconds = rawTime/DIV;
-      long micros = (rawTime % DIV)/1000L;
+      long seconds = rawTime / DIV;
+      long micros = (rawTime % DIV) / 1000L;
       tab[0] = seconds;
       tab[1] = micros;
    }

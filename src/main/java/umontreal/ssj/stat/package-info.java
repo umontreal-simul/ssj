@@ -1,0 +1,75 @@
+/**
+ * @package umontreal.ssj.stat
+ *
+ * Tools for Collecting Statistics and computing estimators and confidence intervals.
+ *
+ * @anchor REF_stat_overview_sec_overview
+ *
+ * This package provides elementary tools for collecting data and 
+ * computing some estimators and confidence intervals. The base class
+ * @ref umontreal.ssj.stat.StatProbe implements common methods needed by all
+ * data collectors (statistical probes). 
+ * Its subclass  @ref umontreal.ssj.stat.Tally collects data as a
+ * sequence of observations @f$X_1,X_2,\dots @f$, and computes sample averages,
+ * sample standard deviations, and confidence intervals based on
+ * normal or Student approximations.  It does not store observations.
+ *  The class  @ref umontreal.ssj.stat.TallyStore is similar, but it
+ * stores the individual observations in a
+ * `DoubleArrayList`, a type of extensible array imported from the COLT library.
+ * This permits one to compute more quantities and to use the methods
+ * provided by COLT for computing descriptive statistics.
+ * Data can also be collected directly in aggregated form in *histograms*
+ * via `TallyHistogram` or `HistogramOnly`.
+ * The class `ScaledHistogram` permits one rescale histograms to view them as density estimators,
+ * to construct averaged-shifted histograms, and polygonal interpolations of histograms.
+ *
+ * The class  @ref umontreal.ssj.simevents.Accumulate,
+ * in package `simevents`,
+ *  computes integrals and averages with respect to time. This class is in
+ * package `simevents` because its operation depends on the simulation clock.
+ * 
+ * `PgfDataTable` provides tools to construct tables of observations (rows)
+ * in which each observation has many fields (columns).
+ * These tables are in a appropriate format for the  pgfplot LaTeX package.
+ * They can also be forwarded to other software for visualization, etc.
+ * 
+ * Subpackages of the package `stat` offer additional tools.
+ * For example, the packages `stat.list` and `stat.matrix` provide lists and matrices of 
+ * <tt>Tally</tt> objects and tools to manage them.
+ * The package `stat.density` provides tools for density estimation, e.g., 
+ * via histograms and kernel density estimators.
+ * 
+ * All classes that represent statistical probes support the *observer*
+ * design pattern, well-known in software engineering
+ *  @cite iGAM98a&thinsp;.
+ * This pattern facilitates the separation of data generation (by the
+ * simulation program) from data processing (for statistical reports and
+ * displays). This can be very helpful in particular in large simulation
+ * programs or libraries, where different objects may need to process the
+ * same data in different ways. A statistical probe maintains a list of
+ * registered  @ref umontreal.ssj.stat.ObservationListener objects, and
+ * broadcasts information to all its registered observers whenever
+ * appropriate. Any object that implements the interface
+ * @ref umontreal.ssj.stat.ObservationListener can register as an observer.
+ * For an example, see the program `QueueObs` in the SSJ tutorial.
+ * 
+ * When writing complex simulation programs, in data generation portions, one
+ * uses the statistical probes as usual but with observation notification
+ * turned on. To turn it on, one can invoke
+ * the method `notifyObs` in  @ref umontreal.ssj.stat.StatProbe on the probes. 
+ * In this mode, a
+ * probe becomes a *distribution agency* which broadcasts received
+ * observations to all *observers* that registered to it. It will also
+ * fulfill its collector functionality unless it is disabled explicitly by
+ * calling the method `stopCollectStat` in @ref umontreal.ssj.stat.StatProbe.  When
+ * statistical collection is disabled, the probes are only distribution agencies.
+ * Data processing parts of a program can be implemented through observers. An
+ * observer is a class implementing the  `Observer` interface. It can be
+ * registered to any class extending  `Observable`, including
+ * @ref umontreal.ssj.stat.StatProbe. The observed value is passed to the
+ * observers through the second argument of the `update` method of @ref java.util.Observer,
+ * which is an `Object`. The argument must then be type-casted to a
+ * `Double` wrapper object before the observation value can be extracted.
+ */
+ 
+package umontreal.ssj.stat;

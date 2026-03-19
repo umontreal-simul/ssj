@@ -1,0 +1,12 @@
+3  120.0   numPeriods and lengthPeriod (minutes)
+3  35.0    numAgents and base arrival rate 
+4  40.0        "
+3  25.0        "
+2          nCounselors
+12  30.0   numSlots and slotLength (minutes)
+0.8 0.05   r  p
+6.0       s (minutes)
+280.0 50.0  mua  sigmaa (seconds) 
+26.0  4.0   mub  sigmab (minutes)
+-100.0 60.0 mur  sigmar (seconds)
+

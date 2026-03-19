@@ -1,0 +1,11 @@
+/**
+ * @package umontreal.ssj.randvarmulti
+ *
+ * Generating Random Vectors.
+ *
+ * This package provides a collection of classes for non-uniform random
+ * variate generation, very similar to `randvar`, but for multivariate
+ * distributions.
+ */
+
+package umontreal.ssj.randvarmulti;

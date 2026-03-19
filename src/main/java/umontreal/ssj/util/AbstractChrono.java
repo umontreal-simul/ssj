@@ -70,92 +70,92 @@ package umontreal.ssj.util;
  */
 public abstract class AbstractChrono {
 
-	private long m_second;
-	private long m_microsec;
-	private long[] now = new long[2];
+   private long m_second;
+   private long m_microsec;
+   private long[] now = new long[2];
 
-	// tab[0] = seconds, tab[1] = microseconds
-	protected abstract void getTime(long[] tab);
+   // tab[0] = seconds, tab[1] = microseconds
+   protected abstract void getTime(long[] tab);
 
-	/**
-	 * @name Timing functions @{
-	 */
-	public AbstractChrono() {
-	}
+   /**
+    * @name Timing functions @{
+    */
+   public AbstractChrono() {
+   }
 
-	/**
-	 * Initializes this `AbstractChrono` to zero.
-	 */
-	public void init() {
-		getTime(now);
-		m_second = now[0];
-		m_microsec = now[1];
-	}
+   /**
+    * Initializes this `AbstractChrono` to zero.
+    */
+   public void init() {
+      getTime(now);
+      m_second = now[0];
+      m_microsec = now[1];
+   }
 
-	/**
-	 * Returns the CPU time in seconds used by the program since the last call to
-	 * #init for this `AbstractChrono`.
-	 * 
-	 * @return the number of seconds
-	 */
-	public double getSeconds() {
-		getTime(now);
-		double time = (now[1] - m_microsec) / 1000000.0 + (now[0] - m_second);
-		return time;
-	}
+   /**
+    * Returns the CPU time in seconds used by the program since the last call to
+    * #init for this `AbstractChrono`.
+    * 
+    * @return the number of seconds
+    */
+   public double getSeconds() {
+      getTime(now);
+      double time = (now[1] - m_microsec) / 1000000.0 + (now[0] - m_second);
+      return time;
+   }
 
-	/**
-	 * Returns the CPU time in minutes used by the program since the last call to
-	 * #init for this `AbstractChrono`.
-	 * 
-	 * @return the number of minutes
-	 */
-	public double getMinutes() {
-		getTime(now);
-		double time = (now[1] - m_microsec) / 1000000.0 + (now[0] - m_second);
-		return time * 1.666666667 * 0.01;
-	}
+   /**
+    * Returns the CPU time in minutes used by the program since the last call to
+    * #init for this `AbstractChrono`.
+    * 
+    * @return the number of minutes
+    */
+   public double getMinutes() {
+      getTime(now);
+      double time = (now[1] - m_microsec) / 1000000.0 + (now[0] - m_second);
+      return time * 1.666666667 * 0.01;
+   }
 
-	/**
-	 * Returns the CPU time in hours used by the program since the last call to
-	 * #init for this `AbstractChrono`.
-	 * 
-	 * @return the number of hours
-	 */
-	public double getHours() {
-		getTime(now);
-		double time = (now[1] - m_microsec) / 1000000.0 + (now[0] - m_second);
-		return time * 2.777777778 * 0.0001;
-	}
+   /**
+    * Returns the CPU time in hours used by the program since the last call to
+    * #init for this `AbstractChrono`.
+    * 
+    * @return the number of hours
+    */
+   public double getHours() {
+      getTime(now);
+      double time = (now[1] - m_microsec) / 1000000.0 + (now[0] - m_second);
+      return time * 2.777777778 * 0.0001;
+   }
 
-	/**
-	 * Converts the CPU time used by the program since its last call to #init for
-	 * this <tt>AbstractChrono</tt> to a String in the `HH:MM:SS.xx` format.
-	 * 
-	 * @return the string representation of the CPU time
-	 */
-	public String format() {
-		return format(getSeconds());
-	}
+   /**
+    * Converts the CPU time used by the program since its last call to #init for
+    * this <tt>AbstractChrono</tt> to a String in the `HH:MM:SS.xx` format.
+    * 
+    * @return the string representation of the CPU time
+    */
+   public String format() {
+      return format(getSeconds());
+   }
 
-	/**
-	 * Converts the time `time`, given in seconds, to a String in the `HH:MM:SS.xx`
-	 * format.
-	 * 
-	 * @return the string representation of the time `time`
-	 */
-	public static String format(double time) {
-		int second, hour, min, centieme;
-		hour = (int) (time / 3600.0);
-		if (hour > 0)
-			time -= ((double) hour * 3600.0);
-		min = (int) (time / 60.0);
-		if (min > 0)
-			time -= ((double) min * 60.0);
-		second = (int) time;
-		centieme = (int) (100.0 * (time - (double) second) + 0.5);
-		return String.valueOf(hour) + ":" + min + ":" + second + "." + centieme;
-	}
+   /**
+    * Converts the time `time`, given in seconds, to a String in the `HH:MM:SS.xx`
+    * format.
+    * 
+    * @return the string representation of the time `time`
+    */
+   public static String format(double time) {
+      int second, hour, min, centieme;
+      hour = (int) (time / 3600.0);
+      if (hour > 0)
+         time -= ((double) hour * 3600.0);
+      min = (int) (time / 60.0);
+      if (min > 0)
+         time -= ((double) min * 60.0);
+      second = (int) time;
+      centieme = (int) (100.0 * (time - (double) second) + 0.5);
+      return String.valueOf(hour) + ":" + min + ":" + second + "." + centieme;
+   }
 
 }
 

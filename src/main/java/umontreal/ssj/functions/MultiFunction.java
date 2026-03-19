@@ -35,9 +35,10 @@ public interface MultiFunction {
 
    /**
     * Returns the value of the function evaluated at @f$X@f$.
-    *  @param X            point at which the function is evaluated
-    *  @return value of function at `X`
+    * 
+    * @param X point at which the function is evaluated
+    * @return value of function at `X`
     */
-   public double evaluate (double[] X);
+   public double evaluate(double[] X);
 
 }

@@ -23,69 +23,64 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements methods for generating random variates from the
- * *half-normal* distribution with parameters @f$\mu@f$ and @f$\sigma>
- * 0@f$. Its density is
- * @f{align*}{
- *    f(x) 
- *    & 
- *   =
- *    \frac{1}{\sigma}\sqrt{\frac{2}{\pi}}\; e^{-(x-\mu)^2/2\sigma^2}, \qquad\mbox{for } x \ge\mu. 
- *    \\ 
- *    f(x) 
- *    & 
- *   =
- *    0, \qquad\mbox{for } x < \mu.
- * @f}
- * <div class="SSJ-bigskip"></div>
+ * *half-normal* distribution with parameters @f$\mu@f$ and @f$\sigma> 0@f$. Its
+ * density is
+ * 
+ * @f{align*}{ f(x) & = \frac{1}{\sigma}\sqrt{\frac{2}{\pi}}\;
+ *             e^{-(x-\mu)^2/2\sigma^2}, \qquad\mbox{for } x \ge\mu. \\ f(x) & =
+ *             0, \qquad\mbox{for } x < \mu.
+ * @f} <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
 public class HalfNormalGen extends RandomVariateGen {
-    
+
    // Distribution parameters
    protected double mu;
    protected double sigma;
 
    /**
-    * Creates a new *half-normal* generator with parameters @f$\mu=@f$
-    * `mu` and @f$\sigma=@f$ `sigma`, using stream `s`.
+    * Creates a new *half-normal* generator with parameters @f$\mu=@f$ `mu`
+    * and @f$\sigma=@f$ `sigma`, using stream `s`.
     */
-   public HalfNormalGen (RandomStream s, double mu, double sigma) {
-      super (s, new HalfNormalDist (mu, sigma));
-      setParams (mu, sigma);
+   public HalfNormalGen(RandomStream s, double mu, double sigma) {
+      super(s, new HalfNormalDist(mu, sigma));
+      setParams(mu, sigma);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public HalfNormalGen (RandomStream s, HalfNormalDist dist) {
-      super (s, dist);
+   public HalfNormalGen(RandomStream s, HalfNormalDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getMu(), dist.getSigma());
+         setParams(dist.getMu(), dist.getSigma());
    }
 
    /**
     * Generates a variate from the *half-normal* distribution with
-    * parameters @f$\mu= @f$&nbsp;`mu` and @f$\sigma= @f$&nbsp;`sigma`,
-    * using stream `s`.
-    *  @param s            the random stream
-    *  @param mu           the parameter mu
-    *  @param sigma        the parameter sigma
-    *  @return Generates a variate from the *HalfNormal* distribution
+    * parameters @f$\mu= @f$&nbsp;`mu` and @f$\sigma= @f$&nbsp;`sigma`, using
+    * stream `s`.
+    * 
+    * @param s     the random stream
+    * @param mu    the parameter mu
+    * @param sigma the parameter sigma
+    * @return Generates a variate from the *HalfNormal* distribution
     */
-   public static double nextDouble (RandomStream s, double mu, double sigma) {
-      return HalfNormalDist.inverseF (mu, sigma, s.nextDouble());
+   public static double nextDouble(RandomStream s, double mu, double sigma) {
+      return HalfNormalDist.inverseF(mu, sigma, s.nextDouble());
    }
 
    /**
     * Returns the parameter @f$\mu@f$ of this object.
-    *  @return the parameter mu
+    * 
+    * @return the parameter mu
     */
    public double getMu() {
       return mu;
@@ -93,16 +88,16 @@ public class HalfNormalGen extends RandomVariateGen {
 
    /**
     * Returns the parameter @f$\sigma@f$ of this object.
-    *  @return the parameter mu
+    * 
+    * @return the parameter mu
     */
    public double getSigma() {
       return sigma;
    }
 
-
-   protected void setParams (double mu, double sigma) {
+   protected void setParams(double mu, double sigma) {
       if (sigma <= 0.0)
-         throw new IllegalArgumentException ("sigma <= 0");
+         throw new IllegalArgumentException("sigma <= 0");
       this.mu = mu;
       this.sigma = sigma;
    }

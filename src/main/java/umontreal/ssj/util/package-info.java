@@ -1,0 +1,12 @@
+/**
+ * @package umontreal.ssj.util
+ *
+ * This package provides various kinds of general basic utilities
+ * used in SSJ and also in the *simulation laboratory* at DIRO,
+ * Université de Montréal. Much of this was originally implemented in
+ * the Modula-2 language before 1990 and has been translated in C and then in Java, with
+ * some adaptations along the road.
+ *
+ **/
+
+package umontreal.ssj.util;

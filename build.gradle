@@ -3,14 +3,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.ysb33r.gradle:doxygen-gradle-plugin:0.7.0'
+        classpath 'org.ysb33r.gradle:doxygen-gradle-plugin:2.1.1'
     }
 }
 
 plugins {
     id 'java-library'
     id 'c'
-    id 'org.ysb33r.doxygen' version '0.7.0'
+    id("org.ysb33r.doxygen") version '2.1.1' 
     id 'distribution'
     id 'maven-publish'
     id 'eclipse'
@@ -22,14 +22,13 @@ repositories {
 
 group = 'ca.umontreal.iro.simul'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+// sourceCompatibility = 1.8
+// targetCompatibility = 1.8
 
 version = '3.3.2'
 
 dependencies {
     implementation     'org.jfree:jcommon:1.0.24'
-//    implementation     'org.jfree:jfreechart:1.0.12'
     implementation     'org.jfree:jfreechart:1.5.3'
     implementation     'colt:colt:1.2.0'
     implementation     'com.github.rwl:optimization:1.3'
@@ -71,21 +70,29 @@ publishing {
 // ****************************** DOCS ******************************
 
 doxygen {
-    generate_html true
-    outputDir new File("$buildDir/docs")
-
-    project_name "SSJ"
-    project_number project.version
-
-    source new File(projectDir, 'src/main/java')
-    // source new File(projectDir, 'src/main/docs/examples/tutorial')
-    image_paths new File(projectDir, 'src/main/docs/images')
- 
-    template 'src/main/docs/Doxyfile'
-}
+  sourceSets {
+    main {
+      option 'generate_html', true
+      // generate_html true
+      outputDir = new File(buildDir,'build/docs')
+      // outputDir = new File("$buildDir/docs")
+      sources new File(projectDir,'src/main/java')
+      // sources 'src/main/java/'
+      sources new File(projectDir,'src/main/docs/examples/tutorial/tutorial.dox')
+      // imagePath 'src/main/docs/images'  // All of this is already in Doxyfile.
+      // projectName "SSJ"
+      // projectNumber project.version
+      // doxyfile file('src/main/docs/Doxyfile')
+      }
+    }
+    //include 'src/main/java/'
+    // imagePath new File(projectDir, 'src/main/docs/images')  // Already in Doxyfile.
+    // template file('src/main/docs/Doxyfile')
+    // outputDir = new File(buildDir,'build/docs')
+  }
 
 tasks.withType(Javadoc) {
-      failOnError false
+      failOnError = false
       options.addStringOption('Xdoclint:none', '-quiet')
       options.addStringOption('encoding', 'UTF-8')
       options.addStringOption('charSet', 'UTF-8')
@@ -143,7 +150,7 @@ test {
 
 task examples(type: Test) {
     ignoreFailures = true
-    description 'Runs the example programs.'
+    description = 'Runs the example programs.'
     outputs.upToDateWhen { false }
     dependsOn compileTestJava
     useJUnit()
@@ -206,7 +213,7 @@ distributions {
             }
             into('doc') {
                 if (project.hasProperty('buildDocs')) {
-                    from(doxygen) {
+                    from('$buildDir/docs') {
                         include 'html/**'
                     }
                 }
@@ -224,8 +231,13 @@ distributions {
         }
     }
 }
-distTar.compression = 'bzip2'
-distTar.extension = 'tar.bz2'
+
+plugins.withType(DistributionPlugin) {
+    distTar {
+        compression = Compression.BZIP2 // Sets the compression type
+        archiveExtension.set('tar.bz2') // Sets the file extension in newer Gradle versions
+    }
+}
 
 
 // ****************************** WRAPPER ******************************

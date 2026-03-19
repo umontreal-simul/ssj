@@ -23,15 +23,17 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *Nakagami*
  * distribution. See the definition in
+ * 
  * @ref umontreal.ssj.probdist.NakagamiDist of package `probdist`.
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -43,41 +45,41 @@ public class NakagamiGen extends RandomVariateGen {
 
    /**
     * Creates a new Nakagami generator with parameters @f$a=@f$ `a`,
+    * 
     * @f$\lambda=@f$ `lambda` and @f$c =@f$ `c`, using stream `s`.
     */
-   public NakagamiGen (RandomStream s, double a, double lambda, double c) {
-      super (s, new NakagamiDist (a, lambda, c));
-      setParams (a, lambda, c);
+   public NakagamiGen(RandomStream s, double a, double lambda, double c) {
+      super(s, new NakagamiDist(a, lambda, c));
+      setParams(a, lambda, c);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public NakagamiGen (RandomStream s, NakagamiDist dist) {
-      super (s, dist);
+   public NakagamiGen(RandomStream s, NakagamiDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getA(), dist.getLambda(), dist.getC());
+         setParams(dist.getA(), dist.getLambda(), dist.getC());
    }
 
    /**
     * Generates a variate from the *Nakagami* distribution with parameters
-    * @f$a=@f$ `a`, @f$\lambda=@f$ `lambda` and @f$c =@f$ `c`, using
-    * stream `s`.
-    *  @param s            the random stream
-    *  @param a            the location parameter
-    *  @param lambda       the scale parameter
-    *  @param c            the shape parameter
-    *  @return Generates a variate from the *Nakagami* distribution
+    * 
+    * @f$a=@f$ `a`, @f$\lambda=@f$ `lambda` and @f$c =@f$ `c`, using stream `s`.
+    * @param s      the random stream
+    * @param a      the location parameter
+    * @param lambda the scale parameter
+    * @param c      the shape parameter
+    * @return Generates a variate from the *Nakagami* distribution
     */
-   public static double nextDouble (RandomStream s, double a, double lambda,
-                                    double c) {
-      return NakagamiDist.inverseF (a, lambda, c, s.nextDouble());
+   public static double nextDouble(RandomStream s, double a, double lambda, double c) {
+      return NakagamiDist.inverseF(a, lambda, c, s.nextDouble());
    }
 
    /**
     * Returns the location parameter @f$a@f$ of this object.
-    *  @return the location parameter mu
+    * 
+    * @return the location parameter mu
     */
    public double getA() {
       return a;
@@ -85,7 +87,8 @@ public class NakagamiGen extends RandomVariateGen {
 
    /**
     * Returns the scale parameter @f$\lambda@f$ of this object.
-    *  @return the scale parameter mu
+    * 
+    * @return the scale parameter mu
     */
    public double getLambda() {
       return lambda;
@@ -93,18 +96,18 @@ public class NakagamiGen extends RandomVariateGen {
 
    /**
     * Returns the shape parameter @f$c@f$ of this object.
-    *  @return the shape parameter mu
+    * 
+    * @return the shape parameter mu
     */
    public double getC() {
       return c;
    }
 
-
-   protected void setParams (double a, double lambda, double c) {
+   protected void setParams(double a, double lambda, double c) {
       if (lambda <= 0.0)
-         throw new IllegalArgumentException ("lambda <= 0");
+         throw new IllegalArgumentException("lambda <= 0");
       if (c <= 0.0)
-         throw new IllegalArgumentException ("c <= 0");
+         throw new IllegalArgumentException("c <= 0");
       this.a = a;
       this.lambda = lambda;
       this.c = c;

@@ -23,6 +23,7 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.io.*;
 
 /**
@@ -31,58 +32,36 @@ import java.io.*;
  * Stores a sequence of fields in binary file, which can be either atoms or
  * arrays, each of which having the following format:
  *
- * <ul><li>
- * Field label:
+ * <ul>
+ * <li>Field label:
  *
- * <ul><li>
- * Pipe character (<tt>|</tt>)
- * </li>
- * <li>
- * Label length (32-bit integer, big endian)
- * </li>
- * <li>
- * Label string (array of bytes of the specified length)
- * </li>
+ * <ul>
+ * <li>Pipe character (<tt>|</tt>)</li>
+ * <li>Label length (32-bit integer, big endian)</li>
+ * <li>Label string (array of bytes of the specified length)</li>
  * </ul>
  * </li>
- * <li>
- * Field type (byte):
+ * <li>Field type (byte):
  *
- * <ul><li>
- * `i` (32-bit integer)
- * </li>
- * <li>
- * `f` (32-bit float)
- * </li>
- * <li>
- * `d` (64-bit double)
- * </li>
- * <li>
- * `S` (string)
- * </li>
+ * <ul>
+ * <li>`i` (32-bit integer)</li>
+ * <li>`f` (32-bit float)</li>
+ * <li>`d` (64-bit double)</li>
+ * <li>`S` (string)</li>
  * </ul>
  * </li>
- * <li>
- * Number of dimensions (8-bit integer)
- * </li>
- * <li>
- * Dimensions (array of 32-bit integers, big endian)
- * </li>
- * <li>
- * Field data (in the specified format, big endian)
- * </li>
+ * <li>Number of dimensions (8-bit integer)</li>
+ * <li>Dimensions (array of 32-bit integers, big endian)</li>
+ * <li>Field data (in the specified format, big endian)</li>
  * </ul>
  *
  * In the case of an atomic field, the number of dimensions is set to zero.
  *
  * A string field is stored in the following format:
  *
- * <ul><li>
- * String length (32-bit integer)
- * </li>
- * <li>
- * Array of bytes of the specified length
- * </li>
+ * <ul>
+ * <li>String length (32-bit integer)</li>
+ * <li>Array of bytes of the specified length</li>
  * </ul>
  *
  * Also supports anonymous fields (fields with an empty label).
@@ -90,33 +69,33 @@ import java.io.*;
  * Arrays up to two dimensions are supported.
  *
  * Modules for reading data exported with this class are available in Java (
+ * 
  * @ref BinaryDataReader ), Matlab and Python (numpy).
  *
- *  Provide links for the import modules.
+ *      Provide links for the import modules.
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  */
 public class BinaryDataWriter extends AbstractDataWriter {
    protected DataOutputStream out;
-   
+
    /**
     * Utility method to write string data.
     *
-    */    
+    */
    protected void writeStringData(String s) throws IOException {
       if (s != null) {
          out.writeInt(s.length());
          out.writeBytes(s);
-      }
-      else {
+      } else {
          out.writeInt(0);
       }
    }
-   
+
    /**
     * Starts a new field by writing its label.
     *
-    * @param label   name of the field (can be {@code null})
+    * @param label name of the field (can be {@code null})
     *
     */
    protected void writeLabel(String label) throws IOException {
@@ -125,20 +104,19 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * @name Fields
-    * @{
+    * @name Fields @{
     */
 
    /**
-    * *Field-type* symbol indicating a label (it more accurately a field
-    * separator symbol).
+    * *Field-type* symbol indicating a label (it more accurately a field separator
+    * symbol).
     */
-   public final static byte TYPECHAR_LABEL   = '|';
+   public final static byte TYPECHAR_LABEL = '|';
 
    /**
     * *Field-type* symbol indicating `String` data.
     */
-   public final static byte TYPECHAR_STRING  = 'S';
+   public final static byte TYPECHAR_STRING = 'S';
 
    /**
     * *Field-type* symbol indicating `int` data.
@@ -148,12 +126,12 @@ public class BinaryDataWriter extends AbstractDataWriter {
    /**
     * *Field-type* symbol indicating `float` data.
     */
-   public final static byte TYPECHAR_FLOAT   = 'f';
+   public final static byte TYPECHAR_FLOAT = 'f';
 
    /**
     * *Field-type* symbol indicating `double` data.
     */
-   public final static byte TYPECHAR_DOUBLE  = 'd';
+   public final static byte TYPECHAR_DOUBLE = 'd';
 
    /**
     * @}
@@ -161,61 +139,62 @@ public class BinaryDataWriter extends AbstractDataWriter {
 
    /**
     * Data will be output to the file with the specified name.
-    *  @param filename     name of the file to be created or appended to
-    *  @param append       an existing file with the specified name will
-    *                      be appended to if `true` or truncated if
-    *                      `false`
+    * 
+    * @param filename name of the file to be created or appended to
+    * @param append   an existing file with the specified name will be appended to
+    *                 if `true` or truncated if `false`
     */
-   public BinaryDataWriter (String filename, boolean append)
-         throws IOException {
+   public BinaryDataWriter(String filename, boolean append) throws IOException {
       this.out = new DataOutputStream(new FileOutputStream(filename, append));
    }
 
    /**
     * Data will be output to the specified file.
-    *  @param file         file to be created or appended to
-    *  @param append       an existing file with the specified name will
-    *                      be appended to if `true` or truncated if
-    *                      `false`
+    * 
+    * @param file   file to be created or appended to
+    * @param append an existing file with the specified name will be appended to if
+    *               `true` or truncated if `false`
     */
-   public BinaryDataWriter (File file, boolean append) throws IOException {
+   public BinaryDataWriter(File file, boolean append) throws IOException {
       this.out = new DataOutputStream(new FileOutputStream(file, append));
    }
 
    /**
     * Truncates any existing file with the specified name.
-    *  @param filename     name of the file to be created
+    * 
+    * @param filename name of the file to be created
     */
-   public BinaryDataWriter (String filename) throws IOException {
+   public BinaryDataWriter(String filename) throws IOException {
       this.out = new DataOutputStream(new FileOutputStream(filename));
    }
 
    /**
     * Truncates any existing file with the specified name.
-    *  @param file         file to be created
+    * 
+    * @param file file to be created
     */
-   public BinaryDataWriter (File file) throws IOException {
+   public BinaryDataWriter(File file) throws IOException {
       this.out = new DataOutputStream(new FileOutputStream(file));
    }
 
    /**
     * Constructor.
-    *  @param outputStream output stream to write to
+    * 
+    * @param outputStream output stream to write to
     */
-   public BinaryDataWriter (OutputStream outputStream) throws IOException {
+   public BinaryDataWriter(OutputStream outputStream) throws IOException {
       this.out = new DataOutputStream(outputStream);
    }
 
    /**
-    * @name Writing atomic data
-    * @{
+    * @name Writing atomic data @{
     */
 
    /**
-    * Writes an atomic string field. Writes an anonymous field if `label`
-    * is `null`.
+    * Writes an atomic string field. Writes an anonymous field if `label` is
+    * `null`.
     */
-   public void write (String label, String s) throws IOException {
+   public void write(String label, String s) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_STRING);
       out.writeByte(0);
@@ -223,10 +202,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes an atomic 32-bit integer (big endian). Writes an anonymous
-    * field if `label` is `null`.
+    * Writes an atomic 32-bit integer (big endian). Writes an anonymous field if
+    * `label` is `null`.
     */
-   public void write (String label, int a) throws IOException {
+   public void write(String label, int a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_INTEGER);
       out.writeByte(0);
@@ -234,10 +213,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes an atomic 32-bit float (big endian). Writes an anonymous
-    * field if `label` is `null`.
+    * Writes an atomic 32-bit float (big endian). Writes an anonymous field if
+    * `label` is `null`.
     */
-   public void write (String label, float a) throws IOException {
+   public void write(String label, float a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_FLOAT);
       out.writeByte(0);
@@ -245,10 +224,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes an atomic 64-bit double (big endian). Writes an anonymous
-    * field if `label` is `null`.
+    * Writes an atomic 64-bit double (big endian). Writes an anonymous field if
+    * `label` is `null`.
     */
-   public void write (String label, double a) throws IOException {
+   public void write(String label, double a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_DOUBLE);
       out.writeByte(0);
@@ -260,15 +239,14 @@ public class BinaryDataWriter extends AbstractDataWriter {
     */
 
    /**
-    * @name Writing one-dimensional arrays
-    * @{
+    * @name Writing one-dimensional arrays @{
     */
 
    /**
-    * Writes the first `n` elements of a one-dimensional array of strings.
-    * Writes an anonymous field if `label` is `null`.
+    * Writes the first `n` elements of a one-dimensional array of strings. Writes
+    * an anonymous field if `label` is `null`.
     */
-   public void write (String label, String[] a, int n) throws IOException {
+   public void write(String label, String[] a, int n) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_STRING);
       out.writeByte(1);
@@ -278,11 +256,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes the first `n` elements of a one-dimensional array of 32-bit
-    * integers (big endian). Writes an anonymous field if `label` is
-    * `null`.
+    * Writes the first `n` elements of a one-dimensional array of 32-bit integers
+    * (big endian). Writes an anonymous field if `label` is `null`.
     */
-   public void write (String label, int[] a, int n) throws IOException {
+   public void write(String label, int[] a, int n) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_INTEGER);
       out.writeByte(1);
@@ -292,10 +269,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes the first `n` elements of a one-dimensional array of 32-bit
-    * floats (big endian). Writes an anonymous field if `label` is `null`.
+    * Writes the first `n` elements of a one-dimensional array of 32-bit floats
+    * (big endian). Writes an anonymous field if `label` is `null`.
     */
-   public void write (String label, float[] a, int n) throws IOException {
+   public void write(String label, float[] a, int n) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_FLOAT);
       out.writeByte(1);
@@ -305,11 +282,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes the first `n` elements of a one-dimensional array of 64-bit
-    * doubles (big endian). Writes an anonymous field if `label` is
-    * `null`.
+    * Writes the first `n` elements of a one-dimensional array of 64-bit doubles
+    * (big endian). Writes an anonymous field if `label` is `null`.
     */
-   public void write (String label, double[] a, int n) throws IOException {
+   public void write(String label, double[] a, int n) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_DOUBLE);
       out.writeByte(1);
@@ -323,15 +299,14 @@ public class BinaryDataWriter extends AbstractDataWriter {
     */
 
    /**
-    * @name Writing two-dimensional arrays
-    * @{
+    * @name Writing two-dimensional arrays @{
     */
 
    /**
-    * Writes a two-dimensional array of strings. Writes an anonymous field
-    * if `label` is `null`.
+    * Writes a two-dimensional array of strings. Writes an anonymous field if
+    * `label` is `null`.
     */
-   public void write (String label, String[][] a) throws IOException {
+   public void write(String label, String[][] a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_STRING);
       out.writeByte(2);
@@ -343,10 +318,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes a two-dimensional array of 32-bit integers (big endian).
-    * Writes an anonymous field if `label` is `null`.
+    * Writes a two-dimensional array of 32-bit integers (big endian). Writes an
+    * anonymous field if `label` is `null`.
     */
-   public void write (String label, int[][] a) throws IOException {
+   public void write(String label, int[][] a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_INTEGER);
       out.writeByte(2);
@@ -358,10 +333,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes a two-dimensional array of 32-bit floats (big endian). Writes
-    * an anonymous field if `label` is `null`.
+    * Writes a two-dimensional array of 32-bit floats (big endian). Writes an
+    * anonymous field if `label` is `null`.
     */
-   public void write (String label, float[][] a) throws IOException {
+   public void write(String label, float[][] a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_FLOAT);
       out.writeByte(2);
@@ -373,10 +348,10 @@ public class BinaryDataWriter extends AbstractDataWriter {
    }
 
    /**
-    * Writes a two-dimensional array of 64-bit doubles (big endian).
-    * Writes an anonymous field if `label` is `null`.
+    * Writes a two-dimensional array of 64-bit doubles (big endian). Writes an
+    * anonymous field if `label` is `null`.
     */
-   public void write (String label, double[][] a) throws IOException {
+   public void write(String label, double[][] a) throws IOException {
       writeLabel(label);
       out.writeByte(TYPECHAR_DOUBLE);
       out.writeByte(2);
@@ -392,8 +367,7 @@ public class BinaryDataWriter extends AbstractDataWriter {
     */
 
    /**
-    * @name Other methods
-    * @{
+    * @name Other methods @{
     */
 
    /**

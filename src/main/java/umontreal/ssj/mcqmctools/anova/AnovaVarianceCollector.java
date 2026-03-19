@@ -33,7 +33,8 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
    }
 
    /**
-    * Add an observer, which is notified when the ANOVA variance collector is updated.
+    * Add an observer, which is notified when the ANOVA variance collector is
+    * updated.
     *
     */
    public void addObserver(AnovaObserver observer) {
@@ -44,19 +45,21 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
     * Resets all collectors.
     *
     */
-   @Override public void init() {
+   @Override
+   public void init() {
       super.init();
       meanCorrection.init();
       totalVar.init();
    }
 
    /**
-    * Adds an observation of ANOVA variances.
-    * The first \c size() items in \c vars are the observed partial variances.
-    * The last two items are respectively the observed correction to the mean and total variance.
+    * Adds an observation of ANOVA variances. The first \c size() items in \c vars
+    * are the observed partial variances. The last two items are respectively the
+    * observed correction to the mean and total variance.
     *
     */
-   @Override public void add(double[] vars) {
+   @Override
+   public void add(double[] vars) {
       if (sorted)
          throw new IllegalStateException("AnovaVarianceCollector cannot collect data once sorted");
       for (int i = 0; i < size(); i++)
@@ -69,7 +72,6 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
          obs.anovaUpdated(this);
    }
 
-   
    /**
     * Sorts the computed variances.
     *
@@ -110,7 +112,8 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
    }
 
    /**
-    * Returns the total variance fraction for all projections of dimension \c order.
+    * Returns the total variance fraction for all projections of dimension \c
+    * order.
     *
     */
    public double getVarianceFractionForOrder(int order) {
@@ -122,8 +125,8 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
    }
 
    /**
-    * Returns the total variance for a specific projection or a negative number if the
-    * projection \c coords have not been analysed.
+    * Returns the total variance for a specific projection or a negative number if
+    * the projection \c coords have not been analysed.
     *
     */
    public double getTotalVarianceForCoordinate(CoordinateSet coords) {
@@ -132,7 +135,7 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
             return c.average();
       return -1;
    }
-   
+
    /**
     * Returns the total variance for all projections involving coordinate \c coord.
     *
@@ -144,7 +147,7 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
             sum += c.average();
       return sum;
    }
-   
+
    /**
     * Returns the maximum dimension of the projections contained in the list.
     *
@@ -160,12 +163,12 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
     * Returns a description of the ANOVA collector.
     *
     */
-   @Override public String toString() {
+   @Override
+   public String toString() {
       String s = "ANOVA Collector";
       s += String.format(" [maxOrder=%d]", getMaxOrder());
       return s;
    }
-   
 
    /**
     * Returns a report of the current state of estimation of the ANOVA variances.
@@ -194,13 +197,10 @@ public class AnovaVarianceCollector extends ListOfTallies<PartialVariance> {
 
       for (PartialVariance c : this)
          report += c + umontreal.ssj.util.PrintfFormat.NEWLINE;
-      
+
       for (int i = 1; i <= getMaxOrder(); i++)
-         report += umontreal.ssj.util.PrintfFormat.NEWLINE
-               + String.format("%30s: %9.4g  (%.4g %%)",
-               String.format("order %d", i),
-               getVarianceForOrder(i),
-               getVarianceFractionForOrder(i) * 100);
+         report += umontreal.ssj.util.PrintfFormat.NEWLINE + String.format("%30s: %9.4g  (%.4g %%)",
+               String.format("order %d", i), getVarianceForOrder(i), getVarianceFractionForOrder(i) * 100);
 
       return report;
    }

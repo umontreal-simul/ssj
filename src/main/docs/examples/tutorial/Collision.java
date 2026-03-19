@@ -1,5 +1,4 @@
 package tutorial;
-
 import umontreal.ssj.probdist.PoissonDist;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.stat.*;
@@ -10,8 +9,8 @@ public class Collision {
    int m;            // Number of items.
    double lambda;    // Theoretical expectation of C (asymptotic).
    boolean[] used;   // Locations already used.
-   int maxCounts; // Values of C >= maxCounts are aggregated.
-   int[] counts; // Counts the number of occurrences of each value of C.
+   int maxCounts;    // Values of C >= maxCounts are aggregated.
+   int[] counts;     // Counts the number of occurrences of each value of C.
    PoissonDist poisson; // Will be a Poisson distribution with mean lambda.
 	
    public Collision (int k, int m, int maxCounts) {
@@ -54,10 +53,9 @@ public class Collision {
    public static void main (String[] args) {
 	    int k = 10000;  int m = 500;
 		int maxCounts = 30;
-		int n = 10000000;
+		int n = 100000;
 		Collision col = new Collision(k, m, maxCounts);
 		Tally statC = new Tally("Statistics on collisions");
-		// System.out.println(col.toString());
 		Chrono timer = new Chrono();
 		col.simulateRuns(n, new MRG32k3a(), statC);
 		System.out.println("Total CPU time:      " + timer.format() + "\n");

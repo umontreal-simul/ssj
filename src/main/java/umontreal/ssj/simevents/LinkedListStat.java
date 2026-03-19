@@ -23,14 +23,15 @@
  *
  */
 package umontreal.ssj.simevents;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This class extends  @ref ListWithStat, and uses a linked list as the
- * internal data structure.
+ * This class extends @ref ListWithStat, and uses a linked list as the internal
+ * data structure.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -40,116 +41,121 @@ public class LinkedListStat<E> extends ListWithStat<E> {
     * Constructs a new list, initially empty.
     */
    public LinkedListStat() {
-      super (Simulator.getDefaultSimulator(), new LinkedList<Node<E>>());
+      super(Simulator.getDefaultSimulator(), new LinkedList<Node<E>>());
    }
 
    /**
-    * Constructs a new list, initially empty, and using the default
-    * simulator.
-    *  @param inSim        Simulator associate to the current variable.
+    * Constructs a new list, initially empty, and using the default simulator.
+    * 
+    * @param inSim Simulator associate to the current variable.
     */
    public LinkedListStat(Simulator inSim) {
-      super (inSim, new LinkedList<Node<E>>());
+      super(inSim, new LinkedList<Node<E>>());
    }
 
    /**
-    * Constructs a list containing the elements of the specified
-    * collection, using the default simulator.
-    *  @param c            collection containing elements to fill in this
-    *                      list with
+    * Constructs a list containing the elements of the specified collection, using
+    * the default simulator.
+    * 
+    * @param c collection containing elements to fill in this list with
     */
-   public LinkedListStat (Collection<? extends E> c) {
-      super (Simulator.getDefaultSimulator(), new LinkedList<Node<E>>(), c);
+   public LinkedListStat(Collection<? extends E> c) {
+      super(Simulator.getDefaultSimulator(), new LinkedList<Node<E>>(), c);
    }
 
    /**
-    * Constructs a list containing the elements of the specified
-    * collection.
-    *  @param inSim        Simulator associate to the current variable.
-    *  @param c            collection containing elements to fill in this
-    *                      list with
+    * Constructs a list containing the elements of the specified collection.
+    * 
+    * @param inSim Simulator associate to the current variable.
+    * @param c     collection containing elements to fill in this list with
     */
-   public LinkedListStat (Simulator inSim, Collection<? extends E> c) {
-      super (inSim, new LinkedList<Node<E>>(), c);
+   public LinkedListStat(Simulator inSim, Collection<? extends E> c) {
+      super(inSim, new LinkedList<Node<E>>(), c);
    }
 
    /**
-    * Constructs a new list with name `name`, using the default simulator.
-    * This name can be used to identify the list in traces and reports.
-    *  @param name         name for the list object
+    * Constructs a new list with name `name`, using the default simulator. This
+    * name can be used to identify the list in traces and reports.
+    * 
+    * @param name name for the list object
     */
-   public LinkedListStat (String name) {
-      super (Simulator.getDefaultSimulator(), new LinkedList<Node<E>>(), name);
+   public LinkedListStat(String name) {
+      super(Simulator.getDefaultSimulator(), new LinkedList<Node<E>>(), name);
    }
 
    /**
-    * Constructs a new list with name `name`. This name can be used to
+    * Constructs a new list with name `name`. This name can be used to identify the
+    * list in traces and reports.
+    * 
+    * @param inSim Simulator associate to the current variable.
+    * @param name  name for the list object
+    */
+   public LinkedListStat(Simulator inSim, String name) {
+      super(inSim, new LinkedList<Node<E>>(), name);
+   }
+
+   /**
+    * Constructs a new list containing the elements of the specified collection `c`
+    * and with name `name`, using the default simulator. This name can be used to
     * identify the list in traces and reports.
-    *  @param inSim        Simulator associate to the current variable.
-    *  @param name         name for the list object
+    * 
+    * @param c    collection containing elements to fill in this list with
+    * @param name name for the list object
     */
-   public LinkedListStat (Simulator inSim, String name) {
-      super (inSim, new LinkedList<Node<E>>(), name);
+   public LinkedListStat(Collection<? extends E> c, String name) {
+      super(Simulator.getDefaultSimulator(), new LinkedList<Node<E>>(), c, name);
    }
 
    /**
-    * Constructs a new list containing the elements of the specified
-    * collection `c` and with name `name`, using the default simulator.
-    * This name can be used to identify the list in traces and reports.
-    *  @param c            collection containing elements to fill in this
-    *                      list with
-    *  @param name         name for the list object
+    * Constructs a new list containing the elements of the specified collection `c`
+    * and with name `name`. This name can be used to identify the list in traces
+    * and reports.
+    * 
+    * @param inSim Simulator associate to the current variable.
+    * @param c     collection containing elements to fill in this list with
+    * @param name  name for the list object
     */
-   public LinkedListStat (Collection<? extends E> c, String name) {
-      super (Simulator.getDefaultSimulator(), new LinkedList<Node<E>>(), c, name);
-   }
-
-   /**
-    * Constructs a new list containing the elements of the specified
-    * collection `c` and with name `name`. This name can be used to
-    * identify the list in traces and reports.
-    *  @param inSim        Simulator associate to the current variable.
-    *  @param c            collection containing elements to fill in this
-    *                      list with
-    *  @param name         name for the list object
-    */
-   public LinkedListStat (Simulator inSim, Collection<? extends E> c,
-                          String name) {
-      super (inSim, new LinkedList<Node<E>>(), c, name);
+   public LinkedListStat(Simulator inSim, Collection<? extends E> c, String name) {
+      super(inSim, new LinkedList<Node<E>>(), c, name);
    }
 
    /**
     * @name `LinkedList` methods
     *
-    * See the JDK documentation for more information about these methods.
+    *       See the JDK documentation for more information about these methods.
     *
     * @{
     */
-   public void addFirst (E obj) {
-      add (0, obj);
+   public void addFirst(E obj) {
+      add(0, obj);
    }
-   public void addLast (E obj) {
-      add (size(), obj);
+
+   public void addLast(E obj) {
+      add(size(), obj);
    }
+
    public E getFirst() {
       if (isEmpty())
          throw new NoSuchElementException();
-      return get (0);
-    }
+      return get(0);
+   }
+
    public E getLast() {
       if (isEmpty())
          throw new NoSuchElementException();
-      return get (size() - 1);
+      return get(size() - 1);
    }
+
    public E removeFirst() {
       if (isEmpty())
          throw new NoSuchElementException();
-      return remove (0);
+      return remove(0);
    }
+
    public E removeLast() {
       if (isEmpty())
          throw new NoSuchElementException();
-      return remove (size() - 1);
+      return remove(size() - 1);
    }
 }
 

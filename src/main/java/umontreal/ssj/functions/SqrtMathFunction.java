@@ -26,19 +26,21 @@ package umontreal.ssj.functions;
 
 /**
  * Represents a function computing the square root of another function
+ * 
  * @f$f(x)@f$.
  *
- * <div class="SSJ-bigskip"></div>
+ *             <div class="SSJ-bigskip"></div>
  */
 public class SqrtMathFunction implements MathFunction {
    private MathFunction func;
 
-/**
- * Computes and returns the square root of the function `func`.
- *  @param func         the function to compute square root for.
- */
-public SqrtMathFunction (MathFunction func) {
-      super ();
+   /**
+    * Computes and returns the square root of the function `func`.
+    * 
+    * @param func the function to compute square root for.
+    */
+   public SqrtMathFunction(MathFunction func) {
+      super();
       if (func == null)
          throw new NullPointerException();
       this.func = func;
@@ -46,14 +48,14 @@ public SqrtMathFunction (MathFunction func) {
 
    /**
     * Returns the function associated with this object.
-    *  @return the associated function.
+    * 
+    * @return the associated function.
     */
    public MathFunction getFunction() {
       return func;
    }
 
-
-   public double evaluate (double x) {
-      return Math.sqrt (func.evaluate (x));
+   public double evaluate(double x) {
+      return Math.sqrt(func.evaluate(x));
    }
 }

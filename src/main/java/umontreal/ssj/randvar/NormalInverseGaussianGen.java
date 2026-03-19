@@ -23,16 +23,17 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *normal inverse
  * gaussian* (@f$\mathcal{NIG}@f$) distribution. See the definition of
- * @ref umontreal.ssj.probdist.NormalInverseGaussianDist
- * in package `probdist`.
+ * 
+ * @ref umontreal.ssj.probdist.NormalInverseGaussianDist in package `probdist`.
  *
- * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -46,33 +47,28 @@ public class NormalInverseGaussianGen extends RandomVariateGen {
    /**
     * Creates an *normal inverse gaussian* random variate generator with
     * parameters @f$\alpha@f$ = `alpha`, @f$\beta@f$ = `beta`,
+    * 
     * @f$\mu@f$ = `mu` and @f$\delta@f$ = `delta`, using stream `s`.
     */
-   public NormalInverseGaussianGen (RandomStream s, double alpha,
-                                    double beta, double mu, double delta) {
-      super (s, new NormalInverseGaussianDist(alpha, beta, mu, delta));
-      setParams (alpha, beta, mu, delta);
+   public NormalInverseGaussianGen(RandomStream s, double alpha, double beta, double mu, double delta) {
+      super(s, new NormalInverseGaussianDist(alpha, beta, mu, delta));
+      setParams(alpha, beta, mu, delta);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public NormalInverseGaussianGen (RandomStream s,
-                                    NormalInverseGaussianDist dist) {
-      super (s, dist);
+   public NormalInverseGaussianGen(RandomStream s, NormalInverseGaussianDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getAlpha(), dist.getBeta(), dist.getMu(),
-                    dist.getDelta());
+         setParams(dist.getAlpha(), dist.getBeta(), dist.getMu(), dist.getDelta());
    }
 
    /**
     * NOT IMPLEMENTED. Use the daughter classes.
     */
-   public static double nextDouble (RandomStream s, double alpha,
-                                    double beta, double mu, double delta) {
-      return NormalInverseGaussianDist.inverseF (alpha, beta, mu, delta,
-                                                 s.nextDouble());
+   public static double nextDouble(RandomStream s, double alpha, double beta, double mu, double delta) {
+      return NormalInverseGaussianDist.inverseF(alpha, beta, mu, delta, s.nextDouble());
    }
 
    /**
@@ -105,23 +101,23 @@ public class NormalInverseGaussianGen extends RandomVariateGen {
 
    /**
     * Sets the parameters @f$\alpha@f$, @f$\beta@f$, @f$\mu@f$ and
+    * 
     * @f$\delta@f$ of this object.
     */
-   public void setParams (double alpha, double beta, double mu,
-                          double delta) {
+   public void setParams(double alpha, double beta, double mu, double delta) {
       if (delta <= 0.0)
-         throw new IllegalArgumentException ("delta <= 0");
+         throw new IllegalArgumentException("delta <= 0");
       if (alpha <= 0.0)
-         throw new IllegalArgumentException ("alpha <= 0");
+         throw new IllegalArgumentException("alpha <= 0");
       if (Math.abs(beta) >= alpha)
-         throw new IllegalArgumentException ("|beta| >= alpha");
+         throw new IllegalArgumentException("|beta| >= alpha");
 
-      gamma = Math.sqrt(alpha*alpha - beta*beta);
+      gamma = Math.sqrt(alpha * alpha - beta * beta);
 
       this.mu = mu;
       this.delta = delta;
       this.beta = beta;
       this.alpha = alpha;
    }
- 
+
 }

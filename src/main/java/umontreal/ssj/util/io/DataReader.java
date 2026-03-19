@@ -23,6 +23,7 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -34,142 +35,135 @@ import java.util.Map;
 public interface DataReader {
 
    /**
-    * @name Reading atomic data
-    * @{
+    * @name Reading atomic data @{
     */
 
    /**
-    * Reads the first field labeled as `label` and returns its `String`
-    * value.
+    * Reads the first field labeled as `label` and returns its `String` value.
     */
-   public String readString (String label) throws IOException;
+   public String readString(String label) throws IOException;
 
    /**
-    * Reads the first field labeled as `label` and returns its `int`
-    * value.
+    * Reads the first field labeled as `label` and returns its `int` value.
     */
-   public int readInt (String label) throws IOException;
+   public int readInt(String label) throws IOException;
 
    /**
-    * Reads the first field labeled as `label` and returns its `float`
-    * value.
+    * Reads the first field labeled as `label` and returns its `float` value.
     */
-   public float readFloat (String label) throws IOException;
+   public float readFloat(String label) throws IOException;
 
    /**
-    * Reads the first field labeled as `label` and returns its `double`
-    * value.
+    * Reads the first field labeled as `label` and returns its `double` value.
     */
-   public double readDouble (String label) throws IOException;
+   public double readDouble(String label) throws IOException;
 
    /**
     * @}
     */
 
    /**
-    * @name Reading one-dimensional arrays
-    * @{
+    * @name Reading one-dimensional arrays @{
     */
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>String</tt>’s.
     */
-   public String[] readStringArray (String label) throws IOException;
+   public String[] readStringArray(String label) throws IOException;
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>int</tt>’s.
     */
-   public int[] readIntArray (String label) throws IOException;
+   public int[] readIntArray(String label) throws IOException;
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>float</tt>’s.
     */
-   public float[] readFloatArray (String label) throws IOException;
+   public float[] readFloatArray(String label) throws IOException;
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>double</tt>’s.
     */
-   public double[] readDoubleArray (String label) throws IOException;
+   public double[] readDoubleArray(String label) throws IOException;
 
    /**
     * @}
     */
 
    /**
-    * @name Reading two-dimensional arrays
-    * @{
+    * @name Reading two-dimensional arrays @{
     */
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>String</tt>’s.
     */
-   public String[][] readStringArray2D (String label) throws IOException;
+   public String[][] readStringArray2D(String label) throws IOException;
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>int</tt>’s.
     */
-   public int[][] readIntArray2D (String label) throws IOException;
+   public int[][] readIntArray2D(String label) throws IOException;
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>float</tt>’s.
     */
-   public float[][] readFloatArray2D (String label) throws IOException;
+   public float[][] readFloatArray2D(String label) throws IOException;
 
    /**
     * Reads the first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>double</tt>’s.
     */
-   public double[][] readDoubleArray2D (String label) throws IOException;
+   public double[][] readDoubleArray2D(String label) throws IOException;
 
    /**
     * @}
     */
 
    /**
-    * @name Reading fields of unknown type
-    * @{
+    * @name Reading fields of unknown type @{
     */
 
    /**
-    * Reads all remaining fields in the file and returns a hashmap indexed
-    * by field labels. Anonymous fields are mapped to
-    * <code>"_data01_"</code>, <code>"_data02_"</code>, …
+    * Reads all remaining fields in the file and returns a hashmap indexed by field
+    * labels. Anonymous fields are mapped to <code>"_data01_"</code>,
+    * <code>"_data02_"</code>, …
     */
    public Map<String, DataField> readAllNextFields() throws IOException;
 
    /**
-    * Reads all fields in the file and returns a hashmap indexed by field
-    * labels. Anonymous fields are mapped to <code>"_data01_"</code>,
+    * Reads all fields in the file and returns a hashmap indexed by field labels.
+    * Anonymous fields are mapped to <code>"_data01_"</code>,
     * <code>"_data02_"</code>, …
     */
    public Map<String, DataField> readAllFields() throws IOException;
 
    /**
     * Reads the next available field.
-    *  @return a newly created DataField instance or `null` if not found
+    * 
+    * @return a newly created DataField instance or `null` if not found
     */
    public DataField readNextField() throws IOException;
 
    /**
     * Reads the first field labeled as `label`.
-    *  @return a newly created DataField instance or `null` if not found
+    * 
+    * @return a newly created DataField instance or `null` if not found
     */
-   public DataField readField (String label) throws IOException;
+   public DataField readField(String label) throws IOException;
 
    /**
     * @}
     */
 
    /**
-    * @name Other methods
-    * @{
+    * @name Other methods @{
     */
 
    /**
@@ -178,8 +172,8 @@ public interface DataReader {
    public void close() throws IOException;
 
    /**
-    * Resets the reader to its initial state, i.e. goes back to the
-    * beginning of the data stream, if possible.
+    * Resets the reader to its initial state, i.e. goes back to the beginning of
+    * the data stream, if possible.
     */
    public void reset() throws IOException;
 

@@ -32,33 +32,34 @@ package umontreal.ssj.functions;
  */
 public class PowerMathFunction implements MathFunction
 
-,
-      MathFunctionWithFirstDerivative {
+      , MathFunctionWithFirstDerivative {
    private MathFunction func;
    private double a, b;
    private double power;
 
-/**
- * Constructs a new power function for function `func` and power `power`. The
- * values of the constants are @f$a=1@f$ and @f$b=0@f$.
- *  @param func         the function @f$f(x)@f$.
- *  @param power        the power @f$p@f$.
- */
-public PowerMathFunction (MathFunction func, double power) {
-      this (func, 1, 0, power);
+   /**
+    * Constructs a new power function for function `func` and power `power`. The
+    * values of the constants are @f$a=1@f$ and @f$b=0@f$.
+    * 
+    * @param func  the function @f$f(x)@f$.
+    * @param power the power @f$p@f$.
+    */
+   public PowerMathFunction(MathFunction func, double power) {
+      this(func, 1, 0, power);
    }
 
    /**
-    * Constructs a new power function for function `func`, power `power`,
-    * and constants `a` and `b`.
-    *  @param func         the function @f$f(x)@f$.
-    *  @param power        the power @f$p@f$.
-    *  @param a            the multiplicative constant.
-    *  @param b            the additive constant.
+    * Constructs a new power function for function `func`, power `power`, and
+    * constants `a` and `b`.
+    * 
+    * @param func  the function @f$f(x)@f$.
+    * @param power the power @f$p@f$.
+    * @param a     the multiplicative constant.
+    * @param b     the additive constant.
     */
-   public PowerMathFunction (MathFunction func, double a, double b, double power) {
+   public PowerMathFunction(MathFunction func, double a, double b, double power) {
       if (func == null)
-         throw new NullPointerException ();
+         throw new NullPointerException();
       this.func = func;
       this.a = a;
       this.b = b;
@@ -67,44 +68,47 @@ public PowerMathFunction (MathFunction func, double power) {
 
    /**
     * Returns the function @f$f(x)@f$.
-    *  @return the function.
+    * 
+    * @return the function.
     */
-   public MathFunction getFunction () {
+   public MathFunction getFunction() {
       return func;
    }
 
    /**
     * Returns the value of @f$a@f$.
-    *  @return the value of @f$a@f$.
+    * 
+    * @return the value of @f$a@f$.
     */
-   public double getA () {
+   public double getA() {
       return a;
    }
 
    /**
     * Returns the value of @f$b@f$.
-    *  @return the value of @f$b@f$.
+    * 
+    * @return the value of @f$b@f$.
     */
-   public double getB () {
+   public double getB() {
       return b;
    }
 
    /**
     * Returns the power @f$p@f$.
-    *  @return the power.
+    * 
+    * @return the power.
     */
-   public double getPower () {
+   public double getPower() {
       return power;
    }
 
-
-   public double derivative (double x) {
-      final double fder = MathFunctionUtil.derivative (func, x);
-      return getA()*getPower()*Math.pow (getA() * func.evaluate (x) + getB(), getPower() - 1)*fder;
+   public double derivative(double x) {
+      final double fder = MathFunctionUtil.derivative(func, x);
+      return getA() * getPower() * Math.pow(getA() * func.evaluate(x) + getB(), getPower() - 1) * fder;
    }
 
-   public double evaluate (double x) {
-      final double v = func.evaluate (x);
-      return Math.pow (a * v + b, power);
+   public double evaluate(double x) {
+      final double v = func.evaluate(x);
+      return Math.pow(a * v + b, power);
    }
 }

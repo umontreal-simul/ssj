@@ -1,7 +1,0 @@
-/**
- * @package umontreal.ssj.util.sort
- *
- * This subpackage contains classes for sorting multi-dimensional points.
- * These sorts are useful in particular for the Array-RQMC method for Markov chains.
- *
- */

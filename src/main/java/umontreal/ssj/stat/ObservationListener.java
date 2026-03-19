@@ -25,18 +25,19 @@
 package umontreal.ssj.stat;
 
 /**
- * Represents an object that can listen to observations broadcast by
- * statistical probes.
+ * Represents an object that can listen to observations broadcast by statistical
+ * probes.
  *
  * <div class="SSJ-bigskip"></div>
  */
 public interface ObservationListener {
 
-/**
- * Receives the new observation `x` broadcast by `probe`.
- *  @param probe        the statistical probe broadcasting the observation.
- *  @param x            the observation being broadcast.
- */
-public void newObservation (StatProbe probe, double x);
+   /**
+    * Receives the new observation `x` broadcast by `probe`.
+    * 
+    * @param probe the statistical probe broadcasting the observation.
+    * @param x     the observation being broadcast.
+    */
+   public void newObservation(StatProbe probe, double x);
 
 }

@@ -23,6 +23,7 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
@@ -35,35 +36,34 @@ import java.util.HashMap;
 public abstract class AbstractDataReader implements DataReader {
 
    /**
-    * @name Reading atomic data
-    * @{
+    * @name Reading atomic data @{
     */
 
    /**
     * Reads first field labeled as `label` and returns its `String` value.
     */
-   public String readString (String label) throws IOException {
+   public String readString(String label) throws IOException {
       return readField(label).asString();
    }
 
    /**
     * Reads first field labeled as `label` and returns its `int` value.
     */
-   public int readInt (String label) throws IOException {
+   public int readInt(String label) throws IOException {
       return readField(label).asInt();
    }
 
    /**
     * Reads first field labeled as `label` and returns its `float` value.
     */
-   public float readFloat (String label) throws IOException {
+   public float readFloat(String label) throws IOException {
       return readField(label).asFloat();
    }
 
    /**
     * Reads first field labeled as `label` and returns its `double` value.
     */
-   public double readDouble (String label) throws IOException {
+   public double readDouble(String label) throws IOException {
       return readField(label).asDouble();
    }
 
@@ -72,15 +72,14 @@ public abstract class AbstractDataReader implements DataReader {
     */
 
    /**
-    * @name Reading one-dimensional arrays
-    * @{
+    * @name Reading one-dimensional arrays @{
     */
 
    /**
     * Reads first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>String</tt>’s.
     */
-   public String[] readStringArray (String label) throws IOException {
+   public String[] readStringArray(String label) throws IOException {
       return readField(label).asStringArray();
    }
 
@@ -88,7 +87,7 @@ public abstract class AbstractDataReader implements DataReader {
     * Reads first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>int</tt>’s.
     */
-   public int[] readIntArray (String label) throws IOException {
+   public int[] readIntArray(String label) throws IOException {
       return readField(label).asIntArray();
    }
 
@@ -96,7 +95,7 @@ public abstract class AbstractDataReader implements DataReader {
     * Reads first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>float</tt>’s.
     */
-   public float[] readFloatArray (String label) throws IOException {
+   public float[] readFloatArray(String label) throws IOException {
       return readField(label).asFloatArray();
    }
 
@@ -104,7 +103,7 @@ public abstract class AbstractDataReader implements DataReader {
     * Reads first field labeled as `label` and returns its value as a
     * one-dimensional array of <tt>double</tt>’s.
     */
-   public double[] readDoubleArray (String label) throws IOException {
+   public double[] readDoubleArray(String label) throws IOException {
       return readField(label).asDoubleArray();
    }
 
@@ -113,15 +112,14 @@ public abstract class AbstractDataReader implements DataReader {
     */
 
    /**
-    * @name Reading two-dimensional arrays
-    * @{
+    * @name Reading two-dimensional arrays @{
     */
 
    /**
     * Reads first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>String</tt>’s.
     */
-   public String[][] readStringArray2D (String label) throws IOException {
+   public String[][] readStringArray2D(String label) throws IOException {
       return readField(label).asStringArray2D();
    }
 
@@ -129,7 +127,7 @@ public abstract class AbstractDataReader implements DataReader {
     * Reads first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>int</tt>’s.
     */
-   public int[][] readIntArray2D (String label) throws IOException {
+   public int[][] readIntArray2D(String label) throws IOException {
       return readField(label).asIntArray2D();
    }
 
@@ -137,7 +135,7 @@ public abstract class AbstractDataReader implements DataReader {
     * Reads first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>float</tt>’s.
     */
-   public float[][] readFloatArray2D (String label) throws IOException {
+   public float[][] readFloatArray2D(String label) throws IOException {
       return readField(label).asFloatArray2D();
    }
 
@@ -145,7 +143,7 @@ public abstract class AbstractDataReader implements DataReader {
     * Reads first field labeled as `label` and returns its value as a
     * two-dimensional array of <tt>double</tt>’s.
     */
-   public double[][] readDoubleArray2D (String label) throws IOException {
+   public double[][] readDoubleArray2D(String label) throws IOException {
       return readField(label).asDoubleArray2D();
    }
 
@@ -154,21 +152,20 @@ public abstract class AbstractDataReader implements DataReader {
     */
 
    /**
-    * @name Reading fields of unknown type
-    * @{
+    * @name Reading fields of unknown type @{
     */
 
    /**
-    * Reads all remaining fields in the file and returns a hashmap indexed
-    * by field labels. Anonymous fields are mapped to
-    * <code>"_data01_"</code>, <code>"_data02_"</code>, …
+    * Reads all remaining fields in the file and returns a hashmap indexed by field
+    * labels. Anonymous fields are mapped to <code>"_data01_"</code>,
+    * <code>"_data02_"</code>, …
     */
    public Map<String, DataField> readAllNextFields() throws IOException {
 
-      HashMap<String,DataField> fields = new HashMap<String,DataField>();
-      
+      HashMap<String, DataField> fields = new HashMap<String, DataField>();
+
       int iAnonymous = 0;
-      
+
       while (dataPending()) {
 
          DataField data = readNextField();
@@ -179,13 +176,13 @@ public abstract class AbstractDataReader implements DataReader {
          fields.put(key, data);
 
       }
-      
+
       return fields;
    }
 
    /**
-    * Reads all fields in the file and returns a hashmap indexed by field
-    * labels. Anonymous fields are mapped to <code>"_data01_"</code>,
+    * Reads all fields in the file and returns a hashmap indexed by field labels.
+    * Anonymous fields are mapped to <code>"_data01_"</code>,
     * <code>"_data02_"</code>, …
     */
    public Map<String, DataField> readAllFields() throws IOException {

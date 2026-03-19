@@ -25,37 +25,39 @@
 package umontreal.ssj.probdist;
 
 /**
- * Extends the  @ref GammaDist distribution with constructors accepting the
- * mean @f$\mu@f$ and variance @f$\sigma^2@f$ as arguments instead of a
- * shape parameter @f$\alpha@f$ and a scale parameter @f$\lambda@f$. Since
- * @f$\mu=\alpha/ \lambda@f$, and @f$\sigma^2=\alpha/ \lambda^2@f$, the
- * shape and scale parameters are @f$\alpha=\mu^2 / \sigma^2@f$, and
+ * Extends the @ref GammaDist distribution with constructors accepting the
+ * mean @f$\mu@f$ and variance @f$\sigma^2@f$ as arguments instead of a shape
+ * parameter @f$\alpha@f$ and a rate parameter @f$\lambda@f$. Since
+ * 
+ * @f$\mu=\alpha/ \lambda@f$, and @f$\sigma^2=\alpha/ \lambda^2@f$, the shape
+ *                and scale parameters are @f$\alpha=\mu^2 / \sigma^2@f$, and
  * @f$\lambda=\mu/ \sigma^2@f$, respectively.
  *
- * <div class="SSJ-bigskip"></div>
+ *                 <div class="SSJ-bigskip"></div>
  *
  * @ingroup probdist_continuous
  */
 public class GammaDistFromMoments extends GammaDist {
 
    /**
-    * Constructs a gamma distribution with mean `mean`, variance `var`,
-    * and `d` decimal of precision.
-    *  @param mean         the desired mean.
-    *  @param var          the desired variance.
-    *  @param d            the number of decimals of precision.
+    * Constructs a gamma distribution with mean `mean`, variance `var`, and `d`
+    * decimal of precision.
+    * 
+    * @param mean the desired mean.
+    * @param var  the desired variance.
+    * @param d    the number of decimals of precision.
     */
-   public GammaDistFromMoments (double mean, double var, int d) {
-      super (mean * mean / var, mean / var, d);
+   public GammaDistFromMoments(double mean, double var, int d) {
+      super(mean * mean / var, mean / var, d);
    }
 
    /**
-    * Constructs a gamma distribution with mean `mean`, and variance
-    * `var`.
-    *  @param mean         the desired mean.
-    *  @param var          the desired variance.
+    * Constructs a gamma distribution with mean `mean`, and variance `var`.
+    * 
+    * @param mean the desired mean.
+    * @param var  the desired variance.
     */
-   public GammaDistFromMoments (double mean, double var) {
-      super (mean * mean / var, mean / var);
+   public GammaDistFromMoments(double mean, double var) {
+      super(mean * mean / var, mean / var);
    }
 }

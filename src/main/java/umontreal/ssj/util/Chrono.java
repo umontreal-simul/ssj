@@ -25,18 +25,20 @@
 package umontreal.ssj.util;
 
 /**
- * The  @ref Chrono class extends the  @ref umontreal.ssj.util.AbstractChrono
- * class and computes the CPU time for the current thread only.  It is equivalent to
- * @ref ChronoSingleThread.
- * The class @ref umontreal.ssj.util.ChronoWall provides another option.
+ * The @ref Chrono class extends the @ref umontreal.ssj.util.AbstractChrono
+ * class and computes the CPU time for the current thread only. It is equivalent
+ * to
+ * 
+ * @ref ChronoSingleThread. The class @ref umontreal.ssj.util.ChronoWall
+ *      provides another option.
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  */
 public class Chrono extends AbstractChrono {
    private ChronoSingleThread chrono = new ChronoSingleThread();
 
-   protected void getTime (long[] tab) {
-         chrono.getTime(tab);
+   protected void getTime(long[] tab) {
+      chrono.getTime(tab);
    }
 
    /**
@@ -48,15 +50,15 @@ public class Chrono extends AbstractChrono {
    }
 
    /**
-    * Creates a `Chrono` instance adapted for a program using a single thread.
-    * It is equivalent to @ref ChronoSingleThread.
-    * This class should not be used to create a timer for a
-    * multi-threaded program, because the obtained CPU times will differ
-    * depending on the used Java version.
-    *  @return the constructed timer.
+    * Creates a `Chrono` instance adapted for a program using a single thread. It
+    * is equivalent to @ref ChronoSingleThread. This class should not be used to
+    * create a timer for a multi-threaded program, because the obtained CPU times
+    * will differ depending on the used Java version.
+    * 
+    * @return the constructed timer.
     */
-   public static Chrono createForSingleThread () {
-         return new Chrono();
+   public static Chrono createForSingleThread() {
+      return new Chrono();
    }
 
 }

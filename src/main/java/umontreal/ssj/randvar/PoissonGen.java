@@ -23,23 +23,23 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.probdist.*;
 import umontreal.ssj.rng.*;
 
 /**
  * This class implements random variate generators having the *Poisson*
  * distribution. Its mass function is
- * @anchor REF_randvar_PoissonGen_eq_fmass_Poisson
- * @f[
- *   p(x) = \frac{e^{-\lambda} \lambda^x}{x!} \qquad\mbox{for } x=0,1,…, \tag{fmass-Poisson}
- * @f]
- * where @f$\lambda> 0@f$ is a real valued parameter equal to the mean.
+ * 
+ * @anchor REF_randvar_PoissonGen_eq_fmass_Poisson @f[ p(x) = \frac{e^{-\lambda}
+ *         \lambda^x}{x!} \qquad\mbox{for } x=0,1,…, \tag{fmass-Poisson} @f]
+ *         where @f$\lambda> 0@f$ is a real valued parameter equal to the mean.
  *
- * No local copy of the parameter @f$\lambda= @f$ `lambda` is maintained in
- * this class. The (non-static) `nextInt` method simply calls `inverseF` on
- * the distribution.
+ *         No local copy of the parameter @f$\lambda= @f$ `lambda` is maintained
+ *         in this class. The (non-static) `nextInt` method simply calls
+ *         `inverseF` on the distribution.
  *
- * <div class="SSJ-bigskip"></div>
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_discrete
  */
@@ -48,29 +48,30 @@ public class PoissonGen extends RandomVariateGenInt {
 
    /**
     * Creates a Poisson random variate generator with parameter
+    * 
     * @f$\lambda= @f$ `lambda`, using stream `s`.
     */
-   public PoissonGen (RandomStream s, double lambda) {
-      super (s, new PoissonDist (lambda));
-      setParams (lambda);
+   public PoissonGen(RandomStream s, double lambda) {
+      super(s, new PoissonDist(lambda));
+      setParams(lambda);
    }
 
    /**
-    * Creates a new random variate generator using the Poisson
-    * distribution `dist` and stream `s`.
+    * Creates a new random variate generator using the Poisson distribution `dist`
+    * and stream `s`.
     */
-   public PoissonGen (RandomStream s, PoissonDist dist) {
-      super (s, dist);
+   public PoissonGen(RandomStream s, PoissonDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getLambda());
+         setParams(dist.getLambda());
    }
 
    /**
-    * A static method for generating a random variate from a *Poisson*
-    * distribution with parameter @f$\lambda@f$ = `lambda`.
+    * A static method for generating a random variate from a *Poisson* distribution
+    * with parameter @f$\lambda@f$ = `lambda`.
     */
-   public static int nextInt (RandomStream s, double lambda) {
-      return PoissonDist.inverseF (lambda, s.nextDouble());
+   public static int nextInt(RandomStream s, double lambda) {
+      return PoissonDist.inverseF(lambda, s.nextDouble());
    }
 
    /**
@@ -83,9 +84,9 @@ public class PoissonGen extends RandomVariateGenInt {
    /**
     * Sets the parameter @f$\lambda= @f$ `lam` of this object.
     */
-   protected void setParams (double lam) {
+   protected void setParams(double lam) {
       if (lam <= 0.0)
-         throw new IllegalArgumentException ("lambda <= 0");
+         throw new IllegalArgumentException("lambda <= 0");
       this.lambda = lam;
    }
 }

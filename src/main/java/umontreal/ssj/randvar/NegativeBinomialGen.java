@@ -23,22 +23,23 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators having the *negative
  * binomial* distribution. Its mass function is
- * @anchor REF_randvar_NegativeBinomialGen_eq_fmass_negbin
- * @f[
- *   p(x) = \frac{\Gamma(\gamma+ x)}{x!\: \Gamma(\gamma)}\: p^{\gamma}(1 - p)^x, \qquad\mbox{for } x = 0, 1, 2, …\tag{fmass-negbin}
- * @f]
- * where @f$\Gamma@f$ is the gamma function, @f$\gamma> 0@f$ and
+ * 
+ * @anchor REF_randvar_NegativeBinomialGen_eq_fmass_negbin @f[ p(x) =
+ *         \frac{\Gamma(\gamma+ x)}{x!\: \Gamma(\gamma)}\: p^{\gamma}(1 - p)^x,
+ *         \qquad\mbox{for } x = 0, 1, 2, …\tag{fmass-negbin} @f]
+ *         where @f$\Gamma@f$ is the gamma function, @f$\gamma> 0@f$ and
  * @f$0\le p\le1@f$. No local copy of the parameters @f$\gamma@f$ and
- * @f$p@f$ is maintained in this class. The (non-static) `nextInt` method
- * simply calls `inverseF` on the distribution.
+ * @f$p@f$ is maintained in this class. The (non-static) `nextInt` method simply
+ *         calls `inverseF` on the distribution.
  *
- * <div class="SSJ-bigskip"></div>
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_discrete
  */
@@ -48,30 +49,31 @@ public class NegativeBinomialGen extends RandomVariateGenInt {
 
    /**
     * Creates a negative binomial random variate generator with parameters
+    * 
     * @f$\gamma= @f$ `gamma` and @f$p@f$, using stream `s`.
     */
-   public NegativeBinomialGen (RandomStream s, double gamma, double p) {
-      super (s, new NegativeBinomialDist (gamma, p));
-      setParams (gamma, p);
+   public NegativeBinomialGen(RandomStream s, double gamma, double p) {
+      super(s, new NegativeBinomialDist(gamma, p));
+      setParams(gamma, p);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public NegativeBinomialGen (RandomStream s, NegativeBinomialDist dist) {
-      super (s, dist);
+   public NegativeBinomialGen(RandomStream s, NegativeBinomialDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getGamma(), dist.getP());
+         setParams(dist.getGamma(), dist.getP());
    }
 
    /**
-    * Generates a new variate from the *negative binomial* distribution,
-    * with parameters @f$\gamma= @f$&nbsp;`gamma` and @f$p =
+    * Generates a new variate from the *negative binomial* distribution, with
+    * parameters @f$\gamma= @f$&nbsp;`gamma` and @f$p =
+    * 
     * @f$&nbsp;`p`, using stream `s`.
     */
-   public static int nextInt (RandomStream s, double gamma, double p) {
-      return NegativeBinomialDist.inverseF (gamma, p, s.nextDouble());
+   public static int nextInt(RandomStream s, double gamma, double p) {
+      return NegativeBinomialDist.inverseF(gamma, p, s.nextDouble());
    }
 
    /**
@@ -91,11 +93,11 @@ public class NegativeBinomialGen extends RandomVariateGenInt {
    /**
     * Sets the parameter @f$\gamma@f$ and @f$p@f$ of this object.
     */
-   protected void setParams (double gamma, double p) {
+   protected void setParams(double gamma, double p) {
       if (p < 0.0 || p > 1.0)
-         throw new IllegalArgumentException ("p not in [0, 1]");
+         throw new IllegalArgumentException("p not in [0, 1]");
       if (gamma <= 0.0)
-         throw new IllegalArgumentException ("gamma <= 0");
+         throw new IllegalArgumentException("gamma <= 0");
       this.p = p;
       this.gamma = gamma;
    }

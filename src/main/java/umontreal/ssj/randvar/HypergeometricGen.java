@@ -23,25 +23,25 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *hypergeometric*
- * distribution. Its mass function is
- *  (see, e.g., @cite rGEN98a&thinsp; (page 101))
- * @anchor REF_randvar_HypergeometricGen_eq_fheperg
- * @f[
- *   p(x) = \frac{ {m \choose x} {l - m\choose k-x}}{{l \choose k}} \qquad\mbox{for } x=\max(0,k-l+m), …, \min(k, m), \tag{fheperg}
- * @f]
- * where
- *  @f$m@f$, @f$l@f$ and @f$k@f$ are integers that satisfy @f$0< m\le l@f$
- * and @f$0 < k\le l@f$.
+ * distribution. Its mass function is (see, e.g., @cite rGEN98a&thinsp; (page
+ * 101))
+ * 
+ * @anchor REF_randvar_HypergeometricGen_eq_fheperg @f[ p(x) = \frac{ {m \choose
+ *         x} {l - m\choose k-x}}{{l \choose k}} \qquad\mbox{for }
+ *         x=\max(0,k-l+m), …, \min(k, m), \tag{fheperg} @f] where
+ * @f$m@f$, @f$l@f$ and @f$k@f$ are integers that satisfy @f$0< m\le l@f$
+ *          and @f$0 < k\le l@f$.
  *
- * The generation method is inversion using the chop-down algorithm
+ *          The generation method is inversion using the chop-down algorithm
  * @cite sKAC85a&thinsp;
  *
- * <div class="SSJ-bigskip"></div>
+ *       <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_discrete
  */
@@ -52,30 +52,31 @@ public class HypergeometricGen extends RandomVariateGenInt {
 
    /**
     * Creates a hypergeometric generator with parameters @f$m =
-    * @f$&nbsp;`m`, @f$l = @f$&nbsp;`l` and @f$k = @f$&nbsp;`k`, using
-    * stream `s`.
+    * 
+    * @f$&nbsp;`m`, @f$l = @f$&nbsp;`l` and @f$k = @f$&nbsp;`k`, using stream `s`.
     */
-   public HypergeometricGen (RandomStream s, int m, int l, int k) {
-      super (s, new HypergeometricDist (m, l, k));
-      setParams (m, l, k);
+   public HypergeometricGen(RandomStream s, int m, int l, int k) {
+      super(s, new HypergeometricDist(m, l, k));
+      setParams(m, l, k);
    }
 
    /**
     * Creates a new generator for distribution `dist`, using stream `s`.
     */
-   public HypergeometricGen (RandomStream s, HypergeometricDist dist) {
-      super (s, dist);
+   public HypergeometricGen(RandomStream s, HypergeometricDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getM(), dist.getL(), dist.getK());
+         setParams(dist.getM(), dist.getL(), dist.getK());
    }
 
    /**
     * Generates a new variate from the *hypergeometric* distribution with
     * parameters @f$m = @f$&nbsp;`m`, @f$l = @f$&nbsp;`l` and @f$k =
+    * 
     * @f$&nbsp;`k`, using stream `s`.
     */
-   public static int nextInt (RandomStream s, int m, int l, int k) {
-      return HypergeometricDist.inverseF (m, l, k, s.nextDouble());
+   public static int nextInt(RandomStream s, int m, int l, int k) {
+      return HypergeometricDist.inverseF(m, l, k, s.nextDouble());
    }
 
    /**
@@ -102,13 +103,13 @@ public class HypergeometricGen extends RandomVariateGenInt {
    /**
     * Sets the parameter @f$n@f$ and @f$p@f$ of this object.
     */
-   protected void setParams (int m, int l, int k) {
+   protected void setParams(int m, int l, int k) {
       if (l <= 0)
-         throw new IllegalArgumentException ("l must be greater than 0");
+         throw new IllegalArgumentException("l must be greater than 0");
       if (m <= 0 || m > l)
-         throw new IllegalArgumentException ("m is invalid: 1<=m<l");
+         throw new IllegalArgumentException("m is invalid: 1<=m<l");
       if (k <= 0 || k > l)
-         throw new IllegalArgumentException ("k is invalid: 1<=k<l");
+         throw new IllegalArgumentException("k is invalid: 1<=k<l");
       this.m = m;
       this.l = l;
       this.k = k;

@@ -27,83 +27,86 @@ package umontreal.ssj.hups;
 import umontreal.ssj.util.PrintfFormat;
 
 /**
- * This container class embodies a point set to which a *baker's
- * transformation* (also called a *tent transform*) is applied 
- * (see, e.g., @cite rDIC10a, @cite vHIC02a, @cite vLEC09f). 
- * It transforms each coordinate @f$u@f$ of each point into @f$2u@f$ if @f$u \le1/2@f$ and
+ * This container class embodies a point set to which a *baker's transformation*
+ * (also called a *tent transform*) is applied (see, e.g., @cite rDIC10a, @cite
+ * vHIC02a, @cite vLEC09f). It transforms each coordinate @f$u@f$ of each point
+ * into @f$2u@f$ if @f$u \le1/2@f$ and
+ * 
  * @f$2(1-u)@f$ if @f$u > 1/2@f$.
  *
- * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ *              <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class BakerTransformedPointSet extends ContainerPointSet {
 
    /**
-    * Constructs a baker-transformed point set from the given point set
-    * `p`.
-    *  @param p   point set for which we want a baker-transformed version
+    * Constructs a baker-transformed point set from the given point set `p`.
+    * 
+    * @param p point set for which we want a baker-transformed version
     */
-   public BakerTransformedPointSet (PointSet p) {
-      init (p);
+   public BakerTransformedPointSet(PointSet p) {
+      init(p);
    }
 
-
-   public double getCoordinate (int i, int j) {
-      double u = P.getCoordinate (i, j);
-      if (u < 0.5) return 2.0 * u;
-      else return 2.0 * (1 - u);
+   public double getCoordinate(int i, int j) {
+      double u = P.getCoordinate(i, j);
+      if (u < 0.5)
+         return 2.0 * u;
+      else
+         return 2.0 * (1 - u);
    }
 
-   public PointSetIterator iterator(){
+   public PointSetIterator iterator() {
       return new BakerTransformedPointSetIterator();
    }
 
    public String toString() {
-      return "Baker transformed point set of: {" + PrintfFormat.NEWLINE
-              + P.toString() + PrintfFormat.NEWLINE + "}";
+      return "Baker transformed point set of: {" + PrintfFormat.NEWLINE + P.toString() + PrintfFormat.NEWLINE + "}";
    }
 
-/*
-   public String formatPoints() {
-      try {
-         return super.formatPoints();
-      }
-      catch (UnsupportedOperationException e) {
-         return "The values are Baker transformed for each coordinate:" +
-                 PrintfFormat.NEWLINE + " {" +
-                 P.formatPoints() + PrintfFormat.NEWLINE + "}";
-      }
-   }
-*/
+   /*
+    * public String formatPoints() { try { return super.formatPoints(); } catch
+    * (UnsupportedOperationException e) { return
+    * "The values are Baker transformed for each coordinate:" +
+    * PrintfFormat.NEWLINE + " {" + P.formatPoints() + PrintfFormat.NEWLINE + "}";
+    * } }
+    */
    // ***************************************************************
 
-   protected class BakerTransformedPointSetIterator
-                   extends ContainerPointSetIterator {
+   protected class BakerTransformedPointSetIterator extends ContainerPointSetIterator {
 
       public double nextCoordinate() {
          double u = innerIterator.nextCoordinate();
-         if (u < 0.5) return 2.0 * u;
-         else return 2.0 * (1.0 - u);
+         if (u < 0.5)
+            return 2.0 * u;
+         else
+            return 2.0 * (1.0 - u);
       }
 
       // Same as nextCoordinate.
       public double nextDouble() {
          double u = innerIterator.nextCoordinate();
-         if (u < 0.5) return 2.0 * u;
-         else return 2.0 * (1.0 - u);
+         if (u < 0.5)
+            return 2.0 * u;
+         else
+            return 2.0 * (1.0 - u);
       }
 
-      public void nextCoordinates (double p[], int d)  {
-         innerIterator.nextCoordinates (p, d);
+      public void nextCoordinates(double p[], int d) {
+         innerIterator.nextCoordinates(p, d);
          for (int j = 0; j < d; j++)
-            if (p[j] < 0.5) p[j] *= 2.0;
-            else p[j] = 2.0 * (1.0 - p[j]);
+            if (p[j] < 0.5)
+               p[j] *= 2.0;
+            else
+               p[j] = 2.0 * (1.0 - p[j]);
       }
 
-      public int nextPoint (double p[], int d)  {
-         innerIterator.nextPoint (p, d);
+      public int nextPoint(double p[], int d) {
+         innerIterator.nextPoint(p, d);
          for (int j = 0; j < d; j++)
-            if (p[j] < 0.5) p[j] *= 2.0;
-            else p[j] = 2.0 * (1.0 - p[j]);
+            if (p[j] < 0.5)
+               p[j] *= 2.0;
+            else
+               p[j] = 2.0 * (1.0 - p[j]);
          return getCurPointIndex();
       }
 

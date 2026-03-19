@@ -24,43 +24,42 @@
  */
 package umontreal.ssj.randvarmulti;
 
-   import cern.colt.matrix.DoubleMatrix2D;
-   import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-   import cern.colt.matrix.linalg.CholeskyDecomposition;
+import cern.colt.matrix.DoubleMatrix2D;
+import cern.colt.matrix.impl.DenseDoubleMatrix2D;
+import cern.colt.matrix.linalg.CholeskyDecomposition;
 import umontreal.ssj.probdist.NormalDist;
 import umontreal.ssj.randvar.NormalGen;
 import umontreal.ssj.rng.RandomStream;
 
 /**
- * Extends  @ref MultinormalGen for a *multivariate normal* distribution
+ * Extends @ref MultinormalGen for a *multivariate normal* distribution
+ * 
  * @cite tJOH72a&thinsp;, generated via a Cholesky decomposition of the
- * covariance matrix. The covariance matrix @f$\boldsymbol{\Sigma}@f$ is
- * decomposed (by the constructor) as @f$\boldsymbol{\Sigma}=
- * \mathbf{A}\mathbf{A}^{\!\mathsf{t}}@f$ where @f$\mathbf{A}@f$ is a
- * lower-triangular matrix (this is the Cholesky decomposition), and
- * @f$\mathbf{X}@f$ is generated via
- * @f[
- *   \mathbf{X}= \boldsymbol{\mu}+ \mathbf{A}\mathbf{Z},
- * @f]
- * where @f$\mathbf{Z}@f$ is a @f$d@f$-dimensional vector of independent
- * standard normal random variates, and @f$\mathbf{A}^{\!\mathsf{t}}@f$ is
- * the transpose of @f$\mathbf{A}@f$. The covariance matrix
- * @f$\boldsymbol{\Sigma}@f$ must be positive-definite, otherwise the
- * Cholesky decomposition will fail. The decomposition method uses the
- * <tt>CholeskyDecomposition</tt> class in `colt`.
+ *       covariance matrix. The covariance matrix @f$\boldsymbol{\Sigma}@f$ is
+ *       decomposed (by the constructor) as @f$\boldsymbol{\Sigma}=
+ *       \mathbf{A}\mathbf{A}^{\!\mathsf{t}}@f$ where @f$\mathbf{A}@f$ is a
+ *       lower-triangular matrix (this is the Cholesky decomposition), and
+ * @f$\mathbf{X}@f$ is generated via @f[ \mathbf{X}= \boldsymbol{\mu}+
+ *                  \mathbf{A}\mathbf{Z}, @f] where @f$\mathbf{Z}@f$ is
+ *                  a @f$d@f$-dimensional vector of independent standard normal
+ *                  random variates, and @f$\mathbf{A}^{\!\mathsf{t}}@f$ is the
+ *                  transpose of @f$\mathbf{A}@f$. The covariance matrix
+ * @f$\boldsymbol{\Sigma}@f$ must be positive-definite, otherwise the Cholesky
+ *                           decomposition will fail. The decomposition method
+ *                           uses the <tt>CholeskyDecomposition</tt> class in
+ *                           `colt`.
  *
- * <div class="SSJ-bigskip"></div>
+ *                           <div class="SSJ-bigskip"></div>
  */
 public class MultinormalCholeskyGen extends MultinormalGen {
 
    private void initL() {
       if (mu.length != sigma.rows() || mu.length != sigma.columns())
-         throw new IllegalArgumentException
-            ("Incompatible mean vector and covariance matrix");
-      CholeskyDecomposition decomp = new CholeskyDecomposition (sigma);
-      //if (!decomp.isSymmetricPositiveDefinite())
-      //   throw new IllegalArgumentException
-      //      ("The covariance matrix must be symmetric and positive-definite");
+         throw new IllegalArgumentException("Incompatible mean vector and covariance matrix");
+      CholeskyDecomposition decomp = new CholeskyDecomposition(sigma);
+      // if (!decomp.isSymmetricPositiveDefinite())
+      // throw new IllegalArgumentException
+      // ("The covariance matrix must be symmetric and positive-definite");
       sqrtSigma = decomp.getL();
    }
 
@@ -68,36 +67,37 @@ public class MultinormalCholeskyGen extends MultinormalGen {
     * Equivalent to
     * {@link #MultinormalCholeskyGen(NormalGen,double[],DoubleMatrix2D)
     * MultinormalCholeskyGen(gen1, mu, new DenseDoubleMatrix2D(sigma))}.
-    *  @param gen1         the one-dimensional generator
-    *  @param mu           the mean vector.
-    *  @param sigma        the covariance matrix.
-    *  @exception NullPointerException if any argument is `null`.
-    *  @exception IllegalArgumentException if the length of the mean
-    * vector is incompatible with the dimensions of the covariance matrix.
+    * 
+    * @param gen1  the one-dimensional generator
+    * @param mu    the mean vector.
+    * @param sigma the covariance matrix.
+    * @exception NullPointerException     if any argument is `null`.
+    * @exception IllegalArgumentException if the length of the mean vector is
+    *                                     incompatible with the dimensions of the
+    *                                     covariance matrix.
     */
-   public MultinormalCholeskyGen (NormalGen gen1, double[] mu,
-                                  double[][] sigma) {
+   public MultinormalCholeskyGen(NormalGen gen1, double[] mu, double[][] sigma) {
       super(gen1, mu, sigma);
       initL();
    }
 
    /**
-    * Constructs a multinormal generator with mean vector `mu` and
-    * covariance matrix `sigma`. The mean vector must have the same length
-    * as the dimensions of the covariance matrix, which must be symmetric
-    * and positive-definite. If any of the above conditions is violated,
-    * an exception is thrown. The vector @f$\mathbf{Z}@f$ is generated by
-    * calling @f$d@f$ times the generator `gen1`, which must be a
-    * *standard normal* 1-dimensional generator.
-    *  @param gen1         the one-dimensional generator
-    *  @param mu           the mean vector.
-    *  @param sigma        the covariance matrix.
-    *  @exception NullPointerException if any argument is `null`.
-    *  @exception IllegalArgumentException if the length of the mean
-    * vector is incompatible with the dimensions of the covariance matrix.
+    * Constructs a multinormal generator with mean vector `mu` and covariance
+    * matrix `sigma`. The mean vector must have the same length as the dimensions
+    * of the covariance matrix, which must be symmetric and positive-definite. If
+    * any of the above conditions is violated, an exception is thrown. The
+    * vector @f$\mathbf{Z}@f$ is generated by calling @f$d@f$ times the generator
+    * `gen1`, which must be a *standard normal* 1-dimensional generator.
+    * 
+    * @param gen1  the one-dimensional generator
+    * @param mu    the mean vector.
+    * @param sigma the covariance matrix.
+    * @exception NullPointerException     if any argument is `null`.
+    * @exception IllegalArgumentException if the length of the mean vector is
+    *                                     incompatible with the dimensions of the
+    *                                     covariance matrix.
     */
-   public MultinormalCholeskyGen (NormalGen gen1, double[] mu,
-                                  DoubleMatrix2D sigma) {
+   public MultinormalCholeskyGen(NormalGen gen1, double[] mu, DoubleMatrix2D sigma) {
       super(gen1, mu, sigma);
       initL();
    }
@@ -105,78 +105,74 @@ public class MultinormalCholeskyGen extends MultinormalGen {
    /**
     * Returns the lower-triangular matrix @f$\mathbf{A}@f$ in the Cholesky
     * decomposition of @f$\boldsymbol{\Sigma}@f$.
-    *  @return the Cholesky decomposition of the covariance matrix.
+    * 
+    * @return the Cholesky decomposition of the covariance matrix.
     */
    public DoubleMatrix2D getCholeskyDecompSigma() {
       return sqrtSigma.copy();
    }
 
    /**
-    * Sets the covariance matrix @f$\boldsymbol{\Sigma}@f$ of this
-    * multinormal generator to `sigma` (and recomputes @f$\mathbf{A}@f$).
-    *  @param sigma        the new covariance matrix.
-    *  @exception IllegalArgumentException if `sigma` has incorrect
-    * dimensions.
+    * Sets the covariance matrix @f$\boldsymbol{\Sigma}@f$ of this multinormal
+    * generator to `sigma` (and recomputes @f$\mathbf{A}@f$).
+    * 
+    * @param sigma the new covariance matrix.
+    * @exception IllegalArgumentException if `sigma` has incorrect dimensions.
     */
-   public void setSigma (DoubleMatrix2D sigma) {
+   public void setSigma(DoubleMatrix2D sigma) {
       if (sigma.rows() != mu.length || sigma.columns() != mu.length)
-         throw new IllegalArgumentException
-            ("Invalid dimensions of covariance matrix");
-      CholeskyDecomposition decomp = new CholeskyDecomposition (sigma);
-      //if (!decomp.isSymmetricPositiveDefinite())
-      //   throw new IllegalArgumentException
-      //      ("The new covariance matrix must be symmetric and positive-definite");
-      this.sigma.assign (sigma);
+         throw new IllegalArgumentException("Invalid dimensions of covariance matrix");
+      CholeskyDecomposition decomp = new CholeskyDecomposition(sigma);
+      // if (!decomp.isSymmetricPositiveDefinite())
+      // throw new IllegalArgumentException
+      // ("The new covariance matrix must be symmetric and positive-definite");
+      this.sigma.assign(sigma);
       this.sqrtSigma = decomp.getL();
    }
 
    /**
-    * Equivalent to
-    * {@link #nextPoint(NormalGen,double[],DoubleMatrix2D,double[])
+    * Equivalent to {@link #nextPoint(NormalGen,double[],DoubleMatrix2D,double[])
     * nextPoint(gen1, mu, new DenseDoubleMatrix2D(sigma), p)}.
     */
-   public static void nextPoint (NormalGen gen1, double[] mu,
-                                 double[][] sigma, double[] p) {
-      nextPoint (gen1, mu, new DenseDoubleMatrix2D (sigma), p);
+   public static void nextPoint(NormalGen gen1, double[] mu, double[][] sigma, double[] p) {
+      nextPoint(gen1, mu, new DenseDoubleMatrix2D(sigma), p);
    }
 
    /**
-    * Generates a @f$d@f$-dimensional vector from the multinormal
-    * distribution with mean vector `mu` and covariance matrix `sigma`,
-    * using the one-dimensional normal generator `gen1` to generate the
-    * coordinates of @f$\mathbf{Z}@f$, and using the Cholesky
-    * decomposition of @f$\boldsymbol{\Sigma}@f$. The resulting vector is
-    * put into `p`. Note that this static method will be very slow for
-    * large dimensions, since it computes the Cholesky decomposition at
-    * every call. It is therefore recommended to use a
-    * `MultinormalCholeskyGen` object instead, if the method is to be
-    * called more than once.
-    *  @param p            the array to be filled with the generated
-    *                      point.
-    *  @exception IllegalArgumentException if the one-dimensional normal
-    * generator uses a normal distribution with @f$\mu@f$ not equal to 0,
-    * or @f$\sigma@f$ not equal to 1.
-    *  @exception IllegalArgumentException if the length of the mean
-    * vector is different from the dimensions of the covariance matrix, or
-    * if the covariance matrix is not symmetric and positive-definite.
-    *  @exception NullPointerException if any argument is `null`.
+    * Generates a @f$d@f$-dimensional vector from the multinormal distribution with
+    * mean vector `mu` and covariance matrix `sigma`, using the one-dimensional
+    * normal generator `gen1` to generate the coordinates of @f$\mathbf{Z}@f$, and
+    * using the Cholesky decomposition of @f$\boldsymbol{\Sigma}@f$. The resulting
+    * vector is put into `p`. Note that this static method will be very slow for
+    * large dimensions, since it computes the Cholesky decomposition at every call.
+    * It is therefore recommended to use a `MultinormalCholeskyGen` object instead,
+    * if the method is to be called more than once.
+    * 
+    * @param p the array to be filled with the generated point.
+    * @exception IllegalArgumentException if the one-dimensional normal generator
+    *                                     uses a normal distribution with @f$\mu@f$
+    *                                     not equal to 0, or @f$\sigma@f$ not equal
+    *                                     to 1.
+    * @exception IllegalArgumentException if the length of the mean vector is
+    *                                     different from the dimensions of the
+    *                                     covariance matrix, or if the covariance
+    *                                     matrix is not symmetric and
+    *                                     positive-definite.
+    * @exception NullPointerException     if any argument is `null`.
     */
-   public static void nextPoint (NormalGen gen1, double[] mu,
-                                 DoubleMatrix2D sigma, double[] p) {
+   public static void nextPoint(NormalGen gen1, double[] mu, DoubleMatrix2D sigma, double[] p) {
       if (gen1 == null)
-         throw new NullPointerException ("gen1 is null");
+         throw new NullPointerException("gen1 is null");
 
       NormalDist dist = (NormalDist) gen1.getDistribution();
       if (dist.getMu() != 0.0)
-         throw new IllegalArgumentException ("mu != 0");
+         throw new IllegalArgumentException("mu != 0");
       if (dist.getSigma() != 1.0)
-         throw new IllegalArgumentException ("sigma != 1");
+         throw new IllegalArgumentException("sigma != 1");
 
-      if (mu.length != sigma.rows() ||
-          mu.length != sigma.columns())
-         throw new IllegalArgumentException
-            ("Incompatible mean vector and covariance matrix dimensions");
-      CholeskyDecomposition decomp = new CholeskyDecomposition (sigma);
+      if (mu.length != sigma.rows() || mu.length != sigma.columns())
+         throw new IllegalArgumentException("Incompatible mean vector and covariance matrix dimensions");
+      CholeskyDecomposition decomp = new CholeskyDecomposition(sigma);
       double[] temp = new double[mu.length];
       DoubleMatrix2D sqrtSigma = decomp.getL();
       for (int i = 0; i < temp.length; i++) {
@@ -189,18 +185,19 @@ public class MultinormalCholeskyGen extends MultinormalGen {
       for (int i = 0; i < temp.length; i++) {
          p[i] = 0;
          for (int c = 0; c <= i; c++)
-            p[i] += sqrtSigma.getQuick (i, c)*temp[c];
+            p[i] += sqrtSigma.getQuick(i, c) * temp[c];
          p[i] += mu[i];
       }
    }
 
    /**
-    * Generates a point from this multinormal distribution. This is much
-    * faster than the static method as it computes the singular value
-    * decomposition matrix only once in the constructor.
-    *  @param p            the array to be filled with the generated point
+    * Generates a point from this multinormal distribution. This is much faster
+    * than the static method as it computes the singular value decomposition matrix
+    * only once in the constructor.
+    * 
+    * @param p the array to be filled with the generated point
     */
-   public void nextPoint (double[] p) {
+   public void nextPoint(double[] p) {
       int n = mu.length;
       for (int i = 0; i < n; i++) {
          temp[i] = gen1.nextDouble();
@@ -213,7 +210,7 @@ public class MultinormalCholeskyGen extends MultinormalGen {
          p[i] = 0;
          // Matrix is lower-triangular
          for (int c = 0; c <= i; c++)
-            p[i] += sqrtSigma.getQuick (i, c)*temp[c];
+            p[i] += sqrtSigma.getQuick(i, c) * temp[c];
          p[i] += mu[i];
       }
    }

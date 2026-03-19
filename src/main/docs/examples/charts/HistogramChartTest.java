@@ -1,11 +1,11 @@
 package charts;
+
 import umontreal.ssj.charts.*;
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;
 import java.awt.Color;
 
-public class HistogramChartTest
-{
+public class HistogramChartTest {
    private static double[] getPoints1() {
       NormalGen gen = new NormalGen(new MRG32k3a(), 0, 2);
       final int N = 100000;

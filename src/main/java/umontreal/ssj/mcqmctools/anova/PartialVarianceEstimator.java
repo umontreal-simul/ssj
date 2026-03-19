@@ -7,16 +7,15 @@ import umontreal.ssj.mcqmctools.*;
 
 import java.util.*;
 
-
 /**
  * Partial variance estimator.
  *
- * Estimates partial variances of a model with respect to multiple coordinate sets.
+ * Estimates partial variances of a model with respect to multiple coordinate
+ * sets.
  *
- * Reference:
- * Monte Carlo estimators for small sensitivity indices
- * I. M. Sobol' and E. E. Myshetskaya
- * Monte Carlo Methods Appl. Vol. 13 No. 5-6 (2007), pp. 455-465
+ * Reference: Monte Carlo estimators for small sensitivity indices I. M. Sobol'
+ * and E. E. Myshetskaya Monte Carlo Methods Appl. Vol. 13 No. 5-6 (2007), pp.
+ * 455-465
  *
  */
 public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
@@ -33,10 +32,9 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
    protected CoordinateSet noCoordinate;
    protected CoordinateSet allCoordinates;
 
-   
    // placeholder for the computed partial variances
    protected double[] vars;
-   
+
    public PartialVarianceEstimator() {
       this.model = null;
       this.coordSets = null;
@@ -44,8 +42,7 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
       this.vars = null;
    }
 
-   public PartialVarianceEstimator (MonteCarloModelDoubleRQMC model, double approxMean,
-         List<CoordinateSet> coordSets) {
+   public PartialVarianceEstimator(MonteCarloModelDoubleRQMC model, double approxMean, List<CoordinateSet> coordSets) {
       setModel(model, approxMean);
       setCoordinateSets(coordSets);
       this.vars = null;
@@ -58,10 +55,11 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
    /**
     * Sets the model whose partial variances are to be estimated.
     *
-    * Best precision is achieved when the mean value of the model is close to \c approxMean.
+    * Best precision is achieved when the mean value of the model is close to \c
+    * approxMean.
     *
     */
-   public void setModel (MonteCarloModelDoubleRQMC model, double approxMean) {
+   public void setModel(MonteCarloModelDoubleRQMC model, double approxMean) {
       this.model = model;
       this.approxMean = approxMean;
    }
@@ -78,7 +76,7 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
     * Set the coordinate sets to consider to \c coordSets.
     *
     */
-   public void setCoordinateSets (List<CoordinateSet> coordSets) {
+   public void setCoordinateSets(List<CoordinateSet> coordSets) {
       this.coordSets = coordSets;
       noCoordinate = new CoordinateSetLong(0);
       allCoordinates = new CoordinateSetLong(-1);
@@ -88,24 +86,20 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
       return approxMean;
    }
 
-   
-
    /**
     * Simulates the estimator once.
     *
-    * Returns \c vars such that:
-    * \li \c vars.length is \c coordSets.size() + 2.
-    * \li \c vars[\c nSets] contains the correction to the approximate mean.
-    * \li \c vars[\c nSets+1] contains the square of the above correction.
+    * Returns \c vars such that: \li \c vars.length is \c coordSets.size() + 2. \li
+    * \c vars[\c nSets] contains the correction to the approximate mean. \li \c
+    * vars[\c nSets+1] contains the square of the above correction.
     *
     */
-   public void simulate (RandomStream stream) {
+   public void simulate(RandomStream stream) {
 
       // initialize storage
       if (vars == null || vars.length != coordSets.size() + 2)
          vars = new double[coordSets.size() + 2];
 
-      
       if (model == null)
          throw new IllegalArgumentException("model has not been initialized");
 
@@ -115,9 +109,8 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
       int nSets = coordSets.size();
 
       if (vars.length < nSets + 2)
-         throw new IllegalArgumentException("vars[] must contain one more element than the"
-               + " number of coordinate sets");
-
+         throw new IllegalArgumentException(
+               "vars[] must contain one more element than the" + " number of coordinate sets");
 
       SplitStream s = new SplitStream(stream, model.getDimension());
 
@@ -130,12 +123,12 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
       s.resetStartSubstream();
       model.simulate(s);
       double valNone = model.getPerformance() - approxMean;
-      
+
       // correction to the approximate mean
       vars[nSets] = valAll;
 
       // square correction
-      vars[nSets+1] = valAll * valAll;
+      vars[nSets + 1] = valAll * valAll;
 
       for (int j = 0; j < nSets; j++) {
 
@@ -150,12 +143,10 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
          vars[j] = valAll * (valPartial - valNone);
       }
    }
-   
 
-   public double[] getPerformance () {
-	   return vars;
-	   }
-	   
+   public double[] getPerformance() {
+      return vars;
+   }
 
    /**
     * Returns the number of input dimensions.
@@ -164,17 +155,21 @@ public class PartialVarianceEstimator implements MonteCarloModel<double[]> {
    public int getDimension() {
       return (model == null) ? 0 : 2 * model.getDimension();
    }
-   
 
    /**
     * Returns a description of the partial variance estimator.
     *
     */
-   @Override public String toString() {
-      String s = String.format("Partial Variance Estimator"
-            + " [model=%s]", model.toString());
+   @Override
+   public String toString() {
+      String s = String.format("Partial Variance Estimator" + " [model=%s]", model.toString());
       return s;
    }
    
-
+   /**
+    * Returns a model tag.
+    */
+   public String getTag() {
+      return getModel().getTag();
+   }
 }

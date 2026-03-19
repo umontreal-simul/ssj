@@ -32,98 +32,100 @@ import umontreal.ssj.rng.RandomStream;
 /**
  * Manages a list of random streams for more convenient synchronization. All
  * streams in the list can be reset simultaneously by a single call to the
- * appropriate method of this stream manager, instead of calling explicitly
- * the reset method for each individual stream.
+ * appropriate method of this stream manager, instead of calling explicitly the
+ * reset method for each individual stream.
  *
  * After a random stream manager is constructed, any existing
+ * 
  * @ref RandomStream object can be registered to this stream manager (i.e.,
- * added to the list) and eventually unregistered (removed from the list).
+ *      added to the list) and eventually unregistered (removed from the list).
  *
- * <div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div>
  */
 public class RandomStreamManager {
    private List streams = new ArrayList();
 
-/**
- * Adds the given `stream` to the internal list of this random stream manager
- * and returns the added stream.
- *  @param stream       the stream being added.
- *  @return the added stream.
- *
- *  @exception NullPointerException if `stream` is `null`.
- */
-public RandomStream add (RandomStream stream) {
+   /**
+    * Adds the given `stream` to the internal list of this random stream manager
+    * and returns the added stream.
+    * 
+    * @param stream the stream being added.
+    * @return the added stream.
+    *
+    * @exception NullPointerException if `stream` is `null`.
+    */
+   public RandomStream add(RandomStream stream) {
       if (stream == null)
          throw new NullPointerException();
-      if (streams.contains (stream))
+      if (streams.contains(stream))
          return stream;
-      streams.add (stream);
+      streams.add(stream);
       return stream;
    }
 
    /**
-    * Removes the given stream from the internal list of this random
-    * stream manager. Returns `true` if the stream was properly removed,
-    * `false` otherwise.
-    *  @param stream       the stream being removed.
-    *  @return the success indicator of the operation.
+    * Removes the given stream from the internal list of this random stream
+    * manager. Returns `true` if the stream was properly removed, `false`
+    * otherwise.
+    * 
+    * @param stream the stream being removed.
+    * @return the success indicator of the operation.
     */
-   public boolean remove (RandomStream stream) {
-      return streams.remove (stream);
+   public boolean remove(RandomStream stream) {
+      return streams.remove(stream);
    }
 
    /**
-    * Removes all the streams from the internal list of this random stream
-    * manager.
+    * Removes all the streams from the internal list of this random stream manager.
     */
    public void clear() {
       streams.clear();
    }
 
    /**
-    * Returns an unmodifiable list containing all the random streams in
-    * this random stream manager. The returned list, constructed by
+    * Returns an unmodifiable list containing all the random streams in this random
+    * stream manager. The returned list, constructed by
     * java.util.Collections.unmodifiableList, can be assumed to contain
-    * non-<tt>null</tt>  @ref RandomStream instances.
-    *  @return the list of managed random streams.
+    * non-<tt>null</tt> @ref RandomStream instances.
+    * 
+    * @return the list of managed random streams.
     */
    public List getStreams() {
-      return Collections.unmodifiableList (streams);
+      return Collections.unmodifiableList(streams);
    }
 
    /**
-    * Forwards to the  umontreal.ssj.rng.RandomStream.resetStartStream
-    * methods of all streams in the list.
+    * Forwards to the umontreal.ssj.rng.RandomStream.resetStartStream methods of
+    * all streams in the list.
     */
    public void resetStartStream() {
       for (int s = 0; s < streams.size(); s++)
-         ((RandomStream)streams.get (s)).resetStartStream();
+         ((RandomStream) streams.get(s)).resetStartStream();
    }
 
    /**
-    * Forwards to the  umontreal.ssj.rng.RandomStream.resetStartSubstream
-    * methods of all streams in the list.
+    * Forwards to the umontreal.ssj.rng.RandomStream.resetStartSubstream methods of
+    * all streams in the list.
     */
    public void resetStartSubstream() {
       for (int s = 0; s < streams.size(); s++)
-         ((RandomStream)streams.get (s)).resetStartSubstream();
+         ((RandomStream) streams.get(s)).resetStartSubstream();
    }
 
    /**
-    * Forwards to the  umontreal.ssj.rng.RandomStream.resetNextSubstream
-    * methods of all streams in the list.
+    * Forwards to the umontreal.ssj.rng.RandomStream.resetNextSubstream methods of
+    * all streams in the list.
     */
    public void resetNextSubstream() {
       for (int s = 0; s < streams.size(); s++)
-         ((RandomStream)streams.get (s)).resetNextSubstream();
+         ((RandomStream) streams.get(s)).resetNextSubstream();
    }
 
-
    public String toString() {
-      StringBuffer sb = new StringBuffer (getClass().getName());
-      sb.append ('[');
-      sb.append ("number of stored streams: ").append (streams.size());
-      sb.append (']');
+      StringBuffer sb = new StringBuffer(getClass().getName());
+      sb.append('[');
+      sb.append("number of stored streams: ").append(streams.size());
+      sb.append(']');
       return sb.toString();
    }
 }

@@ -23,12 +23,13 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
- * This class implements random variate generators with the *symmetrical
- * beta* distribution with shape parameters @f$\alpha= \beta@f$, over the
+ * This class implements random variate generators with the *symmetrical beta*
+ * distribution with shape parameters @f$\alpha= \beta@f$, over the
  * interval @f$(0,1)@f$.
  *
  * <div class="SSJ-bigskip"></div>
@@ -39,22 +40,22 @@ public class BetaSymmetricalGen extends BetaGen {
 
    /**
     * Creates a new symmetrical beta generator with parameters
-    * @f$\alpha=@f$ `alpha`, over the interval @f$(0,1)@f$, using stream
-    * `s`.
+    * 
+    * @f$\alpha=@f$ `alpha`, over the interval @f$(0,1)@f$, using stream `s`.
     */
-   public BetaSymmetricalGen (RandomStream s, double alpha) {
-      this (s, new BetaSymmetricalDist (alpha));
+   public BetaSymmetricalGen(RandomStream s, double alpha) {
+      this(s, new BetaSymmetricalDist(alpha));
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public BetaSymmetricalGen (RandomStream s, BetaSymmetricalDist dist) {
-      super (s, dist);
+   public BetaSymmetricalGen(RandomStream s, BetaSymmetricalDist dist) {
+      super(s, dist);
    }
-   public static double nextDouble (RandomStream s, double alpha) {
-      return BetaSymmetricalDist.inverseF (alpha, s.nextDouble());
+
+   public static double nextDouble(RandomStream s, double alpha) {
+      return BetaSymmetricalDist.inverseF(alpha, s.nextDouble());
    }
 
 }

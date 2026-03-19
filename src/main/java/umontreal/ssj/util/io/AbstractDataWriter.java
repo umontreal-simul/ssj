@@ -23,6 +23,7 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.io.IOException;
 
 /**
@@ -33,39 +34,38 @@ import java.io.IOException;
 public abstract class AbstractDataWriter implements DataWriter {
 
    /**
-    * @name Writing one-dimensional arrays
-    * @{
+    * @name Writing one-dimensional arrays @{
     */
 
    /**
-    * Writes a one-dimensional array of strings. If `label` is `null`,
-    * writes an anonymous field.
+    * Writes a one-dimensional array of strings. If `label` is `null`, writes an
+    * anonymous field.
     */
-   public void write (String label, String[] a) throws IOException {
+   public void write(String label, String[] a) throws IOException {
       write(label, a, a.length);
    }
 
    /**
-    * Writes a one-dimensional array of 32-bit integers (big endian). If
-    * `label` is `null`, writes an anonymous field.
+    * Writes a one-dimensional array of 32-bit integers (big endian). If `label` is
+    * `null`, writes an anonymous field.
     */
-   public void write (String label, int[] a) throws IOException {
+   public void write(String label, int[] a) throws IOException {
       write(label, a, a.length);
    }
 
    /**
-    * Writes a one-dimensional array of 32-bit floats (big endian). If
-    * `label` is `null`, writes an anonymous field.
+    * Writes a one-dimensional array of 32-bit floats (big endian). If `label` is
+    * `null`, writes an anonymous field.
     */
-   public void write (String label, float[] a) throws IOException {
+   public void write(String label, float[] a) throws IOException {
       write(label, a, a.length);
    }
 
    /**
-    * Writes a one-dimensional array of 64-bit doubles (big endian). If
-    * `label` is `null`, writes an anonymous field.
+    * Writes a one-dimensional array of 64-bit doubles (big endian). If `label` is
+    * `null`, writes an anonymous field.
     */
-   public void write (String label, double[] a) throws IOException {
+   public void write(String label, double[] a) throws IOException {
       write(label, a, a.length);
    }
 

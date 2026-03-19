@@ -25,34 +25,17 @@
 package umontreal.ssj.probdist;
 
 /**
- * Represents a *constant* discrete distribution taking a single integer
- * value with probability 1. Its mass function is
- * @anchor REF_probdist_ConstantIntDist_eq_fconsint
- * @f[
- *   p(x) = \left\{\begin{array}{ll}
- *    1, 
- *    & 
- *    \qquad\mbox{for } x = c,
- *    \\ 
- *    0, 
- *    & 
- *    \qquad\mbox{elsewhere. } 
- *   \end{array}\right. \tag{fconsint}
- * @f]
- * Its distribution function is
- * @anchor REF_probdist_ConstantIntDist_eq_cdfconsint
- * @f[
- *   F(x) = \left\{\begin{array}{ll}
- *    0, 
- *    & 
- *    \qquad\mbox{ for } x < c
- *    \\ 
- *    1, 
- *    & 
- *    \qquad\mbox{ for } x \ge c. 
- *   \end{array}\right. \tag{cdfconsint}
- * @f]
- * <div class="SSJ-bigskip"></div>
+ * Represents a *constant* discrete distribution taking a single integer value
+ * with probability 1. Its mass function is
+ * 
+ * @anchor REF_probdist_ConstantIntDist_eq_fconsint @f[ p(x) =
+ *         \left\{\begin{array}{ll} 1, & \qquad\mbox{for } x = c, \\ 0, &
+ *         \qquad\mbox{elsewhere. } \end{array}\right. \tag{fconsint} @f] Its
+ *         distribution function is
+ * @anchor REF_probdist_ConstantIntDist_eq_cdfconsint @f[ F(x) =
+ *         \left\{\begin{array}{ll} 0, & \qquad\mbox{ for } x < c \\ 1, &
+ *         \qquad\mbox{ for } x \ge c. \end{array}\right. \tag{cdfconsint} @f]
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup probdist_discrete
  */
@@ -61,15 +44,14 @@ public class ConstantIntDist extends UniformIntDist {
    /**
     * Constructs a new constant distribution with probability 1 at `c`.
     */
-   public ConstantIntDist (int c) {
-      super (c, c);
+   public ConstantIntDist(int c) {
+      super(c, c);
    }
 
    /**
-    * Returns a `String` containing information about the current
-    * distribution.
+    * Returns a `String` containing information about the current distribution.
     */
-   public String toString () {
+   public String toString() {
       return getClass().getSimpleName() + " : c = " + i;
    }
 

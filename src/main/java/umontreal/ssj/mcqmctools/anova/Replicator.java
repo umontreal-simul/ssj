@@ -7,8 +7,8 @@ import umontreal.ssj.rng.*;
 import umontreal.ssj.mcqmctools.*;
 
 /**
- * Replicator class.
- * Replicates mutliple samples of an integral computed by an internal random integrator.
+ * Replicator class. Replicates mutliple samples of an integral computed by an
+ * internal random integrator.
  *
  */
 public class Replicator implements RandomIntegrator {
@@ -19,9 +19,10 @@ public class Replicator implements RandomIntegrator {
    // internal tallies, to be allocated only once, and only if needed
    protected Tally statValue = null;
    protected ListOfTallies<Tally> statValueList = null;
-   
+
    /**
-    * Creates a replicator that samples \c nReplicates replicates using \c integrator.
+    * Creates a replicator that samples \c nReplicates replicates using \c
+    * integrator.
     * 
     */
    public Replicator(int nReplicates, RandomIntegrator integrator) {
@@ -44,7 +45,7 @@ public class Replicator implements RandomIntegrator {
    public int getNumReplicates() {
       return nReplicates;
    }
-   
+
    /**
     * Returns the number of points (or simulations) per sample integral.
     *
@@ -52,10 +53,11 @@ public class Replicator implements RandomIntegrator {
    public int getNumPoints() {
       return integrator.getTotalSimulations();
    }
-   
+
    /**
-    * Returns the total number of times the model is simulated per call to an integrate()
-    * method: the number of replications multiplied by the number of points.
+    * Returns the total number of times the model is simulated per call to an
+    * integrate() method: the number of replications multiplied by the number of
+    * points.
     *
     */
    public int getTotalSimulations() {
@@ -86,8 +88,8 @@ public class Replicator implements RandomIntegrator {
     * The output values are added to the statistical collector \c statValue.
     *
     */
-   public void integrate (MonteCarloModelDouble model, Tally statValue) {
-	  statValue.init();
+   public void integrate(MonteCarloModelDouble model, Tally statValue) {
+      statValue.init();
       for (int i = 0; i < nReplicates; i++)
          statValue.add(integrator.integrate(model));
    }
@@ -96,7 +98,7 @@ public class Replicator implements RandomIntegrator {
     * Shorthand to integrate without having to pass a Tally object.
     *
     */
-   public double integrate (MonteCarloModelDouble model) {
+   public double integrate(MonteCarloModelDouble model) {
       if (statValue == null)
          this.statValue = new Tally();
       else
@@ -111,7 +113,7 @@ public class Replicator implements RandomIntegrator {
     * The output values are added to the statistical collector \c stat.
     *
     */
-   public void integrate (MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> stat) {
+   public void integrate(MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> stat) {
       double[] val = new double[stat.size()];
       ListOfTallies<Tally> innerStat = ListOfTallies.createWithTally(stat.size());
 
@@ -127,7 +129,7 @@ public class Replicator implements RandomIntegrator {
     * Shorthand to integrate without having to pass a ListOfTallies object.
     *
     */
-   public void integrate (MonteCarloModel<double[]> model, double[] values) {
+   public void integrate(MonteCarloModel<double[]> model, double[] values) {
       if (statValueList == null || statValueList.size() != values.length)
          this.statValueList = ListOfTallies.createWithTally(values.length);
       else
@@ -136,9 +138,8 @@ public class Replicator implements RandomIntegrator {
       statValueList.average(values);
    }
 
-   @Override public String toString() {
-      return "Replicator"
-         + " [replicates=" + nReplicates + "]"
-         + " [integrator=" + integrator + "]";
+   @Override
+   public String toString() {
+      return "Replicator" + " [replicates=" + nReplicates + "]" + " [integrator=" + integrator + "]";
    }
 }

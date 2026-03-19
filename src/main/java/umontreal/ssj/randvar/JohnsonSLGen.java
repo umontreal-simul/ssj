@@ -23,14 +23,16 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the <em>Johnson
+ * 
  * @f$S_L@f$</em> distribution.
  *
- * <div class="SSJ-bigskip"></div>
+ *                <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -39,30 +41,25 @@ public class JohnsonSLGen extends JohnsonSystemG {
    /**
     * Creates a JohnsonSL random variate generator.
     */
-   public JohnsonSLGen (RandomStream s, double gamma, double delta,
-                        double xi, double lambda) {
-      super (s, new JohnsonSLDist(gamma, delta, xi, lambda));
-      setParams (gamma, delta, xi, lambda);
+   public JohnsonSLGen(RandomStream s, double gamma, double delta, double xi, double lambda) {
+      super(s, new JohnsonSLDist(gamma, delta, xi, lambda));
+      setParams(gamma, delta, xi, lambda);
    }
 
    /**
-    * Creates a new generator for the JohnsonSL distribution `dist`, using
-    * stream `s`.
-    */
-   public JohnsonSLGen (RandomStream s, JohnsonSLDist dist) {
-      super (s, dist);
-      if (dist != null)
-         setParams (dist.getGamma(), dist.getDelta(), dist.getXi(),
-                    dist.getLambda());
-   }
-
-   /**
-    * Uses inversion to generate a new JohnsonSL variate, using stream
+    * Creates a new generator for the JohnsonSL distribution `dist`, using stream
     * `s`.
     */
-   public static double nextDouble (RandomStream s, double gamma,
-                                    double delta, double xi, double lambda) {
-      return JohnsonSLDist.inverseF (gamma, delta, xi, lambda,
-                                        s.nextDouble());
+   public JohnsonSLGen(RandomStream s, JohnsonSLDist dist) {
+      super(s, dist);
+      if (dist != null)
+         setParams(dist.getGamma(), dist.getDelta(), dist.getXi(), dist.getLambda());
+   }
+
+   /**
+    * Uses inversion to generate a new JohnsonSL variate, using stream `s`.
+    */
+   public static double nextDouble(RandomStream s, double gamma, double delta, double xi, double lambda) {
+      return JohnsonSLDist.inverseF(gamma, delta, xi, lambda, s.nextDouble());
    }
 }

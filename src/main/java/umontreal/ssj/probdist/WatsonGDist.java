@@ -23,31 +23,27 @@
  *
  */
 package umontreal.ssj.probdist;
+
 import umontreal.ssj.util.*;
 import umontreal.ssj.functions.MathFunction;
 
 /**
- * Extends the class  @ref ContinuousDistribution for the Watson @f$G@f$
+ * Extends the class @ref ContinuousDistribution for the Watson @f$G@f$
  * distribution (see @cite tDAR83a, @cite tWAT76a&thinsp;). Given a sample of
+ * 
  * @f$n@f$ independent uniforms @f$U_i@f$ over @f$[0,1]@f$, the @f$G@f$
- * statistic is defined by
+ *         statistic is defined by
  * @anchor REF_probdist_WatsonGDist_eq_WatsonG
- * @f{align}{
- *    G_n 
- *    & 
- *   =
- *    \sqrt{n} \max_{\Rule{0.0pt}{7.0pt}{0.0pt} 1\le j \le n} \left\{ j/n - U_{(j)} + \bar{U}_n - 1/2 \right\} \tag{WatsonG} 
- *    \\  & 
- *   =
- *    \sqrt{n}\left(D_n^+ + \bar{U}_n - 1/2\right), \nonumber
- * @f}
- * where the @f$U_{(j)}@f$ are the @f$U_i@f$ sorted in increasing order,
+ * @f{align}{ G_n & = \sqrt{n} \max_{\Rule{0.0pt}{7.0pt}{0.0pt} 1\le j \le n}
+ *            \left\{ j/n - U_{(j)} + \bar{U}_n - 1/2 \right\} \tag{WatsonG} \\
+ *            & = \sqrt{n}\left(D_n^+ + \bar{U}_n - 1/2\right), \nonumber
+ * @f} where the @f$U_{(j)}@f$ are the @f$U_i@f$ sorted in increasing order,
  * @f$\bar{U}_n@f$ is the average of the observations @f$U_i@f$, and
- * @f$D_n^+@f$ is the Kolmogorov-Smirnov+ statistic. The distribution
- * function (the cumulative probabilities) is defined as @f$F_n(x) = P[G_n
- * \le x]@f$.
+ * @f$D_n^+@f$ is the Kolmogorov-Smirnov+ statistic. The distribution function
+ *             (the cumulative probabilities) is defined as @f$F_n(x) = P[G_n
+ *             \le x]@f$.
  *
- * <div class="SSJ-bigskip"></div>
+ *             <div class="SSJ-bigskip"></div>
  *
  * @ingroup probdist_edf
  */
@@ -58,58 +54,56 @@ public class WatsonGDist extends ContinuousDistribution {
       protected int n;
       protected double u;
 
-      public Function (int n, double u) {
+      public Function(int n, double u) {
          this.n = n;
          this.u = u;
       }
 
-      public double evaluate (double x) {
-         return u - cdf(n,x);
+      public double evaluate(double x) {
+         return u - cdf(n, x);
       }
    }
 
    /**
     * Constructs a *Watson* distribution for a sample of size @f$n@f$.
     */
-   public WatsonGDist (int n) {
-      setN (n);
+   public WatsonGDist(int n) {
+      setN(n);
    }
 
-
-   public double density (double x) {
-      return density (n, x);
+   public double density(double x) {
+      return density(n, x);
    }
 
-   public double cdf (double x) {
-      return cdf (n, x);
+   public double cdf(double x) {
+      return cdf(n, x);
    }
 
-   public double barF (double x) {
-      return barF (n, x);
+   public double barF(double x) {
+      return barF(n, x);
    }
 
-   public double inverseF (double u) {
-      return inverseF (n, u);
+   public double inverseF(double u) {
+      return inverseF(n, u);
    }
 
-/**
- * Computes the density function for a *Watson* @f$G@f$ distribution with
- * parameter @f$n@f$.
- */
-public static double density (int n, double x) {
+   /**
+    * Computes the density function for a *Watson* @f$G@f$ distribution with
+    * parameter @f$n@f$.
+    */
+   public static double density(int n, double x) {
       final double MINARG = 0.15;
       final double MAXARG = 1.5;
 
       if (n < 2)
-        throw new IllegalArgumentException ("n < 2");
+         throw new IllegalArgumentException("n < 2");
 
       if (x <= MINARG || x >= XBIGM)
          return 0.0;
 
       final double Res;
       if (x > MAXARG)
-         Res = 20 * Math.exp (19.0 - 20.0*x) 
-            - 15.26 * Math.exp (13.34 - 15.26*x) / Math.sqrt ((double)n);
+         Res = 20 * Math.exp(19.0 - 20.0 * x) - 15.26 * Math.exp(13.34 - 15.26 * x) / Math.sqrt((double) n);
       else {
          final double EPS = 1.0 / 20.0;
          Res = (cdf(n, x + EPS) - cdf(n, x - EPS)) / (2.0 * EPS);
@@ -128,9 +122,9 @@ public static double density (int n, double x) {
    private static double CoWA[] = new double[143];
 
    static {
-   /*
-    * Initialization for watsonG
-    */
+      /*
+       * Initialization for watsonG
+       */
       int j;
       YWA[0] = 1.8121832847E-39;
       YWA[1] = 2.0503176304E-32;
@@ -556,24 +550,25 @@ public static double density (int n, double x) {
       CoWA[142] = 9.6E-6;
    }
 
-/**
- * Computes the Watson @f$G@f$ distribution function @f$F_n(x)@f$, with
- * parameter @f$n@f$. A cubic spline interpolation is used for the asymptotic
- * distribution when @f$n\to\infty@f$, and an empirical correction of order
- * @f$1/\sqrt{n}@f$, obtained empirically from @f$10^7@f$ simulation runs
- * with @f$n = 256@f$ is then added. The absolute error is estimated to be
- * less than 0.01, 0.005, 0.002, 0.0008, 0.0005, 0.0005, 0.0005 for @f$n =
- * 16@f$, 32, 64, 128, 256, 512, 1024, respectively.
- */
-public static double cdf (int n, double x) {
-     /*
-      * Approximation of the cumulative distribution function of the
-      * watsonG statistics by the cubic spline function.
-      *   Y[.]  - tabular value of the statistic;
-      *   M[.]  - tabular value of the first derivative;
-      */
+   /**
+    * Computes the Watson @f$G@f$ distribution function @f$F_n(x)@f$, with
+    * parameter @f$n@f$. A cubic spline interpolation is used for the asymptotic
+    * distribution when @f$n\to\infty@f$, and an empirical correction of order
+    * 
+    * @f$1/\sqrt{n}@f$, obtained empirically from @f$10^7@f$ simulation runs
+    *                   with @f$n = 256@f$ is then added. The absolute error is
+    *                   estimated to be less than 0.01, 0.005, 0.002, 0.0008,
+    *                   0.0005, 0.0005, 0.0005 for @f$n = 16@f$, 32, 64, 128, 256,
+    *                   512, 1024, respectively.
+    */
+   public static double cdf(int n, double x) {
+      /*
+       * Approximation of the cumulative distribution function of the watsonG
+       * statistics by the cubic spline function. Y[.] - tabular value of the
+       * statistic; M[.] - tabular value of the first derivative;
+       */
       if (n <= 1)
-        throw new IllegalArgumentException ("n < 2");
+         throw new IllegalArgumentException("n < 2");
 
       final double MINARG = 0.15;
       if (x <= MINARG)
@@ -584,10 +579,10 @@ public static double cdf (int n, double x) {
       double R, Res;
       final double MAXARG = 1.5;
       if (x > MAXARG) {
-         R = Math.exp (19.0 - 20.0*x);
+         R = Math.exp(19.0 - 20.0 * x);
          Res = 1.0 - R;
          // Empirical Correction in 1/sqrt (n)
-         R = Math.exp (13.34 - 15.26*x)/Math.sqrt ((double)n);
+         R = Math.exp(13.34 - 15.26 * x) / Math.sqrt((double) n);
          Res += R;
          // The correction in 1/sqrt (n) is not always precise
          if (Res >= 1.0)
@@ -605,20 +600,20 @@ public static double cdf (int n, double x) {
       double H;
 
       // Search of the correct slot in the interpolation table
-      i = (int)((x - MINTAB)/STEP + 1);
-      Ti = MINTAB + i*STEP;
+      i = (int) ((x - MINTAB) / STEP + 1);
+      Ti = MINTAB + i * STEP;
       Tj = Ti - STEP;
 
       // Approximation within the slot
       j = i - 1;
       H = x - Tj;
       R = Ti - x;
-      P = STEP*STEP/6.0;
-      Res = ((MWA[j]*R*R*R + MWA[i]*H*H*H)/6.0)/STEP;
-      Res += ((YWA[j] - MWA[j]*P)*R + (YWA[i] - MWA[i]*P)*H)/STEP;
+      P = STEP * STEP / 6.0;
+      Res = ((MWA[j] * R * R * R + MWA[i] * H * H * H) / 6.0) / STEP;
+      Res += ((YWA[j] - MWA[j] * P) * R + (YWA[i] - MWA[i] * P) * H) / STEP;
 
       // Empirical correction in 1/sqrt (n)
-      Res += (CoWA[i]*H + CoWA[j]*R)/(STEP*Math.sqrt ((double)n));
+      Res += (CoWA[i] * H + CoWA[j] * R) / (STEP * Math.sqrt((double) n));
 
       if (Res >= 1.0)
          return 1.0;
@@ -626,29 +621,30 @@ public static double cdf (int n, double x) {
    }
 
    /**
-    * Computes the complementary distribution function @f$\bar{F}_n(x)@f$
-    * with parameter @f$n@f$.
+    * Computes the complementary distribution function @f$\bar{F}_n(x)@f$ with
+    * parameter @f$n@f$.
     */
-   public static double barF (int n, double x) {
-      return 1.0 - cdf(n,x);
+   public static double barF(int n, double x) {
+      return 1.0 - cdf(n, x);
    }
 
    /**
     * Computes @f$x = F_n^{-1}(u)@f$, where @f$F_n@f$ is the *Watson*
+    * 
     * @f$G@f$ distribution with parameter @f$n@f$.
     */
-   public static double inverseF (int n, double u) {
+   public static double inverseF(int n, double u) {
       if (n <= 1)
-         throw new IllegalArgumentException ("n < 2");
+         throw new IllegalArgumentException("n < 2");
       if (u < 0.0 || u > 1.0)
-         throw new IllegalArgumentException ("u must be in [0,1]");
+         throw new IllegalArgumentException("u must be in [0,1]");
       if (u == 1.0)
          return Double.POSITIVE_INFINITY;
       if (u == 0.0)
          return 0.0;
 
-      Function f = new Function (n,u);
-      return RootFinder.brentDekker (0.0, 10.0, f, 1e-5);
+      Function f = new Function(n, u);
+      return RootFinder.brentDekker(0.0, 10.0, f, 1e-5);
    }
 
    /**
@@ -661,9 +657,9 @@ public static double cdf (int n, double x) {
    /**
     * Sets the parameter @f$n@f$ of this object.
     */
-   public void setN (int n) {
+   public void setN(int n) {
       if (n <= 1)
-         throw new IllegalArgumentException ("n < 2");
+         throw new IllegalArgumentException("n < 2");
       this.n = n;
       supportA = 0.0;
       supportB = 10.0;
@@ -672,16 +668,15 @@ public static double cdf (int n, double x) {
    /**
     * Return an array containing the parameter @f$n@f$ of this object.
     */
-   public double[] getParams () {
-      double[] retour = {n};
+   public double[] getParams() {
+      double[] retour = { n };
       return retour;
    }
 
    /**
-    * Returns a `String` containing information about the current
-    * distribution.
+    * Returns a `String` containing information about the current distribution.
     */
-   public String toString () {
+   public String toString() {
       return getClass().getSimpleName() + " : n = " + n;
    }
 

@@ -13,7 +13,7 @@ public class MeanVarExperiment {
    protected double variance;
    protected int nObservations;
    protected String statReport;
-   
+
    public MeanVarExperiment(String name, MonteCarloModelDouble model, RandomIntegrator integrator) {
       this.name = name;
       this.model = model;
@@ -39,23 +39,23 @@ public class MeanVarExperiment {
    public MonteCarloModelDouble getModel() {
       return model;
    }
-   
+
    public void setModel(MonteCarloModelDouble model) {
       this.model = model;
    }
-   
+
    public Integrator getIntegrator() {
       return integrator;
    }
-   
+
    public void setIntegrator(RandomIntegrator integrator) {
       this.integrator = integrator;
    }
-   
+
    public double getCPUSeconds() {
       return cpuSeconds;
    }
-   
+
    public double getSecondsPerSimulation() {
       return cpuSeconds / integrator.getTotalSimulations();
    }
@@ -67,7 +67,7 @@ public class MeanVarExperiment {
    public double getVariance() {
       return variance;
    }
-   
+
    /**
     * Returns the variance scaled with the number of function evaluations per
     * observation.
@@ -76,7 +76,7 @@ public class MeanVarExperiment {
    public double getScaledVariance() {
       return variance * integrator.getTotalSimulations() / nObservations;
    }
-   
+
    public void simulate() {
       simulate(new Tally(model.getClass().getSimpleName()));
    }
@@ -92,17 +92,15 @@ public class MeanVarExperiment {
       stat.setConfidenceIntervalStudent();
       statReport = stat.report(0.95, 4);
    }
-   
+
    public String report() {
-      return statReport
-         + String.format("Variance:     %9.4g\n", getVariance())
-         + String.format("Scaled Var.:  %9.4g\n", getScaledVariance())
-         + String.format("CPU time:     %9s\n", Chrono.format(cpuSeconds));
+      return statReport + String.format("Variance:     %9.4g\n", getVariance())
+            + String.format("Scaled Var.:  %9.4g\n", getScaledVariance())
+            + String.format("CPU time:     %9s\n", Chrono.format(cpuSeconds));
    }
-   
+
    public String toString() {
-      return "MeanVarExperiment"  + (name == null ? "" : " " + name) + ":\n" +
-            "  Model: " + model + "\n" +
-            "  Integrator: " + integrator;
+      return "MeanVarExperiment" + (name == null ? "" : " " + name) + ":\n" + "  Model: " + model + "\n"
+            + "  Integrator: " + integrator;
    }
 }

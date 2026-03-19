@@ -25,7 +25,7 @@
 package umontreal.ssj.util;
 
 /**
- * This exception is thrown by a  @ref ClassFinder when two or more fully
+ * This exception is thrown by a @ref ClassFinder when two or more fully
  * qualified class names can be associated with a simple class name.
  *
  * <div class="SSJ-bigskip"></div>
@@ -38,34 +38,36 @@ public class NameConflictException extends Exception {
    /**
     * Constructs a new name conflict exception.
     */
-   public NameConflictException() {}
-
-   /**
-    * Constructs a new name conflict exception with message `message`.
-    *  @param message      the error message.
-    */
-   public NameConflictException (String message) {
-      super (message);
+   public NameConflictException() {
    }
 
    /**
-    * Constructs a new name conflict exception with class finder `finder`,
-    * simple name `name`, and message `message`.
-    *  @param finder       the class finder in which the name conflict
-    *                      occurred.
-    *  @param name         the simple conflicting name.
-    *  @param message      the message describint the conflict.
+    * Constructs a new name conflict exception with message `message`.
+    * 
+    * @param message the error message.
     */
-   public NameConflictException (ClassFinder finder, String name,
-                                 String message) {
-      super (message);
+   public NameConflictException(String message) {
+      super(message);
+   }
+
+   /**
+    * Constructs a new name conflict exception with class finder `finder`, simple
+    * name `name`, and message `message`.
+    * 
+    * @param finder  the class finder in which the name conflict occurred.
+    * @param name    the simple conflicting name.
+    * @param message the message describint the conflict.
+    */
+   public NameConflictException(ClassFinder finder, String name, String message) {
+      super(message);
       this.finder = finder;
       this.name = name;
    }
 
    /**
     * Returns the class finder associated with this exception.
-    *  @return the associated class finder.
+    * 
+    * @return the associated class finder.
     */
    public ClassFinder getClassFinder() {
       return finder;
@@ -73,7 +75,8 @@ public class NameConflictException extends Exception {
 
    /**
     * Returns the simple name associated with this exception.
-    *  @return the associated simple name.
+    * 
+    * @return the associated simple name.
     */
    public String getName() {
       return name;

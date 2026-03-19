@@ -25,7 +25,7 @@
 package umontreal.ssj.probdist;
 
 /**
- * Extends the  @ref ExponentialDist class with a constructor accepting as
+ * Extends the @ref ExponentialDist class with a constructor accepting as
  * argument the mean @f$1/\lambda@f$ instead of the rate @f$\lambda@f$.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
@@ -36,18 +36,20 @@ public class ExponentialDistFromMean extends ExponentialDist {
 
    /**
     * Constructs a new exponential distribution with mean `mean`.
-    *  @param mean         the required mean.
+    * 
+    * @param mean the required mean.
     */
-   public ExponentialDistFromMean (double mean) {
-      super (1.0 / mean);
+   public ExponentialDistFromMean(double mean) {
+      super(1.0 / mean);
    }
 
    /**
-    * Calls  umontreal.ssj.probdist.ExponentialDist.setLambda(double) with
-    * argument `1/mean` to change the mean of this distribution.
-    *  @param mean         the new mean.
+    * Calls umontreal.ssj.probdist.ExponentialDist.setLambda(double) with argument
+    * `1/mean` to change the mean of this distribution.
+    * 
+    * @param mean the new mean.
     */
-   public void setMean (double mean) {
-      setLambda (1.0 / mean);
+   public void setMean(double mean) {
+      setLambda(1.0 / mean);
    }
 }

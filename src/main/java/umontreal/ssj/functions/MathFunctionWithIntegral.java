@@ -32,12 +32,13 @@ package umontreal.ssj.functions;
  */
 public interface MathFunctionWithIntegral extends MathFunction {
 
-/**
- * Computes (or estimates) the integral of the function over the interval
- * @f$[a, b]@f$.
- *  @param a            the starting point of the interval.
- *  @param b            the ending point of the interval.
- *  @return the value of the integral.
- */
-public double integral (double a, double b);
+   /**
+    * Computes (or estimates) the integral of the function over the interval @f$[a,
+    * b]@f$.
+    * 
+    * @param a the starting point of the interval.
+    * @param b the ending point of the interval.
+    * @return the value of the integral.
+    */
+   public double integral(double a, double b);
 }

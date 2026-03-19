@@ -23,12 +23,13 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.io.*;
 import java.net.URL;
 
 /**
- * Binary data reader. This class implements a module for importing data
- * written with  @ref BinaryDataWriter.
+ * Binary data reader. This class implements a module for importing data written
+ * with @ref BinaryDataWriter.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -36,9 +37,9 @@ public class BinaryDataReader extends AbstractDataReader {
    protected DataInputStream in;
 
    // only one of these will be used
-   protected String filename           = null;
-   protected URL url                   = null;
-   protected File file                 = null;
+   protected String filename = null;
+   protected URL url = null;
+   protected File file = null;
    protected boolean canReset = false;
 
    /**
@@ -53,7 +54,6 @@ public class BinaryDataReader extends AbstractDataReader {
 
       return readStringData();
    }
-
 
    /**
     * Reads string data.
@@ -92,7 +92,6 @@ public class BinaryDataReader extends AbstractDataReader {
       return a;
    }
 
-
    /**
     * Reads integer data.
     *
@@ -123,7 +122,6 @@ public class BinaryDataReader extends AbstractDataReader {
             a[i][j] = readIntData();
       return a;
    }
-
 
    /**
     * Reads float data.
@@ -156,7 +154,6 @@ public class BinaryDataReader extends AbstractDataReader {
       return a;
    }
 
-
    /**
     * Reads double data.
     *
@@ -188,18 +185,16 @@ public class BinaryDataReader extends AbstractDataReader {
       return a;
    }
 
-
    /**
     * Reads field data of arbitrary type.
     *
-    * @param typechar   type code character (see {@link BinaryDataWriter} constants)
-    * @param nDims   number of dimensions (0 for atomic data)
-    * @param dims    length of each dimension
+    * @param typechar type code character (see {@link BinaryDataWriter} constants)
+    * @param nDims    number of dimensions (0 for atomic data)
+    * @param dims     length of each dimension
     *
     * @return an instance of the data or {@code null} if data type is unknown
     */
-   protected Object readFieldData(byte typechar, int nDims, int dims[])
-         throws IOException {
+   protected Object readFieldData(byte typechar, int nDims, int dims[]) throws IOException {
 
       if (nDims < 0 || nDims > 2)
          throw new IOException("unsupported number of dimensions: " + nDims);
@@ -208,41 +203,41 @@ public class BinaryDataReader extends AbstractDataReader {
 
       switch (typechar) {
 
-         case BinaryDataWriter.TYPECHAR_STRING:
-            if (nDims == 0)
-               data = readStringData();
-            else if (nDims == 1)
-               data = readStringArrayData(dims[0]);
-            else if (nDims == 2)
-               data = readStringArray2DData(dims);
-            break;
+      case BinaryDataWriter.TYPECHAR_STRING:
+         if (nDims == 0)
+            data = readStringData();
+         else if (nDims == 1)
+            data = readStringArrayData(dims[0]);
+         else if (nDims == 2)
+            data = readStringArray2DData(dims);
+         break;
 
-         case BinaryDataWriter.TYPECHAR_INTEGER:
-            if (nDims == 0)
-               data = readIntData();
-            else if (nDims == 1)
-               data = readIntArrayData(dims[0]);
-            else if (nDims == 2)
-               data = readIntArray2DData(dims);
-            break;
+      case BinaryDataWriter.TYPECHAR_INTEGER:
+         if (nDims == 0)
+            data = readIntData();
+         else if (nDims == 1)
+            data = readIntArrayData(dims[0]);
+         else if (nDims == 2)
+            data = readIntArray2DData(dims);
+         break;
 
-         case BinaryDataWriter.TYPECHAR_FLOAT:
-            if (nDims == 0)
-               data = readFloatData();
-            else if (nDims == 1)
-               data = readFloatArrayData(dims[0]);
-            else if (nDims == 2)
-               data = readFloatArray2DData(dims);
-            break;
+      case BinaryDataWriter.TYPECHAR_FLOAT:
+         if (nDims == 0)
+            data = readFloatData();
+         else if (nDims == 1)
+            data = readFloatArrayData(dims[0]);
+         else if (nDims == 2)
+            data = readFloatArray2DData(dims);
+         break;
 
-         case BinaryDataWriter.TYPECHAR_DOUBLE:
-            if (nDims == 0)
-               data = readDoubleData();
-            else if (nDims == 1)
-               data = readDoubleArrayData(dims[0]);
-            else if (nDims == 2)
-               data = readDoubleArray2DData(dims);
-            break;
+      case BinaryDataWriter.TYPECHAR_DOUBLE:
+         if (nDims == 0)
+            data = readDoubleData();
+         else if (nDims == 1)
+            data = readDoubleArrayData(dims[0]);
+         else if (nDims == 2)
+            data = readDoubleArray2DData(dims);
+         break;
       }
 
       return data;
@@ -250,9 +245,10 @@ public class BinaryDataReader extends AbstractDataReader {
 
    /**
     * Opens the file with the specified name for reading.
-    *  @param filename     name of the file to read the data from
+    * 
+    * @param filename name of the file to read the data from
     */
-   public BinaryDataReader (String filename) throws IOException {
+   public BinaryDataReader(String filename) throws IOException {
       this.filename = filename;
       canReset = true;
       reset();
@@ -260,9 +256,10 @@ public class BinaryDataReader extends AbstractDataReader {
 
    /**
     * Opens the file at the specified url for reading.
-    *  @param url          url of the file to read the data from
+    * 
+    * @param url url of the file to read the data from
     */
-   public BinaryDataReader (URL url) throws IOException {
+   public BinaryDataReader(URL url) throws IOException {
       this.url = url;
       canReset = true;
       reset();
@@ -270,32 +267,34 @@ public class BinaryDataReader extends AbstractDataReader {
 
    /**
     * Opens the specified file for reading.
-    *  @param file         file to read the data from
+    * 
+    * @param file file to read the data from
     */
-   public BinaryDataReader (File file) throws IOException {
+   public BinaryDataReader(File file) throws IOException {
       this.file = file;
       canReset = true;
       reset();
    }
 
    /**
-    * Opens the specified input stream for reading. When using this
-    * constructor, the method  #readField might will not be able to read a
-    * field that is before the current reading position.
-    *  @param inputStream  input stream to read the data from
+    * Opens the specified input stream for reading. When using this constructor,
+    * the method #readField might will not be able to read a field that is before
+    * the current reading position.
+    * 
+    * @param inputStream input stream to read the data from
     */
-   public BinaryDataReader (InputStream inputStream) throws IOException {
+   public BinaryDataReader(InputStream inputStream) throws IOException {
       this.in = new DataInputStream(inputStream);
    }
 
    /**
-    * @name Reading fields of unknown type
-    * @{
+    * @name Reading fields of unknown type @{
     */
 
    /**
     * Reads the next available field.
-    *  @return a newly created DataField instance or `null` if not found
+    * 
+    * @return a newly created DataField instance or `null` if not found
     */
    public DataField readNextField() throws IOException {
 
@@ -309,15 +308,15 @@ public class BinaryDataReader extends AbstractDataReader {
       for (int i = 0; i < nDims; i++)
          dims[i] = in.readInt();
 
-
       return new DataField(label, readFieldData(typechar, nDims, dims));
    }
 
    /**
     * Reads the first field labeled as `label`.
-    *  @return a newly created DataField instance or `null` if not found
+    * 
+    * @return a newly created DataField instance or `null` if not found
     */
-   public DataField readField (String label) throws IOException {
+   public DataField readField(String label) throws IOException {
 
       reset();
 
@@ -348,17 +347,17 @@ public class BinaryDataReader extends AbstractDataReader {
          int skipSize = 0;
          switch (typechar) {
 
-            case BinaryDataWriter.TYPECHAR_INTEGER:
-               skipSize = Integer.SIZE / 8;
-               break;
+         case BinaryDataWriter.TYPECHAR_INTEGER:
+            skipSize = Integer.SIZE / 8;
+            break;
 
-            case BinaryDataWriter.TYPECHAR_FLOAT:
-               skipSize = Float.SIZE / 8;
-               break;
+         case BinaryDataWriter.TYPECHAR_FLOAT:
+            skipSize = Float.SIZE / 8;
+            break;
 
-            case BinaryDataWriter.TYPECHAR_DOUBLE:
-               skipSize = Double.SIZE / 8;
-               break;
+         case BinaryDataWriter.TYPECHAR_DOUBLE:
+            skipSize = Double.SIZE / 8;
+            break;
          }
 
          if (nDims > 0)
@@ -377,13 +376,12 @@ public class BinaryDataReader extends AbstractDataReader {
     */
 
    /**
-    * @name Other methods
-    * @{
+    * @name Other methods @{
     */
 
    /**
-    * Reopens the file (does not work with the constructor that takes an
-    * input stream).
+    * Reopens the file (does not work with the constructor that takes an input
+    * stream).
     */
    public void reset() throws IOException {
       if (!canReset)

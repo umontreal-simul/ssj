@@ -27,8 +27,8 @@ package umontreal.ssj.randvar;
 /**
  * Implements methods for generating random variates from the *lognormal*
  * distribution using an arbitrary normal random variate generator. The
- * (non-static) `nextDouble` method calls the `nextDouble` method of the
- * normal generator and takes the exponential of the result.
+ * (non-static) `nextDouble` method calls the `nextDouble` method of the normal
+ * generator and takes the exponential of the result.
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -39,18 +39,17 @@ public class LognormalSpecialGen extends RandomVariateGen {
    NormalGen myGen;
 
    /**
-    * Create a lognormal random variate generator using the normal
-    * generator `g` and with the same parameters.
+    * Create a lognormal random variate generator using the normal generator `g`
+    * and with the same parameters.
     */
-   public LognormalSpecialGen (NormalGen g) {
+   public LognormalSpecialGen(NormalGen g) {
       // Necessary to compile, but we do not want to use stream and dist
-      super (g.stream, null);
+      super(g.stream, null);
       stream = null;
       myGen = g;
    }
- 
 
    public double nextDouble() {
-      return Math.exp (myGen.nextDouble());
+      return Math.exp(myGen.nextDouble());
    }
 }

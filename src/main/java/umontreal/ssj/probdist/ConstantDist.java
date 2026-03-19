@@ -25,34 +25,17 @@
 package umontreal.ssj.probdist;
 
 /**
- * Represents a *constant* discrete distribution taking a single real value
- * with probability 1. Its mass function is
- * @anchor REF_probdist_ConstantDist_eq_fcons
- * @f[
- *   p(x) = \left\{\begin{array}{ll}
- *    1, 
- *    & 
- *    \qquad\mbox{for } x = c,
- *    \\ 
- *    0, 
- *    & 
- *    \qquad\mbox{elsewhere. } 
- *   \end{array}\right. \tag{fcons}
- * @f]
- * Its distribution function is
- * @anchor REF_probdist_ConstantDist_eq_cdfcons
- * @f[
- *   F(x) = \left\{\begin{array}{ll}
- *    0, 
- *    & 
- *    \qquad\mbox{ for } x < c
- *    \\ 
- *    1, 
- *    & 
- *    \qquad\mbox{ for } x \ge c. 
- *   \end{array}\right. \tag{cdfcons}
- * @f]
- * <div class="SSJ-bigskip"></div>
+ * Represents a *constant* discrete distribution taking a single real value with
+ * probability 1. Its mass function is
+ * 
+ * @anchor REF_probdist_ConstantDist_eq_fcons @f[ p(x) =
+ *         \left\{\begin{array}{ll} 1, & \qquad\mbox{for } x = c, \\ 0, &
+ *         \qquad\mbox{elsewhere. } \end{array}\right. \tag{fcons} @f] Its
+ *         distribution function is
+ * @anchor REF_probdist_ConstantDist_eq_cdfcons @f[ F(x) =
+ *         \left\{\begin{array}{ll} 0, & \qquad\mbox{ for } x < c \\ 1, &
+ *         \qquad\mbox{ for } x \ge c. \end{array}\right. \tag{cdfcons} @f]
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup probdist_discretereal
  */
@@ -62,14 +45,15 @@ public class ConstantDist extends DiscreteDistribution {
    /**
     * Constructs a new constant distribution with probability 1 at `c`.
     */
-   public ConstantDist (double c) {
-      super (new double[] { c }, new double[] { 1.0 }, 1);
+   public ConstantDist(double c) {
+      super(new double[] { c }, new double[] { 1.0 }, 1);
       this.c = c;
    }
 
    /**
     * Returns the mean @f$E[X] = c@f$.
-    *  @return @f$c@f$
+    * 
+    * @return @f$c@f$
     */
    @Override
    public double getMean() {
@@ -78,16 +62,18 @@ public class ConstantDist extends DiscreteDistribution {
 
    /**
     * Returns the variance @f$\mbox{Var}[X] = 0@f$.
-    *  @return 0
+    * 
+    * @return 0
     */
    @Override
-   public double getVariance()  {
+   public double getVariance() {
       return 0;
    }
 
    /**
     * Returns the standard deviation = 0.
-    *  @return 0
+    * 
+    * @return 0
     */
    @Override
    public double getStandardDeviation() {
@@ -96,10 +82,11 @@ public class ConstantDist extends DiscreteDistribution {
 
    /**
     * Returns the inverse distribution function @f$c = F^{-1}(u)@f$.
-    *  @return @f$c@f$
+    * 
+    * @return @f$c@f$
     */
    @Override
-   public double inverseF (double u) {
+   public double inverseF(double u) {
       return c;
    }
 

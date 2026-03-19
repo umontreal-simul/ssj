@@ -23,11 +23,12 @@
  *
  */
 package umontreal.ssj.util.io;
+
 import java.lang.reflect.Array;
 
 /**
- * This class represents a data field from a file read by an instance of a
- * class implementing  @ref DataReader.
+ * This class represents a data field from a file read by an instance of a class
+ * implementing @ref DataReader.
  *
  * <div class="SSJ-bigskip"></div>
  */
@@ -38,31 +39,30 @@ public class DataField {
 
    /**
     * Constructor. Creates a field named `label` of value `data`.
-    *  @param label        name of the field
-    *  @param data         value of the field
+    * 
+    * @param label name of the field
+    * @param data  value of the field
     */
-   public DataField (String label, Object data) {
+   public DataField(String label, Object data) {
       this(label, data, -1);
    }
 
    /**
-    * Constructor. Creates a field named `label` of value `data`.
-    * `effectiveLength` is the number of significant elements contained in
-    * `data` if it is an array.
-    *  @param label        name of the field
-    *  @param data         value of the field
-    *  @param effectiveLength number of significant elements contained in
-    *                         `data`
+    * Constructor. Creates a field named `label` of value `data`. `effectiveLength`
+    * is the number of significant elements contained in `data` if it is an array.
+    * 
+    * @param label           name of the field
+    * @param data            value of the field
+    * @param effectiveLength number of significant elements contained in `data`
     */
-   public DataField (String label, Object data, int effectiveLength) {
+   public DataField(String label, Object data, int effectiveLength) {
       this.label = label;
       this.data = data;
       this.effectiveLength = effectiveLength;
    }
 
    /**
-    * @name Information on the field
-    * @{
+    * @name Information on the field @{
     */
 
    /**
@@ -101,12 +101,14 @@ public class DataField {
    }
 
    /**
-    * Returns the length of the array contained by the field, or `-1` if
-    * it is not an array.
+    * Returns the length of the array contained by the field, or `-1` if it is not
+    * an array.
     */
    public int getArrayLength() {
-      if (!isArray()) return -1;
-      if (effectiveLength < 0) return Array.getLength(data);
+      if (!isArray())
+         return -1;
+      if (effectiveLength < 0)
+         return Array.getLength(data);
       return effectiveLength;
    }
 
@@ -143,24 +145,22 @@ public class DataField {
     */
 
    /**
-    * @name Obtaining the value as atomic data
-    * @{
+    * @name Obtaining the value as atomic data @{
     */
 
    /**
-    * Returns the value as `String`, or `null` if it is not of type
-    * `String`. See  #isString.
+    * Returns the value as `String`, or `null` if it is not of type `String`. See
+    * #isString.
     */
    public String asString() {
-      return (data instanceof String) ? (String)data : null;
+      return (data instanceof String) ? (String) data : null;
    }
 
    /**
-    * Returns the value as `int` or `0` if it is not of type `int` See
-    * #isInt.
+    * Returns the value as `int` or `0` if it is not of type `int` See #isInt.
     */
    public int asInt() {
-      return (data instanceof Integer) ? ((Integer)data).intValue() : 0;
+      return (data instanceof Integer) ? ((Integer) data).intValue() : 0;
    }
 
    /**
@@ -168,15 +168,15 @@ public class DataField {
     * #isFloat.
     */
    public float asFloat() {
-      return (data instanceof Float) ? ((Float)data).floatValue() : 0;
+      return (data instanceof Float) ? ((Float) data).floatValue() : 0;
    }
 
    /**
-    * Returns the value as `double` or `0` if it is not of type `double`
-    * See  #isDouble.
+    * Returns the value as `double` or `0` if it is not of type `double` See
+    * #isDouble.
     */
    public double asDouble() {
-      return (data instanceof Double) ? ((Double)data).doubleValue() : 0;
+      return (data instanceof Double) ? ((Double) data).doubleValue() : 0;
    }
 
    /**
@@ -184,40 +184,39 @@ public class DataField {
     */
 
    /**
-    * @name Obtaining the value as a one-dimensional array
-    * @{
+    * @name Obtaining the value as a one-dimensional array @{
     */
 
    /**
-    * Returns the value as one-dimensional `String` array or `null` if it
-    * is not of type `String[]`.
+    * Returns the value as one-dimensional `String` array or `null` if it is not of
+    * type `String[]`.
     */
    public String[] asStringArray() {
-      return (data instanceof String[]) ? (String[])data : null;
+      return (data instanceof String[]) ? (String[]) data : null;
    }
 
    /**
-    * Returns the value as one-dimensional `int` array or `null` if it is
-    * not of type `int[]`.
+    * Returns the value as one-dimensional `int` array or `null` if it is not of
+    * type `int[]`.
     */
    public int[] asIntArray() {
-      return (data instanceof int[]) ? (int[])data : null;
+      return (data instanceof int[]) ? (int[]) data : null;
    }
 
    /**
-    * Returns the value as one-dimensional `float` array or `null` if it
-    * is not of type `float[]`.
+    * Returns the value as one-dimensional `float` array or `null` if it is not of
+    * type `float[]`.
     */
    public float[] asFloatArray() {
-      return (data instanceof float[]) ? (float[])data : null;
+      return (data instanceof float[]) ? (float[]) data : null;
    }
 
    /**
-    * Returns the value as one-dimensional `double` array or `null` if it
-    * is not of type `double[]`.
+    * Returns the value as one-dimensional `double` array or `null` if it is not of
+    * type `double[]`.
     */
    public double[] asDoubleArray() {
-      return (data instanceof double[]) ? (double[])data : null;
+      return (data instanceof double[]) ? (double[]) data : null;
    }
 
    /**
@@ -225,40 +224,39 @@ public class DataField {
     */
 
    /**
-    * @name Obtaining the value as a two-dimensional array
-    * @{
+    * @name Obtaining the value as a two-dimensional array @{
     */
 
    /**
-    * Returns the value as two-dimensional `String` array or `null` if it
-    * is not of type `String[][]`.
+    * Returns the value as two-dimensional `String` array or `null` if it is not of
+    * type `String[][]`.
     */
    public String[][] asStringArray2D() {
-      return (data instanceof String[][]) ? (String[][])data : null;
+      return (data instanceof String[][]) ? (String[][]) data : null;
    }
 
    /**
-    * Returns the value as two-dimensional `int` array or `null` if it is
-    * not of type `int[][]`.
+    * Returns the value as two-dimensional `int` array or `null` if it is not of
+    * type `int[][]`.
     */
    public int[][] asIntArray2D() {
-      return (data instanceof int[][]) ? (int[][])data : null;
+      return (data instanceof int[][]) ? (int[][]) data : null;
    }
 
    /**
-    * Returns the value as two-dimensional `float` array or `null` if it
-    * is not of type `float[][]`.
+    * Returns the value as two-dimensional `float` array or `null` if it is not of
+    * type `float[][]`.
     */
    public float[][] asFloatArray2D() {
-      return (data instanceof float[][]) ? (float[][])data : null;
+      return (data instanceof float[][]) ? (float[][]) data : null;
    }
 
    /**
-    * Returns the value as two-dimensional `double` array or `null` if it
-    * is not of type `double[][]`.
+    * Returns the value as two-dimensional `double` array or `null` if it is not of
+    * type `double[][]`.
     */
    public double[][] asDoubleArray2D() {
-      return (data instanceof double[][]) ? (double[][])data : null;
+      return (data instanceof double[][]) ? (double[][]) data : null;
    }
 
    /**
@@ -266,8 +264,7 @@ public class DataField {
     */
 
    /**
-    * @name Obtaining the value as an `Object`
-    * @{
+    * @name Obtaining the value as an `Object` @{
     */
 
    /**

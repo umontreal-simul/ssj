@@ -23,12 +23,13 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.probdist.BernoulliDist;
 import umontreal.ssj.rng.RandomStream;
 
 /**
  * This class implements random variate generators for the *Bernoulli*
- * distribution (see class  @ref umontreal.ssj.probdist.BernoulliDist ).
+ * distribution (see class @ref umontreal.ssj.probdist.BernoulliDist ).
  *
  * <div class="SSJ-bigskip"></div>
  *
@@ -38,30 +39,30 @@ public class BernoulliGen extends RandomVariateGenInt {
    protected double p;
 
    /**
-    * Creates a Bernoulli random variate generator with parameter @f$p@f$,
-    * using stream `s`.
+    * Creates a Bernoulli random variate generator with parameter @f$p@f$, using
+    * stream `s`.
     */
-   public BernoulliGen (RandomStream s, double p) {
-      super (s, new BernoulliDist (p));
-      setParams (p);
+   public BernoulliGen(RandomStream s, double p) {
+      super(s, new BernoulliDist(p));
+      setParams(p);
    }
 
    /**
-    * Creates a random variate generator for the *Bernoulli* distribution
-    * `dist` and the random stream `s`.
+    * Creates a random variate generator for the *Bernoulli* distribution `dist`
+    * and the random stream `s`.
     */
-   public BernoulliGen (RandomStream s, BernoulliDist dist) {
-      super (s, dist);
+   public BernoulliGen(RandomStream s, BernoulliDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getP());
+         setParams(dist.getP());
    }
 
    /**
-    * Generates a new integer from the *Bernoulli* distribution with
-    * parameter @f$p = @f$&nbsp;`p`, using the given stream `s`.
+    * Generates a new integer from the *Bernoulli* distribution with parameter @f$p
+    * = @f$&nbsp;`p`, using the given stream `s`.
     */
-   public static int nextInt (RandomStream s, double p) {
-      return BernoulliDist.inverseF (p, s.nextDouble());
+   public static int nextInt(RandomStream s, double p) {
+      return BernoulliDist.inverseF(p, s.nextDouble());
    }
 
    /**
@@ -74,9 +75,9 @@ public class BernoulliGen extends RandomVariateGenInt {
    /**
     * Sets the parameter @f$p@f$ of this object.
     */
-   protected void setParams (double p) {
+   protected void setParams(double p) {
       if (p < 0.0 || p > 1.0)
-         throw new IllegalArgumentException ("p not in range [0, 1]");
+         throw new IllegalArgumentException("p not in range [0, 1]");
       this.p = p;
    }
 }

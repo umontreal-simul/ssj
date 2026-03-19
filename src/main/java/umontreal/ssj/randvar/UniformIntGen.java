@@ -23,52 +23,52 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements a random variate generator for the *uniform*
- * distribution over integers, over the interval @f$[i,j]@f$. Its mass
- * function is
- * @anchor REF_randvar_UniformIntGen_eq_fmassuniformint
- * @f[
- *   p(x) = \frac{1}{j - i + 1} \qquad\mbox{ for } x = i, i + 1, …, j \tag{fmassuniformint}
- * @f]
- * and 0 elsewhere.
+ * distribution over integers, over the interval @f$[i,j]@f$. Its mass function
+ * is
+ * 
+ * @anchor REF_randvar_UniformIntGen_eq_fmassuniformint @f[ p(x) = \frac{1}{j -
+ *         i + 1} \qquad\mbox{ for } x = i, i + 1, …, j
+ *         \tag{fmassuniformint} @f] and 0 elsewhere.
  *
- * <div class="SSJ-bigskip"></div>
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_discrete
  */
 public class UniformIntGen extends RandomVariateGenInt {
-   protected int left;     // the left limit of the interval
-   protected int right;    // the right limit of the interval
+   protected int left; // the left limit of the interval
+   protected int right; // the right limit of the interval
 
    /**
-    * Creates a uniform random variate generator over the integers in the
-    * closed interval @f$[i, j]@f$, using stream `s`.
+    * Creates a uniform random variate generator over the integers in the closed
+    * interval @f$[i, j]@f$, using stream `s`.
     */
-   public UniformIntGen (RandomStream s, int i, int j) {
-      super (s, new UniformIntDist (i, j));
-      setParams (i, j);
+   public UniformIntGen(RandomStream s, int i, int j) {
+      super(s, new UniformIntDist(i, j));
+      setParams(i, j);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public UniformIntGen (RandomStream s, UniformIntDist dist) {
-      super (s, dist);
+   public UniformIntGen(RandomStream s, UniformIntDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getI(), dist.getJ());
+         setParams(dist.getI(), dist.getJ());
    }
 
    /**
     * Generates a new *uniform* random variate over the interval
+    * 
     * @f$[i,j]@f$, using stream `s`, by inversion.
     */
-   public static int nextInt (RandomStream s, int i, int j) {
-      return UniformIntDist.inverseF (i, j, s.nextDouble());
+   public static int nextInt(RandomStream s, int i, int j) {
+      return UniformIntDist.inverseF(i, j, s.nextDouble());
    }
 
    /**
@@ -84,9 +84,10 @@ public class UniformIntGen extends RandomVariateGenInt {
    public int getJ() {
       return right;
    }
-   protected  void setParams (int i, int j) {
+
+   protected void setParams(int i, int j) {
       if (j < i)
-        throw new IllegalArgumentException ("j < i");
+         throw new IllegalArgumentException("j < i");
       left = i;
       right = j;
    }

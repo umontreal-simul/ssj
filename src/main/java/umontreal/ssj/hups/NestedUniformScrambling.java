@@ -22,22 +22,25 @@
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
 package umontreal.ssj.hups;
+
 import umontreal.ssj.rng.RandomStream;
 import java.lang.IllegalArgumentException;
 
 /**
- * This @ref PointSetRandomization class provides the nested uniform scrambling (NUS) randomization proposed 
- * by Owen (\cite vOWE95a, \cite vOWE03a) for digital nets.
- * Since the scrambled points are all stored explicitly, it can only be applied
- * to a @ref CachedPointSet that contains a @ref DigitalNetBase2.
- * The proper way to use it is to construct a @ref CachedPointSet `p` that contains 
- * the digital net, and call @ref NestedUniformScrambling.randomize(p) to randomize.
+ * This @ref PointSetRandomization class provides the nested uniform scrambling
+ * (NUS) randomization proposed by Owen (\cite vOWE95a, \cite vOWE03a) for
+ * digital nets. Since the scrambled points are all stored explicitly, it can
+ * only be applied to a @ref CachedPointSet.  
  * The actual implementation is in @ref DigitalNetBase2.nestedUniformScramble().
+ * For this reason, it only works if the CachedPointSet contains a @ref
+ * DigitalNetBase2. The proper way to use it is to construct a @ref
+ * CachedPointSet `p` that contains the digital net, and call @ref
+ * NestedUniformScrambling.randomize(p) to randomize. 
  *
  * Note that calling CachedPointSet.randomize() with an instance of
  * NestedUniformScrambling as its arguments will not work, because
- * CachedPointSet.randomize() calls randomize() on its reference point set (the digital net)
- * whereas NUS should modify the cached values instead.
+ * CachedPointSet.randomize() calls randomize() on its reference point set (the
+ * digital net) whereas NUS should modify the cached values instead.
  */
 public class NestedUniformScrambling implements PointSetRandomization {
 
@@ -52,34 +55,35 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Same as @ref NestedUniformScrambling (stream, 0). 
-    *  @param stream       stream to use for the randomization
+    * Same as @ref NestedUniformScrambling (stream, 0).
+    * 
+    * @param stream stream to use for the randomization
     */
-   public NestedUniformScrambling (RandomStream stream) {
+   public NestedUniformScrambling(RandomStream stream) {
       this(stream, 0);
    }
 
    /**
-    * Create a @ref NestedUniformScrambling instance, using `stream` as the source of
-    * randomness, and randomizing only the first `numBits` output bits of
-    * the underlying @ref DigitalNetBase2.
+    * Create a @ref NestedUniformScrambling instance, using `stream` as the source
+    * of randomness, and randomizing only the first `numBits` output bits of the
+    * underlying @ref DigitalNetBase2.
     *
-    *  @param stream       stream to use in the randomization
-    *  @param numBits      number of output bits to scramble (it can be smaller
-    *                      than, equal to or larger than the number of output
-    *                      bits in the DigitalNetBase2).  If this parameter is zero, 
-    *                      `outDigits` bits will be scrambled (up to 31 bits).
+    * @param stream  stream to use in the randomization
+    * @param numBits number of output bits to scramble (it can be smaller than,
+    *                equal to or larger than the number of output bits in the
+    *                DigitalNetBase2). If this parameter is zero, `outDigits` bits
+    *                will be scrambled (up to 31 bits).
     */
-   public NestedUniformScrambling (RandomStream stream, int numBits) {
-       this.stream = stream;
-       this.numBits = numBits;
+   public NestedUniformScrambling(RandomStream stream, int numBits) {
+      this.stream = stream;
+      this.numBits = numBits;
    }
 
    public RandomStream getStream() {
       return stream;
    }
 
-   public void setStream (RandomStream stream) {
+   public void setStream(RandomStream stream) {
       this.stream = stream;
    }
 
@@ -91,12 +95,14 @@ public class NestedUniformScrambling implements PointSetRandomization {
    }
 
    /**
-    * Scrambles the points of the @ref DigitalNetBase2 contained in the @ref CachedPointSet `p`
-    * and caches the scrambled points in `p`.  
-    * This `p` must be a @ref CachedPointSet of a @ref DigitalNetBase2.
-    *  @param p            Point set to randomize
+    * Scrambles the points of the @ref DigitalNetBase2 contained in the @ref
+    * CachedPointSet `p` and caches the scrambled points in `p`. This `p` must be
+    * a @ref CachedPointSet of a @ref DigitalNetBase2, or a `ContainerPointSet` that
+    * contains such a `CachedPointSet`.
+    * 
+    * @param p Point set to randomize
     */
-   public void randomize (PointSet p) {
+   public void randomize(PointSet p) {
       if (p instanceof CachedPointSet) {
          CachedPointSet cp = (CachedPointSet) p;
          if (cp.getParentPointSet() instanceof DigitalNetBase2) {
@@ -104,14 +110,17 @@ public class NestedUniformScrambling implements PointSetRandomization {
             return;
          }
       }
-      throw new IllegalArgumentException("NestedUniformScrambling" +
-         " can only randomize a CachedPointSet of a DigitalNetBase2");
+      else if (p instanceof ContainerPointSet)
+         randomize(((ContainerPointSet) p).getOriginalPointSet()); 
+      else
+         throw new IllegalArgumentException(
+            "NestedUniformScrambling" + " can only randomize a CachedPointSet of a DigitalNetBase2");
    }
    
    /**
     * Returns a descriptor of this object.
     */
-   public String toString () {
-		return "Nested uniform scrambling";
-	}
+   public String toString() {
+      return "Nested uniform scrambling";
+   }
 }

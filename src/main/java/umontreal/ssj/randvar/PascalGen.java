@@ -23,48 +23,47 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
- * Implements Pascal random variate generators, which is a special case of
- * the negative binomial generator with parameter @f$\gamma@f$ equal to a
- * positive integer. See  @ref NegativeBinomialGen for a description.
+ * Implements Pascal random variate generators, which is a special case of the
+ * negative binomial generator with parameter @f$\gamma@f$ equal to a positive
+ * integer. See @ref NegativeBinomialGen for a description.
  *
  * <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_discrete
  */
 public class PascalGen extends RandomVariateGenInt {
-   protected int    n;
+   protected int n;
    protected double p;
 
    /**
     * Creates a Pascal random variate generator with parameters @f$n@f$
     * and @f$p@f$, using stream `s`.
     */
-   public PascalGen (RandomStream s, int n, double p) {
-      super (s, new PascalDist (n, p));
-      setParams (n, p);
+   public PascalGen(RandomStream s, int n, double p) {
+      super(s, new PascalDist(n, p));
+      setParams(n, p);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public PascalGen (RandomStream s, PascalDist dist) {
-      super (s, dist);
+   public PascalGen(RandomStream s, PascalDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getN1(), dist.getP());
+         setParams(dist.getN1(), dist.getP());
    }
 
    /**
-    * Generates a new variate from the *Pascal* distribution, with
-    * parameters @f$n = @f$&nbsp;`n` and @f$p = @f$&nbsp;`p`, using stream
-    * `s`.
+    * Generates a new variate from the *Pascal* distribution, with parameters @f$n
+    * = @f$&nbsp;`n` and @f$p = @f$&nbsp;`p`, using stream `s`.
     */
-   public static int nextInt (RandomStream s, int n, double p) {
-      return PascalDist.inverseF (n, p, s.nextDouble());
+   public static int nextInt(RandomStream s, int n, double p) {
+      return PascalDist.inverseF(n, p, s.nextDouble());
    }
 
    /**
@@ -84,11 +83,11 @@ public class PascalGen extends RandomVariateGenInt {
    /**
     * Sets the parameter @f$n@f$ and @f$p@f$ of this object.
     */
-   protected void setParams (int n, double p) {
+   protected void setParams(int n, double p) {
       if (p < 0.0 || p > 1.0)
-         throw new IllegalArgumentException ("p not in [0, 1]");
+         throw new IllegalArgumentException("p not in [0, 1]");
       if (n <= 0)
-         throw new IllegalArgumentException ("n <= 0");
+         throw new IllegalArgumentException("n <= 0");
       this.p = p;
       this.n = n;
    }

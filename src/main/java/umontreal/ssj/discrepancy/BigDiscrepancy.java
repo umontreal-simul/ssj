@@ -23,28 +23,29 @@
    <a href="http://www.gnu.org/licenses">GPL licence site</a>.
  */
 package umontreal.ssj.discrepancy;
-   import umontreal.ssj.hups.PointSet;
-   import java.math.*;
+
+import umontreal.ssj.hups.PointSet;
+import java.math.*;
 
 /**
- * This *abstract* class is the base class of all discrepancy classes
- * programmed with floating-point numbers with multi-precision. For @f$n@f$
- * large, computing the discrepancy suffers from subtractive cancellation and
- * loses all precision if one uses `double` numbers. Using multi-precision
- * numbers allow us to compute the discrepancy for larger @f$n@f$, but the
- * computation is very slow.
+ * This *abstract* class is the base class of all discrepancy classes programmed
+ * with floating-point numbers with multi-precision. For @f$n@f$ large,
+ * computing the discrepancy suffers from subtractive cancellation and loses all
+ * precision if one uses `double` numbers. Using multi-precision numbers allow
+ * us to compute the discrepancy for larger @f$n@f$, but the computation is very
+ * slow.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public abstract class BigDiscrepancy extends Discrepancy {
 
-   protected BigDecimal[] C1Big;    // functions of gamma[i]
-   protected BigDecimal[] C2Big;    // functions of gamma[i]
-   protected BigDecimal[] C3Big;    // functions of gamma[i]
-   protected BigDecimal[] UBig;     // i/n
+   protected BigDecimal[] C1Big; // functions of gamma[i]
+   protected BigDecimal[] C2Big; // functions of gamma[i]
+   protected BigDecimal[] C3Big; // functions of gamma[i]
+   protected BigDecimal[] UBig; // i/n
    protected BigDecimal[][] FactorBig;
 
-   protected void reserveCBig (int s) {
+   protected void reserveCBig(int s) {
       // Reserve memory for gamma factors
       C1Big = new BigDecimal[s];
       C2Big = new BigDecimal[s];
@@ -57,8 +58,7 @@ public abstract class BigDiscrepancy extends Discrepancy {
       }
    }
 
-
-   protected void reserveFactorBig (int n, int s) {
+   protected void reserveFactorBig(int n, int s) {
       // Reserve memory for factors
       FactorBig = new BigDecimal[n][s];
       for (int i = 0; i < n; i++) {
@@ -68,11 +68,10 @@ public abstract class BigDiscrepancy extends Discrepancy {
       }
    }
 
-
-   protected void setUBig (int n) {
+   protected void setUBig(int n) {
       // Precompute all U[i] = i/n, with i = 0, 1, 2, ..., n-1
       UBig = new BigDecimal[n];
-      BigDecimal Ninv = new BigDecimal(1);     // = 1/n
+      BigDecimal Ninv = new BigDecimal(1); // = 1/n
       Ninv = Ninv.divide(new BigDecimal(n), MathContext.DECIMAL128);
 
       for (int i = 0; i < n; i++) {
@@ -82,44 +81,46 @@ public abstract class BigDiscrepancy extends Discrepancy {
    }
 
    /**
-    * Constructor with the @f$n@f$ points `points[i]` in @f$s@f$
-    * dimensions. `points[i][j]` is the @f$j@f$-th coordinate of point
+    * Constructor with the @f$n@f$ points `points[i]` in @f$s@f$ dimensions.
+    * `points[i][j]` is the @f$j@f$-th coordinate of point
+    * 
     * @f$i@f$. Both @f$i@f$ and @f$j@f$ start at 0.
     */
-   public BigDiscrepancy (double[][] points, int n, int s) {
+   public BigDiscrepancy(double[][] points, int n, int s) {
       super(points, n, s);
    }
 
    /**
-    * Constructor with the @f$n@f$ points `points[i]` in @f$s@f$
-    * dimensions with weight factors `gamma`. `points[i][j]` is the
-    * @f$j@f$-th coordinate of point @f$i@f$. Both @f$i@f$ and @f$j@f$
-    * start at 0.
+    * Constructor with the @f$n@f$ points `points[i]` in @f$s@f$ dimensions with
+    * weight factors `gamma`. `points[i][j]` is the
+    * 
+    * @f$j@f$-th coordinate of point @f$i@f$. Both @f$i@f$ and @f$j@f$ start at 0.
     */
-   public BigDiscrepancy (double[][] points, int n, int s, double[] gamma) {
+   public BigDiscrepancy(double[][] points, int n, int s, double[] gamma) {
       super(points, n, s, gamma);
    }
 
    /**
     * The number of points is @f$n@f$, the dimension @f$s@f$, and the
-    * @f$s@f$ weight factors are <tt>gamma[</tt>@f$j@f$<tt>]</tt>, @f$j =
-    * 0, 1, …, (s-1)@f$. The @f$n@f$ points will be chosen later.
+    * 
+    * @f$s@f$ weight factors are <tt>gamma[</tt>@f$j@f$<tt>]</tt>, @f$j = 0, 1,
+    *         …, (s-1)@f$. The @f$n@f$ points will be chosen later.
     */
-   public BigDiscrepancy (int n, int s, double[] gamma) {
+   public BigDiscrepancy(int n, int s, double[] gamma) {
       super(n, s, gamma);
    }
 
    /**
-    * Constructor with the point set `set`. All the points are copied in
-    * an internal array.
+    * Constructor with the point set `set`. All the points are copied in an
+    * internal array.
     */
-   public BigDiscrepancy (PointSet set) {
+   public BigDiscrepancy(PointSet set) {
       super(set);
    }
 
    /**
-    * Empty constructor. The points and parameters *must* be defined
-    * before calling methods of this or derived classes.
+    * Empty constructor. The points and parameters *must* be defined before calling
+    * methods of this or derived classes.
     */
    public BigDiscrepancy() {
    }

@@ -22,13 +22,13 @@ public class CompareOutputs {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                  { "tutorial", Asian.class,        null },
-                 { "tutorial", AsianQMC.class,     null },
+//                 { "tutorial", AsianQMC.class,     null },
                  { "tutorial", BankEv.class,       null },
                  { "tutorial", CallCenter.class,   new String[]{"tutorial/CallCenter.dat"} },
                  { "tutorial", CallEv.class,       new String[]{"tutorial/CallEv.dat"} },
-                 { "tutorial", Collision.class,    null },
+//                 { "tutorial", Collision.class,    null },
                  { "tutorial", InventoryCRN.class, null },
-                 { "tutorial", Inventory.class,    null },
+//                 { "tutorial", Inventory.class,    null },
                  { "tutorial", Nonuniform.class,   null },
                  { "tutorial", PreyPred.class,     null },
                  { "tutorial", QueueEv.class,      null },

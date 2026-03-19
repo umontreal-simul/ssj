@@ -23,18 +23,20 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *inverse Gaussian*
  * distribution with location parameter @f$\mu> 0@f$ and scale parameter
+ * 
  * @f$\lambda> 0@f$. The density function of this distribution is
- * @anchor REF_randvar_InverseGaussianGen_eq_fInverseGaussian
- * @f[
- *   f(x) = \sqrt{\frac{\lambda}{2\pi x^3}}\; e^{{-\lambda(x - \mu)^2}/{(2\mu^2x)}} \qquad\mbox{for } x > 0. \tag{fInverseGaussian}
- * @f]
- * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ * @anchor REF_randvar_InverseGaussianGen_eq_fInverseGaussian @f[ f(x) =
+ *         \sqrt{\frac{\lambda}{2\pi x^3}}\; e^{{-\lambda(x -
+ *         \mu)^2}/{(2\mu^2x)}} \qquad\mbox{for } x > 0.
+ *         \tag{fInverseGaussian} @f]
+ *         <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -44,32 +46,28 @@ public class InverseGaussianGen extends RandomVariateGen {
 
    /**
     * Creates an *inverse Gaussian* random variate generator with
-    * parameters @f$\mu= @f$ `mu` and @f$\lambda= @f$ `lambda`, using
-    * stream `s`.
+    * parameters @f$\mu= @f$ `mu` and @f$\lambda= @f$ `lambda`, using stream `s`.
     */
-   public InverseGaussianGen (RandomStream s, double mu, double lambda) {
-      super (s, new InverseGaussianDist(mu, lambda));
-      setParams (mu, lambda);
+   public InverseGaussianGen(RandomStream s, double mu, double lambda) {
+      super(s, new InverseGaussianDist(mu, lambda));
+      setParams(mu, lambda);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public InverseGaussianGen (RandomStream s, InverseGaussianDist dist) {
-      super (s, dist);
+   public InverseGaussianGen(RandomStream s, InverseGaussianDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getMu(), dist.getLambda());
+         setParams(dist.getMu(), dist.getLambda());
    }
 
    /**
-    * Generates a variate from the inverse gaussian distribution with
-    * location parameter @f$\mu> 0@f$ and scale parameter @f$\lambda>
-    * 0@f$.
+    * Generates a variate from the inverse gaussian distribution with location
+    * parameter @f$\mu> 0@f$ and scale parameter @f$\lambda> 0@f$.
     */
-   public static double nextDouble (RandomStream s,
-                                    double mu, double lambda) {
-      return InverseGaussianDist.inverseF (mu, lambda, s.nextDouble());
+   public static double nextDouble(RandomStream s, double mu, double lambda) {
+      return InverseGaussianDist.inverseF(mu, lambda, s.nextDouble());
    }
 
    /**
@@ -89,11 +87,11 @@ public class InverseGaussianGen extends RandomVariateGen {
    /**
     * Sets the parameters @f$\mu@f$ and @f$\lambda@f$ of this object.
     */
-   protected void setParams (double mu, double lambda) {
+   protected void setParams(double mu, double lambda) {
       if (lambda <= 0.0)
-         throw new IllegalArgumentException ("lambda <= 0");
+         throw new IllegalArgumentException("lambda <= 0");
       if (mu <= 0.0)
-         throw new IllegalArgumentException ("mu <= 0");
+         throw new IllegalArgumentException("mu <= 0");
       this.mu = mu;
       this.lambda = lambda;
    }

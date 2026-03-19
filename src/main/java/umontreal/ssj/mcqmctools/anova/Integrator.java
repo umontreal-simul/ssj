@@ -14,8 +14,8 @@ public interface Integrator {
    public int getNumPoints();
 
    /**
-    * Returns the total number of times the model is simulated per call to an integrate()
-    * method.
+    * Returns the total number of times the model is simulated per call to an
+    * integrate() method.
     *
     */
    public int getTotalSimulations();
@@ -26,13 +26,13 @@ public interface Integrator {
     * The output values are added to the statistical collector \c statValue.
     *
     */
-   public void integrate (MonteCarloModelDouble model, Tally statValue);
+   public void integrate(MonteCarloModelDouble model, Tally statValue);
 
    /**
     * Shorthand to integrate without having to pass a Tally object.
     *
     */
-   public double integrate (MonteCarloModelDouble model);
+   public double integrate(MonteCarloModelDouble model);
 
    /**
     * Integrates a model by means of simulation.
@@ -40,11 +40,11 @@ public interface Integrator {
     * The output values are added to the statistical collector \c statValue.
     *
     */
-   public void integrate (MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> stat);
+   public void integrate(MonteCarloModel<double[]> model, ListOfTallies<? extends Tally> stat);
 
    /**
     * Shorthand to integrate without having to pass a ListOfTallies object.
     *
     */
-   public void integrate (MonteCarloModel<double[]> model, double[] values);
+   public void integrate(MonteCarloModel<double[]> model, double[] values);
 }

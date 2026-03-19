@@ -23,37 +23,36 @@
  *
  */
 package umontreal.ssj.stochprocess;
+
 import umontreal.ssj.rng.*;
 
 /**
- * Same as  @ref VarianceGammaProcessDiff, but the two inner
+ * Same as @ref VarianceGammaProcessDiff, but the two inner
+ * 
  * @ref GammaProcess ’es are of the type PCABridge. Also,
- * `generatePath(double[] uniform01)` distributes the lowest coordinates
- * uniforms to the inner  @ref GammaProcessPCABridge according to their
- * eigenvalues.
+ *      `generatePath(double[] uniform01)` distributes the lowest coordinates
+ *      uniforms to the inner @ref GammaProcessPCABridge according to their
+ *      eigenvalues.
  *
- * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
-public class VarianceGammaProcessDiffPCABridge extends
-                                               VarianceGammaProcessDiffPCA {
+public class VarianceGammaProcessDiffPCABridge extends VarianceGammaProcessDiffPCA {
 
    /**
-    * Constructs a new  @ref VarianceGammaProcessDiffPCABridge with
+    * Constructs a new @ref VarianceGammaProcessDiffPCABridge with
     * parameters @f$\theta= \mathtt{theta}@f$, @f$\sigma=
-    * \mathtt{sigma}@f$, @f$\nu= \mathtt{nu}@f$ and initial value
-    * @f$S(t_0) = \mathtt{s0}@f$. There is only one
-    * @ref umontreal.ssj.rng.RandomStream here which is used for the two
-    * inner  @ref GammaProcessPCABridge ’s. The other parameters are set
-    * as in  @ref VarianceGammaProcessDiff.
+    * \mathtt{sigma}@f$, @f$\nu= \mathtt{nu}@f$ and initial value @f$S(t_0) =
+    * \mathtt{s0}@f$. There is only one
+    * 
+    * @ref umontreal.ssj.rng.RandomStream here which is used for the two inner @ref
+    *      GammaProcessPCABridge ’s. The other parameters are set as in @ref
+    *      VarianceGammaProcessDiff.
     */
-   public VarianceGammaProcessDiffPCABridge (double s0, double theta,
-                                             double sigma, double nu,
-                                             RandomStream stream) {
-     super(s0, theta, sigma, nu,
-	  new GammaProcessPCABridge (0.0, 1.0, 1.0, stream),
-	  new GammaProcessPCABridge (0.0, 1.0, 1.0, stream));
-    // Params mu, nu of the 2 gamma processes are redefined in init()
-    // which will be called after a call to 'setObservTimes'
-}
+   public VarianceGammaProcessDiffPCABridge(double s0, double theta, double sigma, double nu, RandomStream stream) {
+      super(s0, theta, sigma, nu, new GammaProcessPCABridge(0.0, 1.0, 1.0, stream),
+            new GammaProcessPCABridge(0.0, 1.0, 1.0, stream));
+      // Params mu, nu of the 2 gamma processes are redefined in init()
+      // which will be called after a call to 'setObservTimes'
+   }
 
 }

@@ -27,19 +27,11 @@ package umontreal.ssj.randvar;
 /**
  * This class implements a random variate generator that returns a constant
  * value. Its mass function is
- * @anchor REF_randvar_ConstantGen_eq_randcons
- * @f[
- *   p(x) = \left\{\begin{array}{ll}
- *    1, 
- *    & 
- *    \qquad\mbox{for } x = c,
- *    \\ 
- *    0, 
- *    & 
- *    \qquad\mbox{elsewhere. } 
- *   \end{array}\right. \tag{randcons}
- * @f]
- * <div class="SSJ-bigskip"></div>
+ * 
+ * @anchor REF_randvar_ConstantGen_eq_randcons @f[ p(x) =
+ *         \left\{\begin{array}{ll} 1, & \qquad\mbox{for } x = c, \\ 0, &
+ *         \qquad\mbox{elsewhere. } \end{array}\right. \tag{randcons} @f]
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -49,7 +41,7 @@ public class ConstantGen extends RandomVariateGen {
    /**
     * Constructs a new constant generator returning the given value `val`.
     */
-   public ConstantGen (double val) {
+   public ConstantGen(double val) {
       this.val = val;
    }
 
@@ -59,7 +51,7 @@ public class ConstantGen extends RandomVariateGen {
    }
 
    @Override
-   public void nextArrayOfDouble (double[] v, int start, int n) {
+   public void nextArrayOfDouble(double[] v, int start, int n) {
       for (int i = 0; i < n; i++)
          v[start + i] = val;
    }

@@ -32,10 +32,11 @@ package umontreal.ssj.functions;
  */
 public interface MathFunctionWithFirstDerivative extends MathFunction {
 
-/**
- * Computes (or estimates) the first derivative of the function at point `x`.
- *  @param x            the point to evaluate the derivative to.
- *  @return the value of the derivative.
- */
-public double derivative (double x);
+   /**
+    * Computes (or estimates) the first derivative of the function at point `x`.
+    * 
+    * @param x the point to evaluate the derivative to.
+    * @return the value of the derivative.
+    */
+   public double derivative(double x);
 }

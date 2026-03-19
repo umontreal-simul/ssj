@@ -1,12 +1,12 @@
 package charts;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.randvar.*;
 import umontreal.ssj.charts.*;
 import java.util.Arrays;
 import java.awt.Color;
 
-public class EmpiricalChartTest
-{
+public class EmpiricalChartTest {
    private static double[] getPoints1() {
       RandomVariateGen gen = new UniformGen(new LFSR113());
       final int N = 10;
@@ -39,7 +39,7 @@ public class EmpiricalChartTest
       collec.setMarksType(0, "square*");
       collec.setColor(0, Color.MAGENTA);
 
-      chart.enableGrid(0.1, 0.1);            // Enables grid
+      chart.enableGrid(0.1, 0.1); // Enables grid
       chart.toLatexFile("EmpiricalChartTest.tex", 12, 8);
    }
 }

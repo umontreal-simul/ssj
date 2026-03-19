@@ -23,28 +23,22 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *inverse gamma*
  * distribution with shape parameter @f$\alpha> 0@f$ and scale parameter
+ * 
  * @f$\beta> 0@f$. The density function of this distribution is
- * @anchor REF_randvar_InverseGammaGen_eq_finvgam
- * @f[
- *   f(x) = \left\{\begin{array}{ll}
- *    \displaystyle\frac{\beta^{\alpha}}{ \Gamma(\alpha)} \frac{ e^{-\beta/ x}}{ x^{\alpha+ 1}} 
- *    & 
- *    \quad\mbox{for } x > 0 
- *    \\ 
- *    0 
- *    & 
- *    \quad\mbox{otherwise,} 
- *   \end{array} \right. \tag{finvgam}
- * @f]
- * where @f$\Gamma@f$ is the gamma function.
+ * @anchor REF_randvar_InverseGammaGen_eq_finvgam @f[ f(x) =
+ *         \left\{\begin{array}{ll} \displaystyle\frac{\beta^{\alpha}}{
+ *         \Gamma(\alpha)} \frac{ e^{-\beta/ x}}{ x^{\alpha+ 1}} &
+ *         \quad\mbox{for } x > 0 \\ 0 & \quad\mbox{otherwise,} \end{array}
+ *         \right. \tag{finvgam} @f] where @f$\Gamma@f$ is the gamma function.
  *
- * <div class="SSJ-bigskip"></div>
+ *         <div class="SSJ-bigskip"></div>
  *
  * @ingroup randvar_continuous
  */
@@ -54,27 +48,28 @@ public class InverseGammaGen extends RandomVariateGen {
 
    /**
     * Creates an inverse gamma random variate generator with parameters
+    * 
     * @f$\alpha=@f$ `alpha` and @f$\beta=@f$ `beta`, using stream `s`.
     */
-   public InverseGammaGen (RandomStream s, double alpha, double beta) {
-      super (s, new InverseGammaDist(alpha, beta));
+   public InverseGammaGen(RandomStream s, double alpha, double beta) {
+      super(s, new InverseGammaDist(alpha, beta));
       setParams(alpha, beta);
    }
 
    /**
     * Creates an inverse gamma random variate generator with parameters
+    * 
     * @f$\alpha=@f$ `alpha` and @f$\beta= 1@f$, using stream `s`.
     */
-   public InverseGammaGen (RandomStream s, double alpha) {
-      this (s, alpha, 1.0);
+   public InverseGammaGen(RandomStream s, double alpha) {
+      this(s, alpha, 1.0);
    }
 
    /**
-    * Creates a new generator for the distribution `dist`, using stream
-    * `s`.
+    * Creates a new generator for the distribution `dist`, using stream `s`.
     */
-   public InverseGammaGen (RandomStream s, InverseGammaDist dist) {
-      super (s, dist);
+   public InverseGammaGen(RandomStream s, InverseGammaDist dist) {
+      super(s, dist);
       if (dist != null)
          setParams(dist.getAlpha(), dist.getBeta());
    }
@@ -83,9 +78,8 @@ public class InverseGammaGen extends RandomVariateGen {
     * Generates a variate from the inverse gamma distribution with shape
     * parameter @f$\alpha> 0@f$ and scale parameter @f$\beta> 0@f$.
     */
-   public static double nextDouble (RandomStream s,
-                                    double alpha, double beta) {
-      return InverseGammaDist.inverseF (alpha, beta, s.nextDouble());
+   public static double nextDouble(RandomStream s, double alpha, double beta) {
+      return InverseGammaDist.inverseF(alpha, beta, s.nextDouble());
    }
 
    /**
@@ -102,12 +96,11 @@ public class InverseGammaGen extends RandomVariateGen {
       return beta;
    }
 
-
-   protected void setParams (double alpha, double beta) {
+   protected void setParams(double alpha, double beta) {
       if (alpha <= 0.0)
-         throw new IllegalArgumentException ("alpha <= 0");
+         throw new IllegalArgumentException("alpha <= 0");
       if (beta <= 0.0)
-         throw new IllegalArgumentException ("beta <= 0");
+         throw new IllegalArgumentException("beta <= 0");
       this.alpha = alpha;
       this.beta = beta;
    }

@@ -14,16 +14,16 @@ import umontreal.ssj.mcqmctools.*;
 public class RQMCSampler implements RandomSampler {
 
    protected RQMCPointSet points;
-   
-   public RQMCSampler (RQMCPointSet points, RandomStream stream) {
+
+   public RQMCSampler(RQMCPointSet points, RandomStream stream) {
       this.points = points;
       setStream(stream);
    }
 
-   public RQMCSampler (RQMCPointSet points) {
+   public RQMCSampler(RQMCPointSet points) {
       this.points = points;
    }
-   
+
    /**
     * Returns the internal RQMC point set.
     *
@@ -31,14 +31,14 @@ public class RQMCSampler implements RandomSampler {
    public RQMCPointSet getRQMCPointSet() {
       return points;
    }
-   
+
    /** @copydoc RandomSampler::getStream() */
    public RandomStream getStream() {
       return points.getRandomization().getStream();
    }
 
    /** @copydoc RandomSampler::setStream(RandomStream) */
-   public void setStream (RandomStream stream) {
+   public void setStream(RandomStream stream) {
       points.getRandomization().setStream(stream);
    }
 
@@ -52,8 +52,11 @@ public class RQMCSampler implements RandomSampler {
       return points.getPointSet().getNumPoints();
    }
 
-   /** @copydoc Sampler::simulate(MonteCarloModel<? extends E>, ObservationCollector<E>) */
-   public <E> void simulateRuns (MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
+   /**
+    * @copydoc Sampler::simulate(MonteCarloModel<? extends E>,
+    *          ObservationCollector<E>)
+    */
+   public <E> void simulateRuns(MonteCarloModel<? extends E> model, ObservationCollector<E> collector) {
       randomize();
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
          model.simulate(it);
@@ -61,30 +64,35 @@ public class RQMCSampler implements RandomSampler {
       }
    }
 
-   /** @copydoc Sampler::simulate(MonteCarloModelDouble, ObservationCollector<Double>) */
-   public void simulateRuns (MonteCarloModelDouble model, Tally collector) {
+   /**
+    * @copydoc Sampler::simulate(MonteCarloModelDouble,
+    *          ObservationCollector<Double>)
+    */
+   public void simulateRuns(MonteCarloModelDouble model, Tally collector) {
       randomize();
       for (PointSetIterator it = points.iterator(); it.hasNextPoint(); it.resetToNextPoint()) {
-          model.simulate(it);
-          collector.add(model.getPerformance());
-       }
+         model.simulate(it);
+         collector.add(model.getPerformance());
+      }
    }
 
-   @Override public String toString() {
-      return "RQMC Sampler [points=" + points.getPointSet().getNumPoints() + "]"
-         + " [dimension=" + points.getPointSet().getDimension() + "]"
-         + " [pointset=" + points.getPointSet().getClass().getSimpleName() + "]"
-         + " [randomization=" + points.getRandomization().getClass().getSimpleName() + "]";
+   @Override
+   public String toString() {
+      return "RQMC Sampler [points=" + points.getPointSet().getNumPoints() + "]" + " [dimension="
+            + points.getPointSet().getDimension() + "]" + " [pointset="
+            + points.getPointSet().getClass().getSimpleName() + "]" + " [randomization="
+            + points.getRandomization().getClass().getSimpleName() + "]";
    }
 
    /**
-    * Randomizes the integrator by randomizing the internal point set.
-    * If the randomization stream is a PointSetIterator, advance to the next point in the stream.
+    * Randomizes the integrator by randomizing the internal point set. If the
+    * randomization stream is a PointSetIterator, advance to the next point in the
+    * stream.
     *
     */
    protected void randomize() {
       points.randomize();
       if (getStream() instanceof PointSetIterator)
-         ((PointSetIterator)getStream()).resetToNextPoint();
+         ((PointSetIterator) getStream()).resetToNextPoint();
    }
 }

@@ -23,18 +23,19 @@
  *
  */
 package umontreal.ssj.hups;
+
 import umontreal.ssj.rng.RandomStream;
 
 /**
- * This interface is for a *randomization* that can be used to 
- * randomize a  @ref umontreal.ssj.hups.PointSet.
- * One can implement method  #randomize(PointSet) in any way. This method
- * must use an internal  @ref umontreal.ssj.rng.RandomStream. This stream can
- * be set in the constructor, but the methods  #getStream and
- * #setStream(RandomStream) must also be implemented.
+ * This interface is for a *randomization* that can be used to randomize a @ref
+ * umontreal.ssj.hups.PointSet. One can implement method #randomize(PointSet) in
+ * any way. This method must use an internal @ref
+ * umontreal.ssj.rng.RandomStream. This stream can be set in the constructor,
+ * but the methods #getStream and #setStream(RandomStream) must also be
+ * implemented.
  *
- * The method  #randomize(PointSet) can be implemented using combinations of
- * the randomization methods from the point set such as
+ * The method #randomize(PointSet) can be implemented using combinations of the
+ * randomization methods from the point set such as
  * umontreal.ssj.hups.PointSet.addRandomShift,
  * umontreal.ssj.hups.DigitalNet.leftMatrixScramble,
  * umontreal.ssj.hups.DigitalNet.stripedMatrixScramble, etc.
@@ -45,19 +46,22 @@ public interface PointSetRandomization {
 
    /**
     * This method must randomize `p`.
-    *  @param p            Point set to randomize
+    * 
+    * @param p Point set to randomize
     */
-   public void randomize (PointSet p);
+   public void randomize(PointSet p);
 
    /**
-    * Sets the internal  @ref umontreal.ssj.rng.RandomStream to `stream`.
-    *  @param stream       stream to use in the randomization
+    * Sets the internal @ref umontreal.ssj.rng.RandomStream to `stream`.
+    * 
+    * @param stream stream to use in the randomization
     */
-   public void setStream (RandomStream stream);
+   public void setStream(RandomStream stream);
 
    /**
-    * Returns the internal  @ref umontreal.ssj.rng.RandomStream.
-    *  @return stream used in the randomization
+    * Returns the internal @ref umontreal.ssj.rng.RandomStream.
+    * 
+    * @return stream used in the randomization
     */
    public RandomStream getStream();
 

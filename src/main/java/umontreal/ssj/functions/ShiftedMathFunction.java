@@ -32,54 +32,54 @@ package umontreal.ssj.functions;
  */
 public class ShiftedMathFunction implements MathFunction
 
-,
-      MathFunctionWithFirstDerivative, MathFunctionWithDerivative,
-      MathFunctionWithIntegral {
+      , MathFunctionWithFirstDerivative, MathFunctionWithDerivative, MathFunctionWithIntegral {
    MathFunction func;
    double delta;
 
-/**
- * Constructs a new function shifting the function `func` by a shift `delta`.
- *  @param func         the function.
- *  @param delta        the shift.
- */
-public ShiftedMathFunction (MathFunction func, double delta) {
+   /**
+    * Constructs a new function shifting the function `func` by a shift `delta`.
+    * 
+    * @param func  the function.
+    * @param delta the shift.
+    */
+   public ShiftedMathFunction(MathFunction func, double delta) {
       if (func == null)
-         throw new NullPointerException ();
+         throw new NullPointerException();
       this.func = func;
       this.delta = delta;
    }
 
    /**
     * Returns the function @f$f(x)@f$.
-    *  @return the function.
+    * 
+    * @return the function.
     */
-   public MathFunction getFunction () {
+   public MathFunction getFunction() {
       return func;
    }
 
    /**
     * Returns the shift @f$\delta@f$ = `delta`.
-    *  @return the shift.
+    * 
+    * @return the shift.
     */
-   public double getDelta () {
+   public double getDelta() {
       return delta;
    }
 
-
-   public double evaluate (double x) {
-      return func.evaluate (x) - delta;
+   public double evaluate(double x) {
+      return func.evaluate(x) - delta;
    }
 
-   public double derivative (double x) {
-      return MathFunctionUtil.derivative (func, x);
+   public double derivative(double x) {
+      return MathFunctionUtil.derivative(func, x);
    }
 
-   public double derivative (double x, int n) {
-      return MathFunctionUtil.derivative (func, x, n);
+   public double derivative(double x, int n) {
+      return MathFunctionUtil.derivative(func, x, n);
    }
 
-   public double integral (double a, double b) {
-      return MathFunctionUtil.integral (func, a, b) - (b - a)*getDelta();
+   public double integral(double a, double b) {
+      return MathFunctionUtil.integral(func, a, b) - (b - a) * getDelta();
    }
 }

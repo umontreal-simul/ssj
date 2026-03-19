@@ -3,11 +3,10 @@
 *Stochastic Simulation in Java*
 
 SSJ is a Java library for stochastic simulation, developed under the supervision of
-[Pierre L'Ecuyer](http://www-labs.iro.umontreal.ca/~lecuyer/)
+[Pierre L'Ecuyer](https://www-labs.iro.umontreal.ca/~lecuyer/)
 in the 
-[Simulation and Optimization Laboratory](http://simul.iro.umontreal.ca/),
 [Department of Computer Science and Operations
-Research](http://en.diro.umontreal.ca) at UniversitÃ© de MontrÃ©al.
+Research](https://en.diro.umontreal.ca) at Université de Montréal.
 It provides facilities for:
 
 - random number and random variate generation
@@ -20,16 +19,15 @@ It provides facilities for:
 - and much more.
 
 Starting from version 3.1.0, SSJ is released under the
-[Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0),
+[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0),
 and the package names have changed from `umontreal.iro.lecuyer.*` to `umontreal.ssj.*`.
 
 
 ## Documentation and tutorial
 
-The [SSJ User's Guide](http://umontreal-simul.github.io/ssj/docs/master)
-includes:
-- the [API documentation](http://umontreal-simul.github.io/ssj/docs/master/namespaces.html); and
-- [a tutorial with documented examples](http://umontreal-simul.github.io/ssj/docs/master/examples.html).
+The SSJ User's Guide includes:
+- the [API documentation](https://umontreal-simul.github.io/ssj/docs/master/index.html); and
+- [a tutorial with documented examples](https://umontreal-simul.github.io/ssj/docs/master/Tutorial.html).
 
 
 ## Installation
@@ -41,13 +39,13 @@ scratch](#compiling-the-source-code).
 
 SSJ is compatible with Java SE8 and later versions of Java. 
 It requires the Java Development Kit (JDK), whose latest version is available at
-[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 with installation instructions. It must be installed *before* installing SSJ.
 
 It is also useful to install an integrated development environments (IDE) such as 
-[Eclipse](http://www.eclipse.org/),
-[NetBeans](http://netbeans.org/),
-[IntelliJ IDEA](http://www.jetbrains.com/idea/), for example, 
+[Eclipse](https://www.eclipse.org/),
+[NetBeans](https://netbeans.org/),
+[IntelliJ IDEA](https://www.jetbrains.com/idea/), for example, 
 to write, compile, and run your Java code.
 
 ### Using Maven
@@ -58,8 +56,8 @@ SSJ packages are hosted
 [on Bintray](https://bintray.com/umontreal-simul/maven/ssj/_latestVersion)
 and on
 [Maven Central](https://repo1.maven.org/maven2/ca/umontreal/iro/simul/ssj/).
-If your Java project uses [Maven](http://maven.apache.org/) or
-[Gradle](http://gradle.org/), **all you need to do is add
+If your Java project uses [Maven](https://maven.apache.org/) or
+[Gradle](https://gradle.org/), **all you need to do is add
 `ca.umontreal.iro.simul:ssj:+` to the Maven dependencies of your project**,
 then you can start working on your SSJ-based project right-away.
 
@@ -73,7 +71,7 @@ After creating your project, add SSJ to its Maven dependencies
 
 - **Group Id**: `ca.umontreal.iro.simul`;
 - **Artifact Id**: `ssj`;
-- **Version**: any [valid release number for SSJ](http://github.com/umontreal-simul/ssj/releases),
+- **Version**: any [valid release number for SSJ](https://github.com/umontreal-simul/ssj/releases),
   e.g., `3.3.2`,
 
 and you are ready to go!
@@ -107,21 +105,19 @@ All the dependencies will appear in the `pom.xml` file of your project.  You can
 
 For those who want to download the binaries and install them manually, 
 we provide below some general instructions for configuring a project to use SSJ.
-Less experienced users can find
-[more detailed instructions on the SSJ page](http://simul.iro.umontreal.ca/ssj/indexe.html).
 
 
 #### Download a binary archive
 
 Pre-compiled binaries are available as archives on the
-[releases page](http://github.com/umontreal-simul/ssj/releases).
+[releases page](https://github.com/umontreal-simul/ssj/releases).
 They include:
 
-- the main SSJ [JAR file](http://en.wikipedia.org/wiki/JAR_%28file_format%29)
+- the main SSJ [JAR file](https://en.wikipedia.org/wiki/JAR_%28file_format%29)
   (under `ssj/lib`);
 - JAR files for the Java libraries used by SSJ (the dependencies)
   (under `ssj/lib`);
-- dependencies and the [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface)
+- dependencies and the [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface)
   shared libraries (under the `ssj/lib` directory);
 - the user's guide (under `ssj/doc/html`); and
 - example source files (under `ssj/doc/examples`).
@@ -179,7 +175,7 @@ project, by right-clicking on *Libraries* under your project tree in the
 [using Maven](#using-maven) or a [binary release](#binary-releases).**
 But in case you want to change the source for some reason, here is how you can recompile.
 
-The SSJ library uses [Gradle](http://gradle.org/) as its build system.
+The SSJ library uses [Gradle](https://gradle.org/) as its build system.
 You do not need to download it, since the Gradle wrapper executable program is
 provided with the source code as the `gradlew` file for Linux and MacOS
 platforms, and as `gradlew.bat` for Windows platforms.
@@ -214,15 +210,18 @@ The generated binary archives can be found under `build/distributions`.
 
 **(Optional)**
 
-The SSJ library uses [Doxygen](http://www.stack.nl/~dimitri/doxygen/) as its
+The SSJ library uses [Doxygen](https://www.stack.nl/~dimitri/doxygen/) as its
 documentation system.
-If Doxygen is available on your system, you can tell Gradle to build the
-documentation by adding the following line in `gradle.properties`:
+If Doxygen is available on your system, you can build the documentation simply 
+with the command `doxygen` from the main `ssj` directory. 
+The `html` documentation will be built in the directory `ssj/build/docs/html`.
+
+You can also tell Gradle to build the documentation by adding line
 
     buildDocs
 
-Then, run Gradle [as explained above](#using-gradle).
-You may want (or need) to change some Doxygen environments variables in the file Doxyfile.
+in `gradle.properties`, then run Gradle [as explained above](#using-gradle).
+Before that, you may want (or need) to change some Doxygen environments variables in the file `Doxyfile`.
 
 
 ### JNI classes
@@ -230,16 +229,16 @@ You may want (or need) to change some Doxygen environments variables in the file
 **(Optional)**
 
 The classes
-[UnuranContinuous](http://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1randvar_1_1UnuranContinuous.html),
-[UnuranDiscreteInt](http://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1randvar_1_1UnuranDiscreteInt.html),
-[UnuranEmpirical](http://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1randvar_1_1UnuranEmpirical.html) and
-[GlobalCPUTimeChrono](http://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1util_1_1GlobalCPUTimeChrono.html)
+[UnuranContinuous](https://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1randvar_1_1UnuranContinuous.html),
+[UnuranDiscreteInt](https://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1randvar_1_1UnuranDiscreteInt.html),
+[UnuranEmpirical](https://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1randvar_1_1UnuranEmpirical.html) and
+[GlobalCPUTimeChrono](https://umontreal-simul.github.io/ssj/docs/master/html/classumontreal_1_1ssj_1_1util_1_1GlobalCPUTimeChrono.html)
 make use of native libraries through the
-[Java Native Interface (JNI)](http://en.wikipedia.org/wiki/Java_Native_Interface).
+[Java Native Interface (JNI)](https://en.wikipedia.org/wiki/Java_Native_Interface).
 These libraries must be compiled with a C compiler (known to work with GCC).
 
 Note that if you want to build and use the UNU.RAN interface provided with SSJ,
-you must first install [UNU.RAN](http://statistik.wu-wien.ac.at/unuran/).
+you must first install [UNU.RAN](https://statistik.wu-wien.ac.at/unuran/).
 
 To tell Gradle to build the JNI libraries, add the following lines in
 `gradle.properties`:
@@ -257,7 +256,7 @@ Then, run Gradle [as explained above](#using-gradle).
 
 **(For experts only!)**
 
-Under Linux with [GCC](http://gcc.gnu.org/) and [MinGW](http://www.mingw.org/),
+Under Linux with [GCC](https://gcc.gnu.org/) and [MinGW](https://www.mingw.org/),
 you can cross-compile the JNI libraries for both Linux and Windows.
 This is how we generate the binary archives.
 
@@ -282,16 +281,16 @@ from a binary release.**
 If you intend to [compile the source code](#compiling-the-source-code) of SSJ,
 Gradle will take care of downloading the Java dependencies for you.
 Optionally, if you want to use the UNU.RAN interface in SSJ, you need to
-install the [UNU.RAN](http://statistik.wu-wien.ac.at/unuran/) before compiling
+install the [UNU.RAN](https://statistik.wu-wien.ac.at/unuran/) before compiling
 the associated JNI shared library in SSJ.
 
-##### [Colt](http://dst.lbl.gov/ACSSoftware/colt/)  
+##### [Colt](https://dst.lbl.gov/ACSSoftware/colt/)  
 The Colt library is used by a few SSJ classes.  The library, its source code
 and documentation, can be downloaded for free from its home page.  The
 `colt.jar` archive is already included in the SSJ distribution and it must be
 in the CLASSPATH environment variable.
 
-##### [Nonlinear Optimization Java Package](http://www1.fpl.fs.fed.us/optimization.html) by [Steve Verrill](http://www1.fpl.fs.fed.us/steve.html)  
+##### [Nonlinear Optimization Java Package](https://www1.fpl.fs.fed.us/optimization.html) by [Steve Verrill](https://www1.fpl.fs.fed.us/steve.html)  
 The optimization package of Steve Verrill includes Java translations of the
 MINPACK nonlinear least squares routines as well as UNCMIN routines for
 unconstrained optimization.  They were translated from FORTRAN to Java by
@@ -299,14 +298,14 @@ Steve Verrill and are in the public domain.  They are included in the SSJ
 distribution as the optimization.jar archive.  It is used only in the
 `probdist` package to compute maximum likelihood estimators.
 
-##### [JFreeChart](http://www.jfree.org/jfreechart/)
+##### [JFreeChart](https://www.jfree.org/jfreechart/)
 The JFreeChart library is used by the SSJ package charts to draw curves, histograms
 and different kinds of plots.  JFreeChart is copyrighted under the
-[GNU LGPL License](http://www.gnu.org/licenses/lgpl.html).
+[GNU LGPL License](https://www.gnu.org/licenses/lgpl.html).
 It is included in the SSJ distribution as the `jfreechart-X.Y.Z.jar`
 and the `jcommon-X.Y.Z.jar`, where `X.Y.Z` represents a version number.
 
-##### [UNU.RAN](http://statistik.wu-wien.ac.at/unuran/) (optional)  
+##### [UNU.RAN](https://statistik.wu-wien.ac.at/unuran/) (optional)  
 The UNURAN library is used by the classes `UnuranContinuous`,
 `UnuranDiscrete` and `UnuranEmpirical` in the package called `randvar`.
 Downloading, compiling and installing UNURAN is optional.  It is required

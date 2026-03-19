@@ -23,40 +23,45 @@
  *
  */
 package umontreal.ssj.hups;
- // import umontreal.ssj.rng.MRG32k3a;
- import umontreal.ssj.rng.RandomStream;
+
+// import umontreal.ssj.rng.MRG32k3a;
+import umontreal.ssj.rng.RandomStream;
 
 /**
  * This class implements an empty
+ * 
  * @ref umontreal.ssj.hups.PointSetRandomization. The method
- * #randomize(PointSet) does nothing. The internal stream is never used. This
- * class can be used in methods where a randomization is needed but you don’t
- * want one.
+ *      #randomize(PointSet) does nothing. The internal stream is never used.
+ *      This class can be used in methods where a randomization is needed but
+ *      you don’t want one.
  *
- * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
+ *      <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
 public class EmptyRandomization implements PointSetRandomization {
-   protected RandomStream stream;   //  = new MRG32k3a();
+   protected RandomStream stream; // = new MRG32k3a();
 
    /**
     * This method does nothing.
-    *  @param p            Point set to randomize
+    * 
+    * @param p Point set to randomize
     */
-   public void randomize (PointSet p) {
+   public void randomize(PointSet p) {
       // Does nothing
    }
 
    /**
-    * Sets the internal  @ref umontreal.ssj.rng.RandomStream to `stream`.
-    *  @param stream       stream to use in the randomization
+    * Sets the internal @ref umontreal.ssj.rng.RandomStream to `stream`.
+    * 
+    * @param stream stream to use in the randomization
     */
-   public void setStream (RandomStream stream) {
+   public void setStream(RandomStream stream) {
       this.stream = stream;
    }
 
    /**
-    * Returns the internal  @ref umontreal.ssj.rng.RandomStream.
-    *  @return stream used in the randomization
+    * Returns the internal @ref umontreal.ssj.rng.RandomStream.
+    * 
+    * @return stream used in the randomization
     */
    public RandomStream getStream() {
       return stream;

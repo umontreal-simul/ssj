@@ -31,22 +31,20 @@ package umontreal.ssj.functions;
  */
 public class IdentityMathFunction implements MathFunction
 
-,
-      MathFunctionWithFirstDerivative, MathFunctionWithDerivative,
-      MathFunctionWithIntegral {
-   public double evaluate (double x) {
+      , MathFunctionWithFirstDerivative, MathFunctionWithDerivative, MathFunctionWithIntegral {
+   public double evaluate(double x) {
       return x;
    }
-   
-   public double derivative (double x) {
+
+   public double derivative(double x) {
       return 1;
    }
 
-   public double derivative (double x, int n) {
+   public double derivative(double x, int n) {
       return n > 1 ? 0 : 1;
    }
 
-   public double integral (double a, double b) {
-      return (b*b - a*a) / 2;
+   public double integral(double a, double b) {
+      return (b * b - a * a) / 2;
    }
 }

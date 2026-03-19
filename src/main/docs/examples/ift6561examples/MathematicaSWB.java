@@ -1,13 +1,13 @@
 package ift6561examples;
-import umontreal.ssj.rng.RandomStreamBase;
 
+import umontreal.ssj.rng.RandomStreamBase;
 
 public class MathematicaSWB extends RandomStreamBase {
    private final int r = 8;
    private final int s = 48;
    protected final double norm = 1.0 / (1L << 31); // 1 / 2^31
    private static final int MASK31 = 0x7fffffff; // Masque de 31 bits
-   // static final long serialVersionUID;
+   static final long serialVersionUID = 1L;
 
    private int[] X;
    private int m_c;
@@ -86,18 +86,18 @@ public class MathematicaSWB extends RandomStreamBase {
    }
 
    public void resetStartStream() {
-      throw new UnsupportedOperationException ();
+      throw new UnsupportedOperationException();
    }
 
    public void resetStartSubstream() {
-      throw new UnsupportedOperationException ();
+      throw new UnsupportedOperationException();
    }
 
    public void resetNextSubstream() {
-      throw new UnsupportedOperationException ();
+      throw new UnsupportedOperationException();
    }
 
-   //=======================================================================
+   // =======================================================================
 
    public static void main(String[] args) {
       double x;

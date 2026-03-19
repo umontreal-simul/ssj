@@ -23,16 +23,14 @@
  *
  */
 package umontreal.ssj.randvar;
+
 import umontreal.ssj.rng.*;
 import umontreal.ssj.probdist.*;
 
 /**
  * This class implements random variate generators for the *exponential*
- * distribution. The density is
- * @f[
- *   f(x) = \lambda e^{-\lambda x} \qquad\mbox{ for }x\ge0,
- * @f]
- * where @f$\lambda> 0@f$.
+ * distribution. The density is @f[ f(x) = \lambda e^{-\lambda x} \qquad\mbox{
+ * for }x\ge0, @f] where @f$\lambda> 0@f$.
  *
  * The (non-static) `nextDouble` method simply calls `inverseF` on the
  * distribution.
@@ -46,29 +44,31 @@ public class ExponentialGen extends RandomVariateGen {
 
    /**
     * Creates an exponential random variate generator with parameter
+    * 
     * @f$\lambda@f$ = `lambda`, using stream `s`.
     */
-   public ExponentialGen (RandomStream s, double lambda) {
-      super (s, new ExponentialDist(lambda));
-      setParams (lambda);
+   public ExponentialGen(RandomStream s, double lambda) {
+      super(s, new ExponentialDist(lambda));
+      setParams(lambda);
    }
 
    /**
-    * Creates a new generator for the exponential distribution `dist` and
-    * stream `s`.
+    * Creates a new generator for the exponential distribution `dist` and stream
+    * `s`.
     */
-   public ExponentialGen (RandomStream s, ExponentialDist dist) {
-      super (s, dist);
+   public ExponentialGen(RandomStream s, ExponentialDist dist) {
+      super(s, dist);
       if (dist != null)
-         setParams (dist.getLambda());
+         setParams(dist.getLambda());
    }
 
    /**
     * Uses inversion to generate a new exponential variate with parameter
+    * 
     * @f$\lambda= @f$&nbsp;`lambda`, using stream `s`.
     */
-   public static double nextDouble (RandomStream s, double lambda) {
-      return ExponentialDist.inverseF (lambda, s.nextDouble());
+   public static double nextDouble(RandomStream s, double lambda) {
+      return ExponentialDist.inverseF(lambda, s.nextDouble());
    }
 
    /**
@@ -81,9 +81,9 @@ public class ExponentialGen extends RandomVariateGen {
    /**
     * Sets the parameter @f$\lambda= @f$ `lam` of this object.
     */
-   protected void setParams (double lam) {
+   protected void setParams(double lam) {
       if (lam <= 0.0)
-         throw new IllegalArgumentException ("lambda <= 0");
+         throw new IllegalArgumentException("lambda <= 0");
       this.lambda = lam;
    }
 }

@@ -23,14 +23,15 @@
  *
  */
 package umontreal.ssj.hups;
- import umontreal.ssj.rng.RandomStream;
- import java.lang.IllegalArgumentException;
+
+import umontreal.ssj.rng.RandomStream;
+import java.lang.IllegalArgumentException;
 
 /**
- * This class implements a  @ref umontreal.ssj.hups.PointSetRandomization
- * that performs a left matrix scrambling and adds a random digital shift.
- * Point set must be a  @ref umontreal.ssj.hups.DigitalNet or an
- * IllegalArgumentException is thrown.
+ * This class implements a @ref umontreal.ssj.hups.PointSetRandomization that
+ * performs a left matrix scrambling and adds a random digital shift. Point set
+ * must be a @ref umontreal.ssj.hups.DigitalNet or an IllegalArgumentException
+ * is thrown.
  *
  * <div class="SSJ-bigskip"></div><div class="SSJ-bigskip"></div>
  */
@@ -44,35 +45,39 @@ public class LMScrambleShift extends RandomShift {
 
    /**
     * Sets internal variable `stream` to the given `stream`.
-    *  @param stream       stream to use in the randomization
+    * 
+    * @param stream stream to use in the randomization
     */
-   public LMScrambleShift (RandomStream stream) {
-       super(stream);
+   public LMScrambleShift(RandomStream stream) {
+      super(stream);
    }
 
    /**
-    * This method calls
+    * If `p` is a @ref umontreal.ssj.hups.DigitalNet, this method calls
     * umontreal.ssj.hups.DigitalNet.leftMatrixScramble(RandomStream), then
-    * umontreal.ssj.hups.DigitalNet.addRandomShift(RandomStream). If `p`
-    * is not a  @ref umontreal.ssj.hups.DigitalNet, an
-    * IllegalArgumentException is thrown.
-    *  @param p            Point set to randomize
+    * umontreal.ssj.hups.DigitalNet.addRandomShift(RandomStream). 
+    * If `p` is a `ContainerPointSet` that contains a `DigitalNet cp`, it does that to `cp`.
+    * In other cases, a @ref umontreal.ssj.hups.DigitalNet, an IllegalArgumentException is thrown.
+    * 
+    * @param p Point set to randomize
     */
-   public void randomize (PointSet p) {
+   public void randomize(PointSet p) {
       if (p instanceof DigitalNet) {
-         ((DigitalNet)p).leftMatrixScramble (stream);
-         ((DigitalNet)p).addRandomShift (stream);
+         ((DigitalNet) p).leftMatrixScramble(stream);
+         ((DigitalNet) p).addRandomShift(stream);
+      }
+      else if (p instanceof ContainerPointSet) {
+         randomize(((ContainerPointSet) p).getOriginalPointSet()); 
       } else {
-         throw new IllegalArgumentException("LMScrambleShift"+
-                                            " can only randomize a DigitalNet");
+         throw new IllegalArgumentException("LMScrambleShift" + " can only randomize a DigitalNet");
       }
    }
-   
+
    /**
     * Returns a descriptor of this object.
     */
-   public String toString () {
-		return "Left matrix scramble + random digital shift";
-	}
+   public String toString() {
+      return "Left matrix scramble + random digital shift";
+   }
 
 }
